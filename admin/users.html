@@ -276,6 +276,11 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
 let currentUser = null;
 let actorRole = null;
+// Users created in this page session that GET /api/users hasn't returned yet.
+// Workers KV list() is eventually consistent, so a just-created user can be
+// missing from the list for up to ~60s. loadUsers() merges these in until the
+// server includes them, so a new user shows up right after Save.
+const recentlyCreated = new Map(); // id -> user (no password fields)
 
 // 34-course catalogue grouped by Ontario discipline/strand. Keep in sync
 // with the home-page LAYOUT in scripts/_rebuild_index_grid.py and
@@ -443,7 +448,12 @@ async function loadUsers() {
             return;
         }
         const data = await r.json();
-        renderUsers(data.users || []);
+        const users = data.users || [];
+        const listed = new Set(users.map(u => u.id));
+        for (const id of [...recentlyCreated.keys()]) {
+            if (listed.has(id)) recentlyCreated.delete(id);
+        }
+        renderUsers(users.concat([...recentlyCreated.values()]));
     } catch (e) {
         showAlert('alert', 'Network error: ' + e.message, 'error');
     }
@@ -582,6 +592,17 @@ document.getElementById('userForm').addEventListener('submit', async e => {
         });
         const data = await r.json();
         if (!r.ok) { showAlert('modalAlert', data.error || 'Error', 'error'); return; }
+        if (!id && data.id) {
+            const created = {
+                id: data.id,
+                email: body.email,
+                full_name: body.full_name,
+                role: body.role,
+                created_at: new Date().toISOString(),
+            };
+            if (body.role === 'student') created.enrolled_courses = body.enrolled_courses || [];
+            recentlyCreated.set(data.id, created);
+        }
         closeModal();
         await loadUsers();
     } catch (e) {
@@ -597,6 +618,7 @@ async function deleteUser(id, email) {
         });
         const data = await r.json();
         if (!r.ok) { showAlert('alert', data.error || 'Error', 'error'); return; }
+        recentlyCreated.delete(id);
         await loadUsers();
     } catch (e) {
         showAlert('alert', 'Network error', 'error');
