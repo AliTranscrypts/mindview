@@ -41,6 +41,7 @@ The site is a **Cloudflare Pages** project deployed via **Direct Upload**
 |---|---|---|
 | Auth | `functions/_middleware.js` | Gates every HTML request; 302 → `/login` if no valid session cookie |
 | Auth | `functions/lib/session.js` | HMAC-SHA256 signed `mv_session` cookie helpers |
+| Auth | `functions/lib/password.js` | PBKDF2-SHA256 password hash/verify; transparent legacy-SHA-256 upgrade path |
 | Auth | `functions/api/login.js` | Email+password → cookie |
 | Auth | `functions/api/logout.js` | Clear cookie |
 | Auth | `functions/api/me.js` | Returns `{authenticated, user:{id,email,full_name,role,role_label,can_manage_users}}` |
@@ -153,7 +154,7 @@ After every deploy, run `python3 scripts/verify-baseline.py` to confirm invarian
 
 ### Database safety
 - `USERS_KV` is the only source of truth for user identity. Don't wipe it without owner approval — there is no version history.
-- Password hashes are SHA-256 (no salt) for legacy compatibility.
+- Password hashes: new records use PBKDF2-SHA256+salt (`v2:` prefix, see `functions/lib/password.js`). Legacy records still hold unsalted SHA-256 hex and are upgraded transparently on first login — do not wipe USERS_KV without owner approval.
 
 ---
 

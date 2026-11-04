@@ -13,33 +13,60 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293
 .topbar .brand img{height:32px;}
 .topbar nav{display:flex;gap:20px;}
 .topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
-.topbar nav a:hover, .topbar nav a.active{color:#fff;}
+.topbar nav a:hover,.topbar nav a.active{color:#fff;}
 .user-chip{display:flex;align-items:center;gap:10px;font-size:13px;}
-.user-chip .role{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;}
-.role.superuser{background:#dc2626;}.role.admin{background:#7c3aed;}.role.teacher{background:#059669;}.role.student{background:#2563eb;}
-.container{max-width:1200px;margin:0 auto;padding:32px 24px;}
-h1{font-size:28px;font-weight:800;margin-bottom:6px;}
-.sub{color:#64748b;margin-bottom:28px;}
 .role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
-.role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
-.btn{display:inline-block;padding:9px 16px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;}
-.btn:hover{background:#1d4ed8;}
-.btn.ghost{background:#fff;color:#475569;border:1px solid #e2e8f0;}.btn.ghost:hover{border-color:#94a3b8;}
+.role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}
+.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
+.container{max-width:1100px;margin:0 auto;padding:32px 24px;}
+h1{font-size:28px;font-weight:800;margin-bottom:6px;}
+.sub{color:#64748b;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
 .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:20px;}
 .muted{color:#94a3b8;font-size:13px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:16px;margin-bottom:28px;}
-.grid .card{text-align:center;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:28px;}
+.grid .card{text-align:center;margin-bottom:0;}
 .stat-num{font-size:42px;font-weight:800;color:#2563eb;}
 .loading{padding:40px;text-align:center;color:#94a3b8;}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#2563eb;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .15s;}
+.btn:hover{background:#1d4ed8;}
+.btn.ghost{background:#fff;color:#475569;border:1px solid #e2e8f0;}.btn.ghost:hover{border-color:#94a3b8;background:#f8fafc;}
+.btn.green{background:#059669;}.btn.green:hover{background:#047857;}
+
+/* ── Teacher dashboard ──────────────────────────────────── */
+.alert-banner{background:#fef3c7;border:1.5px solid #f59e0b;border-radius:12px;padding:18px 22px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+.alert-banner .alert-text strong{display:block;font-size:16px;color:#78350f;margin-bottom:3px;}
+.alert-banner .alert-text p{font-size:13px;color:#92400e;}
+.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px;}
+@media(max-width:640px){.teacher-grid{grid-template-columns:1fr;}}
+.action-card{cursor:pointer;transition:box-shadow .15s, border-color .15s;position:relative;padding-bottom:70px;}
+.action-card:hover{box-shadow:0 4px 18px rgba(15,23,42,.09);border-color:#94a3b8;}
+.action-icon{font-size:40px;margin-bottom:12px;}
+.action-card h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+.action-card p{font-size:13.5px;color:#475569;line-height:1.55;}
+.action-card .card-btn{position:absolute;bottom:20px;left:24px;right:24px;display:flex;justify-content:flex-start;}
+.action-card.primary-action{border:2px solid #2563eb;background:linear-gradient(135deg,#eff6ff 0%,#fff 100%);}
+.pending-badge{display:inline-flex;align-items:center;gap:5px;background:#dc2626;color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:20px;margin-top:10px;}
+.pending-badge.zero{background:#d1fae5;color:#065f46;}
+
+/* ── Supervision rules card ────────────────────────────── */
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+@media(max-width:640px){.rules-grid{grid-template-columns:1fr;}}
+.rule{display:flex;gap:12px;align-items:flex-start;padding:12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;}
+.rule-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.rule-body strong{display:block;font-size:14px;margin-bottom:3px;}
+.rule-body p{font-size:13px;color:#475569;margin:0;}
 </style>
 </head>
 <body>
+
 <div id="topbar" class="topbar" style="display:none;">
-    <div class="brand"><a href="/admin"><img src="/logo.png" alt="MindView"></a><span>MindView Admin</span></div>
-    <nav>
+    <div class="brand">
+        <a href="/admin"><img src="/logo.png" alt="MindView"></a>
+        <span>MindView Admin</span>
+    </div>
+    <nav id="top-nav">
         <a href="/admin" class="active">Dashboard</a>
-        <a href="/admin/users.html" id="nav-users">Users</a>
-        <a href="/">Courses →</a>
+        <!-- role-specific links injected by JS -->
     </nav>
     <div class="user-chip">
         <span id="user-name"></span>
@@ -49,10 +76,12 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 
 <div class="container">
     <div id="loading" class="loading">Loading…</div>
+
     <div id="content" style="display:none;">
         <h1 id="welcome">Welcome</h1>
         <p class="sub">Role: <span id="role-pill" class="role-pill"></span></p>
 
+        <!-- ══ ADMIN / SUPERUSER ════════════════════════════════════ -->
         <div id="admin-only" style="display:none;">
             <div class="grid">
                 <div class="card"><div class="stat-num" id="stat-total">—</div><div class="muted">Total users</div></div>
@@ -61,21 +90,110 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
                 <div class="card"><div class="stat-num" id="stat-teacher" style="color:#059669;">—</div><div class="muted">Teachers</div></div>
                 <div class="card"><div class="stat-num" id="stat-student" style="color:#2563eb;">—</div><div class="muted">Students</div></div>
             </div>
-            <div style="display:flex;gap:10px;">
-                <a href="/admin/users.html" class="btn">Manage Users →</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                <a href="/admin/users.html" class="btn">👥 Manage Users →</a>
+                <a href="/admin/assessments.html" class="btn green">🔐 Assessment Authorization</a>
+                <a href="/admin/progress.html" class="btn ghost">📊 Student Progress</a>
                 <a href="/" class="btn ghost">Browse Courses</a>
             </div>
         </div>
 
-        <div id="user-only" style="display:none;">
+        <!-- ══ TEACHER ════════════════════════════════════════════════ -->
+        <div id="teacher-only" style="display:none;">
+
+            <!-- Live pending-requests alert -->
+            <div id="teacher-alert" class="alert-banner" style="display:none;">
+                <div class="alert-text">
+                    <strong>🔔 <span id="pending-count">0</span> student(s) are waiting for exam authorization</strong>
+                    <p>A student has requested supervised-assessment access and is online now, waiting for you to authorize it.</p>
+                </div>
+                <a href="/admin/assessments.html" class="btn" style="background:#d97706;white-space:nowrap;">
+                    Authorize Now →
+                </a>
+            </div>
+
+            <!-- Two main action cards -->
+            <div class="teacher-grid">
+                <!-- PRIMARY: Authorization -->
+                <div class="card action-card primary-action" onclick="location.href='/admin/assessments.html'">
+                    <div class="action-icon">🔐</div>
+                    <h3>Authorize Exam Access</h3>
+                    <p>Grant students access to FOR Diagnostics, OF Unit Tests, and Final Exams. You must confirm all four supervision conditions before the unlock button becomes available.</p>
+                    <div id="pending-badge-card" class="pending-badge zero">✓ No pending requests</div>
+                    <div class="card-btn">
+                        <a href="/admin/assessments.html" class="btn">Open Authorization Centre →</a>
+                    </div>
+                </div>
+
+                <!-- SECONDARY: Progress -->
+                <div class="card action-card" onclick="location.href='/admin/progress.html'">
+                    <div class="action-icon">📊</div>
+                    <h3>Student Progress</h3>
+                    <p>View chapter completion per student, mark FOR Diagnostics as reviewed, pass or fail OF Unit Tests, and unlock the Final Exam when a student is ready.</p>
+                    <div class="card-btn">
+                        <a href="/admin/progress.html" class="btn ghost">Open Progress Panel →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Browse courses shortcut -->
+            <div style="margin-bottom:20px;">
+                <a href="/" class="btn ghost">📚 Browse All 40 Courses →</a>
+            </div>
+
+            <!-- Supervision rules summary -->
             <div class="card">
-                <h2 style="font-size:18px;margin-bottom:14px;">Your access</h2>
-                <p id="user-message"></p>
-                <div style="margin-top:16px;"><a href="/" class="btn">Browse Courses →</a></div>
+                <h3 style="font-size:17px;font-weight:800;margin-bottom:6px;">📋 Supervised Assessment Requirements</h3>
+                <p style="font-size:14px;color:#475569;margin-bottom:14px;">
+                    FOR Diagnostics, OF Unit Tests, and Final Exams are server-locked. Students see a "Request Access" button instead of the exam paper. When a student requests access, their request appears in the Authorization Centre above. You may only grant access when <strong>all four</strong> of the following conditions are true — the authorization checklist enforces this.
+                </p>
+                <div class="rules-grid">
+                    <div class="rule">
+                        <div class="rule-icon">🟢</div>
+                        <div class="rule-body">
+                            <strong>Both online simultaneously</strong>
+                            <p>You and the student must both be online and actively present at the same time before and during the exam.</p>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon">📷</div>
+                        <div class="rule-body">
+                            <strong>Student visible via camera</strong>
+                            <p>You must be able to see the student clearly via Jitsi video. They must be alone, at their desk, throughout the exam.</p>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon">🖨️</div>
+                        <div class="rule-body">
+                            <strong>Working printer confirmed</strong>
+                            <p>The student must have a working printer with paper loaded and ready — shown on camera or confirmed verbally before you unlock.</p>
+                        </div>
+                    </div>
+                    <div class="rule">
+                        <div class="rule-icon">📵</div>
+                        <div class="rule-body">
+                            <strong>No external aids visible</strong>
+                            <p>No textbooks, notes, phones, or other devices visible. The student's desk and workspace must be clear of all resources.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+
+        <!-- ══ STUDENT ════════════════════════════════════════════════ -->
+        <div id="student-only" style="display:none;">
+            <div class="card">
+                <h2 style="font-size:18px;margin-bottom:10px;">Your access</h2>
+                <p style="color:#475569;font-size:14px;">
+                    As a student, you have full access to all enrolled course materials, video lessons, and Practice Quiz (AS) assessments.<br><br>
+                    FOR Diagnostics, OF Unit Tests, and Final Exams are supervised — your teacher must be online with you via video call to authorize access. Click the "Request Access" button on any locked assessment to notify your teacher.
+                </p>
+                <div style="margin-top:18px;"><a href="/" class="btn">Browse Your Courses →</a></div>
+            </div>
+        </div>
+
+    </div><!-- /#content -->
+</div><!-- /.container -->
 
 <script>
 const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
@@ -84,9 +202,6 @@ const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Tea
     const r = await fetch('/api/me', { credentials: 'same-origin' });
     const data = r.ok ? await r.json() : null;
     if (!data || !data.authenticated) {
-        // The middleware should already have bounced unauthenticated visitors,
-        // but if a session expires mid-session (e.g. via this XHR), redirect
-        // to the login page with a `next` param back to here.
         location.replace('/login?next=' + encodeURIComponent(location.pathname + location.search));
         return;
     }
@@ -99,39 +214,81 @@ function render(user) {
 
     document.getElementById('topbar').style.display = 'flex';
     document.getElementById('user-name').textContent = fullName;
+    document.getElementById('welcome').textContent = 'Welcome, ' + fullName;
 
-    document.getElementById('welcome').textContent = `Welcome, ${fullName}`;
     const pill = document.getElementById('role-pill');
-    pill.textContent = ROLE_LABELS[role];
+    pill.textContent = ROLE_LABELS[role] || role;
     pill.classList.add(role);
 
     document.getElementById('loading').style.display = 'none';
     document.getElementById('content').style.display = 'block';
 
+    // ── Extend top nav per role ──────────────────────────────
+    const nav = document.getElementById('top-nav');
+    if (role === 'admin' || role === 'superuser') {
+        nav.innerHTML += '<a href="/admin/users.html">Users</a>'
+            + '<a href="/admin/assessments.html">🔐 Authorization</a>'
+            + '<a href="/admin/progress.html">📊 Progress</a>'
+            + '<a href="/">Courses →</a>';
+    } else if (role === 'teacher') {
+        nav.innerHTML += '<a href="/admin/assessments.html">🔐 Authorize Exams</a>'
+            + '<a href="/admin/progress.html">📊 Progress</a>'
+            + '<a href="/">Courses →</a>';
+    } else {
+        nav.innerHTML += '<a href="/">Courses →</a>';
+    }
+
+    // ── Show role-appropriate section ────────────────────────
     if (role === 'admin' || role === 'superuser') {
         document.getElementById('admin-only').style.display = 'block';
         loadStats();
+    } else if (role === 'teacher') {
+        document.getElementById('teacher-only').style.display = 'block';
+        loadPendingRequests();
+        setInterval(loadPendingRequests, 15_000); // refresh badge every 15 s
     } else {
-        document.getElementById('nav-users').style.display = 'none';
-        document.getElementById('user-only').style.display = 'block';
-        document.getElementById('user-message').textContent =
-            role === 'teacher'
-                ? 'As a Teacher, you have access to all course content and assessments. Student management is available through your assigned classes.'
-                : 'As a Student, you have full access to all course materials, video lessons, and assessments.';
+        document.getElementById('student-only').style.display = 'block';
     }
 }
 
+// ── Admin: user stats ────────────────────────────────────────────────────────
 async function loadStats() {
     try {
-        const r = await fetch('/api/users');
+        const r = await fetch('/api/users', { credentials: 'same-origin' });
         if (!r.ok) return;
         const data = await r.json();
         const users = data.users || [];
         document.getElementById('stat-total').textContent = users.length;
         ['superuser','admin','teacher','student'].forEach(role => {
-            document.getElementById(`stat-${role}`).textContent = users.filter(u => u.role === role).length;
+            document.getElementById('stat-' + role).textContent =
+                users.filter(u => u.role === role).length;
         });
-    } catch (e) { console.error(e); }
+    } catch(e) { console.error(e); }
+}
+
+// ── Teacher: live pending-request badge ──────────────────────────────────────
+async function loadPendingRequests() {
+    try {
+        const r = await fetch('/api/assessment-unlock', { credentials: 'same-origin' });
+        if (!r.ok) return;
+        const data = await r.json();
+        const count = (data.pendingRequests || []).length;
+
+        const alert  = document.getElementById('teacher-alert');
+        const badge  = document.getElementById('pending-badge-card');
+        const countEl = document.getElementById('pending-count');
+
+        if (count > 0) {
+            alert.style.display = 'flex';
+            countEl.textContent = count;
+            badge.className = 'pending-badge';
+            badge.textContent = count + ' pending request' + (count > 1 ? 's' : '') + ' — authorize now';
+        } else {
+            alert.style.display = 'none';
+            badge.className = 'pending-badge zero';
+            badge.textContent = '✓ No pending requests';
+        }
+    } catch(e) { /* silent — badge just won't update */ }
 }
 </script>
 </body>

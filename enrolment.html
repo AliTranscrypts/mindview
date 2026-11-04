@@ -42,7 +42,7 @@ fetch('/api/me')
 
 <header class="page-head">
     <h1>💳 Enrolment &amp; Tuition</h1>
-    <p>Per-course pricing — enrol in one course or several. Email or call us to register.</p>
+    <p>Per-course pricing — enrol in one course or several. Email us to register.</p>
 </header>
 
 <section class="enrol-section">
@@ -52,16 +52,24 @@ fetch('/api/me')
 
         <div class="enrol-placeholder">⚠️ Placeholder pricing — final amounts to be confirmed by the school administrator.</div>
 
+        <p style="font-size:13px;color:#64748b;margin:0 0 16px 0;">
+            All prices are in Canadian dollars (CAD) and are subject to applicable taxes (HST) as determined at time of enrolment.
+            Before a payment link is issued, you will receive an itemized fee summary showing the course(s) selected, the total tuition,
+            any applicable HST, and the agreed payment terms. By proceeding with enrolment you confirm you have read our
+            <a href="/enrollment-terms.html" style="color:#2563eb;">Enrollment Terms &amp; Conditions</a> and
+            <a href="/refund-policy.html" style="color:#2563eb;">Refund &amp; Cancellation Policy</a>.
+        </p>
+
         <div class="enrol-pricing">
             <div class="enrol-tier">
                 <div class="enrol-tier-label">Standard</div>
                 <h3>Full-Credit Course</h3>
                 <div class="enrol-price">$599<small> CAD</small></div>
-                <div class="enrol-per">per course · 1.0 credit · 110 hrs instruction</div>
+                <div class="enrol-per">per course · 1.0 credit · 110 hrs student learning time</div>
                 <ul>
                     <li>Grade 10 / 11 / 12 — Academic (D), University (U), University/College (M), College (C)</li>
                     <li>Full lesson notes, videos, assessments &amp; teacher feedback</li>
-                    <li>OSSD-credit eligible</li>
+                    <li>OSSD-credit eligible (registered Ontario private school — school registration number available on request)</li>
                 </ul>
             </div>
 
@@ -69,7 +77,7 @@ fetch('/api/me')
                 <div class="enrol-tier-label">Half-Credit</div>
                 <h3>Open Course</h3>
                 <div class="enrol-price">$329<small> CAD</small></div>
-                <div class="enrol-per">per course · 0.5 credit · 55 hrs instruction</div>
+                <div class="enrol-per">per course · 0.5 credit · 55 hrs student learning time</div>
                 <ul>
                     <li>CHV2O — Civics and Citizenship</li>
                     <li>CPC3O — Politics in Action</li>
@@ -85,7 +93,7 @@ fetch('/api/me')
                 <div class="enrol-per">discounted package — contact admin for a quote</div>
                 <ul>
                     <li>Full grade 11 or 12 year package</li>
-                    <li>OUAC-friendly pre-university bundle</li>
+                    <li>University-preparation bundle (Grades 11–12)</li>
                     <li>College-pathway bundle (MCT3M/MCT4M + complement)</li>
                 </ul>
             </div>
@@ -112,8 +120,11 @@ fetch('/api/me')
                 </div>
             </div>
             <div class="enrol-contact">
-                📧 Contact for enrolment: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a> &nbsp;·&nbsp; 📞 <a href="tel:+1-XXX-XXX-XXXX">(XXX) XXX-XXXX</a>
+                📧 Contact for enrolment: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a>
             </div>
+            <p style="font-size:13px;color:#64748b;margin-top:14px;line-height:1.6;">
+                MindView Academy welcomes all students regardless of background. We are committed to providing equitable access to our courses in accordance with the <em>Ontario Human Rights Code</em> and the <em>Accessibility for Ontarians with Disabilities Act</em>. If you require an accommodation or alternative format, please mention it in your enrolment email and we will work with you to arrange appropriate support. See our <a href="/accessibility.html" style="color:#2563eb;">Accessibility Statement</a> for details.
+            </p>
         </div>
     </div>
 </section>
@@ -124,8 +135,16 @@ fetch('/api/me')
         <p>Ontario Curriculum, Grades 10 — 12 (Revised)</p>
         <p style="margin-top:14px;font-size:13px;">
             <a href="/video-policy.html" style="color:#cbd5e1;text-decoration:underline;">📺 Video Licensing &amp; Compliance Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/privacy-policy.html" style="color:#cbd5e1;text-decoration:underline;">🔒 Privacy Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/enrollment-terms.html" style="color:#cbd5e1;text-decoration:underline;">📋 Enrollment Terms</a>
+            &nbsp;·&nbsp;
+            <a href="/refund-policy.html" style="color:#cbd5e1;text-decoration:underline;">💳 Refund Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/accessibility.html" style="color:#cbd5e1;text-decoration:underline;">♿ Accessibility</a>
         </p>
-        <p style="margin-top:8px;font-size:12px;opacity:0.6;">Built with ⚡ by MindView</p>
+        <p style="margin-top:8px;font-size:12px;color:#94a3b8;">Built with ⚡ by MindView</p>
     </div>
 </footer>
 

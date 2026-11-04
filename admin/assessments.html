@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Assessment Unlock — MindView Admin</title>
+<title>Assessment Authorization — MindView Admin</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
-.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:200;}
 .topbar a{color:#fff;text-decoration:none;}
 .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
 .brand img{height:32px;}
@@ -17,12 +17,12 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293
 .user-chip{font-size:13px;display:flex;align-items:center;gap:10px;}
 .container{max-width:960px;margin:0 auto;padding:32px 24px;}
 h1{font-size:26px;font-weight:800;margin-bottom:6px;}
-.sub{color:#64748b;margin-bottom:24px;}
+.sub{color:#64748b;margin-bottom:24px;font-size:14px;}
 .card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:20px;}
 .card-title{font-size:16px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 .empty{text-align:center;padding:40px 20px;color:#94a3b8;font-size:15px;}
 .req-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:start;
-  padding:16px 0;border-bottom:1px solid #f1f5f9;}
+  padding:18px 0;border-bottom:1px solid #f1f5f9;}
 .req-row:last-child{border-bottom:none;}
 .req-info strong{display:block;font-size:15px;margin-bottom:3px;}
 .req-info span{font-size:13px;color:#64748b;}
@@ -31,31 +31,70 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
 .badge.of{background:#ede9fe;color:#4c1d95;}
 .badge.final{background:#fee2e2;color:#7f1d1d;}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:#2563eb;
-  color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
-.btn:hover{background:#1d4ed8;}
-.btn.green{background:#059669;}.btn.green:hover{background:#047857;}
-.btn.red{background:#dc2626;}.btn.red:hover{background:#b91c1c;}
+  color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;text-decoration:none;transition:background .15s;}
+.btn:hover:not(:disabled){background:#1d4ed8;}
+.btn.green{background:#059669;}.btn.green:hover:not(:disabled){background:#047857;}
+.btn.red{background:#dc2626;}.btn.red:hover:not(:disabled){background:#b91c1c;}
 .btn.ghost{background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;}.btn.ghost:hover{border-color:#94a3b8;}
-.jitsi-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 14px;margin-top:12px;}
-.jitsi-box a{color:#2563eb;font-weight:700;word-break:break-all;}
-.timer{font-size:13px;font-weight:700;color:#dc2626;}
+.btn:disabled{opacity:.45;cursor:not-allowed;}
 .loading{text-align:center;padding:40px;color:#94a3b8;}
 .alert{padding:12px 16px;border-radius:8px;font-size:14px;margin-bottom:16px;}
 .alert.ok{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;}
 .alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.refresh-note{font-size:12px;color:#94a3b8;margin-top:6px;}
 .manual-panel{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:18px;margin-top:12px;}
 .manual-panel label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;}
 .manual-panel input{width:100%;padding:9px 12px;border:1.5px solid #94a3b8;border-radius:8px;
   font-size:14px;font-family:inherit;color:#0f172a;background:#fff;margin-bottom:10px;}
 .manual-panel input:focus{outline:none;border-color:#2563eb;}
-.refresh-note{font-size:12px;color:#94a3b8;margin-top:8px;}
-/* Granted list */
 .grant-row{padding:12px 0;border-bottom:1px solid #f1f5f9;display:flex;justify-content:space-between;align-items:center;}
 .grant-row:last-child{border-bottom:none;}
+.jitsi-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 14px;margin-top:10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.jitsi-box a{color:#2563eb;font-weight:700;font-size:13px;word-break:break-all;}
+
+/* ══ Authorization Modal ═════════════════════════════════════════════════ */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.65);z-index:999;
+  display:none;align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:16px;width:100%;max-width:560px;
+  box-shadow:0 20px 60px rgba(15,23,42,.25);overflow:hidden;
+  max-height:calc(100vh - 32px);display:flex;flex-direction:column;}
+.modal-header{background:#0f172a;color:#fff;padding:20px 24px;flex-shrink:0;}
+.modal-header h2{font-size:20px;font-weight:800;margin-bottom:4px;}
+.modal-header .modal-meta{font-size:13px;color:#94a3b8;line-height:1.5;}
+.modal-header .modal-meta strong{color:#fff;}
+.modal-type-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:700;margin-top:6px;}
+.modal-type-badge.for{background:#f59e0b;color:#fff;}
+.modal-type-badge.of{background:#7c3aed;color:#fff;}
+.modal-type-badge.final{background:#dc2626;color:#fff;}
+.modal-body{padding:22px 24px;overflow-y:auto;flex:1;}
+.jitsi-call-box{background:#eff6ff;border:1.5px solid #2563eb;border-radius:10px;
+  padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.jitsi-call-box .jitsi-label{font-size:14px;font-weight:700;color:#1e40af;}
+.jitsi-call-box .jitsi-label span{display:block;font-size:12px;font-weight:400;color:#475569;margin-top:2px;}
+.conditions-heading{font-size:14px;font-weight:800;color:#1e293b;margin-bottom:12px;}
+.conditions-note{font-size:12px;color:#64748b;margin-bottom:14px;}
+.condition-item{display:flex;gap:14px;align-items:flex-start;padding:14px;
+  border:1.5px solid #e2e8f0;border-radius:10px;margin-bottom:10px;cursor:pointer;
+  transition:border-color .15s,background .15s;}
+.condition-item:hover{border-color:#94a3b8;background:#f8fafc;}
+.condition-item.checked{border-color:#059669;background:#f0fdf4;}
+.condition-item input[type=checkbox]{width:20px;height:20px;cursor:pointer;accent-color:#059669;flex-shrink:0;margin-top:2px;}
+.condition-body strong{display:block;font-size:14px;margin-bottom:3px;}
+.condition-body p{font-size:13px;color:#475569;line-height:1.45;}
+.conditions-progress{font-size:13px;font-weight:700;margin:14px 0 4px;color:#475569;}
+.conditions-progress span{color:#059669;}
+.modal-footer{padding:16px 24px;border-top:1px solid #e2e8f0;background:#f8fafc;flex-shrink:0;
+  display:flex;gap:10px;align-items:center;}
+#grant-btn{flex:1;justify-content:center;padding:13px 20px;font-size:15px;}
+#grant-btn:not(:disabled){background:#059669;}
+#grant-btn:not(:disabled):hover{background:#047857;}
+#grant-btn:disabled{background:#94a3b8;}
 </style>
 </head>
 <body>
 
+<!-- ── Top bar ─────────────────────────────────────────────── -->
 <div class="topbar">
   <div class="brand">
     <a href="/admin"><img src="/logo.png" alt="MindView"></a>
@@ -63,8 +102,9 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
   </div>
   <nav>
     <a href="/admin">Dashboard</a>
-    <a href="/admin/assessments.html" class="active">Assessment Unlock</a>
-    <a href="/admin/users.html">Users</a>
+    <a href="/admin/assessments.html" class="active">🔐 Authorization</a>
+    <a href="/admin/progress.html">📊 Progress</a>
+    <a href="/admin/users.html" id="nav-users" style="display:none;">Users</a>
     <a href="/">Courses →</a>
   </nav>
   <div class="user-chip">
@@ -73,9 +113,14 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
   </div>
 </div>
 
+<!-- ── Main content ────────────────────────────────────────── -->
 <div class="container">
-  <h1>🔐 Assessment Unlock Centre</h1>
-  <p class="sub">Supervised assessments (FOR Diagnostics, OF Unit Tests, Final Exams) are locked to students until you explicitly unlock them here. Students cannot see any questions until granted access.</p>
+  <h1>🔐 Assessment Authorization Centre</h1>
+  <p class="sub">
+    FOR Diagnostics, OF Unit Tests, and Final Exams are <strong>server-locked</strong> — students see a waiting screen instead of the exam paper.
+    When a student clicks "Request Access", their request appears in the queue below.
+    You may only grant access after confirming all <strong>four supervision conditions</strong> in the authorization checklist.
+  </p>
 
   <div id="alert"></div>
 
@@ -85,42 +130,126 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
       🔔 Pending Unlock Requests
       <button class="btn ghost" style="font-size:13px;padding:6px 12px;margin-left:auto;" onclick="loadRequests()">↻ Refresh</button>
     </div>
-    <p class="refresh-note" id="last-refresh"></p>
+    <p class="refresh-note" id="last-refresh">Auto-refreshes every 10 seconds.</p>
     <div id="requests-list"><div class="loading">Loading pending requests…</div></div>
   </div>
 
   <!-- ─── Manual unlock ────────────────────────────────────── -->
   <div class="card">
-    <div class="card-title">🔓 Manual Unlock</div>
+    <div class="card-title">🔓 Manual Authorization</div>
     <p style="font-size:14px;color:#475569;margin-bottom:14px;">
-      Use this if the student didn't submit an automatic unlock request, or if you need to unlock
-      a specific assessment directly. You must be on a video session with the student before unlocking.
+      Use this if the student didn't submit a request, or if you need to authorize a specific assessment directly.
+      The same four-condition checklist will appear before access is granted.
     </p>
     <div class="manual-panel">
       <label>Student email</label>
       <input type="email" id="manual-student-email" placeholder="student@example.com">
-      <label>Assessment path (copy from browser URL bar)</label>
+      <label>Assessment path (copy from the browser URL bar on the locked exam page)</label>
       <input type="text" id="manual-path" placeholder="/assessments/eng4u/Unit1_Critical_Reading_OF.html">
-      <label>Jitsi session room URL <span style="font-weight:400;color:#64748b;">(optional — paste your room link)</span></label>
+      <label>Jitsi session room URL <span style="font-weight:400;color:#64748b;">(optional — paste your room link for the checklist)</span></label>
       <input type="url" id="manual-jitsi" placeholder="https://meet.jit.si/MindViewAcademy-...">
-      <div style="display:flex;gap:10px;margin-top:4px;">
-        <button class="btn green" onclick="manualUnlock()">🔓 Unlock for Student</button>
-        <button class="btn red" onclick="manualRevoke()">🔒 Revoke Access</button>
+      <div style="display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;">
+        <button class="btn green" onclick="manualUnlockFlow()">🔐 Open Authorization Checklist</button>
+        <button class="btn red" onclick="manualRevoke()">🔒 Revoke Existing Access</button>
       </div>
     </div>
   </div>
 
   <!-- ─── Active grants ────────────────────────────────────── -->
   <div class="card">
-    <div class="card-title">✅ Recently Granted (this session)</div>
-    <div id="grants-list"><div class="empty">No grants issued yet this session.</div></div>
+    <div class="card-title">✅ Authorized This Session</div>
+    <div id="grants-list"><div class="empty">No access grants issued yet this session.</div></div>
   </div>
 </div>
+
+<!-- ══ Authorization Modal ════════════════════════════════════ -->
+<div class="modal-overlay" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-box" tabindex="-1">
+
+    <!-- Header: who + what -->
+    <div class="modal-header">
+      <h2 id="modal-title">🔐 Exam Authorization</h2>
+      <div class="modal-meta">
+        Student: <strong id="modal-student-email">—</strong><br>
+        Assessment: <strong id="modal-path-display">—</strong><br>
+        <span id="modal-type-badge" class="modal-type-badge"></span>
+      </div>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- Jitsi video link -->
+      <div class="jitsi-call-box" id="jitsi-call-box">
+        <div class="jitsi-label">
+          📹 Jitsi Video Session
+          <span id="jitsi-hint">You must be on a live video call with the student before proceeding.</span>
+        </div>
+        <a id="modal-jitsi-link" href="#" target="_blank" rel="noopener" class="btn" style="font-size:13px;padding:8px 14px;">
+          Open Video Room →
+        </a>
+      </div>
+
+      <!-- 4 mandatory conditions -->
+      <p class="conditions-heading">Before granting access, confirm ALL four conditions:</p>
+      <p class="conditions-note">Each checkbox must be ticked. The authorization button unlocks only when all four are confirmed.</p>
+
+      <label class="condition-item" id="cond-wrap-1" onclick="toggleCondition(1)">
+        <input type="checkbox" id="cond1" onclick="event.stopPropagation()" onchange="onConditionChange()">
+        <div class="condition-body">
+          <strong>🟢 Both teacher and student are online simultaneously</strong>
+          <p>We are both online and actively present right now. The student is not going to close the session, and I am ready to supervise for the full exam duration.</p>
+        </div>
+      </label>
+
+      <label class="condition-item" id="cond-wrap-2" onclick="toggleCondition(2)">
+        <input type="checkbox" id="cond2" onclick="event.stopPropagation()" onchange="onConditionChange()">
+        <div class="condition-body">
+          <strong>📷 I can see the student clearly via camera</strong>
+          <p>The student's camera is on. I can see their face, desk, and immediate surroundings. They are alone — no other people are visible in the room.</p>
+        </div>
+      </label>
+
+      <label class="condition-item" id="cond-wrap-3" onclick="toggleCondition(3)">
+        <input type="checkbox" id="cond3" onclick="event.stopPropagation()" onchange="onConditionChange()">
+        <div class="condition-body">
+          <strong>🖨️ The student has a working printer with paper loaded</strong>
+          <p>The student has shown me (on camera) or verbally confirmed that their printer is connected, has paper, and is ready to print the exam paper right now.</p>
+        </div>
+      </label>
+
+      <label class="condition-item" id="cond-wrap-4" onclick="toggleCondition(4)">
+        <input type="checkbox" id="cond4" onclick="event.stopPropagation()" onchange="onConditionChange()">
+        <div class="condition-body">
+          <strong>📵 No external aids, notes, or devices visible</strong>
+          <p>I have visually confirmed the student's workspace is clear: no textbooks, printed notes, phones, tablets, secondary monitors, or other browser tabs are visible or in reach.</p>
+        </div>
+      </label>
+
+      <!-- Progress indicator -->
+      <p class="conditions-progress" id="cond-progress">
+        <span id="cond-count">0</span> of 4 conditions confirmed
+      </p>
+
+    </div><!-- /.modal-body -->
+
+    <!-- Footer: action buttons -->
+    <div class="modal-footer">
+      <button id="grant-btn" class="btn" disabled onclick="executeGrant()">
+        🔒 Grant Access (0 / 4)
+      </button>
+      <button class="btn ghost" onclick="closeModal()">Cancel</button>
+    </div>
+
+  </div><!-- /.modal-box -->
+</div><!-- /.modal-overlay -->
 
 <script>
 let myRole = null;
 let myEmail = null;
-const sessionGrants = []; // track grants made this session
+const sessionGrants = [];
+
+// Pending grant info held while modal is open
+let pendingGrant = null;
 
 // ── Boot ──────────────────────────────────────────────────────────────────
 (async function() {
@@ -133,58 +262,70 @@ const sessionGrants = []; // track grants made this session
   myRole = data.user.role;
   myEmail = data.user.email;
   if (myRole !== 'teacher' && myRole !== 'admin' && myRole !== 'superuser') {
-    document.body.innerHTML = '<div style="padding:60px;text-align:center;"><h1>🚫 Access denied</h1></div>';
+    document.body.innerHTML = '<div style="padding:60px;text-align:center;"><h1>🚫 Access denied</h1><p>This page is for teachers, administrators, and super users only.</p></div>';
     return;
   }
   document.getElementById('user-name').textContent = data.user.full_name || data.user.email;
+  if (myRole === 'admin' || myRole === 'superuser') {
+    document.getElementById('nav-users').style.display = 'inline';
+  }
   loadRequests();
-  setInterval(loadRequests, 10_000); // auto-refresh every 10 s
+  setInterval(loadRequests, 10_000);
 })();
 
 function showAlert(msg, kind='ok') {
   document.getElementById('alert').innerHTML =
     `<div class="alert ${kind}">${msg}</div>`;
-  setTimeout(() => document.getElementById('alert').innerHTML = '', 5000);
+  setTimeout(() => { document.getElementById('alert').innerHTML = ''; }, 6000);
 }
 
 // ── Load pending requests ─────────────────────────────────────────────────
 async function loadRequests() {
   try {
     const r = await fetch('/api/assessment-unlock', { credentials: 'same-origin' });
-    if (!r.ok) { console.error('Error loading requests'); return; }
+    if (!r.ok) return;
     const data = await r.json();
     const reqs = data.pendingRequests || [];
     document.getElementById('last-refresh').textContent =
-      'Last refreshed: ' + new Date().toLocaleTimeString();
+      'Last refreshed: ' + new Date().toLocaleTimeString() + ' · Auto-refreshes every 10 s.';
 
     const list = document.getElementById('requests-list');
     if (reqs.length === 0) {
-      list.innerHTML = '<div class="empty">No pending requests right now. Students who request unlock will appear here.</div>';
+      list.innerHTML = '<div class="empty">No pending requests right now.<br>Students who click "Request Access" on a locked exam will appear here automatically.</div>';
       return;
     }
 
     list.innerHTML = reqs.map(req => {
       const when = new Date(req.requestedAt).toLocaleString();
       const type = req.assessmentType || 'Assessment';
-      const badgeClass = type.includes('Final') ? 'final' : type.includes('OF') ? 'of' : 'for';
+      const badgeClass = type.toLowerCase().includes('final') ? 'final'
+                       : type.toLowerCase().includes('of')    ? 'of'
+                       : type.toLowerCase().includes('for')   ? 'for' : 'for';
+
       const jitsiHtml = req.jitsiRoom
-        ? `<div class="jitsi-box"><strong>🎥 Student's Jitsi room:</strong> <a href="${escHtml(req.jitsiRoom)}" target="_blank" rel="noopener">${escHtml(req.jitsiRoom)}</a></div>`
+        ? `<div class="jitsi-box">
+            <span>📹 Jitsi room suggested by student:</span>
+            <a href="${escHtml(req.jitsiRoom)}" target="_blank" rel="noopener">${escHtml(req.jitsiRoom)}</a>
+           </div>`
         : '';
+
       return `<div class="req-row">
         <div class="req-info">
           <strong>${escHtml(req.studentEmail)}</strong>
-          <span>${escHtml(req.assessmentPath)}</span><br>
-          <span>Requested: ${when}</span>
+          <span style="word-break:break-all;">${escHtml(req.assessmentPath)}</span><br>
+          <span>Requested: ${escHtml(when)}</span>
+          ${jitsiHtml}
         </div>
         <div>
           <span class="badge ${badgeClass}">${escHtml(type)}</span>
-          ${jitsiHtml}
         </div>
-        <div style="display:flex;gap:8px;flex-direction:column;">
-          <button class="btn green" onclick="grantRequest('${escHtml(req.studentId)}','${escHtml(req.assessmentPath)}','${escHtml(req.jitsiRoom||'')}')">
-            🔓 Unlock
+        <div style="display:flex;gap:8px;flex-direction:column;min-width:110px;">
+          <button class="btn green"
+            onclick="openAuthModal(${escQ(req.studentId)},${escQ(req.assessmentPath)},${escQ(req.jitsiRoom||'')},${escQ(req.studentEmail||'')},${escQ(type)})">
+            🔐 Authorize
           </button>
-          <button class="btn red" onclick="denyRequest('${escHtml(req.studentId)}','${escHtml(req.assessmentPath)}')">
+          <button class="btn red"
+            onclick="denyRequest(${escQ(req.studentId)},${escQ(req.assessmentPath)})">
             ✗ Deny
           </button>
         </div>
@@ -195,72 +336,194 @@ async function loadRequests() {
   }
 }
 
-// ── Grant from pending request ────────────────────────────────────────────
-async function grantRequest(studentId, path, jitsiRoom) {
-  if (!confirm(`Unlock "${path}" for student?\n\nConfirm you are on a video session with the student and they have a working printer ready.`)) return;
-  const r = await fetch('/api/assessment-unlock', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify({ action: 'grant', path, studentId, jitsiRoom }),
+// ── Deny request ──────────────────────────────────────────────────────────
+function denyRequest(studentId, path) {
+  showAlert('Request dismissed — the student will need to request again when ready.', 'ok');
+  loadRequests();
+}
+
+// ════════════════════════════════════════════════════════════════════════════
+// AUTHORIZATION MODAL
+// ════════════════════════════════════════════════════════════════════════════
+
+function openAuthModal(studentId, path, jitsiRoom, studentEmail, assessmentType) {
+  // Store for use when grant is executed
+  pendingGrant = { studentId, path, jitsiRoom, studentEmail, assessmentType };
+
+  // Populate header
+  document.getElementById('modal-student-email').textContent = studentEmail || studentId;
+  document.getElementById('modal-path-display').textContent = path;
+
+  const typeLower = (assessmentType || '').toLowerCase();
+  const badge = document.getElementById('modal-type-badge');
+  if (typeLower.includes('final')) {
+    badge.textContent = '🔴 Final Exam'; badge.className = 'modal-type-badge final';
+  } else if (typeLower.includes('of')) {
+    badge.textContent = '🟣 OF Unit Test'; badge.className = 'modal-type-badge of';
+  } else {
+    badge.textContent = '🟡 FOR Diagnostic'; badge.className = 'modal-type-badge for';
+  }
+
+  // Populate Jitsi link
+  const jitsiLink = document.getElementById('modal-jitsi-link');
+  const jitsiHint = document.getElementById('jitsi-hint');
+  if (jitsiRoom) {
+    jitsiLink.href = jitsiRoom;
+    jitsiLink.style.display = 'inline-flex';
+    jitsiHint.textContent = 'Student provided this room link. Join or use your own room.';
+  } else {
+    // Auto-generate a deterministic Jitsi room for this session
+    const today = new Date();
+    const dateStr = today.getFullYear() + '' +
+      String(today.getMonth()+1).padStart(2,'0') + String(today.getDate()).padStart(2,'0');
+    const slug = path.replace(/^\/+/,'').replace(/\.html?$/i,'').replace(/[^a-zA-Z0-9_-]/g,'__');
+    const autoRoom = 'https://meet.jit.si/MindViewAcademy-' + slug + '-' + dateStr;
+    jitsiLink.href = autoRoom;
+    jitsiLink.style.display = 'inline-flex';
+    jitsiHint.textContent = 'No room provided — click to open an auto-generated room and share the link with the student.';
+  }
+
+  // Reset all checkboxes
+  resetConditions();
+
+  // Show modal
+  document.getElementById('auth-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.querySelector('#auth-modal .modal-box').focus();
+}
+
+function closeModal() {
+  document.getElementById('auth-modal').classList.remove('open');
+  document.body.style.overflow = '';
+  pendingGrant = null;
+  resetConditions();
+}
+
+// Close modal on overlay click
+document.getElementById('auth-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// ESC key closes modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+function resetConditions() {
+  [1,2,3,4].forEach(n => {
+    const cb = document.getElementById('cond' + n);
+    const wrap = document.getElementById('cond-wrap-' + n);
+    cb.checked = false;
+    wrap.classList.remove('checked');
   });
-  const data = await r.json();
-  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
-  const expires = new Date(data.expiresAt).toLocaleTimeString();
-  showAlert(`✅ Assessment unlocked for student. Expires at ${expires}.`);
-  sessionGrants.push({ studentId, path, assessmentType: data.assessmentType, grantedAt: new Date().toLocaleTimeString() });
-  renderGrants();
-  loadRequests();
+  updateGrantButton(0);
 }
 
-// ── Deny / dismiss request ────────────────────────────────────────────────
-async function denyRequest(studentId, path) {
-  const slug = path.replace(/^\/+/,'').replace(/\.html?$/i,'').replace(/[^a-zA-Z0-9_-]/g,'__');
-  const reqKey = `unlock-req:${studentId}:${slug}`;
-  // Just refresh — we can't delete the KV entry from here without an extra endpoint;
-  // the entry will expire automatically in 4 hours.
-  showAlert('Request dismissed. The student will need to re-request.', 'ok');
-  loadRequests();
+function toggleCondition(n) {
+  const cb = document.getElementById('cond' + n);
+  cb.checked = !cb.checked;
+  onConditionChange();
 }
 
-// ── Manual unlock ─────────────────────────────────────────────────────────
-async function lookupStudentId(email) {
-  // Fetch user list and find studentId by email
-  const r = await fetch('/api/users', { credentials: 'same-origin' });
-  if (!r.ok) return null;
-  const data = await r.json();
-  const user = (data.users || []).find(u => u.email.toLowerCase() === email.toLowerCase());
-  return user ? user.id : null;
+function onConditionChange() {
+  const checked = [1,2,3,4].filter(n => {
+    const cb = document.getElementById('cond' + n);
+    const wrap = document.getElementById('cond-wrap-' + n);
+    if (cb.checked) { wrap.classList.add('checked'); return true; }
+    else { wrap.classList.remove('checked'); return false; }
+  }).length;
+  updateGrantButton(checked);
 }
 
-async function manualUnlock() {
+function updateGrantButton(checked) {
+  const btn = document.getElementById('grant-btn');
+  const progressEl = document.getElementById('cond-count');
+  progressEl.textContent = checked;
+
+  if (checked < 4) {
+    btn.disabled = true;
+    btn.textContent = '🔒 Grant Access (' + checked + ' / 4 conditions met)';
+  } else {
+    btn.disabled = false;
+    btn.textContent = '🔓 Grant Access — All conditions confirmed';
+  }
+}
+
+// ── Execute the grant after modal confirmation ────────────────────────────
+async function executeGrant() {
+  if (!pendingGrant) return;
+  const { studentId, path, jitsiRoom, studentEmail } = pendingGrant;
+
+  const btn = document.getElementById('grant-btn');
+  btn.disabled = true;
+  btn.textContent = 'Granting access…';
+
+  try {
+    const r = await fetch('/api/assessment-unlock', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ action: 'grant', path, studentId, jitsiRoom }),
+    });
+    const data = await r.json();
+    if (!r.ok) {
+      showAlert('Error: ' + (data.error || 'Unknown error'), 'error');
+      btn.disabled = false;
+      btn.textContent = '🔓 Grant Access — All conditions confirmed';
+      return;
+    }
+    const expires = new Date(data.expiresAt).toLocaleTimeString();
+    closeModal();
+    showAlert(`✅ Access granted for <strong>${escHtml(studentEmail || studentId)}</strong>. Assessment unlocked — expires at ${expires}. The student can now load the exam paper.`);
+
+    sessionGrants.push({
+      studentId,
+      studentEmail,
+      path,
+      assessmentType: data.assessmentType || pendingGrant.assessmentType,
+      grantedAt: new Date().toLocaleTimeString(),
+      expiresAt: expires,
+    });
+    renderGrants();
+    loadRequests();
+  } catch(e) {
+    showAlert('Network error — please try again.', 'error');
+    btn.disabled = false;
+    btn.textContent = '🔓 Grant Access — All conditions confirmed';
+  }
+}
+
+// ── Manual authorization flow ─────────────────────────────────────────────
+async function manualUnlockFlow() {
   const email = document.getElementById('manual-student-email').value.trim();
-  const path = document.getElementById('manual-path').value.trim();
-  const jitsiRoom = document.getElementById('manual-jitsi').value.trim() || null;
-  if (!email || !path) { showAlert('Student email and assessment path are required.', 'error'); return; }
+  const path  = document.getElementById('manual-path').value.trim();
+  const jitsi = document.getElementById('manual-jitsi').value.trim() || '';
+
+  if (!email || !path) {
+    showAlert('Both student email and assessment path are required.', 'error');
+    return;
+  }
 
   const studentId = await lookupStudentId(email);
-  if (!studentId) { showAlert('Student not found: ' + email, 'error'); return; }
+  if (!studentId) {
+    showAlert('Student not found: ' + escHtml(email) + '. Check the email address and try again.', 'error');
+    return;
+  }
 
-  if (!confirm(`Unlock ${path} for ${email}?\n\nConfirm you are live with the student and they have a working printer.`)) return;
+  // Infer assessment type from path
+  const pathLower = path.toLowerCase();
+  const assessmentType = pathLower.includes('final') ? 'Final Exam'
+                       : pathLower.includes('_of')   ? 'OF Unit Test'
+                       : pathLower.includes('_for')  ? 'FOR Diagnostic'
+                       : 'Supervised Assessment';
 
-  const r = await fetch('/api/assessment-unlock', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify({ action: 'grant', path, studentId, jitsiRoom }),
-  });
-  const data = await r.json();
-  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
-  showAlert(`✅ Unlocked for ${email}. Expires at ${new Date(data.expiresAt).toLocaleTimeString()}.`);
-  sessionGrants.push({ studentId, path, grantedAt: new Date().toLocaleTimeString() });
-  renderGrants();
+  openAuthModal(studentId, path, jitsi, email, assessmentType);
 }
 
 async function manualRevoke() {
   const email = document.getElementById('manual-student-email').value.trim();
-  const path = document.getElementById('manual-path').value.trim();
-  if (!email || !path) { showAlert('Email and path required.', 'error'); return; }
+  const path  = document.getElementById('manual-path').value.trim();
+  if (!email || !path) { showAlert('Email and assessment path are required.', 'error'); return; }
 
   const studentId = await lookupStudentId(email);
   if (!studentId) { showAlert('Student not found.', 'error'); return; }
@@ -272,26 +535,41 @@ async function manualRevoke() {
     body: JSON.stringify({ action: 'revoke', path, studentId }),
   });
   const data = await r.json();
-  if (!r.ok) { showAlert('Error: ' + data.error, 'error'); return; }
-  showAlert(`🔒 Access revoked for ${email}.`);
+  if (!r.ok) { showAlert('Error: ' + (data.error || 'Unknown error'), 'error'); return; }
+  showAlert('🔒 Access revoked for ' + escHtml(email) + '.');
+}
+
+async function lookupStudentId(email) {
+  const r = await fetch('/api/users', { credentials: 'same-origin' });
+  if (!r.ok) return null;
+  const data = await r.json();
+  const user = (data.users || []).find(u => u.email.toLowerCase() === email.toLowerCase());
+  return user ? user.id : null;
 }
 
 // ── Render session grants ─────────────────────────────────────────────────
 function renderGrants() {
   const list = document.getElementById('grants-list');
   if (sessionGrants.length === 0) {
-    list.innerHTML = '<div class="empty">No grants issued yet this session.</div>';
+    list.innerHTML = '<div class="empty">No access grants issued yet this session.</div>';
     return;
   }
-  list.innerHTML = sessionGrants.slice().reverse().map(g => `
-    <div class="grant-row">
+  list.innerHTML = sessionGrants.slice().reverse().map(g => {
+    const typeLabel = (g.assessmentType || '').toLowerCase().includes('final') ? '🔴 Final'
+                    : (g.assessmentType || '').toLowerCase().includes('of')    ? '🟣 OF'
+                    : '🟡 FOR';
+    return `<div class="grant-row">
       <div>
-        <strong>${escHtml(g.path)}</strong><br>
-        <span style="font-size:13px;color:#64748b;">Granted at ${g.grantedAt}</span>
+        <strong>${escHtml(g.studentEmail || g.studentId)}</strong>
+        <span style="font-size:13px;color:#64748b;display:block;word-break:break-all;">${escHtml(g.path)}</span>
+        <span style="font-size:12px;color:#94a3b8;">${typeLabel} · Granted ${g.grantedAt} · Expires ${g.expiresAt}</span>
       </div>
-      <button class="btn red" style="font-size:12px;padding:6px 12px;"
-        onclick="revokeFromList('${escHtml(g.studentId)}','${escHtml(g.path)}')">Revoke</button>
-    </div>`).join('');
+      <button class="btn red" style="font-size:12px;padding:6px 12px;white-space:nowrap;"
+        onclick="revokeFromList('${escHtml(g.studentId)}','${escHtml(g.path)}')">
+        Revoke
+      </button>
+    </div>`;
+  }).join('');
 }
 
 async function revokeFromList(studentId, path) {
@@ -302,13 +580,19 @@ async function revokeFromList(studentId, path) {
     body: JSON.stringify({ action: 'revoke', path, studentId }),
   });
   const data = await r.json();
-  if (!r.ok) { showAlert('Revoke failed: ' + data.error, 'error'); return; }
+  if (!r.ok) { showAlert('Revoke failed: ' + (data.error || ''), 'error'); return; }
   showAlert('🔒 Access revoked.');
 }
 
+// ── Helpers ───────────────────────────────────────────────────────────────
 function escHtml(s) {
-  return String(s||'').replace(/[&<>"']/g, c =>
-    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return String(s || '').replace(/[&<>"']/g, c =>
+    ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+// Escape for use as a JS string argument inside an onclick attr
+function escQ(s) {
+  return JSON.stringify(String(s || ''));
 }
 </script>
 </body>

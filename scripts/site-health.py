@@ -55,6 +55,7 @@ BOT_BLOCK_DOMAINS = {
     'www.mheducation.ca', 'mheducation.ca',
     'emond.ca', 'www.emond.ca',
     'www.poetryfoundation.org', 'poetryfoundation.org',
+    'douglas-mcintyre.com', 'www.douglas-mcintyre.com',
     # Government of Canada — bot-blocked but work in browser
     'www.canada.ca', 'canada.ca',
     'laws-lois.justice.gc.ca',
@@ -104,6 +105,9 @@ def check_internal_links():
             if target.startswith(('http', 'https', '//', 'data:', 'javascript:', 'mailto:', 'tel:')):
                 continue
             if not target or target.startswith('#'):
+                continue
+            # Skip JavaScript template literals (e.g. ${expr} inside onclick-generated HTML)
+            if '${' in target:
                 continue
             # Check if it's a known CF-handled path (no .html file expected)
             check_path = target if target.startswith('/') else '/' + target
@@ -171,8 +175,9 @@ def check_external_links():
     for code, url, status, domain in results:
         if status == 200:
             ok_cnt += 1
-        elif status == 403 and domain in BOT_BLOCK_DOMAINS:
-            skip_cnt += 1  # known bot-block, fine in browser
+        elif domain in BOT_BLOCK_DOMAINS and (
+                status == 403 or isinstance(status, str)):
+            skip_cnt += 1  # known bot-block (403 or connection-refused/timeout), fine in browser
         elif isinstance(status, int) and status in (301, 302, 307, 308):
             ok_cnt += 1  # redirect is OK
         else:

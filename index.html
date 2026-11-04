@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MindView — Virtual Classroom</title>
+<title>Home — MindView Virtual Classroom</title>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;background:#2563eb;color:#fff;padding:8px 16px;font-size:14px;font-weight:700;border-radius:4px;" onfocus="this.style.position='fixed';this.style.left='16px';this.style.top='16px';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden';">Skip to main content</a>
 
 <nav class="navbar">
     <div class="nav-container">
@@ -53,10 +54,10 @@ fetch('/api/me')
         <div class="hero-badge">Ontario Curriculum — Grade 10, 11 &amp; 12</div>
         <h1><div class="hero-logo-wrap"><img src="logo.png" alt="MindView Academy" class="hero-logo"></div></h1>
         <h2>Virtual Classroom</h2>
-        <p class="hero-sub">40 Courses · Ontario Ministry-Aligned · Grade 10–12</p>
+        <p class="hero-sub">40 Courses · Ontario Curriculum-Aligned · Grade 10–12</p>
         <div class="hero-stats">
             <div class="stat"><span class="stat-num">40</span><span class="stat-label">Courses</span></div>
-            <div class="stat"><span class="stat-num">1300+</span><span class="stat-label">Video Lessons</span></div>
+            <div class="stat"><span class="stat-num">900+</span><span class="stat-label">Video Lessons</span></div>
             <div class="stat"><span class="stat-num">700+</span><span class="stat-label">Assessments &amp; Resources</span></div>
         </div>
         <a href="/catalog" class="hero-cta">Browse the Course Catalog →</a>
@@ -65,6 +66,7 @@ fetch('/api/me')
 
 <!-- Hub cards: each tile is a top-level destination on the site. Clicking
      a tile navigates to a new page (no in-page scrolling). -->
+<main id="main-content">
 <section class="hub-section">
     <div class="container">
         <h2>Where would you like to go?</h2>
@@ -72,28 +74,28 @@ fetch('/api/me')
 
         <div class="hub-grid">
             <a href="/enrolment" class="hub-card">
-                <div class="hub-icon">💳</div>
+                <div class="hub-icon" aria-hidden="true">💳</div>
                 <h3>Enrolment &amp; Tuition</h3>
                 <p>See per-course pricing, half-credit options, multi-course bundles, and the 4-step enrolment flow.</p>
                 <span class="hub-cta">View pricing →</span>
             </a>
 
             <a href="/catalog" class="hub-card">
-                <div class="hub-icon">📚</div>
+                <div class="hub-icon" aria-hidden="true">📚</div>
                 <h3>Course Catalog</h3>
                 <p>All 40 Ontario-aligned courses across 17 subject groups. Grade 10 through Grade 12 — Sciences first, then Arts &amp; Humanities, both A–Z.</p>
                 <span class="hub-cta">Browse 40 courses →</span>
             </a>
 
             <a href="/resources" class="hub-card">
-                <div class="hub-icon">🧰</div>
+                <div class="hub-icon" aria-hidden="true">🧰</div>
                 <h3>Tools &amp; Resources</h3>
                 <p>26 free, vetted reference tools organised by subject — Desmos, PhET, Charter of Rights, Statistics Canada, Job Bank, and more.</p>
                 <span class="hub-cta">Open the toolbox →</span>
             </a>
 
             <a href="/video-policy.html" class="hub-card">
-                <div class="hub-icon">📺</div>
+                <div class="hub-icon" aria-hidden="true">📺</div>
                 <h3>Video Licensing Policy</h3>
                 <p>How MindView sources, hosts, and rotates videos — owner-approved compliance policy covering YouTube embeds and Creative Commons content.</p>
                 <span class="hub-cta">Read the policy →</span>
@@ -101,6 +103,7 @@ fetch('/api/me')
         </div>
     </div>
 </section>
+</main>
 
 <footer class="site-footer">
     <div class="container">
@@ -108,8 +111,16 @@ fetch('/api/me')
         <p>Ontario Curriculum, Grades 10 — 12 (Revised)</p>
         <p style="margin-top:14px;font-size:13px;">
             <a href="/video-policy.html" style="color:#cbd5e1;text-decoration:underline;">📺 Video Licensing &amp; Compliance Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/privacy-policy.html" style="color:#cbd5e1;text-decoration:underline;">🔒 Privacy Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/enrollment-terms.html" style="color:#cbd5e1;text-decoration:underline;">📋 Enrollment Terms</a>
+            &nbsp;·&nbsp;
+            <a href="/refund-policy.html" style="color:#cbd5e1;text-decoration:underline;">💳 Refund Policy</a>
+            &nbsp;·&nbsp;
+            <a href="/accessibility.html" style="color:#cbd5e1;text-decoration:underline;">♿ Accessibility</a>
         </p>
-        <p style="margin-top:8px;font-size:12px;opacity:0.6;">Built with ⚡ by MindView</p>
+        <p style="margin-top:8px;font-size:12px;color:#94a3b8;">Built with ⚡ by MindView</p>
     </div>
 </footer>
 

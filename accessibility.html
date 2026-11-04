@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility Statement — MindView Virtual Classroom</title>
+<link rel="stylesheet" href="/css/style.css">
+<style>
+body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.7; color: #1e293b; background: #f8fafc; }
+.policy { max-width: 920px; margin: 0 auto; padding: 24px; }
+.policy .badge-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 18px; font-size: 13px; color: #475569; }
+.policy .badge { display: inline-block; background: #2563eb; color: #fff; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 12px; }
+.policy .badge.muted { background: #e2e8f0; color: #475569; }
+.policy h1 { font-size: 30px; color: #0f172a; margin-bottom: 8px; }
+.policy h2 { font-size: 22px; margin: 32px 0 12px; color: #1e40af; border-bottom: 2px solid #1e40af; padding-bottom: 6px; }
+.policy p, .policy li { font-size: 14.5px; }
+.policy ul { margin: 8px 0 12px 24px; }
+.policy .callout { background: #eff6ff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 14px 0; border-radius: 0 6px 6px 0; font-size: 14.5px; }
+.policy .callout.green { background: #f0fdf4; border-left-color: #16a34a; color: #14532d; }
+.policy .callout.warn { background: #fef3c7; border-left-color: #d97706; color: #78350f; }
+.policy table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+.policy th, .policy td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; vertical-align: top; }
+.policy th { background: #dbeafe; color: #1e3a8a; }
+.policy footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #cbd5e1; font-size: 12px; color: #64748b; text-align: center; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand"><img src="/logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/catalog">Courses</a>
+            <a href="/enrolment">Enrolment</a>
+            <a href="/resources">Resources</a>
+        </div>
+    </div>
+</nav>
+
+<div class="policy">
+    <div class="badge-row">
+        <span class="badge">Accessibility</span>
+        <span class="badge muted">AODA — IASR Standard</span>
+        <span class="badge muted">Effective: 2026-06-08</span>
+        <span>· Public document — readable without logging in</span>
+    </div>
+
+    <h1>♿ Accessibility Statement</h1>
+    <p>MindView Virtual Classroom ("MindView") is committed to providing an accessible online learning experience for all students, including those with disabilities. This statement describes our current accessibility standards compliance, known limitations, and how to request accommodation or report a barrier.</p>
+
+    <h2>1. Our Commitment</h2>
+    <p>MindView strives to meet the <strong>Web Content Accessibility Guidelines (WCAG) 2.0, Level AA</strong> as referenced by the <em>Accessibility for Ontarians with Disabilities Act, 2005</em> (AODA) and the Integrated Accessibility Standards Regulation (IASR, O. Reg. 191/11).</p>
+    <p>We believe that every student deserves equal access to education, regardless of disability. We are continuously improving the accessibility of our platform and welcome your feedback.</p>
+
+    <h2>2. Current Accessibility Features</h2>
+    <ul>
+        <li><strong>Semantic HTML:</strong> Pages use proper heading hierarchy (h1 → h2 → h3), landmark elements, and meaningful link text to support screen readers.</li>
+        <li><strong>Language declaration:</strong> All pages declare <code>lang="en"</code> so screen readers use the correct language profile.</li>
+        <li><strong>Keyboard navigation:</strong> Core navigation and course content are navigable by keyboard (Tab, Enter, Space, Escape).</li>
+        <li><strong>Viewport scaling:</strong> All pages use responsive layouts and do not restrict the user's ability to zoom text.</li>
+        <li><strong>Alt text:</strong> Decorative and informational images include descriptive <code>alt</code> attributes.</li>
+        <li><strong>Colour contrast:</strong> Text/background colour combinations are targeted at a minimum 4.5:1 contrast ratio for body text.</li>
+        <li><strong>Video content:</strong> Lesson videos embedded from YouTube are served via YouTube's privacy-enhanced embed. YouTube's built-in caption and transcript tools are available for all videos that have auto-captions enabled by the content creator. Where captions are unavailable, lesson notes provide equivalent written content on the same page.</li>
+        <li><strong>Form labels:</strong> Login and enrolment forms use properly associated <code>&lt;label&gt;</code> elements for all inputs.</li>
+        <li><strong>Focus indicators:</strong> Interactive elements (links, buttons, form fields) retain visible browser-default focus indicators.</li>
+    </ul>
+
+    <h2>3. Known Limitations</h2>
+    <p>We acknowledge the following known accessibility gaps that we are actively working to address:</p>
+    <table>
+        <thead><tr><th>Area</th><th>Limitation</th><th>Workaround / Timeline</th></tr></thead>
+        <tbody>
+            <tr>
+                <td>YouTube video captions</td>
+                <td>Not all embedded YouTube videos have captions — auto-captions are available for many videos but accuracy varies.</td>
+                <td>Lesson notes on the same page provide equivalent written content. We are curating captioned alternatives for key videos.</td>
+            </tr>
+            <tr>
+                <td>Mathematical notation (MathJax)</td>
+                <td>MathJax-rendered equations may not be fully accessible to all screen readers without MathML or ARIA annotations.</td>
+                <td>Equations are also described in surrounding text. We are evaluating accessible math rendering improvements.</td>
+            </tr>
+            <tr>
+                <td>Assessment answer entry</td>
+                <td>Some quiz answer interfaces rely on visual layout. Screen-reader navigation through multi-option assessment cards may be cumbersome.</td>
+                <td>Contact us to request an alternative format for any assessment.</td>
+            </tr>
+            <tr>
+                <td>Video supervision (exams)</td>
+                <td>Supervised exams require the student to use a video call (Jitsi Meet) and a printer. These requirements may be a barrier for some students.</td>
+                <td>Contact us to discuss accommodation options. We will work with students to find a supervised alternative where possible.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Multi-Year Accessibility Plan</h2>
+    <p>As required by the AODA IASR, MindView maintains a multi-year accessibility plan. Key commitments:</p>
+    <ul>
+        <li><strong>2026:</strong> Audit all course pages for WCAG 2.0 AA compliance; address critical colour contrast and keyboard navigation gaps; improve MathJax accessibility.</li>
+        <li><strong>2027:</strong> Add captions or written transcripts for all primary instructional videos; implement ARIA landmarks across all admin pages.</li>
+        <li><strong>Ongoing:</strong> Review new content for accessibility before publishing; train content contributors on accessible authoring practices.</li>
+    </ul>
+
+    <h2>5. Requesting Accommodation</h2>
+    <p>If you encounter a barrier on our platform, or require an accommodation to access our courses (including alternative assessment formats or alternative supervision arrangements), please contact us:</p>
+    <div class="callout green">
+        <strong>Accessibility requests:</strong><br>
+        Email: <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a><br>
+        Subject line: "Accessibility Request — [your name]"<br>
+        We will respond within <strong>5 business days</strong> and work with you to find an appropriate solution.
+    </div>
+    <p>We do not charge any additional fee for providing accommodation or alternative formats.</p>
+
+    <h2>6. Feedback</h2>
+    <p>We welcome feedback on the accessibility of our platform. If you find something that is not working well for you, please tell us:</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:enrolment@mindviewacademy.ca">enrolment@mindviewacademy.ca</a> — Subject: "Accessibility Feedback"</li>
+        <li>You can also file a complaint with the <a href="https://www.ontario.ca/page/accessibility-directorate-ontario" target="_blank" rel="noopener">Accessibility Directorate of Ontario</a> if you believe we have not met our AODA obligations.</li>
+    </ul>
+
+    <h2>7. Third-Party Content</h2>
+    <p>Our platform embeds content from third-party services (YouTube, Jitsi Meet, Google Cloud Storage). These third parties maintain their own accessibility statements and are responsible for the accessibility of their embedded tools. MindView is not responsible for the accessibility of third-party content but will endeavour to select accessible third-party tools when alternatives exist.</p>
+
+    <footer>
+        MindView Virtual Classroom · Accessibility Statement · Effective 2026-06-08 ·
+        <a href="/">Home</a> ·
+        <a href="/enrolment">Enrolment</a> ·
+        <a href="/enrollment-terms.html">Enrollment Terms</a> ·
+        <a href="/privacy-policy.html">Privacy Policy</a>
+    </footer>
+</div>
+</body>
+</html>
