@@ -1,49 +1,36 @@
 // functions/api/login.js
 // POST /api/login  body: {email, password}
 //
-// Looks up the user in USERS_KV by email (case-insensitive), verifies that the
-// SHA-256 hex digest of the provided password matches user.passwordHash, then
-// signs a session cookie and returns it.
+// Looks up the user in USERS_KV by email (case-insensitive), verifies the
+// password against user.passwordHash (PBKDF2 "v2:" or legacy SHA-256 hex, see
+// ../lib/password.js), then signs a session cookie and returns it.
 //
 // On ANY failure path (no body, missing env, missing user, bad password) we
 // return 401 with the same generic message so we don't leak which part was
 // wrong.
-//
-// TODO: passwordHash is currently SHA-256 with no salt for compatibility with
-// existing KV records. Upgrade to PBKDF2-with-salt (or scrypt via WASM) on the
-// next successful login per user — store the new hash format and a small
-// version tag (e.g. user.passwordHashVersion = 2).
 //
 // TODO: KV has no email -> id index, so we paginate `USERS_KV.list()` and scan.
 // This is fine for <~1000 users. Add a secondary index ("email:" + lowercased
 // email -> id) on user create/update, and use it here, when we outgrow it.
 
 import { signSession, serializeSessionCookie } from '../lib/session.js';
+import { verifyPassword, hashPassword, needsRehash } from '../lib/password.js';
 
 const SESSION_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
+
+// Transparent upgrade of legacy SHA-256 hashes to PBKDF2 "v2:" on successful
+// login. Keep this OFF until this code is live on production: staging shares
+// USERS_KV with production, so an upgrade triggered by a staging login would
+// rewrite a real user's record into a format the production code running at
+// that moment may not be able to verify, locking that user out of production.
+// Once production runs this code, flip it to true and redeploy.
+const UPGRADE_LEGACY_HASH_ON_LOGIN = false;
 
 function json(status, body, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
     status,
     headers: { 'Content-Type': 'application/json', ...extraHeaders },
   });
-}
-
-async function sha256Hex(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
-}
-
-// Constant-time string compare for hex digests. (Inputs must be same length;
-// returns false otherwise.)
-function timingSafeStrEq(a, b) {
-  if (typeof a !== 'string' || typeof b !== 'string') return false;
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
 }
 
 // Scan USERS_KV for a user whose email matches (case-insensitive). Handles
@@ -104,9 +91,18 @@ export async function onRequest(context) {
     return json(401, { error: 'Invalid email or password' });
   }
 
-  const candidateHash = await sha256Hex(password);
-  if (!timingSafeStrEq(candidateHash, user.passwordHash)) {
+  if (!(await verifyPassword(password, user.passwordHash))) {
     return json(401, { error: 'Invalid email or password' });
+  }
+
+  if (UPGRADE_LEGACY_HASH_ON_LOGIN && needsRehash(user.passwordHash)) {
+    // Best effort: a failed upgrade must never block a valid login.
+    try {
+      const upgraded = { ...user, passwordHash: await hashPassword(password) };
+      await env.USERS_KV.put(user.id, JSON.stringify(upgraded));
+    } catch (e) {
+      console.error('login: password hash upgrade failed', e);
+    }
   }
 
   const exp = Math.floor(Date.now() / 1000) + SESSION_TTL_SECONDS;

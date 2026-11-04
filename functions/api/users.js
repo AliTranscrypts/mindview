@@ -8,7 +8,9 @@
 // User-record shape (DO NOT change order — preserved for KV compatibility):
 //   { id, email, full_name, role, passwordHash, created_at,
 //     enrolled_courses?: string[] }
-// passwordHash = hex SHA-256 of password (no salt).
+// passwordHash = PBKDF2-SHA256 "v2:" hash for new or changed passwords (see
+// ../lib/password.js). Older records may still hold legacy unsalted SHA-256 hex;
+// login accepts both formats.
 //
 // enrolled_courses (added 2026-06-01) is meaningful only for role=student;
 // it's an array of Ontario course codes (lowercased) the student is
@@ -18,11 +20,11 @@
 // chapters / lessons / assessments require enrolment. Teachers / admins /
 // superusers ignore this field and have full access.
 //
-// TODO: Migrate passwordHash to PBKDF2-with-salt on next successful login.
 // TODO: Add an "email:<lower>" -> id secondary index on create/update so login
 //       no longer needs to scan the namespace.
 
 import { readSessionFromRequest } from '../lib/session.js';
+import { hashPassword } from '../lib/password.js';
 
 const ROLE_RANK = { student: 0, teacher: 1, admin: 2, superuser: 3 };
 const ALL_ROLES = ['student', 'teacher', 'admin', 'superuser'];
@@ -78,13 +80,6 @@ function canManageRole(actorRole, targetRole) {
   if (actorRole === 'superuser') return true;
   if (actorRole === 'admin') return targetRole === 'teacher' || targetRole === 'student';
   return false;
-}
-
-async function sha256Hex(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
 }
 
 export async function onRequest(context) {
@@ -158,7 +153,7 @@ export async function onRequest(context) {
       });
     }
     const id = crypto.randomUUID();
-    const passwordHash = await sha256Hex(password); // TODO: upgrade to PBKDF2+salt
+    const passwordHash = await hashPassword(password);
     const user = {
       id,
       email,
@@ -199,7 +194,7 @@ export async function onRequest(context) {
       if (body.password.length < MIN_PW_LENGTH) {
         return json(400, { error: `Password must be at least ${MIN_PW_LENGTH} characters` });
       }
-      updates.passwordHash = await sha256Hex(body.password); // TODO: PBKDF2+salt
+      updates.passwordHash = await hashPassword(body.password);
     }
     delete updates.password;
     // Validate enrolled_courses on update too. Determine the effective role

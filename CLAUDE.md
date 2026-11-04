@@ -155,6 +155,8 @@ After every deploy, run `python3 scripts/verify-baseline.py` to confirm invarian
 ### Database safety
 - `USERS_KV` is the only source of truth for user identity. Don't wipe it without owner approval — there is no version history.
 - Password hashes: new records use PBKDF2-SHA256+salt (`v2:` prefix, see `functions/lib/password.js`). Legacy records still hold unsalted SHA-256 hex and are upgraded transparently on first login — do not wipe USERS_KV without owner approval.
+- **PBKDF2 iterations must stay ≤ 100,000.** Cloudflare Workers rejects higher counts with `NotSupportedError`. The 2026-06-16 deploy used 200,000, which made every "Add user" fail with a 500 (shown as "Network error"); fixed 2026-11-04. Hash layout: `v2:<iterations>:<salt hex>:<hash hex>`.
+- **Never roll production back to a deployment from before 2026-11-04.** Older builds cannot verify `v2:` hashes, so every new or upgraded user would be locked out.
 
 ---
 

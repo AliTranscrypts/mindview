@@ -441,6 +441,14 @@ const PUBLIC_EXACT = new Set([
   // student transparency).
   '/video-policy',
   '/video-policy.html',
+  '/privacy-policy',
+  '/privacy-policy.html',
+  '/refund-policy',
+  '/refund-policy.html',
+  '/accessibility',
+  '/accessibility.html',
+  '/enrollment-terms',
+  '/enrollment-terms.html',
 ]);
 
 // Lowercased file extensions that are always treated as public static assets.

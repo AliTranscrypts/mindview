@@ -12,6 +12,8 @@
 // We intentionally do NOT issue a session cookie here. The owner is expected
 // to immediately log in via /api/login with the password they just chose.
 
+import { hashPassword } from '../lib/password.js';
+
 const ROLE = 'superuser';
 const MIN_PW_LENGTH = 8;
 
@@ -20,13 +22,6 @@ function json(status, body) {
     status,
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
-}
-
-async function sha256Hex(str) {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
 }
 
 // Constant-time string compare — avoid leaking secret length/prefix via timing.
@@ -98,7 +93,7 @@ export async function onRequest(context) {
     return json(403, { error: 'Bootstrap already complete; this endpoint is disabled.' });
   }
 
-  const passwordHash = await sha256Hex(password);
+  const passwordHash = await hashPassword(password);
   const id = crypto.randomUUID();
   const user = {
     id,
