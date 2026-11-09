@@ -78,7 +78,7 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
 
 <div class="container">
   <h1>📊 Student Progress</h1>
-  <p class="sub">Record assessment results and manage unit progression for each student. Marking an OF as Passed automatically unlocks the next chapter for that student.</p>
+  <p class="sub">Record assessment results for each student. All chapters are open to students; these records are for tracking and grading only.</p>
 
   <div id="alert"></div>
 
@@ -95,8 +95,8 @@ h1{font-size:26px;font-weight:800;margin-bottom:6px;}
   <div class="legend">
     <span><span class="chip done">✅ Done/Passed</span> — complete</span>
     <span><span class="chip pending">⏳ Pending</span> — not yet recorded</span>
+    <span><span class="chip pending">📬 Submitted</span> — unit test handed in, not yet marked</span>
     <span><span class="chip failed">✗ Failed</span> — not passed</span>
-    <span><span class="chip locked">🔒 Locked</span> — prerequisite not met</span>
   </div>
 
   <div id="progress-panel"><div class="empty">Select a student and course above to view their progress.</div></div>
@@ -170,22 +170,30 @@ async function loadProgress() {
 function renderProgress(studentId, course, progress) {
   const totalChapters = COURSE_CHAPTERS[course] || 5;
   let html = '<div class="progress-grid">';
-  let prevComplete = true;
 
   for (let ch = 1; ch <= totalChapters; ch++) {
     const p = progress['ch' + ch] || {};
-    const locked = !prevComplete;
 
     const asStatus   = p.as_done   ? 'done'    : 'pending';
     const forStatus  = p.for_done  ? 'done'    : 'pending';
+    // Records only: neither submission nor the pass/fail grade controls access.
+    const ofSubmitted = !!(p.of_submitted || p.completed);
     const ofStatus   = p.of_passed === true ? 'done' : (p.of_passed === false ? 'failed' : 'pending');
-    const unitStatus = p.completed ? 'done' : (locked ? 'locked' : 'pending');
+    const unitStatus = p.completed ? 'done' : p.of_passed === false ? 'failed' : 'pending';
+    const unitLabel  = p.completed ? '✅ Complete'
+      : p.of_passed === false ? '✗ Failed'
+      : ofSubmitted ? '📬 Submitted'
+      : '⏳ In Progress';
+    const ofLabel = p.of_passed === true ? '✅ Passed'
+      : p.of_passed === false ? '✗ Failed'
+      : ofSubmitted ? '📬 Submitted, not yet marked' : '⏳ Not yet submitted';
+    const ofDate = p.of_passed_at || p.of_submitted_at;
 
     html += `<div class="unit-card">
       <div class="unit-header">
         <div class="unit-title">Chapter ${ch}</div>
         <div class="unit-status">
-          <span class="chip ${unitStatus}">${p.completed ? '✅ Complete' : locked ? '🔒 Locked' : '⏳ In Progress'}</span>
+          <span class="chip ${unitStatus}">${unitLabel}</span>
         </div>
       </div>
       <div class="assessment-row">
@@ -198,22 +206,23 @@ function renderProgress(studentId, course, progress) {
         <span class="chip ${forStatus}">${p.for_done ? '✅ Reviewed' : '⏳ Pending teacher review'}</span>
         <div class="assess-meta">${p.for_done_at ? new Date(p.for_done_at).toLocaleDateString() : ''}</div>
         <div class="action-btns">
-          ${!locked && !p.for_done ? `<button class="btn btn-orange" onclick="markFOR('${studentId}','${course}',${ch},true)">✓ Mark Reviewed</button>` : ''}
+          ${!p.for_done ? `<button class="btn btn-orange" onclick="markFOR('${studentId}','${course}',${ch},true)">✓ Mark Reviewed</button>` : ''}
           ${p.for_done ? `<button class="btn btn-ghost" onclick="markFOR('${studentId}','${course}',${ch},false)">↩ Undo</button>` : ''}
         </div>
       </div>
       <div class="assessment-row">
         <div class="assess-label">OF Unit Test</div>
-        <span class="chip ${ofStatus}">${p.of_passed === true ? '✅ Passed' : p.of_passed === false ? '✗ Failed' : '⏳ Not yet marked'}</span>
-        <div class="assess-meta">${p.of_passed_at ? new Date(p.of_passed_at).toLocaleDateString() : ''}</div>
+        <span class="chip ${ofStatus}">${ofLabel}</span>
+        <div class="assess-meta">${ofDate ? new Date(ofDate).toLocaleDateString() : ''}</div>
         <div class="action-btns">
-          ${!locked && p.of_passed !== true ? `<button class="btn btn-green" onclick="markOF('${studentId}','${course}',${ch},true)">✓ Mark Passed</button>` : ''}
-          ${!locked ? `<button class="btn btn-red" onclick="markOF('${studentId}','${course}',${ch},false)">✗ Mark Failed</button>` : ''}
+          ${!ofSubmitted ? `<button class="btn btn-orange" onclick="markSubmitted('${studentId}','${course}',${ch},true)">📬 Mark Submitted</button>` : ''}
+          ${p.of_submitted && p.of_passed === undefined && !p.completed ? `<button class="btn btn-ghost" onclick="markSubmitted('${studentId}','${course}',${ch},false)">↩ Undo</button>` : ''}
+          ${p.of_passed !== true ? `<button class="btn btn-green" onclick="markOF('${studentId}','${course}',${ch},true)">✓ Mark Passed</button>` : ''}
+          <button class="btn btn-red" onclick="markOF('${studentId}','${course}',${ch},false)">✗ Mark Failed</button>
         </div>
       </div>
     </div>`;
 
-    prevComplete = !!p.completed;
   }
 
   // Final exam block
@@ -223,7 +232,7 @@ function renderProgress(studentId, course, progress) {
     <div style="font-size:14px;color:#475569;margin-bottom:14px;">
       ${finalUnlocked
         ? '✅ Unlocked — student can access the final exam.'
-        : '🔒 Locked — unlock after all unit OF assessments are passed.'}
+        : '🔒 Locked — the student can\'t open the final exam until you unlock it.'}
     </div>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       ${!finalUnlocked ? `<button class="btn btn-green" onclick="unlockFinal('${studentId}','${course}')">🔓 Unlock Final Exam</button>` : ''}
@@ -245,10 +254,25 @@ async function markFOR(studentId, course, ch, done) {
   loadProgress();
 }
 
+async function markSubmitted(studentId, course, ch, submitted) {
+  if (!confirm(submitted
+    ? `Record the Chapter ${ch} Unit Test as handed in for this student?`
+    : `Undo "submitted" for the Chapter ${ch} Unit Test?`
+  )) return;
+  const r = await fetch('/api/unit-progress', {
+    method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
+    body: JSON.stringify({ action:'mark_of_submitted', course, chapterNum:ch, studentId, submitted })
+  });
+  const d = await r.json();
+  if (!r.ok) { showAlert('Error: ' + d.error, 'error'); return; }
+  showAlert(submitted ? `📬 Chapter ${ch} Unit Test recorded as submitted.` : `↩ Chapter ${ch} submission undone.`);
+  loadProgress();
+}
+
 async function markOF(studentId, course, ch, passed) {
   if (!confirm(passed
-    ? `Mark Chapter ${ch} OF Unit Test as PASSED for this student?\n\nThis will unlock Chapter ${ch+1}.`
-    : `Mark Chapter ${ch} OF Unit Test as FAILED? The student cannot progress to Chapter ${ch+1}.`
+    ? `Mark Chapter ${ch} OF Unit Test as PASSED for this student?`
+    : `Mark Chapter ${ch} OF Unit Test as FAILED?`
   )) return;
   const r = await fetch('/api/unit-progress', {
     method:'POST', headers:{'Content-Type':'application/json'}, credentials:'same-origin',
@@ -257,7 +281,7 @@ async function markOF(studentId, course, ch, passed) {
   const d = await r.json();
   if (!r.ok) { showAlert('Error: ' + d.error, 'error'); return; }
   showAlert(passed
-    ? `✅ Chapter ${ch} passed — Chapter ${ch+1} is now unlocked.`
+    ? `✅ Chapter ${ch} marked as passed.`
     : `✗ Chapter ${ch} marked as failed.`);
   loadProgress();
 }

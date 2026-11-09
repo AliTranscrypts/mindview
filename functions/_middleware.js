@@ -25,6 +25,7 @@
 //     content (answer keys, solutions, rubrics) from students.
 
 import { readSessionFromRequest } from './lib/session.js';
+import { withHtmlExt } from './lib/assessment-paths.js';
 
 // ── Sequential unit-progression helpers ──────────────────────────────────
 
@@ -42,14 +43,6 @@ const COURSE_CHAPTER_COUNTS = {
   sch4u:5, snc2d:5, sph3u:5, sph4u:5,
 };
 
-// Extract { courseCode, chapterNum } from a chapter-page URL, or null.
-// /courses/eng4u/ch3.html → { code:'eng4u', ch:3 }
-function parseChapterUrl(pathname) {
-  const m = pathname.match(/^\/courses\/([a-z0-9]+)\/ch(\d+)\.html$/i);
-  if (!m) return null;
-  return { code: m[1].toLowerCase(), ch: parseInt(m[2], 10) };
-}
-
 // Returns true when the URL is the final exam for any course.
 function isFinalExamUrl(pathname) {
   return /\/final_exam\.html$/i.test(pathname) || /\/Final_Exam\.html$/.test(pathname);
@@ -62,77 +55,6 @@ function courseFromFinalExamUrl(pathname) {
   m = pathname.match(/^\/assessments\/([a-z0-9]+)_final_exam\.html$/i);
   if (m) return m[1].toLowerCase();
   return null;
-}
-
-// Render the "chapter locked" page served by middleware when a student tries
-// to access a chapter they haven't unlocked yet.
-function renderChapterLockedHTML(opts) {
-  const { courseCode, chapterNum, prevCh, prevProgress } = opts;
-  const UPPER = courseCode.toUpperCase();
-
-  const prevCompleted = prevProgress && prevProgress.completed;
-  const asOk  = prevProgress && prevProgress.as_done;
-  const forOk = prevProgress && prevProgress.for_done;
-  const ofOk  = prevProgress && prevProgress.of_passed;
-
-  function row(label, done) {
-    return `<li style="padding:6px 0;display:flex;align-items:center;gap:10px;">
-      <span style="font-size:18px;">${done ? '✅' : '⏳'}</span>
-      <span style="${done ? 'color:#065f46;' : 'color:#475569;'}">${label}</span>
-    </li>`;
-  }
-
-  return `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit ${chapterNum} Locked — ${UPPER}</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;
-  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
-.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;
-  max-width:560px;width:100%;padding:40px 36px;box-shadow:0 4px 16px rgba(15,23,42,0.07);}
-.icon{font-size:52px;margin-bottom:14px;}
-h1{font-size:22px;font-weight:900;color:#0f172a;margin-bottom:10px;}
-p{font-size:14px;color:#475569;line-height:1.6;margin-bottom:16px;}
-ul{list-style:none;padding:0;background:#f8fafc;border-radius:10px;
-  border:1px solid #e2e8f0;padding:14px 18px;margin-bottom:20px;}
-.actions{display:flex;gap:10px;flex-wrap:wrap;}
-a.btn{display:inline-block;padding:10px 18px;border-radius:8px;
-  font-size:14px;font-weight:700;text-decoration:none;}
-.btn-primary{background:#2563eb;color:#fff;}
-.btn-ghost{background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;}
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="icon">🔒</div>
-  <h1>Chapter ${chapterNum} is locked</h1>
-  <p>
-    <strong>${UPPER} — Chapter ${chapterNum}</strong> is not yet available.
-    You must complete <strong>Chapter ${prevCh}</strong> before proceeding.
-    Your teacher will unlock the next chapter once all required assessments are passed.
-  </p>
-  <p style="font-weight:700;color:#1e293b;">Chapter ${prevCh} status:</p>
-  <ul>
-    ${row('AS Practice Quiz — completed', asOk)}
-    ${row('FOR Diagnostic — teacher reviewed', forOk)}
-    ${row('OF Unit Test — passed', ofOk)}
-  </ul>
-  <p style="font-size:13px;">
-    ${prevCompleted
-      ? '✅ Chapter ' + prevCh + ' is complete. Contact your teacher if this chapter is still locked.'
-      : 'Contact your teacher when you have submitted your Chapter ' + prevCh + ' papers. They will record your results and unlock the next chapter.'}
-  </p>
-  <div class="actions">
-    <a href="/courses/${courseCode}.html" class="btn btn-primary">← Back to course</a>
-    <a href="/courses/${courseCode}/ch${prevCh}.html" class="btn btn-ghost">Go to Chapter ${prevCh}</a>
-  </div>
-</div>
-</body>
-</html>`;
 }
 
 // Render "Final Exam locked" page.
@@ -763,41 +685,21 @@ export async function onRequest(context) {
         }
       }
     }
-    // ── Sequential unit-progression gate ─────────────────────────────
-    // For students: chapters beyond ch1 are locked until the teacher marks
-    // the previous chapter's OF assessment as passed (stored in USERS_KV).
-    // The Final Exam is locked until the teacher explicitly unlocks it.
-    // Teachers / admins / superusers always bypass this gate.
-    if (payload.role === 'student') {
-      // Gate 1: chapter pages
-      const chapInfo = parseChapterUrl(url.pathname);
-      if (chapInfo && chapInfo.ch > 1) {
-        const prevCh = chapInfo.ch - 1;
-        let prevProgress = null;
-        if (env.USERS_KV) {
-          try {
-            const progKey = `progress:${payload.sub}:${chapInfo.code}`;
-            const prog = await env.USERS_KV.get(progKey, 'json');
-            if (prog) prevProgress = prog[`ch${prevCh}`] || null;
-          } catch { /* KV error → locked */ }
-        }
-        const prevCompleted = prevProgress && prevProgress.completed;
-        if (!prevCompleted) {
-          return new Response(
-            renderChapterLockedHTML({
-              courseCode: chapInfo.code,
-              chapterNum: chapInfo.ch,
-              prevCh,
-              prevProgress,
-            }),
-            { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' } }
-          );
-        }
-      }
+    // ── Chapters are NOT gated (owner decision 2026-11-09) ───────────
+    // Students can open every chapter of their enrolled courses in any order.
+    // (Earlier versions locked chapter N+1 until chapter N's unit test was
+    // passed, then until it was submitted.) Unit-test submissions and grades
+    // are still recorded in progress:{studentId}:{course} for the teacher's
+    // Student Progress panel; they no longer control access.
+    //
+    // Pages serves each page at /x.html AND /x, so the gates below match on
+    // the canonical "*.html" form; otherwise the clean URL would skip them.
+    const pagePath = withHtmlExt(url.pathname);
 
-      // Gate 2: final exam
-      if (isFinalExamUrl(url.pathname)) {
-        const code = courseFromFinalExamUrl(url.pathname);
+    if (payload.role === 'student') {
+      // Final Exam: locked until the teacher unlocks it on Student Progress.
+      if (isFinalExamUrl(pagePath)) {
+        const code = courseFromFinalExamUrl(pagePath);
         if (code) {
           let finalUnlocked = false;
           if (env.USERS_KV) {
@@ -824,11 +726,11 @@ export async function onRequest(context) {
     // Questions NEVER reach the student's browser until the grant exists;
     // we serve a "locked" HTML page instead of the real assessment HTML.
     // Teachers / admins / superusers always see the real page.
-    if (payload.role === 'student' && isSupervisedAssessmentPath(url.pathname)) {
+    if (payload.role === 'student' && isSupervisedAssessmentPath(pagePath)) {
       let unlockStatus = 'locked';
       if (env.USERS_KV) {
         try {
-          const slug = slugifyPath(url.pathname);
+          const slug = slugifyPath(pagePath);
           const grantKey = `unlock-grant:${payload.sub}:${slug}`;
           const grant = await env.USERS_KV.get(grantKey, 'json');
           if (grant && Date.now() < grant.expiresAt) {
@@ -842,13 +744,13 @@ export async function onRequest(context) {
         } catch { /* KV error — treat as locked */ }
       }
       if (unlockStatus !== 'granted') {
-        const courseCode = courseCodeFromPath(url.pathname);
-        const typeLabel = examTypeLabel(url.pathname);
-        const timeLimit = examTimeLimit(url.pathname);
-        const jitsiUrl = buildJitsiUrl(url.pathname, payload.sub);
+        const courseCode = courseCodeFromPath(pagePath);
+        const typeLabel = examTypeLabel(pagePath);
+        const timeLimit = examTimeLimit(pagePath);
+        const jitsiUrl = buildJitsiUrl(pagePath, payload.sub);
         return new Response(
           renderLockedAssessmentHTML({
-            path: url.pathname,
+            path: pagePath,
             email: payload.email,
             userId: payload.sub,
             status: unlockStatus,

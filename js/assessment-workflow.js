@@ -46,8 +46,12 @@
   var isAssessment = path.indexOf('/assessments/') !== -1;
   if (!isAssessment) return;
 
-  // Determine assessment type from URL
-  var pathUpper = path.toUpperCase();
+  // Determine assessment type from URL. Pages redirects /x.html to the clean
+  // URL /x, so match on a canonical "*.html" form of the path; matching the raw
+  // path only worked for *.html URLs, which students never end up on.
+  var htmlPath = path.replace(/\/+$/, '');
+  if (!/\.html?$/i.test(htmlPath)) htmlPath += '.html';
+  var pathUpper = htmlPath.toUpperCase();
   var isAS    = /_AS\.HTML$/.test(pathUpper) || /_CH\d+_AS\.HTML$/.test(pathUpper);
   var isFOR   = /_FOR\.HTML$/.test(pathUpper) || /_CH\d+_FOR\.HTML$/.test(pathUpper);
   var isOF    = /_OF\.HTML$/.test(pathUpper) || /_CH\d+_OF\.HTML$/.test(pathUpper);
@@ -62,17 +66,17 @@
   function parseCourseContext() {
     // Pattern: /assessments/{code}/{filename}.html  OR  /assessments/{code}_ch{N}_{type}.html
     var code = '', unitSlug = '';
-    var mDir = path.match(/\/assessments\/([a-z0-9]+)\/([^/]+)\.html$/i);
+    var mDir = htmlPath.match(/\/assessments\/([a-z0-9]+)\/([^/]+)\.html$/i);
     if (mDir) {
       code = mDir[1].toUpperCase();
       unitSlug = mDir[2].replace(/_?(AS|FOR|OF|Final_Exam)$/i, '').replace(/_/g, '-');
     } else {
-      var mFlat = path.match(/\/assessments\/([a-z0-9]+)_ch(\d+)_[a-z]+\.html$/i);
+      var mFlat = htmlPath.match(/\/assessments\/([a-z0-9]+)_ch(\d+)_[a-z]+\.html$/i);
       if (mFlat) {
         code = mFlat[1].toUpperCase();
         unitSlug = 'Ch' + mFlat[2];
       } else {
-        var mFinalFlat = path.match(/\/assessments\/([a-z0-9]+)_final_exam\.html$/i);
+        var mFinalFlat = htmlPath.match(/\/assessments\/([a-z0-9]+)_final_exam\.html$/i);
         if (mFinalFlat) {
           code = mFinalFlat[1].toUpperCase();
           unitSlug = 'Final';
@@ -106,7 +110,7 @@
       '  .page-nav, .navbar, .chnav-btn, .chnav-finish,',
       '  button, .btn, .btn-check,',
       '  .mv-assessment-banner, .mv-gate-overlay, .mv-timer-chip,',
-      '  .mv-teacher-panel, footer, nav { display:none !important; }',
+      '  .mv-teacher-panel, .mv-submit-panel, footer, nav { display:none !important; }',
       '  body { padding:0!important; font-family:"Times New Roman",serif; font-size:12pt; color:#000; }',
       '  .mv-print-header { display:block !important; }',
       '  header h1 { font-size:16pt; font-weight:bold; margin-bottom:4pt; }',
@@ -354,6 +358,121 @@
     }, 1000);
   }
 
+  // ── 6b. Unit Test submission (OF unit tests, students) ──────────────────
+  // Clicking "Submit Unit Test" records the hand-in (functions/api/unit-progress.js,
+  // of_submit) so it shows on the teacher's Student Progress panel. It does not
+  // control access: every chapter is open to students.
+
+  var unitTest = (function () {
+    if (!isOF) return null;
+    var m = htmlPath.match(/\/assessments\/([a-z0-9]+)\/(?:Unit|Chapter)(\d+)_[^/]*_OF\.html$/i) ||
+            htmlPath.match(/\/assessments\/([a-z0-9]+)_ch(\d+)_of\.html$/i);
+    return m ? { course: m[1].toLowerCase(), ch: parseInt(m[2], 10) } : null;
+  })();
+
+  var submitPanels = [];
+  var submittedHtml = null; // set once submitted; panels built later reuse it
+  var SUBMIT_LABEL = '📬 Submit Unit Test';
+
+  function buildSubmitPanel() {
+    var panel = document.createElement('div');
+    panel.className = 'mv-submit-panel';
+    panel.style.cssText = [
+      'background:#f0fdf4','border:2px solid #16a34a','border-radius:10px',
+      'padding:16px 18px','margin:16px 0','text-align:left'
+    ].join(';');
+    panel.innerHTML =
+      '<p style="font-weight:800;color:#166534;margin:0 0 6px;">📬 Finished? Submit your Unit Test</p>' +
+      '<p style="font-size:13px;color:#166534;margin:0 0 12px;line-height:1.5;">' +
+        'After you hand your answer paper to your teacher (or show it on camera), click ' +
+        '<strong>Submit Unit Test</strong> so your teacher knows you have finished. ' +
+        'Your teacher marks the paper later.</p>' +
+      '<button type="button" class="mv-submit-btn" ' +
+        'style="background:#16a34a;color:#fff;border:none;border-radius:8px;' +
+        'padding:12px 24px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;">' +
+        SUBMIT_LABEL + '</button>' +
+      '<p class="mv-submit-error" style="display:none;font-size:13px;color:#b91c1c;margin:10px 0 0;"></p>';
+    panel.querySelector('.mv-submit-btn').onclick = submitUnitTest;
+    if (submittedHtml) panel.innerHTML = submittedHtml;
+    submitPanels.push(panel);
+    return panel;
+  }
+
+  // Swap every submit panel (page top/bottom, time's-up overlay) to the done state.
+  function showSubmitted(info) {
+    var when = info.submittedAt ? new Date(info.submittedAt).toLocaleString() : '';
+    var course = unitTest.course;
+    var html =
+      '<p style="font-weight:800;color:#166534;margin:0 0 6px;">✅ Unit Test submitted' +
+        (when ? ' <span style="font-weight:400;font-size:13px;">(' + escHtml(when) + ')</span>' : '') + '</p>';
+    if (info.nextChapter) {
+      html +=
+        '<p style="font-size:13px;color:#166534;margin:0 0 12px;">Your teacher will mark your paper.</p>' +
+        '<a href="/courses/' + escHtml(course) + '/ch' + info.nextChapter + '.html" ' +
+          'style="display:inline-block;background:#2563eb;color:#fff;padding:10px 18px;' +
+          'border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;">' +
+          'Go to Chapter ' + info.nextChapter + ' →</a>';
+    } else {
+      html +=
+        '<p style="font-size:13px;color:#166534;margin:0 0 12px;">Your teacher will mark your paper.</p>' +
+        '<a href="/courses/' + escHtml(course) + '.html" ' +
+          'style="display:inline-block;background:#2563eb;color:#fff;padding:10px 18px;' +
+          'border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;">' +
+          '← Back to course</a>';
+    }
+    submittedHtml = html;
+    submitPanels.forEach(function (p) { p.innerHTML = html; });
+  }
+
+  function showSubmitError(msg) {
+    submitPanels.forEach(function (p) {
+      var btn = p.querySelector('.mv-submit-btn');
+      if (btn) { btn.disabled = false; btn.textContent = SUBMIT_LABEL; }
+      var err = p.querySelector('.mv-submit-error');
+      if (err) { err.textContent = msg; err.style.display = 'block'; }
+    });
+  }
+
+  function submitUnitTest() {
+    if (!confirm('Submit your Chapter ' + unitTest.ch + ' Unit Test?\n\n' +
+        'Only click OK after you have handed your answer paper to your teacher ' +
+        '(or shown it on camera).')) return;
+    submitPanels.forEach(function (p) {
+      var btn = p.querySelector('.mv-submit-btn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+    });
+    fetch('/api/unit-progress', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({ action: 'of_submit', path: location.pathname }),
+    })
+      .then(function (r) {
+        return r.json().catch(function () { return {}; })
+          .then(function (d) { return { ok: r.ok, d: d }; });
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.d.error || 'Could not submit. Please try again.');
+        showSubmitted(res.d);
+      })
+      .catch(function (e) {
+        showSubmitError((e && e.message) || 'Could not reach MindView. Check your connection and try again.');
+      });
+  }
+
+  // If this test was already submitted (e.g. page reloaded), show that instead.
+  function checkAlreadySubmitted() {
+    fetch('/api/unit-progress?course=' + encodeURIComponent(unitTest.course), { credentials: 'same-origin' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        var ch = d && d.progress && d.progress['ch' + unitTest.ch];
+        if (ch && ch.of_submitted) {
+          showSubmitted({ submittedAt: ch.of_submitted_at, nextChapter: null });
+        }
+      })
+      .catch(function () {});
+  }
+
   function buildTimeUpOverlay() {
     var ov = document.createElement('div');
     ov.style.cssText = [
@@ -379,12 +498,19 @@
             '<li>Do not alter any answers after time has been called.</li>' +
           '</ol>' +
         '</div>' +
-        '<button onclick="this.closest(\'div[style]\').remove()" ' +
+        '<div class="mv-timeup-submit"></div>' +
+        '<button type="button" class="mv-timeup-close" ' +
           'style="margin-top:20px;background:#2563eb;color:#fff;border:none;border-radius:8px;' +
           'padding:12px 28px;font-size:15px;font-weight:700;cursor:pointer;">' +
           'Acknowledge &amp; Close' +
         '</button>' +
       '</div>';
+    // Close removes the whole overlay. (It used to remove only the inner card,
+    // leaving the dark backdrop over the page.)
+    ov.querySelector('.mv-timeup-close').onclick = function () { ov.remove(); };
+    if (unitTest) {
+      ov.querySelector('.mv-timeup-submit').appendChild(buildSubmitPanel());
+    }
     return ov;
   }
 
@@ -552,12 +678,12 @@
           headerEl.parentNode.insertBefore(asBanner, headerEl.nextSibling);
         }
 
-        // ── Auto-record AS completion for sequential progression ─────
+        // ── Auto-record AS completion (shown on Student Progress) ─────
         // Extract chapter number and course code from URL:
         //   /assessments/eng4u/Unit3_..._AS.html  → ch=3  code=eng4u
         //   /assessments/mcr3u_ch3_as.html         → ch=3  code=mcr3u
         var chNum = null, courseCode = null;
-        var mDir = location.pathname.match(/\/assessments\/([a-z0-9]+)\/Unit(\d+)_/i);
+        var mDir = location.pathname.match(/\/assessments\/([a-z0-9]+)\/(?:Unit|Chapter)(\d+)_/i);
         var mFlat = location.pathname.match(/\/assessments\/([a-z0-9]+)_ch(\d+)_as/i);
         if (mDir)  { courseCode = mDir[1];  chNum = parseInt(mDir[2], 10); }
         if (mFlat) { courseCode = mFlat[1]; chNum = parseInt(mFlat[2], 10); }
@@ -620,6 +746,16 @@
 
       var printBtn = buildPrintButton();
       insertAfterHeader(printBtn);
+
+      if (unitTest) {
+        // Submit panel at the top and at the end of the questions.
+        insertAfterHeader(buildSubmitPanel());
+        var footerEl = document.querySelector('footer');
+        var bottomPanel = buildSubmitPanel();
+        if (footerEl && footerEl.parentNode) footerEl.parentNode.insertBefore(bottomPanel, footerEl);
+        else document.body.appendChild(bottomPanel);
+        checkAlreadySubmitted();
+      }
 
       if (isSupervised) {
         // Gate enforced server-side (middleware); student has a valid grant
