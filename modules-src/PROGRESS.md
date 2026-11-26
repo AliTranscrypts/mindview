@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 114/295 live, 2 built, 22 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 116/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 17/59 | 1 | 41 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 18/59 | 0 | 41 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 12/39 | 0 | 27 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 9/52 | 0 | 43 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 10/46 | 0 | 36 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 10/25 | 0 | 15 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 6/24 | 1 | 17 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 10/25 | 1 | 14 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 7/24 | 0 | 17 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -90,7 +90,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 15 Velocity and Acceleration (`velocity-and-acceleration`, topic, site ch3)
 - ✓ 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
 - ✓ 17 Optimization Problems (`optimization-problems`, topic, site ch3)
-- ◐ 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
+- ✓ 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
 - … 19 Related Rates (`related-rates`, topic, site ch3)
 - … 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
 - … 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
@@ -291,7 +291,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 08 Children, Adolescents & Adults (`children-adolescents-adults`, topic, site ch2)
 - ✓ 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
 - ✓ 10 Eating Disorders (`eating-disorders`, topic, site ch3)
-- … 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
+- ◐ 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
 - … 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
 - … 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)
 - … 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
@@ -315,7 +315,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
 - ✓ 05 The Writing Process (`writing-process`, topic, site ch2)
 - ✓ 06 Essay Forms (`essay-forms`, topic, site ch2)
-- ◐ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
+- ✓ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - … 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - … 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
 - … 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)

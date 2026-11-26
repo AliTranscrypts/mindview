@@ -160,3 +160,4 @@ every module that uses the touched code, then ship them together).
 | E17 draftWorkspace, E7 thesisForge, E5 sentenceLab, story reader panel | eng4u 05 | 340 KB (over 300 target); plan drafts did not fit together — readout shows 8 changes/4 higher-order (plan 9/6); all texts verified |
 | E8 citationBuilder, E6 quotationIntegrator, E5 pausePlayer + beat bar | eng4u 07 | OWNER REVIEW: unverified Austen, Dickens, Dickinson dashes, Hamlet Globe lines; 305 KiB. Note: Ozymandias "Works" (04/07) vs "works" (05) — both real editions, align if wanted |
 | V10 shapeStage, V11 signChart (optimization), N4 moneyBoxes, padView/axisName | mcv4u 18 | |
+| F7 riskModel, arteryView, F3 labelLab stations, radioGroup (locked state) | hfa4u 11 | OWNER REVIEW (VERIFY): sodium-source shares 70/20/10 (model), model-day items, DASH/Mediterranean plates, APA refs; optional kitchen card skipped |
