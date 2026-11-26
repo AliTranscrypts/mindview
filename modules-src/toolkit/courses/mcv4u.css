@@ -1,0 +1,18 @@
+/* MCV4U course styles (toolkit/courses/mcv4u.css). The assembler adds this file to every MCV4U module, after the toolkit CSS.
+   Tokens (course plan §3), light and dark, defined like the base tokens:
+     --f4  magenta: f″ (second derivative) curves, normal vectors n⃗ (same hexes as --p-c; rule 7: never beside a magenta c slider)
+     --f5  orange: third vector (w⃗, c⃗, F⃗₃), third plane (same hexes as --p-k)
+   Classes:
+     .vec.wide  over-arrow that spans a vector name of two or more letters (AB⃗). MV.m adds "wide" automatically
+                (toolkit/courses/mcv4u.js), so content just writes `vec{AB}`; single letters keep the toolkit arrow. */
+:root{--f4:#B0286F;--f5:#A84C05}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--f4:#F49AC8;--f5:#FF9F5A}
+}
+:root[data-theme="dark"]{--f4:#F49AC8;--f5:#FF9F5A}
+
+/* V2: full-width arrow for AB⃗ (shaft + head drawn in currentColor, so it follows ink and parameter colours) */
+.vec.wide{padding:0 .04em}
+.vec.wide::before{content:"";position:absolute;left:.08em;right:.2em;top:-.13em;border-top:.075em solid currentColor}
+.vec.wide::after{content:"";left:auto;right:.04em;top:-.275em;width:0;height:0;font-size:1em;line-height:0;
+  border-left:.32em solid currentColor;border-top:.15em solid transparent;border-bottom:.15em solid transparent}

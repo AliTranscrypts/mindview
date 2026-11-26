@@ -41,7 +41,8 @@
    "siteChapter": 1,
    "size": "L",
    "part3": "reactions",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "02",

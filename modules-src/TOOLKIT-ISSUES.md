@@ -80,3 +80,4 @@ every module that uses the touched code, then ship them together).
 | N4 solutionSet (boxes + No solution toggle), gateLanes, radioGroup/N9 stepSlider with lock | mhf4u 44 | |
 | N15 moveChooser.lock, N4 roundBoxes, stepSlider (settable count) | mhf4u 43 | |
 | G1+G16 breakPieces, G13 scaleBars, stackedPanels, springAnim, N11 signChart.factorRows | mhf4u 47 | |
+| functionPicker, tonePlayer, N27 linkedPanels (strip), G13 valueBar (stacked, clipped) | mhf4u 46 | |
