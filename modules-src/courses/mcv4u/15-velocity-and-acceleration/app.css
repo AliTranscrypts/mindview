@@ -1,0 +1,148 @@
+/* MCV4U 15: hero equation colours, V9 motion track, Motion simulator (Explore: track / V5 panels / V11 chart), Part 3 stations,
+   Practice 1 graph thumbnails, Practice 2 boxes, task */
+.va-heq{display:inline-flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:6px 12px}
+.va-ht{display:inline-flex;flex-direction:column;align-items:center;gap:3px}
+.va-hm{white-space:nowrap}
+.va-hs .m{color:var(--pen)}
+.va-hv .m{color:var(--f3)}
+.va-ha .m{color:var(--f4)}
+.va-u{font:600 .46em/1.2 var(--font-ui);color:var(--ink-2)}
+.va-arr{color:var(--ink-2);font-size:.8em;line-height:1.3}
+
+/* V9 motion track */
+.mt-box{position:relative}
+.mt-c{position:absolute;inset:0;display:block;width:100%;height:100%;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);touch-action:pan-y}
+.mt-ctl{margin-top:6px}
+.mt-btns{margin-top:0}
+.mt-sl{margin-top:8px}
+.mt-sl output{color:var(--ink)}
+.mt-tip{margin:0}
+
+/* Motion simulator */
+.va-ex{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-areas:"main side" "main read";grid-template-rows:auto 1fr;gap:12px 26px;align-items:start}
+.va-main{grid-area:main;min-width:0}
+.va-side{grid-area:side;min-width:0}
+.va-rd{grid-area:read;min-width:0}
+.va-eq{font-size:clamp(1.15rem,2.6vw,1.6rem);min-height:1.5em;margin-bottom:6px}
+.va-stage .va-trk{height:176px}
+.va-stage.vert.m-track .va-trk{height:340px}
+.va-stage.horz.m-graphs .va-trk,.va-stage.horz.m-sign .va-trk{height:122px}
+.va-stage.vert.m-graphs,.va-stage.vert.m-sign{display:grid;grid-template-columns:124px minmax(0,1fr);gap:10px;align-items:start}
+.va-stage.vert.m-graphs .va-trk,.va-stage.vert.m-sign .va-trk{height:340px}
+.va-pn{display:grid;gap:6px;margin-top:8px}
+.va-stage.vert .va-pn,.va-stage.vert .va-sc{margin-top:0}
+.va-pn[hidden],.va-sc[hidden]{display:none}
+canvas.plot.va-pc{aspect-ratio:16/6}
+.va-tabs{display:none}
+.va-tabs i{font-family:var(--font-math)}
+.va-cnt{display:flex;flex-wrap:wrap;gap:2px 20px;margin:8px 0 0;font-size:.95rem;color:var(--ink-2)}
+.va-cnt strong{color:var(--ink);font-size:1.08rem}
+.va-note{min-height:1.3em;margin:6px 0 0;font-weight:600}
+.va-mos{margin-bottom:6px}
+.va-mos .chip{font-size:.86rem}
+.va-mos .chip .m{font-size:1.04em}
+.va-bsl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;margin:2px 0 4px}
+.va-bsl output{color:var(--ink)}
+.va-how{margin:8px 0 8px}
+.va-tgs{margin:2px 0 4px}
+.va-read dd{overflow-wrap:anywhere}
+
+/* V11 chart */
+.va-sc{margin-top:10px}
+.va-sch{margin:0 0 6px;font-size:.95rem}
+.va-scwrap{overflow-x:auto}
+table.va-sct th,table.va-sct td{padding:5px 6px;text-align:center;white-space:nowrap;vertical-align:middle}
+table.va-sct tbody th{text-align:left;font-weight:600}
+table.va-sct .hl{background:var(--hi-soft)}
+table.va-sct td.va-sg{font-weight:700;font-size:1.05rem}
+table.va-sct td.va-pt{font:600 .78rem var(--font-ui);color:var(--ink-2);white-space:normal;min-width:3.4em}
+table.va-sct td.va-mc{font:400 .85rem var(--font-ui);white-space:normal;min-width:7.2em}
+.va-mch .chip{font-family:var(--font-ui)}
+.va-mch{display:flex;flex-direction:column;gap:4px;align-items:stretch}
+.va-mch .chip{font-size:.8rem;padding:.2em .55em;min-height:28px;justify-content:center}
+.va-ok{color:var(--green);font-weight:700}
+.va-no{color:var(--red);font-weight:700}
+.va-no s{color:var(--ink-2);font-weight:400}
+.va-scmsg{color:var(--ink-2);margin:6px 0 0}
+
+/* Part 3 */
+.va-st h3{margin-top:0}
+.va-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.va-tp{font-weight:600;margin:10px 0 6px}
+table.va-s1tb th,table.va-s1tb td{padding:6px 8px;vertical-align:middle;text-align:left}
+table.va-s1tb td{font-family:var(--font-ui)}
+table.va-s1tb tbody th{white-space:nowrap}
+.va-sgc{flex-wrap:nowrap;gap:4px}
+.va-sgc .chip{min-width:34px;justify-content:center;font-weight:700}
+.va-mot{display:flex;flex-wrap:wrap;gap:4px;margin:2px 0}
+.va-mot .chip{font-size:.82rem}
+table.va-s1tb tr.va-bad{background:var(--bad-bg)}
+table.va-s1tb tr.va-good{background:var(--good-bg)}
+#va-s1tab{margin-top:10px}
+.va-s2{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px 24px;align-items:start;margin-top:8px}
+.va-trk2{height:190px}
+.va-s3{display:grid;grid-template-columns:minmax(190px,250px) minmax(0,1fr);gap:14px 24px;align-items:start;margin-top:8px}
+.va-trk3{height:370px}
+.va-gh{font-weight:700;margin:6px 0 4px;font-size:.88rem;color:var(--ink-2)}
+.va-gh:first-child{margin-top:0}
+.va-bxs{display:flex;flex-wrap:wrap;gap:8px 16px}
+.va-bx{display:flex;flex-direction:column;gap:3px;font-size:.9rem}
+.va-bw{display:inline-flex;align-items:center;gap:6px}
+.va-bx .numin.short{width:5.5rem}
+.va-unit{color:var(--ink-2);font-size:.92rem}
+.va-bxw.va-bad .numin{border-color:var(--red);background:var(--bad-bg)}
+.va-g{border-top:1px solid var(--rule);padding-top:10px;margin-top:10px}
+.va-g:first-child{border-top:0;padding-top:0;margin-top:0}
+.va-g h4{margin:0 0 6px}
+.va-g details.alg{margin-top:8px}
+
+/* Practice 1: thumbnails in the matching columns */
+#act-graphs .match-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+#act-graphs .match-col h4{grid-column:1/-1}
+#act-graphs .mitem{padding:4px;flex-direction:column;align-items:stretch;gap:2px}
+.va-th{display:block}
+canvas.plot.va-thc{aspect-ratio:4/3;border:0;border-radius:4px}
+.sel-bar .va-th{display:inline-block;width:110px;vertical-align:middle}
+
+/* Practice 2 */
+.va-stem{font-weight:600;margin:0 0 8px}
+.va-nr .va-unit{margin-left:2px}
+.va-ib{margin-top:6px}
+.va-s4c{margin-top:10px}
+
+/* task */
+.vt-step{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.vt-step label{min-width:7.5rem}
+.vt-lab{font-size:1.2rem}
+.vt-step .btn{min-width:40px;font-size:1.1rem}
+.vt-step .numin.short{width:5.5rem}
+.vt-trk{height:150px}
+.vt-ctl{margin-bottom:10px}
+
+@media (max-width:820px){
+  .va-ex{grid-template-columns:minmax(0,1fr);grid-template-areas:"side" "main" "read";grid-template-rows:auto}
+}
+@media (max-width:700px){
+  .va-s2,.va-s3{grid-template-columns:minmax(0,1fr)}
+  .va-trk3{height:300px}
+}
+@media (max-width:560px){
+  .va-tabs{display:inline-flex;margin:0 0 4px}
+  .va-pn[data-tab="s"] .va-pw:not([data-p="s"]),.va-pn[data-tab="v"] .va-pw:not([data-p="v"]),.va-pn[data-tab="a"] .va-pw:not([data-p="a"]){display:none}
+  canvas.plot.va-pc{aspect-ratio:auto;height:210px}
+  .va-stage .va-trk{height:164px}
+  .va-how{font-size:.85rem;margin:6px 0}
+  .va-stage.vert.m-track .va-trk{height:300px}
+  .va-stage.vert.m-graphs,.va-stage.vert.m-sign{grid-template-columns:minmax(0,1fr)}
+  .va-stage.vert.m-graphs .va-trk,.va-stage.vert.m-sign .va-trk{height:240px}
+  table.va-s1tb,table.va-s1tb tbody{display:block}
+  table.va-s1tb thead{display:none}
+  table.va-s1tb tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px;padding:8px 8px;border-bottom:1px solid var(--rule)}
+  table.va-s1tb tbody th{grid-column:1/-1;padding:0;border:0;background:none}
+  table.va-s1tb td{padding:0;border:0;display:flex;align-items:center;gap:8px}
+  table.va-s1tb td[data-l]::before{content:attr(data-l);font:italic 600 1.05rem var(--font-math);color:var(--ink-2)}
+  table.va-s1tb td.va-mtd{grid-column:1/-1;display:block}
+  .va-read{font-size:.92rem}
+  .va-read > div{padding:3px 0}
+  .vt-step label{flex-basis:100%;min-width:0}
+}

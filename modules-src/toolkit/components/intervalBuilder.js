@@ -55,7 +55,7 @@ MV.intervalBuilder = function(host, o){
   }
   // drag handles: one per finite endpoint
   var drag = MV.drag(plot, {
-    axis:"x", step:{ x:1 },
+    axis:"x", step:{ get x(){ return S.half ? 0.5 : 1; } },   // arrow keys follow the ½-step toggle
     handles:function(){ var hs = []; S.pieces.forEach(function(p, i){ if (!p.aInf) hs.push({ id:i + "a", x:p.a, y:0, label:"Left end of piece " + (i + 1) + " at " + num(p.a) + ", " + (p.aIn ? "closed" : "open") + ". Arrow keys move it; O or C sets open or closed." }); if (!p.bInf) hs.push({ id:i + "b", x:p.b, y:0, label:"Right end of piece " + (i + 1) + " at " + num(p.b) + ", " + (p.bIn ? "closed" : "open") + ". Arrow keys move it; O or C sets open or closed." }); }); return hs; },
     snap:function(x){ var st = S.half ? 0.5 : 1; return [Math.max(o.min, Math.min(o.max, Math.round(x / st) * st)), 0]; },
     move:function(id, x){ moveEnd(+id[0], id[1], x); },

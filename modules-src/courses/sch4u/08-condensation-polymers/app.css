@@ -1,0 +1,96 @@
+/* SCH4U 08: hero, C1 chainStage, chain builder, Part 3 stations, practice set, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* chain stage */
+.cp-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.cp-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+
+/* hero */
+.hero .hero-eq .cp-eq{font-size:.8em}
+.hero .hero-eq .cp-eq sub{font-size:.6em}
+.cp-hx-box{border:0;background:none}
+.cp-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.cp-hx-cap{font:400 1.02rem var(--font-ui);color:var(--ink);margin:6px 0;min-height:2.8em}
+.cp-hx-lab{font:700 .9rem var(--font-ui);color:var(--ink-2);margin:8px 0 2px}
+
+/* Explore */
+.cp-how{margin-top:0}
+.cp-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"view view" "ctrl read";gap:18px 28px;align-items:start}
+.cp-view{grid-area:view;min-width:0}.cp-ctrl{grid-area:ctrl;min-width:0}.cp-right{grid-area:read;min-width:0}
+.cp-cap{font:400 clamp(1rem,2.1vw,1.25rem)/1.4 var(--font-ui);margin:0 0 6px;min-height:1.4em}
+.cp-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.cp-capn{font-size:.85em;color:var(--ink-2)}
+.cp-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:10px 0 6px}
+.cp-stepcap{min-height:1.5em;margin:8px 0 4px;font-size:1rem}
+.cp-cmp{margin-top:6px}
+.cp-ledger{margin-top:10px}
+.cp-ledger td,.cp-ledger th{text-align:left}
+.cp-ctrl > div + div,.cp-ctrl > form,.cp-ctrl > label{margin-top:12px}
+.cp-act{margin-top:14px}
+.cp-capb{display:flex;flex-wrap:wrap;gap:6px}
+.cp-capb .btn{min-height:36px;text-align:left}
+.cp-entry{padding-top:10px;border-top:1px solid var(--rule)}
+.cp-entry label{display:block;font-size:.88rem;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.cp-er{display:flex;align-items:center;gap:8px}
+.cp-ent{font:inherit;padding:.35em .55em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);width:8rem;min-height:36px}
+.cp-cover{display:flex;align-items:center;gap:8px;font-size:.95rem;min-height:32px}
+.cp-cover input{width:20px;height:20px;flex:none}
+.cp-msg{min-height:1.4em;margin:8px 0 0;font-size:.95rem;color:var(--ink-2)}
+.cp-right .uses{margin-top:14px}
+.cp-cmp[hidden],.cp-lab1[hidden],.cp-capc[hidden],.cp-bs[hidden],.cp-zoom[hidden]{display:none}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.cp-cond{margin:10px 0 12px}
+.cp-hybox{position:relative}
+.cp-hyb{position:absolute;transform:translate(-50%,-50%);border:1.5px solid var(--pen);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.2em .7em;font:700 .88rem var(--font-ui);min-height:32px;min-width:44px;cursor:pointer;white-space:nowrap}
+.cp-hyb:hover,.cp-hyb:focus-visible{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.cp-hyb:disabled{opacity:.45;cursor:default}
+.cp-hycap{min-height:2.8em;margin:10px 0 4px}
+.cp-zgrid{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:10px;max-width:680px}
+.cp-zf{margin:0;min-width:0}
+.cp-zf figcaption{font-size:.92rem;font-weight:700;margin-bottom:6px}
+.cp-envsl{max-width:520px;margin:6px 0 10px}
+.cp-brow{margin:10px 0}
+.cp-bl{margin:0 0 4px}
+.cp-btrack{position:relative;height:26px;border-radius:6px;background:var(--paper);border:1.5px solid var(--rule)}
+.cp-bfill{position:absolute;left:0;top:0;bottom:0;border-radius:5px 0 0 5px;background:var(--pen)}
+.cp-bval{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-weight:700;font-size:.92rem;color:var(--ink);background:var(--sheet);padding:0 4px;border-radius:4px}
+.cp-bnote{margin:3px 0 0}
+.cp-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px;margin-top:10px}
+.cp-route{min-width:0;border:1.5px solid var(--rule);border-radius:10px;padding:10px 14px;background:var(--sheet)}
+.cp-route > p:first-child{margin-top:0}
+.cp-rsvg{display:block;width:100%;max-width:340px;height:auto;margin:4px 0}
+.cp-rcap{min-height:3em;margin:4px 0}
+.cp-ask{margin:16px 0 6px}
+.cp-rchips{display:flex;flex-wrap:wrap;gap:6px}
+.cp-canada{margin-top:14px}
+
+/* practice set */
+.cp-pchips{margin:8px 0}
+.cp-ivrow{margin:8px 0}
+.cp-ivl{font-size:.92rem;font-weight:700;margin:0 0 4px}
+.cp-ivrow .chips{margin:0}
+
+/* task */
+.cp-tk > div + div{margin-top:12px}
+.cp-h4{font:700 1rem var(--font-ui);margin:0 0 8px}
+#cp-tkbox{margin-bottom:10px}
+#cp-tkbox[hidden]{display:none}
+.cp-conds{margin:8px 0 12px;padding-left:1.4em}
+
+@media (max-width:720px){
+  .cp-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .cp-routes{grid-template-columns:minmax(0,1fr)}
+}

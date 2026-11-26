@@ -203,7 +203,8 @@
     "03",
     "02"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "12",
@@ -217,7 +218,8 @@
    "prereqs": [
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",
@@ -246,7 +248,8 @@
    "prereqs": [
     "13",
     "11"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "15",
@@ -261,7 +264,8 @@
     "11",
     "01",
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "16",

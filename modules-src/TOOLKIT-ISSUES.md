@@ -39,6 +39,8 @@ every module that uses the touched code, then ship them together).
 
 - FIXED 1.0.6: with reduced motion, `MV.tween` called done() before returning, so `x = MV.tween({done(){x=null}})` left x set and buttons stuck disabled (sbi4u 02). done() now runs in a microtask after the call returns.
 
+- FIXED 1.0.7: intervalBuilder arrow keys always stepped 1 even with ½ steps on (mcv4u 15); rebuilt mhf4u 02, 15, 16, 22, 24, 50.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -149,3 +151,7 @@ every module that uses the touched code, then ship them together).
 | C2 general namer + chip judge (all families, rings, benzene, older forms; ~140 unit-tested names), C1 SMILES-lite parser + palette builder, nameChips grid | sch4u 09 | best C2 to promote |
 | conversation simulator, influence map, support-card builder, blocked-word checker, Support header dialog | hfa4u 10 | **PRIORITY OWNER REVIEW (sensitive topic: eating disorders)**: author-written myth statements 2–8, conversation dialogue, 6 of 8 repair responses, Part 3 feedback, data summary + 5 APA refs (VERIFY), helpline numbers (VERIFY). Safety scan clean (no weights/calories/BMI; blocked-word list prevents them in student writing) |
 | V10 shapeStage (Part 3), intervalExtrema engine, wall rail, V8 extremaBoxes | mcv4u 16 | |
+| tileView (D4 erase into stacks), cancelWork, read-only factorTiles, binomial/nCr notation helpers, station bar | mdm4u 11 | promote nCr notation to mdm4u.js |
+| C1 chainStage, calcAct (mixed set) | sch4u 08 | model values: PLA 10% compost, cellulose 15%/95%, 0.85 chain-length per melt; Canada line VERIFY |
+| D5 pascalExplorer (rows 0–15, marks, row sums, mod colouring, hockey/fib), N29 sentenceBuilder (+chip order), N4 numEntryWords | mdm4u 12 | plan: n = 15 state unreachable (slider max 10) |
+| V9 motionTrack (v/a arrows, strip, marks), V5 motionPanels (tabs on phones), V11 motionSignChart, V8 tripBoxes | mcv4u 15 | toolkit bug: intervalBuilder arrow keys step 1 even with ½ steps |
