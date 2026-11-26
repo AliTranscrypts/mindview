@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 156/295 live, 1 built, 22 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 157/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 26/59 | 0 | 33 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 0 | 21 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 16/52 | 1 | 35 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 0 | 35 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 18/46 | 0 | 28 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 17/25 | 0 | 8 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 17/25 | 1 | 7 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 11/24 | 0 | 13 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -193,7 +193,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 14 Bohr Model (`bohr-model`, topic, site ch2)
 - ✓ 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
 - ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
-- ◐ 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
+- ✓ 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - … 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
 - … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
@@ -298,7 +298,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 15 Foodborne Illness & Food Safety (`food-safety`, topic, site ch3)
 - ✓ 16 Canadian Food Production (`canadian-food-production`, topic, site ch4)
 - ✓ 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
-- … 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
+- ◐ 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - … 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - … 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - … 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
