@@ -141,3 +141,4 @@ every module that uses the touched code, then ship them together).
 | D4 arrangementTiles (identical tiles), D5 gridPaths | mdm4u 08 | |
 | E7 thesisForge, E17 draftWorkspace, formXray | eng4u 06 | texts being corrected to Wikisource (Leacock 1919; Bacon 1884 Works); 298 KB |
 | V5 derivativePanels (6-panel ladder), ladderFn, slopeDial, V11 signChart (f″), V8 ladderBoxes | mcv4u 14 | plan: slider ranges widened (b=−6, a=12, b=−12 unreachable) |
+| (update) | eng4u 06 | VERIFIED: Leacock matches Wikisource 1919 scan; Bacon "Of Studies" copied verbatim from Works vol. 1 (1884) p. 55 |
