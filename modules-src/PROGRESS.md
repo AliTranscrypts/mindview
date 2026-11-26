@@ -6,13 +6,13 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 49/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 50/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 48/50 | 1 | 1 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 49/50 | 0 | 1 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 1/59 | 0 | 58 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 1 | 38 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 0/46 | 0 | 46 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 0/25 | 0 | 25 | 0 |
@@ -68,7 +68,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 46 Sums and Differences of Functions (`sums-and-differences-of-functions`, topic, site ch8)
 - ✓ 47 Products and Quotients of Functions (`products-and-quotients-of-functions`, topic, site ch8)
 - ✓ 48 Composite Functions (`composite-functions`, topic, site ch8)
-- ◐ 49 Modelling with Combined Functions (`modelling-with-combined-functions`, topic, site ch8)
+- ✓ 49 Modelling with Combined Functions (`modelling-with-combined-functions`, topic, site ch8)
 - … 50 Chapter 8 Summary & Review (`chapter-8-review`, review, site ch8)
 
 ## MCV4U Calculus and Vectors (`mcv4u`)
@@ -135,8 +135,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## MDM4U Mathematics of Data Management (`mdm4u`)
 
-- … 01 Sample Spaces & Counting Outcomes (`sample-spaces`, topic, site ch1)
-- · 02 The Fundamental Counting Principle (`fundamental-counting-principle`, topic, site ch1)
+- ◐ 01 Sample Spaces & Counting Outcomes (`sample-spaces`, topic, site ch1)
+- … 02 The Fundamental Counting Principle (`fundamental-counting-principle`, topic, site ch1)
 - · 03 Mutually Exclusive Events & the Additive Principle (`mutually-exclusive`, topic, site ch1)
 - · 04 Venn Diagrams & Set Operations (`venn-diagrams`, topic, site ch1)
 - · 05 Independent vs Dependent Events (`independent-dependent`, topic, site ch1)

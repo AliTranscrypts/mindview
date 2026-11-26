@@ -1,0 +1,77 @@
+/* HFA4U course styles (toolkit/courses/hfa4u.css). The assembler adds this file to every HFA4U module (site course HFA4M),
+   after the toolkit CSS. Course plan §2 (safety) and §4 (colour roles).
+   Tokens, light and dark, defined like the base tokens. Never colour alone: every coloured mark also carries a word,
+   letter or icon. Red and green stay reserved for feedback.
+     --nu-carb     orange   carbohydrate                       (same hexes as --p-k)
+     --nu-protein  magenta  protein; plate "protein foods"      (same hexes as --p-c)
+     --nu-fat      teal     fat                                (same hexes as --p-d)
+     --nu-micro    violet   micronutrients (vitamins, minerals) (same hexes as --acol)
+     --nu-water    blue     water                              (same hexes as --pen)
+     --leaf        olive    Food Guide plate: vegetables and fruits (SBI4U token; NEVER used for feedback)
+     --plate-grain brown    Food Guide plate: whole grains     (same hexes as --p-b); plate protein foods use --nu-protein
+     --risk-mod    blue     modifiable risk factors            (same hexes as --pen)
+     --risk-fixed  ink-2    non-modifiable risk factors        (same hexes as --ink-2)
+     --fs-clean cerulean (--p-t) · --fs-separate violet (--acol) · --fs-cook orange (--p-k) · --fs-chill blue (--pen)
+                            food-safety steps, always with an icon and the word
+     --sys-stage   ink      food-system stages; --sys-emis brown (emissions overlay); --sys-waste orange (waste overlay)
+     --nu-carb-soft --nu-protein-soft --nu-fat-soft --nu-micro-soft --nu-water-soft --leaf-soft --plate-grain-soft
+                            tints for bar and plate-section fills (text on a tint stays --ink)
+   In canvas code read them with MV.css("--nu-carb").
+   Classes:
+     .hfa-support   the support note callout (course plan §2):  <div class="hfa-support" role="note"><p>…</p></div>
+                    A content block (start.blocks / reflect.blocks) holding only the note drops its sheet frame.
+     .hfa-private   tag for optional, private self-reflection:  <span class="hfa-private">Optional and private</span>
+     .hfa-model     "model data" tag for built-in made-up datasets
+     .hfa-nft       Nutrition Facts table look: <table class="hfa-nft"><caption>Nutrition Facts</caption>
+                    <thead><tr><th scope="col">Per 1 cup (250 mL)</th><th scope="col">% Daily Value*</th></tr></thead>
+                    <tbody><tr class="cal"><th scope="row">Calories 110</th><td></td></tr><tr><th scope="row">Fat 2 g</th><td>3 %</td></tr>
+                    <tr class="sub">…(indented sub-row)</tr><tr class="hi">…(highlighted row)</tr></tbody>
+                    <tfoot><tr><td colspan="2">*5% or less is a little, 15% or more is a lot</td></tr></tfoot></table>
+                    Wrap it in .tbl-wrap if it may be wider than a phone.
+     .hfa-refs      APA 7 reference list with a hanging indent: <ul class="hfa-refs"><li>MV.nutri.apaRef(…)</li></ul>
+     .hfa-sw        small swatch: <i class="hfa-sw" style="background:var(--leaf)"></i>
+     .hfa-kc        kitchen-card download row (MV.kitchenCardButton in hfa4u.js) */
+:root{--nu-carb:#A84C05;--nu-protein:#B0286F;--nu-fat:#0B7372;--nu-micro:#7A3DB8;--nu-water:#2343C4;--leaf:#4F6B2E;--plate-grain:#6B5A1E;
+  --risk-mod:#2343C4;--risk-fixed:#4D5A80;--fs-clean:#00648A;--fs-separate:#7A3DB8;--fs-cook:#A84C05;--fs-chill:#2343C4;
+  --sys-stage:#1E2A57;--sys-emis:#6B5A1E;--sys-waste:#A84C05;
+  --nu-carb-soft:rgba(168,76,5,.13);--nu-protein-soft:rgba(176,40,111,.12);--nu-fat-soft:rgba(11,115,114,.13);--nu-micro-soft:rgba(122,61,184,.12);
+  --nu-water-soft:rgba(35,67,196,.12);--leaf-soft:rgba(79,107,46,.15);--plate-grain-soft:rgba(107,90,30,.14)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--nu-carb:#FF9F5A;--nu-protein:#F49AC8;--nu-fat:#5FD0CD;--nu-micro:#C9A8FF;--nu-water:#93AEFF;--leaf:#A8C98A;--plate-grain:#D8D08F;
+    --risk-mod:#93AEFF;--risk-fixed:#A8B7AC;--fs-clean:#7FD3F5;--fs-separate:#C9A8FF;--fs-cook:#FF9F5A;--fs-chill:#93AEFF;
+    --sys-stage:#E5ECE4;--sys-emis:#D8D08F;--sys-waste:#FF9F5A;
+    --nu-carb-soft:rgba(255,159,90,.18);--nu-protein-soft:rgba(244,154,200,.17);--nu-fat-soft:rgba(95,208,205,.17);--nu-micro-soft:rgba(201,168,255,.17);
+    --nu-water-soft:rgba(147,174,255,.17);--leaf-soft:rgba(168,201,138,.18);--plate-grain-soft:rgba(216,208,143,.17)}
+}
+:root[data-theme="dark"]{--nu-carb:#FF9F5A;--nu-protein:#F49AC8;--nu-fat:#5FD0CD;--nu-micro:#C9A8FF;--nu-water:#93AEFF;--leaf:#A8C98A;--plate-grain:#D8D08F;
+  --risk-mod:#93AEFF;--risk-fixed:#A8B7AC;--fs-clean:#7FD3F5;--fs-separate:#C9A8FF;--fs-cook:#FF9F5A;--fs-chill:#93AEFF;
+  --sys-stage:#E5ECE4;--sys-emis:#D8D08F;--sys-waste:#FF9F5A;
+  --nu-carb-soft:rgba(255,159,90,.18);--nu-protein-soft:rgba(244,154,200,.17);--nu-fat-soft:rgba(95,208,205,.17);--nu-micro-soft:rgba(201,168,255,.17);
+  --nu-water-soft:rgba(147,174,255,.17);--leaf-soft:rgba(168,201,138,.18);--plate-grain-soft:rgba(216,208,143,.17)}
+
+/* support note (standard callout) and private-reflection tag */
+.hfa-support{margin:0;padding:12px 16px;border-left:4px solid var(--pen);background:var(--info-bg);border-radius:6px}
+.hfa-support p{margin:0;max-width:none}
+.mv-block:has(> .hfa-support:only-child){background:none;border:0;padding:0}
+.hfa-private{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.01em;color:var(--ink-2);border:1.5px dashed var(--ink-2);border-radius:999px;padding:.05em .6em;margin-right:4px;vertical-align:.08em}
+.hfa-model{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:.05em .45em}
+.hfa-sw{display:inline-block;width:.85em;height:.85em;border-radius:2px;vertical-align:-.08em;border:1px solid var(--ink-2)}
+
+/* Nutrition Facts table look */
+table.hfa-nft{border-collapse:collapse;border:2px solid var(--ink);background:var(--sheet);font:400 .95rem/1.35 var(--font-ui);min-width:15rem;max-width:22rem}
+.hfa-nft caption{caption-side:top;text-align:left;font-weight:700;font-size:1.25rem;padding:4px 8px 2px;border:2px solid var(--ink);border-bottom:0;background:var(--sheet)}
+.hfa-nft th,.hfa-nft td{padding:3px 8px;border-bottom:1px solid var(--ink-2);text-align:left;vertical-align:baseline}
+.hfa-nft td{text-align:right;font-weight:700;white-space:nowrap}
+.hfa-nft thead th{font-size:.82rem;font-weight:700;border-bottom:4px solid var(--ink)}
+.hfa-nft thead th + th{text-align:right}
+.hfa-nft tr.cal th{font-size:1.15rem;font-weight:700}
+.hfa-nft tr.cal th,.hfa-nft tr.cal td{border-bottom:4px solid var(--ink)}
+.hfa-nft tr.sub th{padding-left:1.4em;font-weight:400}
+.hfa-nft tbody th{font-weight:700}
+.hfa-nft tr.hi th,.hfa-nft tr.hi td{background:var(--hi-soft)}
+.hfa-nft tfoot td{font-size:.78rem;font-weight:400;text-align:left;white-space:normal;border-bottom:0;color:var(--ink-2)}
+
+/* APA reference list, kitchen-card row */
+ul.hfa-refs{list-style:none;margin:0;padding:0}
+ul.hfa-refs li{padding-left:2em;text-indent:-2em;margin:0 0 .5em;max-width:72ch;overflow-wrap:anywhere}
+.hfa-kc{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-top:12px}

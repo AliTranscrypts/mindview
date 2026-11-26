@@ -4,16 +4,18 @@
      --ev-b  teal    event B, spinner sector B (same hexes as --f3)
      --ev-c  orange  event C, spinner sector C, residual segments (same hexes as --p-k)
      --ev-a-soft / --ev-b-soft / --ev-c-soft   light tints of the three for region fills and table cells
+     --sel-bd  border of a selected (marked) outcome, cell or region: ink in light mode, highlighter in dark.
+               Pair it with background:var(--hi-soft) (course plan §3: the selected region is highlighter yellow).
    Text on an --ev-* fill: use var(--sheet) (passes 4.5 : 1 in both modes). Always show the letter too (colour-key rule 2).
    Classes:
      .ev-a .ev-b .ev-c   letter/text in the event colour (bold)
      .mdm-sw             small square swatch: <i class="mdm-sw" style="background:var(--ev-a)"></i>
      .mdm-model          "model data" tag for built-in made-up datasets (course plan §1) */
-:root{--ev-a:#2343C4;--ev-b:#0E7C7B;--ev-c:#A84C05;--ev-a-soft:rgba(35,67,196,.13);--ev-b-soft:rgba(14,124,123,.14);--ev-c-soft:rgba(168,76,5,.13)}
+:root{--ev-a:#2343C4;--ev-b:#0E7C7B;--ev-c:#A84C05;--ev-a-soft:rgba(35,67,196,.13);--ev-b-soft:rgba(14,124,123,.14);--ev-c-soft:rgba(168,76,5,.13);--sel-bd:#1E2A57}
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18)}
+  :root:not([data-theme="light"]){--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18);--sel-bd:#E6CF48}
 }
-:root[data-theme="dark"]{--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18)}
+:root[data-theme="dark"]{--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18);--sel-bd:#E6CF48}
 
 .ev-a{color:var(--ev-a);font-weight:700}.ev-b{color:var(--ev-b);font-weight:700}.ev-c{color:var(--ev-c);font-weight:700}
 .mdm-sw{display:inline-block;width:.85em;height:.85em;border-radius:2px;vertical-align:-.08em;border:1px solid var(--ink-2)}

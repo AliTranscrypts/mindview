@@ -87,3 +87,4 @@ every module that uses the touched code, then ship them together).
 | N4 fillBoxes | mhf4u 48 | |
 | V8 exactBox, areaTiles; move ∛ support into core MV.m | mcv4u 01 | course files: mcv4u.css (--f4, --f5, .vec.wide), mcv4u.js (MV.mcv.rpow, Q, S, exact.judge) |
 | splitPlot, N6 storyMatch | mhf4u 49 | plan fix: TC3 slider range widened to −6…6 |
+| D1 treeDiagram, D6 simulator (makeSim, drawRelFreq), outcomeTable, valueCounts, spinnerDraw | mdm4u 01 | course files: mdm4u.css (--ev-a/b/c, .mdm-model), mdm4u.js (MV.mdm.fact/nPr/nCr/frac/prob/seededRandom) |

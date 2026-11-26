@@ -52,7 +52,8 @@
    "size": "S",
    "part3": "equally-likely",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "02",
@@ -65,7 +66,8 @@
    "part3": "multiply",
    "prereqs": [
     "01"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "03",
