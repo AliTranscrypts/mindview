@@ -1,0 +1,142 @@
+/* SBI4U 07: guard cell simulator (S4, guard-cell layout), day graphs, petroleum-jelly bench (S7), guard-cell zoom, task, hero.
+   Module tokens: --sto-epi (leaf-surface tint), --sto-jelly (petroleum jelly), --sto-zin (inside the guard cell).
+   Roles: H⁺ --bio-h; K⁺ --ink (no K⁺ colour in Unit 1); ABA --ink-2; water, CO₂ and water vapour arrows --bio-o2, each labelled;
+   plant tissue --leaf (illustration only). */
+:root{--sto-hole:color-mix(in srgb,var(--ink) 62%,var(--sheet));--sto-epi:color-mix(in srgb,var(--leaf) 9%,var(--sheet));--sto-jelly:color-mix(in srgb,var(--ink-2) 40%,var(--sheet));--sto-zin:color-mix(in srgb,var(--leaf) 7%,var(--sheet))}
+
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--sto-hole:color-mix(in srgb,var(--paper) 70%,#000)} }
+:root[data-theme="dark"]{--sto-hole:color-mix(in srgb,var(--paper) 70%,#000)}
+
+/* hero */
+.sto-heq{white-space:normal}
+.sto-hero{width:100%;aspect-ratio:360 / 240}
+.sto-hero svg{width:100%;height:100%;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.sto-hero.sto-hero2{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sto-hero2 figure{margin:0}
+.sto-hero2 svg{height:auto}
+.sto-hero2 figcaption{font-size:.82rem;color:var(--ink-2);margin-top:4px;text-align:center}
+
+/* radio groups (from SBI4U 06 / 01 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .85em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+
+/* explore layout */
+.sto-pg [hidden]{display:none!important}
+.sto-pg .pg-ctrl{display:grid;gap:12px}
+.sto-panel{display:grid;gap:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.sto-pnote,.sto-note{margin:0}
+.sto-note{margin-top:10px}
+.sto-sl{margin:0}
+.sto-sl input{width:100%;accent-color:var(--ink)}
+.sto-stage{position:relative;width:100%;aspect-ratio:360 / 240;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);overflow:hidden}
+.sto-stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sto-stage-b{aspect-ratio:360 / 206}
+.sto-stage-z{aspect-ratio:360 / 194}
+.sto-legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;color:var(--ink-2)}
+.sto-legend span{display:inline-flex;align-items:center;gap:4px}
+.sto-legend svg{width:12px;height:12px}
+.sto-legend svg[viewBox^="0 0 22"]{width:22px}
+.sto-cap{margin:8px 0 0;font-size:.92rem;min-height:2.8em}
+.sto-dayg{margin-top:10px}
+.sto-meter{margin-top:14px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;display:grid;gap:6px}
+.sto-mt{margin:0;font-weight:700;font-size:.9rem}
+.sto-br{display:grid;grid-template-columns:5.6em minmax(0,1fr) 2.2em;align-items:center;gap:8px;font-size:.88rem}
+.sto-br b{text-align:right}
+.sto-bt{display:block;height:14px;border:1.5px solid var(--ink-2);border-radius:999px;overflow:hidden;background:var(--paper)}
+.sto-bt i{display:block;height:100%;background:var(--bio-o2);transition:width .6s}
+.sto-bt.sto-bw i{background:repeating-linear-gradient(135deg,var(--bio-o2) 0 5px,color-mix(in srgb,var(--bio-o2) 55%,var(--sheet)) 5px 8px)}
+@media (prefers-reduced-motion:reduce){ .sto-bt i{transition:none} }
+
+/* SVG drawing */
+.sto-t{font:600 12px var(--font-ui);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round}
+.sto-ts{font-weight:400;font-size:11px;fill:var(--ink-2)}
+.sto-tb{font-size:12px}
+.sto-tk{fill:var(--ink)}
+.sto-th{fill:var(--bio-h)}
+.sto-tw{fill:var(--bio-o2)}
+.sto-tab{fill:var(--ink-2)}
+.sto-tc{fill:var(--ink);stroke:none}
+.sto-epi{fill:var(--sto-epi)}
+.sto-ecell{fill:none;stroke:var(--leaf-edge);stroke-width:1;opacity:.55}
+.sto-gc{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1.4}
+.sto-chl{fill:var(--leaf);opacity:.7}
+.sto-pore{fill:var(--sto-hole);stroke:var(--ink);stroke-width:1.2}
+.sto-iw{fill:none;stroke:var(--leaf);stroke-width:3.6;stroke-linecap:round}
+.sto-ch{fill:var(--ink)}
+.sto-pump{fill:var(--sheet);stroke:var(--bio-h);stroke-width:2}
+.sto-pump.on{fill:var(--bio-h)}
+.sto-k{fill:var(--ink)}
+.sto-h{fill:var(--bio-h)}
+.sto-aba{fill:var(--ink-2)}
+.sto-wat line{stroke:var(--bio-o2);stroke-linecap:round}
+.sto-wat path{fill:var(--bio-o2)}
+.sto-gas line{stroke:var(--bio-o2);stroke-linecap:round}
+.sto-gas path{fill:var(--bio-o2)}
+.sto-gas .sto-halo{stroke:var(--sheet)}
+.sto-gas .sto-haloh{fill:var(--sheet);stroke:var(--sheet);stroke-width:3px}
+.sto-sun{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.sto-ray{stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.sto-moon{fill:var(--ink-2);stroke:var(--ink);stroke-width:1}
+.sto-card{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+
+/* Part 3 */
+.sto-p3{display:grid;gap:18px}
+.sto-st h3{margin-top:0}
+.sto-p3g{margin:8px 0 4px;max-width:680px}
+.sto-key{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 10px;color:var(--ink-2)}
+.sto-k1,.sto-k2{display:inline-block;width:24px;height:0;border-top:3px solid var(--pen);vertical-align:middle;margin-left:6px}
+.sto-k2{border-top:2.5px dashed var(--ink-2)}
+.sto-jump{margin-top:6px}
+#sto-tot{margin-top:8px}
+.sto-qs{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:12px}
+.sto-q{margin:0 0 6px;font-weight:700}
+.sto-a{margin:8px 0 0;padding:8px 12px;border-left:4px solid var(--rule);background:var(--info-bg);border-radius:4px}
+.sto-rod{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.sto-str{stroke:var(--ink-2);stroke-width:1.2}
+.sto-clip{fill:var(--ink-2)}
+.sto-jelly{fill:var(--sto-jelly);stroke:var(--ink-2);stroke-width:.8}
+.sto-slice{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1.2}
+.sto-sl1{stroke:var(--leaf-edge);stroke-width:.8}
+.sto-bar{fill:var(--bio-o2)}
+.sto-base{stroke:var(--ink);stroke-width:1.5}
+.sto-zout{fill:var(--sheet)}
+.sto-zin{fill:var(--sto-zin)}
+.sto-zmem{fill:var(--leaf-fill)}
+.sto-zedge{stroke:var(--leaf-edge);stroke-width:2}
+.sto-rec{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6}
+.sto-rec.on{stroke:var(--ink);stroke-width:2.2;fill:var(--hi-soft)}
+.sto-kch,.sto-wch{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+.sto-wch{stroke:var(--bio-o2)}
+.sto-sig{fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:4 3}
+.sto-sigh{fill:var(--ink-2)}
+.sto-farm{margin-top:14px;padding:12px 14px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper)}
+.sto-farm h4{margin:0 0 6px}
+.sto-farm p{margin:6px 0 0}
+
+/* practice */
+.sto-unit{font-size:.92rem;color:var(--ink-2)}
+
+/* task */
+.sto-conds{margin:8px 0 0;padding-left:1.4em}
+.sto-tin{display:grid;gap:10px;margin:12px 0}
+.sto-tpv svg{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.sto-lair{fill:var(--paper)}
+.sto-ltis{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1}
+.sto-lvein{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1}
+.sto-lepi{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1}
+.sto-lcut{fill:var(--rule);stroke:var(--ink-2);stroke-width:.8}
+.sto-lpit{fill:var(--paper);stroke:none}
+.sto-lgc{fill:var(--leaf);stroke:var(--leaf-edge);stroke-width:.6}
+.sto-lhair{fill:none;stroke:var(--ink-2);stroke-width:1.1}
+.sto-tm{display:grid;gap:4px;margin-top:10px}
+.sto-tml{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.sto-tmt{position:relative;display:block;height:12px;border:1.5px solid var(--ink-2);border-radius:999px;overflow:hidden;background:var(--paper)}
+.sto-tmt i{display:block;height:100%;background:var(--ink-2)}
+.sto-tmt b{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}

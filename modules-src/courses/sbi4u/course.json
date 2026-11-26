@@ -128,7 +128,8 @@
    "prereqs": [
     "01"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "08",
@@ -170,7 +171,8 @@
    "siteChapter": 2,
    "size": "M",
    "part3": "enzymes",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "11",
