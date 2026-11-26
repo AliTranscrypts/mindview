@@ -66,8 +66,7 @@
    "prereqs": [
     "01"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "03",
@@ -95,7 +94,8 @@
    "part3": "three-sets",
    "prereqs": [
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "05",

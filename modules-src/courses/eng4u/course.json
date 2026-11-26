@@ -57,7 +57,8 @@
    "prereqs": [
     "01"
    ],
-   "trivium": "Logic"
+   "trivium": "Logic",
+   "status": "building"
   },
   {
    "nn": "03",

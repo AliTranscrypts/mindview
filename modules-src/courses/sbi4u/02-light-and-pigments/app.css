@@ -1,0 +1,140 @@
+/* SBI4U 02: spectrum lab (S7), Elodea tank, chromatography lab (S9), spectrum reading, grow-light task.
+   Pigment colours for chromatogram bands are depictions of the real pigments (module 02 only), always labelled. */
+:root{--lp-car:var(--p-k);--lp-carotene:#D9821C;--lp-xan:#C9A40C;--lp-chla:#17876A;--lp-chlb:#869E1F;--lp-antho:#A3243F}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--lp-carotene:#F2A24A;--lp-xan:#E6CC4D;--lp-chla:#52C9A4;--lp-chlb:#B5CD52;--lp-antho:#EE8095}
+}
+:root[data-theme="dark"]{--lp-carotene:#F2A24A;--lp-xan:#E6CC4D;--lp-chla:#52C9A4;--lp-chlb:#B5CD52;--lp-antho:#EE8095}
+
+/* radio groups (from SBI4U 01 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* spectrum lab */
+.lp-pg .pg-ctrl{display:grid;gap:10px}
+.lp-row{margin:0}
+.lp-sl{margin:0}
+.lp-sl input{width:100%;accent-color:var(--ink)}
+.lp-sl[hidden],.lp-panel[hidden]{display:none}
+.lp-sl .tiny{display:block}
+.lp-panel{display:grid;gap:8px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.lp-note,.lp-mnote{margin:0}
+.lp-mnote{margin-top:8px}
+.lp-sw{display:inline-block;width:.85em;height:.85em;border-radius:2px;border:1px solid var(--ink-2);vertical-align:-.08em;margin-right:.35em}
+.lp-tgs{display:flex;flex-wrap:wrap;gap:6px}
+.lp-tg{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.3em .7em;font-size:.9rem;min-height:36px;text-align:left}
+.lp-tg svg{width:28px;height:8px;flex:0 0 auto}
+.lp-tg[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);font-weight:700}
+.lp-tg[aria-pressed="false"] svg{opacity:.35}
+.lp-tg .lp-sw{margin-right:0}
+.lp-tick{display:inline-block;width:1em;height:1em;border:1.5px solid var(--ink-2);border-radius:3px;position:relative;flex:0 0 auto}
+.lp-tg[aria-pressed="true"] .lp-tick::after{content:"✓";position:absolute;inset:-.25em 0 0 .1em;font-size:.95em;font-weight:700;color:var(--ink)}
+.lp-ln-a{stroke:var(--ink);stroke-width:3}
+.lp-ln-b{stroke:var(--ink-2);stroke-width:3;stroke-dasharray:6 4}
+.lp-ln-c{stroke:var(--lp-car);stroke-width:3}
+.lp-rec{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.lp-picks{margin:0;font-size:.92rem}
+.lp-engbtns{margin:0;align-items:center}
+.lp-big{font:700 1.5rem var(--font-math)}
+/* Elodea tank */
+.lp-tank{margin:0 0 12px}
+.lp-tank svg{width:100%;max-width:340px;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.lp-tank figcaption{margin-top:4px}
+.lp-lamp{fill:var(--paper);stroke:var(--ink-2);stroke-width:2}
+.lp-lamp-b{stroke:var(--ink-2);stroke-width:2;fill:none}
+.lp-wave{fill:none;stroke:var(--ink);stroke-width:1.6}
+.lp-filt{stroke:var(--ink);stroke-width:1.2}
+.lp-water{fill:var(--pen);fill-opacity:.1}
+.lp-glass{fill:none;stroke:var(--ink-2);stroke-width:2}
+.lp-stem{fill:none;stroke:var(--leaf);stroke-width:3;stroke-linecap:round}
+.lp-elleaf{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1.2}
+.lp-bubble{fill:var(--sheet);fill-opacity:.6;stroke:var(--pen);stroke-width:1.3}
+.lp-tx{font:600 10px var(--font-ui);fill:var(--ink-2)}
+
+/* Practice: read the spectra */
+.lp-rs{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px 22px;align-items:start}
+.lp-rs .lp-sl{margin-top:8px}
+.lp-rschips{margin:0 0 6px}
+.lp-unit{font-size:.95rem;color:var(--ink-2)}
+
+/* task */
+.lp-conds{margin:6px 0 8px;padding-left:1.4em}
+.gl-in{display:grid;gap:6px;margin:10px 0 12px}
+.lp-meter{display:grid;gap:4px;margin-top:10px}
+.lp-meter-l{font-size:.88rem;color:var(--ink-2)}
+.lp-meter-l strong{color:var(--ink)}
+.lp-meter-t{position:relative;display:block;height:12px;border:1.5px solid var(--ink-2);border-radius:999px;overflow:hidden;background:var(--paper)}
+.lp-meter-t i{display:block;height:100%;background:var(--pen)}
+.lp-aim{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+
+/* chromatography */
+.cg-st > p{margin-top:4px}
+.cg-s1,.cg-s2{display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);gap:14px 22px;align-items:start}
+.cg-s2{grid-template-columns:minmax(170px,280px) minmax(0,1fr)}
+.cg-fig{margin:0}
+.cg-fig svg{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.cg-fig figcaption{margin-top:4px;min-height:1.4em}
+.cg-log{margin:0 0 10px;padding-left:1.4em;font-size:.92rem}
+.cg-log:empty{display:none}
+.cg-menu{display:grid;gap:6px}
+.cg-opt{display:flex;gap:8px;align-items:flex-start;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.45em .7em;font-size:.92rem;min-height:40px}
+.cg-opt:not(:disabled):hover{border-color:var(--pen)}
+.cg-opt.done{border-color:var(--green);background:var(--good-bg)}
+.cg-opt:disabled{opacity:.6}
+.cg-opt.done:disabled{opacity:.85}
+.cg-ck{color:var(--green);font-weight:700}
+#cg-fb1{margin-top:10px}
+.cg-paper{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.2}
+.cg-wet{fill:var(--pen);fill-opacity:.08}
+.cg-pool{fill:var(--pen);fill-opacity:.16}
+.cg-pool.tint{fill:var(--lp-chla);fill-opacity:.4}
+.cg-glass{fill:none;stroke:var(--ink-2);stroke-width:2}
+.cg-rod{stroke:var(--ink-2);stroke-width:3;stroke-linecap:round}
+.cg-line{stroke:var(--ink-2);stroke-width:1.4}
+.cg-line.pen{stroke:var(--pen);stroke-width:2}
+.cg-ink{fill:var(--pen);fill-opacity:.45}
+.cg-lost{stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:2 4;opacity:.5}
+.cg-tx{font:600 10px var(--font-ui);fill:var(--ink)}
+.cg-tx.b{font-size:14px;font-weight:700}
+.cg-bowl{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.6}
+.cg-pestle{stroke:var(--ink-2);stroke-width:4;stroke-linecap:round}
+.cg-ruler{fill:var(--paper);stroke:var(--ink-2);stroke-width:1}
+.cg-tick{stroke:var(--ink);stroke-width:1}
+.cg-lead{fill:none;stroke:var(--ink-2);stroke-width:.8}
+.cg-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cg-card{border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;min-width:0}
+.cg-bh{margin:0 0 6px;font-size:.92rem}
+.cg-sw{display:inline-block;width:.95em;height:.95em;border-radius:50%;border:1px solid var(--ink-2);vertical-align:-.12em;margin-right:.4em}
+.cg-in{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cg-in input{width:6rem}
+.cg-okm{color:var(--green);font-weight:700}
+.cg-msg{margin:6px 0 0;font-size:.88rem}
+.cg-msg.good{color:var(--ink)}
+.cg-id{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.cg-id .chip{font-size:.84rem;padding:.2em .7em}
+#cg-fb2{margin-top:10px}
+#cg-data{margin-top:12px}
+.cg-s3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px;max-width:620px}
+.cg-fig3{margin:0;min-width:0}
+.cg-fig3 svg{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.cg-fig3 figcaption{font-size:.85rem;margin-top:4px;display:grid;gap:2px}
+#cg-anote{margin-top:10px}
+
+@media (max-width:760px){
+  .lp-rs{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .cg-s1,.cg-s2{grid-template-columns:minmax(0,1fr)}
+  .cg-fig{max-width:240px}
+  .cg-cards{grid-template-columns:minmax(0,1fr)}
+  .lp-pg .rg.seg button{padding:.4em .6em;font-size:.86rem}
+}
+.lp-legend{margin:6px 0 0}

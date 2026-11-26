@@ -350,7 +350,10 @@ MV.ease = function(t){ return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2,
 // MV.tween({dur:ms, step(t 0..1 eased), done()}) -> cancel(). With reduced motion it jumps to the end.
 MV.tween = function(o){
   var dur = MV.reduceMotion ? 0 : (o.dur == null ? 800 : o.dur), t0 = null, live = true, ease = o.ease || MV.ease;
-  if (!dur) { o.step(1); if (o.done) o.done(); return function(){}; }
+  // Reduced motion: jump to the end now, but run done() just after this call returns, so the
+  // common pattern  x = MV.tween({ done(){ x = null } })  works (done must not run before the
+  // caller stores the cancel function). Cancelling before then skips done, as in the animated path.
+  if (!dur) { o.step(1); var alive = true; if (o.done) Promise.resolve().then(function(){ if (alive) o.done(); }); return function(){ alive = false; }; }
   function tick(now){
     if (!live) return;
     if (t0 === null) t0 = now;

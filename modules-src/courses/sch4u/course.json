@@ -70,7 +70,8 @@
    "prereqs": [
     "01",
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "04",

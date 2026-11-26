@@ -31,9 +31,12 @@ check passes at both widths, in light and dark mode, with reduced motion, and wi
 Also open the built page's parts yourself in the check's screenshots (or a quick Playwright script) and
 make sure the centrepiece and Part 3 actually work: controls respond, readouts update, predictions
 animate, challenges accept the right state and reject the named wrong states, the performance task's
-checklist reacts.
+checklist reacts. Run your interactive test once with reduced motion on as well: every button must
+re-enable after each animation.
 
 **Rules:**
+- Name your test scripts with the course and number, e.g. `modules-src/.artifacts/t-{course}{nn}*.mjs`
+  (bare `tNN.mjs` names collide across courses).
 - Don't edit `modules-src/toolkit/`, `modules-src/build/`, any other module, any site file (`courses/*.html`,
   `js/`, `functions/`, `CLAUDE.md`), or the course hub. If you need a generic component the toolkit lacks,
   build it inside your `app.js` and list it under "promotion candidates" in your reply.
@@ -44,7 +47,9 @@ checklist reacts.
   never refer to options by letter/position, and in your try scripts pick options by their text.
 - Known toolkit quirks (work around locally): `MV.player` called twice on one host adds duplicate
   listeners (use a fresh host); matching (N6) appends "Try another partner." to mismatch feedback;
-  `Plot.line` ignores alpha; y tick labels clip when the y-axis is off-screen. Don't name a text field `ok` (only a boolean
+  `Plot.line` ignores alpha; `Plot.point` forces full opacity; `Plot.curve` clamps pixel x to 6× canvas height;
+  y tick labels clip when the y-axis is off-screen; every failed challenge check counts as a try; the
+  task frame's "find another" message fires after 3 answers. Don't name a text field `ok` (only a boolean
   `ok` marks answers). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
   your own classes with the module's topic.
 - Canadian spelling, true minus signs, upright function names, colours only from tokens.

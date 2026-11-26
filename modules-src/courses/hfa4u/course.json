@@ -69,7 +69,8 @@
    "part3": "water",
    "prereqs": [
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "04",
@@ -83,7 +84,8 @@
    "prereqs": [
     "02",
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "05",

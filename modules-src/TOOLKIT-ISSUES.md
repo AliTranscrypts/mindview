@@ -37,6 +37,8 @@ every module that uses the touched code, then ship them together).
 
 - Plot (50): `Plot.point` forces full opacity.
 
+- FIXED 1.0.6: with reduced motion, `MV.tween` called done() before returning, so `x = MV.tween({done(){x=null}})` left x set and buttons stuck disabled (sbi4u 02). done() now runs in a microtask after the call returns.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -96,3 +98,4 @@ every module that uses the touched code, then ship them together).
 | detective case chips, functionPicker, canvasMath, breakPieces sampler, task evaluator | mhf4u 50 | review |
 | V4 secantTangent, exactDec (from mhf4u 09) | mcv4u 02 | plan: TC1 h=2.5 and TC3 a=5 states unreachable with plan controls |
 | D3 countingSlots, N4 countEntry (products/powers), D1 treeDiagram (+onLevel) | mdm4u 02 | |
+| S7 spectrumGraph, S9 procedureLab, N8 spectrumTap | sbi4u 02 | |

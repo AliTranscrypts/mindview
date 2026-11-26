@@ -56,7 +56,8 @@
    "prereqs": [
     "01"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "03",
@@ -69,7 +70,8 @@
    "part3": "where",
    "prereqs": [
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "04",
