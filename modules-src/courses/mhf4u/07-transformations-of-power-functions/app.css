@@ -1,0 +1,52 @@
+/* MHF4U 07: hero memory hook, key-point mapper (legend, steppers, factor strip, mapping table), Order matters cards, parameter boxes */
+.hero .hero-eq.md{font-size:clamp(1.9rem,4.6vw,3rem)}
+.hero .hero-eq .m{white-space:normal}
+.hero p.hook{font-size:1rem;padding:8px 12px;border-left:4px solid var(--hi);background:var(--hi-soft);border-radius:4px}
+.kp-leg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0 0;max-width:none}
+.kp-leg span{display:inline-flex;align-items:center;gap:6px}
+.kp-leg .ln{display:inline-block;width:26px;height:0;border-top:2px dashed var(--ink-2)}
+.kp-leg .ln.cur{border-top:3px solid var(--pen)}
+.kp-leg .ln.tg{border-top:2.5px dashed var(--ink);width:30px}
+.kp-leg .dt{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.kp-leg .dt.cr{background:var(--ink-2)}
+.kp-sl .slider-top > span .m{font-size:1.15em}
+.kp-pq-note{margin:10px 0 2px}
+.stp-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin:6px 0 4px}
+.stp{display:flex;align-items:center;gap:6px}
+.stp-l{font-weight:700;margin-right:2px}
+.stp .btn{min-width:40px;min-height:36px;justify-content:center;font-size:1.15rem;padding:.2em .6em}
+.stp-v{font:600 1.35rem var(--font-math);min-width:2.2em;text-align:center}
+.fx-strip{font:400 1.3rem/1.5 var(--font-math);margin:6px 0 10px;min-height:3em;max-width:none}
+.fx-strip .m{white-space:normal}
+.fx2,.fx3{opacity:0;transition:opacity .5s}
+.fx2.on,.fx3.on{opacity:1}
+.fx3{font:400 .95rem var(--font-ui)}
+.kp-tbl{margin-top:16px}
+.kp-th{margin:0 0 6px;font-size:.85rem;color:var(--ink-2)}
+.kp-tbl table.vt th,.kp-tbl table.vt td{padding:5px 10px}
+.kp-tbl table.vt th .m{font-size:1.05rem}
+.kp-tbl tr.hl td{background:var(--hi-soft);font-weight:600}
+.kp-tbl .kp-all{display:none;margin-top:8px}
+@media (max-width:560px){
+  .kp-tbl:not(.all) tr.kp-x{display:none}
+  .kp-tbl .kp-all{display:inline-flex}
+}
+.om-target{font:400 1.3rem var(--font-math);margin:0 0 8px}
+.om-target .m{white-space:normal}
+.om-now{font:400 1.15rem var(--font-math);min-height:1.5em;margin:8px 0}
+.om-now .m{white-space:normal}
+.om-h{margin-top:18px}
+.om-tray{display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);min-height:56px}
+.om-card{border:2px solid var(--ink);background:var(--sheet);border-radius:6px;padding:.45em .8em;text-align:left;font-weight:700;font-size:.95rem;min-height:40px}
+.om-card:hover{border-color:var(--pen)}
+.om-empty{padding:.6em .2em}
+.om .olist{margin-top:6px}
+.pbox-row{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:10px}
+.pbox{display:flex;align-items:center;gap:6px;font-weight:700}
+.pbox .m{font-size:1.2rem}
+.pbox .numin{width:6.5rem}
+ol.spec{margin:0;padding-left:1.3em}
+.lg-cap{font-size:clamp(1.3rem,3.4vw,1.8rem)}
+.seg button[aria-pressed="true"] .p-n{color:inherit}
+.opt .m{white-space:normal}
+.om-target .tiny{white-space:nowrap}
