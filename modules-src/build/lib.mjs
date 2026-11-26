@@ -69,6 +69,11 @@ export function arrangeOptions(list, salt){
 // Decision 7 (answers lightly scrambled): option {ok:true} -> {_n, _k}; item {answer:x} -> {_a: base64(xor(json, salt))}.
 export function encodeAnswers(content, salt){
   let counter = 0;
+  // Quick-check chip sets that repeat across items (Even|Odd|Neither, Yes|No …) are answer scales
+  // and keep their order; a 4-choice set used once is reordered like an options list.
+  const sigCount = {};
+  const sig = list => list.map(x => plain(x && (x.t != null ? x.t : x.text))).join("|");
+  (function scan(o){ if (Array.isArray(o)) return o.forEach(scan); if (o && typeof o === "object") for (const k of Object.keys(o)) { if (k === "choices" && Array.isArray(o[k])) { const g = sig(o[k]); sigCount[g] = (sigCount[g] || 0) + 1; } scan(o[k]); } })(content);
   const enc = v => {
     const bytes = Buffer.from(JSON.stringify(v), "utf8");
     for (let i = 0; i < bytes.length; i++) bytes[i] ^= salt.charCodeAt(i % salt.length);
@@ -92,6 +97,7 @@ export function encodeAnswers(content, salt){
       for (const k of Object.keys(o)) {
         if (k === "answer") r._a = enc(o[k]);
         else if ((k === "options" || k === "fixes") && !o.fixedOrder) r[k] = walk(arrangeOptions(o[k], salt));
+        else if (k === "choices" && !o.fixedOrder && Array.isArray(o[k]) && sigCount[sig(o[k])] === 1) r[k] = walk(arrangeOptions(o[k], salt));
         else r[k] = walk(o[k]);
       }
       return r;

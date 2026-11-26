@@ -18,6 +18,8 @@ every module that uses the touched code, then ship them together).
 
 - FIXED 1.0.4: long math in feedback, hints, refreshers and readouts didn't wrap on phones (11).
 
+- FIXED 1.0.5: one-off 4-choice quick checks also kept the plan's answer-first order (15); now reordered too. Repeated chip sets keep their order.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -34,3 +36,4 @@ every module that uses the touched code, then ship them together).
 | N15 moveChooser, N25 flattenMorph, N4 rootBoxes, dotLabels | mhf4u 13 | |
 | N21 zeroSlots, exactQ | mhf4u 14 | |
 | recipPieces (G1+G16), reciprocalTwin, G13 valueBar variant, N11 signLine, N6 graphMatch, N4 coefBoxes | mhf4u 18 | plan issue: TC1 answer equals the start state |
+| N11 signChart (+ .build, signScanner), N25 flattenMorph with gap bars | mhf4u 15 | |
