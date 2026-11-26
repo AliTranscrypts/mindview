@@ -1,0 +1,84 @@
+/* MHF4U 13: hero line, N15 strategy path, N28 pop-up board, Part 3 stations (N25 flatten morph), N4 root boxes, task */
+.hero .hero-eq .m{white-space:normal}
+.hero .hero-eq.sm{font-size:clamp(1.3rem,3.4vw,2.05rem);line-height:1.3}
+.hero .hero-eq.sm .nw .m{white-space:nowrap}
+.fb .m,.pred-q .m,.hints .m,.sbtn .m,.task .m,.sq-p .m,.refresh .m,.face .m,.chal .q-prompt .m,.mitem .m,.read dd .m,.rb-q .m{white-space:normal}
+/* hero */
+.hz-line{font:400 clamp(1.15rem,2.6vw,1.45rem)/1.4 var(--font-math);text-align:center;min-height:2.9em;margin:0 0 8px;display:flex;align-items:center;justify-content:center}
+.hz-line .m{white-space:normal}
+.hz-in{display:inline-block;animation:hzIn .5s ease-out}
+.hz-r{display:inline-block;transition:transform .8s ease-in,opacity .8s ease-in}
+.hz-r.go{transform:translateX(-170%);opacity:0}
+.hz-hl{background:var(--hi);color:var(--hi-ink);border-radius:4px;padding:0 .15em}
+@keyframes hzIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#hero-cap .m{white-space:normal}
+/* N15 strategy path */
+.sp .eq-cap{font-size:clamp(1.25rem,3vw,1.75rem);line-height:1.3}
+.sp-hist{margin:0 0 4px}
+.sp-lines{list-style:none;margin:0;padding:0 0 0 2px;border-left:3px solid var(--rule)}
+.sp-l{font:400 1.02rem/1.45 var(--font-math);color:var(--ink-2);padding-left:10px;overflow-wrap:anywhere}
+.sp-l .m{white-space:normal}
+.sp-more{display:none;margin:0 0 4px;font-size:.85rem}
+.sp-gcap{margin:6px 0 0}
+.sp-gcap .m{white-space:normal}
+.sp-modes .seg-wrap{margin-top:0}
+.sp-chips{margin:12px 0 6px}
+.sp-eq{font-size:1rem;display:inline-flex;align-items:center;gap:.4em}
+.sp-tag{font:700 .8rem var(--font-ui);color:var(--ink-2)}
+.sp-eq[aria-pressed="true"] .sp-tag{color:var(--hi-ink)}
+.sp-note:empty{display:none}
+.sp-h{font-weight:700;margin:10px 0 6px}
+.sp-menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(14rem,1fr));gap:6px}
+.sp-mv{justify-content:flex-start;text-align:left;min-height:40px;font-size:.95rem}
+.sp-mv .m{white-space:nowrap}
+.sp-mv.flash{background:var(--hi);color:var(--hi-ink);border-color:var(--ink)}
+.sp-fb{margin-top:8px}
+.sp-fb:empty{display:none}
+.sp-foot{margin-top:12px}
+.sp-hbox{margin-top:12px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.sp-hhead{margin:0 0 6px}
+.sp-hhead .m{white-space:normal}
+.sp-build .slider output{color:var(--ink)!important}
+.sp-build input[type=range]{accent-color:var(--ink)!important}
+/* N28 candidate tiles (from MHF4U 12) */
+.rh-note{margin:10px 0 6px;max-width:none}
+.rh-board{display:flex;flex-wrap:wrap;gap:6px;min-height:8px}
+.rh-tile{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-width:3.2rem;min-height:44px;padding:.25em .55em;border:2px solid var(--ink);border-radius:6px;background:var(--sheet);color:var(--ink);font:400 1.15rem var(--font-math)}
+.rh-tile:disabled{opacity:1}
+.rh-tile:not(:disabled):hover{border-color:var(--pen)}
+.rh-tile .rh-v{font:400 .78rem var(--font-ui);color:var(--ink-2);white-space:nowrap}
+.rh-tile .rh-v .m{font-size:1em}
+.rh-tile.miss{border-color:var(--rule);color:var(--ink-2);background:var(--paper)}
+.rh-tile.hit{background:var(--hi);border-color:var(--ink);color:var(--hi-ink);box-shadow:0 0 0 3px var(--hi-soft)}
+.rh-tile.hit .rh-v{color:var(--hi-ink);font-weight:700}
+/* Part 3 stations */
+.rt-chips .fchip.txt{font:700 .95rem var(--font-ui)}
+.rt-st h3{margin-top:4px}
+.rt-model{margin:6px 0 10px}
+.rt-model .m,.rt-fac .m{white-space:normal}
+.rt-fac{margin:12px 0 6px}
+.rt-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:10px}
+#rt2-res .tbl-wrap{margin:8px 0}
+#rt3-sl .slider output{color:var(--ink)!important}
+#rt3-sl input[type=range]{accent-color:var(--ink)!important}
+/* Practice: root boxes */
+.rb-q{font:400 clamp(1.2rem,3vw,1.5rem)/1.4 var(--font-math);margin:6px 0 10px}
+.rb-q.txt{font:400 1.05rem/1.5 var(--font-ui)}
+.rb-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.rb-lab{font-weight:700}
+.rb-boxes{display:flex;flex-wrap:wrap;gap:8px}
+.rb-in.numin.short{width:5.6rem}
+/* Performance task */
+.tl-conds{margin:6px 0 10px;padding-left:1.4em}
+.tl-eq{font-size:clamp(1.2rem,3vw,1.6rem)}
+.tl-row label > span:first-child{font:400 1.2rem var(--font-math)}
+.tl-box{display:inline-flex;align-items:center;gap:4px}
+.tl-box .btn{min-width:34px;justify-content:center;padding:.3em .55em}
+.tl-row .tl-box input{width:4.6rem}
+.tl-roots{margin:4px 0 10px}
+.tl-roots .m{white-space:normal}
+@media (max-width:560px){
+  .sp-lines:not(.all) .sp-l:nth-last-child(n+3){display:none}
+  .sp-more{display:inline-block}
+  .sp-menu{grid-template-columns:minmax(0,1fr)}
+}

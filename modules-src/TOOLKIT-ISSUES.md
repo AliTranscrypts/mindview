@@ -31,3 +31,4 @@ every module that uses the touched code, then ship them together).
 | topicTable, N8 tap marker, graph-option MC, tappable equation parts, fraction box, mixed-kind activity | mhf4u 10 | review module |
 | N28 rootHunter (with its own synthetic-division step-through), N4 factorTray, groupingTiles, cubeVolumeModel | mhf4u 12 | |
 | N22 syntheticDivision, G13 valueBar, N4 boxSet | mhf4u 11 | |
+| N15 moveChooser, N25 flattenMorph, N4 rootBoxes, dotLabels | mhf4u 13 | |
