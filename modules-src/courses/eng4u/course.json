@@ -227,7 +227,8 @@
     "11"
    ],
    "trivium": "Rhetoric",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",
@@ -245,8 +246,7 @@
     "04"
    ],
    "trivium": "Logic",
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "14",
