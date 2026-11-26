@@ -1,0 +1,102 @@
+/* MHF4U 35: hero labels, wheel–graph link, Ferris wheel lab controls, real-data builder, change bars, task steppers */
+.hero .hero-eq.sm{font-style:italic;padding-bottom:2.9rem;line-height:1.15}
+.heq-l{position:relative;display:inline-block}
+.heq-l small{position:absolute;top:100%;left:50%;transform:translateX(-50%);width:8.6em;margin-top:.3rem;font:400 .74rem/1.2 var(--font-ui);font-style:normal;color:var(--ink-2);text-align:center;letter-spacing:0;white-space:normal}
+.hero-eq .m{white-space:nowrap}
+@media (max-width:560px){
+  .hero .hero-eq.sm{padding-bottom:4.4rem}
+  .heq-l small{width:6.4em;font-size:.64rem}
+}
+#hero-cap .m{white-space:normal}
+/* wheel–graph link: one canvas above 560 px, two stacked canvases at 560 px and below */
+.wg-two{display:none}
+canvas.plot.wg-c1{aspect-ratio:16/10}
+@media (max-width:560px){
+  .wg-one{display:none}
+  .wg-two{display:grid;gap:8px}
+  .lab-hrow{outline:2.5px solid var(--hi);outline-offset:2px;border-radius:6px}
+}
+/* radio groups (from MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+/* Ferris wheel lab */
+.lab-top{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 12px}
+.lab-lock{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 10px;border:1.5px dashed var(--ink-2);border-radius:8px;background:var(--paper)}
+.lab-cap{font-size:clamp(1.35rem,3.4vw,2rem)}
+.lab-unch{display:inline-block;font:700 .9rem var(--font-ui);color:var(--p-k);background:var(--hi-soft);border:1.5px solid var(--p-k);border-radius:6px;padding:.05em .45em;vertical-align:middle}
+.lab-unch .m{font-size:1.05em}
+.lab-rate{margin-top:8px}
+canvas#lab-rate{aspect-ratio:auto;height:120px}
+.lab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:16px 28px;align-items:start;margin-top:16px}
+.lab-ctrl,.lab-read{min-width:0}
+.lab-grp{margin:0 0 12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.lab-grp > summary{font-weight:700;cursor:pointer;min-height:28px}
+.lab-row{margin:8px 0 4px}
+.lab-note{min-height:1.2em;margin:4px 0 0}
+.lab-tb{margin-top:6px}
+.lab-tog{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.lab-tog .chip{min-height:34px}
+.lab-tog .chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.lab-read .tbl-wrap{margin-top:4px}
+.lab-read table.vt td,.lab-read table.vt th{padding:4px 10px}
+@media (max-width:820px){ .lab-grid{grid-template-columns:minmax(0,1fr)} }
+/* Part 3: real data */
+.dt-set{margin:0 0 12px}
+.dt-story{margin:0 0 12px}
+.dt-story p{margin:0 0 6px}
+.dt-main{margin-top:14px}
+.dt-pts{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%)}
+.dt-pts:focus-within{position:static;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.dt-pts .chip{font-size:.8rem;min-height:30px}
+.dt-pts .chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.dt-card{border:1.5px solid var(--rule);border-radius:8px;padding:12px 14px;min-width:0}
+.dt-h{margin:0 0 8px}
+.dt-done{margin:4px 0;color:var(--ink)}
+.dt-later{margin:4px 0;color:var(--ink-2);opacity:.75}
+.dt-step{margin:8px 0;padding:8px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.dt-sname{margin:0 0 4px}
+.dt-step .numrow,.dt-uq .numrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.dt-kask{margin:10px 0 4px;font-weight:700}
+.dt-k{display:flex;flex-wrap:wrap;gap:6px}
+.dt-k .fchip{min-width:52px}
+.dt-form{margin:4px 0 8px}
+.dt-fit{margin-top:10px}
+.dt-fitc{display:flex;flex-wrap:wrap;gap:6px}
+.dt-fitc .chip{min-height:34px}
+.dt-alg-lines p{margin:8px 0 0;font-size:1.02rem}
+.dt-alg-lines p.dt-cur{background:var(--hi-soft);border-radius:6px;padding:2px 6px}
+.dt-frame{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.dt-frame label{display:inline-flex;gap:6px;align-items:center}
+.dt-frame .numin{width:4.6rem}
+.dt-uq{margin:10px 0 0}
+#dt-rplot{margin-top:10px}
+.dt-bars{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px}
+.dt-bt{margin:0 0 6px}
+.dt-bscroll{overflow-x:auto}
+.dt-brow{display:flex;gap:4px;align-items:stretch;min-width:max-content;height:128px;position:relative;background:linear-gradient(var(--ink-2),var(--ink-2)) 0 56px/100% 1.5px no-repeat}
+.dt-bar{position:relative;width:24px;height:128px;border:0;background:transparent;padding:0;border-radius:4px}
+.dt-bar.on{background:var(--hi-soft)}
+.dt-bb{position:absolute;left:4px;right:4px;background:var(--pen);border-radius:2px}
+.dt-bb.up{bottom:72px}
+.dt-bb.dn{top:57px}
+.dt-bm{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:.72rem;color:var(--ink-2)}
+.dt-bsel{margin:6px 0 4px;font-weight:700}
+/* task */
+.tk-in{display:flex;flex-wrap:wrap;gap:12px 18px;margin:10px 0 14px}
+.tk-f label{display:block;font-weight:700;margin-bottom:4px}
+.tk-row{display:flex;align-items:center;gap:6px}
+.tk-row input{width:4.8rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:.4em .6em;font:400 1.2rem var(--font-math);text-align:center}
+.tk-row input:focus{border-color:var(--ink)}
+.tk-pm{min-width:40px;min-height:40px;padding:0 .4em;font-size:1.2rem;line-height:1}
+.tk-cap{font-size:clamp(1.2rem,3vw,1.6rem)}
+/* long models and worked lines wrap on phones */
+.sbtn .m,.mitem .m,.q-prompt .m,.task .m,.dt-card .m,.lab-read .m{white-space:normal}
+.m .frac{white-space:nowrap}

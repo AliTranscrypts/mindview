@@ -67,3 +67,4 @@ every module that uses the touched code, then ship them together).
 | N23 overlayGauge, N4 sinBuilder, N8 keyPoints, N6 graphMatch, radioGroup, cycleRuler | mhf4u 33 | |
 | N18 concept-map variant, N12 extended to π/12 and 5π/12, mixed-practice set, per-topic tables | mhf4u 30 | review |
 | N9 heightSlider, radioGroup (from 28), N4 entryBoxes | mhf4u 34 | |
+| N19+N24 wheelGraph, radioGroup with per-option disabling | mhf4u 35 | |
