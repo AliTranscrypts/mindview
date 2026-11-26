@@ -6,7 +6,7 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 168/295 live, 1 built, 126 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 169/295 live, 1 built, 125 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
@@ -15,8 +15,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 21/39 | 0 | 18 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 0 | 35 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 19/25 | 1 | 5 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 13/24 | 0 | 11 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 20/25 | 0 | 5 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 13/24 | 1 | 10 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -300,7 +300,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
 - ✓ 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - ✓ 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
-- ◐ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
+- ✓ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - … 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
 - … 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
 - … 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
@@ -322,7 +322,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - ✓ 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - ✓ 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
-- … 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
+- ◐ 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
 - … 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
 - … 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
 - … 17 Choosing a Novel of Literary Merit (`choosing-a-novel`, topic, site ch5)
