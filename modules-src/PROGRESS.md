@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 72/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 73/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 6/59 | 1 | 52 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 7/59 | 0 | 52 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 4/39 | 0 | 35 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 3/52 | 0 | 49 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 4/25 | 0 | 21 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 0 | 22 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 1 | 21 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -79,7 +79,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 04 The Limit of a Function (`the-limit-of-a-function`, topic, site ch1)
 - ✓ 05 Properties of Limits (`properties-of-limits`, topic, site ch1)
 - ✓ 06 Continuity (`continuity`, topic, site ch1)
-- ◐ 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
+- ✓ 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
 - … 08 Derivatives from First Principles (`derivatives-from-first-principles`, topic, site ch2)
 - … 09 Derivatives of Polynomials (`derivatives-of-polynomials`, topic, site ch2)
 - … 10 The Product Rule (`the-product-rule`, topic, site ch2)
@@ -311,10 +311,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 - ✓ 01 Literary Devices & Figurative Language (`literary-devices`, topic, site ch1)
 - ✓ 02 Close Reading of Short Fiction (`close-reading-short-fiction`, topic, site ch1)
-- … 03 Reading Poetry (`reading-poetry`, topic, site ch1)
+- ◐ 03 Reading Poetry (`reading-poetry`, topic, site ch1)
 - … 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
 - … 05 The Writing Process (`writing-process`, topic, site ch2)
-- · 06 Essay Forms (`essay-forms`, topic, site ch2)
+- … 06 Essay Forms (`essay-forms`, topic, site ch2)
 - · 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - · 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - · 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
