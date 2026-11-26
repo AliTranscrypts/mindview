@@ -37,3 +37,4 @@ every module that uses the touched code, then ship them together).
 | N21 zeroSlots, exactQ | mhf4u 14 | |
 | recipPieces (G1+G16), reciprocalTwin, G13 valueBar variant, N11 signLine, N6 graphMatch, N4 coefBoxes | mhf4u 18 | plan issue: TC1 answer equals the start state |
 | N11 signChart (+ .build, signScanner), N25 flattenMorph with gap bars | mhf4u 15 | |
+| approachLadder, exactQ, leadRace | mhf4u 17 | |

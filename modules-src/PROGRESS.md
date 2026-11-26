@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 15/295 live, 1 built, 5 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 16/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 15/50 | 1 | 34 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 16/50 | 1 | 33 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -34,15 +34,15 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Factor Theorem & Sum/Difference of Cubes (`factor-theorem-and-sum-difference-of-cubes`, topic, site ch2)
 - ✓ 13 Solving Polynomial Equations (`solving-polynomial-equations`, topic, site ch2)
 - ✓ 14 Family of Polynomial Functions (`family-of-polynomial-functions`, topic, site ch2)
-- ◐ 15 Polynomial Inequalities (`polynomial-inequalities`, topic, site ch2)
-- · 16 Chapter 2 Summary & Review (`chapter-2-review`, review, site ch2)
-- … 17 Introduction to Rational Functions (`introduction-to-rational-functions`, topic, site ch3)
+- ✓ 15 Polynomial Inequalities (`polynomial-inequalities`, topic, site ch2)
+- … 16 Chapter 2 Summary & Review (`chapter-2-review`, review, site ch2)
+- ◐ 17 Introduction to Rational Functions (`introduction-to-rational-functions`, topic, site ch3)
 - ✓ 18 Reciprocal of Linear Functions (`reciprocal-of-linear-functions`, topic, site ch3)
 - … 19 Reciprocal of Quadratic Functions (`reciprocal-of-quadratic-functions`, topic, site ch3)
 - … 20 Linear over Linear Rational Functions (`linear-over-linear-rational-functions`, topic, site ch3)
 - … 21 Holes and Oblique Asymptotes (`holes-and-oblique-asymptotes`, topic, site ch3)
 - … 22 Rational Equations and Inequalities (`rational-equations-and-inequalities`, topic, site ch3)
-- · 23 Word Problems with Rational Functions (`word-problems-with-rational-functions`, topic, site ch3)
+- … 23 Word Problems with Rational Functions (`word-problems-with-rational-functions`, topic, site ch3)
 - · 24 Chapter 3 Summary & Review (`chapter-3-review`, review, site ch3)
 - · 25 Radian Measure (`radian-measure`, topic, site ch4)
 - · 26 Special Angles and Trig Ratios (`special-angles-and-trig-ratios`, topic, site ch4)
