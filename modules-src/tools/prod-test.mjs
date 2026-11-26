@@ -65,8 +65,9 @@ async function visit(ctx, url, what, check) {
   const before = failures.length;
   await visitOnce(ctx, url, what, check, true);
   if (failures.length > before) {
+    const why = failures.slice(before).join(' | ');
     failures.length = before;
-    console.log(`    … retrying ${what} in 8 s`);
+    console.log(`    … retrying ${what} in 8 s (first attempt: ${why.slice(0, 220)})`);
     await new Promise((r) => setTimeout(r, 8000));
     await visitOnce(ctx, url, what, check, false);
   }
@@ -82,6 +83,9 @@ async function visitOnce(ctx, url, what, check, quiet) {
     if (m.type() !== 'error') return;
     const src = (m.location() && m.location().url) || '';
     if (/favicon/i.test(m.text() + src)) return; // the site has no favicon (pre-existing 404)
+    // Third-party embeds (the chapter pages' YouTube videos) log their own policy warnings; only
+    // errors from the site's own origin count.
+    if (src && !src.startsWith(base)) return;
     errors.push('console: ' + m.text() + (src ? ` [${src}]` : ''));
   });
   try {

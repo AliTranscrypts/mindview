@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 67/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 68/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 5/59 | 0 | 54 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 5/59 | 1 | 53 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 3/39 | 0 | 36 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 2/52 | 0 | 50 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 2/46 | 1 | 43 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 3/25 | 0 | 22 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 0 | 22 | 0 |
 
@@ -78,9 +78,9 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 03 Rates of Change (`rates-of-change`, topic, site ch1)
 - ✓ 04 The Limit of a Function (`the-limit-of-a-function`, topic, site ch1)
 - ✓ 05 Properties of Limits (`properties-of-limits`, topic, site ch1)
-- … 06 Continuity (`continuity`, topic, site ch1)
+- ◐ 06 Continuity (`continuity`, topic, site ch1)
 - … 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
-- · 08 Derivatives from First Principles (`derivatives-from-first-principles`, topic, site ch2)
+- … 08 Derivatives from First Principles (`derivatives-from-first-principles`, topic, site ch2)
 - · 09 Derivatives of Polynomials (`derivatives-of-polynomials`, topic, site ch2)
 - · 10 The Product Rule (`the-product-rule`, topic, site ch2)
 - · 11 The Quotient Rule (`the-quotient-rule`, topic, site ch2)
@@ -234,7 +234,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 - ✓ 01 Leaf Structure (`leaf-structure`, topic, site ch2)
 - ✓ 02 Light and Photosynthetic Pigments (`light-and-pigments`, topic, site ch2)
-- ◐ 03 Chlorophyll and Chloroplasts (`chlorophyll-and-chloroplasts`, topic, site ch2)
+- ✓ 03 Chlorophyll and Chloroplasts (`chlorophyll-and-chloroplasts`, topic, site ch2)
 - … 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
 - · 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
 - · 06 Light Reactions (`light-reactions`, topic, site ch2)
