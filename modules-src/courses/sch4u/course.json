@@ -191,8 +191,7 @@
     "02",
     "09"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "12",
@@ -208,7 +207,8 @@
     "03",
     "05"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",
@@ -275,7 +275,8 @@
    "part3": "formal-charge",
    "prereqs": [
     "16"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "18",
