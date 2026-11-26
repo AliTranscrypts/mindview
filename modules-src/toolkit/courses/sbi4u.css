@@ -1,0 +1,36 @@
+/* SBI4U course styles (toolkit/courses/sbi4u.css). The assembler adds this file to every SBI4U module, after the toolkit CSS.
+   Biology colour roles (course plan §3), light / dark, defined like the base tokens (MHF4U hexes, contrast-checked):
+     --bio-e       violet    #7A3DB8 / #C9A8FF  electrons (e⁻); also tRNA, K⁺, LH, T₃/T₄
+     --bio-h       magenta   #B0286F / #F49AC8  protons (H⁺); also primers, neurotransmitter, estrogen
+     --bio-atp     orange    #A84C05 / #FF9F5A  ATP (draw ADP and Pᵢ in --ink-2 beside it); also glucagon, testosterone, species 2
+     --bio-nadh    teal      #0B7372 / #5FD0CD  NADH and NADPH; also mRNA and guide RNA, Na⁺, FSH, TSH, species 3
+     --bio-fadh    cerulean  #00648A / #7FD3F5  FADH₂; also Ca²⁺, ADH
+     --bio-carbon  brown     #6B5A1E / #D8D08F  carbon compounds and carbon tokens (glucose, pyruvate, acetyl, CO₂'s carbon);
+                                                also amino acids and polypeptides, Cl⁻, progesterone, aldosterone
+     --bio-o2      blue      = --pen            O₂ and H₂O; also the newly made DNA strand, insulin, species 1
+     --leaf        green     #4F6B2E / #A8C98A  plant tissue in illustrations ONLY (modules 01–09). Never feedback:
+                                                right answers keep ✓ and --green.
+     --leaf-fill / --leaf-edge                  --leaf at 20 % and 70 % (plan: tissue fills 20 %, edges 70 %), for HTML/SVG
+   Photons: wavy arrows in --ink (spectral colours only in module 02, always with the wavelength labelled).
+   DNA template / coding / new strand: --ink / --ink-2 / --pen.  Population K line: --ink-2 dashed.
+   Rule 4: one hue = one role per module. When two roles that share a hue meet in one module, redraw one in --ink.
+   In SVG, fill="var(--leaf)" works; in canvas code read the value with MV.css("--leaf").
+   Classes:
+     .bio-tok    molecule token pill, text in --sheet on the role colour: MV.bio.tok("CO2", "--bio-carbon") or
+                 <span class="bio-tok" style="--tok:var(--bio-carbon)">CO₂</span>
+     .bio-sw     small square swatch: <i class="bio-sw" style="background:var(--leaf)"></i>
+     .bio-model  "Model data" tag for rounded or made-up data (course plan §2, Accuracy)
+     .bio-chem   keeps a formula or reaction on one line */
+:root{--bio-e:#7A3DB8;--bio-h:#B0286F;--bio-atp:#A84C05;--bio-nadh:#0B7372;--bio-fadh:#00648A;--bio-carbon:#6B5A1E;--leaf:#4F6B2E;
+  --leaf-fill:rgba(79,107,46,.2);--leaf-edge:rgba(79,107,46,.7);--bio-o2:var(--pen)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bio-e:#C9A8FF;--bio-h:#F49AC8;--bio-atp:#FF9F5A;--bio-nadh:#5FD0CD;--bio-fadh:#7FD3F5;--bio-carbon:#D8D08F;--leaf:#A8C98A;
+    --leaf-fill:rgba(168,201,138,.2);--leaf-edge:rgba(168,201,138,.7);--bio-o2:var(--pen)}
+}
+:root[data-theme="dark"]{--bio-e:#C9A8FF;--bio-h:#F49AC8;--bio-atp:#FF9F5A;--bio-nadh:#5FD0CD;--bio-fadh:#7FD3F5;--bio-carbon:#D8D08F;--leaf:#A8C98A;
+  --leaf-fill:rgba(168,201,138,.2);--leaf-edge:rgba(168,201,138,.7);--bio-o2:var(--pen)}
+
+.bio-tok{display:inline-block;background:var(--tok,var(--ink));color:var(--sheet);border-radius:999px;padding:.05em .5em;font-size:.85em;font-weight:700;line-height:1.35;white-space:nowrap}
+.bio-sw{display:inline-block;width:.85em;height:.85em;border-radius:2px;vertical-align:-.08em;border:1px solid var(--ink-2)}
+.bio-model{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:.05em .45em}
+.bio-chem{white-space:nowrap}

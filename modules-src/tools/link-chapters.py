@@ -8,8 +8,8 @@ courses/<site>/ch<N>.html gets a block listing the modules mapped to that chapte
 (module "siteChapter") whose status is built/live and whose page courses/<site>/modules/NN-slug.html exists.
 
 The block sits between <!-- mv-modules:start --> and <!-- mv-modules:end -->,
-directly before the chapter's first topic block, so it never disturbs the locked
-order (hero → topics → AS/FOR/OF strip → prev/next). Re-running replaces it;
+directly after the chapter's unit header (before the first topic), so it never disturbs the
+locked order (hero → topics → AS/FOR/OF strip → prev/next). Re-running replaces it;
 a chapter with no built modules gets no block. Idempotent.
 """
 import html, json, re, sys
@@ -60,6 +60,28 @@ def block(course, mods, indent):
     )
 
 
+def anchor(text, page):
+    """Insertion point just after the chapter's unit-header block (every course's chapter pages
+    have one: title, subtitle, meta), so the modules block is the first thing under the header.
+    Returns (offset of the line to insert before, indentation to use)."""
+    at = text.find('<div class="unit-header"')
+    if at < 0:
+        raise SystemExit(f"{page}: no unit-header to anchor the modules block")
+    line_start = text.rfind("\n", 0, at) + 1
+    indent = text[line_start:at]
+    depth, i = 0, at
+    tag = re.compile(r"<div\b|</div>")
+    for m in tag.finditer(text, at):
+        depth += 1 if m.group(0) != "</div>" else -1
+        if depth == 0:
+            i = m.end()
+            break
+    else:
+        raise SystemExit(f"{page}: unbalanced unit-header block")
+    nl = text.find("\n", i)
+    return (nl + 1 if nl >= 0 else len(text)), indent
+
+
 def link_course(name):
     course = json.loads((SRC / name / "course.json").read_text())
     site = course["site"]
@@ -73,11 +95,7 @@ def link_course(name):
                 and m.get("status") in ("built", "live")
                 and (REPO / "courses" / site / "modules" / f'{m["nn"]}-{m["slug"]}.html').exists()]
         if mods:
-            at = base.find('<div class="topic-block"')
-            if at < 0:
-                raise SystemExit(f"{page}: no topic-block to anchor the modules block")
-            line_start = base.rfind("\n", 0, at) + 1
-            indent = base[line_start:at]
+            line_start, indent = anchor(base, page)
             new = base[:line_start] + block(course, mods, indent) + base[line_start:]
         else:
             new = base

@@ -1,0 +1,34 @@
+/* SCH4U course styles (toolkit/courses/sch4u.css). The assembler adds this file to every SCH4U module, after the toolkit CSS.
+   Colour-role tokens (course plan §4), light and dark, defined the same three ways as the base tokens:
+     atoms     --at-c (C, ink) · --at-h (H fill, white in both themes) · --at-h-line (H outline) · --at-h-ink (letter on an H ball)
+               --at-o (O, magenta) · --at-n (N, blue) · --at-x (F, Cl, Br, I: teal) · --at-s (S, brown) · --at-p (P, orange) · --at-m (metals, cerulean)
+     electrons --e-pair (electrons, lone pairs, curved electron arrows: violet) · --dl-neg (δ−, magenta) · --dl-pos (δ+, blue)
+     energy    --en-dh (ΔH arrow, orange) · --en-ea (Ea arrow, brown) · --en-cat (catalysed path, teal; draw it dashed)
+     equilib.  --eq-r (reactants, blue) · --eq-p (products, teal) · --eq-f (forward rate, blue) · --eq-b (reverse rate, orange)
+     acid–base --ab-h3o (H₃O⁺, magenta) · --ab-oh (OH⁻, cerulean)
+     electro.  --ec-e (electrons, violet) · --ec-cat (cations, orange) · --ec-an (anions, teal)
+     orbitals  --orb-a / --orb-b (lobe phases, blue / orange; nodes use --ink-2 dashed)
+   Text on a coloured atom ball: var(--sheet), except on H: var(--at-h-ink). MV.chem.atom(el) returns the right trio.
+   Classes: .chem (formula from MV.chem.f: sub/sup sizing) · .chem-tab (C13 data-table panel from MV.chem.tablePanel). */
+:root{--at-c:#1E2A57;--at-h:#FFFFFF;--at-h-line:#4D5A80;--at-h-ink:#1E2A57;--at-o:#B0286F;--at-n:#2343C4;--at-x:#0B7372;--at-s:#6B5A1E;--at-p:#A84C05;--at-m:#00648A;
+  --e-pair:#7A3DB8;--dl-neg:#B0286F;--dl-pos:#2343C4;--en-dh:#A84C05;--en-ea:#6B5A1E;--en-cat:#0B7372;--eq-r:#2343C4;--eq-p:#0B7372;--eq-f:#2343C4;--eq-b:#A84C05;
+  --ab-h3o:#B0286F;--ab-oh:#00648A;--ec-e:#7A3DB8;--ec-cat:#A84C05;--ec-an:#0B7372;--orb-a:#2343C4;--orb-b:#A84C05}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--at-c:#E5ECE4;--at-h:#FFFFFF;--at-h-line:#A8B7AC;--at-h-ink:#1E2A57;--at-o:#F49AC8;--at-n:#93AEFF;--at-x:#5FD0CD;--at-s:#D8D08F;--at-p:#FF9F5A;--at-m:#7FD3F5;
+    --e-pair:#C9A8FF;--dl-neg:#F49AC8;--dl-pos:#93AEFF;--en-dh:#FF9F5A;--en-ea:#D8D08F;--en-cat:#5FD0CD;--eq-r:#93AEFF;--eq-p:#5FD0CD;--eq-f:#93AEFF;--eq-b:#FF9F5A;
+    --ab-h3o:#F49AC8;--ab-oh:#7FD3F5;--ec-e:#C9A8FF;--ec-cat:#FF9F5A;--ec-an:#5FD0CD;--orb-a:#93AEFF;--orb-b:#FF9F5A}
+}
+:root[data-theme="dark"]{--at-c:#E5ECE4;--at-h:#FFFFFF;--at-h-line:#A8B7AC;--at-h-ink:#1E2A57;--at-o:#F49AC8;--at-n:#93AEFF;--at-x:#5FD0CD;--at-s:#D8D08F;--at-p:#FF9F5A;--at-m:#7FD3F5;
+  --e-pair:#C9A8FF;--dl-neg:#F49AC8;--dl-pos:#93AEFF;--en-dh:#FF9F5A;--en-ea:#D8D08F;--en-cat:#5FD0CD;--eq-r:#93AEFF;--eq-p:#5FD0CD;--eq-f:#93AEFF;--eq-b:#FF9F5A;
+  --ab-h3o:#F49AC8;--ab-oh:#7FD3F5;--ec-e:#C9A8FF;--ec-cat:#FF9F5A;--ec-an:#5FD0CD;--orb-a:#93AEFF;--orb-b:#FF9F5A}
+
+.chem{white-space:nowrap}
+.chem sub,.chem sup{font-size:.72em;line-height:0}
+.chem sub{vertical-align:-.28em}
+.chem sup{vertical-align:.5em}
+.chem-tab{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.chem-tab summary{font-weight:700;cursor:pointer;min-height:28px}
+.chem-tab label{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 8px;font-size:.9rem;font-weight:700}
+.chem-tab input{font:inherit;font-weight:400;padding:.3em .5em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);min-width:0;flex:1 1 10rem;max-width:18rem}
+.chem-tab table.vt td{text-align:left}
+.chem-tab .tbl-wrap{max-height:320px;overflow:auto}

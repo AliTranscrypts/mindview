@@ -85,3 +85,4 @@ every module that uses the touched code, then ship them together).
 | functionPicker, tonePlayer, N27 linkedPanels (strip), G13 valueBar (stacked, clipped) | mhf4u 46 | |
 | N18 concept map, gateLanes, G11 canvasMath | mhf4u 45 | review |
 | N4 fillBoxes | mhf4u 48 | |
+| V8 exactBox, areaTiles; move ∛ support into core MV.m | mcv4u 01 | course files: mcv4u.css (--f4, --f5, .vec.wide), mcv4u.js (MV.mcv.rpow, Q, S, exact.judge) |
