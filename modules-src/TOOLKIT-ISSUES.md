@@ -68,3 +68,4 @@ every module that uses the touched code, then ship them together).
 | N18 concept-map variant, N12 extended to π/12 and 5π/12, mixed-practice set, per-topic tables | mhf4u 30 | review |
 | N9 heightSlider, radioGroup (from 28), N4 entryBoxes | mhf4u 34 | |
 | N19+N24 wheelGraph, radioGroup with per-option disabling | mhf4u 35 | |
+| statementBuilder, G11 canvasMath/edgeArrow/mirrorSeg, G9+G11 twinScene, N9 stepSlider (Shift-arrow) | mhf4u 37 | |
