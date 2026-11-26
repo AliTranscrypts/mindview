@@ -1,0 +1,127 @@
+/* MDM4U 04: hero, Venn workbench (D2 Venn, extended), Part 3 stations, "Name the region" pictures, task */
+/* radioGroup (from MDM4U 02 / 03) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button .m{font-size:1.05em}
+
+/* @component D2 vennDiagram styles (copy with the component) */
+.vd{margin:4px 0 0}
+.vd-names{display:flex;flex-wrap:wrap;gap:2px 18px;margin:0 0 6px;font-size:.95rem}
+.vd-names:empty{display:none}
+.vd-box{position:relative;width:100%;touch-action:manipulation;cursor:pointer}
+.vd-box.vd-ro{cursor:default}
+.vd-svg{position:absolute;left:0;top:0;display:block}
+.vd-u{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.vd-f.vd-a{fill:var(--ev-a-soft)}.vd-f.vd-b{fill:var(--ev-b-soft)}.vd-f.vd-c{fill:var(--ev-c-soft)}
+.vd-o{fill:none;stroke-width:2.5}.vd-o.vd-a{stroke:var(--ev-a)}.vd-o.vd-b{stroke:var(--ev-b)}.vd-o.vd-c{stroke:var(--ev-c)}
+.vd-fl.c1{fill:var(--good-bg)}.vd-fl.c2{fill:var(--hi);fill-opacity:.45}.vd-fl.c3{fill:var(--bad-bg)}
+.vd-reg{opacity:0;transition:opacity .4s}.vd-reg.on{opacity:1}
+.vd-sh{fill:var(--hi-soft)}
+.vd-hl{stroke:var(--hi);stroke-width:2.5;opacity:.75}
+.vd-ht{stroke:var(--ink-2);stroke-width:1.4}
+.vd-pr{fill:var(--hi);opacity:.5;animation:vdPul 1.1s ease-in-out 3}
+@keyframes vdPul{50%{opacity:.12}}
+.vd-l{font:italic 700 20px var(--font-math)}.vd-l.vd-a{fill:var(--ev-a)}.vd-l.vd-b{fill:var(--ev-b)}.vd-l.vd-c{fill:var(--ev-c)}
+.vd-s{font:italic 400 18px var(--font-math);fill:var(--ink-2)}
+.vd-vals,.vd-ins{position:absolute;left:0;top:0;right:0;bottom:0;pointer-events:none}
+.vd-ins[hidden]{display:none}
+.vd-v{position:absolute;transform:translate(-50%,-50%);font:400 1.45rem var(--font-math);line-height:1;color:var(--ink);white-space:nowrap}
+.vd.vd-sm .vd-v{font-size:1.25rem}
+.vd-in{position:absolute;left:0;top:0;transform:translate(-50%,-50%);width:48px;height:36px;padding:0 2px;border:1.5px solid var(--ink-2);border-radius:7px;background:var(--sheet);color:var(--ink);font:400 1.2rem var(--font-math);text-align:center;pointer-events:auto}
+.vd-in:focus{border-color:var(--ink);outline:2px solid var(--pen);outline-offset:1px}
+.vd.vd-sm .vd-in{width:42px;height:32px;font-size:1.1rem}
+.vd-strip{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.vd-rb{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:.25em .7em;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);font-size:.88rem}
+.vd-rb:hover{border-color:var(--ink-2)}
+.vd-rb[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--sel-bd);font-weight:700}
+.vd-sws{display:inline-flex;gap:2px}
+.vd-rn{font-family:var(--font-math);font-size:1rem;color:var(--ink-2)}
+.vd-rb[aria-pressed="true"] .vd-rn{color:var(--ink)}
+.vd-sw0{background:var(--sheet)}
+.vd-note{margin:6px 0 0;font-size:.95rem;min-height:1.4em}
+
+/* Venn workbench */
+.vw-pg .pg-graph{min-width:0}
+.vw-cap{min-height:1.5em}
+.vw-cap .muted,.vw-q{font:400 1rem var(--font-ui);color:var(--ink-2)}
+.vw-svp{font-size:.95rem;margin:0 0 8px}
+.vw-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0 0 6px}
+.vw-expr{display:flex;flex-wrap:wrap;align-items:center;min-height:52px;padding:6px 12px;margin:0 0 10px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);font-size:1.55rem}
+.vw-expr .muted{font-size:.95rem}
+.vw-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.vw-tok{min-width:44px;min-height:44px;padding:0 .55em;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink);font:400 1.35rem var(--font-math)}
+.vw-tok:hover{border-color:var(--ink)}
+.vw-tok-x{font:700 .9rem var(--font-ui)}
+.vw-also{color:var(--ink-2)}
+.vw-y{color:var(--green);font-weight:700}.vw-n{color:var(--red);font-weight:700}
+.vw-num{display:inline-grid;place-items:center;min-width:1.6em;height:1.6em;border-radius:50%;background:var(--ink);color:var(--sheet);font:700 1rem var(--font-ui)}
+.vw-dm2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.vw-dmc{min-width:0}
+.vw-dmh{margin:0 0 2px;font-weight:700}
+.vw-key{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;margin:8px 0 0}
+.vw-kh,.vw-kv,.vw-kx{display:inline-block;width:20px;height:15px;border:1.5px solid var(--ink-2);border-radius:3px;vertical-align:-.2em}
+.vw-kh{background:repeating-linear-gradient(0deg,var(--ink-2) 0 1.4px,transparent 1.4px 6px)}
+.vw-kv{background:repeating-linear-gradient(90deg,var(--ink-2) 0 1.4px,transparent 1.4px 6px)}
+.vw-kx{background:repeating-linear-gradient(0deg,var(--ink-2) 0 1.4px,transparent 1.4px 6px),repeating-linear-gradient(90deg,var(--ink-2) 0 1.4px,transparent 1.4px 6px)}
+#vw-hatch[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--sel-bd)}
+.vw-tc3{margin:10px 0 0}
+.vw-tc3 input{width:6.5rem;font:400 1.25rem var(--font-math)}
+@media (max-width:560px){ .vw-dm2{grid-template-columns:minmax(0,1fr)} }
+
+/* hero */
+.vh-h{width:100%;max-width:440px;margin:0 auto}
+.vh-svg{display:block;width:100%;height:auto}
+.vh-u{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.vh-fa{fill:var(--ev-a-soft);transition:opacity .7s}.vh-fb{fill:var(--ev-b-soft);transition:opacity .7s}
+.vh-r{fill:var(--hi);opacity:0;transition:opacity .5s}
+.vh-r.on{opacity:.6}
+.vh-ca{fill:none;stroke:var(--ev-a);stroke-width:2.5;transition:opacity .7s}.vh-cb{fill:none;stroke:var(--ev-b);stroke-width:2.5;transition:opacity .7s}
+.vh-l{font:italic 700 20px var(--font-math)}.vh-la{fill:var(--ev-a)}.vh-lb{fill:var(--ev-b)}
+.vh-s{font:italic 400 18px var(--font-math);fill:var(--ink-2)}
+.vh-n,.vh-fin{font:400 16px var(--font-math);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round;opacity:0;transition:opacity .4s}
+.vh-n.on{opacity:1}
+.vh-fin{font-size:18px;font-weight:700}
+.vh-i{font-style:italic}
+.vh-svg.fin .vh-fa,.vh-svg.fin .vh-fb{opacity:0}
+.vh-svg.fin .vh-ca,.vh-svg.fin .vh-cb{opacity:.35}
+.vh-svg.fin .vh-fin{opacity:1}
+
+/* Practice: "Name the region" pictures */
+.vn-pic{display:block;width:96px;margin:0 0 4px}
+.vn-pic svg{display:block;width:96px;height:64px}
+.vn-u{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.2}
+.vn-sh{fill:var(--hi)}
+.vn-a{fill:none;stroke:var(--ev-a);stroke-width:2}.vn-b{fill:none;stroke:var(--ev-b);stroke-width:2}
+.vn-l{font:italic 700 11px var(--font-math)}.vn-la{fill:var(--ev-a)}.vn-lb{fill:var(--ev-b)}
+.vn-cap{display:block;font-size:.85rem}
+
+/* Part 3 stations */
+.p3-st{margin:0 0 6px}
+.p3-station h3{margin-top:6px}
+.p3-step{border:1.5px solid var(--rule);border-radius:8px;padding:10px 14px;margin:10px 0 12px}
+.p3-sp{margin:2px 0 6px}
+.p3-qm{color:var(--ink-2);font-weight:700}
+.p3-done{font-weight:700}
+.p3-leg{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;margin:8px 0 0}
+.p3-sw{position:relative;display:inline-block;width:18px;height:15px;border:1.5px solid var(--ink-2);border-radius:3px;vertical-align:-.2em;background:var(--sheet);overflow:hidden}
+.p3-sw.c1{background:var(--good-bg)}.p3-sw.c3{background:var(--bad-bg)}
+.p3-sw.c2::before{content:"";position:absolute;inset:0;background:var(--hi);opacity:.45}
+.p3-say{min-height:3em;margin:10px 0 6px}
+.p3-sum{font:400 1.3rem var(--font-math);margin:0 0 6px;overflow-wrap:anywhere}
+
+/* task */
+.vw-conds{margin:8px 0 12px;padding-left:1.4em}
+.vw-tin{display:grid;gap:10px;margin:6px 0 12px}
+.vw-tin label{display:grid;gap:4px;font-weight:700}
+.vw-tin input{width:6rem;min-height:40px;padding:.35em .55em;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);font:400 1.15rem var(--font-math)}
+.vw-tin input:focus{border-color:var(--ink)}
+.vw-tv{background:var(--hi);color:var(--hi-ink);border-radius:4px;padding:0 .18em}
+.tk-pv .read{margin-top:10px}

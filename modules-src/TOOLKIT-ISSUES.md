@@ -109,3 +109,4 @@ every module that uses the touched code, then ship them together).
 | E9 structureMap, E1 annotationStudio (lens variant), E6 paragraphBuilder, spotProse, radioGroup | eng4u 02 | OWNER REVIEW: story text typed from the standard 23-paragraph edition (online check failed) — proofread against a published PD edition; plan issue: none of the 3 model responses passes all 7 task checklist lines; 302 KB |
 | S1 diagramExplorer (+default tag positions), photosystemSim, moleculeClip, S9 tubeBuilder | sbi4u 03 | |
 | pencilTrace (new), V6 approachTable, exactDec, N4 unitBoxes | mcv4u 06 | |
+| D2 vennDiagram (number boxes, hatching, pulse, equivalent names), parseExpr (set notation parser) | mdm4u 04 | |
