@@ -161,3 +161,5 @@ every module that uses the touched code, then ship them together).
 | E8 citationBuilder, E6 quotationIntegrator, E5 pausePlayer + beat bar | eng4u 07 | OWNER REVIEW: unverified Austen, Dickens, Dickinson dashes, Hamlet Globe lines; 305 KiB. Note: Ozymandias "Works" (04/07) vs "works" (05) — both real editions, align if wanted |
 | V10 shapeStage, V11 signChart (optimization), N4 moneyBoxes, padView/axisName | mcv4u 18 | |
 | F7 riskModel, arteryView, F3 labelLab stations, radioGroup (locked state) | hfa4u 11 | OWNER REVIEW (VERIFY): sodium-source shares 70/20/10 (model), model-day items, DASH/Mediterranean plates, APA refs; optional kitchen card skipped |
+| E10 Globe stageSimulator, line bank, E17 draftWorkspace + quotation inserter + then/now tags, lens-card sentence builder | eng4u 08 | Hamlet quoted from the Globe text; Globe line numbers in table R (unit standard). Unverified: 3.2.10–11 numbering; early-quarto readings D1/D2/D5. Kids Help Phone VERIFY |
+| D5 pascalExplorer, D5 gridPaths (label-the-grid), galtonBoard (for 21/D7) | mdm4u 13 | |

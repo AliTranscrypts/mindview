@@ -93,4 +93,5 @@ promotion candidates.
   Sentence to steal, required Art of Language principle, writing tasks checked for structure only, full text in
   the summary). Use "metre" for verse; check.mjs flags "meter" (a gauge is "meter", written `m&#101;ter`).
   Components: E1 annotationStudio + E2 deviceLens + spotProse (01), E9 structureMap + E6 paragraphBuilder (02),
-  E3 scansionTapper (03).
+  E3 scansionTapper (03), E8 citationBuilder (07), E7 thesisForge + E17 draftWorkspace (05/06), E10 stageSimulator (08).
+  Hamlet: quote the Globe text with Globe act.scene.line numbers; 08's `R` table is the unit's reference list.

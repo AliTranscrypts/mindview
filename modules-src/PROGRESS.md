@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 116/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 117/295 live, 2 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 18/59 | 0 | 41 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 12/39 | 0 | 27 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 12/39 | 1 | 26 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 9/52 | 0 | 43 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 10/46 | 0 | 36 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 10/25 | 1 | 14 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 7/24 | 0 | 17 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 11/25 | 0 | 14 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 7/24 | 1 | 16 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -147,10 +147,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 10 Circular Permutations (`circular-permutations`, topic, site ch2)
 - ✓ 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
 - ✓ 12 Combination Identities (`combination-identities`, topic, site ch3)
-- … 13 Pascal's Triangle & Patterns (`pascals-triangle`, topic, site ch3)
+- ◐ 13 Pascal's Triangle & Patterns (`pascals-triangle`, topic, site ch3)
 - … 14 The Binomial Theorem (`binomial-theorem`, topic, site ch3)
 - … 15 Combinations & Probability (`combinations-probability`, topic, site ch3)
-- · 16 Theoretical & Empirical Probability (`theoretical-empirical`, topic, site ch4)
+- … 16 Theoretical & Empirical Probability (`theoretical-empirical`, topic, site ch4)
 - · 17 Conditional Probability (`conditional-probability`, topic, site ch4)
 - · 18 Discrete Random Variables & Probability Distributions (`discrete-random-variables`, topic, site ch4)
 - · 19 Expected Value (`expected-value`, topic, site ch4)
@@ -291,7 +291,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 08 Children, Adolescents & Adults (`children-adolescents-adults`, topic, site ch2)
 - ✓ 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
 - ✓ 10 Eating Disorders (`eating-disorders`, topic, site ch3)
-- ◐ 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
+- ✓ 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
 - … 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
 - … 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)
 - … 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
@@ -316,10 +316,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 05 The Writing Process (`writing-process`, topic, site ch2)
 - ✓ 06 Essay Forms (`essay-forms`, topic, site ch2)
 - ✓ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
-- … 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
+- ◐ 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - … 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
 - … 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
-- · 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
+- … 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - · 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - · 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
 - · 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
