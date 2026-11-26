@@ -41,6 +41,7 @@ function staticCheck(course, id, file){
   else if (bytes > 300 * 1024) W.push(`file is ${(bytes / 1024).toFixed(0)} KB (target under 300 KB)`);
   const vm = html.match(/MindView module toolkit ([\d.]+)/);
   if (!vm) F.push("missing toolkit version comment"); else if (vm[1] !== VERSION) W.push(`built with toolkit ${vm[1]}, current is ${VERSION} (rebuild)`);
+  { const vis = html.replace(/<!--[\s\S]*?-->/g, ""); const mv = vis.match(/\((?:verify|VERIFY)[^)]{0,40}\)|verify before release/); if (mv) F.push(`teacher note visible to students: "${mv[0]}" (move it into a // VERIFY: code comment)`); }
   // outside connections: src/href/url()/fetch to anything but Google Fonts
   const ext = [...html.matchAll(/(?:src|href)\s*=\s*["'](https?:)?\/\/([^/"']+)/gi)].map(m => m[2]).concat([...html.matchAll(/url\(\s*["']?https?:\/\/([^/"')]+)/gi)].map(m => m[1]));
   ext.filter(h => !/^fonts\.(googleapis|gstatic)\.com$/.test(h)).forEach(h => F.push(`outside connection to ${h}`));

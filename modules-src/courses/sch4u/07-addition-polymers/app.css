@@ -1,0 +1,101 @@
+/* SCH4U 07: hero zipper, Polymer zipper (C1 polymerChain + bracket tool), Pack view, Part 3 stations, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+.rg.ap-ev{display:grid;gap:6px}
+.rg.ap-ev button{border-radius:10px;text-align:left;padding:.45em .8em;line-height:1.35}
+
+/* hero */
+.ap-eq{display:inline-block;line-height:1.3}
+.ap-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ap-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ap-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+.ap-hx-ctr{margin:2px 0 0;font:400 1rem var(--font-ui);color:var(--ink-2)}
+
+/* Polymer zipper */
+.ap-how{margin-top:0}
+.ap-modes{margin:0 0 12px}
+.ap-box{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.ap-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ap-packmode .ap-svg{max-width:720px;margin:0 auto}
+.ap-hd{position:absolute;inset:0;pointer-events:none}
+.ap-hdl{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;touch-action:none;width:30px;height:34px;padding:0;border:2px solid var(--ink);border-radius:7px;background:var(--sheet);color:var(--ink);font:700 1.2rem/1 var(--font-ui);cursor:grab}
+.ap-hdl:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.ap-hdl[hidden]{display:none}
+.ap-cap{min-height:1.5em;margin:10px 0 4px;font-size:1rem}
+.ap-zip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.ap-zip[hidden]{display:none}
+.ap-zip .player{margin-top:0}
+.ap-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px 28px;align-items:start;margin-top:16px}
+.ap-ctrl,.ap-right{min-width:0}
+.ap-ctrl > * + *{margin-top:12px}
+.ap-ctrl [hidden]{display:none}
+.ap-k{display:flex;align-items:center;gap:8px;font-size:.95rem;min-height:32px}
+.ap-k input{width:20px;height:20px;flex:none}
+.ap-msg{min-height:1.2em;margin:6px 0 0;font-size:.95rem;color:var(--ink-2)}
+.ap-msg:empty{min-height:0}
+.ap-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0 0 6px}
+.ap-set,.ap-pos{display:flex;flex-wrap:wrap;gap:6px}
+.ap-pos{margin-bottom:4px}
+.ap-set + .ap-lab{margin-top:12px}
+.ap-mx{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.ap-mx[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ap-mx b{display:inline-block;min-width:1.2em;border-radius:4px;background:var(--ink);color:var(--sheet);text-align:center;margin-right:2px}
+.ap-pb,.ap-tp{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;min-width:42px;min-height:46px;border:2px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--ink);font:700 1.15rem/1.1 var(--font-ui);padding:2px 6px}
+.ap-pb small,.ap-tp small{font-size:.68rem;font-weight:400;color:var(--ink-2)}
+.ap-tp.p{background:var(--hi);border-color:var(--hi-ink);color:var(--hi-ink)}
+.ap-pb:disabled,.ap-mx:disabled{opacity:.5}
+.ap-hl{background:var(--hi);color:var(--hi-ink);padding:0 4px;border-radius:4px}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ap-tray{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px;min-height:46px}
+.ap-tile{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.3em .7em;text-align:left}
+.ap-tile[aria-pressed="true"]{background:var(--hi);border-color:var(--hi-ink);color:var(--hi-ink)}
+.ap-tile span{display:flex;flex-direction:column;line-height:1.2}
+.ap-tile small{font-size:.8rem}
+.ap-ric{width:30px;height:28px;flex:none}
+.ap-bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+.ap-bin{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:110px;border:2px dashed var(--ink-2);border-radius:10px;background:var(--paper);color:var(--ink);padding:10px 12px;text-align:left}
+.ap-bin small{font-size:.82rem;color:var(--ink-2)}
+.ap-in{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.ap-chipin{border:1.5px solid var(--green);background:var(--good-bg);border-radius:5px;padding:.05em .5em;font-size:.88rem}
+.ap-liq{margin:12px 0 4px}
+.ap-fbox{max-width:520px;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);margin-top:10px}
+.ap-fsvg,.ap-zsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ap-fread,.ap-zread{margin-top:10px}
+.ap-zgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 20px;margin:12px 0 8px}
+.ap-zfig{margin:0;min-width:0}
+.ap-zfig figcaption{font-weight:700;font-size:.95rem;margin-bottom:6px}
+.ap-zsvg{max-width:420px}
+.ap-zban:empty{min-height:0;margin:0}
+.ap-st [class^="ap-cl-"]{margin-top:10px}
+.ap-claim{margin:14px 0 6px;padding:10px 12px;border-left:4px solid var(--pen);background:var(--paper);border-radius:6px;max-width:none}
+
+/* practice + task */
+.ap-numrow .numin{width:9rem}
+.ap-unit{font-weight:700;color:var(--ink-2)}
+.ap-conds{margin:6px 0 10px;padding-left:1.3em}
+.ap-tkpos{display:flex;flex-wrap:wrap;gap:6px}
+.ap-h4{margin:12px 0 6px}
+.ap-tkbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);margin-bottom:10px}
+.ap-after4{font-weight:700}
+
+@media (max-width:760px){
+  .ap-grid{grid-template-columns:minmax(0,1fr)}
+  .rg.seg button{padding:.4em .6em}
+  .ap-zgrid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ap-bins{grid-template-columns:minmax(0,1fr)}
+  .ap-bin{min-height:72px}
+}

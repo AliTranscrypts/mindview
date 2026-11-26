@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 102/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 103/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 14/59 | 0 | 45 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 10/39 | 0 | 29 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 6/52 | 0 | 46 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 8/46 | 1 | 37 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 6/52 | 1 | 45 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 9/46 | 0 | 37 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 9/25 | 0 | 16 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 5/24 | 0 | 19 | 0 |
 
@@ -183,11 +183,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
 - ✓ 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
 - ✓ 06 Amines and Amides (`amines-and-amides`, topic, site ch1)
-- … 07 Addition Polymers (`addition-polymers`, topic, site ch1)
+- ◐ 07 Addition Polymers (`addition-polymers`, topic, site ch1)
 - … 08 Condensation Polymers (`condensation-polymers`, topic, site ch1)
 - … 09 IUPAC Nomenclature (`iupac-nomenclature`, topic, site ch1)
 - … 10 Organic Reaction Mechanisms (`organic-reaction-mechanisms`, topic, site ch1)
-- · 11 Stereoisomers (`stereoisomers`, topic, site ch1)
+- … 11 Stereoisomers (`stereoisomers`, topic, site ch1)
 - · 12 Chirality, Enantiomers and Diastereomers (`chirality`, topic, site ch1)
 - · 13 Atomic History (`atomic-history`, topic, site ch2)
 - · 14 Bohr Model (`bohr-model`, topic, site ch2)
@@ -239,7 +239,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
 - ✓ 06 Light Reactions (`light-reactions`, topic, site ch2)
 - ✓ 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
-- ◐ 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
+- ✓ 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
 - ✓ 09 C3, C4 and CAM Photosynthesis and Photorespiration (`c3-c4-cam`, topic, site ch2)
 - … 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)
 - … 11 Redox Reactions (`redox-reactions`, topic, site ch2)

@@ -145,3 +145,4 @@ every module that uses the touched code, then ship them together).
 | F2 dayPlanner, systemsWheel, switchBtn, designStations | hfa4u 09 | plan arithmetic: Gurdeep plan = 8 µg vit D (not 11); Harold plan $6.50 / near-miss $9.60 (not $7.60/$10.40). OWNER REVIEW (VERIFY): 12 of 30 pool foods + values, Ruth start day, systems-wheel text, station data/costs, kitchen-card recipes, APA refs, care note |
 | rubiscoSim, S3 carbonBars, S2 strategy steppers, climateBoard, dialSVG | sbi4u 09 | builder-chosen climate-board key (plan gave none); C4-rice text VERIFY |
 | S2 calvinWheel, S3 energyLedger (tally/bars), stepper, S1 diagramExplorer lite, rubiscoZoom | sbi4u 08 | |
+| C1 polymerChain, K21 densityBar | sch4u 07 | fixed by orchestrator: "(verify before release)" was visible to students — moved to // VERIFY comments (3 Mt / 9% recycled; single-use plastics rules); check.mjs now fails visible verify notes |

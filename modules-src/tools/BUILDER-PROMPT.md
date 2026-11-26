@@ -56,6 +56,8 @@ re-enable after each animation.
   task frame's "find another" message fires after 3 answers. Don't name a text field `ok` (only a boolean
   `ok` marks answers). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
   your own classes with the module's topic.
+- Teacher notes such as "verify before release" go only in `// VERIFY:` code comments, never in text students
+  see (check.mjs fails a page that shows "(verify…)").
 - Canadian spelling, true minus signs, upright function names, colours only from tokens.
 
 **Reply (under 150 words):** PASS/FAIL of the final check run, output file size, counts (goals, warm-up,
