@@ -85,8 +85,7 @@
    "prereqs": [
     "03"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "05",
@@ -101,8 +100,7 @@
     "03",
     "04"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "06",
@@ -117,8 +115,7 @@
     "05",
     "03"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "07",
