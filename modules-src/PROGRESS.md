@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 71/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 72/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 6/59 | 0 | 53 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 6/59 | 1 | 52 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 4/39 | 0 | 35 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 3/52 | 0 | 49 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 3/25 | 1 | 21 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 4/25 | 0 | 21 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 0 | 22 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -79,11 +79,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 04 The Limit of a Function (`the-limit-of-a-function`, topic, site ch1)
 - ✓ 05 Properties of Limits (`properties-of-limits`, topic, site ch1)
 - ✓ 06 Continuity (`continuity`, topic, site ch1)
-- … 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
+- ◐ 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
 - … 08 Derivatives from First Principles (`derivatives-from-first-principles`, topic, site ch2)
 - … 09 Derivatives of Polynomials (`derivatives-of-polynomials`, topic, site ch2)
 - … 10 The Product Rule (`the-product-rule`, topic, site ch2)
-- · 11 The Quotient Rule (`the-quotient-rule`, topic, site ch2)
+- … 11 The Quotient Rule (`the-quotient-rule`, topic, site ch2)
 - · 12 Derivatives of Composite Functions: the Chain Rule (`the-chain-rule`, topic, site ch2)
 - · 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
 - · 14 Higher Order Derivatives (`higher-order-derivatives`, topic, site ch3)
@@ -284,7 +284,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
 - ✓ 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
 - ✓ 03 Micronutrients: Vitamins, Minerals, Water (`micronutrients`, topic, site ch1)
-- ◐ 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
+- ✓ 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
 - … 05 Canada's Food Guide, DRIs & Energy Balance (`food-guide-dri-energy`, topic, site ch1)
 - … 06 Pregnancy & Lactation (`pregnancy-lactation`, topic, site ch2)
 - … 07 Infant & Toddler Nutrition (`infant-toddler`, topic, site ch2)

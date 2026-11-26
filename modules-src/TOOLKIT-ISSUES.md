@@ -112,3 +112,4 @@ every module that uses the touched code, then ship them together).
 | D2 vennDiagram (number boxes, hatching, pulse, equivalent names), parseExpr (set notation parser) | mdm4u 04 | |
 | C1 moleculeView (O, highlights), C1 moleculeBuilder (free mode), C2 nameBuilder, C3 mechanismStepper, hbondBox, bpBars | sch4u 03 | course data gap: plan's 16-compound bp/solubility table kept locally — fold into MV.chem.data with 02's BP_ADD |
 | F4 digestiveExplorer, S1 diagramExplorer, nutrientGlyphs, challenge-card chip injection, Trace it | hfa4u 04 | OWNER REVIEW: author-written (VERIFY/model data): tract length 5–9 m, stop times, lactose per serving, priority-allergen list + APA ref, 6 Station 3 cases. Toolkit: challenge click handler crashes if app repaints the clicked button first (also 46) |
+| V5 derivativePanels, sketchBuild, slopeGallery | mcv4u 07 | plan fix: f(x)=9 at x≈2.55 not 2.4 (TC1 tolerance). Toolkit: plot.v undefined while a view is hidden |
