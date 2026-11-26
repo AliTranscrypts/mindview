@@ -1,0 +1,405 @@
+{
+ "course": "hfa4u",
+ "site": "hfa4m",
+ "code": "HFA4M",
+ "title": "Nutrition and Health",
+ "groupLabel": "Unit",
+ "groups": [
+  {
+   "id": "1",
+   "label": "Unit 1",
+   "name": "Nutrition Science"
+  },
+  {
+   "id": "2",
+   "label": "Unit 2",
+   "name": "Nutrition Across the Lifespan"
+  },
+  {
+   "id": "3",
+   "label": "Unit 3",
+   "name": "Nutrition, Health and Disease"
+  },
+  {
+   "id": "4",
+   "label": "Unit 4",
+   "name": "Canadian Food Systems"
+  },
+  {
+   "id": "5",
+   "label": "Unit 5",
+   "name": "Global Food Issues"
+  }
+ ],
+ "modules": [
+  {
+   "nn": "01",
+   "slug": "food-choices",
+   "title": "Factors Influencing Food Choices",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "marketing",
+   "prereqs": []
+  },
+  {
+   "nn": "02",
+   "slug": "macronutrients",
+   "title": "Macronutrients: Carbohydrates, Lipids, Proteins",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "fats-sugars",
+   "prereqs": [
+    "01"
+   ]
+  },
+  {
+   "nn": "03",
+   "slug": "micronutrients",
+   "title": "Micronutrients: Vitamins, Minerals, Water",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "water",
+   "prereqs": [
+    "02"
+   ]
+  },
+  {
+   "nn": "04",
+   "slug": "digestion-metabolism",
+   "title": "Digestion, Absorption & Metabolism",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "conditions",
+   "prereqs": [
+    "02",
+    "03"
+   ]
+  },
+  {
+   "nn": "05",
+   "slug": "food-guide-dri-energy",
+   "title": "Canada's Food Guide, DRIs & Energy Balance",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "recipe",
+   "prereqs": [
+    "01",
+    "04"
+   ]
+  },
+  {
+   "nn": "06",
+   "slug": "pregnancy-lactation",
+   "title": "Pregnancy & Lactation",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "myths",
+   "prereqs": [
+    "02",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "07",
+   "slug": "infant-toddler",
+   "title": "Infant & Toddler Nutrition",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "products",
+   "prereqs": [
+    "03",
+    "05",
+    "06"
+   ]
+  },
+  {
+   "nn": "08",
+   "slug": "children-adolescents-adults",
+   "title": "Children, Adolescents & Adults",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "teens",
+   "prereqs": [
+    "01",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "09",
+   "slug": "older-adults",
+   "title": "Older Adult Nutrition",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "design",
+   "prereqs": [
+    "02",
+    "03",
+    "05",
+    "08"
+   ]
+  },
+  {
+   "nn": "10",
+   "slug": "eating-disorders",
+   "title": "Eating Disorders",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "media",
+   "prereqs": [
+    "01",
+    "08"
+   ]
+  },
+  {
+   "nn": "11",
+   "slug": "cardiovascular-disease",
+   "title": "Cardiovascular Disease",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "sodium",
+   "prereqs": [
+    "02",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "12",
+   "slug": "type-2-diabetes",
+   "title": "Type 2 Diabetes",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "community",
+   "prereqs": [
+    "02",
+    "04",
+    "05",
+    "11"
+   ]
+  },
+  {
+   "nn": "13",
+   "slug": "cancer-nutrition",
+   "title": "Cancer & Nutrition",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "headlines",
+   "prereqs": [
+    "02",
+    "03",
+    "11"
+   ]
+  },
+  {
+   "nn": "14",
+   "slug": "obesity-osteoporosis",
+   "title": "Obesity, Osteoporosis & Other Diet-Related Issues",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "bones",
+   "prereqs": [
+    "02",
+    "03",
+    "04",
+    "05",
+    "11",
+    "12"
+   ]
+  },
+  {
+   "nn": "15",
+   "slug": "food-safety",
+   "title": "Foodborne Illness & Food Safety",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "outbreak",
+   "prereqs": [
+    "04",
+    "06",
+    "09"
+   ]
+  },
+  {
+   "nn": "16",
+   "slug": "canadian-food-production",
+   "title": "Canadian Food Production",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "meal-origin",
+   "prereqs": [
+    "01",
+    "05"
+   ]
+  },
+  {
+   "nn": "17",
+   "slug": "agriculture-methods",
+   "title": "Conventional, Organic, GMO & Sustainable Agriculture",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "evidence",
+   "prereqs": [
+    "16"
+   ]
+  },
+  {
+   "nn": "18",
+   "slug": "processing-labelling",
+   "title": "Food Processing & Labelling",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "claims",
+   "prereqs": [
+    "02",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "19",
+   "slug": "food-security-canada",
+   "title": "Food Security in Canada",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "policy",
+   "prereqs": [
+    "01",
+    "05",
+    "16"
+   ]
+  },
+  {
+   "nn": "20",
+   "slug": "indigenous-food-sovereignty",
+   "title": "Indigenous Food Sovereignty",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "action",
+   "prereqs": [
+    "19",
+    "03",
+    "16"
+   ]
+  },
+  {
+   "nn": "21",
+   "slug": "global-hunger",
+   "title": "Global Hunger & Malnutrition",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "causes",
+   "prereqs": [
+    "03",
+    "19",
+    "16"
+   ]
+  },
+  {
+   "nn": "22",
+   "slug": "climate-food-systems",
+   "title": "Climate Change & Food Systems",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "footprints",
+   "prereqs": [
+    "16",
+    "17",
+    "21"
+   ]
+  },
+  {
+   "nn": "23",
+   "slug": "sustainability-food-waste",
+   "title": "Sustainable Agriculture & Food Waste",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "audit",
+   "prereqs": [
+    "17",
+    "19",
+    "22"
+   ]
+  },
+  {
+   "nn": "24",
+   "slug": "food-aid-sdgs",
+   "title": "Food Aid & the Sustainable Development Goals",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "evaluate",
+   "prereqs": [
+    "19",
+    "21",
+    "22",
+    "23"
+   ]
+  },
+  {
+   "nn": "25",
+   "slug": "ethical-food-choices",
+   "title": "Ethical Food Choices",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "case",
+   "prereqs": [
+    "01",
+    "17",
+    "19",
+    "22",
+    "23"
+   ]
+  }
+ ]
+}

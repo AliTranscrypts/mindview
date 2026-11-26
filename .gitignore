@@ -29,3 +29,12 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+
+# Node tooling (modules-src build/check scripts)
+node_modules/
+
+# Deploy staging folder (scripts/ci-deploy.sh)
+.deploy/
+
+# Interactive-module test artefacts (screenshots, reports)
+modules-src/.artifacts/

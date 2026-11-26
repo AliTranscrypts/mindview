@@ -1,0 +1,841 @@
+{
+ "course": "mhf4u",
+ "site": "mhf4u",
+ "code": "MHF4U",
+ "title": "Advanced Functions",
+ "groupLabel": "Chapter",
+ "groups": [
+  {
+   "id": "1",
+   "label": "Chapter 1",
+   "name": "Polynomial Functions"
+  },
+  {
+   "id": "2",
+   "label": "Chapter 2",
+   "name": "Polynomial Equations and Inequalities"
+  },
+  {
+   "id": "3",
+   "label": "Chapter 3",
+   "name": "Rational Functions"
+  },
+  {
+   "id": "4",
+   "label": "Chapter 4",
+   "name": "Trigonometry"
+  },
+  {
+   "id": "5",
+   "label": "Chapter 5",
+   "name": "Trigonometric Functions"
+  },
+  {
+   "id": "6-7",
+   "label": "Chapters 6–7",
+   "name": "Exponential and Logarithmic Functions"
+  },
+  {
+   "id": "8",
+   "label": "Chapter 8",
+   "name": "Combining Functions"
+  }
+ ],
+ "modules": [
+  {
+   "nn": "01",
+   "slug": "power-functions",
+   "title": "Power Functions",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "symmetry",
+   "prereqs": [],
+   "status": "building",
+   "note": "toolkit pilot"
+  },
+  {
+   "nn": "02",
+   "slug": "stating-intervals",
+   "title": "Stating Intervals",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "detective",
+   "prereqs": [
+    "01"
+   ],
+   "status": "building",
+   "note": "toolkit pilot"
+  },
+  {
+   "nn": "03",
+   "slug": "characteristics-of-polynomial-functions",
+   "title": "Characteristics of Polynomial Functions",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "possible",
+   "prereqs": [
+    "01",
+    "02"
+   ]
+  },
+  {
+   "nn": "04",
+   "slug": "finite-differences",
+   "title": "Finite Differences",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "reverse",
+   "prereqs": [
+    "03"
+   ]
+  },
+  {
+   "nn": "05",
+   "slug": "graphing-from-factored-form",
+   "title": "Graphing from Factored Form",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "equation",
+   "prereqs": [
+    "02",
+    "03"
+   ]
+  },
+  {
+   "nn": "06",
+   "slug": "even-and-odd-functions",
+   "title": "Even and Odd Functions",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "mirror",
+   "prereqs": [
+    "01",
+    "03"
+   ]
+  },
+  {
+   "nn": "07",
+   "slug": "transformations-of-power-functions",
+   "title": "Transformations of Power Functions",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "order",
+   "prereqs": [
+    "01",
+    "03"
+   ]
+  },
+  {
+   "nn": "08",
+   "slug": "average-rate-of-change",
+   "title": "Average Rate of Change",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "context",
+   "prereqs": [
+    "02",
+    "03"
+   ]
+  },
+  {
+   "nn": "09",
+   "slug": "instantaneous-rate-of-change",
+   "title": "Instantaneous Rate of Change",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "sign",
+   "prereqs": [
+    "08",
+    "02"
+   ]
+  },
+  {
+   "nn": "10",
+   "slug": "chapter-1-review",
+   "title": "Chapter 1 Summary & Review",
+   "kind": "review",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": null,
+   "prereqs": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09"
+   ]
+  },
+  {
+   "nn": "11",
+   "slug": "remainder-theorem-and-synthetic-division",
+   "title": "Remainder Theorem & Synthetic Division",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "shortcut",
+   "prereqs": [
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "12",
+   "slug": "factor-theorem-and-sum-difference-of-cubes",
+   "title": "Factor Theorem & Sum/Difference of Cubes",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "cubes",
+   "prereqs": [
+    "11",
+    "05"
+   ]
+  },
+  {
+   "nn": "13",
+   "slug": "solving-polynomial-equations",
+   "title": "Solving Polynomial Equations",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "roots",
+   "prereqs": [
+    "05",
+    "12"
+   ]
+  },
+  {
+   "nn": "14",
+   "slug": "family-of-polynomial-functions",
+   "title": "Family of Polynomial Functions",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "S",
+   "part3": "conditions",
+   "prereqs": [
+    "05",
+    "13",
+    "12"
+   ]
+  },
+  {
+   "nn": "15",
+   "slug": "polynomial-inequalities",
+   "title": "Polynomial Inequalities",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "compare",
+   "prereqs": [
+    "02",
+    "05",
+    "13"
+   ]
+  },
+  {
+   "nn": "16",
+   "slug": "chapter-2-review",
+   "title": "Chapter 2 Summary & Review",
+   "kind": "review",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": null,
+   "prereqs": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+   ]
+  },
+  {
+   "nn": "17",
+   "slug": "introduction-to-rational-functions",
+   "title": "Introduction to Rational Functions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "equation",
+   "prereqs": [
+    "02",
+    "03",
+    "12",
+    "13"
+   ]
+  },
+  {
+   "nn": "18",
+   "slug": "reciprocal-of-linear-functions",
+   "title": "Reciprocal of Linear Functions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "asymptote",
+   "prereqs": [
+    "17",
+    "02"
+   ]
+  },
+  {
+   "nn": "19",
+   "slug": "reciprocal-of-quadratic-functions",
+   "title": "Reciprocal of Quadratic Functions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "cases",
+   "prereqs": [
+    "18",
+    "05",
+    "02",
+    "17"
+   ]
+  },
+  {
+   "nn": "20",
+   "slug": "linear-over-linear-rational-functions",
+   "title": "Linear over Linear Rational Functions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "sketch",
+   "prereqs": [
+    "18",
+    "17",
+    "02",
+    "07"
+   ]
+  },
+  {
+   "nn": "21",
+   "slug": "holes-and-oblique-asymptotes",
+   "title": "Holes and Oblique Asymptotes",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "microscope",
+   "prereqs": [
+    "11",
+    "12",
+    "20"
+   ]
+  },
+  {
+   "nn": "22",
+   "slug": "rational-equations-and-inequalities",
+   "title": "Rational Equations and Inequalities",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "signs",
+   "prereqs": [
+    "13",
+    "15",
+    "20",
+    "21",
+    "02"
+   ]
+  },
+  {
+   "nn": "23",
+   "slug": "word-problems-with-rational-functions",
+   "title": "Word Problems with Rational Functions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "meaning",
+   "prereqs": [
+    "20",
+    "22",
+    "17",
+    "19",
+    "21"
+   ]
+  },
+  {
+   "nn": "24",
+   "slug": "chapter-3-review",
+   "title": "Chapter 3 Summary & Review",
+   "kind": "review",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": null,
+   "prereqs": [
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23"
+   ]
+  },
+  {
+   "nn": "25",
+   "slug": "radian-measure",
+   "title": "Radian Measure",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "spin",
+   "prereqs": []
+  },
+  {
+   "nn": "26",
+   "slug": "special-angles-and-trig-ratios",
+   "title": "Special Angles and Trig Ratios",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "cast",
+   "prereqs": [
+    "25"
+   ]
+  },
+  {
+   "nn": "27",
+   "slug": "equivalent-trig-expressions",
+   "title": "Equivalent Trig Expressions",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "cofunctions",
+   "prereqs": [
+    "26",
+    "25",
+    "06",
+    "07"
+   ]
+  },
+  {
+   "nn": "28",
+   "slug": "compound-angles",
+   "title": "Compound Angles",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "exact",
+   "prereqs": [
+    "26",
+    "27",
+    "25"
+   ]
+  },
+  {
+   "nn": "29",
+   "slug": "proving-trig-identities",
+   "title": "Proving Trig Identities",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "counterexamples",
+   "prereqs": [
+    "26",
+    "28",
+    "27"
+   ]
+  },
+  {
+   "nn": "30",
+   "slug": "chapter-4-review",
+   "title": "Chapter 4 Summary & Review",
+   "kind": "review",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": null,
+   "prereqs": [
+    "25",
+    "26",
+    "27",
+    "28",
+    "29"
+   ]
+  },
+  {
+   "nn": "31",
+   "slug": "graphing-the-six-trig-functions",
+   "title": "Graphing the 6 Trig Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "L",
+   "part3": "reciprocals",
+   "prereqs": [
+    "25",
+    "26",
+    "27",
+    "18",
+    "19"
+   ]
+  },
+  {
+   "nn": "32",
+   "slug": "transformations-of-sinusoidal-functions",
+   "title": "Transformations of Sinusoidal Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "detective",
+   "prereqs": [
+    "31",
+    "07",
+    "27",
+    "25",
+    "26"
+   ]
+  },
+  {
+   "nn": "33",
+   "slug": "equations-of-sinusoidal-functions",
+   "title": "Equations of Sinusoidal Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "rewrite",
+   "prereqs": [
+    "32",
+    "31",
+    "27",
+    "26"
+   ]
+  },
+  {
+   "nn": "34",
+   "slug": "solving-trig-equations",
+   "title": "Solving Trig Equations",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "L",
+   "part3": "quadratics",
+   "prereqs": [
+    "26",
+    "31",
+    "13",
+    "28",
+    "29",
+    "32"
+   ]
+  },
+  {
+   "nn": "35",
+   "slug": "applications-of-trig-functions",
+   "title": "Applications of Trig Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "data",
+   "prereqs": [
+    "32",
+    "33",
+    "34",
+    "08",
+    "09",
+    "25",
+    "26"
+   ]
+  },
+  {
+   "nn": "36",
+   "slug": "chapter-5-review",
+   "title": "Chapter 5 Summary & Review",
+   "kind": "review",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": null,
+   "prereqs": [
+    "31",
+    "32",
+    "33",
+    "34",
+    "35"
+   ]
+  },
+  {
+   "nn": "37",
+   "slug": "inverse-of-exponential-functions",
+   "title": "Inverse of Exponential Functions",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "S",
+   "part3": "translator",
+   "prereqs": [
+    "17",
+    "20"
+   ]
+  },
+  {
+   "nn": "38",
+   "slug": "introduction-to-logarithms",
+   "title": "Introduction to Logarithms",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "features",
+   "prereqs": [
+    "37",
+    "02"
+   ]
+  },
+  {
+   "nn": "39",
+   "slug": "transformations-of-log-functions",
+   "title": "Transformations of Log Functions",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "mapping",
+   "prereqs": [
+    "38",
+    "37",
+    "07",
+    "02"
+   ]
+  },
+  {
+   "nn": "40",
+   "slug": "power-law-of-logarithms",
+   "title": "Power Law of Logarithms",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "S",
+   "part3": "base",
+   "prereqs": [
+    "38",
+    "10",
+    "37",
+    "39"
+   ]
+  },
+  {
+   "nn": "41",
+   "slug": "product-and-quotient-laws",
+   "title": "Product and Quotient Laws",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "clinic",
+   "prereqs": [
+    "40",
+    "37",
+    "38"
+   ]
+  },
+  {
+   "nn": "42",
+   "slug": "logarithmic-scales",
+   "title": "Logarithmic Scales",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "ratios",
+   "prereqs": [
+    "38",
+    "40",
+    "41",
+    "10"
+   ]
+  },
+  {
+   "nn": "43",
+   "slug": "solving-exponential-equations",
+   "title": "Solving Exponential Equations",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 7,
+   "size": "L",
+   "part3": "solve",
+   "prereqs": [
+    "40",
+    "41",
+    "38",
+    "08"
+   ]
+  },
+  {
+   "nn": "44",
+   "slug": "solving-logarithmic-equations",
+   "title": "Solving Logarithmic Equations",
+   "kind": "topic",
+   "group": "6-7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "audit",
+   "prereqs": [
+    "41",
+    "40",
+    "43",
+    "37",
+    "39",
+    "22"
+   ]
+  },
+  {
+   "nn": "45",
+   "slug": "chapters-6-7-review",
+   "title": "Chapters 6–7 Summary & Review",
+   "kind": "review",
+   "group": "6-7",
+   "siteChapter": 7,
+   "size": "L",
+   "part3": null,
+   "prereqs": [
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
+   ]
+  },
+  {
+   "nn": "46",
+   "slug": "sums-and-differences-of-functions",
+   "title": "Sums and Differences of Functions",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "S",
+   "part3": "superposition",
+   "prereqs": [
+    "06",
+    "31",
+    "37",
+    "38",
+    "17",
+    "18",
+    "27",
+    "32",
+    "28"
+   ]
+  },
+  {
+   "nn": "47",
+   "slug": "products-and-quotients-of-functions",
+   "title": "Products and Quotients of Functions",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "signs",
+   "prereqs": [
+    "46",
+    "17",
+    "21",
+    "31",
+    "32",
+    "06",
+    "15"
+   ]
+  },
+  {
+   "nn": "48",
+   "slug": "composite-functions",
+   "title": "Composite Functions",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "L",
+   "part3": "decompose",
+   "prereqs": [
+    "07",
+    "37",
+    "46",
+    "17",
+    "38",
+    "31"
+   ]
+  },
+  {
+   "nn": "49",
+   "slug": "modelling-with-combined-functions",
+   "title": "Modelling with Combined Functions",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "solve",
+   "prereqs": [
+    "46",
+    "47",
+    "48",
+    "43",
+    "35",
+    "23",
+    "02",
+    "04"
+   ]
+  },
+  {
+   "nn": "50",
+   "slug": "chapter-8-review",
+   "title": "Chapter 8 Summary & Review",
+   "kind": "review",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": null,
+   "prereqs": [
+    "46",
+    "47",
+    "48",
+    "49"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+name: Deploy to Cloudflare Pages
+
+# Every push to main deploys production (https://mindview.pages.dev);
+# every push to staging deploys https://staging.mindview.pages.dev.
+# The Pages project is a Direct Upload project, so GitHub Actions does the
+# upload with wrangler (scripts/ci-deploy.sh) instead of Cloudflare's Git builds.
+
+on:
+  push:
+    branches: [main, staging]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Static checks on built interactive modules
+        run: |
+          if [ -f modules-src/build/check.mjs ]; then
+            node modules-src/build/check.mjs --all --static-only
+          else
+            echo "No module checker yet; skipping."
+          fi
+
+      - name: Verify baseline and deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not set. Create a Cloudflare API token with Account → Cloudflare Pages → Edit, then: gh secret set CLOUDFLARE_API_TOKEN -R AliTranscrypts/mindview"
+            exit 1
+          fi
+          sh scripts/ci-deploy.sh
+
+      - name: Smoke-test the deployed site
+        if: github.ref_name == 'main'
+        run: |
+          for p in / /admin/login /api/me; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "https://mindview.pages.dev$p")
+            echo "$p -> $code"
+            case "$p:$code" in
+              /:302|/admin/login:200|/api/me:200|/api/me:401) ;;
+              *) echo "::error::Unexpected status $code for $p"; exit 1 ;;
+            esac
+          done

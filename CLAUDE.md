@@ -21,6 +21,15 @@ Use `sh scripts/safe-deploy.sh` (default → staging) or
 `TARGET=production sh scripts/safe-deploy.sh` (only with owner approval).
 **Never run `wrangler pages deploy . --branch=main` directly.**
 
+**CI/CD (since 2026-11-26):** GitHub Actions (`.github/workflows/deploy.yml`)
+deploys on every push: branch `staging` → staging, branch `main` → production.
+So **a push to `main` is a production release.** Put review-first work on the
+`staging` branch and merge to `main` once the owner approves. The owner
+(ali@transcrypts.com) authorised continuous production releases of the
+interactive modules (section 8) on 2026-11-26. The workflow needs the repo
+secrets `CLOUDFLARE_API_TOKEN` (Account → Cloudflare Pages → Edit) and
+`CLOUDFLARE_ACCOUNT_ID`.
+
 This file is read automatically by Claude Code at the start of every session
 in this repo. **Future agents and humans must read this before changing
 anything.** Its purpose is to lock the *state, structure, and visibility* of
@@ -35,7 +44,7 @@ the owner first** — do not silently override.
 ## 1. Architecture (do not change without explicit approval)
 
 The site is a **Cloudflare Pages** project deployed via **Direct Upload**
-(not Git-connected; updates ship via `wrangler pages deploy`).
+(not Git-connected; updates ship via `wrangler pages deploy`, which GitHub Actions runs on every push — see CI/CD above).
 
 | Layer | Where | What it does |
 |---|---|---|
@@ -144,11 +153,17 @@ Inside every chapter page, the assessment strip is always:
 - Adding new admin pages (must include `/api/me` auth check).
 
 ### Deploy procedure
+Normally: push to GitHub (see "CI/CD" at the top). By hand:
 ```
-cd /Users/syed/Documents/work/mindview
-wrangler pages deploy . --project-name=mindview --branch=main --commit-dirty=true
+sh scripts/safe-deploy.sh                      # staging
+TARGET=production sh scripts/safe-deploy.sh    # production (owner approval)
 ```
-Functions get bundled automatically when wrangler is run **from inside the project directory** (`wrangler pages deploy .`). Running it with a path argument from outside skips Functions bundling — *don't do that*.
+Both go through `scripts/ci-deploy.sh`, which runs the baseline check, copies
+the site into `.deploy/` **without** `modules-src/`, `.github/` and
+`functions/`, and runs `wrangler pages deploy .deploy` **from the repo root**.
+Functions get bundled because wrangler looks for `./functions` in the directory
+it is run from; running it from anywhere else silently drops them — *don't do
+that*. Never deploy the repo root directly: it would publish `modules-src/`.
 
 After every deploy, run `python3 scripts/verify-baseline.py` to confirm invariants hold.
 
@@ -254,4 +269,22 @@ Commit messages on `main` are the canonical record. Most-relevant recent ones:
 - `e113e66` — Custom email+password auth built
 - `fc00324` — Removed Netlify Identity
 
-**End of baseline. Last updated 2026-05-21 by the chapter-restructure session.**
+---
+
+## 8. Interactive learning modules (added 2026-11-26)
+
+Self-study modules built from the owner's plans in `/Users/ali/Desktop/MV/Modules/<course>/plan/`
+(outside this repo; the plans contain every answer, so they never go in the repo or on the site).
+
+| What | Where |
+|---|---|
+| Built pages (served) | `courses/<code>/modules/NN-slug.html`, hub `courses/<code>/modules/index.html` |
+| Sources (never served) | `modules-src/` — toolkit, build scripts, per-module `content.mjs` + `app.js`, `course.json` per course |
+| How to build one | `modules-src/BUILDER-GUIDE.md`; status of every module in `modules-src/PROGRESS.md` |
+| Links from the course | an "Interactive modules" block on each chapter page, written by `modules-src/tools/link-chapters.py` |
+
+- Pages under `courses/<code>/` get the existing enrolment gate and page-nav automatically; no middleware change was needed.
+- HFA4U plans are published inside the site's **HFA4M** course (`courses/hfa4m/modules/`); storage keys keep the `hfa4u-` prefix.
+- Each module saves progress only in the student's browser (`localStorage`), as the plans require.
+
+**End of baseline. Last updated 2026-05-21 by the chapter-restructure session; §8 and CI/CD added 2026-11-26.**

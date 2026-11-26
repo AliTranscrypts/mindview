@@ -1,0 +1,750 @@
+{
+ "course": "sch4u",
+ "site": "sch4u",
+ "code": "SCH4U",
+ "title": "Chemistry",
+ "groupLabel": "Unit",
+ "groups": [
+  {
+   "id": "1",
+   "label": "Unit 1",
+   "name": "Organic Chemistry"
+  },
+  {
+   "id": "2",
+   "label": "Unit 2",
+   "name": "Structure and Properties of Matter"
+  },
+  {
+   "id": "3",
+   "label": "Unit 3",
+   "name": "Energy Changes, Rates of Reaction and Spontaneity"
+  },
+  {
+   "id": "4",
+   "label": "Unit 4",
+   "name": "Chemical Systems and Equilibrium"
+  },
+  {
+   "id": "5",
+   "label": "Unit 5",
+   "name": "Electrochemistry"
+  }
+ ],
+ "modules": [
+  {
+   "nn": "01",
+   "slug": "alkanes-cycloalkanes-alkyl-halides",
+   "title": "Alkanes, Cycloalkanes and Alkyl Halides",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "reactions",
+   "prereqs": []
+  },
+  {
+   "nn": "02",
+   "slug": "alkenes-alkynes-aromatics",
+   "title": "Alkenes, Alkynes and Aromatics",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "L",
+   "part3": "bromine-test",
+   "prereqs": [
+    "01"
+   ]
+  },
+  {
+   "nn": "03",
+   "slug": "alcohols-and-ethers",
+   "title": "Alcohols and Ethers",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "oxidation",
+   "prereqs": [
+    "01",
+    "02"
+   ]
+  },
+  {
+   "nn": "04",
+   "slug": "aldehydes-and-ketones",
+   "title": "Aldehydes and Ketones",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "tests",
+   "prereqs": [
+    "03"
+   ]
+  },
+  {
+   "nn": "05",
+   "slug": "carboxylic-acids-and-esters",
+   "title": "Carboxylic Acids and Esters",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "acids",
+   "prereqs": [
+    "03",
+    "04"
+   ]
+  },
+  {
+   "nn": "06",
+   "slug": "amines-and-amides",
+   "title": "Amines and Amides",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "amides",
+   "prereqs": [
+    "05",
+    "03"
+   ]
+  },
+  {
+   "nn": "07",
+   "slug": "addition-polymers",
+   "title": "Addition Polymers",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "plastics",
+   "prereqs": [
+    "02"
+   ]
+  },
+  {
+   "nn": "08",
+   "slug": "condensation-polymers",
+   "title": "Condensation Polymers",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "hydrolysis",
+   "prereqs": [
+    "05",
+    "06",
+    "07"
+   ]
+  },
+  {
+   "nn": "09",
+   "slug": "iupac-nomenclature",
+   "title": "IUPAC Nomenclature",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "labels",
+   "prereqs": [
+    "01",
+    "06"
+   ]
+  },
+  {
+   "nn": "10",
+   "slug": "organic-reaction-mechanisms",
+   "title": "Organic Reaction Mechanisms",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "roadmap",
+   "prereqs": [
+    "02",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "11",
+   "slug": "stereoisomers",
+   "title": "Stereoisomers",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "properties",
+   "prereqs": [
+    "02",
+    "09"
+   ]
+  },
+  {
+   "nn": "12",
+   "slug": "chirality",
+   "title": "Chirality, Enantiomers and Diastereomers",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "handedness",
+   "prereqs": [
+    "11",
+    "03",
+    "05"
+   ]
+  },
+  {
+   "nn": "13",
+   "slug": "atomic-history",
+   "title": "Atomic History",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "S",
+   "part3": "gold-foil",
+   "prereqs": []
+  },
+  {
+   "nn": "14",
+   "slug": "bohr-model",
+   "title": "Bohr Model",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "spectra",
+   "prereqs": [
+    "13"
+   ]
+  },
+  {
+   "nn": "15",
+   "slug": "quantum-mechanical-model",
+   "title": "Quantum Mechanical Model",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "quantum-numbers",
+   "prereqs": [
+    "14"
+   ]
+  },
+  {
+   "nn": "16",
+   "slug": "electron-configuration",
+   "title": "Electron Configuration",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "blocks",
+   "prereqs": [
+    "15"
+   ]
+  },
+  {
+   "nn": "17",
+   "slug": "lewis-diagrams",
+   "title": "Lewis Diagrams",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "formal-charge",
+   "prereqs": [
+    "16"
+   ]
+  },
+  {
+   "nn": "18",
+   "slug": "vsepr",
+   "title": "VSEPR Theory and Molecular Geometry",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "formula",
+   "prereqs": [
+    "17"
+   ]
+  },
+  {
+   "nn": "19",
+   "slug": "bonding-and-polarity",
+   "title": "Chemical Bonding and Polarity",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "polarity-tests",
+   "prereqs": [
+    "18"
+   ]
+  },
+  {
+   "nn": "20",
+   "slug": "hybridization",
+   "title": "Hybridization (sp/sp²/sp³)",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "organic",
+   "prereqs": [
+    "18",
+    "15",
+    "16",
+    "01",
+    "02",
+    "11"
+   ]
+  },
+  {
+   "nn": "21",
+   "slug": "intermolecular-forces-and-crystals",
+   "title": "Intermolecular Forces and Crystals",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "solids",
+   "prereqs": [
+    "19",
+    "18"
+   ]
+  },
+  {
+   "nn": "22",
+   "slug": "periodic-trends",
+   "title": "Periodic Trends",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "successive",
+   "prereqs": [
+    "16",
+    "15"
+   ]
+  },
+  {
+   "nn": "23",
+   "slug": "the-periodic-table",
+   "title": "The Periodic Table",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "S",
+   "part3": "predict",
+   "prereqs": [
+    "16",
+    "22"
+   ]
+  },
+  {
+   "nn": "24",
+   "slug": "energy-changes-and-enthalpy",
+   "title": "Energy Changes and Enthalpy",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "thermochemical",
+   "prereqs": []
+  },
+  {
+   "nn": "25",
+   "slug": "calorimetry",
+   "title": "Calorimetry",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "error",
+   "prereqs": [
+    "24"
+   ]
+  },
+  {
+   "nn": "26",
+   "slug": "bond-energy",
+   "title": "Bond Energy",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "S",
+   "part3": "fuels",
+   "prereqs": [
+    "17",
+    "24"
+   ]
+  },
+  {
+   "nn": "27",
+   "slug": "hess-law",
+   "title": "Hess's Law",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "magnesium",
+   "prereqs": [
+    "24",
+    "25"
+   ]
+  },
+  {
+   "nn": "28",
+   "slug": "standard-enthalpy-of-formation",
+   "title": "Standard Enthalpy of Formation",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "technologies",
+   "prereqs": [
+    "27"
+   ]
+  },
+  {
+   "nn": "29",
+   "slug": "rate-of-reaction",
+   "title": "Rate of Reaction",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "graphs",
+   "prereqs": [
+    "02"
+   ]
+  },
+  {
+   "nn": "30",
+   "slug": "collision-theory-and-activation-energy",
+   "title": "Collision Theory and Activation Energy",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "catalysts",
+   "prereqs": [
+    "29",
+    "24"
+   ]
+  },
+  {
+   "nn": "31",
+   "slug": "rate-law-and-mechanisms",
+   "title": "Rate Law and Reaction Mechanisms",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "mechanism",
+   "prereqs": [
+    "29",
+    "30"
+   ]
+  },
+  {
+   "nn": "32",
+   "slug": "entropy",
+   "title": "Entropy",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "S",
+   "part3": "predict",
+   "prereqs": [
+    "24"
+   ]
+  },
+  {
+   "nn": "33",
+   "slug": "gibbs-free-energy",
+   "title": "Gibbs Free Energy",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "equilibrium",
+   "prereqs": [
+    "32",
+    "28",
+    "30"
+   ]
+  },
+  {
+   "nn": "34",
+   "slug": "dynamic-equilibrium",
+   "title": "Dynamic Equilibrium",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "S",
+   "part3": "either-side",
+   "prereqs": [
+    "29",
+    "33"
+   ]
+  },
+  {
+   "nn": "35",
+   "slug": "le-chatelier",
+   "title": "Le Chatelier's Principle",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "industry",
+   "prereqs": [
+    "34",
+    "24",
+    "30"
+   ]
+  },
+  {
+   "nn": "36",
+   "slug": "keq",
+   "title": "Quantitative Equilibrium (Keq)",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "lab-k",
+   "prereqs": [
+    "34",
+    "35"
+   ]
+  },
+  {
+   "nn": "37",
+   "slug": "ksp",
+   "title": "Solubility Equilibrium (Ksp)",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "real-world",
+   "prereqs": [
+    "36",
+    "35"
+   ]
+  },
+  {
+   "nn": "38",
+   "slug": "acids-and-bases",
+   "title": "Acids and Bases",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "strength",
+   "prereqs": [
+    "34",
+    "36"
+   ]
+  },
+  {
+   "nn": "39",
+   "slug": "ph-strong-acids-bases",
+   "title": "pH of Strong Acids and Bases",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "S",
+   "part3": "everyday",
+   "prereqs": [
+    "38"
+   ]
+  },
+  {
+   "nn": "40",
+   "slug": "ka-and-kb",
+   "title": "Ka and Kb Calculations",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "ranking",
+   "prereqs": [
+    "36",
+    "38",
+    "39"
+   ]
+  },
+  {
+   "nn": "41",
+   "slug": "hydrolysis-of-salts",
+   "title": "Hydrolysis of Salts",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "S",
+   "part3": "salts",
+   "prereqs": [
+    "38",
+    "39",
+    "40"
+   ]
+  },
+  {
+   "nn": "42",
+   "slug": "strong-titration",
+   "title": "Strong Acid/Base Titration",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "curve",
+   "prereqs": [
+    "39",
+    "41"
+   ]
+  },
+  {
+   "nn": "43",
+   "slug": "weak-titration",
+   "title": "Weak Acid/Base Titration",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "half-equivalence",
+   "prereqs": [
+    "40",
+    "42",
+    "41"
+   ]
+  },
+  {
+   "nn": "44",
+   "slug": "buffer-solutions",
+   "title": "Buffer Solutions",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "blood",
+   "prereqs": [
+    "43",
+    "40",
+    "41",
+    "35"
+   ]
+  },
+  {
+   "nn": "45",
+   "slug": "oxidation-numbers",
+   "title": "Assigning Oxidation Numbers",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "redox-or-not",
+   "prereqs": []
+  },
+  {
+   "nn": "46",
+   "slug": "balancing-redox",
+   "title": "Balancing Redox Reactions (Half-Reaction Method)",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "special",
+   "prereqs": [
+    "45"
+   ]
+  },
+  {
+   "nn": "47",
+   "slug": "galvanic-cells",
+   "title": "Galvanic Cells and Standard Reduction Potentials",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "L",
+   "part3": "spontaneity",
+   "prereqs": [
+    "45",
+    "46"
+   ]
+  },
+  {
+   "nn": "48",
+   "slug": "cell-notation",
+   "title": "Cell Notation (Voltaic Cells)",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "batteries",
+   "prereqs": [
+    "47"
+   ]
+  },
+  {
+   "nn": "49",
+   "slug": "corrosion",
+   "title": "Corrosion",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "protect",
+   "prereqs": [
+    "47",
+    "46",
+    "45"
+   ]
+  },
+  {
+   "nn": "50",
+   "slug": "faraday-first-law",
+   "title": "Faraday's First Law of Electrolysis",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "plating",
+   "prereqs": [
+    "47",
+    "46"
+   ]
+  },
+  {
+   "nn": "51",
+   "slug": "faraday-second-law",
+   "title": "Faraday's Second Law of Electrolysis",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "ion-charge",
+   "prereqs": [
+    "50"
+   ]
+  },
+  {
+   "nn": "52",
+   "slug": "hall-heroult",
+   "title": "The Hall–Héroult Process",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "cost",
+   "prereqs": [
+    "50",
+    "51"
+   ]
+  }
+ ]
+}

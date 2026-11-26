@@ -1,0 +1,605 @@
+{
+ "course": "mdm4u",
+ "site": "mdm4u",
+ "code": "MDM4U",
+ "title": "Mathematics of Data Management",
+ "groupLabel": "Unit",
+ "groups": [
+  {
+   "id": "1",
+   "label": "Unit 1",
+   "name": "Probability Foundations"
+  },
+  {
+   "id": "2",
+   "label": "Unit 2",
+   "name": "Permutations and Combinations"
+  },
+  {
+   "id": "3",
+   "label": "Unit 3",
+   "name": "Probability and Discrete Distributions"
+  },
+  {
+   "id": "4",
+   "label": "Unit 4",
+   "name": "Continuous Distributions and the Normal Model"
+  },
+  {
+   "id": "5",
+   "label": "Unit 5",
+   "name": "Data Collection and One-Variable Statistics"
+  },
+  {
+   "id": "6",
+   "label": "Unit 6",
+   "name": "Two-Variable Statistics"
+  },
+  {
+   "id": "7",
+   "label": "Unit 7",
+   "name": "Culminating Investigation"
+  }
+ ],
+ "modules": [
+  {
+   "nn": "01",
+   "slug": "sample-spaces",
+   "title": "Sample Spaces & Counting Outcomes",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "equally-likely",
+   "prereqs": []
+  },
+  {
+   "nn": "02",
+   "slug": "fundamental-counting-principle",
+   "title": "The Fundamental Counting Principle",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "multiply",
+   "prereqs": [
+    "01"
+   ]
+  },
+  {
+   "nn": "03",
+   "slug": "mutually-exclusive",
+   "title": "Mutually Exclusive Events & the Additive Principle",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "additive",
+   "prereqs": [
+    "01",
+    "02"
+   ]
+  },
+  {
+   "nn": "04",
+   "slug": "venn-diagrams",
+   "title": "Venn Diagrams & Set Operations",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "three-sets",
+   "prereqs": [
+    "03"
+   ]
+  },
+  {
+   "nn": "05",
+   "slug": "independent-dependent",
+   "title": "Independent vs Dependent Events",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "test",
+   "prereqs": [
+    "03",
+    "04"
+   ]
+  },
+  {
+   "nn": "06",
+   "slug": "factorial-notation",
+   "title": "Factorial Notation",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "S",
+   "part3": "algebra",
+   "prereqs": [
+    "02"
+   ]
+  },
+  {
+   "nn": "07",
+   "slug": "permutations-distinct",
+   "title": "Permutations of Distinct Objects",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "equations",
+   "prereqs": [
+    "06",
+    "02"
+   ]
+  },
+  {
+   "nn": "08",
+   "slug": "permutations-identical",
+   "title": "Permutations with Identical Objects",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "paths",
+   "prereqs": [
+    "07",
+    "06"
+   ]
+  },
+  {
+   "nn": "09",
+   "slug": "permutations-restrictions",
+   "title": "Permutations with Restrictions",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "strategies",
+   "prereqs": [
+    "07",
+    "08",
+    "03"
+   ]
+  },
+  {
+   "nn": "10",
+   "slug": "circular-permutations",
+   "title": "Circular Permutations",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "S",
+   "part3": "restrictions",
+   "prereqs": [
+    "07",
+    "09",
+    "06"
+   ]
+  },
+  {
+   "nn": "11",
+   "slug": "combinations",
+   "title": "Combinations: Counting Without Order",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "at-least",
+   "prereqs": [
+    "07",
+    "06",
+    "03",
+    "02"
+   ]
+  },
+  {
+   "nn": "12",
+   "slug": "combination-identities",
+   "title": "Combination Identities",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "stories",
+   "prereqs": [
+    "11"
+   ]
+  },
+  {
+   "nn": "13",
+   "slug": "pascals-triangle",
+   "title": "Pascal's Triangle & Patterns",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "paths",
+   "prereqs": [
+    "11",
+    "02"
+   ]
+  },
+  {
+   "nn": "14",
+   "slug": "binomial-theorem",
+   "title": "The Binomial Theorem",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "backwards",
+   "prereqs": [
+    "13",
+    "11"
+   ]
+  },
+  {
+   "nn": "15",
+   "slug": "combinations-probability",
+   "title": "Combinations & Probability",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "lotteries",
+   "prereqs": [
+    "11",
+    "01",
+    "03"
+   ]
+  },
+  {
+   "nn": "16",
+   "slug": "theoretical-empirical",
+   "title": "Theoretical & Empirical Probability",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "simulation",
+   "prereqs": [
+    "01",
+    "15"
+   ]
+  },
+  {
+   "nn": "17",
+   "slug": "conditional-probability",
+   "title": "Conditional Probability",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "tests",
+   "prereqs": [
+    "05",
+    "16",
+    "04"
+   ]
+  },
+  {
+   "nn": "18",
+   "slug": "discrete-random-variables",
+   "title": "Discrete Random Variables & Probability Distributions",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "compare",
+   "prereqs": [
+    "16",
+    "01",
+    "15"
+   ]
+  },
+  {
+   "nn": "19",
+   "slug": "expected-value",
+   "title": "Expected Value",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "worth-it",
+   "prereqs": [
+    "18",
+    "16"
+   ]
+  },
+  {
+   "nn": "20",
+   "slug": "variance-discrete",
+   "title": "Variance & Standard Deviation of Discrete Random Variables",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "risk",
+   "prereqs": [
+    "19",
+    "18"
+   ]
+  },
+  {
+   "nn": "21",
+   "slug": "binomial-distribution",
+   "title": "The Binomial Distribution",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 5,
+   "size": "L",
+   "part3": "is-it",
+   "prereqs": [
+    "14",
+    "18",
+    "19",
+    "20",
+    "05"
+   ]
+  },
+  {
+   "nn": "22",
+   "slug": "geometric-distribution",
+   "title": "The Geometric Distribution",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "waiting",
+   "prereqs": [
+    "21",
+    "19",
+    "05",
+    "03"
+   ]
+  },
+  {
+   "nn": "23",
+   "slug": "hypergeometric-distribution",
+   "title": "The Hypergeometric Distribution",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "quality",
+   "prereqs": [
+    "15",
+    "21",
+    "19",
+    "05"
+   ]
+  },
+  {
+   "nn": "24",
+   "slug": "choosing-distribution",
+   "title": "Choosing the Right Distribution",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "mixed",
+   "prereqs": [
+    "21",
+    "22",
+    "23",
+    "18",
+    "19"
+   ]
+  },
+  {
+   "nn": "25",
+   "slug": "continuous-density",
+   "title": "Continuous Random Variables & Density",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "measurement",
+   "prereqs": [
+    "18"
+   ]
+  },
+  {
+   "nn": "26",
+   "slug": "normal-properties",
+   "title": "Properties of the Normal Distribution",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "is-it-normal",
+   "prereqs": [
+    "25",
+    "20"
+   ]
+  },
+  {
+   "nn": "27",
+   "slug": "z-scores",
+   "title": "Standardizing & z-Scores",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 6,
+   "size": "L",
+   "part3": "percentiles",
+   "prereqs": [
+    "26"
+   ]
+  },
+  {
+   "nn": "28",
+   "slug": "normal-approximation",
+   "title": "Normal Approximation to the Binomial",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "fails",
+   "prereqs": [
+    "21",
+    "27"
+   ]
+  },
+  {
+   "nn": "29",
+   "slug": "sampling-methods",
+   "title": "Population, Sample & Sampling Methods",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "margin",
+   "prereqs": [
+    "16",
+    "27"
+   ]
+  },
+  {
+   "nn": "30",
+   "slug": "bias",
+   "title": "Sources of Bias in Surveys",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "media",
+   "prereqs": [
+    "29"
+   ]
+  },
+  {
+   "nn": "31",
+   "slug": "central-tendency",
+   "title": "Measures of Central Tendency",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "which-centre",
+   "prereqs": [
+    "29"
+   ]
+  },
+  {
+   "nn": "32",
+   "slug": "spread",
+   "title": "Measures of Spread",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "compare",
+   "prereqs": [
+    "31",
+    "29"
+   ]
+  },
+  {
+   "nn": "33",
+   "slug": "histograms",
+   "title": "Frequency Distributions & Histograms",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "right-graph",
+   "prereqs": [
+    "31",
+    "32",
+    "29"
+   ]
+  },
+  {
+   "nn": "34",
+   "slug": "scatter-plots",
+   "title": "Scatter Plots & Correlation",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 8,
+   "size": "S",
+   "part3": "stories",
+   "prereqs": [
+    "31"
+   ]
+  },
+  {
+   "nn": "35",
+   "slug": "pearson-r",
+   "title": "The Pearson Correlation Coefficient r",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "mislead",
+   "prereqs": [
+    "34",
+    "32",
+    "27"
+   ]
+  },
+  {
+   "nn": "36",
+   "slug": "linear-regression",
+   "title": "Linear Regression & Line of Best Fit",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 8,
+   "size": "L",
+   "part3": "extrapolation",
+   "prereqs": [
+    "35",
+    "31"
+   ]
+  },
+  {
+   "nn": "37",
+   "slug": "residuals",
+   "title": "Residuals & Goodness of Fit",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "is-linear-right",
+   "prereqs": [
+    "36",
+    "35"
+   ]
+  },
+  {
+   "nn": "38",
+   "slug": "causation",
+   "title": "Two-Variable Analysis & Causation",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "headlines",
+   "prereqs": [
+    "35",
+    "37",
+    "29"
+   ]
+  },
+  {
+   "nn": "39",
+   "slug": "culminating-investigation",
+   "title": "Culminating Data-Management Investigation",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 8,
+   "size": "L",
+   "part3": "critique",
+   "prereqs": [
+    "29",
+    "38",
+    "30",
+    "31",
+    "33",
+    "34",
+    "37"
+   ]
+  }
+ ]
+}
