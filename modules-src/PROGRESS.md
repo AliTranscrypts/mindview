@@ -6,14 +6,14 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 289/295 live, 3 built, 3 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 292/295 live, 1 built, 2 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 57/59 | 1 | 1 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 58/59 | 0 | 1 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 39/39 | 0 | 0 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 48/52 | 2 | 2 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 50/52 | 1 | 1 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 46/46 | 0 | 0 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 25/25 | 0 | 0 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 24/24 | 0 | 0 | 0 |
@@ -126,7 +126,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 51 Vector Equation of a Plane (`vector-equation-of-a-plane`, topic, site ch8)
 - ✓ 52 Cartesian Equation of a Plane (`cartesian-equation-of-a-plane`, topic, site ch8)
 - ✓ 53 Intersection of Lines with Planes (`intersection-of-lines-with-planes`, topic, site ch9)
-- ◐ 54 Intersection of Lines in R² and R³ (`intersection-of-lines`, topic, site ch9)
+- ✓ 54 Intersection of Lines in R² and R³ (`intersection-of-lines`, topic, site ch9)
 - … 55 Systems of Equations (Matrices) (`systems-of-equations-matrices`, topic, site ch9)
 - ✓ 56 Intersection of Two Planes (`intersection-of-two-planes`, topic, site ch9)
 - ✓ 57 Intersection of Three Planes (`intersection-of-three-planes`, topic, site ch9)
@@ -197,7 +197,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - ✓ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
 - … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
-- … 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
+- ◐ 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
 - ✓ 22 Periodic Trends (`periodic-trends`, topic, site ch2)
 - ✓ 23 The Periodic Table (`the-periodic-table`, topic, site ch2)
 - ✓ 24 Energy Changes and Enthalpy (`energy-changes-and-enthalpy`, topic, site ch3)
@@ -222,8 +222,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 43 Weak Acid/Base Titration (`weak-titration`, topic, site ch4)
 - ✓ 44 Buffer Solutions (`buffer-solutions`, topic, site ch4)
 - ✓ 45 Assigning Oxidation Numbers (`oxidation-numbers`, topic, site ch5)
-- ◐ 46 Balancing Redox Reactions (Half-Reaction Method) (`balancing-redox`, topic, site ch5)
-- ◐ 47 Galvanic Cells and Standard Reduction Potentials (`galvanic-cells`, topic, site ch5)
+- ✓ 46 Balancing Redox Reactions (Half-Reaction Method) (`balancing-redox`, topic, site ch5)
+- ✓ 47 Galvanic Cells and Standard Reduction Potentials (`galvanic-cells`, topic, site ch5)
 - ✓ 48 Cell Notation (Voltaic Cells) (`cell-notation`, topic, site ch5)
 - ✓ 49 Corrosion (`corrosion`, topic, site ch5)
 - ✓ 50 Faraday's First Law of Electrolysis (`faraday-first-law`, topic, site ch5)

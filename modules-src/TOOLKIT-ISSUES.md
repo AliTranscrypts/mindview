@@ -335,3 +335,4 @@ every module that uses the touched code, then ship them together).
 | V1 view3d | mcv4u 54 | PLAN NOTE: TC1 + P3 use values outside the plan's input ranges (widened to points ±6, directions ±4) |
 | — | eng4u 19 | quotes verified vs PG #42324, #1260 + Wikisource 1925; fixed 1831 "Every where" (ch. 10) |
 | C10 cellView + stripBeaker | sch4u 47 | PLAN ERROR: plan calls I₂ solution colourless (shown pale brown); W6 option C feedback, Station 3 distractors, L-hints builder-written |
+| C1 forceBox, latticeView, bpBars (−260 to 200 °C) | sch4u 21 | PLAN ERROR: near-miss (C₃H₈, HCl, C₂H₅OH) also fails line 3; MgO mp 2852 °C (plan) vs ≈2850 (course table) |
