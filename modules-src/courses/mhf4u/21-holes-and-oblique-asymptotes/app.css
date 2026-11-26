@@ -1,0 +1,132 @@
+/* MHF4U 21: hero sign, lab layout, factor tiles (N26), division board (N22), microscope, matching, missing numbers. Tokens only. */
+.h21-sign{background:var(--hi-soft);border-radius:4px;padding:0 .1em}
+.h21-sign.pulse{animation:h21-pulse .6s ease-in-out 2}
+@keyframes h21-pulse{50%{background:var(--hi);color:var(--hi-ink)}}
+.h21-end{display:block;margin-top:4px}
+
+/* lab layout: graph left; controls and readout right */
+.pg.h21{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-areas:"graph ctrl" "graph read"}
+.h21 [hidden]{display:none!important}
+.h21-sub{font:400 1.35rem/1.3 var(--font-math);min-height:1.3em;margin:-2px 0 6px;overflow-wrap:anywhere}
+.h21-sub .m{white-space:normal}
+.h21-sub.fade{animation:h21-fade .5s ease-out}
+@keyframes h21-fade{from{opacity:0;transform:translateY(-4px)}}
+.h21-zoom{margin-top:8px;align-items:center}
+.h21-gt{margin-top:8px}
+.h21-gt .tbl-wrap{margin-top:8px}
+.h21-read dd{line-height:1.45}
+.h21-read [data-r].flash{animation:h21-flash 1s ease-out}
+@keyframes h21-flash{0%,60%{background:var(--hi-soft)}100%{background:transparent}}
+.h21-st{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.h21-stl{font-weight:700;font-size:.92rem}
+.h21-p2v{display:inline-block;min-width:2em;text-align:center;font:600 1.15rem var(--font-math)}
+.h21-bh{margin:12px 0 4px;font-size:1rem}
+.h21-say{min-height:1.5em;margin:6px 0 0}
+#h21-mode{margin-bottom:8px}
+
+/* N26 factor tiles */
+.ft{position:relative;display:grid;gap:6px;padding:4px 0;animation:h21-fade .4s ease-out}
+.ft.hid{display:none}
+.ft-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:48px;position:relative;z-index:1}
+.ft-lab{font:700 .8rem var(--font-ui);color:var(--ink-2);min-width:3.3em}
+.ft-bar{border-top:2.5px solid var(--ink);margin:2px 0}
+.ft-const{display:inline-flex;flex-direction:column;align-items:center;gap:1px}
+.ft-cl{font:700 .66rem var(--font-ui);color:var(--ink-2);white-space:nowrap}
+.ft-cb{display:inline-flex;align-items:center;gap:3px}
+.ft-cv{display:inline-block;min-width:1.4em;text-align:center;font:600 1.2rem var(--font-math)}
+.ft-cv.one{color:var(--ink-2);font-weight:400}
+.ft-tile{display:inline-flex;align-items:center;gap:2px;border:2px solid var(--rule);border-radius:10px;background:var(--sheet);padding:3px;min-height:44px;position:relative;transition:transform .4s ease,opacity .2s ease,box-shadow .2s ease}
+.ft-tile.match{background:var(--hi-soft);border-color:var(--hi)}
+.ft-tile.glow{box-shadow:0 0 0 4px var(--hi)}
+.ft-tile.slide[data-row="top"],.ft-tile.struck[data-row="top"]{transform:translateY(5px)}
+.ft-tile.slide[data-row="bot"],.ft-tile.struck[data-row="bot"]{transform:translateY(-5px)}
+.ft-tile.striking,.ft-tile.struck{opacity:.3}
+.ft-tile.striking::after,.ft-tile.struck::after{content:"";position:absolute;left:6px;right:6px;top:50%;border-top:2.5px solid var(--ink);transform:rotate(-16deg);pointer-events:none}
+.ft-tile.striking::after{animation:h21-strike .2s ease-out}
+@keyframes h21-strike{from{right:100%}}
+.ft-tile.pulse{animation:h21-pulse2 .6s ease-in-out 3}
+@keyframes h21-pulse2{50%{background:var(--hi);box-shadow:0 0 0 4px var(--hi)}}
+.ft-tile.drop{animation:h21-drop .5s ease-out}
+@keyframes h21-drop{from{opacity:0;transform:translateY(-28px)}}
+.ft-f{font:400 1.18rem var(--font-math);padding:0 4px;white-space:nowrap}
+.ft-b{min-width:32px;min-height:32px;border:1.5px solid var(--rule);border-radius:7px;background:var(--sheet);color:var(--ink);font-weight:700;font-size:1rem;padding:0}
+.ft-b:disabled{opacity:.4}
+.ft-x{min-width:26px;min-height:26px;border:0;border-radius:50%;background:transparent;color:var(--ink-2);font-size:1rem;padding:0}
+.ft-x:hover{color:var(--red)}
+.ft-add{padding:.35em .7em}
+.ft-links{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.ft-links line{stroke:var(--ink-2);stroke-width:1.5}
+
+/* N22 division board (from MHF4U 11) */
+.sg-wrap{position:relative;overflow-x:auto;padding:2px 2px 4px;border-radius:6px}
+.sg-wrap:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+table.sg{border-collapse:collapse;font-family:var(--font-math);font-size:1.18rem}
+table.sg th,table.sg td{min-width:46px;height:2.2em;padding:2px 6px;text-align:center;vertical-align:middle}
+table.sg thead th,table.sg thead td{font:700 .72rem var(--font-ui);color:var(--ink-2);height:auto;padding-bottom:4px}
+table.sg thead th .m{font-size:1.05rem;font-weight:400;color:var(--ink-2)}
+.sg-c{font-size:.66rem}
+table.sg tbody th{min-width:54px;font-weight:400}
+.sg-top th,.sg-mid th{border-right:2px solid var(--ink)}
+.sg-mid td{border-bottom:2px solid var(--ink);color:var(--ink-2)}
+.sg-box{display:inline-block;min-width:1.9em;padding:.05em .3em;border:2px solid var(--ink);border-radius:3px;background:var(--sheet)}
+table.sg td.hl{background:var(--hi-soft)}
+table.sg td.q.fin{font-weight:700}
+table.sg td.sg-rem.fin{background:var(--hi);color:var(--hi-ink);outline:2px solid var(--ink);outline-offset:-3px;border-radius:4px;font-weight:700}
+.sg-svg{position:absolute;left:0;top:0;pointer-events:none;color:var(--ink-2);overflow:visible}
+.sg-arrow{fill:none;stroke:currentColor;stroke-width:1.6;stroke-dasharray:300;stroke-dashoffset:300;animation:h21-draw .45s ease-out forwards}
+@keyframes h21-draw{to{stroke-dashoffset:0}}
+
+/* Part 3 microscope */
+.mc-fn{font-size:clamp(1.3rem,3.4vw,1.8rem)}
+.mc-main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px 26px;align-items:start;margin-top:10px}
+.mc-ask{font-weight:700;margin:12px 0 6px}
+.mc-side h3{margin:0 0 8px;font-size:1.05rem}
+.mc-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.mc-cols h4{margin:0 0 6px;font-size:.85rem;color:var(--ink-2)}
+.mc-chips{display:grid;gap:6px;min-height:40px;border:1.5px dashed var(--rule);border-radius:8px;padding:6px}
+.mc-chip{display:block;border:1.5px solid var(--green);background:var(--good-bg);border-radius:8px;padding:4px 8px;font-size:.9rem;overflow-wrap:anywhere}
+.mc-chip.chg{border-color:var(--rule);background:var(--sheet)}
+.mc-chip .tag{font-size:.7rem}
+.mc-score{font-weight:700;margin-top:10px}
+#mc-tbl{margin-top:8px}
+
+/* Practice 1: graph matching (from MHF4U 20) */
+.mg{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,2fr);gap:14px 18px;margin-top:12px}
+.mg h4{margin:0 0 6px;color:var(--ink-2);font-size:.85rem}
+.mg-eqrow{display:grid;gap:8px}
+.mg-eq .m{font-size:1.1em}
+.mg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.mg-th{display:grid;gap:4px;text-align:left;width:100%;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:6px;min-width:0;color:var(--ink)}
+.mg-th:not(:disabled):hover{border-color:var(--pen)}
+.mg-th.done{border-color:var(--green);background:var(--good-bg)}
+.mg-tag{font-weight:700;font-size:.85rem}
+.mg-c{border:0!important;border-radius:4px}
+.mg-eqd{font-size:.9rem;overflow-wrap:anywhere}
+.mg-eqd:empty{display:none}
+.mg-eqd .pair-n,.mg-eq .pair-n{font-weight:700;color:var(--green)}
+.mg-eq .pair-n:empty{display:none}
+
+/* Practice 2: missing numbers; task */
+.mn-frame{font:400 1.25rem/2.4 var(--font-math);display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;margin:6px 0}
+.mn-in{width:4.6em;font:400 1.05rem var(--font-math);text-align:center}
+.tk-h{margin:0 0 6px}
+#tk-read{margin-top:8px}
+
+@media (max-width:820px){
+  .pg.h21{grid-template-columns:minmax(0,1fr);grid-template-areas:"graph" "ctrl" "read"}
+  .mc-main{grid-template-columns:minmax(0,1fr)}
+  .mg{grid-template-columns:minmax(0,1fr)}
+  .mg-eqrow{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .mg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mg-eqrow{grid-template-columns:minmax(0,1fr)}
+  .ft-f{font-size:1.08rem;padding:0 2px}
+  table.sg{font-size:1.05rem}
+  table.sg th,table.sg td{min-width:40px;padding:2px 4px}
+  .mn-frame{font-size:1.12rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .ft,.ft-tile,.h21-sub.fade,.h21-read [data-r].flash,.sg-arrow,.ft-tile.pulse,.ft-tile.drop,.ft-tile.striking::after,.h21-sign.pulse{animation:none!important;transition:none!important}
+  .sg-arrow{stroke-dashoffset:0}
+}

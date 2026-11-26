@@ -20,6 +20,8 @@ every module that uses the touched code, then ship them together).
 
 - FIXED 1.0.5: one-off 4-choice quick checks also kept the plan's answer-first order (15); now reordered too. Repeated chip sets keep their order.
 
+- Gap: no API to add results-summary lines / skills-to-review goals for interactives outside Practice (Part 3 steps, Explore builders). 19 registers them via MV.ACTS from app.js; document or generalise.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -40,3 +42,4 @@ every module that uses the touched code, then ship them together).
 | approachLadder, exactQ, leadRace | mhf4u 17 | |
 | linOverLin, G11 canvasFracLabel, N8 sketchBuilder, N6 graphMatch (from 18), N4 fracBoxes | mhf4u 20 | |
 | sketchBuilder, N6 graphMatch (from 18), N4 coefTemplate | mhf4u 19 | registers summary lines via MV.ACTS from app.js |
+| N26 factorTiles, N22 syntheticDivision (from 11), N6 graphMatch (from 20), N4 blankBoxes | mhf4u 21 | |
