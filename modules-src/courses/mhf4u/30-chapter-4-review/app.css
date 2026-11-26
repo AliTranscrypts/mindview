@@ -1,0 +1,113 @@
+/* MHF4U 30: hero caption, per-topic tables, Connect (toolbox map, link bar, one page), mixed practice, task */
+#hero-cap{font:400 .95rem/1.5 var(--font-ui);color:var(--ink-2);display:grid;gap:2px}
+#hero-cap .hc-l{display:block}
+#hero-cap .hc-l.cur{color:var(--ink);font-weight:600}
+#hero-cap .m{white-space:normal}
+/* toolkit workaround: the visually hidden "(done)" text in a step button escaped the scrolling step bar on phones */
+.steps .step{position:relative}
+/* per-topic tables */
+.tt-wrap{overflow-x:auto;margin:10px 0}
+.tt td:nth-child(2){white-space:nowrap}
+.tt td:last-child{white-space:nowrap}
+.tt tr.tt-rev td{border-bottom:0}
+.tt tr.tt-more td{padding-top:0;white-space:normal}
+.tt-key{padding:8px 12px;border-left:4px solid var(--hi);background:var(--hi-soft);border-radius:4px}
+.tt-key p{margin:0 0 .3em;max-width:none}
+.tt-key p:last-child{margin:0}
+
+/* unit-circle dot buttons (N12, from MHF4U 26) */
+.uc-dots{position:static}
+.uc-dot{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:0;background:transparent;padding:0;z-index:2;cursor:pointer}
+.uc-dot:focus-visible{outline:3px solid var(--pen);outline-offset:0}
+
+/* Connect: N18 connection builder, toolbox map */
+.cv-chal{border:1.5px solid var(--rule);border-radius:8px;padding:14px 16px;background:var(--paper)}
+.cv-chal .q-prompt{font-weight:700}
+.cv-chal .how{margin:8px 0 0}
+.cv-top{flex-wrap:wrap}
+.cv-tags{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.cv-top .dots{flex:0 0 auto}
+.cv-nav{border-top:1px solid var(--rule);padding-top:10px}
+.tm-seq{margin:8px 0 0;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.tm-sq{margin:12px 0 6px;font-weight:600}
+.tm-split{display:flex;flex-wrap:wrap;gap:8px}
+.tm-sp{font:400 1.05rem var(--font-math);text-align:left;white-space:normal}
+.tm-sp .m{white-space:normal}
+.tm-board{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 44px;align-items:start;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.tm-col{min-width:0;position:relative;z-index:2}
+.tm-h{margin:0 0 6px;font:700 .85rem var(--font-ui);color:var(--ink-2);text-transform:none}
+.tm-cards{display:grid;gap:8px}
+.tm-card{display:block;width:100%;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:6px 10px;font:inherit;font-size:.98rem;line-height:1.4;min-height:40px;cursor:pointer}
+.tm-card .m{white-space:normal}
+.tm-n{display:block;font:700 .8rem var(--font-ui);color:var(--ink-2)}
+.tm-card:not(:disabled):hover{border-color:var(--pen)}
+.tm-card:disabled{cursor:default;opacity:1;color:var(--ink)}
+.tm-card.linked{border-color:var(--hi);box-shadow:inset 5px 0 0 var(--hi)}
+.tm-card.stem{outline:2px dashed var(--ink-2);outline-offset:2px}
+.tm-card.on{background:var(--hi);border-color:var(--ink);color:var(--hi-ink);box-shadow:none}
+.tm-card.on .tm-n{color:var(--hi-ink)}
+.tm-card:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.tm-links{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.tm-ln{fill:none;stroke:var(--hi);stroke-width:2.5;stroke-opacity:.8}
+.tm-ln.cur{stroke-width:5;stroke-opacity:1}
+.tm-ln.pend{stroke:var(--ink-2);stroke-dasharray:6 5;stroke-width:2}
+.tm-end{fill:var(--ink)}
+.tm-bar{position:sticky;bottom:0;z-index:5;margin-top:16px;background:var(--sheet);border:2px solid var(--ink);border-radius:10px;padding:8px 12px;display:grid;gap:6px}
+.tm-bar[hidden]{display:none}
+.tm-sent{margin:0;max-width:none;font-size:.98rem}
+.tm-sent .m{white-space:normal}
+.tm-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.tm-wl{font:700 .85rem var(--font-ui);color:var(--ink-2)}
+.tm-words{display:inline-flex;gap:6px;flex-wrap:wrap}
+.tm-row .q-actions{margin:0 0 0 auto}
+.tm-one{margin-top:18px}
+.tm-one h3{margin:0 0 6px}
+.tm-onegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch;margin-top:8px}
+.tm-oc{border:1.5px solid var(--rule);border-left:5px solid var(--hi);border-radius:8px;background:var(--sheet);padding:6px 10px;display:flex;flex-direction:column;gap:3px}
+.tm-oc .m{white-space:normal}
+.tm-oc .tag{align-self:flex-start}
+.tm-from{font-size:.88rem;color:var(--ink-2)}
+.tm-from .m{color:var(--ink)}
+.tm-oc0{grid-area:1/1}.tm-oc1{grid-area:1/2}.tm-oc2{grid-area:1/3}.tm-oc3{grid-area:2/1}.tm-oc4{grid-area:2/3}.tm-oc5{grid-area:3/1}.tm-oc6{grid-area:3/2}.tm-oc7{grid-area:3/3}
+.tm-ocirc{grid-area:2/2;display:flex;align-items:center;justify-content:center}
+.tm-ocirc canvas.plot{max-width:260px}
+.tm-jh{margin:14px 0 4px}
+.tm-jobs{margin:0;padding-left:1.3em;display:grid;gap:4px}
+@media (max-width:760px){
+  .tm-board{grid-template-columns:minmax(0,1fr);padding-left:30px;gap:14px}
+  .tm-onegrid{grid-template-columns:minmax(0,1fr)}
+  .tm-onegrid > div{grid-area:auto}
+  .tm-ocirc{order:-1}
+  .tm-row .q-actions{margin-left:0}
+}
+
+/* Mixed practice */
+@media (max-width:560px){
+  .mx-q .q-head{flex-wrap:wrap}
+  .mx-q .q-head .tags{order:-1;flex:1 0 100%;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
+}
+.mx-q .q-prompt{font-weight:700}
+.mx-q .numrow{flex-wrap:wrap;align-items:center;gap:8px 10px}
+.mx-cell{display:inline-flex;align-items:center;gap:8px}
+.mx-lab .m{font-size:1.05rem}
+.mx-unit{font-size:.95rem;color:var(--ink-2)}
+.mx-pi{font-size:1.25rem}
+.mx-ucw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 24px;align-items:start;margin-top:6px}
+.mx-ucp{max-width:380px;width:100%}
+.mx-yours{margin:0 0 6px}
+.mx-yours .m{white-space:normal}
+.mx-sum{margin-top:6px}
+@media (max-width:640px){ .mx-ucw{grid-template-columns:minmax(0,1fr)} .mx-ucp{max-width:none} }
+
+/* Task: build an exact value */
+.pt-how{margin:4px 0 8px}
+.tk-in{display:flex;flex-wrap:wrap;gap:10px 28px;margin:8px 0 14px}
+.tk-row{display:flex;align-items:center;gap:8px}
+.tk-name{font:400 1.4rem var(--font-math);min-width:2.4em}
+.btn.tk-pm{font-size:1.3rem;line-height:1;min-width:44px;min-height:40px;padding:.1em .5em}
+.tk-box{width:5.2rem;text-align:center;font:400 1.15rem var(--font-math)}
+.tk-pi{font-size:1.4rem}
+.tk-h{margin:0 0 6px}
+.tk-pw{max-width:420px}
+#tk-read{margin-top:10px}
+#tk-read dd .m{font-size:1.08em;white-space:normal}
