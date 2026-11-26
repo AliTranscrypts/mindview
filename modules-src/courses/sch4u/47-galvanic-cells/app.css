@@ -1,0 +1,107 @@
+/* SCH4U 47: hero, Cell builder (C10), Will it react?, Label the cell, Cell calculations, A practical cell */
+/* Module tokens: solution tints (--gc-cu pale blue, --gc-fe3 pale yellow, --gc-i2 pale brown, --gc-water colourless),
+   --gc-pt (platinum, grey), --gc-bridge (salt-bridge tube), --gc-coat (fresh metal coating), --gc-glow (bulb), --gc-hot
+   (thermometer). Electrons, anions and cations use the course tokens --ec-e, --ec-an and --ec-cat. */
+:root{--gc-cu:#8FC3EC;--gc-fe3:#F0D873;--gc-i2:#C99A62;--gc-water:#EEF3F8;--gc-pt:#9AA1AC;--gc-bridge:#E6E2D6;--gc-coat:#8A4B2A;--gc-glow:#FFD54A;--gc-hot:#C8402E}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--gc-cu:#2F6A99;--gc-fe3:#857024;--gc-i2:#7A5228;--gc-water:#1C2731;--gc-pt:#B3BAC4;--gc-bridge:#3E434B;--gc-coat:#E09A6A;--gc-glow:#FFE27A;--gc-hot:#FF7A66} }
+:root[data-theme="dark"]{--gc-cu:#2F6A99;--gc-fe3:#857024;--gc-i2:#7A5228;--gc-water:#1C2731;--gc-pt:#B3BAC4;--gc-bridge:#3E434B;--gc-coat:#E09A6A;--gc-glow:#FFE27A;--gc-hot:#FF7A66}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* hero */
+.gc-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.gc-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.gc-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: cell builder */
+.gc-how{margin-top:0}
+.gc-modes{margin:0 0 12px}
+.gc-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.gc-view,.gc-side{min-width:0}
+.gc-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.gc-svg{display:block;width:100%;max-width:600px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.gc-cap{min-height:1.5em;margin:10px 0 2px}
+.gc-c[hidden]{display:none}
+.gc-c + .gc-c{margin-top:14px}
+.gc-c > * + *{margin-top:10px}
+.gc-picks{display:flex;flex-wrap:wrap;gap:10px 14px}
+.gc-pick{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1 1 11rem}
+.gc-pick label{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.gc-pick select{font:inherit;font-size:.95rem;padding:.35em .5em;min-height:40px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);max-width:100%}
+.gc-sws{display:flex;flex-wrap:wrap;gap:8px 16px}
+.gc-sw{display:inline-flex;align-items:center;gap:8px;border:0;background:none;color:var(--ink);font:inherit;font-size:.95rem;font-weight:700;padding:4px 2px;min-height:40px;cursor:pointer}
+.gc-track{position:relative;display:inline-block;width:40px;height:22px;border-radius:999px;border:1.5px solid var(--ink-2);background:var(--sheet);flex:none}
+.gc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--ink-2);transition:left .15s}
+.gc-sw[aria-checked="true"] .gc-track{background:var(--hi);border-color:var(--hi)}
+.gc-sw[aria-checked="true"] .gc-knob{left:20px;background:var(--hi-ink)}
+.gc-sw:disabled{opacity:.55;cursor:default}
+.gc-run{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.gc-run label{font-size:.9rem;font-weight:700}
+.gc-run input{flex:1 1 10rem;min-width:0;accent-color:var(--hi)}
+.gc-tc3{border-top:1.5px solid var(--rule);padding-top:10px}
+.gc-tc3 .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0}
+.gc-sl{margin:0 0 4px}
+.gc-read{margin-top:14px}
+.gc-tabs{margin-top:8px}
+.gc-x{display:inline-block;font-size:.8rem;font-weight:700;color:var(--ink-2);border:1px dashed var(--ink-2);border-radius:5px;padding:0 4px;opacity:.75}
+
+/* Part 3 */
+.gc-st h3{margin-top:0}
+.gc-trials{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.gc-trial{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--rule);border-radius:10px;padding:8px;background:var(--sheet)}
+.gc-tsvg{width:96px;height:auto;flex:none;font-family:var(--font-ui)}
+.gc-tb{min-width:0;flex:1}
+.gc-tb > * + *{margin-top:6px}
+.gc-tt{margin:0}
+.gc-tfb{margin:6px 0 0;font-size:.92rem}
+.gc-score{min-height:1.2em}
+.gc-dt td,.gc-dt th{text-align:left;vertical-align:top}
+.gc-barc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:8px 0}
+.gc-barc label{font-weight:700;font-size:.92rem}
+.gc-barc input{flex:1 1 12rem;min-width:0;accent-color:var(--hi)}
+.gc-et td,.gc-et th{text-align:left;padding:3px 8px}
+.gc-et tr.gc-on td{background:var(--hi-soft);border-top:2.5px solid var(--hi);border-bottom:2.5px solid var(--hi)}
+.gc-et tr.gc-below td:nth-child(3){background:var(--good-bg)}
+.gc-ob{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:6px;padding:.15em .6em;min-height:32px;font:inherit;cursor:pointer}
+.gc-ob[aria-pressed="true"]{border-color:var(--hi);font-weight:700}
+.gc-eq{color:var(--ink-2);white-space:nowrap}
+.gc-rulep{border-left:4px solid var(--hi);padding:6px 10px;background:var(--info-bg);border-radius:4px}
+.gc-cards h4{margin:14px 0 6px}
+.gc-eqn{font-weight:700;text-align:center}
+.gc-s3 .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:8px 0}
+.gc-s4{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:12px 20px;align-items:center}
+.gc-shesvg{width:100%;max-width:260px;height:auto;font-family:var(--font-ui)}
+.gc-tabs3{margin-top:8px}
+
+/* Practice: label the cell */
+.gc-lc h4{margin:0 0 4px}
+.gc-lbox{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);max-width:600px;margin:8px auto 0}
+.gc-lbox .gc-svg{max-width:none}
+.gc-tg{position:absolute;transform:translate(-50%,-50%);min-height:28px;min-width:28px;padding:0 8px;border-radius:999px;border:1.5px dashed var(--ink-2);background:var(--sheet);color:var(--ink);font:700 .78rem var(--font-ui);cursor:pointer;opacity:.92}
+.gc-tg.on{border-style:solid;border-color:var(--hi);box-shadow:0 0 0 2px var(--hi-soft)}
+.gc-lmsg{min-height:1.3em;margin:8px 0}
+.gc-part{margin:8px 0}
+.gc-part .chips{margin-top:4px}
+.gc-ctab{margin-bottom:10px}
+.numrow .numin{max-width:9rem}
+
+/* task */
+.gc-tch + .gc-tch{margin-top:12px}
+.gc-h4{margin:0 0 6px}
+.gc-conds li{margin:3px 0}
+
+@media (max-width:760px){
+  .gc-grid{grid-template-columns:minmax(0,1fr)}
+  .gc-s4{grid-template-columns:minmax(0,1fr)}
+  .gc-tg{font-size:.7rem;padding:0 5px;min-height:26px;min-width:26px}
+}

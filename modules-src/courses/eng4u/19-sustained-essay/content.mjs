@@ -3,10 +3,9 @@
 // ("Made, Not Born"); short public-domain quotations from Frankenstein (1831 text), Jane Eyre (1847), The Great Gatsby (1925),
 // Pride and Prejudice (1813), Dracula (1897), Heart of Darkness (1899) and Bacon's "Of Studies" (1625). Practice theses, outlines,
 // paragraphs and the task models are original to the course.
-// VERIFY: every quotation below against the public-domain text (Frankenstein 1831 chapter numbering; standard chapters for the
-// others) before release: Shelley ch. 5 "Unable to endure the aspect…", ch. 10 "I was benevolent and good…", "Everywhere I see bliss…",
-// "I ought to be thy Adam", ch. 12 "the monster that I am", ch. 20 "Beware; for I am fearless…", ch. 24 "lost in darkness and distance";
-// Brontë ch. 23 (three), ch. 27 "I care for myself…"; Fitzgerald ch. 1 "stretched out his arms toward the dark water", ch. 6, ch. 9 (two).
+// Quotations checked 2026-11-26 against Project Gutenberg #42324 (Frankenstein, 1831 text; "Every where" is the 1831 spelling),
+// #1260 (Jane Eyre; ch. 27 "I care for myself" has "I" in italics in the original) and Wikisource "The Great Gatsby (1925)";
+// wording, punctuation and chapter numbers match.
 
 const T_FR = "<em>Frankenstein</em>", T_JE = "<em>Jane Eyre</em>", T_GG = "<em>The Great Gatsby</em>";
 const RUB = "<details class='alg se-rubric'><summary>How your teacher reads the writing (levels 1–4)</summary><div class='tbl-wrap'><table class='topic-tbl'><thead><tr><th scope='col'>Category</th><th scope='col'>Level 1</th><th scope='col'>Level 2</th><th scope='col'>Level 3</th><th scope='col'>Level 4</th></tr></thead><tbody>" +
@@ -161,7 +160,7 @@ export default {
           { id:"q2", q:"Unable to endure the aspect of the being I had created, I rushed out of the room", sur:"Shelley", kind:"ch", n:"5", card:"b" },
           { id:"q3", q:"the monster that I am", sur:"Shelley", kind:"ch", n:"12", card:"b" },
           { id:"q4", q:"I was benevolent and good; misery made me a fiend", sur:"Shelley", kind:"ch", n:"10", card:"c" },
-          { id:"q5", q:"Everywhere I see bliss, from which I alone am irrevocably excluded", sur:"Shelley", kind:"ch", n:"10", card:"c" },
+          { id:"q5", q:"Every where I see bliss, from which I alone am irrevocably excluded", sur:"Shelley", kind:"ch", n:"10", card:"c" },
           { id:"q6", q:"Beware; for I am fearless, and therefore powerful", sur:"Shelley", kind:"ch", n:"20", card:"d" },
           { id:"q7", q:"lost in darkness and distance", sur:"Shelley", kind:"ch", n:"24", card:"e" }],
         para:{ claim:"Yet each rejection the Creature suffers is staged as a judgment of his appearance, never of his actions.",

@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 254/295 live, 35 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 289/295 live, 3 built, 3 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 48/59 | 9 | 2 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 38/39 | 1 | 0 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 28/52 | 20 | 4 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 43/46 | 3 | 0 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 24/25 | 1 | 0 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 23/24 | 1 | 0 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 57/59 | 1 | 1 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 39/39 | 0 | 0 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 48/52 | 2 | 2 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 46/46 | 0 | 0 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 25/25 | 0 | 0 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 24/24 | 0 | 0 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -103,7 +103,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
 - ✓ 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
 - ✓ 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
-- ◐ 31 Logarithmic Differentiation (`logarithmic-differentiation`, topic, site ch5)
+- ✓ 31 Logarithmic Differentiation (`logarithmic-differentiation`, topic, site ch5)
 - ✓ 32 Sinusoidal Word Problems (`sinusoidal-word-problems`, topic, site ch5)
 - ✓ 33 Introduction to Vectors (`introduction-to-vectors`, topic, site ch6)
 - ✓ 34 Adding and Subtracting Vectors (`adding-and-subtracting-vectors`, topic, site ch6)
@@ -115,23 +115,23 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 40 Linear Combinations and Spanning Sets (`linear-combinations-and-spanning-sets`, topic, site ch6)
 - ✓ 41 Vectors as Forces (`vectors-as-forces`, topic, site ch7)
 - ✓ 42 Rope Tension and Velocity (`rope-tension-and-velocity`, topic, site ch7)
-- ◐ 43 The Dot Product in R² (`dot-product-in-r2`, topic, site ch7)
+- ✓ 43 The Dot Product in R² (`dot-product-in-r2`, topic, site ch7)
 - ✓ 44 The Dot Product in R³ (`dot-product-in-r3`, topic, site ch7)
-- ◐ 45 Scalar and Vector Projections (`scalar-and-vector-projections`, topic, site ch7)
+- ✓ 45 Scalar and Vector Projections (`scalar-and-vector-projections`, topic, site ch7)
 - ✓ 46 The Cross Product (`the-cross-product`, topic, site ch7)
 - ✓ 47 Applications of the Cross Product and Triple Scalar Product (`applications-of-cross-and-triple-product`, topic, site ch7)
 - ✓ 48 Equations of Lines in R² (`equations-of-lines-in-r2`, topic, site ch8)
 - ✓ 49 Cartesian Equation of a Line in R² (`cartesian-equation-of-a-line-in-r2`, topic, site ch8)
-- ◐ 50 Vector, Parametric and Symmetric Equations of Lines in R³ (`equations-of-lines-in-r3`, topic, site ch8)
-- ◐ 51 Vector Equation of a Plane (`vector-equation-of-a-plane`, topic, site ch8)
+- ✓ 50 Vector, Parametric and Symmetric Equations of Lines in R³ (`equations-of-lines-in-r3`, topic, site ch8)
+- ✓ 51 Vector Equation of a Plane (`vector-equation-of-a-plane`, topic, site ch8)
 - ✓ 52 Cartesian Equation of a Plane (`cartesian-equation-of-a-plane`, topic, site ch8)
-- ◐ 53 Intersection of Lines with Planes (`intersection-of-lines-with-planes`, topic, site ch9)
-- … 54 Intersection of Lines in R² and R³ (`intersection-of-lines`, topic, site ch9)
+- ✓ 53 Intersection of Lines with Planes (`intersection-of-lines-with-planes`, topic, site ch9)
+- ◐ 54 Intersection of Lines in R² and R³ (`intersection-of-lines`, topic, site ch9)
 - … 55 Systems of Equations (Matrices) (`systems-of-equations-matrices`, topic, site ch9)
-- ◐ 56 Intersection of Two Planes (`intersection-of-two-planes`, topic, site ch9)
-- ◐ 57 Intersection of Three Planes (`intersection-of-three-planes`, topic, site ch9)
+- ✓ 56 Intersection of Two Planes (`intersection-of-two-planes`, topic, site ch9)
+- ✓ 57 Intersection of Three Planes (`intersection-of-three-planes`, topic, site ch9)
 - ✓ 58 Distance from a Point to a Line in R² and R³ (`distance-point-to-line`, topic, site ch9)
-- ◐ 59 Distance from a Point to a Plane (`distance-point-to-plane`, topic, site ch9)
+- ✓ 59 Distance from a Point to a Plane (`distance-point-to-plane`, topic, site ch9)
 
 ## MDM4U Mathematics of Data Management (`mdm4u`)
 
@@ -156,7 +156,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 19 Expected Value (`expected-value`, topic, site ch4)
 - ✓ 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
 - ✓ 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
-- ◐ 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
+- ✓ 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
 - ✓ 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
 - ✓ 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
 - ✓ 25 Continuous Random Variables & Density (`continuous-density`, topic, site ch6)
@@ -198,36 +198,36 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
 - … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
 - … 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
-- ◐ 22 Periodic Trends (`periodic-trends`, topic, site ch2)
-- ◐ 23 The Periodic Table (`the-periodic-table`, topic, site ch2)
-- ◐ 24 Energy Changes and Enthalpy (`energy-changes-and-enthalpy`, topic, site ch3)
+- ✓ 22 Periodic Trends (`periodic-trends`, topic, site ch2)
+- ✓ 23 The Periodic Table (`the-periodic-table`, topic, site ch2)
+- ✓ 24 Energy Changes and Enthalpy (`energy-changes-and-enthalpy`, topic, site ch3)
 - ✓ 25 Calorimetry (`calorimetry`, topic, site ch3)
 - ✓ 26 Bond Energy (`bond-energy`, topic, site ch3)
-- ◐ 27 Hess's Law (`hess-law`, topic, site ch3)
-- ◐ 28 Standard Enthalpy of Formation (`standard-enthalpy-of-formation`, topic, site ch3)
+- ✓ 27 Hess's Law (`hess-law`, topic, site ch3)
+- ✓ 28 Standard Enthalpy of Formation (`standard-enthalpy-of-formation`, topic, site ch3)
 - ✓ 29 Rate of Reaction (`rate-of-reaction`, topic, site ch3)
-- ◐ 30 Collision Theory and Activation Energy (`collision-theory-and-activation-energy`, topic, site ch3)
-- ◐ 31 Rate Law and Reaction Mechanisms (`rate-law-and-mechanisms`, topic, site ch3)
-- ◐ 32 Entropy (`entropy`, topic, site ch3)
+- ✓ 30 Collision Theory and Activation Energy (`collision-theory-and-activation-energy`, topic, site ch3)
+- ✓ 31 Rate Law and Reaction Mechanisms (`rate-law-and-mechanisms`, topic, site ch3)
+- ✓ 32 Entropy (`entropy`, topic, site ch3)
 - ✓ 33 Gibbs Free Energy (`gibbs-free-energy`, topic, site ch3)
 - ✓ 34 Dynamic Equilibrium (`dynamic-equilibrium`, topic, site ch4)
-- ◐ 35 Le Chatelier's Principle (`le-chatelier`, topic, site ch4)
+- ✓ 35 Le Chatelier's Principle (`le-chatelier`, topic, site ch4)
 - ✓ 36 Quantitative Equilibrium (Keq) (`keq`, topic, site ch4)
-- ◐ 37 Solubility Equilibrium (Ksp) (`ksp`, topic, site ch4)
-- ◐ 38 Acids and Bases (`acids-and-bases`, topic, site ch4)
+- ✓ 37 Solubility Equilibrium (Ksp) (`ksp`, topic, site ch4)
+- ✓ 38 Acids and Bases (`acids-and-bases`, topic, site ch4)
 - ✓ 39 pH of Strong Acids and Bases (`ph-strong-acids-bases`, topic, site ch4)
 - ✓ 40 Ka and Kb Calculations (`ka-and-kb`, topic, site ch4)
-- ◐ 41 Hydrolysis of Salts (`hydrolysis-of-salts`, topic, site ch4)
-- ◐ 42 Strong Acid/Base Titration (`strong-titration`, topic, site ch4)
-- ◐ 43 Weak Acid/Base Titration (`weak-titration`, topic, site ch4)
-- ◐ 44 Buffer Solutions (`buffer-solutions`, topic, site ch4)
-- ◐ 45 Assigning Oxidation Numbers (`oxidation-numbers`, topic, site ch5)
-- … 46 Balancing Redox Reactions (Half-Reaction Method) (`balancing-redox`, topic, site ch5)
-- … 47 Galvanic Cells and Standard Reduction Potentials (`galvanic-cells`, topic, site ch5)
-- ◐ 48 Cell Notation (Voltaic Cells) (`cell-notation`, topic, site ch5)
-- ◐ 49 Corrosion (`corrosion`, topic, site ch5)
-- ◐ 50 Faraday's First Law of Electrolysis (`faraday-first-law`, topic, site ch5)
-- ◐ 51 Faraday's Second Law of Electrolysis (`faraday-second-law`, topic, site ch5)
+- ✓ 41 Hydrolysis of Salts (`hydrolysis-of-salts`, topic, site ch4)
+- ✓ 42 Strong Acid/Base Titration (`strong-titration`, topic, site ch4)
+- ✓ 43 Weak Acid/Base Titration (`weak-titration`, topic, site ch4)
+- ✓ 44 Buffer Solutions (`buffer-solutions`, topic, site ch4)
+- ✓ 45 Assigning Oxidation Numbers (`oxidation-numbers`, topic, site ch5)
+- ◐ 46 Balancing Redox Reactions (Half-Reaction Method) (`balancing-redox`, topic, site ch5)
+- ◐ 47 Galvanic Cells and Standard Reduction Potentials (`galvanic-cells`, topic, site ch5)
+- ✓ 48 Cell Notation (Voltaic Cells) (`cell-notation`, topic, site ch5)
+- ✓ 49 Corrosion (`corrosion`, topic, site ch5)
+- ✓ 50 Faraday's First Law of Electrolysis (`faraday-first-law`, topic, site ch5)
+- ✓ 51 Faraday's Second Law of Electrolysis (`faraday-second-law`, topic, site ch5)
 - ✓ 52 The Hall–Héroult Process (`hall-heroult`, topic, site ch5)
 
 ## SBI4U Biology (`sbi4u`)
@@ -253,7 +253,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
 - ✓ 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - ✓ 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)
-- ◐ 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
+- ✓ 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
 - ✓ 23 Transcription (`transcription`, topic, site ch3)
 - ✓ 24 tRNA (`trna`, topic, site ch3)
 - ✓ 25 Overview of Protein Synthesis (`overview-of-protein-synthesis`, topic, site ch3)
@@ -267,12 +267,12 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 33 Restriction Enzymes and Recombinant DNA (`restriction-enzymes-and-recombinant-dna`, topic, site ch3)
 - ✓ 34 Homeostasis (`homeostasis`, topic, site ch4)
 - ✓ 35 Thermoregulation (`thermoregulation`, topic, site ch4)
-- ◐ 36 The Urinary System (`urinary-system`, topic, site ch4)
+- ✓ 36 The Urinary System (`urinary-system`, topic, site ch4)
 - ✓ 37 Hormones That Affect Metabolism (`hormones-that-affect-metabolism`, topic, site ch4)
 - ✓ 38 Male Reproductive Hormones (`male-reproductive-hormones`, topic, site ch4)
 - ✓ 39 Female Reproductive Hormones (`female-reproductive-hormones`, topic, site ch4)
 - ✓ 40 Action Potential (`action-potential`, topic, site ch4)
-- ◐ 41 Synapses (`synapses`, topic, site ch4)
+- ✓ 41 Synapses (`synapses`, topic, site ch4)
 - ✓ 42 Insulin and Glucagon (`insulin-and-glucagon`, topic, site ch4)
 - ✓ 43 Population Ecology (`population-ecology`, topic, site ch5)
 - ✓ 44 Predation, Competition and Symbiosis (`species-interactions`, topic, site ch5)
@@ -301,7 +301,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - ✓ 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - ✓ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
-- ◐ 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
+- ✓ 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
 - ✓ 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
 - ✓ 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
 - ✓ 24 Food Aid & the Sustainable Development Goals (`food-aid-sdgs`, topic, site ch5)
@@ -327,7 +327,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
 - ✓ 17 Choosing a Novel of Literary Merit (`choosing-a-novel`, topic, site ch5)
 - ✓ 18 Research & Secondary Sources (`research-and-sources`, topic, site ch5)
-- ◐ 19 The Sustained Literary-Analysis Essay (`sustained-essay`, topic, site ch5)
+- ✓ 19 The Sustained Literary-Analysis Essay (`sustained-essay`, topic, site ch5)
 - ✓ 20 ISU Oral Defence (`isu-oral-defence`, topic, site ch5)
 - ✓ 21 Media Forms & Conventions (`media-forms`, topic, site ch6)
 - ✓ 22 News, Bias & Source Evaluation (`news-and-bias`, topic, site ch6)

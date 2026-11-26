@@ -360,8 +360,7 @@
    "prereqs": [
     "21"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "23",
@@ -573,8 +572,7 @@
    "prereqs": [
     "34"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "37",
@@ -649,8 +647,7 @@
    "prereqs": [
     "40"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "42",

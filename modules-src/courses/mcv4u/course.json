@@ -535,8 +535,7 @@
     "13",
     "27"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "32",
@@ -714,8 +713,7 @@
     "38",
     "41"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "44",
@@ -748,8 +746,7 @@
     "35",
     "41"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "46",
@@ -824,8 +821,7 @@
     "48",
     "37"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "51",
@@ -841,8 +837,7 @@
     "50",
     "39"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "52",
@@ -875,8 +870,7 @@
     "52",
     "44"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "54",
@@ -892,7 +886,8 @@
     "49",
     "50"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "55",
@@ -924,8 +919,7 @@
     "46",
     "50"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "57",
@@ -941,8 +935,7 @@
     "56",
     "47"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "58",
@@ -975,8 +968,7 @@
     "58",
     "46"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   }
  ]
 }

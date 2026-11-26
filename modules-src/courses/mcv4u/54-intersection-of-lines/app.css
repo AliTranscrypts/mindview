@@ -1,0 +1,72 @@
+/* MCV4U 54: Two lines in space (V1 3D view + line inputs + readouts), Skew or crossing? flowchart, Find it boxes,
+   Skew partner task */
+.il-c1{color:var(--pen)}
+.il-c2{color:var(--f3)}
+.il-hero{max-width:520px;margin:0 auto}
+.il-hpair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.il-hc{margin:0 0 4px;font-weight:700;text-align:center}
+/* V1 3D view */
+.il-3d{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.il-3d:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.il-3d svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.il-t{paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round;font:600 13px var(--font-ui)}
+.il-ax{font:italic 700 15px var(--font-math)}
+.il-tk{font:500 11px var(--font-ui)}
+.il-lb{font:700 13px var(--font-ui)}
+.il-vbar{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0 0}
+.il-vbar .seg button{min-height:32px}
+/* Explore */
+.il-ex{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.il-main,.il-side{min-width:0}
+.il-h{font-weight:700;margin:10px 0 4px}
+.il-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 6px}
+.il-ctl .il-h{margin:0}
+.il-note{margin:6px 0 0}
+.il-gal{gap:6px;margin:0 0 8px}
+.il-gal .il-cchip{border-style:dashed}
+.il-line{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px 8px;margin:8px 0 0;min-width:0}
+.il-line legend{font-weight:700;padding:0 4px}
+.il-l1{border-left:5px solid var(--pen)}
+.il-l2{border-left:5px solid var(--f3)}
+.il-vrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:4px 0}
+.il-vl{min-width:3.4rem}
+.il-par{font-size:1.2rem;color:var(--ink-2)}
+.il-cm{color:var(--ink-2)}
+.il-vrow .numin.il-n{width:3.6rem;min-height:32px;padding:2px 4px;text-align:center}
+.il-flat .il-z{display:none}
+.il-bad{margin:4px 0 0;min-height:1.2em;color:var(--red)}
+.il-sl{margin-top:10px;display:block}
+.il-sl input{width:100%;min-height:28px}
+.il-sl output{color:var(--ink);font-weight:700}
+dl.read.il-read{margin-top:12px}
+.il-eqr{display:block;white-space:normal}
+/* Part 3 */
+.il-pairs{gap:6px;margin:0 0 12px}
+.il-p3g{align-items:start}
+.il-peq{margin:0 0 8px}
+.il-pl{margin:2px 0;overflow-x:auto}
+.il-sw1,.il-sw2{display:inline-block;font-weight:700;font-size:.85rem;padding:1px 8px;border-radius:999px;margin-right:6px;color:var(--ink)}
+.il-sw1{border:2px solid var(--pen)}
+.il-sw2{border:2px solid var(--f3)}
+.il-fc{list-style:none;margin:8px 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.il-fc li{padding:6px 10px;border-left:4px solid var(--rule);border-radius:0 8px 8px 0}
+.il-fc li.cur{border-left-color:var(--hi);background:var(--info-bg)}
+.il-fc li.il-skip{border-left-style:dashed}
+.il-fq{margin:0;font-weight:700}
+.il-fw{margin:4px 0 0}
+.il-okc{color:var(--green)}
+/* Find it */
+.il-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:1.05rem;margin:4px 0 8px}
+.il-frame .numin.short{width:4.2rem}
+.il-fl{white-space:nowrap}
+.il-gap{display:inline-block;width:10px}
+/* task */
+.il-tin{display:flex;flex-direction:column;gap:8px}
+.il-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.il-step label{min-width:7.5rem}
+.il-step .numin.short{width:4rem}
+.il-tgh{margin:10px 0 4px;font-weight:700}
+@media (max-width:720px){
+  .il-ex{grid-template-columns:minmax(0,1fr)}
+  .il-hpair{grid-template-columns:1fr}
+}

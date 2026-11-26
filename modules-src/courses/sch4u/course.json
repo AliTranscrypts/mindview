@@ -352,8 +352,7 @@
     "16",
     "15"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "23",
@@ -368,8 +367,7 @@
     "16",
     "22"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "24",
@@ -381,8 +379,7 @@
    "size": "M",
    "part3": "thermochemical",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "25",
@@ -426,8 +423,7 @@
     "24",
     "25"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "28",
@@ -441,8 +437,7 @@
    "prereqs": [
     "27"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "29",
@@ -471,8 +466,7 @@
     "29",
     "24"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "31",
@@ -487,8 +481,7 @@
     "29",
     "30"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "32",
@@ -502,8 +495,7 @@
    "prereqs": [
     "24"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "33",
@@ -550,8 +542,7 @@
     "24",
     "30"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "36",
@@ -581,8 +572,7 @@
     "36",
     "35"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "38",
@@ -597,8 +587,7 @@
     "34",
     "36"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "39",
@@ -644,8 +633,7 @@
     "39",
     "40"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "42",
@@ -660,8 +648,7 @@
     "39",
     "41"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "43",
@@ -677,8 +664,7 @@
     "42",
     "41"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "44",
@@ -695,8 +681,7 @@
     "41",
     "35"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "45",
@@ -708,8 +693,7 @@
    "size": "S",
    "part3": "redox-or-not",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "46",
@@ -723,7 +707,8 @@
    "prereqs": [
     "45"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "47",
@@ -738,7 +723,8 @@
     "45",
     "46"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "48",
@@ -752,8 +738,7 @@
    "prereqs": [
     "47"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "49",
@@ -769,8 +754,7 @@
     "46",
     "45"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "50",
@@ -785,8 +769,7 @@
     "47",
     "46"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "51",
@@ -800,8 +783,7 @@
    "prereqs": [
     "50"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "52",

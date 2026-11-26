@@ -332,3 +332,6 @@ every module that uses the touched code, then ship them together).
 | — | sch4u 28 | VERIFY: Sabatier reaction in spacecraft (F4), hydrogen from natural gas, Ontario power mix (Station 2) |
 | — | sch4u 30 | VERIFY: ammonia plant 400–500 °C (Station 3, Final A2); catalyst fraction capped at 100%; 2nd homogeneous/heterogeneous examples (amylase, iron) builder-written |
 | C10 cell (2nd copy, built before 47) | sch4u 48 | PLAN ERROR: mismatch card "Iron metal is the cathode" doesn't exist (mapped to pair 4). VERIFY: Ballard note |
+| V1 view3d | mcv4u 54 | PLAN NOTE: TC1 + P3 use values outside the plan's input ranges (widened to points ±6, directions ±4) |
+| — | eng4u 19 | quotes verified vs PG #42324, #1260 + Wikisource 1925; fixed 1831 "Every where" (ch. 10) |
+| C10 cellView + stripBeaker | sch4u 47 | PLAN ERROR: plan calls I₂ solution colourless (shown pale brown); W6 option C feedback, Station 3 distractors, L-hints builder-written |
