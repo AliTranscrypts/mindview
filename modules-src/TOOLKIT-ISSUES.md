@@ -115,3 +115,6 @@ every module that uses the touched code, then ship them together).
 | V5 derivativePanels, sketchBuild, slopeGallery | mcv4u 07 | plan fix: f(x)=9 at x≈2.55 not 2.4 (TC1 tolerance). Toolkit: plot.v undefined while a view is hidden |
 | E3 scansionTapper, E17 poemEditor | eng4u 03 | OWNER REVIEW: Johnson, Dickinson 1890, Rossetti, Hopkins checked on Gutenberg mirrors; Shakespeare and Keats on Wikisource (modern spelling); short Blake, Poe, Coleridge, Tennyson, Pope, McCrae, Frost lines unchecked; author-written device-lens notes, Station 4 distractors, hints; 301 KB |
 | S2 pathwayStepper (station form + atom tracker), N8 regionTaps, enzymeZoom | sbi4u 04 | |
+| D3 countingSlots (permutations), D4 arrangementTiles, products ladder | mdm4u 07 | |
+| radioGroup (+setOptions), drawModel, mosaicSquare, bagSliders | mdm4u 05 | visual bug: D1 tree highlighted path shows through node label backgrounds — also in mdm4u 01 (fixed locally in 05) |
+| rectGrowth, V8 coefBoxes, mtext (canvas labels) | mcv4u 10 | |

@@ -110,7 +110,8 @@
     "03",
     "04"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "06",
@@ -139,7 +140,8 @@
     "06",
     "02"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "08",
