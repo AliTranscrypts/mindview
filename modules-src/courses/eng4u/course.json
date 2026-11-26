@@ -88,7 +88,8 @@
     "01",
     "03"
    ],
-   "trivium": "Logic"
+   "trivium": "Logic",
+   "status": "building"
   },
   {
    "nn": "05",
@@ -104,7 +105,8 @@
     "01",
     "02"
    ],
-   "trivium": "Logic, Rhetoric"
+   "trivium": "Logic, Rhetoric",
+   "status": "building"
   },
   {
    "nn": "06",

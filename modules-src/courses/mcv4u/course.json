@@ -180,7 +180,8 @@
    "prereqs": [
     "08",
     "07"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "10",
@@ -193,7 +194,8 @@
    "part3": "compare",
    "prereqs": [
     "09"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "11",

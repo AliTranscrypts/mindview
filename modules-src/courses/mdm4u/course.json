@@ -123,7 +123,8 @@
    "part3": "algebra",
    "prereqs": [
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "07",
@@ -137,7 +138,8 @@
    "prereqs": [
     "06",
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "08",

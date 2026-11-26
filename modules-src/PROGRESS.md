@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 70/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 71/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 6/59 | 0 | 53 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 4/39 | 0 | 35 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 2/52 | 1 | 49 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 3/52 | 0 | 49 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 3/25 | 0 | 22 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 3/25 | 1 | 21 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 0 | 22 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -81,8 +81,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 06 Continuity (`continuity`, topic, site ch1)
 - … 07 Sketching Derivative Functions (`sketching-derivative-functions`, topic, site ch2)
 - … 08 Derivatives from First Principles (`derivatives-from-first-principles`, topic, site ch2)
-- · 09 Derivatives of Polynomials (`derivatives-of-polynomials`, topic, site ch2)
-- · 10 The Product Rule (`the-product-rule`, topic, site ch2)
+- … 09 Derivatives of Polynomials (`derivatives-of-polynomials`, topic, site ch2)
+- … 10 The Product Rule (`the-product-rule`, topic, site ch2)
 - · 11 The Quotient Rule (`the-quotient-rule`, topic, site ch2)
 - · 12 Derivatives of Composite Functions: the Chain Rule (`the-chain-rule`, topic, site ch2)
 - · 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
@@ -140,8 +140,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 03 Mutually Exclusive Events & the Additive Principle (`mutually-exclusive`, topic, site ch1)
 - ✓ 04 Venn Diagrams & Set Operations (`venn-diagrams`, topic, site ch1)
 - … 05 Independent vs Dependent Events (`independent-dependent`, topic, site ch1)
-- · 06 Factorial Notation (`factorial-notation`, topic, site ch2)
-- · 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
+- … 06 Factorial Notation (`factorial-notation`, topic, site ch2)
+- … 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
 - · 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
 - · 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
 - · 10 Circular Permutations (`circular-permutations`, topic, site ch2)
@@ -179,10 +179,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 - ✓ 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
 - ✓ 02 Alkenes, Alkynes and Aromatics (`alkenes-alkynes-aromatics`, topic, site ch1)
-- ◐ 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
+- ✓ 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
 - … 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
-- · 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
-- · 06 Amines and Amides (`amines-and-amides`, topic, site ch1)
+- … 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
+- … 06 Amines and Amides (`amines-and-amides`, topic, site ch1)
 - · 07 Addition Polymers (`addition-polymers`, topic, site ch1)
 - · 08 Condensation Polymers (`condensation-polymers`, topic, site ch1)
 - · 09 IUPAC Nomenclature (`iupac-nomenclature`, topic, site ch1)
@@ -236,8 +236,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 02 Light and Photosynthetic Pigments (`light-and-pigments`, topic, site ch2)
 - ✓ 03 Chlorophyll and Chloroplasts (`chlorophyll-and-chloroplasts`, topic, site ch2)
 - … 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
-- · 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
-- · 06 Light Reactions (`light-reactions`, topic, site ch2)
+- … 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
+- … 06 Light Reactions (`light-reactions`, topic, site ch2)
 - · 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
 - · 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
 - · 09 C3, C4 and CAM Photosynthesis and Photorespiration (`c3-c4-cam`, topic, site ch2)
@@ -284,10 +284,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
 - ✓ 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
 - ✓ 03 Micronutrients: Vitamins, Minerals, Water (`micronutrients`, topic, site ch1)
-- … 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
-- · 05 Canada's Food Guide, DRIs & Energy Balance (`food-guide-dri-energy`, topic, site ch1)
-- · 06 Pregnancy & Lactation (`pregnancy-lactation`, topic, site ch2)
-- · 07 Infant & Toddler Nutrition (`infant-toddler`, topic, site ch2)
+- ◐ 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
+- … 05 Canada's Food Guide, DRIs & Energy Balance (`food-guide-dri-energy`, topic, site ch1)
+- … 06 Pregnancy & Lactation (`pregnancy-lactation`, topic, site ch2)
+- … 07 Infant & Toddler Nutrition (`infant-toddler`, topic, site ch2)
 - · 08 Children, Adolescents & Adults (`children-adolescents-adults`, topic, site ch2)
 - · 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
 - · 10 Eating Disorders (`eating-disorders`, topic, site ch3)
@@ -312,8 +312,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 01 Literary Devices & Figurative Language (`literary-devices`, topic, site ch1)
 - ✓ 02 Close Reading of Short Fiction (`close-reading-short-fiction`, topic, site ch1)
 - … 03 Reading Poetry (`reading-poetry`, topic, site ch1)
-- · 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
-- · 05 The Writing Process (`writing-process`, topic, site ch2)
+- … 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
+- … 05 The Writing Process (`writing-process`, topic, site ch2)
 - · 06 Essay Forms (`essay-forms`, topic, site ch2)
 - · 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - · 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)

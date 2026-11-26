@@ -20,13 +20,16 @@ Repo: `/Users/ali/Desktop/MV/Modules/Website/mindview`. All paths below are insi
    for MHF4U, `/Users/ali/Desktop/MV/Modules/mhf4u/plan/01-blueprint.md` and `05-colour-key.md`).
 4. The canonical example module(s) the guide names; copy their patterns.
    **For every course except MHF4U:** also read the course files `modules-src/toolkit/courses/{course}.css|js`
-   (usage comments at the top; auto-included in every page of that course) and the course's first module
-   `modules-src/courses/{course}/01-*/`, and grep `@component` across `modules-src/courses/*/*/app.js` for
-   pieces to copy. The course plan's component list (V/D/S/C/F/E codes) names what to tag.
+   (usage comments at the top; auto-included in every page of that course) and skim the course's finished
+   modules `modules-src/courses/{course}/*/` (newest first), and grep `@component` across
+   `modules-src/courses/*/*/app.js` for pieces to copy. The course plan's component list (V/D/S/C/F/E codes)
+   names what to tag (`// @component <code> <name>`). Several modules of your course are being built at the
+   same time; if a component you need isn't built yet, build a self-contained one with the plan's code tag.
+5. The course notes at the end of this file for your course.
 
 **Write only:** `modules-src/courses/{course}/{nn}-{slug}/` (`content.mjs`, `app.js`, optional `app.css`).
 
-**Then run** the guide's assemble and check commands for this module and fix every failure until the
+**Then run** (from `modules-src/`) `node build/assemble.mjs {course} {nn}` and `node build/check.mjs {course} {nn}` for this module and fix every failure until the
 check passes at both widths, in light and dark mode, with reduced motion, and with no console errors.
 Also open the built page's parts yourself in the check's screenshots (or a quick Playwright script) and
 make sure the centrepiece and Part 3 actually work: controls respond, readouts update, predictions
@@ -48,7 +51,8 @@ re-enable after each animation.
 - Known toolkit quirks (work around locally): `MV.player` called twice on one host adds duplicate
   listeners (use a fresh host); matching (N6) appends "Try another partner." to mismatch feedback;
   `Plot.line` ignores alpha; `Plot.point` forces full opacity; `Plot.curve` clamps pixel x to 6× canvas height;
-  y tick labels clip when the y-axis is off-screen; every failed challenge check counts as a try; the
+  y tick labels clip when the y-axis is off-screen; every failed challenge check counts as a try; the challenge click handler
+  crashes if your app repaints/removes the clicked button first (repaint after, or stop propagation); the
   task frame's "find another" message fires after 3 answers. Don't name a text field `ok` (only a boolean
   `ok` marks answers). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
   your own classes with the module's topic.
@@ -57,3 +61,34 @@ re-enable after each animation.
 **Reply (under 150 words):** PASS/FAIL of the final check run, output file size, counts (goals, warm-up,
 predictions, challenges, practice items, Final Check A/B, flashcards), deviations from the plan,
 promotion candidates.
+
+---
+
+## Course notes (read the one for your course)
+
+- **mcv4u:** colours f `--pen`, f′ teal `--f3`, f″ magenta `--f4`, third vector orange `--f5`; rules 7–8. Use
+  `MV.mcv.lim(sub)` for limit notation and `MV.mcv.Q/S/exact.judge` for exact answers (don't copy local versions).
+  Components so far: V4 secantTangent (02), V9 motionTrack (03), V6 approachTable (04), V7 ruleChooser + V8
+  fracBox (05), pencilTrace (06), V5 derivativePanels (07).
+- **mdm4u:** event colours `--ev-a/b/c`; `MV.mdm.fact/nPr/nCr/frac/prob/seededRandom` (simulations must be
+  seeded and repeatable). Components: D1 treeDiagram + D6 simulator (01), D3 countingSlots (02), D2 vennDiagram +
+  parseExpr (03/04). Label invented datasets "model data".
+- **sbi4u:** role colours `--bio-*`, `--leaf` (plant tissue only); `MV.bio.chem` for formulas; simulations are
+  deterministic. Components: S1 diagramExplorer (01/03), S7 spectrumGraph + S9 procedureLab (02), photosystemSim
+  (03), S2 pathwayStepper / S3 energyLedger (04+). Every module has an investigation item and an STSE/Canadian item.
+- **sch4u:** take every constant from `MV.chem.data` (never retype); if a value is missing, define it locally
+  with a comment and report it. `MV.chem.f()` formulas, `MV.chem.atom()` colours, `MV.chem.tablePanel()`.
+  Components: C1 moleculeView/moleculeBuilder, C2 nameBuilder, C3 mechanismStepper (02/03 newest). Spelling
+  "aluminium".
+- **hfa4u:** published in the site's HFA4M course (header shows HFA4M). Follow course plan §2 safety, sensitivity
+  and privacy strictly (weight-inclusive language; self-analysis optional, private and never saved). Don't invent
+  nutrition values or statistics and don't pull figures from the web: label illustrative values "model data" and
+  mark plan "verify before release" items and any value you had to supply with `// VERIFY:` comments; flag all
+  authored content in your reply. `MV.nutri.*`, `MV.kitchenCard` (printing is blocked; cards download). APA 7.
+- **eng4u:** only public-domain texts or passages written for the module; quote exactly from a reliable PD
+  edition and say in your reply if you couldn't verify a text. The site blocks native text selection for
+  students, so span selection uses word chips (`MV.eng.tokens`). ENG features per guide §8 (Word story,
+  Sentence to steal, required Art of Language principle, writing tasks checked for structure only, full text in
+  the summary). Use "metre" for verse; check.mjs flags "meter" (a gauge is "meter", written `m&#101;ter`).
+  Components: E1 annotationStudio + E2 deviceLens + spotProse (01), E9 structureMap + E6 paragraphBuilder (02),
+  E3 scansionTapper (03).
