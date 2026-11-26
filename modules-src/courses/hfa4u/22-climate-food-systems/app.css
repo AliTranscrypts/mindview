@@ -1,0 +1,136 @@
+/* HFA4U 22: hero (food chain loop), Emissions along the chain (F9: Chain view stage bars, Canada impacts map + risk cards,
+   Farm plan cards + meters), Plate footprints (meal builder, dish table), Footprint reasoning, Three-day cafeteria menu.
+   Stage bars: --sys-emis brown fills on --sys-stage ink tracks with value labels. Risk levels: words + pips + icons.
+   Meters: emissions blue --pen, resilience cerulean --p-t, each with a number. Red and green only in feedback. */
+/* radio groups (from HFA4U 16) */
+.cfs-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.cfs-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2);min-width:4.2rem;margin:0 0 4px}
+.cfs-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.cfs-chipset{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.cfs-chipset button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.92rem;min-height:34px;text-align:left;max-width:100%}
+.cfs-chipset button:hover:not(:disabled){border-color:var(--pen)}
+.cfs-chipset button[aria-checked="true"],.cfs-chipset button[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.cfs-chipset button:disabled{opacity:.8}
+.cfs-h4{margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+
+/* hero */
+.cfs-hero{width:100%}
+.cfs-hsvg{display:block;width:100%;height:auto;max-height:420px}
+.cfs-hs{fill:none;stroke:var(--sys-stage);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.cfs-hch{stroke:var(--ink-2);stroke-width:2;stroke-dasharray:4 4}
+.cfs-hl{fill:var(--ink);font:700 16px var(--font-ui)}
+.cfs-hg{fill:var(--ink);font:700 15px var(--font-ui)}
+.cfs-hpuff{fill:var(--sheet);stroke:var(--sys-emis);stroke-width:2.4}
+.cfs-hth{fill:var(--sheet);stroke:var(--ink);stroke-width:2.2}
+.cfs-hthf{fill:var(--p-k)}
+.cfs-hloop{fill:none;stroke:var(--ink-2);stroke-width:3;stroke-dasharray:1}
+.cfs-hhead{fill:none;stroke:var(--ink-2);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.cfs-hcrack{fill:none;stroke:var(--sys-emis);stroke-width:2.4;stroke-linecap:round}
+.cfs-hflood{fill:none;stroke:var(--pen);stroke-width:2.6;stroke-linecap:round}
+.cfs-hcause{fill:var(--ink);font:italic 700 17px var(--font-ui)}
+.cfs-cap{font-size:1rem!important;font-weight:700}
+
+/* explore layout */
+.cfs-lab{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start;margin-top:8px}
+@media (max-width:760px){.cfs-lab{grid-template-columns:minmax(0,1fr)}}
+.cfs-main,.cfs-side{min-width:0}
+.cfs-side>div{margin-bottom:12px}
+.cfs-readw{background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px}
+
+/* chain view */
+.cfs-scale{margin:0 0 6px}
+.cfs-cbs{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.cfs-cbs.two{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.cfs-cb{background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px}
+.cfs-bars{list-style:none;margin:0;padding:0}
+.cfs-bar{display:grid;grid-template-columns:6.6rem minmax(0,1fr) 3.2rem;align-items:center;gap:8px;margin:3px 0;padding:2px 4px;border-radius:6px}
+.cfs-bl{font-size:.88rem;color:var(--ink)}
+.cfs-bt{display:block;height:16px;border:1.5px solid var(--sys-stage);border-radius:4px;background:var(--paper);position:relative;overflow:hidden}
+.cfs-bt i{display:block;height:100%;background:var(--sys-emis)}
+.cfs-bv{font-size:.88rem;font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.cfs-bar.tr .cfs-bl{font-weight:700}
+.cfs-bar.hot{background:var(--hi-soft);outline:2.5px solid var(--hi)}
+.cfs-bar.hot .cfs-bl{font-weight:700}
+.cfs-tot{margin:8px 0 2px}
+.cfs-capt{margin:4px 0 0;font-weight:700}
+.cfs-air{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:var(--hi);color:var(--hi-ink)}
+.cfs-note{margin:8px 0 0}
+.cfs-all{margin-top:10px}
+.cfs-half{margin-top:6px;border:1.5px dashed var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.3em .9em;min-height:36px;font-size:.92rem;cursor:pointer}
+.cfs-half[aria-pressed="true"]{border-style:solid;background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+
+/* Canada impacts */
+.cfs-cmap{display:block;width:100%;height:auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;margin-bottom:10px}
+.cfs-reg{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5;stroke-linejoin:round}
+.cfs-mk{fill:var(--sheet);stroke:var(--ink);stroke-width:2.2}
+.cfs-mk.on{fill:var(--hi);stroke:var(--ink);stroke-width:3}
+.cfs-mlab{fill:var(--ink-2);font:400 15px var(--font-ui)}
+.cfs-mlab.on{fill:var(--ink);font-weight:700}
+@media (max-width:560px){.cfs-cmapw{display:none}}
+.cfs-risks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.cfs-risk{display:grid;grid-template-columns:28px minmax(0,1fr);gap:4px 8px;align-items:center;background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px}
+.cfs-risk.ch{border-color:var(--hi);background:var(--hi-soft)}
+.cfs-ic{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;color:var(--ink);grid-row:span 2}
+.cfs-rt{font-size:.9rem;display:flex;flex-direction:column}
+.cfs-rv{font-weight:700;display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.cfs-pips{display:inline-flex;gap:3px}
+.cfs-pips i{display:block;width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink-2)}
+.cfs-pips i.on{background:var(--ink)}
+.cfs-was{font-weight:400;font-size:.82rem;color:var(--ink-2)}
+
+/* farm plan */
+.cfs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px}
+.cfs-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 8px;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:8px 10px;cursor:pointer;font:inherit}
+.cfs-card:hover{border-color:var(--pen)}
+.cfs-card.on{border:2.5px solid var(--hi);background:var(--hi-soft)}
+.cfs-cl{grid-row:span 2;font-weight:700;font-size:1.05rem;width:1.7rem;height:1.7rem;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center}
+.cfs-card.on .cfs-cl{background:var(--ink);color:var(--sheet)}
+.cfs-ct{font-size:.9rem;font-weight:700}
+.cfs-ce{font-size:.82rem;color:var(--ink-2)}
+.cfs-fmsg{min-height:1.2em;margin:6px 0}
+.cfs-meter{margin:8px 0}
+.cfs-ml{margin:0 0 4px}
+.cfs-mt{position:relative;height:16px;border:1.5px solid var(--ink-2);border-radius:4px;background:var(--paper)}
+.cfs-mt b{position:absolute;top:0;bottom:0;display:block}
+.cfs-meter.em .cfs-mt b{background:var(--pen)}
+.cfs-meter.rs .cfs-mt b{background:var(--p-t)}
+.cfs-mt i.z{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);margin-left:-1px}
+.cfs-mx{display:flex;justify-content:space-between;margin:2px 0 0}
+
+/* Part 3 */
+.cfs-p3{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.cfs-p3{grid-template-columns:minmax(0,1fr)}}
+.cfs-srv{list-style:none;margin:0;padding:0}
+.cfs-srv li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid var(--rule);flex-wrap:wrap}
+.cfs-st{min-width:0;flex:1 1 12rem}
+.cfs-sc{display:flex;align-items:center;gap:6px}
+.cfs-pm{min-width:36px;min-height:36px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;font:inherit;font-weight:700;cursor:pointer;padding:0 8px}
+.cfs-pm:hover:not(:disabled){border-color:var(--pen)}
+.cfs-pm:disabled{opacity:.45;cursor:default}
+.cfs-adt{font-weight:400;font-size:.85rem}
+.cfs-n{min-width:1.4rem;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.cfs-plate{background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;position:sticky;top:70px}
+.cfs-pl{margin:0 0 8px;padding-left:1.1rem}
+.cfs-stack{display:flex;height:18px;border:1.5px solid var(--sys-stage);border-radius:4px;overflow:hidden;background:var(--sheet)}
+.cfs-stack i{display:block;height:100%;border-right:1.5px solid var(--sheet)}
+.cfs-stack i.k0{background:var(--sys-emis)}
+.cfs-stack i.k1{background:var(--ink-2)}
+.cfs-stack i.k2{background:var(--plate-grain)}
+.cfs-stack i.k3{background:var(--ink)}
+.cfs-ptot{margin:8px 0;font-size:1.05rem}
+.cfs-dt{margin-top:16px}
+.cfs-frame{margin:12px 0;border-left:4px solid var(--ink-2);background:var(--paper);padding:8px 12px;border-radius:0 8px 8px 0}
+.cfs-frame p{margin:0}
+
+/* practice: footprint reasoning */
+.cfs-unit{font-size:.9rem;color:var(--ink-2);margin-left:6px}
+.cfs-mchips,.cfs-mcs{margin:8px 0}
+.cfs-mcs button{border-radius:8px}
+
+/* task */
+.cfs-dchips button{border-radius:8px;display:flex;flex-direction:column;align-items:flex-start}
+.cfs-dm{font-size:.8rem;font-weight:400;color:inherit;opacity:.9}
+.cfs-tray{background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px}
+.cfs-ttab{width:100%;border-collapse:collapse;font-size:.9rem}
+.cfs-ttab th,.cfs-ttab td{padding:4px 6px;border-bottom:1px solid var(--rule);text-align:left}
+.cfs-ttab tfoot th,.cfs-ttab tfoot td{border-top:2px solid var(--ink);border-bottom:0}

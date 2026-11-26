@@ -1,0 +1,114 @@
+/* MDM4U 33: Histogram studio (D10 histogram builder, shape gallery), The right graph stations, Left-leaning histogram task.
+   Bars --pen; polygon --ink; tail arrow --hi over --ink; selected bar --sel-bd border on --hi-soft (course plan §3). */
+/* radioGroup (from MDM4U 19 / 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* switch (from MDM4U 19) */
+.hg-sw.cc-switch{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);font:700 .92rem var(--font-ui);padding:4px 0;min-height:36px;text-align:left}
+.hg-sw .cc-track{position:relative;flex:none;width:40px;height:22px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.hg-sw .cc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.hg-sw[aria-checked="true"] .cc-track{background:var(--pen);border-color:var(--pen)}
+.hg-sw[aria-checked="true"] .cc-knob{left:19px;border-color:var(--pen)}
+.hg-sw:disabled{opacity:.45;cursor:not-allowed}
+@media (prefers-reduced-motion:reduce){.hg-sw .cc-track,.hg-sw .cc-knob{transition:none}}
+
+/* histogram SVG */
+.hg-svg{display:block;width:100%;height:auto;max-width:100%}
+.hg-svg text{font-family:var(--font-ui);fill:var(--ink)}
+.hg-bar{fill:var(--pen);stroke:var(--sheet);stroke-width:1.5}
+.hg-bar.hg-on{fill:var(--hi-soft);stroke:none}
+.hg-selbd{fill:none;stroke:var(--sel-bd);stroke-width:3}
+.hg-hit{fill:transparent}
+.hg-b{cursor:pointer;outline:none}
+.hg-b:focus-visible .hg-hit{stroke:var(--ink);stroke-width:2;stroke-dasharray:5 4}
+.hg-grid{stroke:var(--plot-grid);stroke-width:1}
+.hg-ax{stroke:var(--plot-axis);stroke-width:1.6}
+.hg-yt{font-size:13px;text-anchor:end;fill:var(--ink-2)}
+.hg-xt{font-size:13px;text-anchor:middle;fill:var(--ink-2)}
+.hg-sm{font-size:11px}
+.hg-axl{font-size:13px;font-style:italic;fill:var(--ink-2)}
+.hg-bl{font-size:13px;font-weight:700;text-anchor:middle}
+.hg-poly{fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linejoin:round}
+.hg-pt{fill:var(--sheet);stroke:var(--ink);stroke-width:2.2}
+.hg-axhi{fill:var(--hi-soft);stroke:var(--hi);stroke-width:2}
+.hg-hiax{font-weight:700;fill:var(--ink)}
+.hg-arrow-u line{stroke:var(--ink);stroke-width:7;stroke-linecap:round}
+.hg-arrow-u path{fill:var(--ink);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+.hg-arrow line{stroke:var(--hi);stroke-width:3.6;stroke-linecap:round}
+.hg-arrow path{fill:var(--hi)}
+.hg-tail{font-size:13px;font-weight:700;text-anchor:middle}
+.hg-chip rect{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.hg-chip text{font-size:14px;font-weight:700;text-anchor:middle}
+.hg-note{font-size:12px;font-weight:700}
+.hg-hchip rect{fill:var(--sheet);stroke:var(--pen);stroke-width:1.4}
+.hg-hchip text{font-size:10px;font-weight:700;text-anchor:middle}
+.hg-bd{stroke:var(--ink);stroke-width:1.6;stroke-dasharray:4 3}
+.hg-tb{fill:var(--paper);stroke:var(--rule);stroke-width:1.5}
+.hg-th{font-size:13px;font-weight:700;text-anchor:middle}
+.hg-td{font-size:13px;text-anchor:middle}
+.hg-tot{font-weight:700}
+.hg-hero{width:100%}
+
+/* studio layout */
+.hg-top{margin-bottom:4px}
+.hg-cap{font-size:clamp(1.05rem,2.4vw,1.35rem)}
+.hg-plot{margin:4px 0 0}
+.hg-data{margin:8px 0 0;line-height:1.5}
+.hg-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.hg-sh{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.hg-sh2{margin-top:12px}
+.hg-add{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.hg-al{font-weight:700;font-size:.9rem}
+.hg-in{width:5.4rem}
+.hg-how{margin:8px 0 0}
+.hg-msg{min-height:1.2em;margin:6px 0 0}
+.hg-tbl{margin-top:8px}
+.hg-guess{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.hg-gb[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--sel-bd)}
+
+/* shape sort tiles */
+.hg-tile{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:110px}
+.hg-mini{width:110px;height:auto;display:block}
+.hg-mini rect{fill:var(--pen);stroke:var(--sheet);stroke-width:1}
+.hg-mini line{stroke:var(--plot-axis);stroke-width:1.5}
+.hg-tl{font-size:.85rem;font-weight:700;text-align:center;line-height:1.25}
+.hg-ctx{display:block;font-weight:400;font-size:.78rem;color:var(--ink-2)}
+
+/* Part 3 */
+.hg-p3{margin-top:6px}
+.hg-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin:0 0 12px}
+.hg-dc{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:10px;padding:10px 12px;text-align:left;font:600 .95rem var(--font-ui);min-height:48px;cursor:pointer}
+.hg-dc[aria-pressed="true"]{border-color:var(--sel-bd);background:var(--hi-soft)}
+.hg-dc.hg-placed{background:var(--good-bg);cursor:default;opacity:1}
+.hg-on-g{display:block;font-size:.85rem;font-weight:700;margin-top:4px}
+.hg-gts{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.hg-gts .btn[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--sel-bd)}
+.hg-prev{border:1.5px dashed var(--rule);border-radius:10px;padding:8px 12px;margin:0 0 10px;max-width:420px}
+.hg-sk,.hg-bk{max-width:400px}
+.hg-pie{max-width:380px;margin:10px 0}
+.hg-slice{stroke:var(--sheet);stroke-width:1.5}
+.hg-s0{fill:var(--ev-a)}.hg-s1{fill:var(--ev-b)}.hg-s2{fill:var(--ev-c)}.hg-s3{fill:var(--ink-2)}
+.hg-gap{fill:var(--paper);stroke:var(--red);stroke-width:2;stroke-dasharray:5 4}
+.hg-pl{font-size:13px;font-weight:700;text-anchor:middle;fill:var(--sheet) !important}
+.hg-lg{font-size:13px}
+.hg-box{fill:var(--ev-a-soft);stroke:var(--pen);stroke-width:2}
+.hg-med{stroke:var(--ink);stroke-width:2.6}
+.hg-stem{font-family:var(--font-math) !important;font-size:13px}
+.hg-bkc{border-top:1px solid var(--rule);padding:10px 0 4px}
+.hg-angs{display:grid;gap:6px;margin:0 0 8px}
+.hg-ain{width:5.4rem}
+.hg-after{margin:12px 0 0}
+
+/* task */
+.ll-in{display:grid;gap:4px}
+.ll-pv .hg-svg{margin-bottom:8px}

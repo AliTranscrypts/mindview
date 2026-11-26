@@ -1,0 +1,60 @@
+/* MDM4U 26: Bell shaper (D8 normal curve, Rule pieces and edges), Is it normal? stations (D10 histograms + data panel),
+   percent entry, A fair test. Tokens only. */
+/* radioGroup (from MDM4U 20) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.6;cursor:not-allowed}
+
+/* Bell shaper */
+.np-mode{margin-bottom:4px}
+.np-cap{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+.np-aha{margin:10px 0 0;font-size:.95rem}
+.np-msg{min-height:1.2em;margin:6px 0 0}
+.np-teal{color:var(--p-d);font-weight:700}
+.np-orange{color:var(--p-k);font-weight:700}
+.np-edges{display:grid;gap:4px;margin:6px 0}
+.np-edges input[type=range]{width:100%;accent-color:var(--ink)}
+.np-pl{margin:8px 0 4px}
+.np-pcs{display:flex;flex-wrap:wrap;gap:6px}
+.np-pc{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.3em .6em;font:inherit;font-size:.86rem;min-height:36px;text-align:left}
+.np-pc[aria-pressed="true"]{background:var(--hi);border-color:var(--ink);color:var(--hi-ink);font-weight:700}
+.np-pp{font-weight:700}
+.np-conds{margin:6px 0 0;padding-left:1.3em}
+.np-conds li{margin:2px 0}
+.np-ok{font-weight:700;color:var(--green)}
+.np-no{font-weight:700;color:var(--red)}
+
+/* Is it normal? */
+.np-tick{font-weight:700}
+.np3-card{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.np3-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.np3-text{margin:0 0 8px}
+.np3-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:12px 16px;align-items:start}
+canvas.plot.np3-plot{aspect-ratio:4/3}
+.np3-h{margin:0 0 6px;font:700 .85rem var(--font-ui);letter-spacing:.02em;text-transform:uppercase;color:var(--ink-2)}
+.np3-ch{margin-top:10px}
+
+/* percent entry */
+.np-ctx{margin:0 0 8px;font-weight:600}
+.ne-row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:8px}
+.ne-lab{display:inline-flex;align-items:center;gap:8px}
+.ne-lab .numin{width:7rem}
+.ne-u{font-weight:700}
+
+/* A fair test */
+.ft-in{margin:10px 0}
+.ft-read{margin-top:8px}
+
+@media (max-width:560px){
+  .np3-grid{grid-template-columns:minmax(0,1fr)}
+  .np3-read{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+  canvas.plot.np-plot{aspect-ratio:4/3}
+}

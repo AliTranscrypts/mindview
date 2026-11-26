@@ -215,3 +215,7 @@ every module that uses the touched code, then ship them together).
 | C1 vseprModel/dipoleViewer, C11 enTable, ΔEN bar | sch4u 19 | local data: Xe electronegativity 2.60 (`// VERIFY`) |
 | N12 exactTrig, V8 piExact, N24 circle twin | mcv4u 29 | — |
 | V5 asymptote-aware panels + N8 tap-to-mark, V8 frameBoxes, N3 specialTrig, V10 drone/shadow stage | mcv4u 30 | decoy card (1/2)csc²(x/2) added (plan mismatch line needs it) |
+| — | hfa4u 22 | OWNER REVIEW: Crippa 2021 ("a third"), Poore & Nemecek values, 38 700 farm count, 3 references, Canada impact levels, salmon/pork/milk/egg serving values (`// VERIFY`); R1/R2/R5/R6 hints + R5/R6 options builder-written |
+| — | eng4u 15 | **EXCERPT SLOTS** X1–X6 + [p.] pages (only "Blackfoot" and the Truth line quoted). OWNER REVIEW: E. Pauline Johnson texts not checked against a scan; support-line numbers; TRC, Kainai, Capilano facts; King ancestry note (Station 6, hidden unless ?station6=on) — `// VERIFY` |
+| — | mdm4u 38 | screen-time r = −0.65 is a builder value; 4th verdict chip added |
+| — | mdm4u 26 | PLAN ERROR: μ slider 40–160 can't reach Data-mode Fit value 170 (widened to 40–180) |

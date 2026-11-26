@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 172/295 live, 2 built, 121 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 174/295 live, 5 built, 116 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 30/59 | 0 | 29 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 21/39 | 2 | 16 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 23/39 | 3 | 13 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 18/52 | 0 | 34 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 20/25 | 0 | 5 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 14/24 | 0 | 10 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 20/25 | 1 | 4 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 14/24 | 1 | 9 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -157,22 +157,22 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
 - ✓ 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - … 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
-- ◐ 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
+- ✓ 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
 - … 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
 - … 25 Continuous Random Variables & Density (`continuous-density`, topic, site ch6)
-- … 26 Properties of the Normal Distribution (`normal-properties`, topic, site ch6)
+- ◐ 26 Properties of the Normal Distribution (`normal-properties`, topic, site ch6)
 - … 27 Standardizing & z-Scores (`z-scores`, topic, site ch6)
-- ◐ 28 Normal Approximation to the Binomial (`normal-approximation`, topic, site ch6)
+- ✓ 28 Normal Approximation to the Binomial (`normal-approximation`, topic, site ch6)
 - … 29 Population, Sample & Sampling Methods (`sampling-methods`, topic, site ch7)
 - … 30 Sources of Bias in Surveys (`bias`, topic, site ch7)
 - … 31 Measures of Central Tendency (`central-tendency`, topic, site ch7)
 - … 32 Measures of Spread (`spread`, topic, site ch7)
-- … 33 Frequency Distributions & Histograms (`histograms`, topic, site ch7)
+- ◐ 33 Frequency Distributions & Histograms (`histograms`, topic, site ch7)
 - … 34 Scatter Plots & Correlation (`scatter-plots`, topic, site ch8)
 - … 35 The Pearson Correlation Coefficient r (`pearson-r`, topic, site ch8)
 - … 36 Linear Regression & Line of Best Fit (`linear-regression`, topic, site ch8)
 - … 37 Residuals & Goodness of Fit (`residuals`, topic, site ch8)
-- … 38 Two-Variable Analysis & Causation (`causation`, topic, site ch8)
+- ◐ 38 Two-Variable Analysis & Causation (`causation`, topic, site ch8)
 - … 39 Culminating Data-Management Investigation (`culminating-investigation`, topic, site ch8)
 
 ## SCH4U Chemistry (`sch4u`)
@@ -302,7 +302,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - ✓ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - … 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
-- … 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
+- ◐ 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
 - … 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
 - … 24 Food Aid & the Sustainable Development Goals (`food-aid-sdgs`, topic, site ch5)
 - … 25 Ethical Food Choices (`ethical-food-choices`, topic, site ch5)
@@ -323,7 +323,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - ✓ 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
 - ✓ 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
-- … 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
+- ◐ 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
 - … 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
 - … 17 Choosing a Novel of Literary Merit (`choosing-a-novel`, topic, site ch5)
 - … 18 Research & Secondary Sources (`research-and-sources`, topic, site ch5)
