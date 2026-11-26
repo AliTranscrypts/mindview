@@ -52,7 +52,7 @@ function courses() {
     .filter((c) => fs.existsSync(path.join(dir, c, 'course.json')))
     .map((c) => JSON.parse(fs.readFileSync(path.join(dir, c, 'course.json'), 'utf8')));
 }
-const built = (c, m) => fs.existsSync(path.join(repo, 'courses', c.site, 'modules', `${m.nn}-${m.slug}.html`));
+const built = (c, m) => (m.status === 'built' || m.status === 'live') && fs.existsSync(path.join(repo, 'courses', c.site, 'modules', `${m.nn}-${m.slug}.html`));
 
 const failures = [];
 const fail = (what, msg) => { failures.push(`${what}: ${msg}`); console.log(`  ✗ ${what}: ${msg}`); };

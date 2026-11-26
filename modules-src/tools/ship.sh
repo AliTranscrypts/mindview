@@ -15,15 +15,15 @@ cd "$REPO"
 SUBJECT="$1"; shift
 [ -n "$SUBJECT" ] && [ $# -gt 0 ] || { echo "usage: ship.sh \"subject\" course:NN ..."; exit 2; }
 
-COURSES=$(for t in "$@"; do echo "${t%%:*}"; done | sort -u)
-for c in $COURSES; do
-  (cd modules-src && node build/hub.mjs "$c" >/dev/null)
-  python3 modules-src/tools/link-chapters.py "$c"
-done
 for t in "$@"; do
   c="${t%%:*}"; n="${t##*:}"
   st=$(python3 -c "import json,sys;d=json.load(open('modules-src/courses/$c/course.json'));print(next(m.get('status','todo') for m in d['modules'] if m['nn']=='$n'))")
   [ "$st" = "live" ] || python3 modules-src/tools/progress.py set "$c" "$n" built ""
+done
+COURSES=$(for t in "$@"; do echo "${t%%:*}"; done | sort -u)
+for c in $COURSES; do
+  (cd modules-src && node build/hub.mjs "$c" >/dev/null)
+  python3 modules-src/tools/link-chapters.py "$c"
 done
 python3 modules-src/tools/progress.py
 
