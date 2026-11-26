@@ -187,3 +187,4 @@ every module that uses the touched code, then ship them together).
 | F9 foodMap, mealChips, originStations, seasonWheel | hfa4u 16 | OWNER REVIEW: builder-written Ripple options/feedback, Station 1 ingredient rows, Station 2 model ratings + evidence, season-wheel extents, tomato bars, CFIA APA ref — all `// VERIFY` |
 | extended D6 (seeded runs, log-scale graph + band, differences graph), many-runs dot plot, spinner + sector editor, ratio-entry box | mdm4u 16 | builder-written sorter explanations, N1–N4 hints; mystery mix adds red 4 / yellow 3 (plan gives only blue 0.30) |
 | flipTree, D2 vennCond, N4 probEntry, D1 dim(path) option | mdm4u 17 | builder-written Part 3 station texts (Station 3 ~6% base rate), default Venn counts, 2 extra dice events |
+| S4 membraneSim (mitochondrial), S3 split bar, dam inset, S1 tap-label builder, evidenceCards, calc | sbi4u 17 | builder-written evidence-card feedback |
