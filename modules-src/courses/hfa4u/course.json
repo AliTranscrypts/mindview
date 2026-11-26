@@ -41,7 +41,8 @@
    "siteChapter": 1,
    "size": "M",
    "part3": "marketing",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "02",

@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 46/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 47/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 46/50 | 1 | 3 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 47/50 | 1 | 2 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -64,10 +64,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 42 Logarithmic Scales (`logarithmic-scales`, topic, site ch6)
 - ✓ 43 Solving Exponential Equations (`solving-exponential-equations`, topic, site ch7)
 - ✓ 44 Solving Logarithmic Equations (`solving-logarithmic-equations`, topic, site ch7)
-- ◐ 45 Chapters 6–7 Summary & Review (`chapters-6-7-review`, review, site ch7)
+- ✓ 45 Chapters 6–7 Summary & Review (`chapters-6-7-review`, review, site ch7)
 - ✓ 46 Sums and Differences of Functions (`sums-and-differences-of-functions`, topic, site ch8)
 - ✓ 47 Products and Quotients of Functions (`products-and-quotients-of-functions`, topic, site ch8)
-- … 48 Composite Functions (`composite-functions`, topic, site ch8)
+- ◐ 48 Composite Functions (`composite-functions`, topic, site ch8)
 - … 49 Modelling with Combined Functions (`modelling-with-combined-functions`, topic, site ch8)
 - · 50 Chapter 8 Summary & Review (`chapter-8-review`, review, site ch8)
 
@@ -281,7 +281,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## HFA4M Nutrition and Health (`hfa4u`)
 
-- · 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
+- … 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
 - · 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
 - · 03 Micronutrients: Vitamins, Minerals, Water (`micronutrients`, topic, site ch1)
 - · 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
