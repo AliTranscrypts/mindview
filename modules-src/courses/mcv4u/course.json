@@ -1,973 +1,974 @@
 {
-  "course": "mcv4u",
-  "site": "mcv4u",
-  "code": "MCV4U",
-  "title": "Calculus and Vectors",
-  "groupLabel": "Chapter",
-  "groups": [
-    {
-      "id": "1",
-      "label": "Chapter 1",
-      "name": "Introduction to Calculus"
-    },
-    {
-      "id": "2",
-      "label": "Chapter 2",
-      "name": "Derivatives"
-    },
-    {
-      "id": "3",
-      "label": "Chapter 3",
-      "name": "Derivatives and Their Applications"
-    },
-    {
-      "id": "4",
-      "label": "Chapter 4",
-      "name": "Curve Sketching"
-    },
-    {
-      "id": "5",
-      "label": "Chapter 5",
-      "name": "Derivatives of Exponential and Trigonometric Functions"
-    },
-    {
-      "id": "6",
-      "label": "Chapter 6",
-      "name": "Introduction to Vectors"
-    },
-    {
-      "id": "7",
-      "label": "Chapter 7",
-      "name": "Applications of Vectors"
-    },
-    {
-      "id": "8",
-      "label": "Chapter 8",
-      "name": "Equations of Lines and Planes"
-    },
-    {
-      "id": "9",
-      "label": "Chapter 9",
-      "name": "Relationships Between Points, Lines and Planes"
-    }
-  ],
-  "modules": [
-    {
-      "nn": "01",
-      "slug": "rationalizing-radical-expressions",
-      "title": "Rationalizing Radical Expressions",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "S",
-      "part3": "numerator",
-      "prereqs": [],
-      "status": "live"
-    },
-    {
-      "nn": "02",
-      "slug": "slope-of-a-tangent",
-      "title": "Slope of a Tangent to a Curve",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "M",
-      "part3": "tangent-line",
-      "prereqs": [
-        "01"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "03",
-      "slug": "rates-of-change",
-      "title": "Rates of Change",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "M",
-      "part3": "contexts",
-      "prereqs": [
-        "02"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "04",
-      "slug": "the-limit-of-a-function",
-      "title": "The Limit of a Function",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "M",
-      "part3": "long-run",
-      "prereqs": [
-        "02"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "05",
-      "slug": "properties-of-limits",
-      "title": "Properties of Limits",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "M",
-      "part3": "one-sided",
-      "prereqs": [
-        "01",
-        "04"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "06",
-      "slug": "continuity",
-      "title": "Continuity",
-      "kind": "topic",
-      "group": "1",
-      "siteChapter": 1,
-      "size": "S",
-      "part3": "repair",
-      "prereqs": [
-        "04",
-        "05",
-        "02"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "07",
-      "slug": "sketching-derivative-functions",
-      "title": "Sketching Derivative Functions",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "L",
-      "part3": "match",
-      "prereqs": [
-        "02",
-        "03"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "08",
-      "slug": "derivatives-from-first-principles",
-      "title": "Derivatives from First Principles",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "M",
-      "part3": "pattern",
-      "prereqs": [
-        "01",
-        "05",
-        "07"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "09",
-      "slug": "derivatives-of-polynomials",
-      "title": "Derivatives of Polynomials",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "M",
-      "part3": "given-slope",
-      "prereqs": [
-        "08",
-        "07"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "10",
-      "slug": "the-product-rule",
-      "title": "The Product Rule",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "M",
-      "part3": "compare",
-      "prereqs": [
-        "09"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "11",
-      "slug": "the-quotient-rule",
-      "title": "The Quotient Rule",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "M",
-      "part3": "derive",
-      "prereqs": [
-        "10",
-        "09"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "12",
-      "slug": "the-chain-rule",
-      "title": "Derivatives of Composite Functions: the Chain Rule",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "L",
-      "part3": "layers",
-      "prereqs": [
-        "09",
-        "10"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "13",
-      "slug": "implicit-differentiation",
-      "title": "Implicit Differentiation",
-      "kind": "topic",
-      "group": "2",
-      "siteChapter": 2,
-      "size": "M",
-      "part3": "any-curve",
-      "prereqs": [
-        "12",
-        "10"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "14",
-      "slug": "higher-order-derivatives",
-      "title": "Higher Order Derivatives",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "S",
-      "part3": "second",
-      "prereqs": [
-        "09",
-        "11",
-        "12",
-        "07"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "15",
-      "slug": "velocity-and-acceleration",
-      "title": "Velocity and Acceleration",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "M",
-      "part3": "speed",
-      "prereqs": [
-        "03",
-        "14"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "16",
-      "slug": "maximum-and-minimum-on-an-interval",
-      "title": "Maximum and Minimum on an Interval",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "M",
-      "part3": "context",
-      "prereqs": [
-        "09",
-        "14",
-        "12",
-        "02"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "17",
-      "slug": "optimization-problems",
-      "title": "Optimization Problems",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "L",
-      "part3": "algorithm",
-      "prereqs": [
-        "16",
-        "09",
-        "12"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "18",
-      "slug": "economics-and-science-optimization",
-      "title": "Economics and Science Optimization Problems",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "M",
-      "part3": "science",
-      "prereqs": [
-        "17",
-        "11",
-        "09"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "19",
-      "slug": "related-rates",
-      "title": "Related Rates",
-      "kind": "topic",
-      "group": "3",
-      "siteChapter": 3,
-      "size": "L",
-      "part3": "setup",
-      "prereqs": [
-        "12",
-        "13"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "20",
-      "slug": "increasing-and-decreasing-functions",
-      "title": "Increasing and Decreasing Functions",
-      "kind": "topic",
-      "group": "4",
-      "siteChapter": 4,
-      "size": "S",
-      "part3": "from-derivative",
-      "prereqs": [
-        "09",
-        "14",
-        "11",
-        "15"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "21",
-      "slug": "critical-points-and-first-derivative-test",
-      "title": "Critical Points and the First Derivative Test",
-      "kind": "topic",
-      "group": "4",
-      "siteChapter": 4,
-      "size": "M",
-      "part3": "test",
-      "prereqs": [
-        "20",
-        "09",
-        "12"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "22",
-      "slug": "asymptotes",
-      "title": "Vertical, Horizontal and Oblique Asymptotes",
-      "kind": "topic",
-      "group": "4",
-      "siteChapter": 4,
-      "size": "M",
-      "part3": "side",
-      "prereqs": [
-        "04",
-        "05",
-        "17",
-        "21"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "23",
-      "slug": "concavity-and-points-of-inflection",
-      "title": "Concavity and Points of Inflection",
-      "kind": "topic",
-      "group": "4",
-      "siteChapter": 4,
-      "size": "M",
-      "part3": "second-test",
-      "prereqs": [
-        "14",
-        "21"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "24",
-      "slug": "algorithm-for-curve-sketching",
-      "title": "An Algorithm for Curve Sketching",
-      "kind": "topic",
-      "group": "4",
-      "siteChapter": 4,
-      "size": "L",
-      "part3": "clues",
-      "prereqs": [
-        "20",
-        "21",
-        "22",
-        "23",
-        "06"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "25",
-      "slug": "derivative-of-e-to-the-x",
-      "title": "Derivatives of Exponential Functions, *y* = *e*ˣ",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "M",
-      "part3": "ln",
-      "prereqs": [
-        "09",
-        "10",
-        "12"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "26",
-      "slug": "derivative-of-b-to-the-x",
-      "title": "The Derivative of *y* = *b*ˣ",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "S",
-      "part3": "growth",
-      "prereqs": [
-        "25",
-        "12"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "27",
-      "slug": "derivatives-of-logarithmic-functions",
-      "title": "Derivatives of Logarithmic Functions",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "M",
-      "part3": "chains",
-      "prereqs": [
-        "25",
-        "26",
-        "12",
-        "11"
-      ],
-      "status": "live"
-    },
-    {
-      "nn": "28",
-      "slug": "optimization-with-exponentials",
-      "title": "Optimization Problems with Exponential Functions",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "M",
-      "part3": "revenue",
-      "prereqs": [
-        "17",
-        "16",
-        "25",
-        "26",
-        "10"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "29",
-      "slug": "derivatives-of-sine-and-cosine",
-      "title": "Derivatives of Sine and Cosine",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "M",
-      "part3": "chain",
-      "prereqs": [
-        "12",
-        "10",
-        "07",
-        "26"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "30",
-      "slug": "derivatives-of-tangent-and-cotangent",
-      "title": "Derivatives of Tangent and Cotangent",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "S",
-      "part3": "apply",
-      "prereqs": [
-        "11",
-        "29",
-        "19",
-        "26",
-        "27"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "31",
-      "slug": "logarithmic-differentiation",
-      "title": "Logarithmic Differentiation",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "S",
-      "part3": "which",
-      "prereqs": [
-        "13",
-        "27"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "32",
-      "slug": "sinusoidal-word-problems",
-      "title": "Sinusoidal Word Problems",
-      "kind": "topic",
-      "group": "5",
-      "siteChapter": 5,
-      "size": "M",
-      "part3": "trig-opt",
-      "prereqs": [
-        "29",
-        "30",
-        "26"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "33",
-      "slug": "introduction-to-vectors",
-      "title": "Introduction to Vectors",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "S",
-      "part3": "scalar-vector",
-      "prereqs": [],
-      "status": "building"
-    },
-    {
-      "nn": "34",
-      "slug": "adding-and-subtracting-vectors",
-      "title": "Adding and Subtracting Vectors",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "M",
-      "part3": "triangle",
-      "prereqs": [
-        "33"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "35",
-      "slug": "scalar-multiplication",
-      "title": "Multiplication of a Vector by a Scalar",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "S",
-      "part3": "geometry",
-      "prereqs": [
-        "34"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "36",
-      "slug": "properties-of-vectors",
-      "title": "Properties of Vectors",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "S",
-      "part3": "simplify",
-      "prereqs": [
-        "34",
-        "35"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "37",
-      "slug": "vectors-in-r3",
-      "title": "Vectors in R³",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "M",
-      "part3": "sketch",
-      "prereqs": [
-        "33"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "38",
-      "slug": "cartesian-vectors-in-r2",
-      "title": "Cartesian Vectors in R²",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "M",
-      "part3": "components",
-      "prereqs": [
-        "34",
-        "35",
-        "26"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "39",
-      "slug": "operations-in-r3",
-      "title": "Operations with Vectors in R³",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "M",
-      "part3": "prove",
-      "prereqs": [
-        "37",
-        "38"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "40",
-      "slug": "linear-combinations-and-spanning-sets",
-      "title": "Linear Combinations and Spanning Sets",
-      "kind": "topic",
-      "group": "6",
-      "siteChapter": 6,
-      "size": "L",
-      "part3": "target",
-      "prereqs": [
-        "38",
-        "39"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "41",
-      "slug": "vectors-as-forces",
-      "title": "Vectors as Forces",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "M",
-      "part3": "ramp",
-      "prereqs": [
-        "34",
-        "38"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "42",
-      "slug": "rope-tension-and-velocity",
-      "title": "Rope Tension and Velocity",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "L",
-      "part3": "navigation",
-      "prereqs": [
-        "41",
-        "33",
-        "38"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "43",
-      "slug": "dot-product-in-r2",
-      "title": "The Dot Product in R²",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "M",
-      "part3": "properties",
-      "prereqs": [
-        "34",
-        "38",
-        "41"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "44",
-      "slug": "dot-product-in-r3",
-      "title": "The Dot Product in R³",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "M",
-      "part3": "orthogonal",
-      "prereqs": [
-        "37",
-        "39",
-        "43"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "45",
-      "slug": "scalar-and-vector-projections",
-      "title": "Scalar and Vector Projections",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "M",
-      "part3": "work",
-      "prereqs": [
-        "43",
-        "44",
-        "35",
-        "41"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "46",
-      "slug": "the-cross-product",
-      "title": "The Cross Product",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "M",
-      "part3": "properties",
-      "prereqs": [
-        "44",
-        "39"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "47",
-      "slug": "applications-of-cross-and-triple-product",
-      "title": "Applications of the Cross Product and Triple Scalar Product",
-      "kind": "topic",
-      "group": "7",
-      "siteChapter": 7,
-      "size": "L",
-      "part3": "volume",
-      "prereqs": [
-        "45",
-        "46"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "48",
-      "slug": "equations-of-lines-in-r2",
-      "title": "Equations of Lines in R²",
-      "kind": "topic",
-      "group": "8",
-      "siteChapter": 8,
-      "size": "M",
-      "part3": "same-line",
-      "prereqs": [
-        "38"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "49",
-      "slug": "cartesian-equation-of-a-line-in-r2",
-      "title": "Cartesian Equation of a Line in R²",
-      "kind": "topic",
-      "group": "8",
-      "siteChapter": 8,
-      "size": "S",
-      "part3": "angles",
-      "prereqs": [
-        "43",
-        "48"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "50",
-      "slug": "equations-of-lines-in-r3",
-      "title": "Vector, Parametric and Symmetric Equations of Lines in R³",
-      "kind": "topic",
-      "group": "8",
-      "siteChapter": 8,
-      "size": "L",
-      "part3": "two-points",
-      "prereqs": [
-        "39",
-        "48",
-        "37"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "51",
-      "slug": "vector-equation-of-a-plane",
-      "title": "Vector Equation of a Plane",
-      "kind": "topic",
-      "group": "8",
-      "siteChapter": 8,
-      "size": "M",
-      "part3": "on-plane",
-      "prereqs": [
-        "40",
-        "50",
-        "39"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "52",
-      "slug": "cartesian-equation-of-a-plane",
-      "title": "Cartesian Equation of a Plane",
-      "kind": "topic",
-      "group": "8",
-      "siteChapter": 8,
-      "size": "M",
-      "part3": "convert",
-      "prereqs": [
-        "46",
-        "51",
-        "43",
-        "44"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "53",
-      "slug": "intersection-of-lines-with-planes",
-      "title": "Intersection of Lines with Planes",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "M",
-      "part3": "classify",
-      "prereqs": [
-        "50",
-        "52",
-        "44"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "54",
-      "slug": "intersection-of-lines",
-      "title": "Intersection of Lines in R² and R³",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "M",
-      "part3": "skew",
-      "prereqs": [
-        "48",
-        "49",
-        "50"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "55",
-      "slug": "systems-of-equations-matrices",
-      "title": "Systems of Equations (Matrices)",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "L",
-      "part3": "solutions",
-      "prereqs": [
-        "52",
-        "54"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "56",
-      "slug": "intersection-of-two-planes",
-      "title": "Intersection of Two Planes",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "M",
-      "part3": "line",
-      "prereqs": [
-        "52",
-        "55",
-        "46",
-        "50"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "57",
-      "slug": "intersection-of-three-planes",
-      "title": "Intersection of Three Planes",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "L",
-      "part3": "configurations",
-      "prereqs": [
-        "55",
-        "56",
-        "47"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "58",
-      "slug": "distance-point-to-line",
-      "title": "Distance from a Point to a Line in R² and R³",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "M",
-      "part3": "parallel",
-      "prereqs": [
-        "45",
-        "46",
-        "49",
-        "50"
-      ],
-      "status": "building"
-    },
-    {
-      "nn": "59",
-      "slug": "distance-point-to-plane",
-      "title": "Distance from a Point to a Plane",
-      "kind": "topic",
-      "group": "9",
-      "siteChapter": 9,
-      "size": "M",
-      "part3": "skew-distance",
-      "prereqs": [
-        "52",
-        "58",
-        "46"
-      ],
-      "status": "building"
-    }
-  ]
+ "course": "mcv4u",
+ "site": "mcv4u",
+ "code": "MCV4U",
+ "title": "Calculus and Vectors",
+ "groupLabel": "Chapter",
+ "groups": [
+  {
+   "id": "1",
+   "label": "Chapter 1",
+   "name": "Introduction to Calculus"
+  },
+  {
+   "id": "2",
+   "label": "Chapter 2",
+   "name": "Derivatives"
+  },
+  {
+   "id": "3",
+   "label": "Chapter 3",
+   "name": "Derivatives and Their Applications"
+  },
+  {
+   "id": "4",
+   "label": "Chapter 4",
+   "name": "Curve Sketching"
+  },
+  {
+   "id": "5",
+   "label": "Chapter 5",
+   "name": "Derivatives of Exponential and Trigonometric Functions"
+  },
+  {
+   "id": "6",
+   "label": "Chapter 6",
+   "name": "Introduction to Vectors"
+  },
+  {
+   "id": "7",
+   "label": "Chapter 7",
+   "name": "Applications of Vectors"
+  },
+  {
+   "id": "8",
+   "label": "Chapter 8",
+   "name": "Equations of Lines and Planes"
+  },
+  {
+   "id": "9",
+   "label": "Chapter 9",
+   "name": "Relationships Between Points, Lines and Planes"
+  }
+ ],
+ "modules": [
+  {
+   "nn": "01",
+   "slug": "rationalizing-radical-expressions",
+   "title": "Rationalizing Radical Expressions",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "numerator",
+   "prereqs": [],
+   "status": "live"
+  },
+  {
+   "nn": "02",
+   "slug": "slope-of-a-tangent",
+   "title": "Slope of a Tangent to a Curve",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "tangent-line",
+   "prereqs": [
+    "01"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "03",
+   "slug": "rates-of-change",
+   "title": "Rates of Change",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "contexts",
+   "prereqs": [
+    "02"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "04",
+   "slug": "the-limit-of-a-function",
+   "title": "The Limit of a Function",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "long-run",
+   "prereqs": [
+    "02"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "05",
+   "slug": "properties-of-limits",
+   "title": "Properties of Limits",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "M",
+   "part3": "one-sided",
+   "prereqs": [
+    "01",
+    "04"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "06",
+   "slug": "continuity",
+   "title": "Continuity",
+   "kind": "topic",
+   "group": "1",
+   "siteChapter": 1,
+   "size": "S",
+   "part3": "repair",
+   "prereqs": [
+    "04",
+    "05",
+    "02"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "07",
+   "slug": "sketching-derivative-functions",
+   "title": "Sketching Derivative Functions",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "match",
+   "prereqs": [
+    "02",
+    "03"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "08",
+   "slug": "derivatives-from-first-principles",
+   "title": "Derivatives from First Principles",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "pattern",
+   "prereqs": [
+    "01",
+    "05",
+    "07"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "09",
+   "slug": "derivatives-of-polynomials",
+   "title": "Derivatives of Polynomials",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "given-slope",
+   "prereqs": [
+    "08",
+    "07"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "10",
+   "slug": "the-product-rule",
+   "title": "The Product Rule",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "compare",
+   "prereqs": [
+    "09"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "11",
+   "slug": "the-quotient-rule",
+   "title": "The Quotient Rule",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "derive",
+   "prereqs": [
+    "10",
+    "09"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "12",
+   "slug": "the-chain-rule",
+   "title": "Derivatives of Composite Functions: the Chain Rule",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "L",
+   "part3": "layers",
+   "prereqs": [
+    "09",
+    "10"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "13",
+   "slug": "implicit-differentiation",
+   "title": "Implicit Differentiation",
+   "kind": "topic",
+   "group": "2",
+   "siteChapter": 2,
+   "size": "M",
+   "part3": "any-curve",
+   "prereqs": [
+    "12",
+    "10"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "14",
+   "slug": "higher-order-derivatives",
+   "title": "Higher Order Derivatives",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "S",
+   "part3": "second",
+   "prereqs": [
+    "09",
+    "11",
+    "12",
+    "07"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "15",
+   "slug": "velocity-and-acceleration",
+   "title": "Velocity and Acceleration",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "speed",
+   "prereqs": [
+    "03",
+    "14"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "16",
+   "slug": "maximum-and-minimum-on-an-interval",
+   "title": "Maximum and Minimum on an Interval",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "context",
+   "prereqs": [
+    "09",
+    "14",
+    "12",
+    "02"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "17",
+   "slug": "optimization-problems",
+   "title": "Optimization Problems",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "algorithm",
+   "prereqs": [
+    "16",
+    "09",
+    "12"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "18",
+   "slug": "economics-and-science-optimization",
+   "title": "Economics and Science Optimization Problems",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "M",
+   "part3": "science",
+   "prereqs": [
+    "17",
+    "11",
+    "09"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "19",
+   "slug": "related-rates",
+   "title": "Related Rates",
+   "kind": "topic",
+   "group": "3",
+   "siteChapter": 3,
+   "size": "L",
+   "part3": "setup",
+   "prereqs": [
+    "12",
+    "13"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "20",
+   "slug": "increasing-and-decreasing-functions",
+   "title": "Increasing and Decreasing Functions",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "S",
+   "part3": "from-derivative",
+   "prereqs": [
+    "09",
+    "14",
+    "11",
+    "15"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "21",
+   "slug": "critical-points-and-first-derivative-test",
+   "title": "Critical Points and the First Derivative Test",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "test",
+   "prereqs": [
+    "20",
+    "09",
+    "12"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "22",
+   "slug": "asymptotes",
+   "title": "Vertical, Horizontal and Oblique Asymptotes",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "side",
+   "prereqs": [
+    "04",
+    "05",
+    "17",
+    "21"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "23",
+   "slug": "concavity-and-points-of-inflection",
+   "title": "Concavity and Points of Inflection",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "M",
+   "part3": "second-test",
+   "prereqs": [
+    "14",
+    "21"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "24",
+   "slug": "algorithm-for-curve-sketching",
+   "title": "An Algorithm for Curve Sketching",
+   "kind": "topic",
+   "group": "4",
+   "siteChapter": 4,
+   "size": "L",
+   "part3": "clues",
+   "prereqs": [
+    "20",
+    "21",
+    "22",
+    "23",
+    "06"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "25",
+   "slug": "derivative-of-e-to-the-x",
+   "title": "Derivatives of Exponential Functions, *y* = *e*ˣ",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "ln",
+   "prereqs": [
+    "09",
+    "10",
+    "12"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "26",
+   "slug": "derivative-of-b-to-the-x",
+   "title": "The Derivative of *y* = *b*ˣ",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "growth",
+   "prereqs": [
+    "25",
+    "12"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "27",
+   "slug": "derivatives-of-logarithmic-functions",
+   "title": "Derivatives of Logarithmic Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "chains",
+   "prereqs": [
+    "25",
+    "26",
+    "12",
+    "11"
+   ],
+   "status": "live"
+  },
+  {
+   "nn": "28",
+   "slug": "optimization-with-exponentials",
+   "title": "Optimization Problems with Exponential Functions",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "revenue",
+   "prereqs": [
+    "17",
+    "16",
+    "25",
+    "26",
+    "10"
+   ],
+   "status": "built",
+   "note": ""
+  },
+  {
+   "nn": "29",
+   "slug": "derivatives-of-sine-and-cosine",
+   "title": "Derivatives of Sine and Cosine",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "chain",
+   "prereqs": [
+    "12",
+    "10",
+    "07",
+    "26"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "30",
+   "slug": "derivatives-of-tangent-and-cotangent",
+   "title": "Derivatives of Tangent and Cotangent",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "apply",
+   "prereqs": [
+    "11",
+    "29",
+    "19",
+    "26",
+    "27"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "31",
+   "slug": "logarithmic-differentiation",
+   "title": "Logarithmic Differentiation",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "S",
+   "part3": "which",
+   "prereqs": [
+    "13",
+    "27"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "32",
+   "slug": "sinusoidal-word-problems",
+   "title": "Sinusoidal Word Problems",
+   "kind": "topic",
+   "group": "5",
+   "siteChapter": 5,
+   "size": "M",
+   "part3": "trig-opt",
+   "prereqs": [
+    "29",
+    "30",
+    "26"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "33",
+   "slug": "introduction-to-vectors",
+   "title": "Introduction to Vectors",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "S",
+   "part3": "scalar-vector",
+   "prereqs": [],
+   "status": "building"
+  },
+  {
+   "nn": "34",
+   "slug": "adding-and-subtracting-vectors",
+   "title": "Adding and Subtracting Vectors",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "triangle",
+   "prereqs": [
+    "33"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "35",
+   "slug": "scalar-multiplication",
+   "title": "Multiplication of a Vector by a Scalar",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "S",
+   "part3": "geometry",
+   "prereqs": [
+    "34"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "36",
+   "slug": "properties-of-vectors",
+   "title": "Properties of Vectors",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "S",
+   "part3": "simplify",
+   "prereqs": [
+    "34",
+    "35"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "37",
+   "slug": "vectors-in-r3",
+   "title": "Vectors in R³",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "sketch",
+   "prereqs": [
+    "33"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "38",
+   "slug": "cartesian-vectors-in-r2",
+   "title": "Cartesian Vectors in R²",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "components",
+   "prereqs": [
+    "34",
+    "35",
+    "26"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "39",
+   "slug": "operations-in-r3",
+   "title": "Operations with Vectors in R³",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "M",
+   "part3": "prove",
+   "prereqs": [
+    "37",
+    "38"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "40",
+   "slug": "linear-combinations-and-spanning-sets",
+   "title": "Linear Combinations and Spanning Sets",
+   "kind": "topic",
+   "group": "6",
+   "siteChapter": 6,
+   "size": "L",
+   "part3": "target",
+   "prereqs": [
+    "38",
+    "39"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "41",
+   "slug": "vectors-as-forces",
+   "title": "Vectors as Forces",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "ramp",
+   "prereqs": [
+    "34",
+    "38"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "42",
+   "slug": "rope-tension-and-velocity",
+   "title": "Rope Tension and Velocity",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "L",
+   "part3": "navigation",
+   "prereqs": [
+    "41",
+    "33",
+    "38"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "43",
+   "slug": "dot-product-in-r2",
+   "title": "The Dot Product in R²",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "properties",
+   "prereqs": [
+    "34",
+    "38",
+    "41"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "44",
+   "slug": "dot-product-in-r3",
+   "title": "The Dot Product in R³",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "orthogonal",
+   "prereqs": [
+    "37",
+    "39",
+    "43"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "45",
+   "slug": "scalar-and-vector-projections",
+   "title": "Scalar and Vector Projections",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "work",
+   "prereqs": [
+    "43",
+    "44",
+    "35",
+    "41"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "46",
+   "slug": "the-cross-product",
+   "title": "The Cross Product",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "M",
+   "part3": "properties",
+   "prereqs": [
+    "44",
+    "39"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "47",
+   "slug": "applications-of-cross-and-triple-product",
+   "title": "Applications of the Cross Product and Triple Scalar Product",
+   "kind": "topic",
+   "group": "7",
+   "siteChapter": 7,
+   "size": "L",
+   "part3": "volume",
+   "prereqs": [
+    "45",
+    "46"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "48",
+   "slug": "equations-of-lines-in-r2",
+   "title": "Equations of Lines in R²",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "same-line",
+   "prereqs": [
+    "38"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "49",
+   "slug": "cartesian-equation-of-a-line-in-r2",
+   "title": "Cartesian Equation of a Line in R²",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "S",
+   "part3": "angles",
+   "prereqs": [
+    "43",
+    "48"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "50",
+   "slug": "equations-of-lines-in-r3",
+   "title": "Vector, Parametric and Symmetric Equations of Lines in R³",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "L",
+   "part3": "two-points",
+   "prereqs": [
+    "39",
+    "48",
+    "37"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "51",
+   "slug": "vector-equation-of-a-plane",
+   "title": "Vector Equation of a Plane",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "on-plane",
+   "prereqs": [
+    "40",
+    "50",
+    "39"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "52",
+   "slug": "cartesian-equation-of-a-plane",
+   "title": "Cartesian Equation of a Plane",
+   "kind": "topic",
+   "group": "8",
+   "siteChapter": 8,
+   "size": "M",
+   "part3": "convert",
+   "prereqs": [
+    "46",
+    "51",
+    "43",
+    "44"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "53",
+   "slug": "intersection-of-lines-with-planes",
+   "title": "Intersection of Lines with Planes",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "M",
+   "part3": "classify",
+   "prereqs": [
+    "50",
+    "52",
+    "44"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "54",
+   "slug": "intersection-of-lines",
+   "title": "Intersection of Lines in R² and R³",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "M",
+   "part3": "skew",
+   "prereqs": [
+    "48",
+    "49",
+    "50"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "55",
+   "slug": "systems-of-equations-matrices",
+   "title": "Systems of Equations (Matrices)",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "L",
+   "part3": "solutions",
+   "prereqs": [
+    "52",
+    "54"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "56",
+   "slug": "intersection-of-two-planes",
+   "title": "Intersection of Two Planes",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "M",
+   "part3": "line",
+   "prereqs": [
+    "52",
+    "55",
+    "46",
+    "50"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "57",
+   "slug": "intersection-of-three-planes",
+   "title": "Intersection of Three Planes",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "L",
+   "part3": "configurations",
+   "prereqs": [
+    "55",
+    "56",
+    "47"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "58",
+   "slug": "distance-point-to-line",
+   "title": "Distance from a Point to a Line in R² and R³",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "M",
+   "part3": "parallel",
+   "prereqs": [
+    "45",
+    "46",
+    "49",
+    "50"
+   ],
+   "status": "building"
+  },
+  {
+   "nn": "59",
+   "slug": "distance-point-to-plane",
+   "title": "Distance from a Point to a Plane",
+   "kind": "topic",
+   "group": "9",
+   "siteChapter": 9,
+   "size": "M",
+   "part3": "skew-distance",
+   "prereqs": [
+    "52",
+    "58",
+    "46"
+   ],
+   "status": "building"
+  }
+ ]
 }

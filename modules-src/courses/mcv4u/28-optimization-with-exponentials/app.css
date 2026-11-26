@@ -1,0 +1,101 @@
+/* MCV4U 28: hero factor panels, Dose curve (V10 stage, factor panels, window sliders), Part 3 stations (N29 chip slots,
+   V10 stage with bars, V11 sign chart), V8 answer boxes, Dose design task. Colour tokens only. */
+.ox-heq{font:400 .5em/1.2 var(--font-ui);color:var(--ink-2);margin:0 .25em;letter-spacing:0}
+
+/* hero */
+.ox-hfac{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:0 0 8px;align-items:end}
+.ox-hfp{min-width:0}
+.ox-hfcap{margin:0 0 2px;font:600 .82rem var(--font-ui);color:var(--ink-2)}
+.ox-hfcap .m{font-size:1.08em;color:var(--ink)}
+canvas.plot.ox-hsmall{aspect-ratio:16/8}
+
+/* Explore: dose curve */
+.ox-ex{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ox-main,.ox-side{min-width:0}
+.ox-eq{font-size:clamp(1.3rem,3.2vw,1.9rem);min-height:1.3em}
+.ox-fac{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;margin:0 0 8px;align-items:end}
+.ox-fac[hidden],.ox-win[hidden]{display:none}
+.ox-fp{min-width:0}
+.ox-fcap{margin:0 0 2px;font:600 .82rem var(--font-ui);color:var(--ink-2)}
+.ox-fcap .m{color:var(--ink)}
+canvas.plot.ox-small{aspect-ratio:16/10}
+.ox-gcap{margin:0 0 4px;font-weight:700;font-size:.95rem}
+canvas.plot.ox-plot{aspect-ratio:16/11}
+.ox-key{margin:8px 0 0}
+.ox-win{margin-top:10px}
+.ox-sl{margin-top:10px}
+.ox-sl output{font-weight:700}
+.ox-unit{font-weight:400}
+.ox-side .seg-wrap{margin-top:0}
+.ox-read{margin-top:14px}
+@media (max-width:820px){
+  .ox-ex{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Part 3 stations */
+.ox-stns{margin-bottom:6px}
+.ox-stchip{font:600 .95rem var(--font-ui)}
+.ox-stp h3{margin:8px 0 6px}
+.ox-stp .m,.ox-alg-steps .m{white-space:normal}
+.ox-build{margin:10px 0 0;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.ox-frame{margin:0 0 6px;font-size:1.05rem}
+.ox-build .how{margin:0 0 8px}
+.ox-slots{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px}
+.ox-slot{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:150px;min-height:52px;padding:6px 10px;border:2px dashed var(--ink-2);border-radius:8px;background:var(--sheet);text-align:left}
+.ox-slot.on{border-style:solid;border-color:var(--ink);background:var(--hi-soft)}
+.ox-slot.full{border-style:solid;border-color:var(--green);background:var(--good-bg);opacity:1;color:var(--ink)}
+.ox-sll{font:700 .78rem var(--font-ui);color:var(--ink-2)}
+.ox-slv{font-size:1.05rem}
+.ox-tray{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 6px}
+.ox-mchip{font-size:1.02rem;min-height:36px}
+.ox-mchip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.ox-mtip{margin:4px 0 0}
+.ox-first{margin:10px 0 0}
+.ox-stage{margin-top:12px}
+.ox-stage[hidden]{display:none}
+.ox-ss{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:14px 22px;align-items:start}
+.ox-ss-fig,.ox-ss-g{min-width:0}
+.ox-ss-sl{margin-top:10px}
+.ox-bars{display:block;width:100%;max-width:240px;height:auto;margin:20px auto 0}
+.ox-bar-ax{stroke:var(--ink-2);stroke-width:1.5}
+.ox-bar{stroke:var(--sheet);stroke-width:1}
+.ox-bar-obj{fill:var(--pen)}
+.ox-bar-oth{fill:var(--ink-2);opacity:.55}
+.ox-bar-v{fill:var(--ink);font:700 12px var(--font-ui)}
+.ox-bar-l{fill:var(--ink-2);font:600 12px var(--font-ui)}
+.ox-sread{margin-top:12px}
+.ox-best{color:var(--green);font-weight:700}
+.ox-note{margin-top:10px}
+.ox-alg-steps{margin:10px 0 0;padding-left:1.3em;display:grid;gap:4px}
+.ox-sch{margin:12px 0 6px;font-weight:700;font-size:.95rem}
+@media (max-width:560px){
+  .ox-ss{grid-template-columns:minmax(0,1fr)}
+  .ox-bars{max-width:200px;margin-top:0}
+  .ox-slot{min-width:0;flex:1 1 140px}
+}
+
+/* V11 sign chart */
+.ox-sc-wrap{overflow-x:auto;position:relative}
+table.ox-sct th,table.ox-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.ox-sct tbody th{text-align:left;font-weight:600}
+table.ox-sct th .m,table.ox-sct td .m{white-space:nowrap}
+table.ox-sct .ox-sc-u{font:600 .8rem var(--font-ui);color:var(--ink-2)}
+table.ox-sct .ox-sc-ar{font-size:1.25rem;line-height:1}
+table.ox-sct .ox-sc-d td{font-weight:700}
+
+/* V8 answer boxes */
+.ox-dt{display:grid;gap:8px;margin:8px 0 0}
+.ox-dr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.ox-dl{min-width:8.5rem;font-weight:600}
+.ox-box{width:9rem}
+.ox-pre{font:600 1.15rem var(--font-math)}
+.ox-u{color:var(--ink-2)}
+.ox-dch{gap:6px;margin:0}
+.ox-dch .chip{min-height:36px;font-size:1.02rem}
+
+/* task */
+.ox-tsl{margin-top:4px}
+.ox-tkl{font-weight:700;margin:12px 0 6px}
+.ox-tk{gap:8px}
+.ox-tk .fchip{min-width:52px}
+@media (max-width:560px){ .ox-dl{min-width:0} }
