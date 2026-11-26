@@ -1,0 +1,155 @@
+/* SBI4U 08 The Calvin Cycle: Calvin wheel (S2), energy ledger (S3), experiment graph, Where the sugar goes stations, sugar-order task. Tokens only. */
+/* radio groups (copied from SBI4U 04) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* stepper */
+.cc-stp{display:inline-flex;align-items:stretch;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.cc-stb{min-width:40px;min-height:40px;border:0;background:var(--sheet);color:var(--ink);font-size:1.2rem;font-weight:700;padding:0}
+.cc-stb:disabled{opacity:.4}
+.cc-stp output{min-width:2.6em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);padding:0 .4em;line-height:40px}
+
+/* hero equation: brown carbon dots over CO₂ and G3P; ATP orange, NADPH teal */
+.hero .hero-eq .cc-heq{font-size:.7em;white-space:normal;line-height:1.75}
+.cc-hc{position:relative;display:inline-block}
+.cc-hd{position:absolute;left:50%;top:-.3em;transform:translateX(-50%);display:flex;gap:.14em}
+.cc-hd b{display:block;width:.24em;height:.24em;border-radius:50%;background:var(--bio-carbon)}
+.cc-ha{color:var(--bio-atp);font-weight:700}
+.cc-hn{color:var(--bio-nadh);font-weight:700}
+.cc-hero{max-width:480px;margin:0 auto}
+
+/* S2 Calvin wheel */
+.cc-svg{display:block;width:100%;height:auto;overflow:visible}
+.cc-stroma{fill:var(--leaf);fill-opacity:.08;stroke:var(--leaf-edge);stroke-width:1}
+.cc-thy{fill:var(--leaf);opacity:.9}
+.cc-thyt{font:700 10.5px var(--font-ui);fill:var(--sheet)}
+.cc-sub{font:400 10.5px var(--font-ui);fill:var(--ink-2)}
+.cc-lab{font:700 10.5px var(--font-ui);fill:var(--ink)}
+.cc-ph{font:700 12px var(--font-ui);fill:var(--ink)}
+.cc-guide{fill:none;stroke:var(--ink-2);stroke-width:1.3;stroke-dasharray:3 4;opacity:.8}
+.cc-ah{stroke-dasharray:none}
+.cc-ring{fill:none;stroke:var(--ink);stroke-width:2.2}
+.cc-ringh{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cc-rub{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.cc-rubt{font:700 10px var(--font-ui);fill:var(--ink-2)}
+.cc-pool{fill:var(--sheet);stroke:var(--rule);stroke-width:1.5}
+.cc-expb{stroke:var(--bio-carbon);stroke-dasharray:5 3}
+.cc-pl{font:700 11.5px var(--font-ui);fill:var(--ink)}
+.cc-ctr{font:700 11.5px var(--font-ui);fill:var(--ink-2)}
+.cc-ctr2{font:700 14px var(--font-ui);fill:var(--ink)}
+.cc-mol{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.3}
+.cc-g3p{fill:var(--bio-carbon);fill-opacity:.22;stroke:var(--bio-carbon);stroke-width:1.8}
+.cc-c6{stroke:var(--bio-carbon);stroke-dasharray:3 2}
+.cc-c{fill:var(--bio-carbon)}
+.cc-tk{font:700 9px var(--font-ui);fill:var(--ink)}
+.cc-tt{font:700 9.5px var(--font-ui);fill:var(--sheet)}
+
+/* Explore panel */
+.cc-stage{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px}
+.cc-leg{margin:6px 0 0}
+.cc-sw{display:inline-block;width:26px;height:0;border-top:3px solid var(--pen);vertical-align:middle;margin:0 5px 0 0}
+.cc-sw2{border-top:3px dashed var(--ink);margin-left:12px}
+.cc-cap{font-size:.92rem;margin:8px 0 0;min-height:2.6em}
+.cc-row{margin:0 0 12px}
+.cc-panel{margin-top:4px}
+.cc-moves{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 8px}
+.cc-mv{min-height:44px;width:100%}
+.cc-stat{min-height:2.7em;font-size:.92rem;margin:4px 0;padding:4px 8px;border-radius:6px}
+.cc-stat.bad{background:var(--bad-bg)}
+.cc-sup{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px 8px;margin:4px 0 8px}
+.cc-sup legend{font-weight:700;font-size:.88rem;color:var(--ink-2);padding:0 4px}
+.cc-sup .numrow{margin:4px 0}
+.cc-sup label{display:inline-block;min-width:4.2em;font-weight:700}
+.cc-note{margin-top:8px}
+
+/* S3 energy ledger */
+.cc-led{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.cc-led summary{cursor:pointer;font-weight:700;font-size:.92rem}
+.cc-lsd{font-weight:400;color:var(--ink-2);font-size:.85rem;text-decoration:underline}
+.cc-led[open] .cc-lsd{display:none}
+.cc-tr{display:grid;grid-template-columns:7em minmax(0,1fr) auto;gap:8px;align-items:center;margin:8px 0;font-size:.9rem}
+.cc-tn{font-weight:700}
+.cc-tr.cc-tw{grid-template-columns:minmax(0,1fr) auto}
+.cc-s1g{max-width:560px}
+.cc-tg{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.cc-tal{display:inline-flex;flex-wrap:wrap;gap:2px;min-width:0}
+.cc-tal i{display:block;width:7px;height:12px;border-radius:2px;background:var(--c)}
+.cc-tal b{font-size:.8rem;margin-left:3px}
+.cc-on,.cc-off{font-weight:700;color:var(--ink)}
+.cc-lg{margin:8px 0 10px}
+.cc-lgh{margin:0 0 4px;font-size:.9rem}
+.cc-br{display:grid;grid-template-columns:9em minmax(0,1fr) 2.8em;align-items:center;gap:8px;font-size:.86rem;margin:3px 0}
+.cc-bt{position:relative;height:12px;border:1px solid var(--rule);border-radius:6px;background:var(--plot-grid)}
+.cc-bt i{display:block;height:100%;border-radius:5px;box-sizing:border-box}
+.cc-bt b{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ink)}
+.cc-bs{background:var(--c)}
+.cc-bu{background:var(--c);opacity:.5}
+.cc-bn{border:2px solid var(--c);background:transparent}
+.cc-bv{text-align:right;font-variant-numeric:tabular-nums}
+.cc-mk{margin:2px 0 0}
+
+/* Part 3: Where the sugar goes */
+.cc-tbl{border-collapse:collapse;font-size:.92rem;min-width:380px}
+.cc-tcap{margin:6px 0 0}
+.cc-tbl th,.cc-tbl td{padding:5px 8px;border-bottom:1px solid var(--rule);text-align:right}
+.cc-tbl th[scope="row"],.cc-tbl thead th:first-child{text-align:left}
+.cc-tbl thead th,.cc-tbl td{white-space:nowrap}
+.cc-tbl th[scope="row"]{min-width:9em}
+.cc-tbl tr.cc-hit td{background:var(--hi-soft)}
+.cc-rowb{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.25em .75em;font-size:.88rem;min-height:32px;text-align:left}
+.cc-rowb.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.cc-rowb:disabled{opacity:1}
+.cc-task{margin:12px 0}
+.cc-tp{margin:0 0 6px}
+.cc-s2,.cc-s3{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:start}
+.cc-dests{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.cc-dst.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.cc-dst.seen::before{content:"✓ "}
+.cc-dinfo p{margin:0 0 6px}
+.cc-hl{display:none}
+.cc-hl.on{display:inline}
+.cc-hls{fill:var(--hi-soft);stroke:var(--hi);stroke-width:3}
+.cc-wall{fill:var(--sheet);stroke:var(--leaf-edge);stroke-width:6}
+.cc-chl{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:2}
+.cc-starch{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.2}
+.cc-arr{fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cc-mito{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.8}
+.cc-cris{fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.cc-nit{fill:var(--ink-2)}
+.cc-phl{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:2}
+.cc-dl{font:700 11px var(--font-ui);fill:var(--ink)}
+.cc-dq{font:700 12px var(--font-ui);fill:var(--ink-2)}
+.cc-zs{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px}
+.cc-zbg{fill:var(--leaf);fill-opacity:.08}
+.cc-swi{fill:var(--sheet);stroke:var(--rule);stroke-width:1.5}
+.cc-swi.on{fill:var(--hi-soft);stroke:var(--hi)}
+.cc-swt{font:700 10.5px var(--font-ui);fill:var(--ink)}
+.cc-enz{fill:var(--ink-2);fill-opacity:.16;stroke:var(--ink-2);stroke-width:2}
+.cc-enz.off{stroke-dasharray:6 4}
+.cc-zslow{margin-top:10px}
+
+/* Practice: detective */
+.cc-chips{margin:8px 0}
+.cc-unit{font-weight:700}
+
+/* Task: Plan a sugar order */
+.cc-conds{margin:6px 0 0;padding-left:1.4em}
+.cc-tin{display:grid;gap:10px;margin:10px 0}
+.cc-th{font-size:.95rem;margin:10px 0 4px}
+.cc-batch p{margin:4px 0}
+.cc-bsvg{display:block;height:32px;width:auto;max-width:100%}
+.cc-hex{fill:var(--bio-carbon);fill-opacity:.25;stroke:var(--bio-carbon);stroke-width:1.6}
+
+@media (max-width:700px){
+  .cc-s2,.cc-s3{grid-template-columns:minmax(0,1fr)}
+  .cc-tr{grid-template-columns:minmax(0,1fr) auto}
+  .cc-tr .cc-tal,.cc-tr .cc-tg{grid-column:1 / -1;grid-row:2}
+}
