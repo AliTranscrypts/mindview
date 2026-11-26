@@ -6,14 +6,14 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 170/295 live, 2 built, 123 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 172/295 live, 2 built, 121 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 29/59 | 1 | 29 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 21/39 | 0 | 18 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 1 | 34 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 30/59 | 0 | 29 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 21/39 | 2 | 16 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 18/52 | 0 | 34 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 20/25 | 0 | 5 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 14/24 | 0 | 10 | 0 |
@@ -102,7 +102,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
 - ✓ 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
 - ✓ 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
-- ◐ 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
+- ✓ 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
 - … 31 Logarithmic Differentiation (`logarithmic-differentiation`, topic, site ch5)
 - … 32 Sinusoidal Word Problems (`sinusoidal-word-problems`, topic, site ch5)
 - … 33 Introduction to Vectors (`introduction-to-vectors`, topic, site ch6)
@@ -157,12 +157,12 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
 - ✓ 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - … 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
-- … 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
+- ◐ 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
 - … 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
 - … 25 Continuous Random Variables & Density (`continuous-density`, topic, site ch6)
 - … 26 Properties of the Normal Distribution (`normal-properties`, topic, site ch6)
 - … 27 Standardizing & z-Scores (`z-scores`, topic, site ch6)
-- … 28 Normal Approximation to the Binomial (`normal-approximation`, topic, site ch6)
+- ◐ 28 Normal Approximation to the Binomial (`normal-approximation`, topic, site ch6)
 - … 29 Population, Sample & Sampling Methods (`sampling-methods`, topic, site ch7)
 - … 30 Sources of Bias in Surveys (`bias`, topic, site ch7)
 - … 31 Measures of Central Tendency (`central-tendency`, topic, site ch7)
@@ -195,7 +195,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
 - ✓ 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
-- ◐ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
+- ✓ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
 - … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
 - … 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
 - … 22 Periodic Trends (`periodic-trends`, topic, site ch2)

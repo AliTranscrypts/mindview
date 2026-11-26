@@ -1,0 +1,93 @@
+/* MDM4U 23: hero (urn + card + histogram), Draw without replacement (urn SVG + D7 histogram), Quality control stations,
+   Count it entry, Inspection plan task. Successes --pen, failures --ink-2 (course plan §3 / build notes); binomial overlay
+   outlined in --ink; simulated marks --ev-c; selections --hi-soft. */
+/* radioGroup (from MDM4U 21) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;min-width:36px;text-align:center}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* switch (from MDM4U 21) */
+.hg-sw.cc-switch{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);font:700 .92rem var(--font-ui);padding:4px 0;min-height:36px;text-align:left}
+.hg-sw .cc-track{position:relative;flex:none;width:40px;height:22px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.hg-sw .cc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.hg-sw[aria-checked="true"] .cc-track{background:var(--pen);border-color:var(--pen)}
+.hg-sw[aria-checked="true"] .cc-knob{left:19px;border-color:var(--pen)}
+
+/* hero */
+.hg-heq{font-size:.78em;display:inline-flex;flex-wrap:wrap;align-items:flex-start;gap:.15em .3em;line-height:1.15}
+.hg-hp{display:inline-flex;flex-direction:column;align-items:center}
+.hg-hb .hg-hm{padding:0 .12em .08em;border-bottom:2px solid var(--ink-2)}
+.hg-hu{font:700 .72rem/1.2 var(--font-ui);color:var(--ink-2);margin-top:.25em;white-space:nowrap}
+.hg-hfig{display:grid;justify-items:center}
+.hg-hsvg{display:block;width:100%;max-width:440px;height:auto}
+.hg-jar{fill:var(--paper);stroke:var(--ink-2);stroke-width:2.5;stroke-linejoin:round}
+.hg-s{fill:var(--pen)}
+.hg-f{fill:var(--ink-2)}
+.hg-lt{fill:var(--sheet);font:700 11px var(--font-ui);text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.hg-gone{fill:none;stroke:var(--rule);stroke-width:1.5;stroke-dasharray:3 3}
+.hg-hcnt,.hg-umult{font:700 13px var(--font-ui);fill:var(--ink);text-anchor:middle}
+.hg-htray{font:700 12px var(--font-ui);fill:var(--ink-2);text-anchor:middle}
+.hg-hcard{fill:var(--sheet);stroke:var(--ink);stroke-width:1.5}
+.hg-hct{font:700 13px var(--font-math);fill:var(--ink);text-anchor:middle}
+.hg-hax{stroke:var(--ink-2);stroke-width:1.5}
+.hg-hbar{fill:var(--pen)}
+.hg-hxl{font:13px var(--font-math);fill:var(--ink);text-anchor:middle}
+.hg-hbl{font:700 12px var(--font-ui);fill:var(--ink);text-anchor:middle}
+
+/* Explore */
+.hg-pg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.hg-main,.hg-read{min-width:0}
+.hg-cap{font-size:clamp(1.1rem,2.4vw,1.45rem)}
+.hg-sls{display:grid;gap:2px;margin:0 0 8px}
+.hg-sls .slider{margin:0 0 4px}
+.hg-opts{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px}
+.hg-opts .rg-wrap{margin:2px 0}
+.hg-urnbox{margin:6px 0 10px}
+.hg-urn{max-width:420px}
+.hg-usvg{display:block;width:100%;height:auto}
+.hg-tray{fill:none;stroke:var(--rule);stroke-width:1.5}
+.hg-ucount{margin:2px 0 6px}
+.hg-btns{display:flex;flex-wrap:wrap;gap:8px}
+canvas.plot.hg-plot{aspect-ratio:16/10}
+.hg-legend{display:flex;flex-wrap:wrap;gap:4px 16px;margin:4px 0 8px}
+.hg-key{display:inline-flex;align-items:center;gap:6px}
+.hg-swo{display:inline-block;width:.9em;height:.9em;border:2px dashed var(--ink);border-radius:2px}
+.hg-swm{display:inline-block;width:1.1em;height:4px;background:var(--ev-c);border-radius:2px}
+.hg-tbl{margin-top:10px}
+@media (max-width:760px){ .hg-pg{grid-template-columns:minmax(0,1fr)} }
+
+/* Part 3: Quality control */
+.qc-tabs .rg-wrap{margin-bottom:12px}
+.qc-tick{color:var(--green);font-weight:700}
+.qc-task{margin:.4em 0}
+.qc-build{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:10px 0;font-size:1.05rem}
+.qc-c{display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
+.qc-op{font-size:1.2rem;font-weight:700}
+input.numin.qc-in,input.numin.pe-sm{width:3.6em;min-width:0;text-align:center;padding:.3em .25em}
+.qc-res{font-size:1.05rem;margin:.6em 0}
+.qc-fair{margin-top:10px}
+.qc-fair .chips{display:flex;flex-wrap:wrap;gap:8px}
+.qc-note{margin:.5em 0}
+.qc-done{margin:12px 0 0}
+
+/* Count it */
+.pe-row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0}
+.pe-lab{display:inline-flex;align-items:center;gap:8px}
+.pe-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+
+/* Inspection plan */
+.hg-conds{margin:.4em 0 0 1.2em}
+.ip-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.ip-fig{margin:0;min-width:0}
+.ip-cap{font:700 .88rem var(--font-ui);color:var(--ink-2);margin:0 0 4px}
+canvas.plot.ip-plot{aspect-ratio:4/3}
+.ip-read{margin-top:10px}
+@media (max-width:560px){ .ip-two{grid-template-columns:minmax(0,1fr)} }
