@@ -69,3 +69,4 @@ every module that uses the touched code, then ship them together).
 | N9 heightSlider, radioGroup (from 28), N4 entryBoxes | mhf4u 34 | |
 | N19+N24 wheelGraph, radioGroup with per-option disabling | mhf4u 35 | |
 | statementBuilder, G11 canvasMath/edgeArrow/mirrorSeg, G9+G11 twinScene, N9 stepSlider (Shift-arrow) | mhf4u 37 | |
+| G1+G6+G16 logWall, N8 logSketchBuilder, N4 logCoefBoxes, logExplorer, G11 canvasFracLabel (overlap skipping) | mhf4u 39 | |
