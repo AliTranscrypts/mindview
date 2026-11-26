@@ -146,3 +146,4 @@ every module that uses the touched code, then ship them together).
 | rubiscoSim, S3 carbonBars, S2 strategy steppers, climateBoard, dialSVG | sbi4u 09 | builder-chosen climate-board key (plan gave none); C4-rice text VERIFY |
 | S2 calvinWheel, S3 energyLedger (tally/bars), stepper, S1 diagramExplorer lite, rubiscoZoom | sbi4u 08 | |
 | C1 polymerChain, K21 densityBar | sch4u 07 | fixed by orchestrator: "(verify before release)" was visible to students — moved to // VERIFY comments (3 Mt / 9% recycled; single-use plastics rules); check.mjs now fails visible verify notes |
+| C2 general namer + chip judge (all families, rings, benzene, older forms; ~140 unit-tested names), C1 SMILES-lite parser + palette builder, nameChips grid | sch4u 09 | best C2 to promote |

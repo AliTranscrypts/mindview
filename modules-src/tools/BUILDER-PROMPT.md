@@ -80,8 +80,8 @@ promotion candidates.
   (03), S2 pathwayStepper / S3 energyLedger (04+). Every module has an investigation item and an STSE/Canadian item.
 - **sch4u:** take every constant from `MV.chem.data` (never retype); if a value is missing, define it locally
   with a comment and report it. `MV.chem.f()` formulas, `MV.chem.atom()` colours, `MV.chem.tablePanel()`.
-  Components: C1 moleculeView/moleculeBuilder, C2 nameBuilder, C3 mechanismStepper (02/03 newest). Spelling
-  "aluminium".
+  Components: most complete C2 namer + chip judge and C1 SMILES-lite parser/view/palette builder are in 09;
+  C3 mechanismStepper (02, 10); polymerChain + densityBar (07). Spelling "aluminium".
 - **hfa4u:** published in the site's HFA4M course (header shows HFA4M). Follow course plan §2 safety, sensitivity
   and privacy strictly (weight-inclusive language; self-analysis optional, private and never saved). Don't invent
   nutrition values or statistics and don't pull figures from the web: label illustrative values "model data" and
