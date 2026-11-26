@@ -107,3 +107,4 @@ every module that uses the touched code, then ship them together).
 | D2 vennDiagram (2 or 3 sets) | mdm4u 03 | |
 | radioGroup, F1 adequacy bars, retention stage, prediction cards, body tap points, food icons | hfa4u 03 | OWNER REVIEW: advisory figures + framing example taken from a web search of government sources, marked VERIFY in content (check Oct 2026 numbers); model data (Sam record, bars, tofu decoy, self-check values) |
 | E9 structureMap, E1 annotationStudio (lens variant), E6 paragraphBuilder, spotProse, radioGroup | eng4u 02 | OWNER REVIEW: story text typed from the standard 23-paragraph edition (online check failed) — proofread against a published PD edition; plan issue: none of the 3 model responses passes all 7 task checklist lines; 302 KB |
+| S1 diagramExplorer (+default tag positions), photosystemSim, moleculeClip, S9 tubeBuilder | sbi4u 03 | |
