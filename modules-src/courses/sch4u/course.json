@@ -232,7 +232,8 @@
    "part3": "spectra",
    "prereqs": [
     "13"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "15",
