@@ -4,7 +4,7 @@
 # Used by .github/workflows/deploy.yml on every push (main → production,
 # staging → https://staging.mindview.pages.dev) and by scripts/safe-deploy.sh.
 #
-# Why a staging folder: the repo holds files that must never be served, chiefly
+# Deploys git HEAD, not the working tree. Why a staging folder: the repo holds files that must never be served, chiefly
 # modules-src/ (interactive-module sources with readable answer keys). Wrangler
 # uploads every file in the folder it is given, so we copy the site into .deploy/
 # without them. Wrangler is still run from the repo root so that ./functions is
@@ -37,18 +37,17 @@ fi
 echo "→ Staging site files in .deploy/ …"
 rm -rf .deploy
 mkdir .deploy
-# Everything except repo plumbing, Functions (bundled separately) and
-# never-serve sources. Keep this list in sync with CLAUDE.md §"Deploy procedure".
-rsync -a \
-  --exclude '/.git' \
-  --exclude '/.github' \
-  --exclude '/.deploy' \
-  --exclude '/.wrangler' \
-  --exclude '/functions' \
-  --exclude '/modules-src' \
-  --exclude 'node_modules' \
-  --exclude '.DS_Store' \
-  ./ .deploy/
+# Deploy exactly what is committed (HEAD), as CI does, so uncommitted or
+# in-progress files in a working copy are never published. Then drop repo
+# plumbing, Functions (bundled separately from ./functions) and never-serve
+# sources. Keep this list in sync with CLAUDE.md §"Deploy procedure".
+git archive --format=tar HEAD | tar -x -C .deploy
+rm -rf .deploy/.github .deploy/.wrangler .deploy/functions .deploy/modules-src
+find .deploy -name node_modules -prune -exec rm -rf {} + 2>/dev/null || true
+find .deploy -name .DS_Store -delete
+if [ -n "$(git status --porcelain -- . ':!modules-src' ':!.wrangler' 2>/dev/null)" ]; then
+  echo "  note: uncommitted changes outside modules-src are NOT deployed (HEAD only)"
+fi
 
 if [ -d .deploy/modules-src ] || find .deploy -path '*modules-src*' | grep -q .; then
   echo "❌ modules-src leaked into the deploy folder — aborting."

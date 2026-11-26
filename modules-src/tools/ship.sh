@@ -30,7 +30,16 @@ python3 modules-src/tools/progress.py
 (cd modules-src && node build/check.mjs --all --static-only | tail -1)
 
 git checkout -q .wrangler/cache/pages.json 2>/dev/null || true
-git add courses modules-src .github scripts CLAUDE.md .gitignore
+# Stage only what belongs to this ship: the named modules (sources + page), the hubs and chapter
+# pages of their courses, tracking files and shared tooling. Other builders' in-progress files stay out.
+git add .github scripts CLAUDE.md .gitignore modules-src/toolkit modules-src/build modules-src/tools \
+        modules-src/BUILDER-GUIDE.md modules-src/PROGRESS.md modules-src/package.json modules-src/package-lock.json \
+        modules-src/courses/*/course.json
+for t in "$@"; do
+  c="${t%%:*}"; n="${t##*:}"
+  eval "$(python3 -c "import json;d=json.load(open('modules-src/courses/$c/course.json'));m=next(x for x in d['modules'] if x['nn']=='$n');print('SITE=%s; ID=%s-%s' % (d['site'],m['nn'],m['slug']))")"
+  git add "modules-src/courses/$c/$ID" "courses/$SITE/modules/$ID.html" "courses/$SITE/modules/index.html" "courses/$SITE"/ch*.html
+done
 if git diff --cached --quiet; then
   echo "Nothing to commit."
 else

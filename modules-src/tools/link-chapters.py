@@ -5,7 +5,7 @@ Usage: python3 modules-src/tools/link-chapters.py [course ...]   (default: all c
 
 For every course in modules-src/courses/<course>/course.json, each chapter page
 courses/<site>/ch<N>.html gets a block listing the modules mapped to that chapter
-(module "siteChapter") whose built page courses/<site>/modules/NN-slug.html exists.
+(module "siteChapter") whose status is built/live and whose page courses/<site>/modules/NN-slug.html exists.
 
 The block sits between <!-- mv-modules:start --> and <!-- mv-modules:end -->,
 directly before the chapter's first topic block, so it never disturbs the locked
@@ -70,6 +70,7 @@ def link_course(name):
         text = page.read_text()
         base = BLOCK_RE.sub("", text)
         mods = [m for m in course["modules"] if m["siteChapter"] == ch
+                and m.get("status") in ("built", "live")
                 and (REPO / "courses" / site / "modules" / f'{m["nn"]}-{m["slug"]}.html').exists()]
         if mods:
             at = base.find('<div class="topic-block"')

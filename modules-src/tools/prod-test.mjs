@@ -140,7 +140,7 @@ async function main() {
     if (!m) { fail(t, 'unknown module'); continue; }
     const url = `${base}/courses/${c.site}/modules/${m.nn}-${m.slug}.html`;
     await visit(ctx, url, `${c.course} ${m.nn} ${m.slug}`, async (page) => {
-      const steps = page.locator('.steps .step, [data-step], nav .step');
+      const steps = page.locator('nav#steps button.step');
       const n = await steps.count();
       if (n < 5) throw new Error(`step bar has ${n} steps`);
       for (let i = 0; i < n; i++) {

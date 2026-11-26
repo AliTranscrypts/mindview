@@ -52,8 +52,7 @@
    "size": "S",
    "part3": "symmetry",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "02",
@@ -67,8 +66,7 @@
    "prereqs": [
     "01"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "03",
@@ -82,7 +80,8 @@
    "prereqs": [
     "01",
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "04",
@@ -95,7 +94,8 @@
    "part3": "reverse",
    "prereqs": [
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "05",
@@ -109,7 +109,8 @@
    "prereqs": [
     "02",
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "06",
@@ -123,7 +124,8 @@
    "prereqs": [
     "01",
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "07",
@@ -137,7 +139,8 @@
    "prereqs": [
     "01",
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "08",

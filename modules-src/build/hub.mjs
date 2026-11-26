@@ -1,6 +1,8 @@
 // Build a course's module home page: <repo>/courses/<site>/modules/index.html
 // Usage: node build/hub.mjs <course> | --all
-// A module is listed as available iff its built page courses/<site>/modules/NN-slug.html exists right now.
+// A module is listed as available iff course.json marks it built/live (set by the orchestrator via
+// tools/progress.py) AND its page courses/<site>/modules/NN-slug.html exists. In-progress pages that
+// parallel builders have assembled are therefore never linked.
 import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
@@ -18,7 +20,7 @@ export async function buildHub(course){
   const data = {
     course:cj.course, site:cj.site, code:cj.code, title:cj.title, art:cj.course === "eng4u",
     groups:cj.groups.map(g => ({ id:g.id, label:g.label, name:g.name })),
-    modules:cj.modules.map(m => ({ nn:m.nn, slug:m.slug, title:m.title, kind:m.kind, group:m.group, prereqs:m.prereqs || [], built:fs.existsSync(outFile(cj, m)) }))
+    modules:cj.modules.map(m => ({ nn:m.nn, slug:m.slug, title:m.title, kind:m.kind, group:m.group, prereqs:m.prereqs || [], built:(m.status === 'built' || m.status === 'live') && fs.existsSync(outFile(cj, m)) }))
   };
   const nBuilt = data.modules.filter(m => m.built).length;
   const payload = JSON.stringify(data).replace(/</g, "\\u003c");
