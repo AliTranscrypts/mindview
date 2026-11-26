@@ -219,3 +219,26 @@ every module that uses the touched code, then ship them together).
 | — | eng4u 15 | **EXCERPT SLOTS** X1–X6 + [p.] pages (only "Blackfoot" and the Truth line quoted). OWNER REVIEW: E. Pauline Johnson texts not checked against a scan; support-line numbers; TRC, Kainai, Capilano facts; King ancestry note (Station 6, hidden unless ?station6=on) — `// VERIFY` |
 | — | mdm4u 38 | screen-time r = −0.65 is a builder value; 4th verdict chip added |
 | — | mdm4u 26 | PLAN ERROR: μ slider 40–160 can't reach Data-mode Fit value 170 (widened to 40–180) |
+| — | mdm4u 33 | gallery context cards (except household incomes) are builder-written model data |
+| — | eng4u 23 | OWNER REVIEW: Canadian ad-disclosure rules, Text C label wording, Aristotle (Roberts) + Lincoln quotes NOT verified vs a PD edition, confirm no mock brand matches a real trademark; real-campaign examples removed (R-A–R-D are unscored note fields) |
+| D11 scatter/regression view, trust gauge, slope-intercept entry | mdm4u 36 | PLAN TYPO: sᵧ written with a Greek gamma; matching feedback refers to 2 meanings not in the list (added as decoys); Part 3 model data (121 cm at 7, ~170 cm at 30) builder-written |
+| C1 vseprFrame + vseprView 3D SVG renderer (auto best view, arcs, ghost polyhedra), trimmed lewisView | sch4u 18 | OWNER REVIEW: Bartlett item (`// VERIFY`); O₂ treated as AX₁E₂ |
+| — | eng4u 17 | OWNER REVIEW: Melville/Shelley/Woolf/Fitzgerald/Austen lines quoted from memory (verification requested); B6 1942 Japanese Canadian history; illustrative page numbers |
+| — | hfa4u 23 | OWNER REVIEW: Second Harvest/VCMI 58% + "a third avoidable", UNEP 2024 1.05 Bt, NZWC household claims + "2 million tonnes", CFIA date-label rules, PROOF finding, Canadian food-recovery hierarchy wording, 4 builder-written APA titles (`// VERIFY`); Station 3 fix effects are builder model values |
+| — | mdm4u 25 | PLAN ERRORS: P4 needs c = 0.5 but slider is 1–20 (now starts 0.5); TC2 b = 3.6 not reachable with 0.5 steps (3.5/4 get that feedback). VERIFY: Ontario population figure |
+| — | mdm4u 25 | PLAN ERROR (cont.): Station 2 boundary values 160.0/170.0 placed in wrong intervals by the plan (module follows the left-endpoint rule) |
+| — | sbi4u 45 | OWNER REVIEW: Sudbury regreening start date, tree count, pH + cover values (`// VERIFY`). PLAN ERROR: sequence 2 has no lichens step, so "lichens placed first" feedback is unused |
+| — | mdm4u 30 | task-only frame + selection factors are builder-invented (`// VERIFY`); hero leaves out the dial |
+| — | mdm4u 31 | Station 4 skew dot-plot data + grouped-class values are builder model data |
+| — | mdm4u 32 | PLAN ERROR: hero "s = 3" impossible with 10 whole numbers (caption now "s ≈ 3") |
+| — | eng4u 20 | PLAN ERROR: Hamlet "suit the action" at Globe 3.2.19–20 (plan said 17–18). OWNER REVIEW: those line numbers, Gettysburg wording, novel quotations + chapters (`// VERIFY`); drill bank + Station 2–3 answers builder-written |
+| — | eng4u 21 | **EXCERPT SLOTS:** 4 real media examples, Part 3 "one story", U6 PSA. OWNER REVIEW: key concepts, McLuhan, War of the Worlds panic claim, Larchmere names (`// VERIFY`). PLAN ERROR: Model 1 is 149 words, not 182. Mock "Light One" poster replaces VW "Think Small" |
+| — | mdm4u 24 | Q2 reworded so sum-of-two-dice routes to "None of these"; station 4 spinner 1–4 chosen by builder |
+| — | hfa4u 25 | PLAN ERROR: Model 2 commitment "half my plate…" not in the Health list. OWNER REVIEW: every rating, emissions share, label + price fact; 34/35 rating reasons, (b)/(c) evidence cards, extra commitment chips, 2 APA refs builder-written (`// VERIFY`) |
+| S2 oxygen-switch map + poolGauges, carrierLoop, S3 ledger + ATP split bar, S7 flask/balloon bench, variable tagger; TOOLKIT QUIRK: content inside <details> loses border-box sizing in Chrome | sbi4u 20 | PLAN ERRORS: TC3 "length 7" impossible on a step-2 slider; after3 "most gas per gram" contradicts the plan's own model (30 °C best). VERIFY: other-fuels NADH counts (glycerol, amino acids) |
+| — | mdm4u 35 | K1 versions A and B ask the same question (as the plan does); Anscombe values `// VERIFY` |
+| — | mdm4u 29 | PLAN ERROR: P2 uses n = 25 but slider steps by 10 (shown as dashed outline) |
+| — | eng4u 16 | **EXCERPT SLOTS** A–F (Atwood). OWNER REVIEW: all Atwood quotes, chapters + page numbers (p. __); Forster lines + part numbers; Mill 1868 quote (`// VERIFY`). ?path=forster swap is partial (Quiet City text missing) |
+| — | eng4u 16 (cont.) | chapter numbers GUESSED by builder (greetings 4–5, "temporary" 28, "ignoring" 10, "ordinary" 6, 6 Gilead cards) — must be checked; Historical Notes details; 2017 NYT source |
+| — | sbi4u 40 | PLAN ERROR: K⁺-blocked trace drops to −20 mV at 1.5 ms then climbs to +10 at 2.0 (used +20 at 1.5). VERIFY: MS rate claim for Canada |
+| — | mdm4u 37 | PLAN NOTE: add-point x limited to 0–20 but data B runs 10–50 (extended to 60); savings-station data builder-chosen |

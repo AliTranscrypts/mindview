@@ -281,8 +281,7 @@
     "14"
    ],
    "trivium": "Rhetoric, Logic",
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "16",
@@ -299,7 +298,8 @@
     "13"
    ],
    "trivium": "Logic",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "17",
@@ -316,7 +316,8 @@
     "11"
    ],
    "trivium": "Logic",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "18",
@@ -332,7 +333,8 @@
     "17"
    ],
    "trivium": "Logic",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "19",
@@ -370,7 +372,8 @@
     "12"
    ],
    "trivium": "Rhetoric",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "21",
@@ -387,7 +390,8 @@
     "07"
    ],
    "trivium": "Rhetoric",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "22",
@@ -421,7 +425,8 @@
     "01"
    ],
    "trivium": "Rhetoric",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "24",

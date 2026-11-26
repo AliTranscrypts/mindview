@@ -1,0 +1,215 @@
+/* SBI4U 20: oxygen-switch map (S2), ledger strip (S3), NAD⁺ gauge, Part 3 stations, task fermenter.
+   Roles (course plan §3, plan build notes): carbon tokens (pyruvate, lactate, acetaldehyde, ethanol, CO₂'s carbon) --bio-carbon;
+   NADH, NAD⁺ loops and the NAD⁺ gauge --bio-nadh; ATP --bio-atp; FADH₂ --bio-fadh; O₂ and H₂O --pen (--bio-o2);
+   cytosol and mitochondrion outlines --ink-2; entry arrows (Other fuels) --ink on a --hi-soft underlay. */
+
+/* hero equation */
+.hero .hero-eq .fe-heq{display:inline-flex;flex-direction:column;gap:.45em;align-items:flex-start;font-size:.47em;line-height:1.2}
+.fe-nw{white-space:nowrap}
+.fe-hl{display:inline-flex;flex-wrap:wrap;align-items:flex-start;gap:.3em}
+.fe-hl .bio-tok{font-size:.9em}
+.fe-arr{display:inline-flex;flex-direction:column;align-items:center;line-height:1;margin:0 .1em}
+.fe-loop{display:block;font-size:.52em;font-weight:700;color:var(--bio-nadh);white-space:nowrap;margin-top:.2em}
+.fe-hero{max-width:460px;margin:0 auto}
+.fe-hsvg{display:block;width:100%;height:auto}
+
+/* radio groups (from SBI4U 14 / 10 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled,.rg.chips button:disabled{opacity:.55}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.fe-sl{margin:0}
+.fe-sl input{width:100%;accent-color:var(--ink)}
+
+/* explore layout */
+.fe-ex [hidden],.fe-p3 [hidden]{display:none!important}
+@media (min-width:821px){ .pg.fe-pg{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)} }
+.fe-pg .pg-ctrl{display:grid;gap:12px}
+.fe-panel{display:grid;gap:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.fe-enote{margin:-4px 0 0}
+.fe-time{display:grid;gap:6px}
+.fe-player{display:flex;flex-wrap:wrap;gap:8px}
+.fe-map{border:1.5px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--sheet)}
+.fe-map svg{display:block;width:100%;height:auto}
+.fe-key{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:8px 0 0;color:var(--ink-2)}
+.fe-kk{display:inline-grid;place-items:center;min-width:16px;height:16px;padding:0 4px;border-radius:8px;font-size:.68rem;font-weight:700;color:var(--sheet)}
+.fe-kk-c{background:var(--bio-carbon)}.fe-kk-n{background:var(--bio-nadh)}.fe-kk-o{background:var(--bio-o2)}.fe-kk-a{background:var(--bio-atp)}
+.fe-cap{margin:8px 0 0;font-size:.92rem;min-height:2.8em}
+.fe-ans{margin:0;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px 10px}
+.fe-ans legend{font-size:.88rem;font-weight:700;color:var(--ink-2);padding:0 4px}
+.fe-ansrow{display:flex;flex-wrap:wrap;gap:6px 14px}
+.fe-ansrow .numrow{margin:0}
+.fe-ansrow .numin{width:5.5em}
+.fe-note{margin:10px 0 0}
+
+/* map SVG */
+.fe-cell{fill:none;stroke:var(--ink-2);stroke-width:2}
+.fe-wall{fill:none;stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:3 3}
+.fe-title{font:700 14px var(--font-ui);fill:var(--ink)}
+.fe-lab,.fe-sm{font:600 12.5px var(--font-ui);fill:var(--ink-2)}
+.fe-c{fill:var(--bio-carbon);stroke:var(--sheet);stroke-width:1.2}
+.fe-ct{font:700 11px var(--font-ui);fill:var(--sheet)}
+.fe-co2{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:1.8}
+.fe-co2t{font:700 10.5px var(--font-ui);fill:var(--bio-carbon)}
+.fe-co2l{font:700 13px var(--font-ui);fill:var(--bio-carbon)}
+.fe-lane{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-dasharray:6 4}
+.fe-lanehd{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round}
+.fe-gbox{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.fe-gbox.off{stroke-dasharray:5 4}
+.fe-bt{font:700 13.5px var(--font-ui);fill:var(--ink)}
+.fe-atpt{font:700 11.5px var(--font-ui);fill:var(--bio-atp)}
+.fe-nt{font:700 11px var(--font-ui);fill:var(--bio-nadh)}
+.fe-stop{font:700 12.5px var(--font-ui);fill:var(--ink)}
+.fe-mo{fill:none;stroke:var(--ink-2);stroke-width:2}
+.fe-mi{fill:none;stroke:var(--ink-2);stroke-width:1.1;stroke-dasharray:7 4}
+.fe-stn{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6}
+.fe-st{font:700 12.5px var(--font-ui);fill:var(--ink)}
+.fe-st2{font:700 11.5px var(--font-ui);fill:var(--ink)}
+.fe-ar{fill:none;stroke:var(--ink-2);stroke-width:1.8;stroke-linejoin:round}
+.fe-rt{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:5 4;stroke-linejoin:round}
+.fe-rt.on{stroke:var(--ink);stroke-width:2.6;stroke-dasharray:none}
+.fe-rt.blk{stroke-dasharray:3 5}
+.fe-hd{stroke-dasharray:none}
+.fe-enz{font:italic 600 11.5px var(--font-ui);fill:var(--ink)}
+.fe-blk{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.fe-pile{font:700 11.5px var(--font-ui);fill:var(--ink)}
+.fe-loop{fill:none;stroke:var(--bio-nadh);stroke-width:2.2}
+.fe-nadh{fill:var(--bio-nadh)}
+.fe-lt{font:700 10px var(--font-ui);fill:var(--bio-nadh)}
+.fe-o2{fill:var(--bio-o2)}
+.fe-o2t{font:700 11px var(--font-ui);fill:var(--sheet)}
+.fe-o2a{fill:none;stroke:var(--bio-o2);stroke-width:2}
+.fe-o2l{font:700 11px var(--font-ui);fill:var(--bio-o2)}
+.fe-noo2{font:italic 700 12px var(--font-ui);fill:var(--ink-2)}
+.fe-gl{font:700 13px var(--font-ui);fill:var(--ink)}
+.fe-gt{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.fe-gf{fill:var(--bio-nadh)}
+.fe-gm{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:3 3}
+.fe-gv{font:700 12.5px var(--font-ui);fill:var(--ink)}
+.fe-o2bar{fill:var(--bio-o2)}
+/* other fuels */
+.fe-enu{fill:none;stroke:var(--hi-soft);stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+.fe-en{fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linejoin:round}
+.fe-enl{font:700 12px var(--font-ui);fill:var(--ink)}
+.fe-ringh{fill:none;stroke:var(--hi-soft);stroke-width:9}
+.fe-ring{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-dasharray:4 3}
+.fe-chain{fill:none;stroke:var(--bio-carbon);stroke-width:2.5}
+.fe-bead{fill:var(--bio-carbon);stroke:var(--sheet);stroke-width:1}
+.fe-cut{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-dasharray:3 2}
+.fe-nh2{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6}
+.fe-nh2t{font:700 11px var(--font-ui);fill:var(--ink)}
+
+/* S3 ledger strip (sticky under the step bar on phones) */
+.fe-led{margin:0 0 12px}
+.fe-lrow{display:flex;flex-wrap:wrap;gap:6px;padding:8px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.fe-cell{display:grid;grid-template-columns:auto auto;gap:0 6px;align-items:baseline;padding:4px 8px;border:1px solid var(--rule);border-radius:6px;min-width:0;flex:1 1 auto}
+.fe-cl{font-size:.75rem;font-weight:700;color:var(--ink-2)}
+.fe-cell > b{font-size:1.05rem;font-variant-numeric:tabular-nums;text-align:right}
+.fe-catp{flex:2 1 220px}
+.fe-tal{grid-column:1 / -1;display:flex;flex-wrap:wrap;gap:2px;min-height:10px;margin-top:2px}
+.fe-tal i{display:block;width:6px;height:10px;border-radius:1px;background:var(--c)}
+.fe-tal b{font-size:.75rem;color:var(--ink-2)}
+.fe-abar{grid-column:1 / -1;position:relative;display:block;height:12px;margin:4px 0 14px;border:1.5px solid var(--ink-2);border-radius:4px;background:var(--sheet)}
+.fe-abar i{position:absolute;left:0;top:0;bottom:0;background:var(--bio-atp);border-radius:2px}
+.fe-abar b{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px solid var(--ink)}
+.fe-abar em{position:absolute;top:13px;transform:translateX(-50%);font-style:normal;font-size:.68rem;font-weight:700;color:var(--ink-2)}
+@media (max-width:640px){
+  .fe-lrow{gap:4px;padding:6px}
+  .fe-cell{padding:2px 6px}
+  .fe-cell > b{font-size:.95rem}
+  .fe-tal{display:none}
+}
+
+/* Part 3 */
+.fe-sta h3{margin-top:0}
+.fe-two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:720px){ .fe-two{grid-template-columns:minmax(0,1fr)} }
+.fe-fig{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.fe-fig svg{display:block;width:100%;height:auto}
+.fe-scap{margin:8px 0 0;font-size:.95rem;min-height:2.6em}
+.fe-bowl{fill:none;stroke:var(--ink-2);stroke-width:2.5}
+.fe-dough{fill:var(--paper);stroke:var(--ink-2);stroke-width:2}
+.fe-dough.baked{stroke:var(--ink);stroke-width:3.5}
+.fe-bub{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:1.6}
+.fe-yc{fill:none;stroke:var(--ink);stroke-width:1.5}
+.fe-x{font:700 11px var(--font-ui);fill:var(--ink)}
+.fe-heat{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-linecap:round}
+.fe-jar{fill:none;stroke:var(--ink-2);stroke-width:2.2}
+.fe-milk{fill:var(--paper)}
+.fe-rod{fill:var(--ink-2)}
+.fe-prot{fill:var(--ink);opacity:.75}
+.fe-tick{stroke:var(--ink-2);stroke-width:1.5}
+.fe-ph{fill:var(--ink);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.fe-phv{font:700 13px var(--font-ui);fill:var(--ink)}
+.fe-rxn{font-size:1.05rem;display:flex;flex-wrap:wrap;align-items:center;gap:.35em}
+.fe-nadp{display:inline-block;border:2px solid var(--bio-nadh);color:var(--bio-nadh);border-radius:999px;padding:0 .5em;font-size:.85em;font-weight:700}
+.fe-chainl{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.fe-chainl li{border:1.5px solid var(--rule);border-radius:8px;padding:.3em .6em;font-size:.92rem;color:var(--ink-2);background:var(--sheet)}
+.fe-chainl li + li::before{content:"→";margin:0 .45em 0 -.2em;color:var(--ink-2)}
+.fe-chainl li.on{border-color:var(--ink);color:var(--ink);font-weight:700;background:var(--hi-soft)}
+.fe-bal2{margin-top:12px}
+.fe-ful{fill:var(--paper);stroke:var(--ink-2);stroke-width:2}
+.fe-beam{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.fe-str{fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.fe-pan{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.8}
+.fe-bench{margin:8px 0}
+.fe-flask{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round}
+.fe-liq{fill:var(--paper)}
+.fe-yst{fill:var(--ink-2)}
+.fe-neck{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.fe-bal{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:2}
+.fe-tgt{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-dasharray:4 3}
+.fe-vol{font:700 12px var(--font-ui);fill:var(--bio-carbon)}
+.fe-vtray{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px;min-height:36px}
+.fe-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:640px){ .fe-roles{grid-template-columns:minmax(0,1fr)} }
+.fe-role .bin{width:100%;min-height:auto}
+.fe-rin{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;min-height:30px}
+.fe-rin .chip{font-size:.85rem}
+.fe-t5r{margin:6px 0 0}
+.fe-key5{display:inline-block;width:18px;height:3px;background:var(--bio-carbon);vertical-align:middle}
+.fe-zbox{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6}
+.fe-zbox.on{stroke:var(--ink);stroke-width:2.6}
+.fe-nadhp{fill:var(--bio-nadh)}
+.fe-nadht{font:700 10.5px var(--font-ui);fill:var(--sheet)}
+.fe-m5{margin-top:14px}
+@media (max-width:560px){
+  .hero .hero-eq .fe-heq{font-size:.62em}
+  .fe-bench .fe-sm,.fe-bench .fe-vol{font-size:18px}
+  .fe-zfig .fe-st{font-size:15px}
+}
+.fe-sta .plot-wrap{max-width:680px}
+.fe-zfig{max-width:620px}
+#fe-conc .opts{grid-template-columns:minmax(0,1fr)}
+.fe-role{min-width:0}
+
+/* task */
+.fe-conds{margin:6px 0 10px;padding-left:1.4em}
+.fe-tin{display:grid;gap:10px;margin:8px 0}
+.fe-tpvw h4{margin:0 0 6px}
+.fe-tpvw .fe-fig{max-width:260px}
+
+/* phones: the map scales to about 70 %, so its labels grow a little */
+@media (max-width:560px){
+  .fe-map .fe-sm,.fe-map .fe-lab{font-size:14px}
+  .fe-map .fe-title{font-size:15.5px}
+  .fe-map .fe-st{font-size:13.5px}
+  .fe-map .fe-st2{font-size:12.5px}
+  .fe-map .fe-bt{font-size:14.5px}
+  .fe-map .fe-nt,.fe-map .fe-atpt,.fe-map .fe-ct{font-size:12px}
+  .fe-map .fe-enz{font-size:13px}
+  .fe-map .fe-pile{font-size:13px}
+  .fe-map .fe-enl{font-size:13.5px}
+  .fe-map .fe-lt{font-size:10.5px}
+  .fe-map .fe-gl{font-size:14px}
+  .fe-map .fe-co2t,.fe-map .fe-o2t,.fe-map .fe-o2l{font-size:11.5px}
+}
+
+/* Chrome's details content slot drops the inherited border-box, so re-set it for what sits inside the panels */
+.fe-p3 details > *{box-sizing:border-box}

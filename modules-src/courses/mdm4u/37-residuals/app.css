@@ -1,0 +1,81 @@
+/* MDM4U 37: Residual inspector (D11 scatter + linked residual panel), Is linear right? stations, N4 numEntry, Hidden curve.
+   Points --pen; line --ink; residual segments and dots --ev-c (orange, its own dark value); zero line --ink-2 dashed; added point --hi ring. */
+/* radioGroup (from MDM4U 19) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* switch (from MDM4U 19) */
+.rs-sw.cc-switch{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);font:700 .92rem var(--font-ui);padding:4px 0;min-height:36px;text-align:left}
+.rs-sw .cc-track{position:relative;flex:none;width:40px;height:22px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.rs-sw .cc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.rs-sw[aria-checked="true"] .cc-track{background:var(--pen);border-color:var(--pen)}
+.rs-sw[aria-checked="true"] .cc-knob{left:19px;border-color:var(--pen)}
+@media (prefers-reduced-motion:reduce){.rs-sw .cc-track,.rs-sw .cc-knob{transition:none}}
+
+/* Residual inspector */
+.rs-top{display:flex;flex-wrap:wrap;gap:0 18px;align-items:center}
+.rs-ctx{margin:0 0 10px}
+canvas.plot.rs-sc{aspect-ratio:16/11}
+canvas.plot.rs-rplot{aspect-ratio:16/6;min-height:120px}
+.rs-plab{margin:8px 0 4px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.rs-msg{min-height:1.2em;margin:6px 0 0}
+.rs-sws{margin:4px 0 6px}
+#rs-cmp{margin-top:10px}
+
+/* small SVG plots (practice tiles and Part 3) */
+.rs-mini{display:block;width:100%;max-width:220px;height:auto}
+.rs-scat{display:block;width:100%;max-width:340px;height:auto}
+.rs-zero{stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:6 4}
+.rs-seg{stroke:var(--ev-c);stroke-width:2}
+.rs-dot{fill:var(--ev-c)}
+.rs-ax{stroke:var(--plot-axis);stroke-width:1.3}
+.rs-tk{fill:var(--ink-2);font:11px var(--font-ui)}
+.rs-ln{stroke:var(--ink);stroke-width:2.4}
+.rs-ln2{stroke:var(--ink-2);stroke-width:2;stroke-dasharray:6 5}
+.rs-cv{fill:none;stroke:var(--ink);stroke-width:2.4}
+.rs-pt{fill:var(--pen)}
+.rs-pthi{stroke:var(--hi);stroke-width:3}
+.tile .rs-mini{width:180px}
+.chip-in .rs-mini,.sel-bar .rs-mini,.fb .rs-mini{display:inline-block;width:96px;vertical-align:middle}
+
+/* Part 3: Is linear right? */
+.rs-tabs{margin-bottom:6px}
+.rs-tick{color:var(--green);font-weight:700}
+.rs-card0{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.rs-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.rs-text{margin:0 0 10px}
+.rs-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:0 0 10px}
+.rs-fig{margin:0}
+.rs-fig figcaption{font-size:.9rem;margin-bottom:4px}
+.rs-one{margin:0 0 10px}
+.rs-item{margin:12px 0 0}
+.rs-ilab{margin:0 0 6px;font-weight:700}
+.rs-bins{display:flex;flex-wrap:wrap;gap:6px}
+.rs-bins button[aria-pressed="true"]{background:var(--hi);color:var(--hi-ink);border-color:var(--hi)}
+.rs-after{margin:10px 0 0}
+.rs-key{display:inline-block;width:22px;height:0;border-top:2.4px solid var(--ink);vertical-align:middle}
+.rs-key2{border-top:2px dashed var(--ink-2)}
+
+/* N4 numEntry choice row */
+.rs-pick{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:8px 0 0}
+.rs-pk{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rs-pk[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rs-pk:disabled{opacity:.55}
+
+/* Hidden curve */
+.rs-conds{margin:.4em 0 0 1.2em;padding:0}
+.rs-hc-in{display:grid;gap:6px}
+.rs-hc-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.rs-hc-row label{min-width:7.5em}
+.rs-hc-row .numin{width:4.5em}
+.rs-hc-row .btn{min-width:40px;min-height:40px}
+.rs-hc-pv .read{margin-top:10px}

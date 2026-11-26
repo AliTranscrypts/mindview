@@ -23,7 +23,7 @@ for t in "$@"; do
   LOG="modules-src/.artifacts/check-${t%%:*}${t##*:}.log"
   ok=0
   for attempt in 1 2; do
-    if (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}" ${FAST:+--quick}) > "$LOG" 2>&1 \
+    if (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}" ${FAST:+--static-only}) > "$LOG" 2>&1 \
        && grep -q "✓ PASS ${t%%:*} " "$LOG"; then ok=1; break; fi
     [ "$attempt" = 1 ] && echo "  check failed for $t (attempt 1) — retrying" && sleep 10
   done

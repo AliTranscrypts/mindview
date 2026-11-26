@@ -1,0 +1,67 @@
+/* MDM4U 30: Bias switchboard (D12 switchboard form), Media watch items, Fair survey task.
+   Truth mark --f3 (teal, dashed); estimate needle --ink; bias arrow --hi; poll dots and bars --pen (plan §5). */
+/* radioGroup (from MDM4U 19 / 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* Bias switchboard */
+.bs-top{margin-bottom:4px}
+canvas.plot.bs-plot{aspect-ratio:16/10}
+.bs-cap{font-size:clamp(1.05rem,2.4vw,1.35rem)}
+.bs-sws{display:flex;flex-direction:column;gap:6px;margin:0 0 12px}
+.bs-sw{display:flex;align-items:flex-start;gap:10px;padding:8px 10px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);cursor:pointer;position:relative}
+.bs-sw:has(.bs-cb:checked){border-color:var(--pen);background:var(--info-bg)}
+.bs-sw.bs-locked{opacity:.6;cursor:not-allowed}
+.bs-cb{position:absolute;opacity:0;width:40px;height:24px;margin:0;left:10px;top:9px;cursor:inherit}
+.bs-track{position:relative;flex:none;width:40px;height:22px;margin-top:1px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.bs-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.bs-cb:checked + .bs-track{background:var(--pen);border-color:var(--pen)}
+.bs-cb:checked + .bs-track .bs-knob{left:19px;border-color:var(--pen)}
+.bs-cb:focus-visible + .bs-track{outline:3px solid var(--hi);outline-offset:2px}
+.bs-cb:disabled + .bs-track{opacity:.5}
+.bs-ic{flex:none;width:24px;height:24px;color:var(--ink-2)}
+.bs-ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bs-swt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.bs-swt strong{font-size:.95rem}
+.bs-swd{font-size:.84rem;color:var(--ink-2)}
+.bs-lockmsg{min-height:1.2em;margin:2px 0 0}
+.bs-n{margin-top:4px}
+.bs-n input{width:100%}
+.bs-tc3{margin-top:12px;padding:10px 12px;border:1.5px dashed var(--rule);border-radius:8px}
+.bs-t3h{margin:0 0 8px;font-size:.92rem}
+.bs-lab{margin-top:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.bs-labq{margin:0 0 8px;font-size:.92rem}
+.bs-verdict{font-weight:600}
+.bs-all .tbl-wrap{max-height:320px;overflow:auto}
+@media (prefers-reduced-motion:reduce){.bs-track,.bs-knob{transition:none}}
+@media (max-width:760px){.bs-pg .pg-ctrl{order:-1}.bs-pg{display:flex;flex-direction:column}}
+
+/* Media watch */
+.bs-st{border:1.5px solid var(--rule);border-radius:10px;padding:14px 16px;margin:0 0 16px;background:var(--sheet)}
+.bs-sthead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 12px;margin-bottom:8px}
+.bs-stlab{font-weight:700;color:var(--ink-2);font-size:.9rem}
+.bs-news{margin:0;padding:10px 14px;border-left:4px solid var(--ink-2);background:var(--paper);font-size:1.08rem;font-weight:600}
+.bs-src{margin:6px 0 10px}
+.bs-step{margin-top:12px}
+.bs-sq{margin:0 0 8px;font-weight:600}
+.bs-chips{display:flex;flex-wrap:wrap;gap:6px}
+.bs-chip{color:var(--ink);text-align:left}
+.bs-chip[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--sel-bd);font-weight:700}
+.bs-chip:disabled{opacity:.8}
+.bs-after{margin:12px 0 0;font-style:italic}
+.bs-graph{margin:6px 0 10px}
+canvas.plot.bs-gplot{aspect-ratio:16/9;max-width:560px}
+
+/* Fair survey task */
+.bs-conds{margin:6px 0 0;padding-left:1.3em}
+.fs-in .rg-wrap{align-items:flex-start;flex-direction:column}
+canvas.plot.bs-tplot{aspect-ratio:16/8}

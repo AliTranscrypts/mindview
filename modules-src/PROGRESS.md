@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 174/295 live, 5 built, 116 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 179/295 live, 23 built, 93 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 30/59 | 0 | 29 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 23/39 | 3 | 13 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 18/52 | 0 | 34 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 20/25 | 1 | 4 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 14/24 | 1 | 9 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 30/59 | 1 | 28 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 26/39 | 9 | 4 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 18/52 | 1 | 33 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 4 | 23 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 21/25 | 2 | 2 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 15/24 | 6 | 3 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -113,7 +113,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - … 38 Cartesian Vectors in R² (`cartesian-vectors-in-r2`, topic, site ch6)
 - … 39 Operations with Vectors in R³ (`operations-in-r3`, topic, site ch6)
 - … 40 Linear Combinations and Spanning Sets (`linear-combinations-and-spanning-sets`, topic, site ch6)
-- … 41 Vectors as Forces (`vectors-as-forces`, topic, site ch7)
+- ◐ 41 Vectors as Forces (`vectors-as-forces`, topic, site ch7)
 - … 42 Rope Tension and Velocity (`rope-tension-and-velocity`, topic, site ch7)
 - … 43 The Dot Product in R² (`dot-product-in-r2`, topic, site ch7)
 - … 44 The Dot Product in R³ (`dot-product-in-r3`, topic, site ch7)
@@ -158,21 +158,21 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - … 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
 - ✓ 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
-- … 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
-- … 25 Continuous Random Variables & Density (`continuous-density`, topic, site ch6)
-- ◐ 26 Properties of the Normal Distribution (`normal-properties`, topic, site ch6)
+- ◐ 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
+- ◐ 25 Continuous Random Variables & Density (`continuous-density`, topic, site ch6)
+- ✓ 26 Properties of the Normal Distribution (`normal-properties`, topic, site ch6)
 - … 27 Standardizing & z-Scores (`z-scores`, topic, site ch6)
 - ✓ 28 Normal Approximation to the Binomial (`normal-approximation`, topic, site ch6)
-- … 29 Population, Sample & Sampling Methods (`sampling-methods`, topic, site ch7)
-- … 30 Sources of Bias in Surveys (`bias`, topic, site ch7)
-- … 31 Measures of Central Tendency (`central-tendency`, topic, site ch7)
-- … 32 Measures of Spread (`spread`, topic, site ch7)
-- ◐ 33 Frequency Distributions & Histograms (`histograms`, topic, site ch7)
+- ◐ 29 Population, Sample & Sampling Methods (`sampling-methods`, topic, site ch7)
+- ◐ 30 Sources of Bias in Surveys (`bias`, topic, site ch7)
+- ◐ 31 Measures of Central Tendency (`central-tendency`, topic, site ch7)
+- ◐ 32 Measures of Spread (`spread`, topic, site ch7)
+- ✓ 33 Frequency Distributions & Histograms (`histograms`, topic, site ch7)
 - … 34 Scatter Plots & Correlation (`scatter-plots`, topic, site ch8)
-- … 35 The Pearson Correlation Coefficient r (`pearson-r`, topic, site ch8)
-- … 36 Linear Regression & Line of Best Fit (`linear-regression`, topic, site ch8)
-- … 37 Residuals & Goodness of Fit (`residuals`, topic, site ch8)
-- ◐ 38 Two-Variable Analysis & Causation (`causation`, topic, site ch8)
+- ◐ 35 The Pearson Correlation Coefficient r (`pearson-r`, topic, site ch8)
+- ◐ 36 Linear Regression & Line of Best Fit (`linear-regression`, topic, site ch8)
+- ◐ 37 Residuals & Goodness of Fit (`residuals`, topic, site ch8)
+- ✓ 38 Two-Variable Analysis & Causation (`causation`, topic, site ch8)
 - … 39 Culminating Data-Management Investigation (`culminating-investigation`, topic, site ch8)
 
 ## SCH4U Chemistry (`sch4u`)
@@ -194,7 +194,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
 - ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
 - ✓ 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
-- … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
+- ◐ 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - ✓ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
 - … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
 - … 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
@@ -251,10 +251,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
 - ✓ 18 Energy Transfer (`energy-transfer`, topic, site ch2)
 - ✓ 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
-- … 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
+- ◐ 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - … 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)
 - … 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
-- … 23 Transcription (`transcription`, topic, site ch3)
+- ◐ 23 Transcription (`transcription`, topic, site ch3)
 - … 24 tRNA (`trna`, topic, site ch3)
 - … 25 Overview of Protein Synthesis (`overview-of-protein-synthesis`, topic, site ch3)
 - … 26 The lac Operon (`the-lac-operon`, topic, site ch3)
@@ -271,12 +271,12 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - … 37 Hormones That Affect Metabolism (`hormones-that-affect-metabolism`, topic, site ch4)
 - … 38 Male Reproductive Hormones (`male-reproductive-hormones`, topic, site ch4)
 - … 39 Female Reproductive Hormones (`female-reproductive-hormones`, topic, site ch4)
-- … 40 Action Potential (`action-potential`, topic, site ch4)
+- ◐ 40 Action Potential (`action-potential`, topic, site ch4)
 - … 41 Synapses (`synapses`, topic, site ch4)
 - … 42 Insulin and Glucagon (`insulin-and-glucagon`, topic, site ch4)
 - … 43 Population Ecology (`population-ecology`, topic, site ch5)
 - … 44 Predation, Competition and Symbiosis (`species-interactions`, topic, site ch5)
-- … 45 Ecological Succession (`ecological-succession`, topic, site ch5)
+- ◐ 45 Ecological Succession (`ecological-succession`, topic, site ch5)
 - … 46 Human Population Growth (`human-population-growth`, topic, site ch5)
 
 ## HFA4M Nutrition and Health (`hfa4u`)
@@ -302,10 +302,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - ✓ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - … 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
-- ◐ 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
-- … 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
+- ✓ 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
+- ◐ 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
 - … 24 Food Aid & the Sustainable Development Goals (`food-aid-sdgs`, topic, site ch5)
-- … 25 Ethical Food Choices (`ethical-food-choices`, topic, site ch5)
+- ◐ 25 Ethical Food Choices (`ethical-food-choices`, topic, site ch5)
 
 ## ENG4U English (`eng4u`)
 
@@ -323,13 +323,13 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - ✓ 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
 - ✓ 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
-- ◐ 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
-- … 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
-- … 17 Choosing a Novel of Literary Merit (`choosing-a-novel`, topic, site ch5)
-- … 18 Research & Secondary Sources (`research-and-sources`, topic, site ch5)
+- ✓ 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
+- ◐ 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
+- ◐ 17 Choosing a Novel of Literary Merit (`choosing-a-novel`, topic, site ch5)
+- ◐ 18 Research & Secondary Sources (`research-and-sources`, topic, site ch5)
 - … 19 The Sustained Literary-Analysis Essay (`sustained-essay`, topic, site ch5)
-- … 20 ISU Oral Defence (`isu-oral-defence`, topic, site ch5)
-- … 21 Media Forms & Conventions (`media-forms`, topic, site ch6)
+- ◐ 20 ISU Oral Defence (`isu-oral-defence`, topic, site ch5)
+- ◐ 21 Media Forms & Conventions (`media-forms`, topic, site ch6)
 - … 22 News, Bias & Source Evaluation (`news-and-bias`, topic, site ch6)
-- … 23 Advertising & Social Media Rhetoric (`advertising-and-social-media`, topic, site ch6)
+- ◐ 23 Advertising & Social Media Rhetoric (`advertising-and-social-media`, topic, site ch6)
 - … 24 Creating an Original Media Text (`creating-media`, topic, site ch6)

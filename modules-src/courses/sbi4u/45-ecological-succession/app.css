@@ -1,0 +1,116 @@
+/* SBI4U 45: succession landscape (plants --leaf, soil brown --bio-carbon: this module has no carbon tokens), mini graphs,
+   fire strip (flames --ink, never red), Part 3 stations, glacier activity, regreening task, hero strip.
+   Module tokens: --es-sky (darker in dark mode through --sheet), --es-rock, --es-burnt. */
+:root{--es-sky:color-mix(in srgb,var(--pen) 9%,var(--sheet));--es-rock:color-mix(in srgb,var(--ink-2) 38%,var(--sheet));
+  --es-burnt:color-mix(in srgb,var(--ink) 55%,var(--sheet))}
+
+/* radio groups (from SBI4U 19 / 17 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .8em;font-size:.9rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{color:var(--ink-2);opacity:.6}
+
+/* landscape scene */
+.es-sky{fill:var(--es-sky)}
+.es-rock{fill:var(--es-rock)}
+.es-soil{fill:var(--bio-carbon)}
+.es-burnt{fill:var(--es-burnt)}
+.es-lichen{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1}
+.es-moss{fill:var(--leaf);opacity:.55}
+.es-grass{fill:none;stroke:var(--leaf);stroke-width:1.6;stroke-linecap:round}
+.es-shrub{fill:var(--leaf-fill);stroke:var(--leaf-edge);stroke-width:1.2}
+.es-trunk{stroke:var(--ink-2);stroke-width:2}
+.es-pine{fill:var(--leaf-fill);stroke:var(--leaf);stroke-width:1.4}
+.es-late,.es-spruce{fill:var(--leaf);stroke:var(--leaf-edge);stroke-width:1}
+.es-gully{fill:none;stroke:var(--sheet);stroke-width:2}
+.es-lt{font:700 13px var(--font-ui);fill:var(--ink)}
+.es-st{font:700 11.5px var(--font-ui);fill:var(--sheet)}
+.es-flame{fill:var(--ink)}
+
+/* explore layout */
+.es-pg [hidden]{display:none!important}
+.es-pg .pg-ctrl{display:grid;gap:12px;align-content:start}
+.es-stage{border:1.5px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.es-stage svg,.es-strip svg,.es-cone svg{display:block;width:100%;height:auto}
+.es-cap{min-height:1.4em;font-size:.92rem;margin:8px 0 6px}
+.es-graphs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.es-graphs svg{display:block;width:100%;height:auto}
+.es-gbox{fill:var(--sheet);stroke:var(--rule);stroke-width:1.2}
+.es-gbox.es-glow{fill:var(--hi-soft);stroke:var(--hi);stroke-width:2.5}
+.es-gt{font:700 11px var(--font-ui);fill:var(--ink)}
+.es-tk{font:400 9.5px var(--font-ui);fill:var(--ink-2)}
+.es-grid{stroke:var(--plot-grid);stroke-width:1}
+.es-ax{fill:none;stroke:var(--plot-axis);stroke-width:1.3}
+.es-gl{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.es-gm{stroke:var(--pen);stroke-width:1.3;stroke-dasharray:3 3}
+.es-gd{fill:var(--pen);stroke:var(--sheet);stroke-width:1.2}
+.es-play{display:flex;gap:8px;margin-top:6px}
+.es-strip{border:1.5px solid var(--rule);border-radius:8px;padding:6px 8px;margin-top:4px}
+.es-b-pine{fill:var(--leaf-fill);stroke:var(--leaf);stroke-width:.8}
+.es-b-spruce{fill:var(--leaf);stroke:var(--leaf-edge);stroke-width:.8}
+.es-b-shrub{fill:var(--sheet);stroke:var(--leaf);stroke-width:1.2;stroke-dasharray:4 3}
+.es-bt{font:700 12px var(--font-ui);fill:var(--ink)}
+.es-bt.es-bt-on{fill:var(--sheet)}
+.es-key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0 4px}
+.es-key span{display:inline-flex;align-items:center;gap:5px}
+.es-sw{display:inline-block;width:18px;height:12px;border-radius:2px}
+i.es-b-pine{background:var(--leaf-fill);border:1.5px solid var(--leaf)}
+i.es-b-spruce{background:var(--leaf);border:1.5px solid var(--leaf-edge)}
+i.es-b-shrub{background:var(--sheet);border:1.5px dashed var(--leaf)}
+.es-rules{color:var(--ink-2);margin:4px 0 0}
+.es-lbar{display:inline-block;width:70px;height:9px;border:1px solid var(--ink-2);border-radius:3px;vertical-align:middle;margin-left:6px;overflow:hidden}
+.es-lbar i{display:block;height:100%;background:var(--hi-soft);border-right:2px solid var(--hi)}
+.es-morebtn{display:none}
+.es-note{margin-top:10px;color:var(--ink-2)}
+@media (max-width:560px){
+  .es-gt{font-size:14px}.es-tk{font-size:12.5px}.es-lt{font-size:17px}.es-st{font-size:15px}.es-bt{font-size:15px}
+  .es-read .es-x{display:none}
+  .es-moreon .es-read .es-x{display:flex}
+  .es-morebtn{display:inline-flex;margin-top:6px}
+}
+
+/* Part 3 */
+.es-p3{display:grid;gap:18px}
+.es-stn{border:1.5px solid var(--rule);border-radius:10px;padding:10px 14px 12px}
+.es-stn h3{margin-top:0}
+.es-cone{max-width:420px;border:1.5px solid var(--rule);border-radius:8px;background:var(--es-sky)}
+.es-cbody{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.4}
+.es-scale{fill:var(--sheet);stroke:var(--ink);stroke-width:1.3}
+.es-resin{fill:var(--hi-soft);stroke:var(--hi);stroke-width:1}
+.es-seed{fill:var(--ink-2)}
+.es-wing{fill:none;stroke:var(--ink-2);stroke-width:1.4}
+.es-ground{stroke:var(--ink);stroke-width:2}
+.es-cres{min-height:1.4em;font-weight:700;margin:6px 0}
+.es-tbl{border-collapse:collapse;font-size:.92rem;min-width:280px}
+.es-tbl th,.es-tbl td{border:1px solid var(--rule);padding:.35em .6em;text-align:left;font-variant-numeric:tabular-nums}
+.es-tbl thead th{font-size:.85rem;background:color-mix(in srgb,var(--ink-2) 8%,var(--sheet))}
+.es-q{margin:10px 0 4px}
+.es-ans{font-weight:700}
+.es-cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.es-cc{border:1.5px solid var(--rule);border-radius:8px;padding:6px 12px}
+.es-cc h4{margin:.2em 0}
+.es-cc ul{margin:.2em 0;padding-left:1.2em}
+@media (max-width:560px){ .es-cmp{grid-template-columns:minmax(0,1fr)} }
+
+/* glacier activity */
+[data-gq] .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
+[data-gq] .numin{width:7rem}
+
+/* task */
+.es-tlist{margin:.4em 0 .8em;padding-left:1.4em}
+.es-tin{display:grid;gap:12px;margin:10px 0}
+.es-ttrees .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.es-tpv h4{margin:.2em 0 .5em}
+.es-tread{margin:.6em 0 0;padding-left:1.2em;font-size:.92rem}
+
+/* hero */
+.es-hero{width:100%;aspect-ratio:520 / 196}
+.es-hero svg{width:100%;height:100%;display:block}
+.es-pframe{fill:none;stroke:var(--rule);stroke-width:1.2}
+.es-hl{font:700 10.5px var(--font-ui);fill:var(--ink-2)}
+.es-ht{font:700 14px var(--font-ui);fill:var(--ink)}
+.es-hs{font:700 9.5px var(--font-ui);fill:var(--ink)}
+.es-hbox{fill:var(--hi-soft);stroke:var(--hi);stroke-width:1.2}

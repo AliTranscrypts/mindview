@@ -1,0 +1,117 @@
+/* SBI4U 40 Action Potential: membrane strip, trace, axon, stations, Label the trace, task. Tokens only.
+   Na⁺ teal (--bio-nadh), K⁺ violet (--bio-e), ATP orange (--bio-atp), trace --pen, guides --ink-2 dashed, myelin --ink-2. */
+/* radio groups (copied from SBI4U 04) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* hero */
+.ap-heq{display:inline-block;font-size:.72em;line-height:1.35;font-family:var(--font-ui)}
+.ap-hero{max-width:560px;margin:0 auto}
+.ap-svg{display:block;width:100%;height:auto;overflow:visible}
+.ap-lab{font:700 11px var(--font-ui);fill:var(--ink)}
+.ap-sub{font:400 10.5px var(--font-ui);fill:var(--ink-2)}
+.ap-guide{stroke:var(--ink-2);stroke-width:1.3;stroke-dasharray:7 5;fill:none}
+.ap-flash{stroke:var(--hi);stroke-width:3;stroke-dasharray:none}
+.ap-htr{fill:none;stroke:var(--pen);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.ap-htr.thin{stroke-width:2.2}
+.ap-stim{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* S4 membrane strip */
+.ap-mem{fill:var(--rule);opacity:.6}
+.ap-meml{stroke:var(--ink-2);stroke-width:1.2}
+.ap-pore{fill:var(--sheet)}
+.ap-ch{fill:var(--sheet);stroke-width:2.4}
+.ap-ch.ap-chna,.ap-gate.ap-chna{stroke:var(--bio-nadh)}
+.ap-ch.ap-chk,.ap-gate.ap-chk{stroke:var(--bio-e)}
+.ap-gate{stroke-width:5;stroke-linecap:round}
+.ap-ball.ap-chna{fill:var(--bio-nadh)}
+.ap-ball.ap-chk{fill:var(--bio-e)}
+.ap-lock{fill:var(--ink)}
+.ap-lockb{fill:none;stroke:var(--ink);stroke-width:1.6}
+.ap-drug{fill:var(--ink)}
+.ap-drugt{font:700 13px var(--font-ui);fill:var(--sheet)}
+.ap-dna{fill:var(--bio-nadh);stroke:var(--sheet);stroke-width:1}
+.ap-dk{fill:var(--bio-e);stroke:var(--sheet);stroke-width:1}
+.ap-pump{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.ap-pump.on{stroke:var(--bio-atp);stroke-width:3}
+.ap-atp{fill:var(--bio-atp)}
+.ap-atpt{font:700 10px var(--font-ui);fill:var(--sheet)}
+.ap-flna{font:700 11px var(--font-ui);fill:var(--bio-nadh)}
+.ap-flk{font:700 11px var(--font-ui);fill:var(--bio-e)}
+
+/* Explore */
+.ap-row{margin:0 0 12px}
+.ap-cb{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:.92rem;min-height:32px}
+.ap-cb input{width:20px;height:20px;accent-color:var(--ink)}
+.ap-chips{display:flex;flex-wrap:wrap;gap:6px 10px;margin:8px 0 4px}
+.ap-chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);border-radius:999px;padding:.2em .75em;font-size:.88rem;font-weight:700;background:var(--sheet)}
+.ap-chv{margin:4px 0 6px}
+.ap-chv summary{cursor:pointer;font-weight:700;font-size:.92rem;padding:4px 0}
+.ap-strip{max-width:560px}
+.ap-cap{font-size:.92rem;color:var(--ink-2);margin:6px 0 0}
+.ap-note{margin-top:12px}
+.ap-watch{margin:4px 0 6px;font-size:.95rem}
+.ap-sw{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:.05em .45em}
+.ap-axw{max-width:560px}
+
+/* axon */
+.ap-axon{fill:var(--sheet);stroke:var(--ink);stroke-width:1.5}
+.ap-my{fill:var(--ink-2);opacity:.55}
+.ap-myd{fill:none;stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:4 3}
+.ap-pulse{fill:var(--hi);stroke:var(--ink);stroke-width:1.5}
+.ap-dir{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Part 3 stations */
+.ap-st h3{margin-top:0}
+.ap-bars{display:flex;gap:8px;align-items:flex-end;margin:10px 0 12px;max-width:520px}
+.ap-bar{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:6px 4px;cursor:pointer;min-height:44px}
+.ap-bar:hover,.ap-bar:focus-visible{border-color:var(--ink)}
+.ap-bar.good{border:2px solid var(--green);background:var(--good-bg)}
+.ap-bar.bad{border:2px solid var(--red);background:var(--bad-bg)}
+.ap-barv{position:relative;display:block;width:60%;height:110px}
+.ap-barv i{position:absolute;left:0;right:0;bottom:0;background:var(--pen);border-radius:4px 4px 0 0}
+.ap-barn{font-weight:700;font-size:.88rem}
+.ap-barl{font-size:.8rem;color:var(--ink-2);text-align:center;line-height:1.2}
+.ap-tbl{border-collapse:collapse;font-size:.9rem}
+.ap-tbl th,.ap-tbl td{border:1px solid var(--rule);padding:4px 8px;text-align:center}
+.ap-tbl th[scope="row"]{text-align:left}
+.ap-wp{margin:12px 0 6px}
+.ap-s2pic{max-width:560px}
+.ap-patch{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.3}
+.ap-patch.fire{fill:var(--hi);stroke:var(--ink)}
+.ap-patch.refr{fill:var(--rule);stroke:var(--ink-2);stroke-dasharray:4 3}
+.ap-s2t{font-weight:700;margin:6px 0}
+
+/* Practice: Label the trace */
+.ap-lt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px 22px;align-items:start}
+.ap-lt > *{min-width:0}
+.ap-ltw{border-radius:8px}
+.ap-ltw:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ap-ltw canvas{cursor:crosshair}
+.ap-ltp{font-weight:700;margin:6px 0 0}
+.ap-ltd{margin:10px 0 0;padding-left:1.4em;font-size:.9rem}
+.ap-ltd li{margin:4px 0}
+.ap-ok{color:var(--green);font-weight:700}
+.ap-fu{border-left:4px solid var(--rule);padding-left:12px}
+
+/* task */
+.ap-tin > div{margin:0 0 12px}
+.ap-ttr{max-width:560px;margin-top:6px}
+.ap-conds{margin:.4em 0 0 1.2em}
+
+@media (max-width:640px){
+  .ap-lt{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){
+  .ap-barv{height:80px}
+  .ap-barl{font-size:.72rem}
+  .ap-bars{gap:4px}
+}

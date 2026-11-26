@@ -1,0 +1,56 @@
+/* MCV4U 41: hero equation colours, Force table (board, tabbed force panels, readout), Forces on a ramp stations,
+   Hang the weight inputs. Prefix vf- (vector forces), vr- (vector ramp), hw- (hang the weight). */
+.vf-hp .m{color:var(--pen)}
+.vf-ht .m{color:var(--f3)}
+.vf-ho .m{color:var(--f5)}
+/* Explore */
+.vf-ex{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.vf-main,.vf-side{min-width:0}
+canvas.plot.vf-board{touch-action:pan-y}
+.vf-key{margin:8px 0 0}
+.vf-drift{margin:6px 0 0;font-weight:600;min-height:1.4em}
+.vf-tabs{display:none;margin-bottom:8px}
+.vf-fp{border-top:1px solid var(--rule);padding:8px 0 4px}
+.vf-fp:first-of-type{border-top:0;padding-top:0}
+.vf-fh{margin:0 0 4px;font-weight:700;font-size:.95rem;color:var(--ink)}
+.vf-fh .m{color:var(--vf-c)}
+.vf-fh::before{content:"";display:inline-block;width:14px;height:4px;border-radius:2px;background:var(--vf-c);vertical-align:middle;margin-right:6px}
+.vf-add{margin:4px 0 6px;min-height:34px}
+.vf-fbody[hidden]{display:none}
+.vf-sl{margin-top:6px}
+.vf-sl input{width:100%;min-height:28px}
+.vf-note{margin:4px 0 6px}
+.vf-angs{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 6px}
+.vf-angs .chip{min-height:30px;min-width:42px;padding:2px 6px;font-size:.82rem}
+.vf-seg{margin:10px 0 4px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.vf-seg .seg{flex-wrap:wrap}
+.vf-eqb[hidden]{display:none}
+.vf-eqb{margin:6px 0}
+.vf-read{margin-top:10px}
+#vf-tbl .tbl-wrap{margin-top:8px}
+@media (max-width:760px){
+  .vf-ex{grid-template-columns:minmax(0,1fr)}
+  .vf-tabs{display:flex}
+  .vf-fp{display:none;border-top:0;padding-top:0}
+  .vf-fp.on{display:block}
+}
+/* Part 3 */
+.vr-stseg{margin:0 0 10px}
+.vr-stseg .seg{flex-wrap:wrap}
+.vr-wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.vr-main,.vr-side{min-width:0}
+.vr-intro{margin:0 0 8px}
+.vr-note{margin:8px 0 0;font-weight:600;min-height:1.4em}
+.vr-sl{margin-top:8px;display:block}
+.vr-sl input{width:100%;min-height:28px}
+.vr-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.vr-chips .chip{min-height:32px;min-width:44px}
+.vr-read{margin-top:10px}
+#vr-c1[hidden],#vr-c2[hidden],#vr-alg[hidden]{display:none}
+@media (max-width:760px){ .vr-wrap{grid-template-columns:minmax(0,1fr)} }
+/* Task */
+.hw-in-wrap{display:flex;flex-direction:column;gap:10px}
+.hw-row{border:1.5px solid var(--rule);border-left:5px solid var(--vf-c);border-radius:8px;padding:6px 10px 10px;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.hw-row legend{font-weight:700;padding:0 4px}
+.hw-f{display:flex;align-items:center;gap:6px}
+.hw-in{width:5.5em}

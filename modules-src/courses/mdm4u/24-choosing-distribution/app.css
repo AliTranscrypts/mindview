@@ -1,0 +1,138 @@
+/* MDM4U 24: hero (four mini-histograms + decision tree), Distribution detective (route tree, deck, parameter boxes,
+   D7 histograms: series 1 solid --pen, series 2 teal --ev-b outlined), Mixed problems stations, probEntry, task.
+   Route edges --ink (hero route 2 teal); reached leaves highlighter yellow; neutral checks use --info-bg. */
+/* radioGroup (from MDM4U 21 / 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+.rg.chips button .m{font-size:1.05em}
+
+/* hero */
+.cd-heq{display:inline-flex;flex-direction:column;align-items:center;gap:.3em}
+.cd-hrow{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:8px 12px}
+.cd-hh{display:inline-flex;flex-direction:column;align-items:center;padding:4px 6px;border:1.5px solid transparent;border-radius:8px;transition:background .3s,border-color .3s}
+.cd-hh svg{display:block;width:64px;height:46px}
+.cd-hh rect{fill:var(--pen)}
+.cd-hh line{stroke:var(--ink-2);stroke-width:1.5}
+.cd-hl{font:700 .72rem/1.2 var(--font-ui);color:var(--ink-2);margin-top:3px}
+.cd-hh.on{background:var(--hi-soft);border-color:var(--sel-bd)}
+.cd-hh.on .cd-hl{color:var(--ink)}
+.cd-hq{font:700 .95rem var(--font-ui);color:var(--ink)}
+.cd-hfig{display:grid;justify-items:center}
+.cd-hsvg{display:block;width:100%;max-width:440px;height:auto}
+.cd-hc{fill:var(--sheet);stroke:var(--pen);stroke-width:2}
+.cd-hc.two{stroke:var(--ev-b)}
+.cd-hct{font:700 12px var(--font-ui);fill:var(--ink)}
+
+/* decisionTree (SVG) */
+.cd-te{stroke:var(--rule);stroke-width:2}
+.cd-te.on{stroke:var(--ink);stroke-width:3.5}
+.cd-te.on2{stroke:var(--ev-b);stroke-width:3.5}
+.cd-tyn{font:600 11px var(--font-ui);fill:var(--ink-2)}
+.cd-tyn.on,.cd-tyn.on2{font-weight:800;fill:var(--ink)}
+.cd-tn rect{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.cd-tn text{font:700 11px var(--font-ui);fill:var(--ink)}
+.cd-tn.leaf rect{fill:var(--paper)}
+.cd-tn.lit rect,.cd-tn.lit2 rect{fill:var(--hi);stroke:var(--sel-bd);stroke-width:2}
+.cd-tn.lit text,.cd-tn.lit2 text{fill:var(--hi-ink)}
+.cd-tok rect{fill:var(--pen);stroke:var(--sheet);stroke-width:1.5}
+.cd-tok.two rect{fill:var(--ev-b)}
+
+/* Explore: distribution detective */
+.cd-pg{display:block}
+.cd-deck{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:4px 0 8px}
+.cd-cn{font:700 .9rem var(--font-ui);color:var(--ink-2)}
+.cd-card{margin:0 0 10px;padding:10px 12px;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);font-size:1.02rem}
+.cd-ctag{display:inline-block;font:700 .75rem var(--font-ui);letter-spacing:.03em;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:.05em .4em;margin-right:.35em;vertical-align:.1em}
+.cd-rt{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px 20px;align-items:start}
+.cd-qh{margin:0 0 6px;font-weight:700;font-size:.92rem;color:var(--ink-2)}
+.cd-q{margin:0 0 4px}
+.cd-qt{margin:0 0 4px}
+.cd-qn{font-weight:700;color:var(--ink-2)}
+.cd-qr .rg-wrap{margin:0 0 6px}
+.cd-leaf{margin:6px 0 0;font-size:1rem}
+.cd-tsvg{display:block;width:100%;height:auto}
+.cd-pars{margin:8px 0 0}
+.cd-ph{margin:0 0 6px}
+.cd-pf{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.cd-pl{display:inline-flex;align-items:center;gap:8px}
+.cd-pl input.cd-in{width:5.2em}
+.cd-pchip .rg-wrap{margin:0}
+.cd-cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 20px;margin:0 0 6px}
+.cd-pick{border:1.5px solid var(--pen);border-radius:10px;padding:10px 12px;background:var(--sheet)}
+.cd-pick.two{border-color:var(--ev-b);border-style:dashed}
+.cd-pk{margin:0 0 8px;font-weight:700}
+.cd-sw{display:inline-block;width:.95em;height:.95em;border-radius:2px;margin-right:.4em;vertical-align:-.12em;background:var(--pen)}
+.cd-sw.two{background:transparent;border:2.5px solid var(--ev-b)}
+.cd-chart{margin:10px 0 0}
+.cd-pw2{margin-top:8px}
+canvas.plot.cd-plot{aspect-ratio:16/8}
+.cd-empty{margin:8px 0}
+.cd-empty:empty{display:none}
+.cd-read{margin-top:8px}
+.cd-chk{display:block;margin-top:4px;padding:4px 8px;border-left:3px solid var(--ink-2);background:var(--info-bg);border-radius:4px;font-size:.92rem}
+.cd-bld{margin:14px 0 0;border:1.5px solid var(--rule);border-radius:10px;padding:8px 12px;background:var(--sheet)}
+.cd-bld summary{font-weight:700;cursor:pointer;min-height:32px;display:list-item}
+.cd-bldb{margin-top:8px}
+.cd-br .rg-wrap{margin:0 0 8px}
+.cd-bout{border-top:1px solid var(--rule);padding-top:6px}
+.cd-bout p{margin:4px 0}
+
+/* Part 3: Mixed problems */
+.mx-tabs{margin-bottom:6px}
+.mx-wrap{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.mx-task{margin:0 0 8px}
+.mx-card{border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;margin:10px 0 0}
+.mx-card.ok{border-color:var(--green)}
+.mx-ct{margin:0 0 8px}
+.mx-cn{font-weight:700;color:var(--ink-2);margin-right:.3em}
+.mx-opts{margin:4px 0 0}
+.mx-wrap details.alg{margin-top:12px}
+.mx-bsvg{display:block;width:100%;max-width:340px;height:auto;margin:6px 0}
+.mx-ax{stroke:var(--plot-axis);stroke-width:1.5}
+.mx-bar.b0{fill:var(--pen)}
+.mx-bar.b1{fill:var(--ev-b)}
+.mx-bar.b2{fill:var(--ev-c)}
+.mx-bv{font:700 12px var(--font-ui);fill:var(--ink);text-anchor:middle}
+.mx-bl{font:600 11px var(--font-ui);fill:var(--ink-2);text-anchor:middle}
+.mx-bq{font:700 20px var(--font-ui);fill:var(--ink-2);text-anchor:middle}
+.mx-tab{border-collapse:collapse;margin:4px 0;font-size:.92rem}
+.mx-tab th,.mx-tab td{border:1px solid var(--rule);padding:4px 8px;text-align:left}
+.mx-tab td:last-child{font-variant-numeric:tabular-nums}
+.mx-grid{display:grid;grid-template-columns:repeat(5,minmax(0,48px));gap:4px;margin:6px 0}
+.mx-gh{display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink-2)}
+.mx-cell{min-height:44px;border:1.5px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);font:700 1rem var(--font-ui)}
+.mx-cell.on{background:var(--hi-soft);border-color:var(--sel-bd)}
+.mx-cnt p{margin:8px 0 6px}
+.mx-cnt .numrow{display:flex;flex-wrap:wrap;gap:8px 16px}
+.mx-in{width:4em}
+.mx-done{margin:12px 0 0}
+.mx-tick{font-weight:700}
+
+/* probEntry */
+.pe-row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.pe-lab{display:inline-flex;align-items:center;gap:8px}
+
+/* task */
+.cd-conds{margin:6px 0 0;padding-left:1.3em}
+.cd-conds li{margin:2px 0}
+.cd-tk{margin:8px 0 6px}
+canvas.plot.cd-tplot{aspect-ratio:4/3}
+
+@media (max-width:760px){
+  .cd-rt{grid-template-columns:minmax(0,1fr)}
+  .cd-cmp{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .cd-tree{display:none}
+  canvas.plot.cd-plot{aspect-ratio:4/3}
+  .cd-pw2 canvas.plot.cd-plot,.cd-cmp ~ .cd-chart canvas.plot.cd-plot{aspect-ratio:16/10}
+}

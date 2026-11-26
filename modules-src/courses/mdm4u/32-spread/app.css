@@ -1,0 +1,56 @@
+/* MDM4U 32: Spread builder (D10 dot plot + box plot rows, D9 readout, SD steps table), Compare stations, Steady practice task. Tokens only. */
+/* radioGroup (from MDM4U 20) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+.sp-nw{white-space:nowrap}
+.sp-q{display:inline-block;min-width:1.6em;padding:0 .3em;border:1.5px dashed var(--ink-2);border-radius:4px;text-align:center;font-weight:700}
+
+/* Spread builder */
+.sp-cap{font-size:clamp(1.05rem,2.4vw,1.35rem)}
+.sp-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+.sp-wrap{min-width:540px}
+canvas.plot.sp-plot{aspect-ratio:auto;height:250px}
+canvas.plot.sp-plot.sp-two{height:400px}
+.sp-keys{margin:6px 0 0}
+.sp-aha{margin:10px 0 0;font-size:.95rem}
+.sp-msg{min-height:1.2em;margin:6px 0 0}
+.sp-data{display:grid;gap:6px;margin:0 0 12px}
+.sp-dl{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.sp-dr{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.numin.sp-in{flex:1 1 14rem;min-width:0;width:auto;font-size:1rem}
+.sp-sl{margin:4px 0 6px}
+.sp-steps{margin-top:8px}
+.sp-lines{margin:8px 0 0;display:grid;gap:4px}
+.sp-lines p{margin:0}
+.sp-note{margin:8px 0 0}
+.sp-conds{margin:6px 0 0;padding-left:1.3em}
+.sp-conds li{margin:2px 0}
+.sp-tick{font-weight:700}
+
+/* Compare stations */
+.cp-card{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;margin-top:10px;background:var(--sheet)}
+.cp-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.cp-text{margin:0 0 10px}
+.cp-q{margin:12px 0 6px;font-weight:700}
+.cp-ask{margin-top:6px}
+.cp-set{margin-top:8px}
+.cp-done{margin:12px 0 0}
+.cp-read{margin:10px 0}
+canvas.plot.cp-plot1{aspect-ratio:auto;height:170px;max-width:620px}
+canvas.plot.cp-plot2{aspect-ratio:auto;height:290px;max-width:620px}
+canvas.plot.cp-plot3{aspect-ratio:auto;height:170px;max-width:620px}
+canvas.plot.cp-plot3.cp-r2{height:300px}
+canvas.plot.cp-plot3.cp-r3{height:430px}
+
+/* Steady practice */
+canvas.plot.sp-tplot{aspect-ratio:auto;height:190px}

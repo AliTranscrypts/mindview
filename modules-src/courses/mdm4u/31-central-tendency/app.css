@@ -1,0 +1,69 @@
+/* MDM4U 31: Balance and middle (D9 dot seesaw, middle view, weighted beam, D10 grouped histogram), Which centre? stations,
+   Find it (N4 numEntry), Five quiz scores. Dots --pen; beam and fulcrum --ink; median bracket --hi (course plan §3). */
+/* radioGroup (from MDM4U 19) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* Balance and middle */
+.ct-top{margin-bottom:4px}
+canvas.plot.ct-plot{aspect-ratio:16/10}
+.ct-cap{font-size:clamp(1.05rem,2.4vw,1.4rem)}
+.ct-terms{margin:10px 0 0;font:600 1rem var(--font-math);overflow-wrap:anywhere}
+.ct-aha{margin:10px 0 0;font-size:.95rem}
+.ct-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.ct-sh{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.ct-how{margin:6px 0}
+.ct-msg{min-height:1.2em;margin:6px 0 0}
+.ct-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ct-chip{min-width:40px;min-height:38px;border:1.5px solid var(--pen);border-radius:999px;background:var(--sheet);color:var(--ink);font:700 1rem var(--font-math);padding:0 .6em}
+.ct-chip[aria-pressed="true"]{background:var(--pen);color:var(--sheet);box-shadow:0 0 0 2px var(--sheet),0 0 0 4.5px var(--ink)}
+.ct-add{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0}
+.ct-al{font-weight:700;font-size:.9rem}
+.ct-stb{min-width:38px;min-height:36px;padding:0 .5em}
+.ct-ov{min-width:2.2em;text-align:center;font:700 1.08rem var(--font-math)}
+.ct-wrows{display:grid;gap:8px}
+.ct-wrow{border-bottom:1px solid var(--rule);padding:0 0 6px}
+.ct-wl{margin:0 0 2px;font-weight:700;font-size:.9rem;color:var(--ink-2)}
+.ct-sl{margin:0 0 4px}
+.ct-warn{min-height:1.2em;margin:6px 0 0;font-weight:700;color:var(--red)}
+.ct-grows{display:grid;gap:4px}
+.ct-grow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:3px 0;border-bottom:1px solid var(--rule)}
+.ct-gl{font:700 1rem var(--font-math);min-width:5.2em}
+.ct-gm{min-width:6.5em}
+.ct-q{display:inline-block;min-width:1.6em;padding:0 .3em;border:1.5px dashed var(--ink-2);border-radius:4px;text-align:center;font-weight:700}
+
+/* Which centre? */
+.wc-tabs{margin-bottom:6px}
+.wc-card0{border:1.5px solid var(--rule);border-radius:12px;padding:12px 14px;background:var(--sheet)}
+.wc-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.wc-text{margin:0 0 8px}
+.wc-ch{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.wc-c{min-height:38px}
+.wc-c[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--ink)}
+.wc-c:disabled[aria-pressed="true"]{opacity:1}
+.wc-plotbox{border-top:1px solid var(--rule);padding-top:8px;margin-top:8px}
+.wc-pl{margin:0 0 4px;font-weight:700}
+canvas.plot.wc-plot{aspect-ratio:16/8}
+.wc-after{margin:12px 0 0}
+.ct-tick{font-weight:700}
+
+/* Find it (N4 numEntry, from MDM4U 20) */
+.ne-row{display:flex;flex-wrap:wrap;gap:8px 16px;margin:6px 0}
+.ne-lab{display:flex;align-items:center;gap:6px}
+.ne-lab span{font-weight:700}
+.ne-in{width:6.5rem}
+
+/* Five quiz scores */
+.ct-conds{margin:6px 0 10px 1.2em;padding:0}
+.qs-in{display:grid;gap:4px}
+canvas.plot.qs-plot{aspect-ratio:16/9}
+@media (max-width:520px){canvas.plot.ct-plot{aspect-ratio:4/3}canvas.plot.wc-plot{aspect-ratio:16/10}}
