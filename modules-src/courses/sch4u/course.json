@@ -191,7 +191,8 @@
     "02",
     "09"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "12",
@@ -219,8 +220,7 @@
    "size": "S",
    "part3": "gold-foil",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "14",

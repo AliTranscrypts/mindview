@@ -216,7 +216,8 @@
     "11",
     "04"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "14",

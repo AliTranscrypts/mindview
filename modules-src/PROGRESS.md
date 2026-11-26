@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 127/295 live, 2 built, 24 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 129/295 live, 3 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 19/59 | 1 | 39 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 20/59 | 0 | 39 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 15/39 | 0 | 24 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 10/52 | 1 | 41 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 12/46 | 0 | 34 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 11/52 | 1 | 40 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 12/46 | 1 | 33 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 13/25 | 0 | 12 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 8/24 | 0 | 16 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 8/24 | 1 | 15 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -92,7 +92,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Optimization Problems (`optimization-problems`, topic, site ch3)
 - ✓ 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
 - ✓ 19 Related Rates (`related-rates`, topic, site ch3)
-- ◐ 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
+- ✓ 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
 - … 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
 - … 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
 - … 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
@@ -187,9 +187,9 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 08 Condensation Polymers (`condensation-polymers`, topic, site ch1)
 - ✓ 09 IUPAC Nomenclature (`iupac-nomenclature`, topic, site ch1)
 - ✓ 10 Organic Reaction Mechanisms (`organic-reaction-mechanisms`, topic, site ch1)
-- … 11 Stereoisomers (`stereoisomers`, topic, site ch1)
+- ◐ 11 Stereoisomers (`stereoisomers`, topic, site ch1)
 - … 12 Chirality, Enantiomers and Diastereomers (`chirality`, topic, site ch1)
-- ◐ 13 Atomic History (`atomic-history`, topic, site ch2)
+- ✓ 13 Atomic History (`atomic-history`, topic, site ch2)
 - … 14 Bohr Model (`bohr-model`, topic, site ch2)
 - … 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
 - … 16 Electron Configuration (`electron-configuration`, topic, site ch2)
@@ -244,7 +244,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)
 - ✓ 11 Redox Reactions (`redox-reactions`, topic, site ch2)
 - ✓ 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
-- … 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
+- ◐ 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
 - … 14 Glycolysis (`glycolysis`, topic, site ch2)
 - … 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
 - … 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
@@ -317,7 +317,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 06 Essay Forms (`essay-forms`, topic, site ch2)
 - ✓ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - ✓ 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
-- … 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
+- ◐ 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
 - … 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
 - … 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - … 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
