@@ -106,8 +106,7 @@
     "02"
    ],
    "trivium": "Logic, Rhetoric",
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "06",
@@ -140,7 +139,8 @@
     "02"
    ],
    "trivium": "Grammar",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "08",

@@ -1,0 +1,126 @@
+/* MCV4U 18: hero strip (hoodie tag, crowd), revenue and profit dashboard, V10 shape stages (bars, heater), V11 sign chart,
+   money boxes, task. Module tokens for the two terms that pull against each other in Part 3 (light and dark):
+     --ec-a  the shrinking term (setup shared, driver wages): same hexes as --p-t
+     --ec-b  the growing term (crowding, fuel): same hexes as --f5 */
+:root{--ec-a:#00648A;--ec-b:#A84C05}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--ec-a:#7FD3F5;--ec-b:#FF9F5A} }
+:root[data-theme="dark"]{--ec-a:#7FD3F5;--ec-b:#FF9F5A}
+
+.ec-heq-a{font-style:normal;color:var(--ink-2);margin:0 .2em}
+
+/* hero */
+.ec-hero canvas.plot{aspect-ratio:16/10}
+.ec-hstrip{display:flex;align-items:center;gap:14px;margin:0 0 8px}
+.ec-hoodie-box{flex:0 0 auto;width:104px}
+.ec-hoodie{display:block;width:100%;height:auto}
+.ec-hd{fill:var(--sheet);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.ec-hd-l{fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.ec-tag rect{fill:var(--hi);stroke:var(--ink);stroke-width:1.5}
+.ec-tag circle{fill:var(--sheet);stroke:var(--ink);stroke-width:1}
+.ec-tag text{fill:var(--hi-ink);font:700 15px var(--font-ui);text-anchor:middle;dominant-baseline:middle}
+.ec-crowd-box{flex:1 1 auto;min-width:0}
+.ec-crowd{display:flex;flex-wrap:wrap;gap:3px}
+.ec-person{width:18px;height:29px;fill:var(--ink-2)}
+.ec-person.off{opacity:.14}
+@media (prefers-reduced-motion:no-preference){ .ec-person{transition:opacity .25s} }
+.ec-crowd-n{margin:4px 0 0;font:700 .95rem var(--font-ui);color:var(--ink)}
+.ec-lg{display:inline-flex;align-items:center;gap:6px;margin-right:14px;white-space:nowrap}
+.ec-sw{display:inline-block;width:26px;height:0;border-top:3px solid var(--pen);flex:0 0 auto}
+.ec-sw-r{border-top-color:var(--pen)}
+.ec-sw-p{border-top:4.5px solid var(--ink)}
+.ec-sw-c{border-top:2.5px dashed var(--ink-2)}
+.ec-sw-d{border-top-color:var(--f3)}
+.ec-sw-z{height:14px;border:0;background:var(--hi-soft);border-radius:3px;width:20px}
+
+/* dashboard */
+.ec-dash{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ec-main,.ec-side{min-width:0}
+.ec-g + .ec-g{margin-top:14px}
+.ec-gcap{margin:0 0 4px;font-weight:700;font-size:.95rem}
+.ec-legend{display:flex;flex-wrap:wrap;gap:4px 0;margin:6px 0 0;font-size:.9rem}
+.ec-model{margin:0 0 4px}
+.ec-model p + p{margin-top:6px}
+.ec-now{color:var(--ink)}
+.ec-short{display:none}
+.ec-sl{margin-top:12px}
+.ec-sl[hidden]{display:none}
+.ec-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:10px 0 0}
+.ec-rl{font-size:.875rem;font-weight:700;flex:0 0 100%}
+.ec-row .chip{min-height:34px}
+.ec-ans{margin:14px 0 0;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.ec-ans label{display:block;font-weight:700;margin:0 0 6px}
+.ec-ans-in,.ec-bin{display:inline-flex;align-items:center;gap:6px;max-width:100%}
+.ec-pre{font:600 1.15rem var(--font-math)}
+.ec-ans .numin{width:9rem}
+.ec-ans .tiny{margin:6px 0 0}
+.ec-read{margin-top:12px}
+@media (max-width:820px){
+  .ec-dash{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ec-long{display:none}
+  .ec-short{display:inline}
+  .ec-dash[data-view="price"] .ec-g[data-g="qty"],.ec-dash[data-view="qty"] .ec-g[data-g="price"]{display:none}
+  .ec-g + .ec-g{margin-top:0}
+  .ec-g canvas.plot.wide{aspect-ratio:4/3}
+}
+
+/* Part 3 stations: V10 shape stage */
+.ec-stns{margin-bottom:6px}
+.ec-stchip{font:600 .95rem var(--font-ui)}
+.ec-stp h3{margin:8px 0 6px}
+.ec-stp .m,.ec-alg-steps .m,.ec-legend .m{white-space:normal}
+.ec-ss{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:14px 22px;align-items:start}
+.ec-ss-fig,.ec-ss-g{min-width:0}
+.ec-ss-sl{margin-top:10px}
+.ec-bar{display:block;width:100%;max-width:170px;height:auto;margin:0 auto}
+.ec-bar-ax{stroke:var(--ink-2);stroke-width:1.5}
+.ec-bar-top{stroke:var(--ink);stroke-width:2}
+.ec-bar-tot{fill:var(--ink);font:700 15px var(--font-ui)}
+.ec-seg{stroke:var(--sheet);stroke-width:1}
+.ec-seg-a{fill:var(--ec-a);background:var(--ec-a)}
+.ec-seg-b{fill:var(--ec-b);background:var(--ec-b)}
+.ec-seg-c{fill:var(--ink-2);background:var(--ink-2)}
+.ec-parts{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:4px;font-size:.9rem}
+.ec-parts li{display:flex;align-items:baseline;gap:8px}
+.ec-parts .ec-sw{width:14px;height:14px;border:0;border-radius:3px;align-self:center}
+.ec-parts b{margin-left:auto;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ec-sread{margin-top:12px}
+.ec-best{color:var(--green);font-weight:700}
+.ec-revbox{margin-top:10px}
+.ec-alg-steps{margin:10px 0 0;padding-left:1.3em;display:grid;gap:4px}
+.ec-sch{margin:12px 0 6px;font-weight:700;font-size:.95rem}
+.ec-heat{display:block;width:100%;max-width:260px;height:auto;margin:0 auto}
+.ec-batt{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.ec-batt-t{fill:var(--ink)}
+.ec-wire{fill:none;stroke:var(--ink-2);stroke-width:2.5}
+.ec-htr{fill:none;stroke:var(--ink);stroke-width:2}
+.ec-coil{fill:none;stroke:var(--ink-2);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.ec-coil.hot{stroke:var(--ec-b)}
+.ec-glow{fill:url(#ec-glow-g);opacity:0}
+.ec-glow-s0{stop-color:var(--hi);stop-opacity:1}
+.ec-glow-s1{stop-color:var(--hi);stop-opacity:0}
+@media (prefers-reduced-motion:no-preference){ .ec-glow{transition:opacity .2s} }
+.ec-svg-t{fill:var(--ink);font:700 14px var(--font-ui)}
+.ec-svg-s{fill:var(--ink-2);font:600 11px var(--font-ui)}
+@media (max-width:560px){
+  .ec-ss{grid-template-columns:minmax(0,1fr)}
+  .ec-bar{max-width:130px}
+}
+
+/* V11 sign chart */
+.ec-sc-wrap{overflow-x:auto;position:relative}
+table.ec-sct th,table.ec-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.ec-sct tbody th{text-align:left;font-weight:600}
+table.ec-sct th .m,table.ec-sct td .m{white-space:nowrap}
+.ec-sc-k{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.ec-sct .ec-sc-u{font:600 .8rem var(--font-ui);color:var(--ink-2)}
+table.ec-sct .ec-sc-ar{font-size:1.25rem;line-height:1}
+table.ec-sct .ec-sc-d td{font-weight:700}
+
+/* money boxes (Solve it) */
+.ec-sb{display:grid;gap:8px;margin:8px 0 0}
+.ec-brow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.ec-brow label{min-width:10rem;font-weight:600}
+.ec-bin .numin{width:9rem}
+.ec-u{color:var(--ink-2)}

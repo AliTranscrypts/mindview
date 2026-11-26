@@ -171,8 +171,7 @@
    "size": "M",
    "part3": "enzymes",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "11",

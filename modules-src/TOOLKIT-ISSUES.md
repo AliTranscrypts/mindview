@@ -158,3 +158,5 @@ every module that uses the touched code, then ship them together).
 | energyLandscape, enzymeSVG/enzymeZoom, S3 ledger (accounting), stepper, S7 rateProbe, S2 feedback pathway | sbi4u 10 | B2 value VERIFY |
 | V10 shapeStage (box, field), modelSlots, orderSteps, slotChoice, V8 solveBoxes, V11 signChart | mcv4u 17 | toolkit quirk: {x} placeholders inside backtick maths get broken by MV.m |
 | E17 draftWorkspace, E7 thesisForge, E5 sentenceLab, story reader panel | eng4u 05 | 340 KB (over 300 target); plan drafts did not fit together — readout shows 8 changes/4 higher-order (plan 9/6); all texts verified |
+| E8 citationBuilder, E6 quotationIntegrator, E5 pausePlayer + beat bar | eng4u 07 | OWNER REVIEW: unverified Austen, Dickens, Dickinson dashes, Hamlet Globe lines; 305 KiB. Note: Ozymandias "Works" (04/07) vs "works" (05) — both real editions, align if wanted |
+| V10 shapeStage, V11 signChart (optimization), N4 moneyBoxes, padView/axisName | mcv4u 18 | |
