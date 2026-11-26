@@ -38,3 +38,4 @@ node_modules/
 
 # Interactive-module test artefacts (screenshots, reports)
 modules-src/.artifacts/
+modules-src/modules-src/

@@ -4,8 +4,9 @@
 // Every secondary source is fictional, written for the course (plan §1, §6.2): Okafor, QuickLit Notes, Ng, the Northern
 // Encyclopedia, TextPal, Lindqvist, Bélanger, the library index and its decoys; web addresses use the reserved .example domain
 // and the DOI uses the 10.5555 test prefix. Every model sentence, scenario and student paragraph is original to the course.
-// VERIFY: Johnson's two sentences against a public-domain Boswell (Life of Johnson, 18 April 1775).
-// VERIFY: every Gatsby passage in NOVEL against the 1925 first edition (Project Gutenberg); page numbers are illustrative.
+// Verified 2026-11-26: Johnson's two sentences match Boswell's Life of Johnson (Project Gutenberg #1564, Osgood abridgement).
+// Verified 2026-11-26: all eight NOVEL passages match the 1925 first edition on Wikisource ("The Great Gatsby (1925)"), including
+// "orgastic" and "Every one". PG #64317 is a later text ("orgiastic", "Everyone", "tomorrow"). Page numbers are illustrative.
 // VERIFY: the MLA 9 citation for an AI prompt (S5) against current MLA Style Center guidance (plan §6.3).
 
 const M1 = "Ask who’s accountable, what evidence is shown, and who checked it. An unsigned page or a chatbot can’t answer those.";
