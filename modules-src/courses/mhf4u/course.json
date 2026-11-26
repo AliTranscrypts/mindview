@@ -304,8 +304,7 @@
     "12",
     "13"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "18",
@@ -354,7 +353,8 @@
     "02",
     "07"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "21",
@@ -436,7 +436,8 @@
    "siteChapter": 4,
    "size": "M",
    "part3": "spin",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "26",
