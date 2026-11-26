@@ -117,11 +117,25 @@ function spot(host, a){
   };
 }
 
+// Right-column order for N6: a deterministic shuffle, re-seeded (up to 12 times) while too many
+// partners sit level with their left item (at most 1 aligned pair, none for 3 or fewer pairs).
+// The first seed is the old one, so modules whose order was already fine keep it.
+function matchOrder(a){
+  var K = MV.ans(a) || {}, best = a.right, bestN = 1e9, lim = a.left.length > 3 ? 1 : 0;
+  for (var t = 0; t < 12; t++) {
+    var r = MV.shuffle(a.right, MV.meta.id + a.id + (t ? "#" + t : "")), n = 0;
+    a.left.forEach(function(L, i){ if (r[i] && K[L.id] === r[i].id) n++; });
+    if (n < bestN) { best = r; bestN = n; }
+    if (n <= lim) break;
+  }
+  return best;
+}
+
 // ---------- N6 matching pairs ----------
 // a: {id, type:"match", leftTitle, rightTitle, left:[{id, t, hints:[3], why, goal}], right:[{id, t}], answer:{leftId:rightId}, wrong:{"L|R": html}, wrongDefault}
 function match(host, a){
   var st = bucket(a); st.done = st.done || {}; st.tries = st.tries || {}; st.hints = st.hints || {};
-  var sel = null, msg = null, right = a.shuffle === false ? a.right : MV.shuffle(a.right, MV.meta.id + a.id);
+  var sel = null, msg = null, right = a.shuffle === false ? a.right : matchOrder(a);
   function key(){ return MV.ans(a); }
   function stats(){
     var K = key(), first = 0, done = 0, missed = [];

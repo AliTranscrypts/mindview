@@ -176,8 +176,7 @@
     "03",
     "05"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "11",
@@ -220,7 +219,8 @@
    "size": "S",
    "part3": "gold-foil",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "14",
@@ -261,7 +261,8 @@
    "part3": "blocks",
    "prereqs": [
     "15"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "17",

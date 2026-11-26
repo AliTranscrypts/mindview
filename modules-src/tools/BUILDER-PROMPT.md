@@ -53,8 +53,9 @@ re-enable after each animation.
   `Plot.line` ignores alpha; `Plot.point` forces full opacity; `Plot.curve` clamps pixel x to 6× canvas height;
   y tick labels clip when the y-axis is off-screen; every failed challenge check counts as a try; the challenge click handler
   crashes if your app repaints/removes the clicked button first (repaint after, or stop propagation); the
-  task frame's "find another" message fires after 3 answers. Don't name a text field `ok` (only a boolean
-  `ok` marks answers). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
+  task frame's `after3` note shows after 3 answers unless you set `task.afterAt: 4` (toolkit 1.0.8+; no app.js
+  workaround needed). Matching (N6) right columns are re-shuffled so at most one pair sits level. Don't name a text field `ok` (only a boolean
+  `ok` marks answers), and don't use the key `answer` for anything but an answer key (the build scrambles it). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
   your own classes with the module's topic.
 - Teacher notes such as "verify before release" go only in `// VERIFY:` code comments, never in text students
   see (check.mjs fails a page that shows "(verify…)").

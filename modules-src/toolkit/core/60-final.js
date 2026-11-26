@@ -130,7 +130,7 @@ MV.initFinal = function(){
 };
 
 // ---------- performance task frame (K17) ----------
-// content.task: {title, statement, checks:[label html], tips:[html], explainPrompt, vocab, success, more, after3, store}
+// content.task: {title, statement, checks:[label html], tips:[html], explainPrompt, vocab, success, more, after3, afterAt (answers found before after3 shows; default 3), store}
 // app.task: {render(inputsHost, previewHost, api), read(), checks(d) -> [bool], tips(d, res) -> [html], valid(d) -> true | "message",
 //            key(d) -> string, label(key) -> html, text(key) -> plain text, summary(d) -> [lines]}
 function taskState(){ var k = MV.C.task.store || "task"; var t = MV.S[k] || (MV.S[k] = { explain:"", found:[], app:{} }); t.found = t.found || []; t.app = t.app || {}; return t; }
@@ -162,7 +162,7 @@ MV.initTask = function(){
       MV.save();
       var list = A.label ? st.found.map(function(k){ return A.label(k); }).join("; ") : "";
       var more = !(st.explain || "").trim() ? " Don’t forget to write your explanation." : "";
-      var tail = st.found.length >= 3 && T.after3 ? "<p>" + T.after3 + "</p>" : "";
+      var tail = st.found.length >= (T.afterAt || 3) && T.after3 ? "<p>" + T.after3 + "</p>" : "";
       fb.innerHTML = '<div class="fb good"><p><strong>✓ ' + (T.success || "Your design works!") + "</strong>" + more + "</p>" + (A.key ? "<p>" + (T.more || "There’s more than one answer. Can you find another?") + (list ? " Answers you’ve found: " + list : "") + "</p>" : "") + tail + "</div>";
       MV.paintSummary();
     } else {
