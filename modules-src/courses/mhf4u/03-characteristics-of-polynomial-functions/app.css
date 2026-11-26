@@ -1,0 +1,42 @@
+/* MHF4U 03: budget bars, shape lab controls, TC3 reasons, "Possible or impossible?" cards */
+.slider[hidden],.btn[hidden],.lab-zoom[hidden],.imp-r[hidden],#p3-app [hidden]{display:none!important}
+.hero-eq .lt{font-size:.5em;font-style:normal;color:var(--ink-2);white-space:nowrap;letter-spacing:0}
+.hero-far{font-size:.95em}
+.bud{display:grid;gap:8px;margin:0 0 14px}
+.bud-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 12px}
+.bud-lab{font-weight:700;font-size:.95rem}
+.bud-lab b{font-size:1.12rem}
+.bud-slots{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bud-g{display:inline-flex;gap:3px}
+.bud-g.pair{padding:2px;border:1px dashed var(--ink-2);border-radius:5px}
+.bud-s{display:inline-block;width:20px;height:16px;border:1.5px solid var(--rule);border-radius:3px;background:var(--sheet);transition:background-color .25s,border-color .25s}
+.bud-s.on{background:var(--pen);border-color:var(--pen)}
+.hero-bud{opacity:0;transition:opacity .6s;margin:12px 0 0;font-size:.95rem}
+.hero-bud.on{opacity:1}
+.lab-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.lab-lab{font-weight:700;font-size:.92rem}
+.chips.lab-chips{margin:0;gap:6px}
+.nchip .m{font-size:1em}
+.nchip[aria-pressed="true"]{background:var(--sheet);color:var(--ink);border-color:var(--pen);box-shadow:inset 0 0 0 1.5px var(--pen)}
+.lab-more{margin:6px 0 4px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.lab-more summary{font-weight:700;cursor:pointer}
+.lab-more[open] summary{margin-bottom:8px}
+.lab-more .btn{margin-top:4px}
+.zstops{display:flex;justify-content:space-between;font-size:.8rem;color:var(--ink-2);margin:-2px 0 4px}
+.imp{margin:10px 0 0}
+.imp-r{display:grid;gap:6px;margin-top:10px}
+.pc-fig{margin:0}
+.pc-fig figcaption{font:400 1.25rem var(--font-math);text-align:center;margin-top:8px;min-height:1.4em}
+.pc-alg{display:block;font:400 .92rem var(--font-ui);color:var(--ink-2);margin-top:4px}
+.pc-text{border:2px dashed var(--ink-2);border-radius:8px;padding:24px 18px;font-size:1.2rem;text-align:center;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--paper)}
+.pc-text p{margin:0}
+.pc-claim{font:400 1.5rem var(--font-math);margin:0 0 10px}
+.pc-q{font-weight:700;font-size:.95rem;margin:0 0 6px}
+.pc-verdict{display:flex;flex-wrap:wrap;gap:8px}
+.pc-rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pc-chip{border:2px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.45em .8em;text-align:left;min-height:40px;font-size:.95rem}
+.pc-verdict .pc-chip{min-width:8.5rem;font-weight:700;text-align:center}
+.pc-chip[aria-checked="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink);font-weight:700}
+.pc-chip:not(:disabled):hover{border-color:var(--pen)}
+.pc-chip:disabled{opacity:.8}
+.pc-chip .m{white-space:normal}
