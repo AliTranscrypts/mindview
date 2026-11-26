@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 39/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 40/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 39/50 | 1 | 10 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 40/50 | 1 | 9 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -59,15 +59,15 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 37 Inverse of Exponential Functions (`inverse-of-exponential-functions`, topic, site ch6)
 - ✓ 38 Introduction to Logarithms (`introduction-to-logarithms`, topic, site ch6)
 - ✓ 39 Transformations of Log Functions (`transformations-of-log-functions`, topic, site ch6)
-- ◐ 40 Power Law of Logarithms (`power-law-of-logarithms`, topic, site ch6)
-- … 41 Product and Quotient Laws (`product-and-quotient-laws`, topic, site ch6)
+- ✓ 40 Power Law of Logarithms (`power-law-of-logarithms`, topic, site ch6)
+- ◐ 41 Product and Quotient Laws (`product-and-quotient-laws`, topic, site ch6)
 - … 42 Logarithmic Scales (`logarithmic-scales`, topic, site ch6)
 - … 43 Solving Exponential Equations (`solving-exponential-equations`, topic, site ch7)
 - … 44 Solving Logarithmic Equations (`solving-logarithmic-equations`, topic, site ch7)
 - · 45 Chapters 6–7 Summary & Review (`chapters-6-7-review`, review, site ch7)
 - … 46 Sums and Differences of Functions (`sums-and-differences-of-functions`, topic, site ch8)
 - … 47 Products and Quotients of Functions (`products-and-quotients-of-functions`, topic, site ch8)
-- · 48 Composite Functions (`composite-functions`, topic, site ch8)
+- … 48 Composite Functions (`composite-functions`, topic, site ch8)
 - · 49 Modelling with Combined Functions (`modelling-with-combined-functions`, topic, site ch8)
 - · 50 Chapter 8 Summary & Review (`chapter-8-review`, review, site ch8)
 
