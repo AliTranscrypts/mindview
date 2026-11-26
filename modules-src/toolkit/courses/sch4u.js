@@ -75,7 +75,7 @@ function f(s){
 }
 
 // ---------- atom colours (course plan §4) ----------
-var NONMETAL = { H:1, B:1, C:1, N:1, O:1, F:1, Si:1, P:1, S:1, Cl:1, Br:1, I:1, He:1, Ne:1, Ar:1, Se:1, As:1, Te:1, Ge:1 };
+var NONMETAL = { H:1, B:1, C:1, N:1, O:1, F:1, Si:1, P:1, S:1, Cl:1, Br:1, I:1, He:1, Ne:1, Ar:1, Kr:1, Xe:1, Rn:1, At:1, Se:1, As:1, Te:1, Ge:1, Sb:1 };
 function colorVar(el){
   if (el === "C") return "--at-c"; if (el === "H") return "--at-h"; if (el === "O") return "--at-o"; if (el === "N") return "--at-n";
   if (el === "F" || el === "Cl" || el === "Br" || el === "I") return "--at-x"; if (el === "S") return "--at-s"; if (el === "P") return "--at-p";
