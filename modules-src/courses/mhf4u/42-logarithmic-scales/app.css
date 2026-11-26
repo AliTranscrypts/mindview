@@ -1,0 +1,106 @@
+/* MHF4U 42: scale switcher (ls-), Part 3 graphs (ls-p3), practice mini rulers (ls-mini), task (lb-). Colour tokens only. */
+.ls-hcap{min-height:1.4em}
+.hero .hero-eq.md{font-size:clamp(1.9rem,5vw,3.4rem)}   /* a long equation: a little smaller than the toolkit md size (as MHF4U 37) */
+.ls-uses{display:block;margin:8px 0 0}
+.ls-alg .m{white-space:normal}
+
+/* radio groups (from MHF4U 37) */
+.ls-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.ls-rgl{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.ls-rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.ls-rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.ls-rg.seg button + button{border-left:1.5px solid var(--ink)}
+.ls-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.ls-rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.ls-rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.95rem;min-height:40px}
+.ls-rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ls-rg.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid var(--ink)}
+.ls-rg.tabs button{border:1.5px solid var(--rule);border-bottom:0;background:var(--paper);color:var(--ink);padding:.45em 1.1em;font-size:1rem;font-weight:700;min-height:42px;border-radius:8px 8px 0 0;margin-right:4px}
+.ls-rg.tabs button[aria-checked="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.ls-rg button:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+
+/* N9 step sliders (from MHF4U 37) */
+.ls-sl{margin:0 0 8px}
+.ls-sl-top{display:flex;justify-content:space-between;align-items:baseline;gap:4px 10px;flex-wrap:wrap}
+.ls-sl-top label{font-weight:700;font-size:.92rem}
+.ls-sl-top output{font:600 1.1rem var(--font-math);color:var(--ink)}
+.ls-sl-row{display:flex;align-items:center;gap:8px}
+.ls-pm{min-width:40px;min-height:40px;padding:0;font-size:1.25rem;line-height:1}
+.ls-sl input[type=range]{flex:1;min-width:0;-webkit-appearance:none;appearance:none;height:44px;background:transparent;margin:0;cursor:pointer}
+.ls-sl input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:var(--rule)}
+.ls-sl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--ink);border:2px solid var(--sheet);box-shadow:0 0 0 1.5px var(--ink);margin-top:-8px}
+.ls-sl input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:var(--rule)}
+.ls-sl input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;background:var(--ink);border:2px solid var(--sheet);box-shadow:0 0 0 1.5px var(--ink)}
+.ls-sl input[type=range]:focus-visible{outline:3px solid var(--pen);outline-offset:2px;border-radius:6px}
+.ls-sl input[type=range]:disabled{opacity:.45;cursor:default}
+
+/* Explore: the scale switcher */
+.ls-tabs{margin:0 0 12px}
+.ls-main{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:14px 26px;align-items:start}
+.ls-graph,.ls-ctrl{min-width:0}
+.eq-cap.ls-cap{font-size:clamp(1.15rem,2.6vw,1.6rem)}
+.ls-ruler .drag-h{width:44px;height:44px;margin:-22px 0 0 -22px}
+.ls-dotb{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:0;background:transparent;padding:0;z-index:1}
+.ls-dotb:focus-visible{outline:3px solid var(--pen);outline-offset:0}
+.ls-axes{margin:6px 0 0}
+.ls-phnote{margin:4px 0 0;color:var(--ink-2);font-style:italic;min-height:1.2em}
+.ls-exchips{display:none;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.ls-exchips .chip{font-size:.85rem}
+.ls-ctrl > div{margin:0 0 12px}
+.ls-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.ls-big{min-height:40px}
+.ls-tg{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ls-tog[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ls-tog:disabled,.ls-pose-b:disabled{opacity:.5}
+.ls-ex[data-mode="switch"] .ls-cmp{display:none}
+.ls-ex[data-mode="compare"] .ls-sw{display:none}
+.ls-busy .ls-ctrl,.ls-busy .ls-tabs,.ls-busy .ls-exchips{pointer-events:none;opacity:.6}
+.ls-read{margin-top:16px;border-top:1.5px solid var(--rule);padding-top:12px}
+.ls-read .read{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
+.ls-read .read > div{padding:8px 0;border-bottom:1px solid var(--rule)}
+.ls-read .read > div:first-child{padding-top:8px}
+.ls-posebox{margin-top:12px;border:1.5px solid var(--hi);background:var(--hi-soft);border-radius:8px;padding:10px 14px}
+.ls-poseq{margin:0 0 6px}
+.ls-posebox .chips{margin:8px 0 0}
+.ls-posebox .chip{min-height:40px;font:400 1.05rem var(--font-math)}
+
+/* Part 3 */
+.ls-st{margin:0 0 10px}
+.ls-p3g{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px 26px;align-items:start}
+.ls-p3gr,.ls-p3c{min-width:0}
+.ls-p3gr > div + div,.ls-p3gr > div:first-child:not(.plot-wrap){margin-bottom:8px}
+#ls-ax{margin-top:10px}
+.ls-p3c > div{margin:0 0 10px}
+.ls-p3c .read{margin-top:6px}
+.ls-trailnote{margin:8px 0 0;font-weight:700}
+#ls-ch .ls-rg.chips button{font-size:.9rem}
+
+/* Practice 2 mini rulers */
+.ls-mini{margin:12px 0 0;max-width:560px}
+canvas.plot.ls-minic{aspect-ratio:auto;height:112px}
+.ls-minicap{margin:6px 0 0;color:var(--ink-2)}
+
+/* Task: Loud but safe */
+.lb-in{margin:0 0 12px}
+.lb-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px}
+.lb-lab{font-weight:700;font-size:.92rem;flex:1 0 100%}
+.lb-step{display:inline-flex;align-items:center;gap:10px}
+.lb-step output{font:600 1.35rem var(--font-math);min-width:2ch;text-align:center}
+.lb-cap{font-weight:700;border-left:4px solid var(--hi);background:var(--hi-soft);padding:8px 12px;border-radius:4px;margin:4px 0 0}
+.lb-pv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.lb-pv canvas.plot.lb-c{aspect-ratio:3/5}
+.lb-meter{order:2}.lb-blocks{order:1}
+ul.checks li.lb-bonus .mk{color:var(--ink)}
+.lb-leanall{margin-top:8px}
+
+@media (max-width:820px){
+  .ls-main,.ls-p3g{grid-template-columns:minmax(0,1fr)}
+  .ls-read .read{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .ls-exchips{display:flex}
+  .ls-rg.tabs button{padding:.45em .8em;font-size:.95rem}
+  .lb-pv{grid-template-columns:minmax(0,1fr)}
+  .lb-meter{order:1}.lb-blocks{order:2}
+  .lb-pv canvas.plot.lb-c{aspect-ratio:4/3}
+}

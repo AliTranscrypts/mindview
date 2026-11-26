@@ -74,3 +74,4 @@ every module that uses the touched code, then ship them together).
 | K12 groupSort with multi-form cards, tide frame with brackets | mhf4u 36 | review |
 | exactPow, G4+G14 logRuler, blockBars, N4 rangeBoxes | mhf4u 40 | plan issue: TC1 n = −4 feedback unreachable (slider −3…4) |
 | lengthStrip, claimTester, N15 moveChooser (single-column), N4 coefBoxes, N9 markSlider | mhf4u 41 | |
+| G4 logAxis (linear↔log morph, mirror), exampleLabels, N4+G4 rulerBoxes | mhf4u 42 | |

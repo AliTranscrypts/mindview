@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 40/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 41/295 live, 1 built, 5 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 40/50 | 1 | 9 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 41/50 | 1 | 8 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -60,8 +60,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 38 Introduction to Logarithms (`introduction-to-logarithms`, topic, site ch6)
 - ✓ 39 Transformations of Log Functions (`transformations-of-log-functions`, topic, site ch6)
 - ✓ 40 Power Law of Logarithms (`power-law-of-logarithms`, topic, site ch6)
-- ◐ 41 Product and Quotient Laws (`product-and-quotient-laws`, topic, site ch6)
-- … 42 Logarithmic Scales (`logarithmic-scales`, topic, site ch6)
+- ✓ 41 Product and Quotient Laws (`product-and-quotient-laws`, topic, site ch6)
+- ◐ 42 Logarithmic Scales (`logarithmic-scales`, topic, site ch6)
 - … 43 Solving Exponential Equations (`solving-exponential-equations`, topic, site ch7)
 - … 44 Solving Logarithmic Equations (`solving-logarithmic-equations`, topic, site ch7)
 - · 45 Chapters 6–7 Summary & Review (`chapters-6-7-review`, review, site ch7)
