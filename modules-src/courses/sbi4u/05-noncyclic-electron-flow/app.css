@@ -1,0 +1,166 @@
+/* SBI4U 05: Z-scheme (S2), membrane view (S4), cyclic loop, Emerson zoom, ATP bars (S3), ordering, accounting, task, hero.
+   Module tokens: --nz-lumen (lumen tint: ink-2 over the sheet), --nz-core (lipid core). Particles: electrons --bio-e, H⁺ --bio-h,
+   NADPH --bio-nadh, O₂ and H₂O --bio-o2 (blue), ATP --bio-atp. Lamps and photons in ink; flashes --hi; fluorescence a --red halo,
+   always labelled in text; inhibitors a dark ink "block" icon. */
+:root{--nz-lumen:color-mix(in srgb,var(--ink-2) 18%,var(--sheet));--nz-core:color-mix(in srgb,var(--ink-2) 9%,var(--sheet))}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--nz-lumen:color-mix(in srgb,var(--ink-2) 15%,var(--sheet));--nz-core:color-mix(in srgb,var(--ink-2) 8%,var(--sheet))}
+}
+:root[data-theme="dark"]{--nz-lumen:color-mix(in srgb,var(--ink-2) 15%,var(--sheet));--nz-core:color-mix(in srgb,var(--ink-2) 8%,var(--sheet))}
+
+/* radio groups (from SBI4U 03 / 01 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* centrepiece layout */
+.nz-stage{position:relative;width:100%;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);overflow:hidden}
+.nz-stage svg{display:block;width:100%;height:auto}
+.nz-mscroll{overflow-x:auto;max-width:100%;border-radius:8px}
+.nz-stage-m{min-width:520px}
+.nz-cap{margin:8px 0 4px;font-size:.92rem;min-height:2.6em}
+.nz-legend{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0 0;color:var(--ink-2)}
+.nz-legend span{display:inline-flex;align-items:center;gap:5px}
+.nz-legend svg{width:14px;height:14px;flex:none}
+.nz-abbr{display:block}
+.nz-fs{border:0;margin:0;padding:0;min-width:0;display:grid;gap:12px}
+.nz-fs:disabled{opacity:.7}
+.nz-row{min-width:0}
+.nz-lamprow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px}
+.nz-lamplab{font-size:.92rem}
+.nz-btns{display:inline-flex;flex-wrap:wrap;gap:6px}
+.nz-cont[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.nz-tc3{border-top:1px solid var(--rule);padding-top:10px}
+.nz-tc3 h4{margin:0 0 6px;font-size:.95rem}
+.nz-tc3 .numrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;margin:4px 0}
+.nz-tc3 .numin{width:6.5em}
+.nz-hl{background:var(--hi-soft);color:inherit;padding:0 .15em;border-radius:3px}
+.nz-model{margin-top:18px}
+.nz-rules{margin:10px 0 8px;padding-left:1.2em;display:grid;gap:6px}
+
+/* challenge 1: carrier chips */
+.nz-path{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px}
+.nz-pi{margin:0 0 6px;font-weight:700;font-size:.92rem}
+.nz-pchips{display:flex;flex-wrap:wrap;gap:6px}
+.nz-pchip{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.25em .75em;font-size:.88rem;min-height:34px}
+.nz-pchip:disabled{opacity:.45;text-decoration:line-through}
+.nz-trail{margin:8px 0 6px;font-size:.92rem;overflow-wrap:anywhere}
+.nz-trail-l{font-weight:700;color:var(--ink-2)}
+.nz-pbtns{display:inline-flex;gap:6px}
+
+/* SVG: the Z and the membrane */
+.nz-axis{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.nz-ah{stroke-dasharray:none !important;stroke-linejoin:round}
+.nz-axis.nz-ah{fill:none}
+.nz-line{stroke:var(--ink);stroke-width:2.2;fill:none;stroke-linecap:round}
+.nz-line.nz-ah{fill:none;stroke-width:2.2}
+.nz-up{stroke:var(--ink);stroke-width:2.8;fill:none;stroke-linecap:round}
+.nz-up.nz-ah{fill:none}
+.nz-thin{stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:4 3;fill:none}
+.nz-thin.nz-ah{fill:none}
+.nz-route{stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:3 3;fill:none;opacity:.8}
+.nz-route.nz-ah{fill:none}
+.nz-loop{stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:6 4;fill:none;opacity:.7}
+.nz-loop.on{stroke:var(--ink);stroke-width:2.4;opacity:1}
+.nz-loop.nz-ah{fill:none}
+.nz-lvl{stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:3 2}
+.nz-node{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6}
+.nz-node.miss{stroke:var(--ink-2);stroke-dasharray:3 3}
+.nz-lab{font:700 13px var(--font-ui);fill:var(--ink)}
+.nz-lab-s{font-size:11.5px}
+.nz-sub{font:600 10.5px var(--font-ui);fill:var(--ink-2)}
+.nz-tokt{font:700 10.5px var(--font-ui);fill:var(--sheet)}
+.nz-tok-o{fill:var(--bio-o2)}
+.nz-tok-h{fill:var(--bio-h)}
+.nz-tok-n{fill:var(--bio-nadh)}
+.nz-tok-k{fill:var(--ink)}
+.nz-e{fill:var(--bio-e);stroke:var(--sheet);stroke-width:1.2}
+.nz-pip{fill:var(--sheet);stroke:var(--bio-o2);stroke-width:1.3}
+.nz-pip.on{fill:var(--bio-o2)}
+.nz-glow{fill:var(--hi)}
+.nz-lamp{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6}
+.nz-lamp.on{fill:var(--hi)}
+.nz-lbase{fill:var(--ink)}
+.nz-lampt{font:700 10px var(--font-ui);fill:var(--ink)}
+.nz-rays{stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;fill:none}
+.nz-photon{stroke:var(--ink);stroke-width:1.6;fill:none;stroke-linejoin:round;stroke-linecap:round}
+.nz-photon.thin{stroke-width:1.1}
+.nz-block circle{fill:var(--ink)}
+.nz-block rect{fill:var(--sheet)}
+.nz-blockt{font:700 10.5px var(--font-ui);fill:var(--ink)}
+.nz-halo{fill:none;stroke:var(--red);stroke-width:2.4;stroke-dasharray:3 2}
+.nz-halo-t{font:700 10.5px var(--font-ui);fill:var(--red)}
+.nz-num circle{fill:var(--ink)}
+.nz-numt{font:700 11px var(--font-ui);fill:var(--sheet)}
+.nz-stroma{fill:var(--leaf-fill)}
+.nz-core{fill:var(--nz-core)}
+.nz-lumen{fill:var(--nz-lumen)}
+.nz-mline{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.nz-cx{fill:var(--rule);stroke:var(--ink-2);stroke-width:1.5}
+.nz-seat{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+.nz-hdot{fill:var(--bio-h)}
+.nz-bart{fill:var(--paper);stroke:var(--rule)}
+.nz-barf{fill:var(--ink-2)}
+
+/* Part 3 */
+.nz-p3 h3{margin-top:0}
+.nz-st + .nz-s2,.nz-s2 + .nz-st{margin-top:24px}
+.nz-st + .nz-s2{margin-top:24px}
+.nz-tblw{margin:10px 0 4px;max-width:420px}
+.nz-tbl{border-collapse:collapse;width:100%}
+.nz-tbl th,.nz-tbl td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:left}
+.nz-tbl td{text-align:right;font-variant-numeric:tabular-nums}
+.nz-tbl tbody tr:last-child th,.nz-tbl tbody tr:last-child td{border-bottom:0}
+.nz-s2b{margin:10px 0}
+.nz-s2b .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.nz-s2b .numin{width:6em}
+.nz-concl{margin-top:14px;border-bottom:0}
+.nz-zoom{margin-top:16px;border-top:1px solid var(--rule);padding-top:12px}
+.nz-zoom h4{margin:0 0 8px}
+.nz-stage-zoom{max-width:560px;margin-top:10px}
+.nz-s3ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin:8px 0 12px}
+.nz-stepper{display:inline-flex;align-items:center;gap:8px}
+.nz-step-l{font-weight:700}
+.nz-stepper output{min-width:2ch;text-align:center;font-weight:700;font-size:1.1rem}
+.nz-bars{display:grid;gap:10px;margin:10px 0}
+.nz-bar{display:grid;grid-template-columns:minmax(6.5em,auto) minmax(0,1fr);grid-template-areas:"l t" "l v";gap:2px 12px;align-items:center}
+.nz-bar-l{grid-area:l;font-weight:700;font-size:.92rem}
+.nz-bar-t{grid-area:t;position:relative;height:14px;border-radius:7px;background:var(--paper);border:1px solid var(--rule);overflow:visible}
+.nz-bar-t i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;transition:width .25s}
+.nz-bar-v{grid-area:v;font-size:.86rem}
+.nz-need{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2.5px dashed var(--ink)}
+.nz-f-n{background:var(--bio-nadh)}
+.nz-f-h{background:var(--bio-h)}
+.nz-f-a{background:var(--bio-atp)}
+.nz-f-o{background:var(--bio-o2)}
+.nz-f-p{background:var(--ink-2)}
+.nz-s3msg{min-height:1.5em;font-weight:600}
+@media (prefers-reduced-motion:reduce){.nz-bar-t i{transition:none}}
+
+/* phones: larger SVG text (user units scale down with the diagram) */
+@media (max-width:600px){
+  .nz-lab{font-size:15px}.nz-lab-s{font-size:13px}.nz-sub,.nz-halo-t,.nz-blockt{font-size:12.5px}
+  .nz-stage-m .nz-lab{font-size:13px}.nz-stage-m .nz-sub{font-size:11.5px}
+}
+
+/* practice */
+.nz-unit{color:var(--ink-2);font-size:.9rem}
+
+/* task */
+.nz-reqs{margin:6px 0 10px;padding-left:1.4em}
+.nz-tin{display:grid;gap:12px;margin:12px 0}
+.nz-trow label{font-weight:700;display:block;margin-bottom:4px}
+.nz-trow output{font-size:1.1rem}
+.nz-tctl{display:flex;align-items:center;gap:8px}
+.nz-tctl input[type=range]{flex:1;min-width:0}
+
+/* hero */
+.nz-hero{width:100%}
+.nz-hero svg{display:block;width:100%;height:auto;background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px}

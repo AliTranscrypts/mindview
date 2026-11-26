@@ -118,3 +118,6 @@ every module that uses the touched code, then ship them together).
 | D3 countingSlots (permutations), D4 arrangementTiles, products ladder | mdm4u 07 | |
 | radioGroup (+setOptions), drawModel, mosaicSquare, bagSliders | mdm4u 05 | visual bug: D1 tree highlighted path shows through node label backgrounds — also in mdm4u 01 (fixed locally in 05) |
 | rectGrowth, V8 coefBoxes, mtext (canvas labels) | mcv4u 10 | |
+| F6 lifeStageSwitcher, F1 plateCheck, fridgeSort, F13 claimCards, dayPlanner | hfa4u 06 | OWNER REVIEW (VERIFY-marked): DRI values beyond the plan, 3 milestones, 20 task-card model values, illustrative NTD chart, APA refs, C1–C5 distractors/hints |
+| S2 zScheme, S4 membraneSim, S3 energyLedger bars, rule-based ordering activity | sbi4u 05 | |
+| D4 arrangementTiles (build/list), factorTiles, log bar chart | mdm4u 06 | |
