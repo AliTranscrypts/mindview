@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 164/295 live, 2 built, 129 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 166/295 live, 1 built, 128 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 28/59 | 0 | 31 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 19/39 | 1 | 19 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 20/39 | 1 | 18 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 0 | 35 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 18/46 | 1 | 27 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 19/25 | 0 | 6 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 13/24 | 0 | 11 | 0 |
 
@@ -154,8 +154,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Conditional Probability (`conditional-probability`, topic, site ch4)
 - ✓ 18 Discrete Random Variables & Probability Distributions (`discrete-random-variables`, topic, site ch4)
 - ✓ 19 Expected Value (`expected-value`, topic, site ch4)
-- ◐ 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
-- … 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
+- ✓ 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
+- ◐ 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - … 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
 - … 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
 - … 24 Choosing the Right Distribution (`choosing-distribution`, topic, site ch5)
@@ -250,7 +250,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - ✓ 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
 - ✓ 18 Energy Transfer (`energy-transfer`, topic, site ch2)
-- ◐ 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
+- ✓ 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
 - … 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - … 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)
 - … 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
