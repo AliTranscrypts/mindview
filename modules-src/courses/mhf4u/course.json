@@ -387,7 +387,8 @@
     "21",
     "02"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "23",
@@ -424,7 +425,8 @@
     "21",
     "22",
     "23"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "25",
@@ -436,7 +438,8 @@
    "size": "M",
    "part3": "spin",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "26",
@@ -450,8 +453,7 @@
    "prereqs": [
     "25"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "27",
@@ -552,7 +554,8 @@
     "27",
     "25",
     "26"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "33",

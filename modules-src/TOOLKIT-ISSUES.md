@@ -25,6 +25,8 @@ every module that uses the touched code, then ship them together).
 - Gap: N10 `MV.intervalBuilder` can't represent an isolated single point (forces a 0.5 gap); 16 added a "Single points" row.
 - Review modules override `paintWarmResult`, `paintFinalCtl`, `summaryData`, `summaryText` (10, 16): generalise review score bands/key ideas/per-topic summary in the toolkit.
 
+- Gaps (25): sorter has no "Use these values" box; numeric activity tolerance scales with the answer, has no π-box, and allows one box per item (25 built N4 piBoxes).
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -49,3 +51,5 @@ every module that uses the touched code, then ship them together).
 | chain ordering with spare slot, interval entry with single points, mixed-kind activity, per-topic key-idea tables | mhf4u 16 | review |
 | N4 boxSet (from 11), drawTank, concDraw | mhf4u 23 | |
 | N12 unitCircle | mhf4u 26 | reused by 27, 28, 30, 31, 34 |
+| exactQ22, N11 signChart.rational | mhf4u 22 | |
+| G8 circleDraw, N19 wheel, N19 beltPath, unitChain, N4 piBoxes, radioGroup | mhf4u 25 | |

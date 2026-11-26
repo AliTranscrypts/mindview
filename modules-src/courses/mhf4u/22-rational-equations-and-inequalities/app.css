@@ -1,0 +1,101 @@
+/* MHF4U 22: hero underlines, the □ box, two-sides grapher, Part 3 probe and sign-chart builds, reverse items, task */
+.hero .hero-eq.md{font-size:clamp(1.9rem,4.6vw,3.3rem);white-space:nowrap}
+.hside{display:inline-block;padding-bottom:.08em;border-bottom:4px solid var(--ink)}
+.hside.hl{border-bottom-color:var(--pen)}
+.hside.hr{border-bottom-color:var(--f3)}
+.hero-fig figcaption .hero-sent{display:inline-block;font:400 1.05rem/1.4 var(--font-ui)}
+.hero-fig figcaption .hero-sent .m{font-size:1.05em}
+.hero-fig figcaption .hero-cap2{font-weight:700;margin-top:4px}
+.bx{display:inline-block;min-width:.9em;height:.95em;line-height:.95em;padding:0 .14em;border:1.5px solid currentColor;border-radius:2px;font-style:normal;font-family:var(--font-math);text-align:center;vertical-align:-.12em;font-size:.9em;box-sizing:content-box}
+.bxl{min-width:.7em;height:.8em}
+/* Explore */
+.ex .eq-cap{font-size:clamp(1.35rem,3.4vw,2rem)}
+.cside{display:inline-block;padding-bottom:2px;border-bottom:3px solid var(--ink)}
+.cside.cl{border-bottom-color:var(--pen)}
+.cside.cr{border-bottom-color:var(--f3)}
+.ex-capnote{margin:0 0 4px}
+.ex-panel{margin:0 0 10px}
+.ex-panel p{margin:0}
+.ex-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px;min-height:0}
+.cchip{display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--rule);background:var(--sheet);border-radius:999px;padding:.15em .7em;font-size:.88rem;line-height:1.5}
+.cchip.ok{border-color:var(--green);background:var(--good-bg)}
+.cchip.bad{border-color:var(--red);background:var(--bad-bg)}
+.ex-wrap{position:relative}
+.ex-cover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px;font-weight:700;font-size:1.2rem;color:var(--ink-2)}
+.ex-hidemsg{border:1.5px dashed var(--rule);border-radius:8px;padding:28px 16px;text-align:center;color:var(--ink-2);background:var(--sheet)}
+canvas.plot.ex-nl{aspect-ratio:auto;height:80px;min-height:0;margin-top:8px}
+.ex-ib{margin-top:6px}
+.ctl-row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:0 0 12px}
+.ctl-row label{font-weight:700;font-size:.92rem}
+.ctl-row select{font:inherit;font-size:.95rem;max-width:100%;padding:.4em .5em;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink)}
+.ex-mode .seg-wrap,.ex-sym .seg-wrap,.ex-view .seg-wrap{margin:0 0 10px}
+.ex-box .slider{margin-bottom:8px}
+.ex-chnote{margin:10px 0 0;padding:8px 10px;border-radius:8px;background:var(--info-bg)}
+.ex-read dd .m{white-space:normal}
+.ex-alg{margin-top:16px;border:1.5px solid var(--rule);border-radius:8px;padding:10px 14px;background:var(--sheet)}
+.ex-alg h4{margin:0 0 6px;font-size:.95rem}
+.alg-strip{margin:0;padding-left:1.6em;overflow-x:auto;display:grid;gap:4px}
+.alg-strip li{white-space:nowrap}
+.alg-strip li.now{background:var(--hi-soft);border-radius:4px}
+/* Part 3, Stage A */
+.pa .read{margin-top:10px}
+.pa-short{margin:8px 0 0}
+.pa-short p{margin:0}
+.pa-task{margin:12px 0 4px}
+.pa-key{margin:4px 0 0}
+.pa-sw{display:inline-block;width:22px;height:10px;border:2px dashed var(--red);vertical-align:middle;margin-right:4px}
+.pa-close{margin-top:14px}
+/* Part 3, Stage B */
+.pb-ineq{font-size:1.1rem}
+.sb-st{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 10px;padding:0;list-style:none;font-size:.9rem;color:var(--ink-2)}
+.sb-st li.now{color:var(--ink);font-weight:700}
+.sb-st li.done{color:var(--green)}
+.pb-line{margin:0 0 6px}
+.pb-grid{align-items:start}
+.sb-zrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.sb-pm{min-width:40px;font-weight:700;font-size:1.1rem}
+.sb-cur{font:400 1.1rem var(--font-math);min-width:4.5em;text-align:center}
+.pb-tags{display:grid;gap:8px;margin-top:10px}
+.pb-tag{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.pb-tv{min-width:4.2em}
+.pb-tag .seg button{font-size:.82rem;padding:.35em .6em}
+.pb-sc{margin-top:10px}
+table.pb-t th[scope=row]{text-align:right;font-family:var(--font-math);font-size:1rem;color:var(--ink);background:var(--sheet)}
+table.pb-t tr.pb-w th,table.pb-t tr.pb-w td{border-top:2px solid var(--ink)}
+.pb-c{min-width:42px;min-height:36px;border:1.5px solid var(--ink-2);border-radius:6px;background:var(--sheet);font:700 1.2rem var(--font-math);color:var(--ink)}
+.pb-c:hover{border-color:var(--pen)}
+.pb-c.bad{border-color:var(--red);background:var(--bad-bg);outline:2px solid var(--red);outline-offset:1px}
+.pb-cv{font-weight:700;font-size:1.15rem}
+.pb-strip{margin-top:10px}
+.dt-strip{display:flex;gap:4px;overflow-x:auto;align-items:stretch;padding:2px 2px 6px}
+.dt-st{flex:1 0 auto;min-width:56px;border:2px solid var(--rule);background:var(--sheet);border-radius:6px;padding:.45em .5em;font-size:.86rem;font-weight:700;color:var(--ink-2);white-space:nowrap}
+.dt-st[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);color:var(--ink)}
+.dt-st:not(:disabled):hover{border-color:var(--pen)}
+.dt-pt{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:34px;border:1.5px dashed var(--ink-2);background:var(--paper);border-radius:6px;padding:.2em .25em;font-size:.78rem;line-height:1.15}
+.dt-pt b{font-size:1rem;color:var(--pen)}
+.dt-pt:disabled{opacity:.4;border-style:dotted}
+.dt-pt[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--hi-soft)}
+.sb-live{margin:10px 0 0;max-width:none}
+.sb-iv{font-size:1.2rem}
+/* Practice: reverse and extend */
+.rv-tag{margin:6px 0}
+.rv-boxes{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:10px}
+.rv-box{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:700}
+.rv-mk{font-weight:700;font-size:1.1rem}
+.rv-mk.ok{color:var(--green)}
+.rv-mk.no{color:var(--red)}
+.rv-ib{margin-top:8px}
+/* Task */
+.sgn-slot{display:inline-block;border:1.5px solid var(--ink-2);border-radius:4px;padding:0 .4em;font-size:.85em;color:var(--ink-2)}
+.tk-cap{font-size:clamp(1.3rem,3.2vw,1.8rem);margin-bottom:10px}
+.tk-rows{display:grid;gap:8px;margin-bottom:8px}
+.tk-row{display:flex;align-items:center;gap:6px}
+.tk-row label{min-width:2.8em;font-weight:700}
+.tk-st{min-width:40px;min-height:38px;font-weight:700;font-size:1.1rem}
+.tk-in{width:4.4rem;text-align:center}
+.tk-sym .seg-wrap{margin:4px 0 12px}
+@media (max-width:560px){
+  canvas.plot.ex-nl{height:64px}
+  .alg-strip{font-size:.95rem}
+  .pb-tag .seg button{padding:.35em .45em}
+}
