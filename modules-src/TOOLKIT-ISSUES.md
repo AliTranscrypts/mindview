@@ -72,3 +72,4 @@ every module that uses the touched code, then ship them together).
 | G1+G6+G16 logWall, N8 logSketchBuilder, N4 logCoefBoxes, logExplorer, G11 canvasFracLabel (overlap skipping) | mhf4u 39 | |
 | G4 powerLadder, exactPow, N4 pieceBoxes | mhf4u 38 | |
 | K12 groupSort with multi-form cards, tide frame with brackets | mhf4u 36 | review |
+| exactPow, G4+G14 logRuler, blockBars, N4 rangeBoxes | mhf4u 40 | plan issue: TC1 n = −4 feedback unreachable (slider −3…4) |
