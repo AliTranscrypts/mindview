@@ -47,3 +47,4 @@ every module that uses the touched code, then ship them together).
 | sketchBuilder, N6 graphMatch (from 18), N4 coefTemplate | mhf4u 19 | registers summary lines via MV.ACTS from app.js |
 | N26 factorTiles, N22 syntheticDivision (from 11), N6 graphMatch (from 20), N4 blankBoxes | mhf4u 21 | |
 | chain ordering with spare slot, interval entry with single points, mixed-kind activity, per-topic key-idea tables | mhf4u 16 | review |
+| N4 boxSet (from 11), drawTank, concDraw | mhf4u 23 | |

@@ -1,0 +1,92 @@
+/* MHF4U 23: hero caption, simulator (strip, tank, locks), Part 3 meaning cards, number boxes, task controls */
+@media (min-width:821px){ .hero .hero-eq.md{font-size:clamp(2.2rem,4.1vw,3.2rem)} }
+.hero-sub{display:block;font:400 clamp(.95rem,1.7vw,1.12rem)/1.3 var(--font-ui);font-style:normal;color:var(--ink-2);letter-spacing:0;margin-top:.5em}
+.m sub i{font-style:normal}
+
+/* Explore */
+.ex23-mode{margin:0 0 12px}
+.ex23-mode .seg-wrap{margin-top:0}
+.ex23-mode .sh{display:none}
+.ex23 .slider output{color:var(--ink)!important}
+.ex23 input[type=range],.tk23 input[type=range],.m23-sl input[type=range]{accent-color:var(--ink)!important}
+.ex23 .eq-cap.ex23-cap{font-size:clamp(1.15rem,2.4vw,1.55rem)}
+.ex23-sep{color:var(--ink-2);font-family:var(--font-ui)}
+.ex23-stripbox{display:none;margin:0 0 8px}
+.ex23[data-mode="cost"] .ex23-stripbox{display:block}
+canvas.ex23-strip{display:block;width:100%;height:46px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ex23-striplab{margin:4px 0 0;font-weight:700}
+.ex23-panels{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.ex23-tankbox{display:none;min-width:0}
+.ex23[data-mode="conc"] .ex23-panels,.tk23-panels{grid-template-columns:minmax(0,.48fr) minmax(0,1fr)}
+.ex23[data-mode="conc"] .ex23-tankbox,.tk23-panels .ex23-tankbox{display:block}
+canvas.plot.ex23-tank{aspect-ratio:auto;height:100%;min-height:220px}
+.ex23-note{min-height:0;margin:6px 0 0}
+.ex23-table{margin-top:8px}
+.ex23-table table.vt td:first-child,.ex23-table table.vt th:first-child{text-align:left}
+.ex23-add{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0}
+.ex23-run{min-width:9.5em}
+.ex23-grp{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px;margin:0 0 8px}
+.ex23-grp summary{font-weight:700;cursor:pointer;min-height:28px;padding-top:2px}
+.ex23 .btn[aria-pressed="true"],.m23 .btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.lock-note{display:flex;align-items:center;gap:4px;color:var(--ink-2);font-weight:700;margin:0 0 2px}
+.locked23 input[type=range]{opacity:.45}
+.lock23{flex:0 0 auto}
+
+/* Part 3 */
+.m23-sit{margin:0 0 10px}
+.m23-sit .seg-wrap{margin-top:0}
+.m23-story{background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:10px 14px;margin:0 0 14px}
+.m23-story p{margin:0;max-width:none}
+.m23-feats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chip.m23-f{min-height:40px;text-align:left;border-radius:8px}
+.m23-ok{color:var(--green);font-weight:700}
+.chip.on .m23-ok{color:var(--hi-ink)}
+.m23-try{color:var(--red);font-size:.88em}
+.m23-q{margin:0 0 6px;font-size:1.08rem}
+.m23-q:focus{outline:2px solid var(--pen);outline-offset:3px}
+.m23-card .q-prompt{margin:0 0 10px}
+.m23-opts{grid-template-columns:minmax(0,1fr)}
+.m23-alg{margin-top:18px;border:1.5px solid var(--rule);border-radius:8px;padding:12px 14px}
+.m23-alg h3{margin:0 0 8px;font-size:1.1rem}
+.m23-steps p{margin:0 0 8px;max-width:none}
+.m23-note{background:var(--info-bg);padding:6px 10px;border-radius:6px}
+.m23-sl{max-width:420px}
+.m23-sl output{font:600 1.2rem var(--font-math)}
+
+/* Number boxes (Practice 1 and 3) */
+.bx-in{width:4.4em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);padding:.25em .3em;font:400 1.05rem var(--font-math);text-align:center;color:var(--ink)}
+.bx-in:focus{border-color:var(--ink)}
+.bx-in.bad{border-color:var(--red);background:var(--bad-bg)}
+.bx-in:disabled{opacity:.85}
+.bx-in[type=number]{-moz-appearance:textfield;appearance:textfield}
+.bx-in::-webkit-inner-spin-button,.bx-in::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+.bx-row{display:flex;flex-wrap:wrap;gap:12px 22px;margin:8px 0}
+.bx-lab{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-weight:700}
+.bx-lab .bx-in{width:6em}
+.bm-tpl{font-size:1.35rem;margin:12px 0;padding:4px 0;overflow-x:auto;max-width:none}
+.bm-tpl .m{white-space:nowrap}
+.bm-tpl .frac > .fn,.bm-tpl .frac > .fd{padding:4px 4px}
+.bm-tpl .bx-in{font-size:1rem;width:4.6em;margin:0 2px}
+
+/* Task */
+.tk23-row{margin:0 0 10px}
+.tk23-row .slider-top label{font-weight:700}
+.tk23-row output{font:600 1.2rem var(--font-math);color:var(--ink)}
+.tk23-ctl{display:flex;align-items:center;gap:8px}
+.tk23-ctl input{flex:1;min-width:0}
+.tk23-ctl .btn{min-width:36px;min-height:34px;padding:.2em .5em}
+.eq-cap.tk23-cap{font-size:clamp(1.05rem,2.2vw,1.35rem)}
+
+@media (max-width:560px){
+  .ex23-mode .seg-wrap > .tiny{display:none}
+  .ex23-mode .seg{display:flex;width:100%}
+  .ex23-mode .seg button{flex:1 1 0;padding:.4em .3em}
+  .ex23-mode .lg{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .ex23-mode .sh{display:inline}
+  .ex23[data-mode="conc"] .ex23-panels,.tk23-panels{grid-template-columns:minmax(0,1fr)}
+  canvas.plot.ex23-tank{height:180px;min-height:0}
+  .ex23[data-mode="conc"] dl.read > div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:8px;align-items:baseline}
+  .ex23[data-mode="conc"] dl.read dd{margin:0}
+  .bm-tpl{font-size:1.15rem}
+  .bm-tpl .bx-in{width:3.9em}
+}
