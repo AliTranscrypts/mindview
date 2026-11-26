@@ -467,7 +467,8 @@
     "12",
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "28",
@@ -534,7 +535,8 @@
    "prereqs": [
     "13",
     "27"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "32",
