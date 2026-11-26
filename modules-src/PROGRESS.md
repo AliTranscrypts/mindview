@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 51/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 52/295 live, 2 built, 4 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 49/50 | 0 | 1 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 1/59 | 0 | 58 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 1/39 | 0 | 38 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 0/46 | 1 | 45 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 0/25 | 0 | 25 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 1 | 51 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 1/46 | 0 | 45 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 0/25 | 1 | 24 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 0/24 | 0 | 24 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -177,7 +177,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## SCH4U Chemistry (`sch4u`)
 
-- … 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
+- ◐ 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
 - · 02 Alkenes, Alkynes and Aromatics (`alkenes-alkynes-aromatics`, topic, site ch1)
 - · 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
 - · 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
@@ -232,7 +232,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## SBI4U Biology (`sbi4u`)
 
-- ◐ 01 Leaf Structure (`leaf-structure`, topic, site ch2)
+- ✓ 01 Leaf Structure (`leaf-structure`, topic, site ch2)
 - … 02 Light and Photosynthetic Pigments (`light-and-pigments`, topic, site ch2)
 - · 03 Chlorophyll and Chloroplasts (`chlorophyll-and-chloroplasts`, topic, site ch2)
 - · 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
@@ -281,7 +281,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## HFA4M Nutrition and Health (`hfa4u`)
 
-- … 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
+- ◐ 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
 - · 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
 - · 03 Micronutrients: Vitamins, Minerals, Water (`micronutrients`, topic, site ch1)
 - · 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)

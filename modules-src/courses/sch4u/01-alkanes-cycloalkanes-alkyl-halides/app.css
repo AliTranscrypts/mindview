@@ -1,0 +1,96 @@
+/* SCH4U 01: hero, C1 molecule view + atom buttons, C2 name chips, chain builder layout, reactions stations, task */
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* hero */
+.hx-stage{position:relative}
+.hx-svg{display:block;width:100%;height:auto}
+.hx-th{position:absolute;right:2%;top:4%;width:12%;max-width:64px;height:auto;opacity:0;transition:opacity .3s}
+.hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.hx-name{font:400 1.15rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:1.6em}
+
+/* C1 molecule view */
+.c1-wrap{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.c1-svg{display:block;width:100%;height:auto;touch-action:pan-y;font-family:var(--font-ui)}
+.c1-ov{position:absolute;inset:0;pointer-events:none}
+.c1-b{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:0;background:transparent;padding:0;pointer-events:auto;cursor:pointer}
+.c1-b.h{width:26px;height:26px;margin:-13px 0 0 -13px}
+.c1-b:hover{background:var(--hi-soft)}
+.c1-b:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.c1-rot{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.c1-rot .btn{min-width:40px;min-height:40px}
+.c1-rot[hidden]{display:none}
+.c1-static{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+canvas.ab-figc{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.ab-fig{display:block;max-width:420px;margin:10px 0 0}
+.ab-fig.sm{width:180px;max-width:100%;margin:0}
+.mitem .ab-fig.sm{display:block;width:150px;max-width:none}
+
+/* C2 name chips */
+.c2-tape{font:400 1.35rem/1.3 var(--font-ui);margin:4px 0 10px;min-height:1.4em;overflow-wrap:anywhere}
+.c2-name{font-weight:700;color:var(--ink)}
+.c2-lab{display:block;font-size:.78rem;font-weight:700;color:var(--ink-2);margin:6px 0 2px}
+.c2-tape .c2-lab{display:inline;font-size:.85rem}
+.c2-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.c2-row .c2-lab{flex-basis:100%;margin-bottom:0}
+.c2-c{min-height:36px;min-width:36px}
+.c2-act{margin-top:10px}
+
+/* chain builder */
+.ab-how{margin-top:0}
+.ab-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.ab-left{grid-area:view;min-width:0}.ab-ctrl{grid-area:ctrl;min-width:0}.ab-right{grid-area:read;min-width:0}
+.ab-cap{font:400 clamp(1.15rem,2.6vw,1.6rem)/1.3 var(--font-ui);white-space:normal}
+.ab-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.ab-views{margin-top:10px}
+.ab-modes{margin-bottom:10px}
+.ab-tgt{margin:6px 0 8px}
+.ab-sl{display:block;margin:12px 0 6px}
+.ab-shape{margin:6px 0}
+.ab-msg{min-height:1.4em;margin:10px 0 6px;font-size:.92rem;color:var(--ink-2)}
+.ab-subs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ab-subs .chip{min-height:36px}
+.ab-subs .chip:disabled,.c2-c:disabled{opacity:.45}
+.ab-bp{display:inline-flex;align-items:center;gap:6px}
+.ab-th{width:14px;height:40px;flex:none}
+.ab-lab{margin-top:14px}
+.ab-bpd > summary{font-weight:700;cursor:pointer;min-height:32px}
+@media (min-width:700px){.ab-bpd > summary{display:none}}
+.ab-prod{margin-top:8px}
+.ab-prodh{margin:6px 0 4px;font-weight:700}
+.ab-prods{display:flex;flex-wrap:wrap;gap:10px}
+.ab-pr{margin:0;flex:1 1 180px;border:1.5px solid var(--rule);border-radius:8px;padding:6px 8px;background:var(--sheet)}
+.ab-pr figcaption{font-size:.95rem;text-align:center}
+.ab-fb{margin-top:6px}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ab-burner{display:block;width:100%;max-width:340px;height:auto;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.ab-outc{margin:12px 0 6px}
+.ab-eq{font-size:1.15rem;margin:6px 0 10px;overflow-wrap:anywhere}
+.ab-eq .chem{white-space:normal}
+.ab-alks{margin:8px 0 12px}
+.ab-plist{list-style:none;padding:0;margin:8px 0}
+.ab-plist li{padding:4px 6px;border-radius:6px;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.ab-plist li.on{background:var(--hi-soft)}
+.ab-sw{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:4px}
+
+/* practice + task */
+.ab-ord{margin:8px 0}
+.ab-h4{margin:16px 0 4px}
+.ab-conds{margin:6px 0 10px;padding-left:1.3em}
+#tk-view{margin-bottom:10px}
+
+@media (max-width:760px){
+  .ab-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "read" "ctrl"}
+  .rg.seg button{padding:.4em .6em}
+}
