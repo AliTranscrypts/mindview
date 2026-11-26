@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 105/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 106/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 14/59 | 0 | 45 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 14/59 | 1 | 44 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 10/39 | 0 | 29 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 8/52 | 0 | 44 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 9/46 | 0 | 37 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 9/25 | 1 | 15 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 10/25 | 0 | 15 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 5/24 | 0 | 19 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -88,10 +88,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
 - ✓ 14 Higher Order Derivatives (`higher-order-derivatives`, topic, site ch3)
 - … 15 Velocity and Acceleration (`velocity-and-acceleration`, topic, site ch3)
-- … 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
+- ◐ 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
 - … 17 Optimization Problems (`optimization-problems`, topic, site ch3)
 - … 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
-- · 19 Related Rates (`related-rates`, topic, site ch3)
+- … 19 Related Rates (`related-rates`, topic, site ch3)
 - · 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
 - · 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
 - · 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
@@ -290,7 +290,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 07 Infant & Toddler Nutrition (`infant-toddler`, topic, site ch2)
 - ✓ 08 Children, Adolescents & Adults (`children-adolescents-adults`, topic, site ch2)
 - ✓ 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
-- ◐ 10 Eating Disorders (`eating-disorders`, topic, site ch3)
+- ✓ 10 Eating Disorders (`eating-disorders`, topic, site ch3)
 - … 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
 - … 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
 - … 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)

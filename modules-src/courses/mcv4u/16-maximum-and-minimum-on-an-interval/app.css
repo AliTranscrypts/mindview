@@ -1,0 +1,114 @@
+/* MCV4U 16: hero tie table, closed-interval hunter (wall rail, hunt chips, candidate table, □√□ box), V10 shape stage and
+   candidate cards (Part 3), V8 extrema boxes (Practice 1), task steppers */
+.hero-fig canvas.mm-hplot{aspect-ratio:4/3}
+.mm-htab{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 8px;margin-top:8px;min-height:2.2em}
+.mm-hc{font:400 1.05rem var(--font-math);border:1.5px solid var(--rule);border-radius:6px;padding:.15em .55em;background:var(--sheet);visibility:hidden;white-space:nowrap}
+.mm-hc.on{visibility:visible}
+.mm-hc.glow{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:600}
+.mm-hc .m{font-size:1em}
+.mm-ar{color:var(--ink-2)}
+.hero-fig figcaption{font-size:1.1rem}
+
+.mm-ex{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.mm-main,.mm-side{min-width:0}
+.mm-eq{min-height:1.6em}
+.mm-gw{position:relative}
+.mm-rail{position:relative;height:48px;margin:0 0 2px;touch-action:none}
+.mm-wh{position:absolute;top:2px;width:40px;height:40px;margin-left:-20px;border-radius:50%;border:2px solid var(--ink-2);background:var(--sheet);color:var(--ink);
+  font:italic 600 1.25rem var(--font-math);display:flex;align-items:center;justify-content:center;padding:0;cursor:ew-resize;touch-action:none;z-index:2}
+.mm-wh::after{content:"";position:absolute;left:50%;top:100%;width:0;height:8px;border-left:2px dashed var(--ink-2)}
+.mm-wh.open{border-style:dashed}
+.mm-wh:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.mm-wh:disabled{opacity:.6;cursor:default}
+.mm-wh .m{font-size:1em}
+.mm-legend{margin:8px 0 2px}
+.mm-how{margin:6px 0 8px}
+.mm-fns{margin-bottom:6px}
+.mm-fns .chip{font-size:.86rem}
+.mm-fns .chip .m{font-size:1.05em}
+.mm-hunt{margin:8px 0 10px}
+.mm-hunt[hidden]{display:none}
+.mm-hchips{gap:6px;margin-bottom:6px}
+.mm-hc2{padding:.2em .6em;min-height:30px}
+.mm-hc2 .m{font-size:1em}
+.mm-read{margin-top:8px}
+.mm-tw{margin-top:4px}
+table.mm-tbl th,table.mm-tbl td{padding:5px 10px}
+table.mm-tbl td.mm-tag,table.mm-tbl td.mm-res{font:400 .85rem var(--font-ui);color:var(--ink-2)}
+table.mm-tbl td.mm-res.hl{color:var(--ink);font-weight:700}
+table.mm-tbl tr.mm-excl td{color:var(--ink-2)}
+.mm-tc3{margin:12px 0 6px;padding:10px 12px;border:1.5px dashed var(--rule);border-radius:8px}
+.mm-tc3h{font-weight:700;margin:0 0 6px}
+.mm-sq{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:1.15rem}
+.mm-sq .numin.short{width:4.6rem}
+.mm-rad{font:400 1.6rem var(--font-math);margin-right:-4px}
+.mm-rin{border-top-width:2.5px;border-top-color:var(--ink)}
+
+/* Part 3: V10 shape stage, cards and picks */
+.mm-st h3{margin-top:0}
+.mm-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.mm-stage{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:12px 20px;align-items:center}
+.mm-sfig,.mm-sgr{min-width:0}
+.mm-svg{display:block;width:100%;max-width:260px;height:auto;margin:0 auto;background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px}
+.mm-ssl{margin-top:8px}
+.mm-ssl output{font-size:1.1rem}
+.mm-ssl output .m{font-size:1em}
+.mm-sread{min-height:1.4em;margin:2px 0 6px;font-weight:600}
+.mm-dh{margin:10px 0 6px}
+.mm-deck{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 12px}
+.mm-card{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:112px;min-height:86px;padding:8px 10px;border:2px solid var(--ink-2);border-radius:10px;
+  background:var(--sheet);color:var(--ink);font-size:1rem;cursor:pointer}
+.mm-card .m{font-size:1.05em}
+.mm-card.on{border-color:var(--ink);background:var(--hi-soft)}
+.mm-card.out{border-style:dashed;opacity:.7;cursor:default}
+.mm-cw{display:block;font:400 .82rem var(--font-ui);color:var(--ink-2)}
+.mm-cb{display:block;margin-top:2px;font-weight:700}
+.mm-card.on .mm-cb{font-weight:400}
+.mm-picks{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 20px}
+.mm-pick{min-width:0}
+.mm-pq{font-weight:700;margin:4px 0 6px}
+.mm-pch{margin-bottom:6px}
+.mm-pfb .fb{margin-top:4px}
+.mm-g-ground{stroke:var(--ink-2);stroke-width:2}
+.mm-g-house{fill:var(--hi-soft);stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round}
+.mm-g-pane{fill:none;stroke:var(--ink-2);stroke-width:1;opacity:.6}
+.mm-g-plant{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round}
+.mm-g-leaf{fill:var(--green)}
+.mm-g-tube{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.mm-g-fluid,.mm-g-bulb{fill:var(--pen)}
+.mm-g-tick{stroke:var(--ink-2);stroke-width:1.5}
+.mm-g-tl{fill:var(--ink-2);font:600 11px var(--font-ui)}
+.mm-g-clock{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.mm-g-hand{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.mm-g-hand.thin{stroke-width:1.8}
+.mm-d-vial{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2.5;stroke-linejoin:round}
+.mm-d-rim{stroke:var(--ink-2);stroke-width:3;stroke-linecap:round}
+.mm-d-fluid{fill:var(--pen);opacity:.85}
+.mm-d-now{fill:var(--ink)}
+
+/* Practice 1: extrema boxes */
+.mm-ct{display:grid;gap:8px;margin:6px 0 4px}
+.mm-ctr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.mm-ctl{font-weight:700;min-width:10.5em}
+.mm-cbx{display:inline-flex;align-items:center;gap:6px}
+.mm-cbx > span{font-size:.92rem}
+.mm-cbx .m{font-size:1.08em}
+.mm-ct .numin.short{width:5.6rem}
+.mm-ct .numin.mm-list{width:7.5rem}
+
+/* task */
+.mm-step{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.mm-step label{min-width:11.5em}
+.mm-step .numin.short{width:5rem}
+.mm-all{margin-top:6px}
+
+@media (max-width:760px){
+  .mm-ex{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .mm-stage{grid-template-columns:minmax(0,1fr)}
+  .mm-svg{max-width:220px}
+  .mm-picks{grid-template-columns:minmax(0,1fr)}
+  .mm-card{min-width:96px}
+  .mm-ctl{min-width:0;flex:1 1 100%}
+}
