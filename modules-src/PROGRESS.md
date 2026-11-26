@@ -6,13 +6,13 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 139/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 140/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 22/59 | 0 | 37 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 15/39 | 1 | 23 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 16/39 | 1 | 22 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 13/52 | 0 | 39 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 14/46 | 0 | 32 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 15/25 | 0 | 10 | 0 |
@@ -150,11 +150,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 13 Pascal's Triangle & Patterns (`pascals-triangle`, topic, site ch3)
 - ✓ 14 The Binomial Theorem (`binomial-theorem`, topic, site ch3)
 - ✓ 15 Combinations & Probability (`combinations-probability`, topic, site ch3)
-- ◐ 16 Theoretical & Empirical Probability (`theoretical-empirical`, topic, site ch4)
-- … 17 Conditional Probability (`conditional-probability`, topic, site ch4)
+- ✓ 16 Theoretical & Empirical Probability (`theoretical-empirical`, topic, site ch4)
+- ◐ 17 Conditional Probability (`conditional-probability`, topic, site ch4)
 - … 18 Discrete Random Variables & Probability Distributions (`discrete-random-variables`, topic, site ch4)
 - … 19 Expected Value (`expected-value`, topic, site ch4)
-- · 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
+- … 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
 - · 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - · 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)
 - · 23 The Hypergeometric Distribution (`hypergeometric-distribution`, topic, site ch5)
