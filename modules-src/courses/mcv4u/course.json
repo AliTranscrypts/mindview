@@ -61,7 +61,8 @@
    "siteChapter": 1,
    "size": "S",
    "part3": "numerator",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "02",

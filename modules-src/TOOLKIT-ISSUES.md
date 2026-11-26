@@ -76,3 +76,4 @@ every module that uses the touched code, then ship them together).
 | lengthStrip, claimTester, N15 moveChooser (single-column), N4 coefBoxes, N9 markSlider | mhf4u 41 | |
 | G4 logAxis (linear↔log morph, mirror), exampleLabels, N4+G4 rulerBoxes | mhf4u 42 | |
 | N4 solutionSet (boxes + No solution toggle), gateLanes, radioGroup/N9 stepSlider with lock | mhf4u 44 | |
+| N15 moveChooser.lock, N4 roundBoxes, stepSlider (settable count) | mhf4u 43 | |
