@@ -200,3 +200,5 @@ every module that uses the touched code, then ship them together).
 | S2 Krebs wheel (multi-molecule stepper), S3 energy ledger, ¹⁴C tracker, tap/drag table fill, chip tagger, two-box number entry | sbi4u 15 | plan gap: no Canadian/STSE item (not invented) |
 | ratioDial, V8 lnExact (lnParse/specVal), N13 station stepper | mcv4u 26 | builder-written prediction setups, Part 3 intro |
 | — | sbi4u 15 | PLAN ERROR: ¹⁴C tracker lists 5 values for 6 stages (Turn 2 set to 2/4 on average) |
+| flowSVG energy flow band, ATP pool gauge + ATP–ADP loop, signed-ΔG/ratio number entry, chipQ | sbi4u 18 | builder-written Beyond-station chips + feedback; ATP pool model (100 units, 0–200 gauge) |
+| C12 orbitalView (3D orbital meshes + nodes), C12 dotCloud (seeded H 1s/2s/2p, 90% boundary), C12 standingRing, ruleSorter, radioGroup extra() hook | sch4u 15 | PLAN NOTE: "planes = l" — dz² and f have cone-shaped nodes (readouts say so). Local: Bohr radius 52.9 pm. OWNER REVIEW: Bader content (`// VERIFY`) |

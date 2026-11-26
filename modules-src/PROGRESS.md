@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 151/295 live, 2 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 153/295 live, 2 built, 22 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 24/59 | 1 | 34 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 25/59 | 0 | 34 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 0 | 21 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 15/52 | 0 | 37 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 16/46 | 1 | 29 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 15/52 | 1 | 36 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 17/46 | 1 | 28 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 17/25 | 0 | 8 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 11/24 | 0 | 13 | 0 |
 
@@ -98,11 +98,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
 - … 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
 - ✓ 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
-- ◐ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
+- ✓ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
 - … 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
 - … 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
 - … 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
-- · 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
+- … 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
 - · 31 Logarithmic Differentiation (`logarithmic-differentiation`, topic, site ch5)
 - · 32 Sinusoidal Word Problems (`sinusoidal-word-problems`, topic, site ch5)
 - · 33 Introduction to Vectors (`introduction-to-vectors`, topic, site ch6)
@@ -191,12 +191,12 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Chirality, Enantiomers and Diastereomers (`chirality`, topic, site ch1)
 - ✓ 13 Atomic History (`atomic-history`, topic, site ch2)
 - ✓ 14 Bohr Model (`bohr-model`, topic, site ch2)
-- … 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
+- ◐ 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
 - ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
 - … 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - … 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
-- · 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
+- … 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
 - · 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
 - · 22 Periodic Trends (`periodic-trends`, topic, site ch2)
 - · 23 The Periodic Table (`the-periodic-table`, topic, site ch2)
@@ -246,14 +246,14 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
 - ✓ 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
 - ✓ 14 Glycolysis (`glycolysis`, topic, site ch2)
-- ◐ 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
+- ✓ 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
 - ✓ 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - ✓ 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
-- … 18 Energy Transfer (`energy-transfer`, topic, site ch2)
+- ◐ 18 Energy Transfer (`energy-transfer`, topic, site ch2)
 - … 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
 - … 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - … 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)
-- · 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
+- … 22 DNA Direction of Construction (`dna-direction-of-construction`, topic, site ch3)
 - · 23 Transcription (`transcription`, topic, site ch3)
 - · 24 tRNA (`trna`, topic, site ch3)
 - · 25 Overview of Protein Synthesis (`overview-of-protein-synthesis`, topic, site ch3)
