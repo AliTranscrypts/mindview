@@ -1,0 +1,106 @@
+/* MCV4U 21: critical point classifier (V5 panels, probe and zoom sliders, Build sliders, V11 sign chart builder),
+   Test it stations (factor boxes, sketch picker, shift graph), Find and design boxes (V8), task inputs */
+.cp-ex [hidden],.cp-st [hidden],#task-sheet [hidden]{display:none !important}
+.cp-ex{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.cp-main,.cp-side{min-width:0}
+.cp-eq{min-height:1.6em}
+canvas.plot.cp-top{aspect-ratio:16/10}
+canvas.plot.cp-low{aspect-ratio:16/7}
+.cp-panels .plot-wrap + .plot-wrap{margin-top:6px}
+.cp-psl,.cp-zsl{margin-top:10px}
+.cp-psl output,.cp-zsl output,.cp-bsl output{color:var(--ink)}
+.cp-psl input,.cp-zsl input,.cp-bsl input{width:100%;min-height:28px}
+.cp-zh{font-weight:700;margin:10px 0 4px}
+.cp-zch{gap:6px;margin-bottom:4px}
+.cp-zch .chip{font-size:.9rem}
+.cp-key{margin:8px 0 0}
+.cp-fns{margin-bottom:6px;gap:6px}
+.cp-fns .chip{font-size:.86rem}
+.cp-fns .chip .m{font-size:1.05em}
+.cp-lock{font:400 .75rem var(--font-ui);color:var(--ink-2)}
+.cp-how{margin:8px 0 10px}
+.cp-read{margin-top:8px}
+.cp-bsl{margin:0 0 2px}
+.cp-chartwrap{grid-column:1/-1;border-top:1px solid var(--rule);padding-top:14px}
+.cp-cht{margin:0 0 6px;font-size:1.05rem}
+
+/* V11 sign chart (builder and finished) */
+.cp-chh{font-weight:700;margin:6px 0 4px}
+.cp-xs{gap:6px;margin-bottom:10px}
+.cp-xs .chip{min-height:34px;padding:.2em .7em}
+.cp-xs .chip .m{font-size:1em}
+.cp-scw{overflow-x:auto;position:relative;margin:4px 0}
+table.cp-sct th,table.cp-sct td{padding:5px 8px;text-align:center;white-space:nowrap;vertical-align:middle}
+table.cp-sct tbody th{text-align:left;font-weight:600}
+table.cp-sct thead th.cp-ptc{background:var(--hi-soft)}
+table.cp-sct td.cp-pt{font:600 .8rem var(--font-ui);color:var(--ink-2)}
+table.cp-sct td.cp-auto span[aria-hidden]{font-size:1.25rem;line-height:1;display:block}
+.cp-w{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.cp-sct .cp-trow td{font-size:.85rem;color:var(--ink-2)}
+table.cp-sct .cp-drow td{font-weight:700}
+.cp-sg,.cp-ar,.cp-kd{min-width:40px;min-height:36px;border:2px dashed var(--rule);background:var(--sheet);color:var(--ink-2);border-radius:8px;font:700 1.15rem var(--font-math);padding:0 .5em;cursor:pointer}
+.cp-kd{min-width:84px;font:700 .85rem var(--font-ui)}
+.cp-sg.on,.cp-ar.on,.cp-kd.on{border-style:solid;border-color:var(--ink);color:var(--ink);background:var(--hi-soft)}
+.cp-sg:not(:disabled):hover,.cp-ar:not(:disabled):hover,.cp-kd:not(:disabled):hover{border-color:var(--pen)}
+.cp-sg:disabled,.cp-ar:disabled,.cp-kd:disabled{cursor:default;opacity:.9}
+.cp-chhow{margin:4px 0 8px}
+.cp-val{margin:10px 0 6px;padding:10px 12px;border:1.5px dashed var(--rule);border-radius:8px}
+.cp-val .cp-zh{margin-top:0}
+.cp-cube{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:1.15rem}
+.cp-cube .numin.short{width:4.6rem}
+.cp-rad{font:400 1.6rem var(--font-math);margin-right:-4px}
+.cp-rin{border-top-width:2.5px;border-top-color:var(--ink)}
+
+/* Part 3 */
+.cp-st h3{margin-top:0}
+.cp-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.cp-fac{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:1.15rem;margin:6px 0 4px}
+.cp-fac .numin.short{width:4rem}
+.cp-res{margin-top:10px}
+.cp-res canvas.plot.wide{max-width:640px}
+.cp-call{margin:10px 0 0;padding:10px 14px;border-left:4px solid var(--hi);background:var(--info-bg);border-radius:0 8px 8px 0}
+.cp-call p{margin:0 0 6px}
+.cp-call p:last-child{margin-bottom:0}
+.cp-sks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:8px 0}
+.cp-sk{display:block;width:100%;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:4px;min-width:0;cursor:pointer}
+.cp-sk canvas.plot{border:0;aspect-ratio:4/3;display:block;width:100%}
+.cp-sk:not(:disabled):hover{border-color:var(--pen)}
+.cp-sk.on{border-color:var(--red)}
+.cp-sk.on.good{border-color:var(--green);background:var(--good-bg)}
+.cp-sk:disabled{cursor:default}
+.cp-shift{margin-top:12px}
+.cp-shift canvas.plot.wide{max-width:640px}
+.cp-shift output{color:var(--ink)}
+.cp-shift input{width:100%;max-width:420px}
+.cp-note{font-weight:600;margin:8px 0 0}
+
+/* Practice 2: V8 design boxes */
+.cp-dt{display:flex;flex-direction:column;gap:8px;margin:8px 0 4px}
+.cp-dr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.cp-dl2{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.cp-dl{min-width:9.5rem}
+.cp-dpt{display:inline-flex;align-items:center;gap:4px;font-size:1.1rem}
+.cp-dq .numin.short{width:4.6rem}
+.cp-dq .numin.cp-list{width:8rem}
+.cp-br{min-width:34px;min-height:36px;border:2px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:6px;font:700 1.25rem var(--font-math);padding:0 .3em}
+.cp-br:not(:disabled):hover{border-color:var(--pen)}
+
+/* task */
+.cp-tin{display:flex;flex-direction:column;gap:8px;margin:8px 0 12px}
+.cp-step{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.cp-step label{min-width:8.5rem}
+.cp-step .numin.short{width:4.2rem}
+.cp-pl{min-width:8.5rem;font-weight:600}
+.cp-pl .m{font-size:1em}
+#td-plot{margin-top:4px}
+.cp-all{font-weight:600}
+
+@media (max-width:760px){
+  .cp-ex{grid-template-columns:minmax(0,1fr)}
+  .cp-sks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  canvas.plot.cp-top{aspect-ratio:4/3}
+  canvas.plot.cp-low{aspect-ratio:16/9}
+  .cp-dl{min-width:0}
+  .cp-fac{gap:4px;font-size:1.05rem}
+  .cp-fac .numin.short{width:2.8rem;padding-left:.3em;padding-right:.3em}
+}

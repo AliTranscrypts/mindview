@@ -1,0 +1,218 @@
+/* HFA4U 14: hero (cause web → bone curve), Many causes, many paths (F7 causes map, persona panels, bone bank), Build bones
+   (F1 food chips with adequacy bars, fracture facts, language audit), Bone and body data, Build Rowan's bones.
+   Colour roles (course plan §4, module plan §5): modifiable factors --risk-mod (blue), non-modifiable --risk-fixed (--ink-2);
+   calcium and vitamin D bars --nu-micro (violet); the vegetable chip --leaf with its word; the bone curve --pen; the
+   fracture-risk zone --hi-soft. "Concern" tags use orange (--p-k) with a "!" and the word. Red and green stay for feedback. */
+
+/* radio groups and switches (from HFA4U 12 / 09) */
+.ob-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.ob-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2);min-width:4.2rem}
+.ob-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.ob-rg button:disabled{opacity:.6;cursor:default}
+.ob-chipset{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.ob-chipset button{border:1.5px solid var(--rule);background:var(--sheet);border-radius:12px;padding:.35em .8em;font-size:.92rem;min-height:34px;text-align:left}
+.ob-chipset button:hover{border-color:var(--pen)}
+.ob-chipset button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ob-sw{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);border-radius:8px;padding:6px 10px;min-height:40px;font-size:.92rem;max-width:100%}
+.ob-sw:hover{border-color:var(--pen)}
+.ob-swt{position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:999px;border:2px solid var(--ink-2);background:var(--paper)}
+.ob-swt i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--ink-2);transition:left .15s}
+.ob-sw[aria-checked="true"]{border-color:var(--ink)}
+.ob-sw[aria-checked="true"] .ob-swt{background:var(--hi);border-color:var(--ink)}
+.ob-sw[aria-checked="true"] .ob-swt i{left:18px;background:var(--ink)}
+.ob-swl{flex:1 1 auto;min-width:0}
+.ob-swv{flex:0 0 auto;font-size:.78rem;font-weight:700;color:var(--ink-2);min-width:1.8rem;text-align:right}
+.ob-sw[aria-checked="true"] .ob-swv{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){ .ob-swt i{transition:none} }
+
+/* hero */
+.ob-hero{width:100%}
+.ob-hsvg{display:block;width:100%;height:auto}
+.ob-hl{stroke:var(--ink-2);stroke-width:1.3;opacity:.75}
+.ob-hw{fill:var(--sheet);stroke:var(--ink);stroke-width:1.4}
+.ob-hwt{fill:var(--ink);font-family:var(--font-ui);font-weight:700}
+.ob-hax{fill:none;stroke:var(--ink-2);stroke-width:1.6}
+.ob-hs{fill:var(--ink-2);font:400 11px var(--font-ui)}
+.ob-hs.b{fill:var(--ink);font-weight:700}
+.ob-hcurve{fill:none;stroke:var(--pen);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.ob-hpk{fill:var(--pen);stroke:var(--sheet);stroke-width:2}
+.ob-hcap{fill:var(--ink);font:700 13px var(--font-ui)}
+.ob-hrow{display:flex;justify-content:flex-end;margin-top:4px}
+
+/* support note under the Explore and Final Check intros */
+.ob-sup{margin:0 0 14px}
+
+/* Explore layout */
+.ob-fs{border:0;margin:0;padding:0;min-width:0}
+.ob-fs:disabled{opacity:.85}
+.ob-lab{margin-top:4px}
+.ob-h4{margin:0 0 6px;font-size:1rem;font-weight:700;padding:0}
+.ob-h5,.ob-lab h5{margin:0 0 6px;font-size:.95rem}
+.ob-readw{margin-top:14px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.ob-read{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:0 22px}
+.ob-read > div,.ob-read > div:first-child{padding:6px 0;border-bottom:0}
+.ob-big{font-size:1.4rem}
+
+/* Mode A: causes map */
+.ob-demo{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 10px;padding:10px 12px;border:1.5px solid var(--pen);border-radius:8px;background:var(--info-bg)}
+.ob-demo p{margin:0}
+.ob-tray{display:flex;flex-wrap:wrap;gap:8px;padding:10px;border:1.5px dashed var(--rule);border-radius:8px;min-height:52px;margin-bottom:10px}
+.ob-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 8px;align-items:start;text-align:left;border:1.5px solid var(--ink-2);background:var(--sheet);border-radius:6px;padding:.4em .7em .4em .55em;font-size:.92rem;max-width:100%;min-height:44px}
+.ob-card.mod{border-left:6px solid var(--risk-mod)}
+.ob-card.fixed{border-left:6px solid var(--risk-fixed)}
+.ob-tray .ob-card{max-width:15rem}
+.ob-card[aria-pressed="true"]{background:var(--hi);color:var(--hi-ink);box-shadow:0 0 0 3px var(--hi-soft)}
+.ob-cn{grid-row:span 2;display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;border:1.5px solid currentColor;font-size:.8rem;font-weight:700;margin-top:.1em}
+.ob-ct{font-weight:700;line-height:1.3}
+.ob-ck{font-size:.75rem;color:var(--ink-2)}
+.ob-card[aria-pressed="true"] .ob-ck{color:var(--hi-ink)}
+.ob-selbar{margin:0 0 10px;padding:10px 12px;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--info-bg)}
+.ob-selt{margin:0 0 4px}
+.ob-selrow{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.ob-sell{font-size:.85rem;font-weight:700;color:var(--ink-2)}
+.ob-doms{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.ob-dom{border:1.5px solid var(--rule);border-radius:8px;padding:8px;background:var(--paper);display:flex;flex-direction:column;gap:6px;min-width:0}
+.ob-dom h5{margin:0;font-size:.88rem;line-height:1.25}
+.ob-dn{color:var(--ink-2);font-weight:400}
+.ob-dom .ob-card{width:100%;font-size:.86rem}
+.ob-dom p{margin:0}
+.ob-kkey{margin:8px 0 0}
+.ob-lens{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:10px}
+.ob-web{margin-top:10px}
+.ob-websvg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
+.ob-link{stroke:var(--ink-2);stroke-width:1.6;stroke-linecap:round}
+.ob-node rect{fill:var(--sheet);stroke-width:2}
+.ob-node.mod rect{stroke:var(--risk-mod)}
+.ob-node.fixed rect{stroke:var(--risk-fixed)}
+.ob-node.off rect{stroke:var(--rule);stroke-dasharray:2 3}
+.ob-node.off .ob-nt{fill:var(--ink-2);opacity:.6}
+.ob-nt{fill:var(--ink);font:700 11.5px var(--font-ui)}
+.ob-ldet{margin-top:6px}
+.ob-ldet summary{cursor:pointer;font-weight:700;font-size:.92rem}
+.ob-links{margin:8px 0 0;padding-left:1.2em;font-size:.92rem}
+.ob-links li{margin:0 0 .35em}
+
+/* Mode B: BMI vs full picture */
+.ob-ini{display:inline-grid;place-items:center;flex:0 0 auto;width:1.9em;height:1.9em;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);font-weight:700;color:var(--ink)}
+.ob-ini.big{width:2.6em;height:2.6em;font-size:1.1rem}
+#ob-perw .ob-chipset button{display:inline-flex;align-items:center;gap:8px}
+.ob-pct{display:flex;flex-direction:column}
+.ob-pbw{font-size:.8rem;font-weight:400;color:var(--ink-2)}
+.ob-chipset button[aria-checked="true"] .ob-pbw{color:var(--hi-ink)}
+.ob-pcard{border:1.5px solid var(--ink-2);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.ob-phead{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.ob-phead p{margin:0}
+.ob-pn{font-weight:700;font-size:1.05rem}
+.ob-pcols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:12px 22px}
+.ob-pbmi{border-right:1.5px solid var(--rule);padding-right:18px}
+.ob-bword{font-size:1.5rem;font-weight:700;margin:4px 0 6px}
+.ob-meas{list-style:none;margin:0;padding:0}
+.ob-meas li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 10px;padding:6px 4px;border-bottom:1px solid var(--rule);border-radius:4px}
+.ob-meas li:last-child{border-bottom:0}
+.ob-meas li.ob-lit{background:var(--hi-soft)}
+.ob-mt{font-weight:700}
+.ob-tag{display:inline-block;font-size:.85rem;font-weight:700;border-radius:999px;padding:.1em .7em;border:1.5px solid var(--rule)}
+.ob-tag.ok{border-color:var(--pen);color:var(--pen)}
+.ob-tag.cn{border-color:var(--p-k);color:var(--p-k);background:var(--nu-carb-soft)}
+.ob-tag.lvl{border-style:dashed;border-color:var(--ink-2);color:var(--ink-2)}
+.ob-tag.q{border-style:dashed;color:var(--ink-2);min-width:2.4em;text-align:center}
+.ob-pnone{margin:6px 0 0}
+
+/* Mode C: bone bank */
+.ob-bone{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.ob-plotcol{min-width:0}
+.ob-leg{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.85rem;color:var(--ink-2)}
+.ob-leg li{display:inline-flex;align-items:center;gap:6px}
+.ob-lk{display:inline-block;width:22px;height:0;border-top:3px solid var(--pen)}
+.ob-lk.gh{border-top:2.4px dashed var(--ink-2)}
+.ob-lk.zn{height:12px;border:0;background:var(--hi-soft);border-radius:2px}
+.ob-lk.pk{width:10px;height:10px;border:0;border-radius:50%;background:var(--pen)}
+.ob-lk.en{width:10px;height:10px;border:2px solid var(--ink);border-radius:50%;background:var(--sheet)}
+.ob-bctl .ob-rgl{min-width:9.5rem}
+.ob-meno{padding-top:8px;border-top:1.5px dashed var(--rule)}
+.ob-prule{margin:6px 0 0}
+.ob-about{margin-top:12px}
+.ob-rules{margin:8px 0 0;padding-left:1.2em}
+
+/* Part 3 */
+.ob-st{padding:4px 0 16px;margin-bottom:16px;border-bottom:1.5px solid var(--rule)}
+.ob-st:last-child{border-bottom:0;margin-bottom:0}
+.ob-s1tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:0 0 10px}
+.ob-s1tools .ob-rgw{margin:0}
+.ob-foods{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:8px}
+.ob-food{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 8px;align-items:start;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);border-radius:8px;padding:8px 10px;min-height:44px}
+.ob-food > span:not(.ob-fmark){grid-column:2}
+.ob-food:hover{border-color:var(--nu-micro)}
+.ob-food[aria-pressed="true"]{border-color:var(--nu-micro);box-shadow:inset 0 0 0 1.5px var(--nu-micro);background:var(--nu-micro-soft)}
+.ob-food:disabled{opacity:.45;cursor:not-allowed}
+.ob-food.veg{border-left:6px solid var(--leaf)}
+.ob-fmark{grid-row:span 3;display:inline-grid;place-items:center;width:1.5em;height:1.5em;border-radius:50%;border:1.5px solid var(--nu-micro);color:var(--nu-micro);font-weight:700}
+.ob-fn{font-weight:700}
+.ob-fs{font-weight:400;font-size:.85rem;color:var(--ink-2)}
+.ob-fv{font-size:.88rem}
+.ob-ftag{justify-self:start;font-size:.75rem;font-weight:700;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:0 .4em}
+.ob-ftag.veg{color:var(--leaf);border-color:var(--leaf)}
+.ob-tot{margin-top:10px}
+.ob-tray{margin:0 0 6px}
+.ob-abars{display:flex;flex-direction:column;gap:8px}
+.ob-abar{display:grid;grid-template-columns:6.2rem minmax(0,1fr);grid-template-areas:"lab track" ". val";gap:2px 10px;align-items:center}
+.ob-alab{grid-area:lab;font-weight:700;font-size:.92rem}
+.ob-atrack{grid-area:track;position:relative;height:16px;border:1.5px solid var(--ink-2);border-radius:4px;background:var(--paper);overflow:hidden}
+.ob-afill{position:absolute;left:0;top:0;bottom:0;background:var(--nu-micro)}
+.ob-aref{position:absolute;left:50%;top:-2px;bottom:-2px;border-left:2.5px dashed var(--ink)}
+.ob-aval{grid-area:val;font-size:.85rem;color:var(--ink-2)}
+.ob-aval strong{color:var(--ink)}
+.ob-akey{margin:0}
+.ob-facts{margin:0;padding-left:1.2em}
+.ob-facts li{margin:0 0 .45em}
+.ob-aud{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ob-sent{border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;background:var(--sheet)}
+.ob-sent.done{background:var(--paper)}
+.ob-stx{display:flex;gap:10px;align-items:baseline;margin:0 0 8px;font-weight:700;font-size:1.02rem}
+.ob-stx s{font-weight:400;color:var(--ink-2)}
+.ob-sno{flex:0 0 auto;display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;border:1.5px solid var(--ink-2);font-size:.8rem}
+.ob-sres{margin:0 0 4px}
+.ob-vrow,.ob-rrow{display:flex;flex-wrap:wrap;gap:6px 8px}
+.ob-rq{margin:10px 0 6px;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.ob-rw{border:1.5px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.45em .8em;text-align:left;font-size:.92rem;max-width:100%;min-height:40px}
+.ob-rw:hover{border-color:var(--pen)}
+.ob-sent .fb{margin-top:8px}
+
+/* Practice 2 chips */
+.ob-bchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ob-bchip{border:1.5px solid var(--rule);background:var(--sheet);border-radius:999px;padding:.3em .9em;font-size:.92rem;min-height:34px;text-align:left;max-width:100%}
+.ob-bchip:hover{border-color:var(--pen)}
+.ob-bchip[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ob-bchip.right{box-shadow:0 0 0 2px var(--green)}
+
+/* Performance task */
+.ob-conds{margin:6px 0 10px;padding-left:1.4em}
+.ob-tkin{display:flex;flex-direction:column;gap:6px;margin:6px 0 12px}
+.ob-tkr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;border:1.5px solid var(--rule);border-radius:8px;padding:6px 8px 6px 10px;background:var(--sheet)}
+.ob-tkr.veg{border-left:6px solid var(--leaf)}
+.ob-tkr.on{border-color:var(--nu-micro);background:var(--nu-micro-soft)}
+.ob-tkr.veg.on{border-left-color:var(--leaf)}
+.ob-tkn{display:flex;flex-direction:column;min-width:0;flex:1 1 12rem}
+.ob-tkd{font-size:.85rem;color:var(--ink-2)}
+.ob-ctr{display:inline-flex;align-items:center;gap:6px;flex:0 0 auto}
+.ob-cb{min-width:36px;min-height:36px;padding:0;font-size:1.1rem;font-weight:700}
+.ob-tkv{display:inline-block;min-width:1.6em;text-align:center;font-weight:700;font-size:1.1rem}
+.ob-tkpv{padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ob-tkread{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 12px;margin:6px 0 10px}
+.ob-tkread > div,.ob-tkread > div:first-child{padding:4px 0;border-bottom:0}
+.ob-kc{margin-top:12px;padding:10px 12px;border:1.5px dashed var(--ink-2);border-radius:8px}
+.ob-kc p{margin:0 0 6px}
+
+@media (max-width:900px){
+  .ob-doms{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+  .ob-bone{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ob-doms{grid-template-columns:minmax(0,1fr)}
+  .ob-pcols{grid-template-columns:minmax(0,1fr)}
+  .ob-pbmi{border-right:0;padding-right:0;border-bottom:1.5px solid var(--rule);padding-bottom:10px}
+  .ob-tray .ob-card{max-width:100%}
+  .ob-abar{grid-template-columns:minmax(0,1fr);grid-template-areas:"lab" "track" "val"}
+  .ob-tkread{grid-template-columns:minmax(0,1fr)}
+  .ob-bctl .ob-rgl{min-width:0;width:100%}
+}

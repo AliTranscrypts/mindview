@@ -1,0 +1,116 @@
+/* MCV4U 22: hero equation, Asymptote zoom (V6 approach table, Divide step-through, long division), Which side? stations
+   (gap meter, sign tables), Limits at infinity and design, Asymptote architect */
+.hero .hero-eq.sm{font-size:clamp(1.45rem,4.2vw,2.3rem);margin-bottom:.4em}
+.az-he{display:block;white-space:nowrap;margin:0 0 .2em}
+.az-hdot{display:none}
+.opt .m,.chip .m,.fchip .m,.read dd .m,.read dt .m,.sq-p .m,.mitem .m{white-space:normal}
+
+/* Explore: controls */
+.az-ex .eq-cap{min-height:2.6em;display:flex;align-items:center}
+.az-cap .m{font-size:1.08em}
+.az-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;margin:0 0 2px}
+.az-lab{font-weight:700;font-size:.9rem;min-width:6.2em}
+.az-row .chips{flex:1 1 240px;margin:0 0 8px}
+.az-fchip{font-size:.86rem}
+.az-fchip .m{font-size:1.05em}
+.az-fchip strong{margin-right:.2em}
+.az-bsl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;margin:0 0 4px}
+.az-bsl[hidden],.az-far[hidden],.az-near[hidden]{display:none}
+.az-sl output{color:var(--ink)}
+.az-mode .seg-wrap{margin:2px 0 8px}
+.az-near .chips{margin:4px 0 8px}
+.az-tg[aria-pressed="true"]{background:var(--hi);border-color:var(--ink);color:var(--hi-ink)}
+.az-panel{margin-top:6px}
+.az-pnote{margin:6px 0 0}
+.az-locked .az-fns .chip,.az-locked .az-bld .chip,.az-locked .az-near .btn{opacity:.6}
+
+/* V6 approach table (copied from MCV4U 04) */
+.az-v6{margin:6px 0 0}
+.az-v6g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.az-v6s{min-width:0;border:1.5px solid var(--rule);border-radius:8px;overflow-x:auto}
+table.az-v6t{width:100%;border-collapse:collapse;font-family:var(--font-math);font-size:1.02rem}
+table.az-v6t th,table.az-v6t td{padding:6px 10px;border-bottom:1px solid var(--rule);text-align:center;white-space:nowrap}
+table.az-v6t th{font-family:var(--font-ui);font-size:.85rem;color:var(--ink-2);background:var(--paper)}
+table.az-v6t th .m{font-size:1.15em;color:var(--ink)}
+table.az-v6t tr:last-child td{border-bottom:0}
+.az-v6h{font-weight:700}
+.az-v6at{margin:10px 0 0;font-size:1rem}
+.az-v6n{margin:6px 0 0}
+
+/* Near mode: one-sided limit entry */
+.az-lims{margin:12px 0 0;border:1.5px dashed var(--ink-2);border-radius:8px;padding:8px 12px 4px;background:var(--paper)}
+.az-limh{margin:0 0 8px;font-weight:700}
+.az-limrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 6px}
+.az-limlab{font:400 1.12rem var(--font-math)}
+.az-limrow .chips{margin:0}
+.az-limrow .chip{font-size:1rem;min-width:52px}
+.az-limok{margin:2px 0 6px;color:var(--green);font-weight:700}
+
+/* Divide mode */
+.az-div .player{margin-top:0}
+.az-dsteps{margin:10px 0 0;padding-left:1.4em;display:grid;gap:6px}
+.az-dsteps li{padding:.3em .5em;border-radius:6px}
+.az-dsteps li.cur{background:var(--hi-soft)}
+.az-dsteps .m{white-space:normal}
+.az-ld-wrap{overflow-x:auto;margin:10px 0 0}
+table.az-ld{border-collapse:collapse;font-family:var(--font-math);font-size:1.12rem}
+table.az-ld td{padding:2px 8px;text-align:left;white-space:nowrap;min-width:3.2em;height:1.7em}
+table.az-ld .az-ldd{text-align:right;border-right:2px solid var(--ink)}
+table.az-ld tr.az-ldn td{border-top:2px solid var(--ink)}
+table.az-ld tr.az-ldn td:first-child{border-top:0}
+table.az-ld tr.az-ldp td:nth-child(n+2){border-bottom:1.5px solid var(--ink-2)}
+table.az-ld tr.az-ldp td:empty{border-bottom:0}
+table.az-ld tr.az-ldr td{font-weight:700}
+table.az-ld tr.az-ldoff td{border-color:transparent}
+table.az-ld tr.az-ldq td{color:var(--ink)}
+
+/* Part 3 stations */
+.az-st .seg-wrap{margin-top:0}
+.az-h{margin:14px 0 10px}
+.az-pane[hidden]{display:none}
+.az-gmrow{display:grid;grid-template-columns:minmax(0,1fr) 58px;gap:10px;align-items:stretch}
+.az-gm{display:flex;flex-direction:column;align-items:center;height:100%;min-height:180px;gap:4px}
+.az-gm-t{font-size:.78rem;font-weight:700;color:var(--ink-2)}
+.az-gm-track{position:relative;flex:1 1 auto;width:26px;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet)}
+.az-gm-zero{position:absolute;left:-6px;right:-6px;top:50%;border-top:2px dashed var(--ink-2)}
+.az-gm-bar{position:absolute;left:3px;right:3px;top:50%;height:0;background:var(--hi);border-radius:3px}
+@media (prefers-reduced-motion:no-preference){ .az-gm-bar{transition:height .15s ease,top .15s ease} }
+.az-gmt{margin:6px 0 0;min-height:1.5em}
+.az-q{border-bottom:1px solid var(--rule);padding:0 0 12px;margin:0 0 12px}
+.az-qp{margin:0 0 8px}
+.az-eqrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-size:1.08rem}
+.az-eqrow .m{white-space:normal}
+.az-fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle}
+.az-frn{display:flex;align-items:center;gap:6px;padding:0 4px 4px;border-bottom:2px solid var(--ink)}
+.az-frd{padding-top:3px}
+.numin.az-in{width:4.6rem;padding:.3em .45em;font-size:1.05rem}
+.az-sr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 8px}
+.az-sr .chips{margin:0}
+.az-s2f .chips,.az-s3f .chips{margin:0 0 8px}
+.az-s2eq{margin:0 0 10px}
+.az-s2eq .m{white-space:normal}
+.az-sgw{margin:10px 0}
+table.az-sg th[scope="row"]{text-align:left}
+table.az-sg td .chips{margin:0;justify-content:center;flex-wrap:nowrap}
+table.az-sg td .chip{min-width:46px;font-size:.95rem}
+.az-sgb{min-width:44px;font:700 1.1rem var(--font-math)}
+
+/* Practice: Limits at infinity and design */
+.az-lin{margin:4px 0 0}
+.az-bxrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:6px 0 8px}
+.az-bx{display:flex;align-items:center;gap:8px;font:400 1.15rem var(--font-math)}
+.az-bxt{font:600 1rem var(--font-ui)}
+.az-oa{gap:6px}
+.az-oay{font-size:1.15rem}
+.az-lq .q-prompt .m{white-space:normal}
+
+/* Task */
+.az-arow input{width:5.2rem}
+.az-aeq{margin:0 0 10px;min-height:2.4em;font-size:1.08rem}
+
+@media (max-width:560px){
+  .az-v6g{grid-template-columns:minmax(0,1fr)}
+  .az-bsl{grid-template-columns:minmax(0,1fr)}
+  .az-gmrow{grid-template-columns:minmax(0,1fr) 44px;gap:6px}
+  .az-lab{min-width:0}
+}
