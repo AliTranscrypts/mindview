@@ -17,8 +17,17 @@ SUBJECT="$1"; shift
 
 echo "→ Rebuilding with the current toolkit and running the full check …"
 for t in "$@"; do
-  (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}" | grep -E "PASS|FAIL") \
-    || { echo "❌ check failed for $t — not shipping"; exit 1; }
+  # Full output is kept in .artifacts/check-<course><NN>.log. Under heavy load (many builders running
+  # browsers) a check can time out, so a failure is retried once before the ship is refused.
+  LOG="modules-src/.artifacts/check-${t%%:*}${t##*:}.log"
+  ok=0
+  for attempt in 1 2; do
+    if (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}") > "$LOG" 2>&1 \
+       && grep -q "✓ PASS ${t%%:*} " "$LOG"; then ok=1; break; fi
+    [ "$attempt" = 1 ] && echo "  check failed for $t (attempt 1) — retrying" && sleep 10
+  done
+  grep -E "PASS|FAIL" "$LOG" | grep -v hub
+  [ "$ok" = 1 ] || { echo "❌ check failed for $t — not shipping. Details:"; grep -E "✗|FAIL|Error" "$LOG" | head -12; exit 1; }
 done
 for t in "$@"; do
   c="${t%%:*}"; n="${t##*:}"

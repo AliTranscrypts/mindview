@@ -84,7 +84,8 @@
    "prereqs": [
     "03"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "05",
@@ -127,7 +128,8 @@
    "part3": "tradeoff",
    "prereqs": [
     "01"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "08",

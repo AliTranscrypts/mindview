@@ -6,7 +6,7 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 73/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 74/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
@@ -14,9 +14,9 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 7/59 | 0 | 52 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 4/39 | 0 | 35 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 3/52 | 0 | 49 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 1 | 42 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 4/25 | 0 | 21 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 1 | 21 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 3/24 | 0 | 21 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -142,8 +142,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - … 05 Independent vs Dependent Events (`independent-dependent`, topic, site ch1)
 - … 06 Factorial Notation (`factorial-notation`, topic, site ch2)
 - … 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
-- · 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
-- · 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
+- … 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
+- … 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
 - · 10 Circular Permutations (`circular-permutations`, topic, site ch2)
 - · 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
 - · 12 Combination Identities (`combination-identities`, topic, site ch3)
@@ -235,10 +235,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 01 Leaf Structure (`leaf-structure`, topic, site ch2)
 - ✓ 02 Light and Photosynthetic Pigments (`light-and-pigments`, topic, site ch2)
 - ✓ 03 Chlorophyll and Chloroplasts (`chlorophyll-and-chloroplasts`, topic, site ch2)
-- … 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
+- ◐ 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
 - … 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
 - … 06 Light Reactions (`light-reactions`, topic, site ch2)
-- · 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
+- … 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
 - · 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
 - · 09 C3, C4 and CAM Photosynthesis and Photorespiration (`c3-c4-cam`, topic, site ch2)
 - · 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)
@@ -311,7 +311,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 - ✓ 01 Literary Devices & Figurative Language (`literary-devices`, topic, site ch1)
 - ✓ 02 Close Reading of Short Fiction (`close-reading-short-fiction`, topic, site ch1)
-- ◐ 03 Reading Poetry (`reading-poetry`, topic, site ch1)
+- ✓ 03 Reading Poetry (`reading-poetry`, topic, site ch1)
 - … 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
 - … 05 The Writing Process (`writing-process`, topic, site ch2)
 - … 06 Essay Forms (`essay-forms`, topic, site ch2)
