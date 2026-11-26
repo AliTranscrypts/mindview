@@ -19,6 +19,10 @@ Repo: `/Users/ali/Desktop/MV/Modules/Website/mindview`. All paths below are insi
 3. The course plan's shared sections, as the guide directs (`/Users/ali/Desktop/MV/Modules/{course}/plan/01-course-plan.md`;
    for MHF4U, `/Users/ali/Desktop/MV/Modules/mhf4u/plan/01-blueprint.md` and `05-colour-key.md`).
 4. The canonical example module(s) the guide names; copy their patterns.
+   **For every course except MHF4U:** also read the course files `modules-src/toolkit/courses/{course}.css|js`
+   (usage comments at the top; auto-included in every page of that course) and the course's first module
+   `modules-src/courses/{course}/01-*/`, and grep `@component` across `modules-src/courses/*/*/app.js` for
+   pieces to copy. The course plan's component list (V/D/S/C/F/E codes) names what to tag.
 
 **Write only:** `modules-src/courses/{course}/{nn}-{slug}/` (`content.mjs`, `app.js`, optional `app.css`).
 

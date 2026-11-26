@@ -1,0 +1,100 @@
+/* MHF4U 49: hero equation labels, radio groups, Model lab layout, crossing finder, task steppers */
+.ml-heq{display:inline-flex;flex-wrap:wrap;align-items:flex-start;gap:.15em .3em;line-height:1.15}
+.ml-hp{display:inline-flex;flex-direction:column;align-items:center}
+.ml-hp small{font:400 .82rem/1.2 var(--font-ui);color:var(--ink-2);margin-top:.15rem;letter-spacing:0}
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+.ml-lockt{display:block;font-size:.72rem;font-weight:400}
+/* Model lab */
+.ml-story{border:1.5px solid var(--rule);border-radius:8px;padding:10px 14px 12px;margin:0 0 16px;background:var(--paper)}
+.ml-story h3{margin:0 0 4px}
+.ml-storyt{margin:0 0 8px;max-width:none}
+.ml-tyear{display:none}
+.ml-tyear .tbl-wrap{margin-top:8px}
+.ml-lab{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-areas:"g c" "r c";gap:14px 28px;align-items:start}
+.ml-g{grid-area:g;min-width:0}.ml-c{grid-area:c;min-width:0}.ml-r{grid-area:r;min-width:0}
+.ml-cap{font-size:clamp(1.25rem,3vw,1.75rem)}
+.ml-note{margin:0 0 6px;font-weight:700}
+#ml-views,#ml-lsel{margin:0 0 8px}
+.ml-tabs{display:flex!important;width:100%}
+.ml-tabs button{flex:1 1 0}
+#ml-fore{margin-top:10px}
+#ml-set{margin:0 0 12px;overflow-x:auto;padding-bottom:4px}
+#ml-set .rg-wrap{flex-wrap:nowrap}
+#ml-set .rg.seg{flex-wrap:nowrap;flex:0 0 auto}
+#ml-set .rg.seg button{white-space:nowrap}
+.ml-part{border:1.5px solid var(--rule);border-radius:8px;padding:6px 12px;margin:0 0 10px}
+.ml-part summary{font-weight:700;cursor:pointer;min-height:32px;display:list-item;padding-top:4px}
+.ml-pbody{padding:6px 0 4px}
+.ml-sel{display:flex;align-items:center;gap:10px;margin:0 0 10px;font-weight:700;font-size:.92rem}
+.ml-sel select{font:inherit;font-weight:400;padding:.35em .5em;border:1.5px solid var(--ink);border-radius:6px;background:var(--sheet);color:var(--ink);min-height:36px}
+.ml-sl output{font-size:1.15rem}
+.ml-ou{font:400 .85rem var(--font-ui)}
+.ml-locked{opacity:.75}
+.ml-locknote{margin:-4px 0 8px}
+.ml-op{margin:0 0 10px}
+#ml-p1d,#ml-p2d{margin-top:6px}
+canvas.plot.ml-strip{aspect-ratio:5/2}
+.ml-tcload{display:block;margin-top:8px}
+.ml-guess{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px}
+.ml-guessres{display:block;margin-top:6px;font-weight:700}
+.ml-sense{display:block;font-weight:700;margin-bottom:2px}
+.ml-ol{margin:6px 0 0;padding-left:1.3em}
+.ml-ol li{margin:4px 0}
+/* crossing finder */
+.ml-cchip .tag{font-size:.7rem;vertical-align:middle}
+.ml-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.ml-step,.ml-stb{min-width:0}
+.ml-step{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.ml-step.cur{border-color:var(--ink)}
+.ml-step.todo{opacity:.6}
+.ml-step.done .ml-stn{background:var(--good-bg);color:var(--green);border-color:var(--green)}
+.ml-sth{margin:0;font-weight:700;display:flex;align-items:center;gap:8px}
+.ml-stn{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;border:1.5px solid var(--ink);border-radius:50%;font-size:.85rem}
+.ml-stb{margin-top:8px}
+.ml-stb > p{margin:0 0 8px}
+.ml-tcap{margin:10px 0 4px!important;font-weight:700}
+.ml-tbl{display:flex;gap:4px;overflow-x:auto;padding:2px 2px 6px;align-items:stretch}
+.ml-tlab,.ml-tc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:0 0 auto;min-width:46px;padding:.3em .4em;border-radius:6px;font:400 .95rem var(--font-math)}
+.ml-tlab{color:var(--ink-2);background:var(--paper);border:1.5px solid var(--rule)}
+.ml-tc{border:2px solid var(--rule);background:var(--sheet);color:var(--ink);min-height:44px}
+.ml-tc .ml-tx{font-weight:700}
+.ml-tc .ml-th{font-size:.88rem}
+.ml-tc[aria-pressed="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.ml-tc:disabled{opacity:.85}
+.ml-c5{margin:6px 0 0}
+.ml-ivrow{display:flex;gap:4px;overflow-x:auto;align-items:stretch;padding:8px 2px 6px}
+.ml-st{flex:1 0 auto;min-width:60px;border:2px solid var(--rule);background:var(--sheet);color:var(--ink-2);border-radius:6px;padding:.45em .5em;font-size:.85rem;font-weight:700;white-space:nowrap;min-height:40px}
+.ml-st[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);color:var(--ink)}
+.ml-pt{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:44px;border:1.5px dashed var(--ink-2);background:var(--paper);color:var(--ink);border-radius:6px;padding:.2em .3em;font-size:.78rem;line-height:1.15}
+.ml-pt b{font-size:1rem;color:var(--pen)}
+.ml-pt:disabled{opacity:.45;border-style:dotted}
+.ml-pt[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--hi-soft)}
+.ml-ivans .m{font-size:1.2rem}
+.ml-algt{margin:12px 0 4px}
+/* task */
+.ml-steprow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 10px}
+.ml-steprow label{flex:1 1 14rem;font-size:.95rem}
+.ml-stepper{display:inline-flex;align-items:center;gap:6px}
+.ml-stepper .btn{min-width:40px;min-height:40px;padding:.3em .6em;font-size:1.1rem}
+.ml-stepper .numin{width:5rem;text-align:center}
+.ml-tkcap{font-size:1.4rem}
+.ml-afterm{margin-top:8px}
+@media (max-width:820px){
+  .ml-lab{grid-template-columns:minmax(0,1fr);grid-template-areas:"g" "c" "r"}
+}
+@media (max-width:560px){
+  .ml-tfull{display:none}
+  .ml-tyear{display:block}
+  canvas.plot.ml-tall{aspect-ratio:3/4}
+  canvas.plot.ml-strip{aspect-ratio:2/1}
+  .ml-tabs button{padding:.4em .5em}
+}
