@@ -1,0 +1,63 @@
+/* MHF4U 05: hero equation, N21 zero builder, equation from a graph, find-the-equation inputs, matching thumbnails */
+.hero .hero-eq .m{white-space:normal}
+.hero-eq .ord{text-decoration:underline;text-decoration-thickness:.05em;text-underline-offset:.08em}
+/* N21 zero builder */
+.zb-sub{font:400 1.05rem/1.6 var(--font-math);margin:0 0 8px;max-width:none}
+.zb-sub:empty{display:none}
+.zb-sub .zb-sep{margin-right:.2em}
+.zb-cap .zb-f{border-radius:4px;transition:background-color .3s}
+.zb-cap .zb-hl{background:var(--hi);color:var(--hi-ink)}
+.zb-zeros{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;margin-top:12px}
+.zb-g{flex:0 0 auto;display:grid;gap:6px;justify-items:start;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.zb-g.sel{border-color:var(--ink);background:var(--hi-soft)}
+.zb-zl{font-weight:700;font-size:.9rem}
+button.zb-zl{border:1.5px solid var(--rule);background:var(--sheet);border-radius:6px;padding:.2em .6em;min-height:30px}
+button.zb-zl[aria-pressed="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.zb-ord{display:flex;gap:4px;align-items:center}
+.zb-ord .tiny{margin-right:2px;color:var(--ink-2)}
+.zb-ord .chip{min-width:34px;padding:.2em .6em}
+.zb-ord .chip:disabled{opacity:.4}
+.zb-ord .chip.on:disabled{opacity:1}
+.zb-addrow{margin-top:4px}
+.zb-win{margin-top:4px}
+.zb-win > .tiny:first-child{font-weight:700}
+.zb-help{margin:10px 0 0}
+.zb-tg{margin:10px 0 0}
+.zb-lensnote{margin:8px 0 0;max-width:none}
+.zb-lensnote:empty{display:none}
+canvas.plot.zb-lensc{max-width:240px;margin:8px auto 0;border:0;background:transparent}
+.zb-strip{margin-top:10px}
+.zb-strip:empty{display:none}
+.zb-tbl th,.zb-tbl td{text-align:center;white-space:nowrap}
+.zb-tbl td.zb-pos{background:var(--hi-soft);font-weight:700}
+.zb-tbl tr.zb-prod th,.zb-tbl tr.zb-prod td{border-top:2px solid var(--ink)}
+.zb-task-read{margin-top:14px}
+.zb-task-ctrl{margin-bottom:16px}
+/* Part 3: equation from a graph */
+.eq-keys{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:8px}
+.eq-keys:not(:focus-within){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+.eq-keys .chip{min-width:40px}
+.eq-fan{margin:8px 0 0}
+.eq-fan:empty{display:none}
+.eq-eq{font-size:clamp(1.3rem,3.4vw,1.85rem)}
+.eq-step{margin:0 0 10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.eq-step.now{border-color:var(--ink)}
+.eq-step h4{margin:0 0 6px;font-size:.95rem}
+.eq-step.done h4{color:var(--green)}
+.eq-step p{margin:0 0 6px}
+.eq-step p:last-child{margin-bottom:0}
+.eq-ords{display:flex;flex-wrap:wrap;gap:10px 16px}
+.eq-og{display:grid;gap:4px}
+.eq-pts{margin:6px 0 0}
+.eq-step p.eq-sub{font:400 1.2rem var(--font-math);overflow-wrap:anywhere;margin:10px 0 0}
+.eq-sub .m{white-space:normal}
+.eq-step .numrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:6px}
+/* Practice 2: find the equation */
+.ff-row{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:10px}
+.ff-f{display:flex;align-items:center;gap:8px;font-weight:700}
+/* Practice 1: matching thumbnails, two per row */
+[data-act-id="match"] .match-col:nth-child(2){grid-template-columns:repeat(2,minmax(0,1fr))}
+[data-act-id="match"] .match-col:nth-child(2) h4{grid-column:1/-1}
+[data-act-id="match"] .match-col:nth-child(2) .mitem{flex-direction:column;align-items:stretch;padding:.35em}
+[data-act-id="match"] .match-col:nth-child(2) .mitem > span{width:100%}
+[data-act-id="match"] .mitem canvas.plot{width:100%;max-width:none;margin:0;pointer-events:none}
