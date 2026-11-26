@@ -76,10 +76,10 @@ export function encodeAnswers(content, salt){
   };
   const walk = o => {
     if (Array.isArray(o)) {
-      const marks = o.some(x => x && typeof x === "object" && !Array.isArray(x) && Object.prototype.hasOwnProperty.call(x, "ok"));
+      const marks = o.some(x => x && typeof x === "object" && !Array.isArray(x) && typeof x.ok === "boolean");
       return o.map(x => {
         const y = walk(x);
-        if (marks && y && typeof y === "object" && !Array.isArray(y)) {
+        if (marks && y && typeof y === "object" && !Array.isArray(y) && (y.ok === undefined || typeof y.ok === "boolean")) {
           const flag = !!y.ok; delete y.ok;
           y._n = (counter++).toString(36) + fnv(salt + counter).slice(0, 3);
           y._k = fnv(salt + "|" + y._n + "|" + (flag ? 1 : 0));

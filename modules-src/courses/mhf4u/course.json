@@ -155,8 +155,7 @@
     "02",
     "03"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "09",
@@ -171,8 +170,7 @@
     "08",
     "02"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "10",
@@ -194,7 +192,8 @@
     "08",
     "09"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "11",
@@ -224,7 +223,8 @@
     "11",
     "05"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",

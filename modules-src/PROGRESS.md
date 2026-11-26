@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 7/295 live, 2 built, 5 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 9/295 live, 2 built, 3 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 7/50 | 2 | 41 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 9/50 | 2 | 39 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -27,11 +27,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 05 Graphing from Factored Form (`graphing-from-factored-form`, topic, site ch1)
 - ✓ 06 Even and Odd Functions (`even-and-odd-functions`, topic, site ch1)
 - ✓ 07 Transformations of Power Functions (`transformations-of-power-functions`, topic, site ch1)
-- ◐ 08 Average Rate of Change (`average-rate-of-change`, topic, site ch1)
-- ◐ 09 Instantaneous Rate of Change (`instantaneous-rate-of-change`, topic, site ch1)
-- … 10 Chapter 1 Summary & Review (`chapter-1-review`, review, site ch1)
+- ✓ 08 Average Rate of Change (`average-rate-of-change`, topic, site ch1)
+- ✓ 09 Instantaneous Rate of Change (`instantaneous-rate-of-change`, topic, site ch1)
+- ◐ 10 Chapter 1 Summary & Review (`chapter-1-review`, review, site ch1)
 - … 11 Remainder Theorem & Synthetic Division (`remainder-theorem-and-synthetic-division`, topic, site ch2)
-- … 12 Factor Theorem & Sum/Difference of Cubes (`factor-theorem-and-sum-difference-of-cubes`, topic, site ch2)
+- ◐ 12 Factor Theorem & Sum/Difference of Cubes (`factor-theorem-and-sum-difference-of-cubes`, topic, site ch2)
 - … 13 Solving Polynomial Equations (`solving-polynomial-equations`, topic, site ch2)
 - … 14 Family of Polynomial Functions (`family-of-polynomial-functions`, topic, site ch2)
 - · 15 Polynomial Inequalities (`polynomial-inequalities`, topic, site ch2)

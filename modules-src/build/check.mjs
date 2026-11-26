@@ -252,6 +252,16 @@ async function browserCheck(browser, url, P, shotDir){
       const ov = await overflow(page); if (ov > 1) F.push(`phone: sideways scroll of ${ov}px in "${v}"`);
       await page.screenshot({ path:path.join(shotDir, `m-${v}.png`) });
     }
+    // again with every step marked done (done steps add hidden "(done)" text to the step bar)
+    for (let i = 0; i < views.length - 1; i++) {
+      await page.evaluate(v => { location.hash = v; }, views[i]); await page.waitForTimeout(150);
+      const btn = page.locator(`.view[data-view="${views[i]}"] [data-continue]`);
+      if (await btn.count()) { await btn.first().click().catch(() => {}); await page.waitForTimeout(150); }
+    }
+    for (const v of views) {
+      await page.evaluate(v => { location.hash = v; }, v); await page.waitForTimeout(150);
+      const ov = await overflow(page); if (ov > 1) F.push(`phone (steps done): sideways scroll of ${ov}px in "${v}"`);
+    }
     errs.forEach(e => F.push(e));
     await ctx.close();
   }
