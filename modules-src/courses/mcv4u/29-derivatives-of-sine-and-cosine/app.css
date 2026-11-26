@@ -1,0 +1,83 @@
+/* MCV4U 29: hero panels, Slope of a wave (linked panels, unit circle twin, controls), Chain rule stations with the overlay
+   gauge, Exact slopes boxes, Wave design task. Prefix sw- (sine wave), wd- (wave design). */
+.sw-heq1{display:block;white-space:nowrap}
+.sw-heq1 + .sw-heq1{margin-top:.12em}
+.sw-heq{display:block;font:400 .34em/1.3 var(--font-ui);color:var(--ink-2);margin-top:.35em;letter-spacing:0}
+.sw-heq .m{font-size:1.15em}
+.sw-hero{display:flex;flex-direction:column;gap:8px}
+canvas.plot.sw-hp{aspect-ratio:2/1}
+/* Explore */
+.sw-ex{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.sw-main,.sw-side{min-width:0}
+.sw-ex.sw-full{grid-template-columns:minmax(0,1fr)}
+.sw-ex.sw-full .sw-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 28px;align-items:start}
+.sw-ex.sw-full .sw-side > *{grid-column:1}
+.sw-ex.sw-full .sw-side > .sw-read{grid-column:2;grid-row:1 / span 8;margin-top:0}
+.sw-eq{min-height:1.6em}
+.sw-pans{display:flex;flex-direction:column;gap:6px}
+.sw-pan[hidden]{display:none}
+canvas.plot.sw-pc{aspect-ratio:16/7;touch-action:none}
+canvas.sw-uc{display:block;width:100%;height:240px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);touch-action:none}
+.sw-pcap{margin:4px 0 2px;font-size:.85rem;font-weight:700;color:var(--ink-2)}
+.sw-key{margin:8px 0 0}
+.sw-lab{font-weight:700;font-size:.85rem;margin:10px 0 4px}
+.sw-side > div:first-child .sw-lab{margin-top:0}
+.sw-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+.sw-chips .chip{min-height:36px;min-width:40px}
+.sw-how{margin:8px 0 10px}
+.sw-sl{margin-top:8px}
+.sw-sl input{width:100%;min-height:28px}
+.sw-sl output{color:var(--ink)}
+.sw-sl output.sw-kout{color:var(--p-k);font-weight:700}
+.sw-note{margin:4px 0 6px}
+.sw-angc{margin:6px 0 4px}
+.sw-angc .chip{min-width:44px}
+.sw-marks{margin-top:8px}
+.sw-mact{margin:6px 0 4px}
+.sw-mlist{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sw-mchip{min-height:32px}
+.sw-kbox{margin-top:8px;padding-top:6px;border-top:1px solid var(--rule)}
+.sw-kbox[hidden]{display:none}
+.sw-tact{margin:8px 0 0;flex-wrap:wrap}
+.sw-side dl.read.sw-read{margin-top:16px}
+/* Part 3 */
+.sw-stbar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.sw-stbody{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:14px 26px;align-items:start}
+.sw-stl,.sw-str{min-width:0}
+.sw-sth{margin:0 0 4px}
+.sw-brow{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:6px 10px;align-items:center;margin:6px 0}
+.sw-blab{font-size:.88rem;font-weight:600;color:var(--ink-2)}
+.sw-cand{margin:12px 0 6px;font-size:1.08rem;font-weight:600}
+canvas.plot.sw-sc1{aspect-ratio:16/6}
+canvas.plot.sw-sc2{aspect-ratio:16/9}
+.sw-gauge{margin-top:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.sw-gh{font-weight:700;margin:0 0 6px}
+.sw-bar{height:14px;border:1.5px solid var(--ink-2);border-radius:7px;overflow:hidden;background:var(--paper)}
+.sw-bar span{display:block;height:100%;background:var(--f3)}
+.sw-bar.ok{border-color:var(--green)}
+.sw-gv{margin:6px 0 0}
+.sw-ok{color:var(--green)}
+/* Practice 2 */
+.sw-dt{display:flex;flex-direction:column;gap:8px;margin:8px 0 4px}
+.sw-dr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:1.05rem}
+.sw-dl{font-weight:600;min-width:6.5rem}
+.sw-dr .numin.short{width:8.5rem}
+.sw-dr .numin.short.sw-long{width:12rem;max-width:100%}
+/* task */
+.wd-in{display:flex;flex-direction:column;gap:10px;margin:10px 0}
+.wd-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.wd-lab{min-width:1.6rem;font-weight:700;font-size:1.1rem}
+.wd-a .chip.on{background:var(--acol);border-color:var(--acol);color:var(--sheet)}
+.wd-k .chip.on{background:var(--p-k);border-color:var(--p-k);color:var(--sheet)}
+.wd-a .chip.on .m,.wd-k .chip.on .m{color:inherit}
+.wd-gh{font-weight:700;margin:10px 0 4px}
+@media (max-width:820px){
+  .sw-ex,.sw-stbody{grid-template-columns:minmax(0,1fr)}
+  .sw-ex.sw-full .sw-side{display:block}
+}
+@media (max-width:560px){
+  canvas.plot.sw-pc{aspect-ratio:5/3}
+  canvas.plot.sw-hp{aspect-ratio:16/9}
+  .sw-brow{grid-template-columns:minmax(0,1fr)}
+  .sw-dl{min-width:0}
+}
