@@ -1,0 +1,180 @@
+/* SBI4U 15 Krebs Cycle: carbon wheel (S2), energy ledger (S3), ¹⁴C tracker, totals table, data station, practice, task. Tokens only. */
+/* radio groups (copied from SBI4U 08) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.55}
+
+/* stepper */
+.kc-stp{display:inline-flex;align-items:stretch;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.kc-stb{min-width:40px;min-height:40px;border:0;background:var(--sheet);color:var(--ink);font-size:1.2rem;font-weight:700;padding:0}
+.kc-stb:disabled{opacity:.4}
+.kc-stp output{min-width:2.6em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);padding:0 .4em;line-height:40px}
+
+/* hero equation: brown carbon dots over the carbon compounds; NADH teal, FADH₂ cerulean, ATP orange */
+.hero .hero-eq .kc-heq{font-size:.62em;white-space:normal;line-height:1.85}
+.kc-hc{position:relative;display:inline-block}
+.kc-hd{position:absolute;left:50%;top:-.3em;transform:translateX(-50%);display:flex;gap:.14em}
+.kc-hd b{display:block;width:.24em;height:.24em;border-radius:50%;background:var(--bio-carbon)}
+.kc-ha{color:var(--bio-atp);font-weight:700}
+.kc-hn{color:var(--bio-nadh);font-weight:700}
+.kc-hf{color:var(--bio-fadh);font-weight:700}
+.kc-hero{max-width:480px;margin:0 auto}
+
+/* SVG pieces */
+.kc-svg{display:block;width:100%;height:auto;overflow:visible}
+.kc-mat{fill:var(--ink-2);fill-opacity:.05;stroke:var(--ink-2);stroke-width:1.6}
+.kc-mem{fill:none;stroke:var(--ink-2);stroke-width:1;opacity:.55}
+.kc-hout{fill:none;stroke:var(--ink-2);stroke-width:1.6}
+.kc-hin{fill:var(--ink-2);fill-opacity:.06;stroke:var(--ink-2);stroke-width:1.6}
+.kc-sub{font:400 10.5px var(--font-ui);fill:var(--ink-2)}
+.kc-lab{font:700 10.5px var(--font-ui);fill:var(--ink)}
+.kc-bxt{font:700 11px var(--font-ui);fill:var(--ink)}
+.kc-nl{font:700 11.5px var(--font-ui);fill:var(--ink)}
+.kc-hl{font:700 11px var(--font-ui);fill:var(--ink)}
+.kc-stn{font:700 10.5px var(--font-ui);fill:var(--ink-2)}
+.kc-enz{font:italic 400 10px var(--font-ui);fill:var(--ink)}
+.kc-box{fill:var(--sheet);stroke:var(--rule);stroke-width:1.4}
+.kc-arr{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kc-arr.hi{stroke:var(--hi);stroke-width:3.5}
+.kc-ah{stroke-dasharray:none}
+.kc-ring{fill:none;stroke:var(--ink-2);stroke-width:2.4}
+.kc-ring.hi{stroke:var(--hi);stroke-width:4.5}
+.kc-ringh{fill:none;stroke:var(--ink-2);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.kc-ringh.hi{stroke:var(--hi);stroke-width:3.5}
+.kc-faint{opacity:.35;stroke-dasharray:4 4}
+.kc-gate{stroke:var(--ink);stroke-width:6;stroke-linecap:round}
+.kc-glow{fill:var(--hi-soft);stroke:var(--hi);stroke-width:3}
+.kc-mol{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:1.8}
+.kc-hmol{stroke-width:2.6}
+.kc-pill{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:1.5}
+.kc-empty{fill:none;stroke:var(--ink-2);stroke-width:1.2;stroke-dasharray:3 3;opacity:.7}
+.kc-c{fill:var(--bio-carbon)}
+.kc-cn{font:700 9px var(--font-ui);fill:var(--bio-carbon)}
+.kc-ring14{fill:none;stroke:var(--ink);stroke-width:1.4}
+.kc-cnt{font:700 11px var(--font-ui);fill:var(--ink)}
+.kc-co2{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.3}
+.kc-tk{font:700 9px var(--font-ui);fill:var(--ink)}
+.kc-cs{fill:var(--c);stroke:var(--c);stroke-width:1}
+.kc-cst{font:700 9.5px var(--font-ui);fill:var(--sheet)}
+.kc-co{fill:var(--sheet);stroke:var(--c);stroke-width:1.6}
+.kc-cot{font:700 9.5px var(--font-ui);fill:var(--c)}
+.kc-ctr{font:700 11px var(--font-ui);fill:var(--ink-2)}
+.kc-ctrb{font:700 26px var(--font-ui);fill:var(--ink)}
+.kc-ctrb2{font:700 15px var(--font-ui);fill:var(--ink)}
+.kc-nadt{fill:var(--sheet);stroke:var(--bio-nadh);stroke-width:1.8}
+.kc-tray{fill:var(--sheet);stroke:var(--rule);stroke-width:1.4;stroke-dasharray:4 3}
+.kc-zone{fill:var(--sheet);stroke:var(--rule);stroke-width:1.4}
+.kc-cyc{fill:none;stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:5 4}
+
+/* Explore panel */
+.kc-stage{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px}
+.kc-cap{font-size:.92rem;margin:8px 0 0}
+.kc-row{margin:0 0 12px}
+.kc-fuel{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;margin:0 0 4px}
+.kc-fuel .btn{min-height:40px}
+.kc-fa{display:inline-flex;flex-direction:column;gap:2px}
+.kc-player{margin:8px 0 4px}
+.kc-player .btn{min-height:40px}
+.kc-stat{min-height:2.7em;font-size:.92rem;margin:6px 0;padding:4px 8px;border-radius:6px}
+.kc-stat.bad{background:var(--bad-bg)}
+.kc-panel{margin:6px 0 10px}
+.kc-sel select{font:inherit;font-size:.92rem;min-height:40px;padding:4px 8px;border:1.5px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--ink);max-width:100%}
+.kc-tog{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0 10px}
+.kc-chk{display:inline-flex;align-items:center;gap:6px;min-height:32px;font-size:.92rem}
+.kc-chk input{width:20px;height:20px;margin:0}
+.kc-note{margin-top:6px}
+.kc-conc{margin-top:10px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.kc-ch{margin:0 0 6px;font-weight:700;font-size:.92rem}
+.kc-br{display:grid;grid-template-columns:9.5em minmax(0,1fr) 2.4em;align-items:center;gap:8px;font-size:.86rem;margin:3px 0}
+.kc-bt{position:relative;height:12px;border:1px solid var(--rule);border-radius:6px;background:var(--plot-grid)}
+.kc-bt i{display:block;height:100%;border-radius:5px;background:var(--bio-carbon)}
+.kc-bt b{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ink)}
+.kc-bv{text-align:right;font-variant-numeric:tabular-nums}
+
+/* S3 energy ledger */
+.kc-led{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.kc-led summary{cursor:pointer;font-weight:700;font-size:.92rem}
+.kc-lsd{font-weight:400;color:var(--ink-2);font-size:.85rem;text-decoration:underline}
+.kc-led[open] .kc-lsd{display:none}
+.kc-lh{font-weight:700;margin:8px 0 4px}
+.kc-lt{border-collapse:collapse;font-size:.85rem;margin:8px 0;min-width:300px}
+.kc-lt th,.kc-lt td{padding:4px 6px;border-bottom:1px solid var(--rule);text-align:right}
+.kc-lt th[scope="row"]{text-align:left}
+.kc-lt thead th{font-size:.78rem;vertical-align:bottom}
+.kc-gl{color:var(--ink-2);font-style:italic}
+.kc-tr{display:grid;grid-template-columns:4.2em minmax(0,1fr) auto;gap:8px;align-items:center;margin:6px 0;font-size:.9rem}
+.kc-tn{font-weight:700}
+.kc-tal{display:inline-flex;flex-wrap:wrap;gap:2px;min-width:0}
+.kc-tal i{display:block;width:7px;height:12px;border-radius:2px;background:var(--c)}
+.kc-tal b{font-size:.8rem;margin-left:3px}
+
+/* Part 3 */
+.kc-sta h3{margin-top:0}
+.kc-s1btns{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.kc-s1btns .btn{min-height:40px}
+.kc-done{opacity:1}
+.kc-trk{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:4px;max-width:640px}
+.kc-s1cap{margin:8px 0 4px;min-height:2.6em}
+.kc-6{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;max-width:360px;margin:4px 0}
+.kc-6 i{display:block;height:16px;border-radius:4px;box-sizing:border-box}
+.kc-6 i.org,.kc-k.org{background:var(--bio-carbon)}
+.kc-6 i.gone,.kc-k.gone{background:var(--sheet);border:2px solid var(--ink-2)}
+.kc-k{display:inline-block;width:.9em;height:.9em;border-radius:3px;vertical-align:-.1em;box-sizing:border-box}
+.kc-ask{margin-top:12px}
+.kc-unit{font-weight:700}
+.kc-nchips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 8px}
+.kc-nchip{touch-action:none;min-width:44px;min-height:40px;font-weight:700;font-variant-numeric:tabular-nums}
+.kc-nchip.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.kc-tt{border-collapse:collapse;font-size:.92rem;min-width:520px;margin-top:6px}
+.kc-tt th,.kc-tt td{padding:5px 6px;border-bottom:1px solid var(--rule);text-align:center}
+.kc-tt th[scope="row"],.kc-tt thead th:first-child,.kc-tt td:nth-child(2){text-align:left}
+.kc-tt tr.kc-tot th,.kc-tt tr.kc-tot td{border-top:2px solid var(--ink)}
+.kc-cell{min-width:64px;min-height:38px;border:1.5px dashed var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:6px;font-weight:700;font-size:.92rem;padding:2px 6px}
+.kc-cell.ready{border-color:var(--hi);border-style:solid}
+.kc-cell.ok{border:1.5px solid var(--green);background:var(--good-bg);opacity:1}
+.kc-q{color:var(--ink-2)}
+.kc-ghost{position:fixed;z-index:60;transform:translate(-50%,-50%);pointer-events:none;background:var(--hi);color:var(--hi-ink);border-radius:999px;padding:.25em .8em;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.kc-dt{border-collapse:collapse;font-size:.92rem;width:100%;margin:8px 0}
+.kc-dt th,.kc-dt td{padding:5px 8px;border-bottom:1px solid var(--rule);text-align:left}
+.kc-pr{margin:14px 0}
+.kc-tp{margin:0 0 6px}
+.kc-prc{margin:6px 0}
+.kc-prc .chip{text-align:left}
+
+/* Practice */
+.kc-tgp{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.kc-tgc label{font-weight:700}
+
+/* Task */
+.kc-conds{margin:6px 0 0;padding-left:1.4em}
+.kc-tin{display:grid;gap:10px;margin:10px 0}
+.kc-th{font-size:.95rem;margin:10px 0 4px}
+.kc-fsvg{display:block;height:36px;width:auto;max-width:100%}
+.kc-hex{fill:var(--sheet);stroke:var(--bio-carbon);stroke-width:1.6}
+.kc-tpv .kc-br{grid-template-columns:minmax(0,11em) minmax(0,1fr) 2.4em}
+
+@media (max-width:700px){
+  .kc-br{grid-template-columns:7.5em minmax(0,1fr) 2.2em}
+  .kc-tpv .kc-br{grid-template-columns:minmax(0,8em) minmax(0,1fr) 2.2em}
+}
+/* phones: the wheel is drawn at about 0.7 scale, so its text is set larger (sizes are in SVG units) */
+@media (max-width:600px){
+  .kc-stage{padding:2px;margin:0 -8px}
+  .kc-nl{font-size:13.5px}
+  .kc-sub,.kc-stn{font-size:12px}
+  .kc-bxt{font-size:12.5px}
+  .kc-enz{font-size:11.5px}
+  .kc-ctr{font-size:12.5px}
+  .kc-cst,.kc-cot{font-size:10.5px}
+  .kc-tk{font-size:10px}
+  .kc-hl{font-size:12.5px}
+  .kc-trk .kc-bxt{font-size:14px}
+  .kc-trk .kc-tk{font-size:10.5px}
+}

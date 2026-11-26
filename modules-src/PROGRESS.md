@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 146/295 live, 5 built, 23 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 151/295 live, 2 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 23/59 | 1 | 35 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 24/59 | 1 | 34 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 0 | 21 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 14/52 | 1 | 37 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 15/46 | 1 | 30 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 16/25 | 1 | 8 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 10/24 | 1 | 13 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 15/52 | 0 | 37 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 16/46 | 1 | 29 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 17/25 | 0 | 8 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 11/24 | 0 | 13 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -97,8 +97,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
 - ✓ 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
 - … 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
-- ◐ 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
-- … 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
+- ✓ 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
+- ◐ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
 - … 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
 - … 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
 - … 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
@@ -192,7 +192,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 13 Atomic History (`atomic-history`, topic, site ch2)
 - ✓ 14 Bohr Model (`bohr-model`, topic, site ch2)
 - … 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
-- ◐ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
+- ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
 - … 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - … 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
@@ -246,8 +246,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
 - ✓ 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
 - ✓ 14 Glycolysis (`glycolysis`, topic, site ch2)
-- … 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
-- ◐ 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
+- ◐ 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
+- ✓ 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - ✓ 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
 - … 18 Energy Transfer (`energy-transfer`, topic, site ch2)
 - … 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
@@ -297,7 +297,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
 - ✓ 15 Foodborne Illness & Food Safety (`food-safety`, topic, site ch3)
 - ✓ 16 Canadian Food Production (`canadian-food-production`, topic, site ch4)
-- ◐ 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
+- ✓ 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
 - … 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - … 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - … 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
@@ -319,7 +319,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - ✓ 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
 - ✓ 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
-- ◐ 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
+- ✓ 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - … 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - … 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
 - … 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)

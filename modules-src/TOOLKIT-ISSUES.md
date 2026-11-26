@@ -197,3 +197,6 @@ every module that uses the touched code, then ship them together).
 | E11 motifTracker, E7 statement forge, quotation/citation checks, spotProse | eng4u 11 | PLAN ERRORS: quotes changed to Globe wording ("porches of my ears", "protests too much", "mildew'd"); line numbers moved to Globe (e.g. 2.2.321, 3.2.268, 5.1.236–237, Macbeth 5.1.39, 5.1.56–58); all verified vs Perseus Globe |
 | V8 eNumber (exact values with e), V5 shared-axes slope tool, designBoxes with e; FIXED: try.mjs re-anchors "modules-src/…" screenshot paths (cause of the stray modules-src/modules-src/.artifacts/) | mcv4u 25 | builder-written Part 3 distractors |
 | S4 mitochondrial membraneSim, energy staircase, routeBuilder (with distractors; TOOLKIT: N5 can't leave out a tile), electronegLadder, O₂-electrode tap-a-segment | sbi4u 16 | OWNER REVIEW: CO-alarm law statement (`// VERIFY`) |
+| S2 Krebs wheel (multi-molecule stepper), S3 energy ledger, ¹⁴C tracker, tap/drag table fill, chip tagger, two-box number entry | sbi4u 15 | plan gap: no Canadian/STSE item (not invented) |
+| ratioDial, V8 lnExact (lnParse/specVal), N13 station stepper | mcv4u 26 | builder-written prediction setups, Part 3 intro |
+| — | sbi4u 15 | PLAN ERROR: ¹⁴C tracker lists 5 values for 6 stages (Turn 2 set to 2/4 on average) |
