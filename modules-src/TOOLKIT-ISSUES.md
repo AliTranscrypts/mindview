@@ -163,3 +163,4 @@ every module that uses the touched code, then ship them together).
 | F7 riskModel, arteryView, F3 labelLab stations, radioGroup (locked state) | hfa4u 11 | OWNER REVIEW (VERIFY): sodium-source shares 70/20/10 (model), model-day items, DASH/Mediterranean plates, APA refs; optional kitchen card skipped |
 | E10 Globe stageSimulator, line bank, E17 draftWorkspace + quotation inserter + then/now tags, lens-card sentence builder | eng4u 08 | Hamlet quoted from the Globe text; Globe line numbers in table R (unit standard). Unverified: 3.2.10–11 numbering; early-quarto readings D1/D2/D5. Kids Help Phone VERIFY |
 | D5 pascalExplorer, D5 gridPaths (label-the-grid), galtonBoard (for 21/D7) | mdm4u 13 | |
+| S2 electronFlow, S3 energyDrop (fire vs staircase), bondTug + carbon-score ladder, station keyframe stepper | sbi4u 11 | plan gap: no investigation or STSE item (course rule) — not invented |
