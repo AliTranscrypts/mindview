@@ -1,0 +1,159 @@
+/* MDM4U 16: hero, Law of large numbers lab (D6 simulator, spinner editor, many-runs dot plot), Design a simulation stations,
+   Odds and evidence ratio boxes, Spinner designer. Spinner colours: R --red, B --ev-a, G --green, Y --hi (letters always shown). */
+/* radioGroup (from MDM4U 13) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.42;cursor:not-allowed}
+
+/* colour swatches and letters */
+.te-swR{background:var(--red)}.te-swB{background:var(--ev-a)}.te-swG{background:var(--green)}.te-swY{background:var(--hi)}
+.rg .mdm-sw,.te-cc .mdm-sw,.sd-in .mdm-sw,.sd-tbl .mdm-sw{margin-right:.35em}
+
+/* hero */
+.hero-eq .te-arrow{display:inline-block;margin:0 .25em;font-family:var(--font-math)}
+.hero-eq .te-as{font-family:var(--font-math);white-space:nowrap}
+.te-hero{display:grid;gap:8px}
+.te-hero-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.te-coin{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;border:2.5px solid var(--ink);background:var(--hi);color:var(--hi-ink);font:700 1.3rem var(--font-math)}
+.te-coin.te-flip{animation:te-flip .22s linear infinite}
+@keyframes te-flip{50%{transform:scaleX(.12)}}
+.te-hcount{font:600 1.05rem var(--font-math);min-width:7.5em}
+.te-hero-top .btn{margin-left:auto}
+
+/* Explore layout */
+.te-top{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:flex-start;margin-bottom:6px}
+.te-cap.eq-cap{font-size:clamp(1.2rem,3vw,1.55rem)}
+.te-plab{margin:6px 0 2px;font-size:.85rem;font-weight:700;color:var(--ink-2)}
+.te-leg{margin:8px 0 6px}
+.te-leg i.te-dash{background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 12px)}
+.te-run{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 2px}
+.te-run .btn{min-width:56px}
+.te-run .rg-wrap{margin:0 6px 0 0}
+.te-note{margin:4px 0 8px}
+.te-lastlab{margin:8px 0 4px}
+.te-strip{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 8px}
+.te-o{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 4px;border:1.5px solid var(--rule);border-radius:5px;font:600 .9rem var(--font-math);background:var(--sheet);color:var(--ink-2)}
+.te-o.hit{border-color:var(--sel-bd);background:var(--hi-soft);color:var(--ink);font-weight:800;text-decoration:underline;text-underline-offset:2px}
+.te-o.te-oR{background:var(--red);color:var(--sheet);border-color:var(--red)}
+.te-o.te-oB{background:var(--ev-a);color:var(--sheet);border-color:var(--ev-a)}
+.te-o.te-oG{background:var(--green);color:var(--sheet);border-color:var(--green)}
+.te-o.te-oY{background:var(--hi);color:var(--hi-ink);border-color:var(--hi)}
+.te-o.hit.te-oR,.te-o.hit.te-oB,.te-o.hit.te-oG,.te-o.hit.te-oY{outline:2.5px solid var(--sel-bd);outline-offset:1px}
+.te-tally{margin:6px 0 0}
+.te-tlab{margin:0 0 4px;font-size:.85rem;font-weight:700}
+.te-tbars{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:3px;align-items:end;height:120px;border-bottom:1.5px solid var(--plot-axis)}
+.te-tcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;min-width:0}
+.te-tb{display:block;width:100%;max-width:26px;background:var(--ev-a-soft);border:1.5px solid var(--pen);border-bottom:0;border-radius:3px 3px 0 0}
+.te-tcol.ev .te-tb{background:var(--pen)}
+.te-tn{font:600 .68rem var(--font-ui);color:var(--ink-2);margin-bottom:2px}
+.te-ts{font:700 .8rem var(--font-math);margin-top:3px;position:relative;top:18px;height:0}
+.te-tally{padding-bottom:20px}
+.te-tcol.ev .te-ts{text-decoration:underline}
+
+/* controls */
+.te-seedrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;margin:0 0 8px}
+.te-seedrow .rg-wrap{margin:0}
+.te-check{display:inline-flex;align-items:center;gap:8px;font-weight:700;min-height:34px}
+.te-check input{width:20px;height:20px;accent-color:var(--pen)}
+.te-secnote{margin:-6px 0 8px}
+.te-counts{margin:8px 0 0;font-size:.92rem;line-height:1.7}
+.te-cc{white-space:nowrap;margin-right:.6em}
+
+/* spinner */
+.te-svg{display:block;width:100%;height:auto}
+.te-fR{fill:var(--red)}.te-fB{fill:var(--ev-a)}.te-fG{fill:var(--green)}.te-fY{fill:var(--hi)}
+.te-svg path[class^="te-f"]{stroke:var(--sheet);stroke-width:1.6}
+.te-svg text{font-family:var(--font-ui);font-weight:800;text-anchor:middle;dominant-baseline:central}
+.te-tR,.te-tB,.te-tG{fill:var(--sheet)}.te-tY{fill:var(--hi-ink)}
+.te-hid{fill:var(--rule);stroke:var(--ink-2);stroke-width:1.5}
+.te-qm{fill:var(--ink-2);font-size:72px}
+.te-rim{fill:none;stroke:var(--ink);stroke-width:2}
+.te-needle{transform-box:view-box;transform-origin:100px 100px;transition:transform .7s cubic-bezier(.2,.8,.25,1)}
+.te-needle line{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.te-needle line.te-nh{stroke:var(--sheet);stroke-width:8}
+.te-needle path{fill:var(--ink);stroke:var(--sheet);stroke-width:2;paint-order:stroke}
+.te-hub{fill:var(--ink);stroke:var(--sheet);stroke-width:2}
+@media (prefers-reduced-motion:reduce){.te-needle{transition:none}.te-coin.te-flip{animation:none}}
+.te-ed{position:relative;width:min(100%,280px);margin:6px auto 0}
+.te-sec{position:absolute;transform:translate(-50%,-50%);width:var(--bs,30px);height:var(--bs,30px);min-width:0;padding:0;border-radius:50%;border:2px solid var(--sheet);font:800 .82rem/1 var(--font-ui);box-shadow:0 0 0 1px var(--ink-2);cursor:pointer}
+.te-n15 .te-sec{--bs:28px}.te-n18 .te-sec{--bs:25px;font-size:.74rem}
+.te-sec.te-bR{background:var(--red);color:var(--sheet)}.te-sec.te-bB{background:var(--ev-a);color:var(--sheet)}
+.te-sec.te-bG{background:var(--green);color:var(--sheet)}.te-sec.te-bY{background:var(--hi);color:var(--hi-ink)}
+.te-sec:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.te-sec:hover{box-shadow:0 0 0 2px var(--ink)}
+.te-myed{width:min(100%,200px);margin:6px auto 8px}
+.te-estrow{display:grid;gap:4px;margin:6px 0}
+.te-estrow label{font-weight:700}
+.te-estrow .numin{max-width:9em}
+.te-myinfo{margin:6px 0 0;font-size:.92rem}
+
+/* readout: phones show 4 rows, "More" shows the rest */
+.te-more{display:none;margin-top:6px}
+@media (max-width:820px){
+  .te-read:not(.te-open) .te-xr{display:none}
+  .te-more{display:inline-flex}
+}
+
+/* steppers (from MDM4U 13's task) */
+.te-stp{display:flex;align-items:center;gap:8px;margin:0 0 6px;flex-wrap:wrap}
+.te-stl{min-width:8.2em;font-weight:700}
+.te-stb{min-width:42px;min-height:38px}
+.te-sto{min-width:1.6em;text-align:center;font:700 1.3rem var(--font-math)}
+
+/* Part 3: Design a simulation */
+.sm-tabs .rg-wrap{margin-bottom:12px}
+.sm-tick{color:var(--green);font-weight:800}
+.sm-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-bottom:1.5px solid var(--rule);padding-bottom:6px;margin-bottom:8px}
+.sm-num{font:700 .78rem var(--font-ui);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.sm-name{font-weight:800;font-size:1.1rem}
+.sm-task{font-weight:600}
+.sm-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:8px 0 10px}
+.sm-dev{display:grid;gap:6px;text-align:left;border:2px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:12px 14px;min-height:64px;font-size:.98rem;cursor:pointer}
+.sm-dev:hover:not(:disabled){border-color:var(--ink)}
+.sm-dev[aria-pressed="true"]{border-color:var(--ink)}
+.sm-dev.sm-yes{border-color:var(--green);background:var(--good-bg)}
+.sm-dev.sm-no{border-style:dashed;background:var(--bad-bg)}
+.sm-dev:disabled{cursor:default;opacity:1}
+.sm-p{font-weight:700;font-size:.9rem}
+.sm-runrow{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.sm-lab{margin:6px 0 4px;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.sm-digs{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:4px;max-width:520px}
+.sm-dg{display:flex;align-items:center;justify-content:center;gap:3px;border:1.5px solid var(--rule);border-radius:5px;padding:3px 0;font:600 .95rem var(--font-math);color:var(--ink-2)}
+.sm-dg small{font:700 .72rem var(--font-ui)}
+.sm-dg.sm-ok{border-color:var(--pen);background:var(--ev-a-soft);color:var(--ink)}
+.sm-res{margin:6px 0 10px}
+.sm-tbl{border-collapse:collapse;font-size:.92rem;min-width:300px}
+.sm-tbl th,.sm-tbl td{border-bottom:1px solid var(--rule);padding:5px 10px;text-align:left}
+.sm-tbl thead th{font-size:.8rem;color:var(--ink-2)}
+.sm-s3in{margin:4px 0 8px}
+.sm-dev3{margin:-2px 0 10px}
+.sm-done{margin:12px 0 0;padding:10px 12px;border-radius:8px;background:var(--good-bg)}
+
+/* Odds and evidence: ratio boxes */
+.od-ratio{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.od-ratio .numin.od-rin{width:5.5em;min-width:0}
+.od-colon{font:700 1.3rem var(--font-math)}
+.od-rl{font-weight:700}
+
+/* Spinner designer */
+.sd-in .te-stl{min-width:6.6em}
+.sd-tot{font-weight:700;margin:8px 0 0;color:var(--ink-2)}
+.sd-tot.sd-ok{color:var(--green)}
+.sd-spin{width:min(100%,240px);margin:0 auto 10px}
+.sd-tbl{border-collapse:collapse;font-size:.9rem;min-width:360px}
+.sd-tbl th,.sd-tbl td{border-bottom:1px solid var(--rule);padding:5px 8px;text-align:left}
+.sd-tbl thead th{font-size:.78rem;color:var(--ink-2)}
+.hero .hero-eq .te-heq{display:grid;gap:.18em;font:400 clamp(1.25rem,3.4vw,2rem)/1.25 var(--font-math)}
+.te-hl{display:block}
+@media (max-width:560px){
+  .te-runs{flex-wrap:nowrap;gap:4px}
+  .te-runs .btn{min-width:0;flex:1 1 auto;padding-left:.45em;padding-right:.45em}
+}
