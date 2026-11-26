@@ -6,7 +6,7 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 137/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 138/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
@@ -15,8 +15,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 15/39 | 0 | 24 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 13/52 | 0 | 39 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 14/46 | 0 | 32 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 14/25 | 0 | 11 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 9/24 | 1 | 14 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 14/25 | 1 | 10 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 10/24 | 0 | 14 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -296,9 +296,9 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)
 - ✓ 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
 - … 15 Foodborne Illness & Food Safety (`food-safety`, topic, site ch3)
-- … 16 Canadian Food Production (`canadian-food-production`, topic, site ch4)
+- ◐ 16 Canadian Food Production (`canadian-food-production`, topic, site ch4)
 - … 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
-- · 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
+- … 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - · 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
 - · 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - · 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
@@ -318,7 +318,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - ✓ 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - ✓ 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
-- ◐ 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
+- ✓ 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
 - … 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - … 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - … 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)

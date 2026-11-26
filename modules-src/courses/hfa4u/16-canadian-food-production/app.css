@@ -1,0 +1,192 @@
+/* HFA4U 16: hero (map + lunch tray), Farm-to-table Canada (F9 food system map, meal chips, meal card, readout, tomato bars),
+   Where did this meal come from? (claim cards, evaluation grid, seasonal wheel), Canadian plate task.
+   Lines: --ink (solid = Canada, dashed = imported); shock highlights orange --p-k; regions --ink-2 outlines with labels,
+   selected or represented regions --hi-soft. Plate sections: vegetables and fruits --leaf, whole grains --plate-grain,
+   protein foods --nu-protein, always with the section name. Emissions overlay brown --sys-emis. Red and green only in feedback. */
+/* radio groups (from HFA4U 12) */
+.cf-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.cf-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2);min-width:4.2rem;margin:0}
+.cf-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.cf-chipset{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.cf-chipset button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.92rem;min-height:34px;text-align:left;max-width:100%}
+.cf-chipset button:hover:not(:disabled){border-color:var(--pen)}
+.cf-chipset button[aria-checked="true"],.cf-chipset button[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.cf-chipset button:disabled{opacity:.8}
+.cf-chipset button.right{background:var(--good-bg);border-color:var(--green);color:var(--ink)}
+.cf-chipset button.wrong{background:var(--bad-bg);border-color:var(--red);color:var(--ink)}
+.cf-h4{margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cf-h5{margin:12px 0 6px;font-size:.95rem;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cf-stok{font-weight:700}
+
+/* hero */
+.cf-hero{width:100%}
+.cf-hsvg{display:block;width:100%;height:auto}
+.cf-tray{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.8}
+.cf-tray.mon{fill:var(--paper);stroke:var(--ink)}
+.cf-ht{fill:var(--ink);font:700 15px var(--font-ui)}
+.cf-hs{fill:var(--ink-2);font:400 13px var(--font-ui)}
+.cf-htag{fill:var(--ink);font:700 13px var(--font-ui)}
+.cf-hm{fill:var(--ink);font:700 19px var(--font-ui)}
+.cf-cap{font-size:1rem!important;font-weight:700}
+
+/* F9 map */
+.cf-map{display:block;width:100%;height:auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:8px}
+.cf-reg{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6;stroke-linejoin:round}
+.cf-reg.lit{fill:var(--hi-soft)}
+.cf-reg.sel{fill:var(--hi-soft);stroke:var(--ink);stroke-width:3.2}
+.cf-glow{fill:var(--hi);opacity:0;pointer-events:none;fill-opacity:.3}
+.cf-us{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:6 5}
+.cf-ulab{fill:var(--ink-2);font:400 13px var(--font-ui)}
+.cf-mlab{fill:var(--ink-2);font:700 14px var(--font-ui)}
+.cf-ln{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round}
+.cf-ln.imp{stroke-dasharray:8 6;stroke-linecap:butt}
+.cf-ln.shock{stroke:var(--p-k)}
+.cf-dot{fill:var(--ink)}
+.cf-dot.imp{fill:var(--sheet);stroke:var(--ink);stroke-width:2.2}
+.cf-dot.shock{fill:var(--p-k);stroke:var(--p-k)}
+.cf-alab{fill:var(--ink);font:700 13px var(--font-ui);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+.cf-tagt{fill:var(--ink-2)}
+.cf-tagt.up{fill:var(--p-k)}
+.cf-plate{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.cf-plate.in{fill:none;stroke:var(--rule);stroke-width:1.5}
+.cf-lk{display:inline-block;width:30px;height:10px;vertical-align:middle}
+.cf-key{margin:6px 0 0}
+.cf-ri{width:16px;height:16px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px}
+
+/* Explore layout */
+.cf-ctl{display:grid;gap:2px;margin:0 0 8px}
+.cf-ctl .cf-rgw{margin:0 0 6px}
+.cf-lab{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 22px;align-items:start}
+.cf-side .cf-sec{grid-template-columns:minmax(0,1fr);gap:2px;margin:0 0 6px}
+.cf-side .cf-sect{padding-top:0}
+.cf-side .cf-ing{font-size:.86rem;padding:.18em .55em;min-height:32px}
+#cf-card{margin-top:12px}
+.cf-main,.cf-side{min-width:0}
+.cf-side{border-left:1.5px solid var(--rule);padding-left:18px}
+.cf-mapw{position:relative}
+.cf-rbtns .cf-rgw{margin:0;display:block}
+.cf-rmap{display:block}
+.cf-rmap button{position:absolute;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.15em .6em;font-size:.82rem;font-weight:700;min-height:28px;white-space:nowrap}
+.cf-rmap button:hover{border-color:var(--pen)}
+.cf-rmap button[aria-checked="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.cf-note{margin-top:10px}
+.cf-rcard ul.cf-prods{margin:4px 0 8px;padding-left:1.1em}
+.cf-prods li{margin:0 0 3px}
+.cf-prods li.sm{font-weight:700}
+.cf-sm{display:inline-block;font-size:.75rem;font-weight:700;color:var(--ink);background:var(--hi-soft);border:1.5px solid var(--hi);border-radius:4px;padding:0 .4em;margin-left:2px}
+.cf-lead{margin:4px 0 0}
+.cf-empty{margin:4px 0 12px}
+
+/* meal chips */
+.cf-mc{margin:4px 0 6px}
+.cf-sec{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:4px 10px;align-items:start;margin:0 0 6px}
+.cf-sect{font-size:.82rem;font-weight:700;color:var(--ink-2);padding-top:6px}
+.cf-chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.cf-ing{border:1.5px solid var(--rule);border-left-width:5px;background:var(--sheet);color:var(--ink);border-radius:8px;padding:.22em .7em;font-size:.9rem;min-height:34px;text-align:left;max-width:100%}
+.cf-ing:hover{border-color:var(--pen)}
+.cf-sec.vf .cf-ing{border-left-color:var(--leaf)}
+.cf-sec.grain .cf-ing{border-left-color:var(--plate-grain)}
+.cf-sec.protein .cf-ing{border-left-color:var(--nu-protein)}
+.cf-sec.other .cf-ing{border-left-color:var(--ink-2)}
+.cf-ing[aria-pressed="true"]{background:var(--hi);color:var(--hi-ink);font-weight:700}
+.cf-ot{font-size:.8rem;color:var(--ink-2);font-weight:400}
+.cf-ing[aria-pressed="true"] .cf-ot{color:var(--hi-ink)}
+.cf-brow{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:4px 0 0}
+
+/* meal card */
+table.cf-meal{border-collapse:collapse;width:100%;font-size:.9rem;margin:0 0 12px}
+.cf-meal caption{text-align:left;font-weight:700;padding:0 0 4px}
+.cf-meal th,.cf-meal td{text-align:left;padding:5px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+.cf-meal thead th{font-size:.8rem;color:var(--ink-2)}
+.cf-meal tbody th{border-left:4px solid var(--ink-2)}
+.cf-meal tr.vf th{border-left-color:var(--leaf)}
+.cf-meal tr.grain th{border-left-color:var(--plate-grain)}
+.cf-meal tr.protein th{border-left-color:var(--nu-protein)}
+.cf-meal tr.hot td,.cf-meal tr.hot th{background:var(--hi-soft)}
+.cf-meal tr.hit td:last-child{color:var(--ink)}
+.cf-reg-t{display:block;font-size:.78rem;color:var(--ink-2)}
+
+/* tomato bars (P4) */
+.cf-tom{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px;margin:0 0 12px;background:var(--paper)}
+.cf-tb{margin:6px 0 8px}
+.cf-tbt{margin:0 0 3px;font-size:.88rem}
+.cf-tbar{display:flex;height:18px;align-items:stretch}
+.cf-tbar i{display:block;height:100%;background:var(--ink-2);border-radius:3px}
+.cf-tbar.split i.g{background:var(--sys-emis)}
+.cf-tbar.split i.t{background:repeating-linear-gradient(135deg,var(--ink-2) 0 3px,transparent 3px 6px);border:1.5px solid var(--ink-2)}
+.cf-tbl{margin:3px 0 0}
+.cf-sw{display:inline-block;width:.9em;height:.9em;border-radius:2px;vertical-align:-.1em;margin:0 3px 0 6px}
+.cf-sw.g{background:var(--sys-emis)}
+.cf-sw.t{background:repeating-linear-gradient(135deg,var(--ink-2) 0 2px,transparent 2px 4px);border:1px solid var(--ink-2)}
+
+/* Part 3 */
+.cf-st{margin-top:10px}
+table.cf-rules{border-collapse:collapse;font-size:.9rem;margin:0 0 12px;min-width:20rem}
+.cf-rules caption{text-align:left;font-weight:700;padding:0 0 4px}
+.cf-rules th,.cf-rules td{text-align:left;padding:5px 8px;border-bottom:1px solid var(--rule);vertical-align:top}
+.cf-rules tbody th{white-space:normal;min-width:11rem}
+.cf-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(19rem,1fr));gap:12px}
+.cf-pcard{border:1.5px solid var(--rule);border-radius:8px;padding:4px 14px 10px;background:var(--sheet);min-width:0}
+.cf-pcard p{margin:0 0 8px}
+.cf-pn{display:inline-grid;place-items:center;width:1.6em;height:1.6em;border-radius:50%;border:1.5px solid var(--ink-2);font-size:.8rem}
+.cf-claims button{font-size:.86rem;border-radius:8px}
+.cf-cq .fb{margin-top:8px}
+.cf-data{margin-top:8px}
+table.cf-dtab{border-collapse:collapse;font-size:.88rem;width:100%}
+.cf-dtab th,.cf-dtab td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--rule)}
+.cf-dtab tbody th{font-weight:400}
+.cf-sys{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 16px;margin:0 0 10px}
+.cf-sys p{margin:0;border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px;font-size:.9rem;max-width:none}
+.cf-sysk{display:block;font-weight:700}
+.cf-grid{display:grid;gap:10px}
+.cf-crit{border:1.5px solid var(--rule);border-radius:8px;padding:2px 12px 10px}
+.cf-crit .cf-rgw{margin:0 0 6px}
+.cf-evl{margin:6px 0 2px;font-size:.88rem}
+ul.cf-evs{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.cf-ev{border:1.5px dashed var(--ink-2);border-radius:8px;padding:3px 9px;font-size:.86rem;background:var(--paper)}
+.cf-keyidea{margin-top:12px}
+.cf-wl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.cf-wctl .cf-rgl{margin:4px 0 6px}
+.cf-wwin{margin:0 0 8px}
+.cf-wfig{margin:0}
+.cf-wsvg{display:block;width:100%;max-width:340px;height:auto;margin:0 auto}
+.cf-wout{fill:none;stroke:var(--ink-2);stroke-width:1.5}
+.cf-wtick{stroke:var(--ink-2);stroke-width:1.2}
+.cf-wm{fill:var(--ink);font:700 11px var(--font-ui)}
+.cf-wring{fill:none;stroke:var(--rule);stroke-width:1.2;stroke-dasharray:2 3}
+.cf-warc{fill:none;stroke:var(--leaf);stroke-width:9;stroke-linecap:butt}
+.cf-warc.k{stroke-width:5}
+.cf-warc.ext{stroke:var(--ink-2);stroke-width:5}
+.cf-warc.ext.st{stroke-dasharray:2 3}
+.cf-warc.ext.dn{stroke-dasharray:7 4}
+.cf-wnb{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.4}
+.cf-wn{fill:var(--ink);font:700 10px var(--font-ui)}
+.cf-wc{fill:var(--ink-2);font:700 13px var(--font-ui)}
+ul.cf-wleg{list-style:none;margin:6px 0;padding:0;font-size:.88rem}
+.cf-wleg li{margin:0 0 3px}
+.cf-wkey{margin:4px 0 0}
+
+/* task */
+.cf-tin .cf-sec{grid-template-columns:minmax(0,1fr)}
+.cf-tin .cf-sect{padding-top:0}
+.cf-tkmap{margin:0 0 10px}
+.cf-tkread{margin-top:6px}
+
+@media (max-width:820px){
+  .cf-lab{grid-template-columns:minmax(0,1fr)}
+  .cf-side{border-left:0;padding-left:0;border-top:1.5px solid var(--rule);padding-top:12px}
+  .cf-lab:not(.region) .cf-side{order:-1;border-top:0;padding-top:0;border-bottom:1.5px solid var(--rule);padding-bottom:8px}
+  .cf-wl{grid-template-columns:minmax(0,1fr)}
+}
+/* phones: the map becomes a region list; origin lines become the meal card's origin column */
+@media (max-width:640px){
+  .cf-mapw .cf-map,.cf-tkmap{display:none}
+  .cf-mapw:not(.region){display:none}
+  .cf-mapw:not(.region) + .cf-key{display:none}
+  .cf-rmap{display:grid;gap:6px}
+  .cf-rmap button{position:static;transform:none;justify-content:flex-start;font-size:.92rem;min-height:40px;padding:.3em .8em;border-radius:8px;width:100%}
+  .cf-sec{grid-template-columns:minmax(0,1fr)}
+  .cf-sect{padding-top:0}
+  .cf-sys{grid-template-columns:minmax(0,1fr)}
+  .cf-cards{grid-template-columns:minmax(0,1fr)}
+}
