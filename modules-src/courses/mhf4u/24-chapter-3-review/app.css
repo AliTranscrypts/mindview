@@ -1,0 +1,141 @@
+/* MHF4U 24: hero (glowing equation parts), per-topic tables, Connect (anatomy board, link bar, one page), mixed practice, task */
+.hero .hero-eq.sm{font-size:clamp(1.15rem,2.6vw,1.6rem);line-height:1.5}
+.hero .hero-eq .m{white-space:normal}
+.hero-eq .hx{border-radius:5px;padding:0 1px;transition:background-color .3s ease,box-shadow .3s ease}
+.hero-eq .hx.on{background:var(--hi);color:var(--hi-ink);box-shadow:0 0 0 3px var(--hi)}
+#hero-cap{font:400 .95rem/1.5 var(--font-ui);color:var(--ink-2);display:grid;gap:2px}
+#hero-cap .hc-l{display:block}
+#hero-cap .hc-l.cur{color:var(--ink);font-weight:600}
+#hero-cap .m{white-space:normal}
+/* toolkit workaround: the visually hidden "(done)" text in a step button escaped the scrolling step bar on phones */
+.steps .step{position:relative}
+/* per-topic tables */
+.tt-wrap{overflow-x:auto;margin:10px 0}
+.tt td:nth-child(2){white-space:nowrap}
+.tt td:last-child{white-space:nowrap}
+.tt tr.tt-rev td{border-bottom:0}
+.tt tr.tt-more td{padding-top:0;white-space:normal}
+.tt-key{padding:8px 12px;border-left:4px solid var(--hi);background:var(--hi-soft);border-radius:4px}
+.tt-key p{margin:0 0 .3em;max-width:none}
+.tt-key p:last-child{margin:0}
+
+/* Connect: N18 connection builder */
+.cv-chal{border:1.5px solid var(--rule);border-radius:8px;padding:14px 16px;background:var(--paper)}
+.cv-chal .q-prompt{font-weight:700}
+.cv-chal .how{margin:8px 0 0}
+.cv-chal .fb .m{white-space:nowrap}
+.cv-top{flex-wrap:wrap}
+.cv-tags{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.cv-top .dots{flex:0 0 auto}
+.cv-nav{border-top:1px solid var(--rule);padding-top:10px}
+.an-row{position:relative;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:14px 22px;align-items:start;margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.an-eq{min-width:0;position:relative;z-index:2}
+.an-form{margin:0 0 2px}
+.an-eqline{font:400 1.3rem/1.5 var(--font-math);margin:0 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 0}
+.an-eqline > .m{margin-right:.25em}
+.an-eqline .frac{vertical-align:middle}
+.an-eqline .fn,.an-eqline .fd{padding:2px 0}
+.an-part{position:relative;z-index:2;margin:1px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:6px;padding:0 .3em;font:inherit;line-height:1.35;min-height:32px;min-width:30px;cursor:pointer}
+.an-part:not(:disabled):hover{border-color:var(--pen)}
+.an-part:disabled{cursor:default;opacity:1}
+.an:not(.live) .an-part:not(.linked){border-color:transparent}
+.an-part.linked{border-color:var(--hi);box-shadow:inset 0 -3px 0 var(--hi)}
+.an-part.on{background:var(--hi);border-color:var(--ink);color:var(--hi-ink);box-shadow:none}
+.an-divl{font-size:1.05rem}
+.an-dl{font:700 .85rem var(--font-ui)}
+.an-gr{min-width:0}
+.an-gt{margin:0 0 4px;font:700 .85rem var(--font-ui);color:var(--ink-2)}
+.an-pw{position:relative}
+.an-ft{position:absolute;transform:translate(-50%,-50%);z-index:2}
+.an-ft.pt{width:28px;height:28px;border-radius:50%;border:0;background:transparent;padding:0}
+.an-ft.pt:not(:disabled){cursor:pointer}
+.an-ft.pt:not(:disabled):hover{box-shadow:0 0 0 2px var(--pen) inset}
+.an-ft.pt.on{box-shadow:0 0 0 3px var(--ink) inset}
+.an-ft.pill{border:1.5px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:999px;padding:0 .6em;font:400 1rem/1.2 var(--font-math);white-space:nowrap;min-height:28px}
+.an-ft.pill:not(:disabled){cursor:pointer}
+.an-ft.pill:not(:disabled):hover{border-color:var(--pen)}
+.an-ft.pill:disabled{opacity:1}
+.an-ft.pill.linked{border:2.5px solid var(--hi)}
+.an-ft.pill.on{background:var(--hi);border-color:var(--ink);color:var(--hi-ink)}
+.an-ft:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.an-links{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.an-ln{stroke:var(--hi);stroke-width:2.5;stroke-linecap:round;stroke-opacity:.7}
+.an-ln.cur{stroke-width:5;stroke-opacity:1}
+.an-end{fill:var(--ink)}
+.an-bar{position:sticky;bottom:0;z-index:5;margin-top:16px;background:var(--sheet);border:2px solid var(--ink);border-radius:10px;padding:8px 12px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px}
+.an-bar[hidden]{display:none}
+.an-sel{margin:0;flex:1 1 300px;display:grid;gap:2px;font-size:.95rem;max-width:none}
+.an-bar .q-actions{margin:0}
+.an-one{margin-top:18px}
+.an-one h3{margin:0 0 6px}
+.an-onegrid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:start;margin-top:8px}
+.an-flist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.an-flist li{display:flex;gap:10px;align-items:flex-start}
+.an-flist .tag{display:inline-block;margin:2px 0 0}
+.an-bd{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;border:2px solid var(--ink);font:700 .8rem var(--font-ui);background:var(--sheet)}
+@media (max-width:700px){
+  .an-row{grid-template-columns:minmax(0,1fr)}
+  .an-pw canvas.plot{aspect-ratio:1/1}
+  .an-eqline{font-size:1.18rem}
+  .an-onegrid{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Mixed practice */
+@media (max-width:560px){
+  .mx-q .q-head{flex-wrap:wrap}
+  .mx-q .q-head .tags{order:-1;flex:1 0 100%;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
+}
+.mx-q .q-prompt{font-weight:700}
+.mx-q .numrow{flex-wrap:wrap}
+.mx-pair{gap:10px 22px}
+.mx-cell{display:inline-flex;align-items:center;gap:8px}
+.mx-lab .m{font-size:1.05rem}
+.mx-unit{font-size:.95rem;color:var(--ink-2)}
+.mx-ib{margin-top:6px}
+.mx-ib canvas.plot.nl{aspect-ratio:auto;height:104px;min-height:0}
+.mx-yours{margin:12px 0 0}
+.mx-yours .m{white-space:normal}
+.mx-sum{margin-top:6px}
+
+/* Task: build a rational function to spec (N26 factor tiles, from MHF4U 21) */
+.pt-conds{margin:8px 0 12px;padding-left:1.4em;display:grid;gap:4px}
+.pt-how{margin:4px 0 8px}
+.tk-h{margin:0 0 6px}
+.tk-eq{font-size:clamp(1.1rem,2.8vw,1.45rem)}
+.tk-eq .m{white-space:normal}
+.tk-sl{margin:12px 0 4px;font:700 .85rem var(--font-ui);color:var(--ink-2)}
+#tk-read{margin-top:10px}
+.tk-sc{border-collapse:collapse;font:400 1rem var(--font-math)}
+.tk-sc th{font:700 .8rem var(--font-ui);color:var(--ink-2);text-align:left;padding:4px 8px;white-space:nowrap;background:var(--paper)}
+.tk-sc td{border:1px solid var(--rule);padding:4px 8px;text-align:center;white-space:nowrap}
+.tk-sc td.neg{background:var(--hi-soft);font-weight:700}
+.tk-sc td.cv{font:700 .8rem var(--font-ui)}
+.ft-wrap{display:grid;gap:4px}
+.ft-a{display:flex;align-items:center;gap:8px}
+.ft-a .ft-const{flex-direction:row;gap:8px}
+.ft-times{display:none}
+.ft{position:relative;min-width:0;display:grid;gap:6px;padding:4px 0}
+.ft-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-height:48px;position:relative;z-index:1}
+.ft-lab{flex:1 0 100%;font:700 .75rem var(--font-ui);color:var(--ink-2)}
+.ft-row[data-row="bot"] .ft-lab{order:9}
+.ft-bar{border-top:2.5px solid var(--ink);margin:2px 0}
+.ft-const{display:inline-flex;flex-direction:column;align-items:center;gap:1px}
+.ft-cl{font:400 1.15rem var(--font-math);color:var(--ink)}
+.ft-cb{display:inline-flex;align-items:center;gap:3px}
+.ft-cv{display:inline-block;min-width:1.6em;text-align:center;font:600 1.2rem var(--font-math)}
+.ft-tile{display:inline-flex;align-items:center;gap:2px;border:2px solid var(--rule);border-radius:10px;background:var(--sheet);padding:3px;min-height:42px;position:relative}
+.ft-tile.match{background:var(--hi-soft);border-color:var(--hi)}
+.ft-f{font:400 1.18rem var(--font-math);padding:0 4px;white-space:nowrap}
+.ft-b{min-width:30px;min-height:30px;border:1.5px solid var(--rule);border-radius:7px;background:var(--sheet);color:var(--ink);font-weight:700;font-size:1rem;padding:0}
+.ft-b:disabled{opacity:.4}
+.ft-x{min-width:26px;min-height:26px;border:0;border-radius:50%;background:transparent;color:var(--ink-2);font-size:1rem;padding:0}
+.ft-x:hover{color:var(--red)}
+.ft-add{padding:.35em .7em}
+.ft-links{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.ft-links line{stroke:var(--ink-2);stroke-width:1.5}
+@media (max-width:560px){
+  .ft-f{font-size:1.08rem;padding:0 2px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-eq .hx{transition:none}
+}
