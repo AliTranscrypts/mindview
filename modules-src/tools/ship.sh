@@ -15,6 +15,11 @@ cd "$REPO"
 SUBJECT="$1"; shift
 [ -n "$SUBJECT" ] && [ $# -gt 0 ] || { echo "usage: ship.sh \"subject\" course:NN ..."; exit 2; }
 
+echo "→ Rebuilding with the current toolkit and running the full check …"
+for t in "$@"; do
+  (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}" | grep -E "PASS|FAIL") \
+    || { echo "❌ check failed for $t — not shipping"; exit 1; }
+done
 for t in "$@"; do
   c="${t%%:*}"; n="${t##*:}"
   st=$(python3 -c "import json,sys;d=json.load(open('modules-src/courses/$c/course.json'));print(next(m.get('status','todo') for m in d['modules'] if m['nn']=='$n'))")
