@@ -1,0 +1,15 @@
+{
+  "name": "mindview-modules-src",
+  "private": true,
+  "type": "module",
+  "description": "Build tooling for MindView interactive learning modules (never deployed).",
+  "scripts": {
+    "assemble": "node build/assemble.mjs",
+    "hub": "node build/hub.mjs",
+    "check": "node build/check.mjs"
+  },
+  "devDependencies": {
+    "playwright": "*",
+    "terser": "^5.51.4"
+  }
+}

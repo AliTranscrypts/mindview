@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 0/295 live, 0 built, 2 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 0/295 live, 2 built, 0 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 0/50 | 0 | 50 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 0/50 | 2 | 48 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -20,8 +20,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
-- … 01 Power Functions (`power-functions`, topic, site ch1) — toolkit pilot
-- … 02 Stating Intervals (`stating-intervals`, topic, site ch1) — toolkit pilot
+- ◐ 01 Power Functions (`power-functions`, topic, site ch1)
+- ◐ 02 Stating Intervals (`stating-intervals`, topic, site ch1)
 - · 03 Characteristics of Polynomial Functions (`characteristics-of-polynomial-functions`, topic, site ch1)
 - · 04 Finite Differences (`finite-differences`, topic, site ch1)
 - · 05 Graphing from Factored Form (`graphing-from-factored-form`, topic, site ch1)

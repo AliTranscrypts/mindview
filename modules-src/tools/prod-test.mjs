@@ -62,7 +62,12 @@ async function visit(ctx, url, what, check) {
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e.message || e)));
-  page.on('console', (m) => { if (m.type() === 'error' && !/favicon/i.test(m.text())) errors.push('console: ' + m.text()); });
+  page.on('console', (m) => {
+    if (m.type() !== 'error') return;
+    const src = (m.location() && m.location().url) || '';
+    if (/favicon/i.test(m.text() + src)) return; // the site has no favicon (pre-existing 404)
+    errors.push('console: ' + m.text() + (src ? ` [${src}]` : ''));
+  });
   try {
     const resp = await page.goto(url, { waitUntil: 'load', timeout: 45000 });
     const status = resp ? resp.status() : 0;
@@ -83,7 +88,7 @@ async function visit(ctx, url, what, check) {
 
 async function main() {
   loadEnv();
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ channel: 'chrome' }).catch(() => chromium.launch());
   const all = courses();
 
   console.log(`Base: ${base}`);

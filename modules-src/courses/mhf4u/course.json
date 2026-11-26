@@ -52,8 +52,8 @@
    "size": "S",
    "part3": "symmetry",
    "prereqs": [],
-   "status": "building",
-   "note": "toolkit pilot"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "02",
@@ -67,8 +67,8 @@
    "prereqs": [
     "01"
    ],
-   "status": "building",
-   "note": "toolkit pilot"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "03",

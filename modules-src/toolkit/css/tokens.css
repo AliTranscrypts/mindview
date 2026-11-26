@@ -1,0 +1,36 @@
+/* Colour tokens, fonts. Light values first; dark values twice (device setting, and forced by the theme switch). */
+:root{
+  --paper:#EDF3EA;--grid:#DAE6D5;--sheet:#FCFDFB;--ink:#1E2A57;--ink-2:#4D5A80;--rule:#C6D4C2;
+  --pen:#2343C4;--acol:#7A3DB8;--f3:#0E7C7B;
+  --p-k:#A84C05;--p-d:#0B7372;--p-c:#B0286F;--p-b:#6B5A1E;--p-t:#00648A;
+  --red:#B5392D;--green:#1D7646;--good-bg:#E3F1E7;--bad-bg:#F8E7E4;--info-bg:#EAEFFA;
+  --hi:#F4DA4E;--hi-soft:rgba(244,218,78,.38);--hi-ink:#1E2A57;
+  --plot-grid:#E4ECE1;--plot-axis:#1E2A57;
+  --font-ui:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-math:"STIX Two Text","Cambria Math",Cambria,"Times New Roman",serif;
+  --mv-top:0px;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#131B18;--grid:#1B2621;--sheet:#1A2420;--ink:#E5ECE4;--ink-2:#A8B7AC;--rule:#33443C;
+    --pen:#93AEFF;--acol:#C9A8FF;--f3:#5FD0CD;
+    --p-k:#FF9F5A;--p-d:#5FD0CD;--p-c:#F49AC8;--p-b:#D8D08F;--p-t:#7FD3F5;
+    --red:#FF8B7B;--green:#6BD39B;--good-bg:#1C3326;--bad-bg:#3B2421;--info-bg:#1E2840;
+    --hi:#E6CF48;--hi-soft:rgba(230,207,72,.14);--hi-ink:#17201B;
+    --plot-grid:#243029;--plot-axis:#E5ECE4;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131B18;--grid:#1B2621;--sheet:#1A2420;--ink:#E5ECE4;--ink-2:#A8B7AC;--rule:#33443C;
+  --pen:#93AEFF;--acol:#C9A8FF;--f3:#5FD0CD;
+  --p-k:#FF9F5A;--p-d:#5FD0CD;--p-c:#F49AC8;--p-b:#D8D08F;--p-t:#7FD3F5;
+  --red:#FF8B7B;--green:#6BD39B;--good-bg:#1C3326;--bad-bg:#3B2421;--info-bg:#1E2840;
+  --hi:#E6CF48;--hi-soft:rgba(230,207,72,.14);--hi-ink:#17201B;
+  --plot-grid:#243029;--plot-axis:#E5ECE4;
+  color-scheme:dark;
+}
