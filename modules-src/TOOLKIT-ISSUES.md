@@ -27,6 +27,8 @@ every module that uses the touched code, then ship them together).
 
 - Gaps (25): sorter has no "Use these values" box; numeric activity tolerance scales with the answer, has no π-box, and allows one box per item (25 built N4 piBoxes).
 
+- Gaps (27): every failed challenge check counts as a try, even for invalid/setup states (no way to return "not counted"); no "challenge opened" event (modules use focus/tap or set-up buttons).
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -54,3 +56,5 @@ every module that uses the touched code, then ship them together).
 | exactQ22, N11 signChart.rational | mhf4u 22 | |
 | G8 circleDraw, N19 wheel, N19 beltPath, unitChain, N4 piBoxes, radioGroup | mhf4u 25 | |
 | N23 overlayGauge, N12 unitCircle (copy), G8 circleDraw (arcAt/txt/eqLabel), radio chips, piS/exS/parsePi | mhf4u 27 | |
+| (note) two N12 unit circles: 26 = special-angle table, CAST, reference arc/triangle, tappable dots; 27 = two arms, rotation arc / mirror line, coordinate segments | 26, 27 | merge into one toolkit N12 when promoting |
+| G8 circleDraw, G13 valueBars, N9 angleSlider, radioGroup, valuePalette | mhf4u 28 | |

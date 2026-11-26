@@ -1,0 +1,96 @@
+/* MHF4U 28: compound angle visualiser, π/12 clock, double-angle lab, exact-value entries, task inputs */
+.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.seg button:disabled{opacity:.6}
+.cx-hcap{font-size:1.05rem !important;line-height:1.5}
+.cx-hcap .m{white-space:normal}
+.cx-sl{margin:10px 0 4px}
+.cx-sl label{font-weight:700}
+.cx-sl output{font:600 1.35rem var(--font-math)}
+.cx-slrow{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;gap:10px;align-items:center}
+.cx-slrow input[type=range]{width:100%;min-height:32px}
+.cx-pm{min-width:40px;min-height:40px;font-size:1.3rem;line-height:1;padding:0}
+.cx-cap{margin:8px 0 0;min-height:1.5em}
+.cx-cap .m{white-space:normal}
+.cx-tg{margin-top:10px}
+.cx-pin{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:10px}
+.cx-form{margin:6px 0 0;font-size:1.15rem}
+.cx-form p{margin:4px 0}
+.cx-form .m{white-space:normal}
+.cx-u1,.cx-u2{display:inline-block;padding-bottom:1px}
+.cx-u1{border-bottom:3px solid var(--pen)}
+.cx-u2{border-bottom:3px solid var(--f3)}
+.cx-pc{font-size:.75em;vertical-align:super;margin-left:1px}
+.cx-u1 .cx-pc{color:var(--pen)}
+.cx-u2 .cx-pc{color:var(--f3)}
+.cx-hl{background:var(--hi);color:var(--hi-ink);border-radius:3px;padding:0 3px}
+.cx-dbar{display:block;height:10px;margin-top:6px;border:1.5px solid var(--rule);border-radius:3px;background:var(--paper);max-width:220px}
+.cx-dbar b{display:block;height:100%;background:var(--ink-2)}
+.cx-found summary,.p3-view{margin-bottom:4px}
+.pg-read .read dd{line-height:1.6}
+.read dd .m{font-size:1.08em}
+/* Part 3: the π/12 clock */
+.p3-view{margin-bottom:14px}
+.ck-dots{position:static}
+.ck-dot{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:0;background:transparent;padding:0;z-index:2;cursor:pointer}
+.ck-dot:focus-visible{outline:3px solid var(--pen);outline-offset:0}
+.ck-start{font-weight:700}
+.ck-h{font-size:1.1rem;margin:0 0 6px}
+.ck-step{border-top:1px solid var(--rule);margin-top:12px;padding-top:10px}
+.ck-step h4{margin:0 0 6px;font-size:1rem}
+.ck-lab{margin:8px 0 4px;font-weight:700}
+.ck-tiles{display:flex;flex-wrap:wrap;gap:6px}
+.ck-tile{min-width:52px;min-height:40px}
+.ck-opts .opt{min-height:44px}
+.ck-form{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0 10px}
+.ck-op{font:400 1.3rem var(--font-math);padding:0 2px}
+.ck-slot{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:70px;min-height:44px;border:2px dashed var(--ink-2);background:var(--sheet);border-radius:8px;padding:.25em .45em}
+.ck-slot[aria-pressed="true"]{border-style:solid;border-color:var(--ink);background:var(--hi-soft)}
+.ck-slot.good{border-style:solid;border-color:var(--green);background:var(--good-bg)}
+.ck-slot.bad{border-style:solid;border-color:var(--red);background:var(--bad-bg)}
+.ck-slot:disabled{color:inherit;opacity:1}
+.ck-sf{font-size:.95rem}
+.ck-sv{font:400 1.1rem var(--font-math);min-height:1.4em}
+.ck-pal{display:grid;grid-template-columns:repeat(9,minmax(44px,1fr));gap:6px;max-width:560px}
+.ck-pt{min-height:44px;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;font:400 1.05rem var(--font-math);padding:.1em .2em}
+.ck-pt:hover:not(:disabled){border-color:var(--pen)}
+.ck-pt[aria-pressed="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.ck-done{margin:0 0 12px;padding-left:1.2em}
+.ck-done li{margin:4px 0}
+.ck-done .m{white-space:normal}
+table.ck-grid td,table.ck-grid th{padding:6px 8px}
+table.ck-grid th[scope=row]{font-family:var(--font-math);background:var(--paper)}
+.sg-pair{display:inline-flex;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden;vertical-align:middle}
+.sg-pair button{min-width:40px;min-height:40px;border:0;background:var(--sheet);font:700 1.05rem var(--font-math);padding:0 .45em}
+.sg-pair button + button{border-left:1.5px solid var(--ink)}
+.sg-pair button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.sg-pair button:disabled{color:inherit}
+.sg-pair button[aria-pressed="true"]:disabled{color:var(--sheet)}
+.sg-pair.bad{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+/* Practice 2 */
+.en-in{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:8px 0 4px;font-size:1.15rem}
+.en-box{width:3.5em}
+.en-frac{display:inline-flex;flex-direction:column;align-items:center}
+.en-top{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;justify-content:center}
+.en-bar{display:block;width:100%;height:2px;background:var(--ink);margin:4px 0}
+.en-pal{margin-top:6px;width:100%}
+/* task */
+.tk-in{display:grid;gap:10px;margin:8px 0 14px}
+.tk-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.tk-row .seg-wrap{margin-top:0}
+.tk-name{font:400 1.5rem var(--font-math);min-width:2.4em}
+.tk-lab{font-weight:700}
+#tk-xp{width:3.4rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:.3em .4em;font:400 1.2rem var(--font-math);text-align:center;min-height:40px}
+.tk-frac{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.tk-frac input,.tk-frac select,#tk-key{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:.3em .4em;font:400 1.15rem var(--font-math);min-height:38px}
+.tk-frac input,.tk-frac select{width:4.4rem;text-align:center}
+#tk-key{max-width:100%}
+.tk-line{display:block;width:100%;height:2px;background:var(--ink)}
+.tk-pi{font:400 1.5rem var(--font-math)}
+.tk-keyv{font-size:1.15rem}
+.tk-note{margin:-4px 0 0}
+.tk-live{font-size:1.05rem;min-height:2.6em}
+.tk-live .m{white-space:normal}
+@media (max-width:820px){
+  .ck-pal{grid-template-columns:repeat(3,minmax(44px,1fr));max-width:260px}
+  .en-pal{max-width:260px}
+}
