@@ -1,0 +1,97 @@
+/* MCV4U 14: hero ladder colours and panels, V5 ladder panels (Explore), slope speedometer, Part 3 stations, V11 sign chart of f″,
+   V8 ladder boxes, task steppers and mini ladder */
+.hd-heq{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.15em .1em;font-size:.78em;line-height:1.35}
+.hd-ht{white-space:nowrap}
+.hd-ht .m{font-size:1em}
+.hd-k0{color:var(--pen)}
+.hd-k1{color:var(--f3)}
+.hd-k2{color:var(--f4)}
+.hd-arr{color:var(--ink-2);margin:0 .12em;font-style:normal}
+.hd-hero canvas.plot.hd-h0{aspect-ratio:16/7}
+.hd-hero canvas.plot.hd-h1{aspect-ratio:16/5}
+.hd-hero canvas + canvas{margin-top:6px}
+
+.hd-ex{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.hd-main,.hd-side{min-width:0}
+.hd-eq{min-height:1.6em}
+.hd-pan{margin-top:6px}
+.hd-pan[hidden],.hd-speed[hidden],.hd-pager[hidden]{display:none}
+.hd-pcap{margin:4px 0 2px;font-size:.95rem;display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;min-height:1.6em}
+.hd-pcap .m{white-space:nowrap}
+.hd-sw{display:inline-block;width:18px;height:4px;border-radius:2px;flex:0 0 auto}
+.hd-deg{font:600 .78rem var(--font-ui);color:var(--ink-2);border:1px solid var(--rule);border-radius:999px;padding:0 .55em}
+canvas.plot.hd-top{aspect-ratio:16/7}
+canvas.plot.hd-low{aspect-ratio:16/4.2}
+.hd-pager{display:flex;align-items:center;gap:8px;margin:6px 0 0;flex-wrap:wrap}
+.hd-pager .tiny{flex:1 1 100%;order:3}
+.hd-speed{display:flex;gap:18px;align-items:center;margin:4px 0 8px}
+.hd-dialbox{flex:0 0 auto;width:180px}
+.hd-dial{display:block;width:180px;height:auto}
+.hd-face{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.hd-tick{stroke:var(--ink-2);stroke-width:1.5}
+.hd-tl{fill:var(--ink-2);font:600 11px var(--font-ui);text-anchor:middle;dominant-baseline:middle}
+.hd-needle{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.hd-hub{fill:var(--ink)}
+.hd-turn{fill:none;stroke:var(--f4);stroke-width:3;stroke-linecap:round}
+.hd-turnh{fill:var(--f4)}
+.hd-sread{flex:1 1 160px;min-width:0}
+.hd-sread .read{margin:0}
+.hd-trend{min-height:1.3em;margin:6px 0 0;font-weight:600;color:var(--ink)}
+.hd-fns{margin-bottom:6px}
+.hd-fns .chip{font-size:.86rem}
+.hd-fns .chip .m{font-size:1.05em}
+.hd-form{margin:4px 0 2px}
+.hd-bsl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;margin:2px 0 4px}
+.hd-bsl output{color:var(--ink)}
+#hd-rungs,#hd-mode{margin-top:6px}
+.hd-how{margin:8px 0 10px}
+.hd-sl output{color:var(--ink)}
+.hd-skip{min-height:1.2em;margin:0 0 6px;color:var(--ink-2);font-weight:600}
+
+.p3-st h3{margin-top:0}
+.p3-st:first-child{margin-top:0;padding-top:0;border-top:0}
+canvas.plot.hd-s1f{aspect-ratio:16/7}
+canvas.plot.hd-s1d{aspect-ratio:16/8}
+.hd-s1{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:12px 28px;align-items:start}
+.hd-s1p,.hd-s1c{min-width:0}
+.hd-s1c .how{margin-top:0}
+.hd-s1h{margin:16px 0 4px;font-size:1rem}
+.hd-s1b[hidden],#hd-iv[hidden]{display:none}
+.hd-cards{margin:6px 0 10px}
+.hd-cards .chip .m{font-size:1.05em}
+.hd-key{margin:6px 0 0}
+.hd-c2 .read{margin-top:10px}
+#hd-alg{margin-top:12px}
+.hd-sc-wrap{overflow-x:auto;position:relative}
+table.hd-sct th,table.hd-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.hd-sct tbody th{text-align:left;font-weight:600}
+table.hd-sct th .m,table.hd-sct td .m{white-space:nowrap}
+.hd-sc-k{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.hd-sct .hd-sc-u{font:600 .78rem var(--font-ui);color:var(--ink-2)}
+table.hd-sct .hd-sc-ar span[aria-hidden]{font-size:1.25rem;line-height:1;display:block}
+.hd-sc-w{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.hd-sct .hd-sc-d td{font-weight:700}
+
+.hd-bxs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px}
+.hd-bxs label{display:flex;align-items:center;gap:8px;font:400 1.1rem var(--font-math)}
+
+.hd-tstep{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.hd-tstep label{min-width:6.5rem}
+.hd-tlab{font-size:1.2rem}
+.hd-tstep .btn{min-width:40px;font-size:1.1rem}
+.hd-tstep .numin.short{width:5rem}
+.hd-tpan canvas.plot.hd-ttop{aspect-ratio:16/8}
+.hd-tpan canvas.plot.hd-tlow{aspect-ratio:16/6}
+.hd-tpan .plot-wrap + .plot-wrap{margin-top:6px}
+
+@media (max-width:820px){
+  .hd-ex,.hd-s1{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  canvas.plot.hd-top{aspect-ratio:auto;height:190px}
+  canvas.plot.hd-low{aspect-ratio:auto;height:130px}
+  .hd-speed{gap:10px;align-items:flex-start}
+  .hd-dialbox,.hd-dial{width:118px}
+  .hd-sread .read dd{font-size:.95rem}
+  .hd-bsl{grid-template-columns:minmax(0,1fr)}
+}

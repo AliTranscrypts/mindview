@@ -139,3 +139,5 @@ every module that uses the touched code, then ship them together).
 | gearTrain, pipeLines, V7 layerPeeler, V8 coefBoxes (extended) | mcv4u 12 | plan: TC2 −8 state unreachable on −4…4 slider |
 | F6 needsCurve, drinkShelf, cafeteriaMenu, realityStations, radioGroup (function options) | hfa4u 08 | OWNER REVIEW (VERIFY): fibre/protein DRIs, vitamin D + fibre per card, map distances/prices, Station 3–4 scenarios/times, Lin family background, chart values, Minaker 2016 citation |
 | D4 arrangementTiles (identical tiles), D5 gridPaths | mdm4u 08 | |
+| E7 thesisForge, E17 draftWorkspace, formXray | eng4u 06 | texts being corrected to Wikisource (Leacock 1919; Bacon 1884 Works); 298 KB |
+| V5 derivativePanels (6-panel ladder), ladderFn, slopeDial, V11 signChart (f″), V8 ladderBoxes | mcv4u 14 | plan: slider ranges widened (b=−6, a=12, b=−12 unreachable) |
