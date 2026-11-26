@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 133/295 live, 3 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 136/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 20/59 | 2 | 37 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 22/59 | 0 | 37 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 15/39 | 0 | 24 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 13/52 | 0 | 39 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 13/46 | 0 | 33 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 13/25 | 1 | 11 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 13/46 | 1 | 32 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 14/25 | 0 | 11 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 9/24 | 0 | 15 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -93,8 +93,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
 - ✓ 19 Related Rates (`related-rates`, topic, site ch3)
 - ✓ 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
-- ◐ 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
-- ◐ 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
+- ✓ 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
+- ✓ 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
 - … 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
 - … 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
 - … 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
@@ -245,11 +245,11 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 11 Redox Reactions (`redox-reactions`, topic, site ch2)
 - ✓ 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
 - ✓ 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
-- … 14 Glycolysis (`glycolysis`, topic, site ch2)
+- ◐ 14 Glycolysis (`glycolysis`, topic, site ch2)
 - … 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
 - … 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - … 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
-- · 18 Energy Transfer (`energy-transfer`, topic, site ch2)
+- … 18 Energy Transfer (`energy-transfer`, topic, site ch2)
 - · 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
 - · 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - · 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)
@@ -294,7 +294,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
 - ✓ 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
 - ✓ 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)
-- ◐ 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
+- ✓ 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
 - … 15 Foodborne Illness & Food Safety (`food-safety`, topic, site ch3)
 - … 16 Canadian Food Production (`canadian-food-production`, topic, site ch4)
 - … 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
