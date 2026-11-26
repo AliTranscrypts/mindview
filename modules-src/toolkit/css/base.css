@@ -122,7 +122,7 @@ canvas.plot.nl{aspect-ratio:6/1;min-height:92px}
 .qn{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--sheet);display:grid;place-items:center;font-weight:700;font-size:.9rem;margin-top:1px}
 .q-prompt{flex:1;font-weight:700;min-width:0}
 .q-prompt .m{white-space:normal}
-.opt .m{white-space:normal}
+.opt .m,.fb .m,.hints .m,.refresh .m,.read .m{white-space:normal}
 .tag{flex:0 0 auto;font-size:.8rem;font-weight:700;border:1.5px solid var(--ink-2);color:var(--ink-2);border-radius:999px;padding:.1em .7em;margin-top:2px}
 .tags{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
 .opts{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}

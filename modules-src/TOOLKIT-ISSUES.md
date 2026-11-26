@@ -16,6 +16,8 @@ every module that uses the touched code, then ship them together).
 - FIXED 1.0.3: the assembler scrambled any key named `ok`, even text (12). Now only boolean `ok` marks answers.
 - Review modules: score bands, key ideas, the Connect summary line and mixed-practice "modules to revisit" needed app.js overrides in 10 — generalise in the toolkit before 16/24/30/36/45/50 if they hit the same gaps.
 
+- FIXED 1.0.4: long math in feedback, hints, refreshers and readouts didn't wrap on phones (11).
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -28,3 +30,4 @@ every module that uses the touched code, then ship them together).
 | N27 linkedPanels, N8 tapPoint, N14 secantTable, exactDec | mhf4u 09 | |
 | topicTable, N8 tap marker, graph-option MC, tappable equation parts, fraction box, mixed-kind activity | mhf4u 10 | review module |
 | N28 rootHunter (with its own synthetic-division step-through), N4 factorTray, groupingTiles, cubeVolumeModel | mhf4u 12 | |
+| N22 syntheticDivision, G13 valueBar, N4 boxSet | mhf4u 11 | |

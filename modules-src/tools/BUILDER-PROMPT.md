@@ -2,6 +2,8 @@
 
 The orchestrator fills in `{course}`, `{nn}`, `{slug}`, `{title}`, `{plan}` and sends this to one
 general-purpose agent per module. One agent builds exactly one module.
+Review modules are scheduled only after every topic module of their chapter is built (they link to
+the built modules' sections and reuse their components).
 
 ---
 
@@ -38,7 +40,8 @@ checklist reacts.
   never refer to options by letter/position, and in your try scripts pick options by their text.
 - Known toolkit quirks (work around locally): `MV.player` called twice on one host adds duplicate
   listeners (use a fresh host); matching (N6) appends "Try another partner." to mismatch feedback;
-  `Plot.line` ignores alpha; y tick labels clip when the y-axis is off-screen.
+  `Plot.line` ignores alpha; y tick labels clip when the y-axis is off-screen. Don't name a text field `ok` (only a boolean
+  `ok` marks answers).
 - Canadian spelling, true minus signs, upright function names, colours only from tokens.
 
 **Reply (under 150 words):** PASS/FAIL of the final check run, output file size, counts (goals, warm-up,
