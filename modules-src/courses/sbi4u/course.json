@@ -159,7 +159,8 @@
     "08",
     "01"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "10",
@@ -184,7 +185,8 @@
    "part3": "reaction-types",
    "prereqs": [
     "10"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "12",
@@ -198,7 +200,8 @@
    "prereqs": [
     "11",
     "10"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "13",

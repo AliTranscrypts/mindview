@@ -143,3 +143,4 @@ every module that uses the touched code, then ship them together).
 | V5 derivativePanels (6-panel ladder), ladderFn, slopeDial, V11 signChart (f″), V8 ladderBoxes | mcv4u 14 | plan: slider ranges widened (b=−6, a=12, b=−12 unreachable) |
 | (update) | eng4u 06 | VERIFIED: Leacock matches Wikisource 1919 scan; Bacon "Of Studies" copied verbatim from Works vol. 1 (1884) p. 55 |
 | F2 dayPlanner, systemsWheel, switchBtn, designStations | hfa4u 09 | plan arithmetic: Gurdeep plan = 8 µg vit D (not 11); Harold plan $6.50 / near-miss $9.60 (not $7.60/$10.40). OWNER REVIEW (VERIFY): 12 of 30 pool foods + values, Ruth start day, systems-wheel text, station data/costs, kitchen-card recipes, APA refs, care note |
+| rubiscoSim, S3 carbonBars, S2 strategy steppers, climateBoard, dialSVG | sbi4u 09 | builder-chosen climate-board key (plan gave none); C4-rice text VERIFY |
