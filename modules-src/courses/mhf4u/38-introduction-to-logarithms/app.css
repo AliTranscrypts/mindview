@@ -1,0 +1,72 @@
+/* MHF4U 38: power ladder, ladder-to-graph, missing-piece boxes, task preview. Colour tokens only. */
+.lg-hcap span{display:block;font:400 1.05rem/1.4 var(--font-ui)}
+.lg-hcap span + span{margin-top:6px}
+.lg-hcap .m{font-size:1.08em}
+.lg-heads{display:grid;grid-template-columns:38% 24% 38%;max-width:520px;font-size:.82rem;color:var(--ink-2);margin:2px 0 4px;line-height:1.25;align-items:end}
+.lg-heads .m{font-size:1.05em}
+.lg-hl{grid-column:1;text-align:right;padding-right:8px}
+.lg-hr{grid-column:3;padding-left:8px}
+.lg-wrap{max-width:520px}
+.lg-cv:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.lg-strip{max-width:520px;margin-top:10px}
+.lg-strip canvas.plot.nl{min-height:80px;aspect-ratio:7/1}
+.lg-kbd{max-width:520px;margin:8px 0 0}
+.lg-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.lg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.lg-lab .m{color:var(--ink)}
+.lg-in{width:7.5rem}
+.lg-b40{min-height:40px}
+.lg-pm{min-width:40px;padding-left:.6em;padding-right:.6em;font-size:1.1rem}
+.lg-rg{display:inline-flex;flex-wrap:wrap}
+.lg-rg.seg{border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.lg-rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:38px}
+.lg-rg.seg button + button{border-left:1.5px solid var(--ink)}
+.lg-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.lg-rg.chips{gap:6px}
+.lg-rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.22em .8em;font-size:1rem;min-height:34px}
+.lg-rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.lg-rg button:disabled{opacity:.55}
+.lg-bchips .m{color:var(--p-b);font-size:1.05rem}
+.lg-bchips button[aria-checked="true"] .m{color:var(--hi-ink)}
+.lg-busy{opacity:.6;pointer-events:none}
+.lg-dec{margin:6px 0 12px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.lg-dec p{margin:0 0 8px}
+.lg-tc3{margin-top:14px;padding:10px 12px;border:1.5px dashed var(--ink-2);border-radius:8px}
+.lg-tc3 p{margin:0 0 8px}
+.lg-th{font-size:.85rem;font-weight:700;color:var(--ink-2);margin:12px 0 4px}
+.lg-lib{margin:8px 0 0}
+.lg-found ul{margin:10px 0 0;padding-left:1.2em}
+.lg-found li{margin:5px 0}
+.lg-found summary{font-weight:700;cursor:pointer}
+.pg-read .tbl-wrap{max-height:300px;overflow:auto}
+/* Part 3 */
+.lg3{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.lg3-graph,.lg3-read{min-width:0}
+.lg3-read .lg-th{margin-top:0}
+.lg3-steps{margin-top:18px}
+.lg3-panel{border-top:1.5px solid var(--rule);padding-top:12px}
+.lg-end{font-weight:700;margin:4px 0 10px}
+.lg-trail .tbl-wrap{max-height:260px;overflow:auto}
+.lg-pts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:8px 0 12px;font-size:1.25rem}
+.lg-pt{white-space:nowrap;display:inline-flex;align-items:center;gap:2px}
+.lg-din{width:5.2rem;padding:.3em .5em;font-size:1.1rem}
+.lg-din.good{border-color:var(--green);background:var(--good-bg)}
+.lg-din.bad{border-color:var(--red);background:var(--bad-bg)}
+/* Practice 2 */
+.lg-pair{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+/* task */
+.lg-tin{align-items:flex-end}
+.lg-tin label,.lg-xfr{display:flex;flex-direction:column;gap:4px;font-size:.9rem;font-weight:700;color:var(--ink-2)}
+.lg-sel{min-height:40px;font:400 1.1rem var(--font-math);border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.3em .5em}
+.lg-frin{display:inline-flex;flex-direction:column;align-items:center;gap:3px}
+.lg-frin .numin{width:5.5rem;text-align:center}
+.lg-bar{display:block;width:100%;height:2px;background:var(--ink)}
+.lg-tpv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.lg-tcap{min-height:1.5em;margin:8px 0 0;font-size:1.05rem}
+.lg-cant{font-size:.88em}
+@media (max-width:720px){
+  .lg3{grid-template-columns:minmax(0,1fr)}
+  .lg-tpv{grid-template-columns:minmax(0,1fr)}
+  .lg-heads{font-size:.74rem}
+  .lg-rg.seg button{padding:.4em .7em}
+}
