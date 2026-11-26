@@ -6,7 +6,7 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 136/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 137/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
@@ -14,9 +14,9 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 22/59 | 0 | 37 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 15/39 | 0 | 24 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 13/52 | 0 | 39 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 13/46 | 1 | 32 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 14/46 | 0 | 32 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 14/25 | 0 | 11 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 9/24 | 0 | 15 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 9/24 | 1 | 14 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -245,7 +245,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 11 Redox Reactions (`redox-reactions`, topic, site ch2)
 - ✓ 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
 - ✓ 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
-- ◐ 14 Glycolysis (`glycolysis`, topic, site ch2)
+- ✓ 14 Glycolysis (`glycolysis`, topic, site ch2)
 - … 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
 - … 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - … 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
@@ -318,10 +318,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - ✓ 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - ✓ 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
-- … 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
+- ◐ 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
 - … 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - … 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
-- · 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
+- … 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)
 - · 14 Alice Munro & the Canadian Short Story (`munro-short-story`, topic, site ch4)
 - · 15 Indigenous Voices & Thomas King (`indigenous-voices`, topic, site ch4)
 - · 16 Atwood and Speculative Canada (`atwood-speculative`, topic, site ch4)
