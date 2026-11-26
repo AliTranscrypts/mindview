@@ -213,7 +213,8 @@
     "05",
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",
@@ -229,7 +230,8 @@
     "03",
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "14",

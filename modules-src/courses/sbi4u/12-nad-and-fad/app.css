@@ -1,0 +1,224 @@
+/* SBI4U 12: electron shuttle (taxi scene, mini chain, garage, S2 load stepper, Mode B parking lot and S3 ledger), molecule
+   zoom, pool gauges, yeast data station, carrier accounting, "Fill the carriers" task, hero.
+   Roles: NAD⁺/NADH (and NADP⁺/NADPH) --bio-nadh, FAD/FADH₂ --bio-fadh, e⁻ --bio-e, H⁺ --bio-h, substrates --bio-carbon,
+   O₂ --bio-o2, ATP value --bio-atp (readout only), complexes and enzymes --ink-2. */
+
+/* hero equation */
+.hero .hero-eq .nf-heq{display:flex;flex-direction:column;gap:.35em;line-height:1.1;font-size:.74em}
+.nf-heq1,.nf-heq2{display:flex;flex-wrap:wrap;align-items:flex-start;gap:0 .3em}
+.nf-heq2{font-size:.74em;color:var(--ink-2)}
+.nf-sp{display:inline-flex;flex-direction:column;align-items:center;font-weight:700}
+.nf-sp small{font:600 .42em var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-top:.1em}
+.nf-heq2 .nf-sp small{font-size:.5em}
+.nf-sp small{font-size:max(.42em,10px)}
+.nf-heq2 .nf-sp small{font-size:max(.5em,10px)}
+.nf-nad{color:var(--bio-nadh)}
+.nf-fad{color:var(--bio-fadh)}
+.nf-hp{color:var(--bio-h);font-weight:700}
+.nf-hero{width:100%;aspect-ratio:520 / 352}
+.nf-hero svg{width:100%;height:100%;display:block}
+
+/* radio groups (from SBI4U 09 / 06 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.55}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px;white-space:nowrap}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.6}
+
+/* switch */
+.nf-swb{display:inline-flex;align-items:center;gap:8px;text-align:left;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.4em .7em;min-height:44px;font-size:.9rem;font-weight:700}
+.nf-swk{flex:0 0 30px;height:16px;border-radius:8px;border:1.5px solid var(--ink-2);position:relative;background:var(--paper)}
+.nf-swk::after{content:"";position:absolute;top:1.5px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--ink-2);transition:left .15s}
+.nf-swb[aria-checked="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.nf-swb[aria-checked="true"] .nf-swk{background:var(--ink);border-color:var(--ink)}
+.nf-swb[aria-checked="true"] .nf-swk::after{left:15px;background:var(--sheet)}
+.nf-swb:disabled{opacity:.5}
+.nf-swst{font-size:.75rem;color:var(--ink-2)}
+.nf-sws{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin:4px 0}
+@media (prefers-reduced-motion:reduce){ .nf-swk::after{transition:none} }
+
+/* explore layout */
+.nf-top{margin-bottom:14px}
+.nf-pg [hidden],.nf-aha[hidden],.nf-stp[hidden]{display:none!important}
+.nf-pg .pg-ctrl > div{display:grid;gap:12px}
+.nf-stage{position:relative;width:100%;aspect-ratio:520 / 352;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);overflow:hidden}
+.nf-stage svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.nf-legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;color:var(--ink-2)}
+.nf-legend > span{display:inline-flex;align-items:center;gap:5px}
+.nf-lk{display:inline-block;width:18px;height:10px;border-radius:3px;border:2px solid}
+.nf-lk-n{border-color:var(--bio-nadh);background:linear-gradient(90deg,transparent 50%,var(--bio-nadh) 50%)}
+.nf-lk-f{border-color:var(--bio-fadh);background:linear-gradient(90deg,transparent 50%,var(--bio-fadh) 50%)}
+.nf-ld{display:inline-block;width:11px;height:11px;border-radius:50%}
+.nf-ld-e{background:var(--bio-e)}.nf-ld-h{background:var(--bio-h)}.nf-ld-s{background:var(--bio-carbon);border-radius:4px;width:16px}
+.nf-cap{margin:8px 0 0;font-size:.92rem;min-height:2.8em}
+.nf-acts{margin-top:0}
+.nf-sep{display:inline-block;width:1px;align-self:stretch;background:var(--rule);margin:0 2px}
+.nf-unl{margin:-4px 0 0}
+.nf-note{margin:12px 0 0}
+.nf-aha{margin:10px 0 0;padding:8px 12px;border-left:4px solid var(--ink);background:var(--paper);border-radius:6px;font-size:.92rem}
+.nf-atp{color:var(--bio-atp);font-weight:800}
+.nf-read > div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:7px 0}
+.nf-read dd{margin:0;text-align:right;font-weight:700}
+.nf-morebtn{display:none;margin-top:6px}
+.nf-tc2{margin-top:14px;padding:10px 12px;border:1.5px dashed var(--rule);border-radius:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.nf-tc2 label{font-size:.9rem}
+.nf-tc2 .numin{width:6.5em}
+.nf-sl{margin:0}
+.nf-sl input{width:100%;accent-color:var(--ink)}
+.nf-fadn{margin:-6px 0 0}
+.nf-why{margin:0;color:var(--red);font-weight:600;min-height:1.2em}
+
+/* garage of loaded carriers + S2 step list */
+.nf-garage{margin-top:2px}
+.nf-gh{margin:0 0 6px;font-size:.92rem}
+.nf-gl{display:flex;flex-wrap:wrap;gap:6px}
+.nf-gcar{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.25em .6em;min-height:34px;font-size:.88rem;font-weight:700}
+.nf-gcar[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);box-shadow:0 0 0 1px var(--ink)}
+.nf-gcar:disabled{opacity:.6}
+.nf-mini{display:inline-block;width:18px;height:10px;border-radius:3px;border:2px solid}
+.nf-gc-nadh .nf-mini{border-color:var(--bio-nadh);background:var(--bio-nadh)}
+.nf-gc-fadh .nf-mini{border-color:var(--bio-fadh);background:var(--bio-fadh)}
+.nf-stp{margin-top:14px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper)}
+.nf-stph{margin:0 0 6px;font-size:.92rem}
+.nf-stl{margin:0 0 8px;padding-left:1.4em;font-size:.9rem}
+.nf-stl li{padding:2px 4px;border-radius:4px}
+.nf-stl li.on{background:var(--hi-soft);font-weight:700}
+
+/* Mode B: parking lot and ledger */
+.nf-lot{display:grid;gap:12px;padding:12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.nf-loth{margin:0 0 6px;font-size:.9rem;font-weight:700}
+.nf-cars{display:grid;grid-template-columns:repeat(10,26px);gap:12px 8px}
+.nf-car{position:relative;display:block;width:26px;height:12px;margin-top:7px;border:2px solid currentColor;border-radius:4px}
+.nf-car::before{content:"";position:absolute;left:5px;top:-8px;width:12px;height:6px;border:2px solid currentColor;border-bottom:0;border-radius:4px 4px 0 0}
+.nf-car.on{background:currentColor}
+.nf-car.on::before{background:currentColor}
+.nf-cn{color:var(--bio-nadh)}
+.nf-cf{color:var(--bio-fadh)}
+.nf-strip{margin:8px 0 0;font-size:.92rem}
+.nf-ebar{margin-top:8px}
+.nf-eb{display:flex;align-items:center;gap:10px;font-size:.9rem}
+.nf-ebl{font-weight:700;flex:0 0 auto}
+.nf-ebt{position:relative;flex:1 1 auto;height:14px;border:1.5px solid var(--rule);border-radius:4px;background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 1px),var(--rule) calc(10% - 1px) 10%);overflow:hidden}
+.nf-ebt i{position:absolute;left:0;top:0;bottom:0;background:var(--bio-e)}
+.nf-ebn{margin:4px 0 0}
+
+/* scene SVG */
+.nf-bg{fill:var(--sheet)}
+.nf-t{font:500 13px var(--font-ui);fill:var(--ink)}
+.nf-ts{font:500 12px var(--font-ui);fill:var(--ink-2)}
+.nf-tb{font:700 13px var(--font-ui);fill:var(--ink)}
+.nf-b{font-weight:700}
+.nf-halo{paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round}
+.nf-tokt{font:800 10.5px var(--font-ui);fill:var(--sheet)}
+.nf-e{fill:var(--bio-e)}
+.nf-h{fill:var(--bio-h)}
+.nf-hat{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6}
+.nf-hatt{font:700 11.5px var(--font-ui);fill:var(--ink)}
+.nf-sub{fill:var(--bio-carbon)}
+.nf-subt{font:700 12.5px var(--font-ui);fill:var(--sheet)}
+.nf-enz{fill:color-mix(in srgb,var(--ink-2) 13%,var(--sheet));stroke:var(--ink-2);stroke-width:2}
+.nf-tray{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:5 4}
+.nf-mem{fill:color-mix(in srgb,var(--ink-2) 14%,var(--sheet));stroke:var(--ink-2);stroke-width:1}
+.nf-cx{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.nf-door{fill:var(--ink-2)}
+.nf-cxs{font:600 10.5px var(--font-ui);fill:var(--ink-2)}
+.nf-cxl{font:800 15px var(--font-ui);fill:var(--ink)}
+.nf-mob{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.6}
+.nf-o2{fill:var(--bio-o2)}
+.nf-pump0{fill:none;stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:4 4;opacity:.7}
+.nf-pump0.nf-ah{stroke-dasharray:none}
+.nf-pump{fill:none;stroke:var(--bio-h);stroke-width:2.8}
+.nf-txb{stroke-width:2.4;stroke-linejoin:round}
+.nf-wheel{fill:var(--ink-2)}
+.nf-txt{font:800 12px var(--font-ui)}
+.nf-bad{font:800 13px var(--font-ui);fill:var(--red)}
+
+/* Part 3: molecules */
+.nf-mols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:10px 0}
+.nf-mol{border:1.5px solid var(--rule);border-radius:8px;padding:10px;background:var(--sheet);min-width:0}
+.nf-mol h4{margin:0 0 4px;font-size:1rem}
+.nf-mstage{width:100%;max-width:240px;margin:0 auto;aspect-ratio:200 / 300}
+.nf-mstage svg{width:100%;height:100%;display:block}
+.nf-vit{margin:6px 0 0;font-size:.88rem}
+.nf-mcap{margin:6px 0 0;min-height:1.2em}
+.nf-ring{stroke-width:3;stroke-linejoin:round}
+.nf-ring-n{stroke:var(--bio-nadh);fill:color-mix(in srgb,var(--bio-nadh) 14%,var(--sheet))}
+.nf-ring-f{stroke:var(--bio-fadh);fill:color-mix(in srgb,var(--bio-fadh) 14%,var(--sheet))}
+.nf-sug,.nf-ad{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.8;stroke-linejoin:round}
+.nf-p{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.8}
+.nf-xp{fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:4 3}
+.nf-bond{stroke:var(--ink-2);stroke-width:2;fill:none}
+.nf-div{stroke:var(--rule);stroke-width:1.2;stroke-dasharray:3 4}
+.nf-mt{font:700 12px var(--font-ui);fill:var(--ink)}
+.nf-ms{font:500 11.5px var(--font-ui);fill:var(--ink-2)}
+
+/* Part 3: gauges */
+.nf-gauges{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:10px 0}
+.nf-gauge{border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;background:var(--sheet)}
+.nf-gauge h4{margin:0 0 8px;font-size:1rem}
+.nf-gdir{font-size:.85rem;font-weight:700;color:var(--ink)}
+.nf-gt{position:relative;height:22px;border:2px solid var(--bio-nadh);border-radius:6px;background:var(--sheet);margin:16px 0 0}
+.nf-gfill{position:absolute;left:0;top:0;bottom:0;background:var(--bio-nadh)}
+.nf-gmark{position:absolute;top:-14px;width:0;height:0;margin-left:-6px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid var(--ink)}
+.nf-gv{margin:6px 0 2px;font-size:.9rem}
+.nf-evs{display:flex;flex-wrap:wrap;gap:8px}
+.nf-gcap{margin:10px 0 0;font-size:.92rem;min-height:2.6em}
+
+/* Part 3: data station */
+.nf-s3leg{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:6px 0 10px}
+.nf-key{display:inline-block;width:26px;height:0;border-top:3px solid var(--pen);vertical-align:middle}
+.nf-key-2{border-top:3px dashed var(--ink)}
+.nf-tread{margin:4px 0 10px}
+
+/* carrier accounting */
+.nf-boxes{display:flex;flex-wrap:wrap;gap:8px 18px}
+.nf-boxes .numin{width:6em}
+
+/* task */
+.nf-trule{font-size:.92rem;padding:8px 12px;background:var(--paper);border-radius:6px}
+.nf-tin{display:grid;gap:12px;margin:10px 0}
+.nf-tpvw h4{margin:0 0 6px}
+.nf-tpvw svg{width:100%;height:auto;display:block;aspect-ratio:520 / 250}
+.nf-ttot{margin:8px 0 4px;font-size:1rem}
+.nf-tleg{margin:0}
+.nf-tk{display:inline-block;width:14px;height:9px;border-radius:2px;vertical-align:middle;margin-right:3px}
+.nf-tk-n{background:var(--bio-nadh)}.nf-tk-f{background:var(--bio-fadh)}
+.nf-tbg{fill:var(--sheet);stroke:var(--rule);stroke-width:1.5}
+.nf-tcol{fill:var(--paper);stroke:var(--rule);stroke-width:1}
+.nf-tarr{fill:none;stroke:var(--ink-2);stroke-width:1.8}
+.nf-tglu{fill:var(--bio-carbon)}
+.nf-tpyr{fill:color-mix(in srgb,var(--bio-carbon) 55%,var(--sheet));stroke:var(--bio-carbon);stroke-width:1.5}
+.nf-tace{fill:var(--bio-carbon)}
+.nf-tmiss{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:3 2}
+.nf-tturn{fill:none;stroke:var(--ink);stroke-width:2}
+.nf-tturn-h{fill:none;stroke:var(--ink);stroke-width:2}
+.nf-tn{fill:var(--bio-nadh)}
+.nf-tf{fill:var(--bio-fadh)}
+.nf-badt{fill:var(--red);font-weight:700}
+
+/* phone */
+@media (max-width:820px){
+  .nf-mols{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+}
+@media (max-width:600px){
+  .nf-subs .rg-wrap{flex-wrap:nowrap;min-width:0}
+  .nf-subs .rg.chips{flex-wrap:nowrap;overflow-x:auto;min-width:0;padding-bottom:4px}
+  .nf-subs{min-width:0;max-width:100%;overflow:hidden}
+  .nf-cars{grid-template-columns:repeat(5,26px)}
+  .nf-morebtn{display:inline-block}
+  .nf-read.nf-col .nf-more{display:none}
+  .nf-gauges{grid-template-columns:minmax(0,1fr)}
+  .nf-eb{flex-wrap:wrap}
+  .nf-ebt{flex-basis:100%}
+  .nf-stage .nf-ts,.nf-hero .nf-ts{font-size:15px}
+  .nf-stage .nf-tb,.nf-hero .nf-tb{font-size:16px}
+  .nf-stage .nf-cxs,.nf-hero .nf-cxs{font-size:12.5px}
+  .nf-stage .nf-subt,.nf-hero .nf-subt{font-size:13.5px}
+  .nf-stage .nf-txt,.nf-hero .nf-txt{font-size:13px}
+}

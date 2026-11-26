@@ -185,8 +185,7 @@
    "prereqs": [
     "10"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "12",
@@ -201,7 +200,8 @@
     "11",
     "10"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "13",
