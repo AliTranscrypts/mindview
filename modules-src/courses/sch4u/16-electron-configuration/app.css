@@ -1,0 +1,160 @@
+/* SCH4U 16: hero ladder, Orbital filler (mini table, energy ladder, aufbau diagonal), Part 3 tables, builder, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* block tints (s cerulean, p teal, d orange, f brown) */
+.b-s{--bt:var(--p-t)} .b-p{--bt:var(--p-d)} .b-d{--bt:var(--p-k)} .b-f{--bt:var(--p-b)}
+
+/* hero */
+.ec-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ec-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.ec-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:1.6em;flex:1 1 14rem}
+
+/* Orbital filler: top row, table box */
+.ec-top{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 12px}
+.ec-tbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:10px 12px 4px}
+.ec-thead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;margin-bottom:6px}
+.ec-legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.84rem;color:var(--ink-2)}
+.ec-legend span{display:inline-flex;align-items:center;gap:5px}
+.ec-sw{display:inline-block;width:14px;height:14px;border-radius:3px;border:1px solid var(--rule);background:color-mix(in srgb,var(--bt) 30%,var(--sheet))}
+.ec-wide[hidden]{display:none}
+.ec-ptab,.ec-bscroll{overflow-x:auto;overscroll-behavior-x:contain;padding-bottom:4px}
+.ec-zsl{margin-top:6px}
+
+/* C11 mini periodic table */
+.ec-pt{display:flex;flex-direction:column;gap:2px;min-width:500px;max-width:700px}
+.ec-pt-row{display:grid;grid-template-columns:1.3em repeat(18,minmax(25px,1fr));gap:2px;border-radius:5px}
+.ec-pt-row.prow{outline:2px dashed var(--ink-2);outline-offset:1px}
+.ec-pt-bk{margin-bottom:1px}
+.ec-bk{font:700 .7rem var(--font-ui);text-align:center;border-radius:3px;padding:1px 0;color:var(--ink);background:color-mix(in srgb,var(--bt) 45%,var(--sheet));white-space:nowrap;overflow:hidden}
+.ec-pt-hd span{font-size:.66rem;text-align:center;color:var(--ink-2);line-height:1.4}
+.ec-pt-g.on{color:var(--ink);font-weight:700;text-decoration:underline}
+.ec-pt-pl{font-size:.7rem;color:var(--ink-2);display:flex;align-items:center;justify-content:center}
+.ec-pt-el{height:28px;min-width:0;padding:0;border:1px solid var(--rule);border-radius:3px;font:700 .76rem var(--font-ui);color:var(--ink);
+  background:color-mix(in srgb,var(--bt) 30%,var(--sheet));display:flex;align-items:center;justify-content:center}
+button.ec-pt-el:hover{border-color:var(--ink)}
+.ec-pt-el.off{opacity:.42;font-weight:400}
+.ec-pt-el.gcol,.ec-pt-gap.gcol{box-shadow:inset 2px 0 0 var(--ink-2),inset -2px 0 0 var(--ink-2)}
+.ec-pt-el.sel{background:var(--hi);color:var(--hi-ink);border:2.5px solid var(--ink);box-shadow:none}
+.ec-pt-el.fam{background:var(--hi);color:var(--hi-ink);border-color:var(--ink)}
+.ec-pt-el.flash{animation:ec-flash 1.2s ease-out 2}
+.ec-pt-el:disabled{cursor:default}
+@keyframes ec-flash{0%{box-shadow:0 0 0 0 var(--hi)}50%{box-shadow:0 0 0 6px var(--hi)}100%{box-shadow:0 0 0 0 transparent}}
+
+/* view grid */
+.ec-view{margin-top:14px}
+.ec-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px 26px;align-items:start;margin-top:6px}
+.ec-left,.ec-right{min-width:0}
+@media (max-width:760px){.ec-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* C12 energy ladder */
+.ec-ladbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:12px 12px 10px;overflow:auto}
+@media (max-width:600px){.ec-ladbox{max-height:380px}}
+.ec-lad{display:flex;flex-direction:column;gap:5px;min-width:max-content}
+.ec-row{display:flex;align-items:center;gap:8px}
+.ec-row.npd{margin-bottom:12px}
+.ec-sl{flex:0 0 2.4em;text-align:right;font:700 .95rem var(--font-ui);color:var(--ink-2);padding:1px 3px;border-radius:4px}
+.ec-row.cur .ec-sl{background:var(--hi);color:var(--hi-ink)}
+.ec-bxs{display:flex;gap:3px;border-radius:6px}
+.ec-row.l-p .ec-bxs{margin-left:37px}
+.ec-row.l-d .ec-bxs{margin-left:74px}
+.ec-lad.compact .ec-row.l-p .ec-bxs,.ec-lad.compact .ec-row.l-d .ec-bxs{margin-left:0}
+.ec-bx{position:relative;width:34px;height:38px;padding:0;display:inline-flex;align-items:center;justify-content:center;gap:1px;
+  border:1.5px solid var(--ink-2);border-radius:4px;background:var(--sheet);color:var(--e-pair);font:700 1.18rem/1 var(--font-ui)}
+.ec-bx.full{background:var(--hi-soft)}
+.ec-bx.over{letter-spacing:-2px;font-size:.92rem}
+button.ec-bx{cursor:pointer}
+button.ec-bx:hover{border-color:var(--ink)}
+button.ec-bx:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.ec-ar{display:inline-block;color:var(--e-pair)}
+.ec-ar.in{animation:ec-drop .38s ease-out}
+.ec-ar.off{position:absolute;left:0;right:0;top:7px;text-align:center;animation:ec-fly .7s ease-in forwards;pointer-events:none}
+.ec-row.glow .ec-bx{box-shadow:0 0 0 3px var(--hi)}
+.ec-row.pulse .ec-bxs{animation:ec-pulse .7s ease-out}
+@keyframes ec-drop{from{transform:translateY(-16px);opacity:0}to{transform:none;opacity:1}}
+@keyframes ec-fly{from{transform:none;opacity:1}to{transform:translateY(-30px);opacity:0}}
+@keyframes ec-pulse{0%{box-shadow:0 0 0 0 var(--hi)}45%{box-shadow:0 0 0 6px var(--hi)}100%{box-shadow:0 0 0 0 transparent}}
+@media (prefers-reduced-motion:reduce){
+  .ec-ar.in,.ec-row.pulse .ec-bxs,.ec-pt-el.flash{animation:none}
+  .ec-ar.off{display:none}
+}
+.ec-core{display:flex;align-items:center;gap:8px;margin-top:4px}
+.ec-corebar{flex:0 1 auto;border:1.5px solid var(--ink-2);border-radius:4px;background:var(--hi-soft);padding:.35em .7em;font-size:.86rem;color:var(--ink)}
+
+/* controls under the ladder */
+.ec-ctrl{margin-top:10px}
+.ec-c[hidden]{display:none}
+.ec-c[data-for="fill"]{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.ec-fbtns{display:flex;flex-wrap:wrap;gap:8px}
+.ec-chg{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.ec-pm{min-width:44px;font-size:1.15rem;font-weight:700}
+.ec-qv{min-width:2.4em;text-align:center;font:700 1.2rem var(--font-ui)}
+.ec-qsp{font-size:.95rem;color:var(--ink-2)}
+.ec-cap{min-height:1.5em;margin:10px 0 2px}
+.ec-cap > p{margin:0}
+.ec-cap .fb{margin-top:6px}
+
+/* aufbau diagonal */
+.ec-dg{margin:0 0 12px;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:8px 10px}
+.ec-dsvg{display:block;width:100%;max-width:230px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.ec-dg figcaption{font-size:.84rem;color:var(--ink-2);text-align:center;margin-top:2px}
+
+/* Part 3, station 1: blank table with block regions */
+.ec-let{margin:6px 0 10px}
+.ec-st1 h3{margin-top:0}
+.ec-blank{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));grid-template-rows:repeat(7,26px) 12px repeat(2,26px);max-width:660px}
+.ec-rg{display:flex;flex-direction:column;padding:0;margin:0;border:2px solid var(--ink-2);border-radius:4px;background:var(--sheet);color:var(--ink);overflow:hidden;min-height:0;min-width:0}
+.ec-rg:hover{border-color:var(--ink)}
+.ec-rr{flex:1 1 0;display:flex;align-items:center;justify-content:center;font:700 .8rem var(--font-ui);
+  background-image:linear-gradient(to right,var(--rule) 1px,transparent 1px);background-size:calc(100% / var(--w)) 100%}
+.ec-rr + .ec-rr{border-top:1px solid var(--rule)}
+.ec-rg.on{background:color-mix(in srgb,var(--bt) 30%,var(--sheet));border-color:var(--bt)}
+.ec-rg.on .ec-rr{background-image:none}
+.ec-swipe{display:none;margin:2px 0 0}
+@media (max-width:600px){.ec-swipe{display:block}}
+.ec-ptab3 .ec-pt-el.off{opacity:.8}
+.ec-m1,.ec-m2{min-height:1em;margin-top:6px}
+
+/* station 2 and 3 */
+.ec-bqt{margin:4px 0 0}
+.ec-bcfg{font-size:1.25rem}
+.ec-bq .q-actions{margin:8px 0 10px}
+.ec-fams{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:8px;margin:6px 0 10px}
+.ec-fam{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;border:2px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.5em .7em}
+.ec-fam.on{border-color:var(--ink);background:var(--hi-soft)}
+.ec-famc{font-size:.9rem;color:var(--ink-2)}
+.ec-famtx{margin-top:8px}
+.ec-famp{margin:0}
+
+/* Practice: Build and predict */
+.ec-chiplist{margin:10px 0 4px}
+.ec-numrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.ec-unit{color:var(--ink-2)}
+.ec-invq{margin:10px 0 0;font-weight:700;font-size:.94rem}
+.ec-cb{border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;margin-top:10px}
+.ec-cbout{margin:0;min-height:1.8em;padding:6px 10px;background:var(--paper);border-radius:6px;font:700 1.15rem var(--font-ui);overflow-wrap:anywhere}
+.ec-q{color:var(--ink-2)}
+.ec-cbrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.ec-cbl{flex:0 0 5.4em;font-size:.82rem;font-weight:700;color:var(--ink-2)}
+.ec-cbrow .chip{min-height:34px}
+.ec-cbn{min-width:38px}
+.ec-cbn sup{font-size:.85em}
+
+/* task */
+.ec-conds{margin:8px 0 12px;padding-left:1.4em}
+.ec-tq + .ec-tq{margin-top:12px}
+.ec-lab{margin:0 0 6px;font-weight:700}
+.ec-h4{margin:4px 0 8px}
+.ec-tkpv{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:10px 12px;overflow-x:auto}
+.ec-tkh{margin:0 0 10px;font-size:1.05rem}
+.ec-tkread{margin-top:10px}

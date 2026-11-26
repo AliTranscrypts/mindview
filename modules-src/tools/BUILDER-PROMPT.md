@@ -55,7 +55,7 @@ re-enable after each animation.
   crashes if your app repaints/removes the clicked button first (repaint after, or stop propagation); the
   task frame's `after3` note shows after 3 answers unless you set `task.afterAt: 4` (toolkit 1.0.8+; no app.js
   workaround needed). Matching (N6) right columns are re-shuffled so at most one pair sits level. Don't name a text field `ok` (only a boolean
-  `ok` marks answers), and don't use the key `answer` for anything but an answer key (the build scrambles it). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
+  `ok` marks answers), and don't use the key `answer` for anything but an answer key (the build scrambles it). Scripts run with cwd = modules-src: write output paths as `.artifacts/…` (not `modules-src/.artifacts/…`, which lands in modules-src/modules-src/). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
   your own classes with the module's topic.
 - Teacher notes such as "verify before release" go only in `// VERIFY:` code comments, never in text students
   see (check.mjs fails a page that shows "(verify…)").

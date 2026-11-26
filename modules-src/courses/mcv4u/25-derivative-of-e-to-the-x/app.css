@@ -1,0 +1,83 @@
+/* MCV4U 25: Find the special base (V5 shared-axes slope tool, brown base slider with nudges, ratio table, match gauge,
+   V8 exact boxes), eˣ and ln stations (mirror, undo chips, solve boxes, chain rule measured), Tangents and rates boxes, task */
+.ee-heq{display:block;font:400 .34em/1.3 var(--font-ui);color:var(--ink-2);margin-top:.35em;letter-spacing:0}
+.ee-heq .m{font-size:1.15em}
+.ee-ex{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ee-main,.ee-side{min-width:0}
+.ee-eq{min-height:1.6em}
+canvas.plot.ee-plot{aspect-ratio:16/12;touch-action:none}
+.ee-key{margin:8px 0 0}
+.ee-how{margin:8px 0 10px}
+.ee-sl{margin-top:8px}
+.ee-sl input{width:100%;min-height:28px}
+.ee-sl output{color:var(--ink)}
+.ee-sl output.ee-bout{color:var(--p-b);font-weight:700}
+.ee-nudge{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 2px}
+.ee-nudge .btn{min-height:40px;min-width:62px;font-variant-numeric:tabular-nums}
+.ee-nudge .ee-ebtn{border:2px solid var(--p-b);color:var(--p-b);background:var(--sheet)}
+.ee-note{margin:4px 0 0}
+.ee-side dl.read.ee-read{margin-top:18px}
+.ee-read dd .tiny{color:var(--ink-2)}
+.ee-tbl{margin-top:10px;max-width:100%}
+.ee-tbl .tbl-wrap{max-height:260px;overflow:auto}
+.ee-gauge{margin-top:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ee-gh{font-weight:700;margin:0 0 6px}
+.ee-grow{display:flex;align-items:center;gap:10px;margin:4px 0}
+.ee-bar{flex:1;height:14px;border:1.5px solid var(--ink-2);border-radius:7px;overflow:hidden;background:var(--paper)}
+.ee-bar span{display:block;height:100%;background:var(--f3)}
+.ee-bar.ee-fine.ok{border-color:var(--green)}
+.ee-gv{margin:6px 0 0}
+.ee-ok{color:var(--green)}
+.ee-exact{margin-top:14px;padding:10px 12px;border:1.5px dashed var(--rule);border-radius:8px}
+.ee-exh{font-weight:700;margin:0 0 2px}
+.ee-frow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0;font-size:1.1rem}
+.ee-frow .numin.short{width:4.4rem}
+.ee-fl{white-space:nowrap}
+.ee-ln{font:400 1.15rem var(--font-math);margin:0 2px}
+.ee-e{font:italic 400 1.25rem var(--font-math);margin-left:2px}
+.ee-sup{display:inline-flex;align-self:flex-start;margin-top:-8px}
+.ee-sup .numin.short.ee-pow{width:3.6rem;font-size:.9rem;min-height:30px}
+/* Part 3 */
+.ee-st h3{margin-top:0}
+.ee-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.ee-stg{align-items:start}
+.ee-pair{font-weight:600;margin:10px 0}
+.ee-undo{display:flex;flex-direction:column;gap:10px;margin:8px 0 4px}
+.ee-urow{display:grid;grid-template-columns:minmax(110px,auto) minmax(0,1fr);gap:6px 12px;align-items:center}
+.ee-uex{font-size:1.15rem;white-space:nowrap}
+.ee-urow .chips{gap:6px;margin:0}
+.ee-ufb{grid-column:1/-1}
+.ee-ufb .fb{margin:0}
+.chip.good{border-color:var(--green);background:var(--good-bg)}
+.ee-svh{font-weight:700;margin:16px 0 4px}
+.ee-solve{margin:10px 0;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.ee-sq{margin:0 0 6px}
+.ee-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:1.1rem}
+.ee-frame .numin.short{width:4.4rem}
+.ee-meas{font-weight:700;margin:0 0 8px}
+.ee-pq{font-weight:600;margin:10px 0 6px}
+.ee-pch{gap:6px}
+.ee-cmp{margin:10px 0 0;font-size:1.05rem}
+.ee-note2{margin:8px 0 0;padding:8px 12px;border-left:4px solid var(--hi);background:var(--info-bg);border-radius:0 8px 8px 0}
+/* Practice 2: V8 boxes */
+.ee-dt{display:flex;flex-direction:column;gap:8px;margin:8px 0 4px}
+.ee-dr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:1.05rem}
+.ee-dl{font-weight:600}
+.ee-dpt{display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap}
+.ee-dr .numin.short{width:5.2rem}
+/* task */
+.pk-in{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.pk-step{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.pk-step label{min-width:7.5rem}
+.pk-step .numin.short{width:4rem}
+.pk-step .btn{min-width:40px;min-height:40px}
+.pk-gh{font-weight:700;margin:10px 0 4px}
+@media (max-width:820px){
+  .ee-ex{grid-template-columns:minmax(0,1fr)}
+  .ee-urow{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  canvas.plot.ee-plot{aspect-ratio:1/1}
+  .ee-frow .ee-fl:first-child{flex-basis:100%}
+  .ee-frow .numin.short,.ee-frame .numin.short{width:3.9rem}
+}

@@ -267,7 +267,8 @@
     "10",
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "17",
@@ -333,7 +334,8 @@
     "14",
     "19",
     "12"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "21",
@@ -344,7 +346,8 @@
    "siteChapter": 3,
    "size": "L",
    "part3": "history",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "22",

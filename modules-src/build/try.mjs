@@ -30,6 +30,10 @@ page.on("console", msg => { if (msg.type() === "error" && !/Failed to load resou
 const url = `http://127.0.0.1:${srv.address().port}/courses/${cj.site}/modules/${id}.html`;
 await page.goto(url); await page.waitForTimeout(600);
 const shots = path.join(SRC, ".artifacts", course, id); fs.mkdirSync(shots, { recursive:true });
+// Test scripts run with cwd = modules-src, so a screenshot path written from the repo root
+// ("modules-src/.artifacts/…") would land in modules-src/modules-src/. Re-anchor such paths.
+{ const shot0 = page.screenshot.bind(page);
+  page.screenshot = (o = {}) => { if (o.path && !path.isAbsolute(o.path) && /^modules-src[\\/]/.test(o.path)) o = { ...o, path:path.join(ROOT, o.path) }; return shot0(o); }; }
 const t = {
   url, log:(...a) => console.log("  ", ...a),
   expect:(c, msg) => { console.log(c ? "   ✓ " + msg : "   ✗ " + msg); if (!c) fails.push(msg); },
