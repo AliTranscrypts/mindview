@@ -6,7 +6,7 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 99/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 100/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
@@ -15,8 +15,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 10/39 | 0 | 29 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 6/52 | 0 | 46 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 7/46 | 0 | 39 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 8/25 | 0 | 17 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 4/24 | 1 | 19 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 8/25 | 1 | 16 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 5/24 | 0 | 19 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -289,10 +289,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 06 Pregnancy & Lactation (`pregnancy-lactation`, topic, site ch2)
 - ✓ 07 Infant & Toddler Nutrition (`infant-toddler`, topic, site ch2)
 - ✓ 08 Children, Adolescents & Adults (`children-adolescents-adults`, topic, site ch2)
-- … 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
+- ◐ 09 Older Adult Nutrition (`older-adults`, topic, site ch2)
 - … 10 Eating Disorders (`eating-disorders`, topic, site ch3)
 - … 11 Cardiovascular Disease (`cardiovascular-disease`, topic, site ch3)
-- · 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
+- … 12 Type 2 Diabetes (`type-2-diabetes`, topic, site ch3)
 - · 13 Cancer & Nutrition (`cancer-nutrition`, topic, site ch3)
 - · 14 Obesity, Osteoporosis & Other Diet-Related Issues (`obesity-osteoporosis`, topic, site ch3)
 - · 15 Foodborne Illness & Food Safety (`food-safety`, topic, site ch3)
@@ -314,7 +314,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 03 Reading Poetry (`reading-poetry`, topic, site ch1)
 - ✓ 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
 - … 05 The Writing Process (`writing-process`, topic, site ch2)
-- ◐ 06 Essay Forms (`essay-forms`, topic, site ch2)
+- ✓ 06 Essay Forms (`essay-forms`, topic, site ch2)
 - … 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - … 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
 - · 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
