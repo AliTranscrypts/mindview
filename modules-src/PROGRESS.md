@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 153/295 live, 2 built, 22 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 155/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 25/59 | 0 | 34 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 25/59 | 1 | 33 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 0 | 21 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 15/52 | 1 | 36 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 17/46 | 1 | 28 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 16/52 | 0 | 36 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 18/46 | 0 | 28 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 17/25 | 0 | 8 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 11/24 | 0 | 13 | 0 |
 
@@ -96,7 +96,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
 - ✓ 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
 - ✓ 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
-- … 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
+- ◐ 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
 - ✓ 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
 - ✓ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
 - … 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
@@ -191,7 +191,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Chirality, Enantiomers and Diastereomers (`chirality`, topic, site ch1)
 - ✓ 13 Atomic History (`atomic-history`, topic, site ch2)
 - ✓ 14 Bohr Model (`bohr-model`, topic, site ch2)
-- ◐ 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
+- ✓ 15 Quantum Mechanical Model (`quantum-mechanical-model`, topic, site ch2)
 - ✓ 16 Electron Configuration (`electron-configuration`, topic, site ch2)
 - … 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - … 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
@@ -249,7 +249,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 15 Krebs Cycle (`krebs-cycle`, topic, site ch2)
 - ✓ 16 The Electron Transport Chain (`electron-transport-chain`, topic, site ch2)
 - ✓ 17 Chemiosmosis (`chemiosmosis`, topic, site ch2)
-- ◐ 18 Energy Transfer (`energy-transfer`, topic, site ch2)
+- ✓ 18 Energy Transfer (`energy-transfer`, topic, site ch2)
 - … 19 Cellular Respiration ATP Count (`atp-count`, topic, site ch2)
 - … 20 Alternate Pathways (Fermentation) (`fermentation`, topic, site ch2)
 - … 21 Structure and Replication (`dna-structure-and-replication`, topic, site ch3)

@@ -1,0 +1,121 @@
+/* MCV4U 24: hero checklist, Sketch assembler (checklist, graph + strips, V14 sketch pad, gauge), stations, full sketches, task */
+.cs-heq{display:inline-block;line-height:1.5}
+.cs-hwrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start}
+.cs-hlist{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px;font:600 .86rem var(--font-ui);color:var(--ink-2)}
+.cs-hlist li{display:flex;align-items:center;gap:6px;opacity:.55;transition:opacity .3s ease}
+.cs-hlist li.on{opacity:1;color:var(--ink)}
+.cs-hlist li.cur{opacity:1;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.cs-hmk{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;border:1.5px solid var(--rule);font-size:.8rem}
+.cs-hlist li.on .cs-hmk{background:var(--green);border-color:var(--green);color:var(--sheet)}
+@media (prefers-reduced-motion:reduce){ .cs-hlist li{transition:none} }
+@media (max-width:640px){
+  .cs-hwrap{grid-template-columns:minmax(0,1fr)}
+  .cs-hlist{flex-direction:row;flex-wrap:wrap;gap:4px 10px;font-size:.78rem}
+}
+
+/* Explore layout: top bar; checklist beside the graph (above it on phones); readouts under the checklist */
+.cs-ex{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;grid-template-areas:"top top" "main steps" "main read";gap:12px 26px;align-items:start}
+.cs-top{grid-area:top;min-width:0}
+.cs-stepsbox{grid-area:steps;min-width:0}
+.cs-main{grid-area:main;min-width:0}
+.cs-read{grid-area:read;min-width:0}
+.cs-ex .cs-stepsbox[hidden]{display:none}
+@media (max-width:820px){
+  .cs-ex{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-template-areas:"top" "steps" "main" "read"}
+}
+.cs-fns{margin-bottom:8px}
+.cs-fns .chip{font-size:.88rem}
+.cs-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.cs-tog{display:inline-flex;align-items:center;gap:6px;font:600 .9rem var(--font-ui);min-height:32px}
+.cs-tog input{width:18px;height:18px}
+.cs-how{margin:6px 0 0}
+.cs-sbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.cs-sb{display:inline-flex;align-items:center;gap:6px;min-height:34px;border:1.5px solid var(--rule);border-radius:999px;background:var(--sheet);color:var(--ink);padding:3px 10px 3px 4px;font:600 .82rem var(--font-ui);cursor:pointer}
+.cs-sb:disabled{opacity:.5;cursor:default}
+.cs-sb.on{border-color:var(--ink);background:var(--hi-soft)}
+.cs-sbn{display:inline-flex;align-items:center;justify-content:center;width:1.6em;height:1.6em;border-radius:50%;border:1.5px solid var(--rule);font-size:.78rem}
+.cs-sb.done .cs-sbn{background:var(--green);border-color:var(--green);color:var(--sheet)}
+.cs-stepq{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--sheet)}
+.cs-sq{margin:0 0 8px}
+.cs-fd{margin:4px 0 8px;font-size:1.05rem}
+.cs-opts .opt{padding:.45em .7em}
+.cs-inrow{margin-top:8px}
+.cs-inrow label{flex:1 1 100%;font-weight:600;font-size:.92rem}
+.cs-num{width:11rem}
+.cs-eq{min-height:1.8em}
+.cs-badge{display:inline-block;margin-left:8px;padding:1px 10px;border:1.5px solid var(--ink-2);border-radius:999px;font:600 .82rem var(--font-ui);color:var(--ink);vertical-align:middle}
+canvas.plot.cs-g{aspect-ratio:16/11}
+canvas.plot.cs-strip{aspect-ratio:auto;height:64px}
+.cs-main .plot-wrap + .plot-wrap{margin-top:4px}
+.cs-key{margin:6px 0 0}
+.cs-sk{margin-top:10px;border-top:1.5px solid var(--rule);padding-top:8px}
+.cs-sk[hidden]{display:none}
+.cs-scw{overflow-x:auto;margin:6px 0}
+table.cs-sct th,table.cs-sct td{padding:5px 8px;white-space:nowrap}
+table.cs-sct tbody th{text-align:left;font-weight:600}
+table.cs-sct .cs-bad{background:var(--bad-bg)}
+.cs-x{color:var(--red);font-weight:700;margin-right:3px}
+.cs-cell{min-width:40px;min-height:34px;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);font:700 1.1rem var(--font-ui);cursor:pointer}
+.cs-cell:hover:not(:disabled){border-color:var(--ink)}
+
+/* V14 sketch pad controls */
+.cs-ptin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:6px 0}
+.cs-ptl{display:inline-flex;align-items:center;gap:6px}
+.cs-ptl .cs-num{width:6.5rem}
+.cs-skmsg{margin:4px 0;font-weight:600;color:var(--red)}
+.cs-ptlist{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.cs-ptc{font-family:var(--font-math)}
+.cs-shh{margin:10px 0 4px}
+.cs-shrow{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:6px}
+@media (max-width:640px){ .cs-shrow{flex-wrap:nowrap;overflow-x:auto} }
+.cs-shg{flex:0 0 auto;border:1.5px solid var(--rule);border-radius:8px;margin:0;padding:4px 6px 6px;min-width:0}
+.cs-shg legend{font:600 .8rem var(--font-math);padding:0 4px;white-space:nowrap}
+.cs-shc{display:inline-flex;align-items:center;justify-content:center;position:relative;min-width:44px;min-height:36px;border:1.5px solid var(--rule);border-radius:6px;margin:2px;font:700 1.05rem var(--font-ui);cursor:pointer;background:var(--sheet)}
+.cs-shc input{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer}
+.cs-shc.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.cs-shc:focus-within{outline:3px solid var(--pen);outline-offset:1px}
+.cs-gauge{margin-top:8px}
+.cs-gcells{display:flex;flex-wrap:wrap;gap:6px}
+.cs-gc{display:flex;flex-direction:column;gap:2px;border-radius:8px;padding:5px 9px;font:600 .82rem var(--font-ui)}
+.cs-gc.good{background:var(--good-bg)}
+.cs-gc.bad{background:var(--bad-bg)}
+.cs-gciv{font-family:var(--font-math);font-weight:400}
+.cs-gpts{margin:6px 0 0}
+
+/* Part 3 */
+.cs-st h3{margin-top:0}
+.cs-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.cs-cluep{border-left:4px solid var(--hi);padding:4px 10px;background:var(--paper)}
+.cs-clue1.off{text-decoration:line-through;color:var(--ink-2)}
+.cs-tabs{margin:4px 0}
+.cs-st canvas.plot.wide{max-width:720px}
+.cs-shift{margin-top:10px;border-top:1.5px solid var(--rule);padding-top:8px}
+.cs-shift[hidden]{display:none}
+.cs-shmsg{min-height:1.4em;font-weight:700}
+canvas.plot.cs-s2strip{aspect-ratio:auto;height:58px}
+.cs-s2lab{margin:8px 0 0}
+.cs-mkrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0}
+.cs-pm{min-width:40px;font-size:1.1rem}
+.cs-mkout{min-width:4.5em;text-align:center;font-size:1.05rem}
+.cs-marks [aria-pressed="true"]{background:var(--hi-soft);border-color:var(--ink)}
+#cs-s2done{margin-top:8px}
+.cs-m3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:12px 20px;align-items:start}
+.cs-eqs{display:flex;flex-direction:column;gap:8px}
+.cs-sks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cs-skb{display:flex;flex-direction:column;gap:4px;border:2px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:6px;cursor:pointer;text-align:left;min-width:0}
+.cs-skb:hover:not(:disabled){border-color:var(--ink)}
+.cs-skb.done{border-color:var(--green);cursor:default}
+.cs-skb canvas.plot{margin:0;pointer-events:none}
+.cs-skn{font:600 .85rem var(--font-ui)}
+@media (max-width:640px){ .cs-m3{grid-template-columns:minmax(0,1fr)} }
+
+/* Practice: full sketches */
+.cs-knav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+canvas.plot.cs-kg{aspect-ratio:16/11}
+
+/* Task */
+.cs-clues{margin:6px 0 10px;padding-left:1.4em}
+.cs-tstep{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0}
+.cs-tstep label{min-width:9.5em}
+.cs-tin{width:5.5rem}
+.cs-tnow{min-height:1.6em;font-size:1.1rem;margin:8px 0}
