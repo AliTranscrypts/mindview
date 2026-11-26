@@ -71,7 +71,8 @@
     "01",
     "02"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "04",
@@ -84,7 +85,8 @@
    "part3": "tests",
    "prereqs": [
     "03"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "05",

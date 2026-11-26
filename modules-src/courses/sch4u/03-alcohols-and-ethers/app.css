@@ -1,0 +1,108 @@
+/* SCH4U 03: hero, C1 molecule view (atom + bond buttons), switchboard, bars, particle box, Part 3 stations, task builder */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.ao-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ao-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ao-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+
+/* C1 molecule view */
+.c1-wrap{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.c1-svg{display:block;width:100%;height:auto;touch-action:pan-y;font-family:var(--font-ui)}
+.c1-ov{position:absolute;inset:0;pointer-events:none}
+.c1-b{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;background:transparent;padding:0;pointer-events:auto;cursor:pointer}
+.c1-b.bd{width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:6px}
+.c1-b:hover{background:var(--hi-soft)}
+.c1-b:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.c1-rot{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.c1-rot .btn{min-width:40px;min-height:40px}
+.c1-rot[hidden]{display:none}
+
+/* switchboard */
+.ao-how{margin-top:0}
+.ao-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.ao-left{grid-area:view;min-width:0}.ao-ctrl{grid-area:ctrl;min-width:0}.ao-right{grid-area:read;min-width:0}
+.ao-cap{font:400 clamp(1.15rem,2.6vw,1.55rem)/1.3 var(--font-ui);white-space:normal;min-height:1.4em}
+.ao-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.ao-views{margin-top:10px}
+.ao-note{min-height:1.4em;margin:8px 0 0;font-size:1rem}
+.ao-modes{margin-bottom:12px}
+.ao-sl{display:block;margin:4px 0 6px}
+.ao-msg{min-height:1.4em;margin:8px 0 6px;font-size:.92rem;color:var(--ink-2)}
+.ao-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:10px 0 6px}
+.ao-menu{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.ao-menu .ao-sub,.ao-menu p{flex-basis:100%;margin:4px 0 0}
+.ao-menu .btn{min-height:36px}
+.ao-menu .btn:disabled{opacity:.5}
+.ao-why{flex-basis:100%;margin:-2px 0 2px}
+.ao-tkr{flex-basis:100%;margin-top:6px}
+.ao-oxrow{margin-top:12px}
+.ao-water{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-size:.95rem;min-height:32px}
+.ao-water input{width:20px;height:20px}
+.ao-nf{margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+.ao-nf label{display:block;font-size:.88rem;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.ao-nfr{display:flex;flex-wrap:wrap;gap:6px}
+.ao-nin{font:inherit;padding:.35em .55em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);min-width:0;flex:1 1 9rem;max-width:16rem;min-height:36px}
+.ao-nmsg{min-height:1.2em;margin:6px 0 0}
+.ao-right .chem-tab{margin-top:14px}
+.ao-molbox[hidden],.ao-pbox[hidden],.ao-bars[hidden],.ao-views[hidden],.ao-oxrow[hidden],.ao-water[hidden],.ao-oxrow [hidden]{display:none}
+/* bars */
+.ao-bars{margin-top:12px}
+.ao-bsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ao-blabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:2px}
+.ao-blab{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.9rem;line-height:1.25;overflow-wrap:anywhere;padding:4px 2px;border-radius:6px}
+.ao-blab.cur{background:var(--hi-soft)}
+/* particle box */
+.ao-psvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ao-pcap{margin:8px 0 2px;font-size:.98rem}
+.ao-pleg{margin:4px 0 0}
+.ao-hbkey{display:inline-block;width:26px;height:0;border-top:3px dotted var(--e-pair);vertical-align:middle;margin:0 2px}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ao-pick1,.ao-pick2,.ao-pick3{margin:8px 0 12px}
+.ao-lad{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:14px 20px;align-items:start}
+.ao-rungs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column-reverse;gap:8px}
+.ao-rung{display:flex;gap:10px;align-items:flex-start;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.ao-rung.cur{border-color:var(--pen);box-shadow:inset 4px 0 0 var(--pen)}
+.ao-rung.next,.ao-rung.stop{border-style:dashed;color:var(--ink-2)}
+.ao-rn{flex:none;min-width:3.6em;font-weight:700;font-size:.85rem;color:var(--ink-2)}
+.ao-cf{font-size:.92rem}
+.ao-cf .chem,.ao-eqn .chem,.ao-case .chem{white-space:normal;overflow-wrap:anywhere}
+.ao-eqn{margin:8px 0 0;font-size:1.05rem}
+.ao-l1msg{min-height:1.4em;margin:8px 0;font-weight:700}
+.ao-zc{margin:6px 0 0}
+.ao-l2step{margin-top:10px}
+.ao-l2cap{min-height:2.8em;margin:8px 0 6px}
+.ao-l2read{margin-top:6px}
+.ao-strip{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.ao-strip li{display:flex;align-items:center;gap:8px}
+.ao-strip li > span:last-child{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px;background:var(--sheet)}
+.ao-arr{font-weight:700;color:var(--ink-2)}
+
+/* practice + task */
+.ao-tf{display:block;font-size:.85em;color:var(--ink-2);font-weight:400}
+.ao-pchips{margin-top:10px}
+.ao-pchips .chip{min-height:36px}
+.ao-conds{margin:6px 0 10px;padding-left:1.3em}
+.ao-h4{margin:12px 0 6px}
+#ao-tkview{margin-bottom:6px}
+
+@media (max-width:760px){
+  .ao-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .rg.seg button{padding:.4em .6em}
+  .ao-lad{grid-template-columns:minmax(0,1fr)}
+  .ao-blab{font-size:.74rem}
+  .ao-blab strong{font-size:.8rem}
+}

@@ -110,3 +110,4 @@ every module that uses the touched code, then ship them together).
 | S1 diagramExplorer (+default tag positions), photosystemSim, moleculeClip, S9 tubeBuilder | sbi4u 03 | |
 | pencilTrace (new), V6 approachTable, exactDec, N4 unitBoxes | mcv4u 06 | |
 | D2 vennDiagram (number boxes, hatching, pulse, equivalent names), parseExpr (set notation parser) | mdm4u 04 | |
+| C1 moleculeView (O, highlights), C1 moleculeBuilder (free mode), C2 nameBuilder, C3 mechanismStepper, hbondBox, bpBars | sch4u 03 | course data gap: plan's 16-compound bp/solubility table kept locally — fold into MV.chem.data with 02's BP_ADD |

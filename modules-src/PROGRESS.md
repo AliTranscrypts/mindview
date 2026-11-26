@@ -6,14 +6,14 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 69/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 70/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 6/59 | 0 | 53 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 3/39 | 1 | 35 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 2/52 | 0 | 50 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 4/39 | 0 | 35 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 2/52 | 1 | 49 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 3/46 | 0 | 43 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 3/25 | 0 | 22 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 2/24 | 0 | 22 | 0 |
@@ -138,7 +138,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 01 Sample Spaces & Counting Outcomes (`sample-spaces`, topic, site ch1)
 - ✓ 02 The Fundamental Counting Principle (`fundamental-counting-principle`, topic, site ch1)
 - ✓ 03 Mutually Exclusive Events & the Additive Principle (`mutually-exclusive`, topic, site ch1)
-- ◐ 04 Venn Diagrams & Set Operations (`venn-diagrams`, topic, site ch1)
+- ✓ 04 Venn Diagrams & Set Operations (`venn-diagrams`, topic, site ch1)
 - … 05 Independent vs Dependent Events (`independent-dependent`, topic, site ch1)
 - · 06 Factorial Notation (`factorial-notation`, topic, site ch2)
 - · 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
@@ -179,8 +179,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 - ✓ 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
 - ✓ 02 Alkenes, Alkynes and Aromatics (`alkenes-alkynes-aromatics`, topic, site ch1)
-- … 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
-- · 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
+- ◐ 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
+- … 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
 - · 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
 - · 06 Amines and Amides (`amines-and-amides`, topic, site ch1)
 - · 07 Addition Polymers (`addition-polymers`, topic, site ch1)
