@@ -1,0 +1,77 @@
+/* MHF4U 04: difference tables (N14 with staggered difference columns), machine controls, Part 3 rounds, hero captions */
+.dt-scroll{display:inline-block;vertical-align:top;overflow-x:auto;max-width:100%;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.dt-scroll:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.dt-inner{position:relative;display:inline-block;vertical-align:top}
+.dt-arrows{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.dt-arrows .ln{fill:none;stroke:var(--ink-2);stroke-width:1.6}
+.dt-arrows .hd{fill:var(--ink-2);stroke:none}
+table.dtab{border-collapse:separate;border-spacing:0;font-family:var(--font-math);font-size:1.05rem;color:var(--ink)}
+table.dtab caption{caption-side:top}
+table.dtab th{font:700 .78rem/1.2 var(--font-ui);color:var(--ink-2);background:var(--paper);padding:6px 10px;border-bottom:1.5px solid var(--rule);vertical-align:bottom;text-align:center;white-space:nowrap}
+table.dtab th .m{font-size:1.25rem;color:var(--ink)}
+table.dtab tbody tr{height:19px}
+table.dtab td{padding:0 14px;min-width:3.2em;text-align:center;white-space:nowrap;line-height:1.2;vertical-align:middle}
+table.dtab .dt-x,table.dtab .dt-y{position:sticky;z-index:1;background:var(--sheet)}
+table.dtab th.dt-x,table.dtab th.dt-y{background:var(--paper);z-index:2}
+table.dtab .dt-x{left:0;width:54px;min-width:54px;max-width:54px;box-sizing:border-box;color:var(--ink-2)}
+table.dtab .dt-y{left:54px;box-shadow:inset -1.5px 0 0 var(--rule)}
+table.dtab td.dt-y{font-weight:600}
+table.dtab tbody tr:nth-child(4n+1) td.dt-x,table.dtab tbody tr:nth-child(4n+1) td.dt-y{background:var(--paper)}
+.dt-dl{display:block;font:400 1.15rem var(--font-math);color:var(--ink)}
+.dt-dw{display:block}
+.dt-tag{display:inline-block;margin-top:4px;padding:1px 6px;border-radius:4px;font:700 .7rem var(--font-ui)}
+.dt-tag.yes{background:var(--hi);color:var(--hi-ink)}
+.dt-tag.no{font-weight:400;color:var(--ink-2);border:1px dashed var(--rule)}
+table.dtab .on{background:var(--hi-soft)}
+table.dtab th.on{color:var(--ink)}
+table.dtab td.new .v{outline:2px solid var(--ink-2);outline-offset:3px;border-radius:3px}
+table.dtab td.src .v{text-decoration:underline;text-decoration-color:var(--ink-2);text-decoration-thickness:2px;text-underline-offset:4px}
+table.dtab td.new{animation:dtin .3s ease-out}
+@keyframes dtin{from{opacity:0}to{opacity:1}}
+table.dtab .dt-e,table.dtab .dt-eh{border-left:1.5px dashed var(--ink-2)}
+table.dtab .dt-eh{color:var(--ink)}
+table.dtab .dt-eh .m{font-size:1.05rem}
+table.dtab .dt-e small{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2);margin-top:1px}
+.dt-hb{border:1.5px solid var(--rule);background:var(--sheet);color:inherit;border-radius:6px;padding:.25em .55em;font:inherit;min-height:32px;cursor:pointer}
+.dt-hb:not(:disabled):hover{border-color:var(--pen)}
+.dt-hb:disabled{cursor:default;opacity:1}
+.dt-hb.good{border-color:var(--green);background:var(--good-bg)}
+.dt-hb.bad{border-color:var(--red);background:var(--bad-bg)}
+.dt-step{min-height:1.5em;margin:6px 2px 0;font-size:.92rem;color:var(--ink-2)}
+.dt-mach{margin-top:8px}
+.dg-lab{margin:12px 0 6px}
+.ctl-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 0}
+.ctl-row .chips{margin:0}
+.ctl-lab{font-size:.92rem;font-weight:700}
+.ex-form{margin:8px 0 10px;font-size:.95rem;color:var(--ink-2)}
+.ex-form .m{color:var(--ink)}
+.ex-atype{display:flex;align-items:center;gap:10px;margin:-2px 0 10px;font-size:.9rem;color:var(--ink-2)}
+.ex-atype input{width:6.5rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.3em .6em;font:400 1.1rem var(--font-math)}
+.ex-atype input:focus{border-color:var(--ink)}
+.rv-sub{margin:4px 0 10px;color:var(--ink-2)}
+.rv-steps{margin:14px 0 0;padding-left:1.4em}
+.rv-steps > li{margin:0 0 12px;padding-left:4px}
+.rv-steps > li p{margin:0 0 4px}
+.rv-steps > li.ok > p:first-child{color:var(--ink-2)}
+.rv-done{color:var(--green);font-weight:700}
+.rv-in{margin:6px 0 8px}
+.rv-in input{width:7rem}
+.scr select{font:400 1.05rem var(--font-math);padding:.35em .6em;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);min-height:36px;max-width:100%}
+.hero-dt{max-width:100%}
+.hero-fig figcaption:empty{display:none}
+.hero-cap{font:400 1.3rem var(--font-math);text-align:center;margin:8px 0 0;max-width:none;opacity:0;transition:opacity .6s}
+.hero-cap.on{opacity:1}
+.hero-cap .m{white-space:normal}
+.spec{margin:6px 0 0;padding-left:1.3em}
+@media (max-width:560px){
+  table.dtab{font-size:15px}
+  table.dtab th{padding:5px 7px}
+  table.dtab td{padding:0 9px}
+  table.dtab .dt-x{width:44px;min-width:44px;max-width:44px}
+  table.dtab .dt-y{left:44px}
+  .hero-cap{font-size:1.1rem}
+  .hero-dt .dt-dw{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hero-dt th{white-space:normal}
+  .hero-dt .dt-tag{max-width:5.5em;white-space:normal}
+  .hero-dt td{padding:0 8px;min-width:2.4em}
+}

@@ -12,3 +12,4 @@ every module that uses the touched code, then ship them together).
 |---|---|---|
 | polyExact, polyLab, budgetBars, cardDeck | mhf4u 03 | |
 | N9+N14 keyPointMapper, N5+N13 transformSequencer, N4 paramBoxes | mhf4u 07 | |
+| N14 diffTable | mhf4u 04 | staggered difference columns, arrows, constant glow |
