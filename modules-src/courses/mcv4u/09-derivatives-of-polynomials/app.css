@@ -1,0 +1,107 @@
+/* MCV4U 09: hero typography, rule checker (V5 panels, stacked slope bar), slope dial, tangent and normal, V8 entry rows, task */
+canvas.plot.dp-top{aspect-ratio:16/10}
+canvas.plot.dp-low{aspect-ratio:16/8}
+.dp-panels .dp-panel + .dp-panel,.rc-hero canvas + canvas{margin-top:6px}
+.rc-hero canvas.plot.dp-top{aspect-ratio:16/9}
+.rc-hero canvas.plot.dp-low{aspect-ratio:16/7}
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.dp-main,.dp-side{min-width:0}
+
+/* hero */
+.rc-hx{display:flex;flex-direction:column;align-items:center;gap:2px;margin:0 0 8px;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.15;min-height:2.5em}
+.hx-row{white-space:nowrap}
+.hx-row .m{font-size:1em}
+.hx-co{display:inline-block;opacity:0}
+.hx-sup{display:inline-grid;vertical-align:super;font-size:.55em;line-height:1}
+.hx-sup > span{grid-area:1/1;display:inline-block;transform-origin:50% 50%}
+.hx-new{opacity:0}
+.hx-r2{font-size:.82em}
+.hx-t{display:inline-grid}
+.hx-t > span{grid-area:1/1;white-space:pre}
+.hx-a{opacity:0;color:var(--f3)}
+.hx-r1 .hx-co,.hx-r1 .hx-new{color:var(--f3)}
+
+/* rule checker */
+.rc-cap{min-height:1.6em}
+.rc-key{margin:6px 0 0}
+.rc-how{margin:8px 0 10px}
+.rc-lab{margin:8px 0 4px;font-weight:700}
+.rc-chips{margin-bottom:4px}
+.rc-chips .chip .m{font-size:1.05em}
+#rc-ctl .seg-wrap{margin:2px 0 4px}
+#rc-ctl .q-actions{margin-top:4px}
+.rc-xsl{margin-top:8px}
+.rc-xsl output{color:var(--ink)}
+.rc-read{margin-top:6px}
+.rc-yes{color:var(--green);font-weight:700}
+.rc-no{color:var(--red);font-weight:700}
+.rc-bar{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px}
+.rc-bar-h{margin:0 0 6px;font-weight:700}
+.rc-bar-tr{position:relative;padding:4px 0}
+.rc-lane{position:relative;height:16px;margin:4px 0}
+.rc-seg{position:absolute;top:0;bottom:0;border-radius:3px;min-width:2px}
+.rc-sf{background:var(--f3)}
+.rc-sg{background:repeating-linear-gradient(135deg,var(--ink) 0 4px,var(--ink-2) 4px 7px)}
+.rc-zero{position:absolute;top:0;bottom:0;border-left:1.5px dashed var(--ink-2)}
+.rc-tot{position:absolute;top:-2px;bottom:-2px;border-left:3px solid var(--ink);margin-left:-1.5px}
+.rc-bar-k{display:flex;flex-wrap:wrap;gap:4px 14px;margin:8px 0 0;font-size:.85rem}
+.rc-bar-k span{display:inline-flex;align-items:center;gap:5px}
+.rc-sw{display:inline-block;width:14px;height:10px;border-radius:2px}
+.rc-sw.rc-st{width:3px;height:14px;background:var(--ink)}
+.rc-proof p{margin:10px 0 0}
+
+/* Part 3 */
+.p3-st h3{margin-top:0}
+.p3-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.gs-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px 26px;align-items:start}
+.gs-pan,.gs-side{min-width:0}
+.gs-dialbox{position:relative;border-radius:12px;padding:2px}
+.gs-dialbox:focus-within{outline:3px solid var(--pen);outline-offset:2px}
+.gs-dial{display:block;width:min(100%,230px);margin:0 auto;touch-action:none;cursor:pointer}
+.gs-trk{fill:none;stroke:var(--rule);stroke-width:7;stroke-linecap:round}
+.gs-tk{stroke:var(--ink-2);stroke-width:1.5}
+.gs-tk.big{stroke:var(--ink);stroke-width:2.2}
+.gs-tl{fill:var(--ink-2);font:600 12px var(--font-ui);text-anchor:middle}
+.gs-ndl{stroke:var(--ink);stroke-width:4;stroke-linecap:round}
+.gs-hub{fill:var(--ink)}
+.gs-val{fill:var(--ink);font:italic 700 17px var(--font-math);text-anchor:middle}
+.gs-msl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;margin:0}
+.gs-eh{margin:12px 0 6px;font-weight:700}
+.gs-pts,.pe-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.gs-pt,.pe-pt,.pe-ln,.pe-lab{display:inline-flex;align-items:center;gap:4px;font:400 1.2rem var(--font-math)}
+.gs-and,.pe-and{font-size:.9rem;color:var(--ink-2)}
+input.numin.gs-in,input.numin.pe-in{width:4.6em;min-width:0;text-align:center}
+#gs-alg .alg-lines > div{overflow-wrap:anywhere}
+#gs-alg .alg-lines small{display:inline}
+canvas.plot.gs-sq{aspect-ratio:4/3.2}
+
+/* Practice 1: coefficient rows */
+.df-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 6px;margin:8px 0 4px}
+.df-lab{font-size:1.15rem;margin-right:2px}
+.df-term{display:inline-flex;align-items:flex-start;gap:2px;padding-top:12px}
+.df-x{font-size:1.35rem;line-height:44px}
+.df-sup{vertical-align:top;line-height:1;margin-top:-12px}
+input.numin.df-in{text-align:center;min-width:0}
+input.numin.df-c{width:4.4em}
+input.numin.df-e{width:3.6em;font-size:.92rem;padding-top:3px;padding-bottom:3px;min-height:34px}
+.df-plus{font:400 1.25rem var(--font-math);color:var(--ink-2)}
+.df-ctl,.pe-ctl{margin-top:4px}
+.pe-row{margin:8px 0 4px}
+
+/* task */
+.tk-step{display:flex;align-items:center;gap:8px;margin:10px 0 0}
+.tk-lab{min-width:1.5em;font-size:1.2rem}
+.tk-val{min-width:2.2em;text-align:center;font:600 1.35rem var(--font-math)}
+.tk-step .btn{min-width:40px;font-size:1.1rem}
+.tk-eq{font-size:clamp(1.1rem,3.2vw,1.45rem);margin:12px 0 4px}
+.pk-read{margin-top:10px}
+
+@media (max-width:820px){
+  .dp-ex,.gs-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .dp-ex canvas.plot.dp-top,.dp-ex canvas.plot.dp-low{aspect-ratio:auto;height:220px}
+  .gs-dial{display:none}
+  .gs-dialbox:focus-within{outline:0}
+  .gs-msl{position:static;width:auto;height:auto;overflow:visible;clip:auto;clip-path:none;white-space:normal;margin:0 0 6px}
+}

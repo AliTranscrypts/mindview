@@ -131,3 +131,4 @@ every module that uses the touched code, then ship them together).
 | E6 ladderBuilder, E7 analysisRules, E4 verbDial, E8 lineCitation, spotProse | eng4u 04 | OWNER REVIEW: no texts verified (fetch failed) — check Defence "world/World", comma after "November" (Frankenstein), spaced ellipsis (Ozymandias); 295 KB |
 | F2 plateBuilder, F5 energyScale, guideShapes | hfa4u 05 | OWNER REVIEW (VERIFY, model data): Nour nutrient values, CCHS typical intakes (stand-ins), persona kcal/meals/activities, self-check fibre %, history/world cards, recipe values, habit labels, allergen additions |
 | (update) | eng4u 04 | VERIFIED since: Frankenstein ch. 5 opening matches the 1831 text (no comma); Tennyson "The Eagle" (Wikisource); Frost "Nothing Gold Can Stay". STILL UNVERIFIED: Wordsworth "I wandered lonely" st. 1, Defence of Poetry "world/World", Keats line in K1B |
+| V5 derivativePanels (domain-aware), V8 coefficientEntry/pointEntry, slopeDial, exactD | mcv4u 09 | |
