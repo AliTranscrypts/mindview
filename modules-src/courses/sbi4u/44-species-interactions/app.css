@@ -1,0 +1,90 @@
+/* SBI4U 44 Predation, Competition and Symbiosis. Prey and species 1: --pen; predators: --bio-atp (orange);
+   species 2: --bio-nadh (teal); K lines --ink-2 dashed; the balance point is an --ink cross. */
+.si-heq{letter-spacing:.02em}
+.si-hero{display:grid;gap:10px}
+.si-hero svg{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.si-hgrid{opacity:0;transition:opacity .9s ease}
+.si-hgrid.on{opacity:1}
+.si-grid{width:100%;border-collapse:collapse;font:400 .78rem/1.25 var(--font-ui);table-layout:fixed}
+.si-grid caption{font-size:.78rem;color:var(--ink-2);text-align:left;margin-bottom:4px}
+.si-grid th,.si-grid td{border:1px solid var(--rule);padding:4px 5px;text-align:center;vertical-align:middle;background:var(--sheet);color:var(--ink)}
+.si-grid th{font-weight:700;background:var(--paper)}
+.si-grid td.si-hot{background:var(--hi-soft);font-weight:700;outline:2px solid var(--bio-atp);outline-offset:-2px}
+.si-t{font:400 11px var(--font-ui);fill:var(--ink)}
+.si-ts{font-size:10px;fill:var(--ink-2)}
+.si-tb{font-weight:700;font-size:11.5px}
+.si-tblue{fill:var(--pen)}
+.si-torange{fill:var(--bio-atp)}
+.si-sign{font:700 20px var(--font-ui);fill:var(--ink)}
+.si-ax{stroke:var(--plot-axis);stroke-width:1.4}
+.si-hc{fill:none;stroke:var(--pen);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.si-lc{fill:none;stroke:var(--bio-atp);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.si-brk line{stroke:var(--ink);stroke-width:1.8}
+.si-brk line.si-brkd{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:3 3}
+.si-hare{fill:var(--pen)}
+.si-lynx{fill:var(--bio-atp)}
+
+/* Explore */
+.si-pg [hidden]{display:none!important}
+.si-panel{display:grid;gap:6px;margin-top:10px}
+.si-leg{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0 0;font-size:.86rem}
+.si-leg i.sw.si-dash{height:0;border-top:2px dashed var(--ink-2);background:none}
+.si-x{display:inline-block;width:28px;text-align:center;font:700 1.1rem var(--font-ui);color:var(--ink)}
+.si-gal{display:grid;gap:10px}
+.si-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.si-card{display:grid;gap:2px;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:10px;padding:8px 10px;min-height:44px;cursor:pointer;font:inherit}
+.si-card[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.si-card:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.si-cn{font-weight:700}
+.si-cp{font:700 1rem var(--font-ui)}
+.si-cw{font-size:.8rem;color:var(--ink-2)}
+.si-stage{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.si-stage svg{width:100%;height:auto;display:block}
+.si-cap{margin:0;font-size:.95rem;min-height:2.6em}
+.si-pbox{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6}
+.si-dot{fill:var(--ink)}
+.si-arr line{stroke:var(--ink-2)}
+.si-arr path{fill:var(--ink-2)}
+.si-att line{stroke-dasharray:5 4}
+.si-snow{fill:var(--paper);stroke:var(--rule);stroke-width:1.2}
+.si-res{fill:var(--hi-soft);stroke:var(--ink-2);stroke-width:1.2}
+.si-numin{width:7.5rem}
+.si-pf{display:inline-flex;flex-direction:column;gap:2px;font-size:.9rem}
+
+/* Part 3: ripple effects */
+.si-p3{display:grid;gap:26px}
+.si-st h3{margin-bottom:4px}
+.si-web{position:relative;width:100%;max-width:560px;margin:10px auto 4px;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.si-web svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.si-node{position:absolute;transform:translate(-50%,-50%);width:31%;min-height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  border:1.5px solid var(--ink);border-radius:10px;background:var(--sheet);color:var(--ink);padding:4px 6px;font:600 .8rem/1.15 var(--font-ui);text-align:center}
+button.si-node{cursor:pointer}
+button.si-node:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.si-node.si-fixed{background:var(--hi-soft);border-style:double;border-width:3px}
+.si-node.good{border-color:var(--green);background:var(--good-bg)}
+.si-node.bad{border-color:var(--red);background:var(--bad-bg)}
+.si-node:disabled{opacity:1}
+.si-nn{display:block}
+.si-ns{display:block;font-weight:400;font-size:.76rem;color:var(--ink-2)}
+.si-warr line{stroke:var(--ink);stroke-width:2}
+.si-warr path{fill:var(--ink)}
+.si-wdash line{stroke:var(--ink-2);stroke-dasharray:5 4}
+.si-wdash path{fill:var(--ink-2)}
+.si-wlabbg{fill:var(--sheet)}
+.si-data{margin-top:10px;border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--paper)}
+.si-data h4{margin:0 0 6px}
+.si-data p{margin:8px 0 0}
+
+/* Practice 2 chips */
+.si-chg{display:grid;gap:6px;margin-top:10px}
+.si-chrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.si-chrow .chips{margin:0}
+.si-chl{min-width:7.5rem;font-weight:700}
+.si-conds{margin:.4em 0 0 1.2em}
+
+@media (max-width:560px){
+  .si-node{width:32%;font-size:.72rem;padding:3px 4px}
+  .si-ns{font-size:.68rem}
+  .si-cards{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){ .si-hgrid{transition:none} }

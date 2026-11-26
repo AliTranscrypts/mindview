@@ -334,8 +334,7 @@
     "19",
     "12"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "21",
@@ -347,7 +346,8 @@
    "size": "L",
    "part3": "history",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "22",
@@ -376,8 +376,7 @@
     "22",
     "21"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "24",
@@ -393,7 +392,8 @@
     "21",
     "10"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "25",
@@ -408,7 +408,8 @@
     "23",
     "24"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "26",
@@ -423,7 +424,8 @@
     "23",
     "25"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "27",
@@ -439,7 +441,8 @@
     "25",
     "26"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "28",
@@ -454,7 +457,8 @@
     "25",
     "22"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "29",
@@ -470,7 +474,8 @@
     "28",
     "23"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "30",
@@ -485,7 +490,8 @@
     "22",
     "29"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "31",
@@ -501,7 +507,8 @@
     "30",
     "28"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "32",
@@ -516,7 +523,8 @@
     "21",
     "30"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "33",
@@ -533,7 +541,8 @@
     "26",
     "21"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "34",
@@ -545,7 +554,8 @@
    "size": "M",
    "part3": "systems",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "35",
@@ -560,7 +570,8 @@
     "34",
     "17"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "36",
@@ -590,7 +601,8 @@
     "14",
     "19"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "38",
@@ -605,7 +617,8 @@
     "34",
     "37"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "39",
@@ -620,7 +633,8 @@
     "38",
     "34"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "40",
@@ -635,8 +649,7 @@
     "34",
     "17"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "41",
@@ -667,7 +680,8 @@
     "36",
     "33"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "43",
@@ -679,7 +693,8 @@
    "size": "L",
    "part3": "sampling",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "44",
@@ -693,7 +708,8 @@
    "prereqs": [
     "43"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "45",
@@ -708,8 +724,7 @@
     "43",
     "44"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "46",
@@ -726,7 +741,8 @@
     "45",
     "18"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   }
  ]
 }

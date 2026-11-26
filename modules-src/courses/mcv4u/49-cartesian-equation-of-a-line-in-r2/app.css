@@ -1,0 +1,50 @@
+/* MCV4U 49: Normal dial (V3 board + V12 four forms), Angles between lines (two lines, protractor arcs, stations),
+   Find the coefficient boxes, Split the pair task */
+.cl-ex,.cl-p3{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.cl-main,.cl-side{min-width:0}
+.cl-eq{min-height:1.6em}
+canvas.plot.cl-board{touch-action:none}
+.cl-key{margin:8px 0 0}
+.cl-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 12px}
+.cl-h{font-weight:700;margin:0 0 6px}
+.cl-ctl .cl-h{margin:0}
+.cl-seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.cl-nbox{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin:0 0 8px}
+.cl-nbox .cl-h{flex-basis:100%;margin:0}
+.cl-step{display:inline-flex;align-items:center;gap:6px}
+.cl-step .m{font-size:1.1rem;min-width:1.1em}
+.cl-out{min-width:2.2em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.cl-note{margin:6px 0 0}
+.cl-side dl.read.cl-read{margin-top:14px}
+.cl-read dd{overflow-wrap:anywhere}
+.cl-wk{margin-left:6px;min-height:28px;padding:.15em .6em;font-size:.82rem}
+.cl-work{display:block;margin-top:4px}
+.cl-forms{margin-top:14px}
+.cl-ph{font-weight:700;margin:0 0 8px}
+.cl-fgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cl-form{border:1.5px solid var(--rule);border-radius:10px;padding:8px 10px;min-width:0}
+.cl-fh{font-weight:700;margin:0 0 6px}
+.cl-frow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.cl-fl{white-space:nowrap}
+input.numin.cl-box{width:3.6em;min-width:0;text-align:center}
+.cl-fnote{margin:6px 0 0;min-height:1.2em}
+.cl-good{color:var(--green);font-weight:700}
+.cl-pairs{gap:6px;margin:0 0 12px}
+.cl-sl{margin-top:4px;display:block}
+.cl-sl input{width:100%;min-height:28px}
+.cl-sl output{color:var(--ink);font-weight:700}
+.cl-st{margin-top:22px}
+.cl-st h3{margin:0 0 6px}
+.cl-formula{margin:10px 0}
+.cl-wl{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cl-wl li{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;padding:6px 10px;border-left:4px solid var(--rule);border-radius:0 8px 8px 0}
+.cl-v .chips{gap:6px;margin:6px 0}
+.cl-ban{margin-top:8px}
+.cl-cq .cl-frow{margin:8px 0 4px}
+.cl-tin{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.cl-tstep{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cl-tstep label{min-width:6.5rem}
+.cl-tgh{font-weight:700;margin:10px 0 4px}
+@media (max-width:900px){.cl-fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.cl-ex,.cl-p3{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:520px){.cl-fgrid{grid-template-columns:minmax(0,1fr)}}

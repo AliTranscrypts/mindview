@@ -1,0 +1,63 @@
+/* MCV4U 48: hero equation, Point and direction (Explore), Same line or not? stations, missing-piece boxes, task */
+.ln-m{color:var(--pen)}
+.ln-heq{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.ln-hpar{font-size:.62em;color:var(--ink-2)}
+.ln-nw{white-space:nowrap}
+.ln-hcap{display:inline-block;font-size:1.1rem}
+
+.ln-ex{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ln-main,.ln-side{min-width:0}
+.ln-eq{min-height:1.6em;font-size:1.2rem;display:flex;flex-wrap:wrap;gap:4px 18px}
+.ln-eq2{color:var(--f3)}
+.ln-tsl{margin-top:8px}
+.ln-tsl output{color:var(--ink)}
+.ln-trow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin-top:6px}
+.ln-chk{display:inline-flex;align-items:center;gap:6px;font-size:.95rem;cursor:pointer}
+.ln-chk[hidden]{display:none}
+.ln-chk input{width:18px;height:18px;accent-color:var(--ink)}
+.ln-how{margin:6px 0 10px}
+.ln-read{margin-top:10px}
+.ln-read .m{white-space:normal}
+.ln-more{display:none;margin-top:6px}
+.ln-note{margin:10px 0 0;font-weight:600;color:var(--ink)}
+
+.ln-st h3{margin-top:0}
+.ln-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.ln-stg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.ln-stl,.ln-str{min-width:0}
+.ln-eqs{font-size:1.08rem;line-height:1.9;margin:0 0 10px}
+.ln-sw{display:inline-block;width:24px;height:0;vertical-align:middle;margin-right:8px;border-top:3px solid var(--ink)}
+.ln-sw2{border-top:3px dashed var(--f3)}
+.ln-rg{margin:4px 0 8px}
+.ln-vfb:empty{display:none}
+.ln-alg{margin-top:12px}
+.ln-alg[hidden],.ln-lock[hidden],.ln-bn[hidden]{display:none}
+.ln-alg h4{margin:0 0 8px}
+.ln-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;min-height:2.6em}
+.ln-steps li{display:flex;gap:10px;align-items:baseline;border:1.5px solid var(--rule);border-radius:6px;padding:.45em .75em;background:var(--sheet)}
+.ln-steps li.cur{border-color:var(--ink);background:var(--hi-soft)}
+.ln-steps .sn{font-weight:700;color:var(--ink-2)}
+.ln-steps .m{white-space:normal}
+.ln-pl{margin-top:8px}
+.ln-bn{margin-top:10px}
+
+.ln-bxs{display:flex;flex-wrap:wrap;gap:10px 22px;margin:6px 0 4px}
+.ln-bxs label{display:flex;align-items:center;gap:8px;font:400 1.1rem var(--font-math)}
+.ln-ptin{display:inline-flex;align-items:center;gap:4px;font-size:1.15rem;margin:6px 0 4px}
+.ln-ptin .numin.short,.ln-bxs .numin.short{width:4.8rem}
+
+.lq-step{display:flex;align-items:center;gap:8px;margin:8px 0 0;flex-wrap:wrap}
+.lq-step label{min-width:7rem}
+.lq-lab{font-size:1.2rem}
+.lq-step .btn{min-width:40px;font-size:1.1rem}
+.lq-step .numin.short{width:5.5rem}
+
+@media (max-width:820px){
+  .ln-ex,.ln-stg{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ln-read:not(.ln-all) .ln-x2{display:none}
+  .ln-more{display:inline-flex}
+  .ln-eq{font-size:1.05rem}
+  .lq-step label{flex-basis:100%;min-width:0}
+}

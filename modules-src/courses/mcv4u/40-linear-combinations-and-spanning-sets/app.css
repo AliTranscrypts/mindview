@@ -1,0 +1,70 @@
+/* MCV4U 40: hero equation, Span painter (Explore), Reach the target stations, V8 boxes, task */
+.lc-a{color:var(--pen)}
+.lc-b{color:var(--f3)}
+.lc-heq{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 12px}
+.lc-nw{white-space:nowrap}
+.lc-sep{color:var(--ink-2)}
+.lc-hcap{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 14px;font-size:1.05rem}
+.lc-hcap [data-st]{transition:opacity .45s ease}
+@media (prefers-reduced-motion:reduce){ .lc-hcap [data-st]{transition:none} }
+
+.lc-ex{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.lc-main,.lc-side{min-width:0}
+.lc-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.lc-vlab{font-weight:700;margin-right:4px}
+.lc-warn{min-height:0;margin:0;font-weight:700;color:var(--hi-ink);border-radius:6px}
+.lc-warn.on{background:var(--hi);padding:.35em .7em;margin:0 0 8px}
+.lc-3d{outline-offset:3px;border-radius:6px}
+.lc-3d:focus-visible{outline:3px solid var(--pen)}
+.lc-3d canvas{cursor:grab}
+.lc-views{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0}
+.lc-views[hidden],.plot-wrap[hidden]{display:none}
+.lc-coefs{display:grid;gap:4px;margin-top:8px}
+.lc-sl{margin-top:4px}
+.lc-sl output{color:var(--ink);font-weight:700}
+.lc-tog,.lc-tgts{margin-bottom:8px}
+.lc-tgts:empty{display:none}
+.lc-drawer{border:1.5px solid var(--rule);border-radius:8px;padding:.4em .8em;margin:0 0 12px;background:var(--sheet)}
+.lc-drawer summary{cursor:pointer;font-weight:700;min-height:28px;display:list-item}
+.lc-drawer p{margin:.5em 0}
+.lc-vval{font-size:1.1rem}
+.lc-vrow{display:flex;align-items:center;gap:10px;margin:8px 0;flex-wrap:wrap}
+.lc-vn{font-size:1.2rem;min-width:1.4em}
+.lc-vsl{display:flex;flex-wrap:wrap;gap:4px 12px;flex:1;min-width:0}
+.lc-mini{display:inline-flex;align-items:center;gap:4px;font-size:.95rem}
+.lc-mini input{width:84px}
+.lc-mini output{min-width:1.6em;text-align:right;font-weight:700}
+.lc-read .m{white-space:normal}
+
+.lc-st h3{margin-top:0}
+.lc-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.lc-stl,.lc-str{min-width:0}
+.lc-eqs{display:grid;gap:8px;margin:6px 0 10px}
+.lc-eqr{display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:1.15rem}
+.lc-eqn{min-width:1.8em;font-weight:600}
+.lc-eqr .numin.short{width:3.6rem;text-align:center}
+.lc-moves{margin-top:12px}
+.lc-mvdone{margin:0 0 8px;padding-left:1.4em;display:grid;gap:4px}
+.lc-mvdone li{padding:.2em .2em}
+.lc-mvq{margin:8px 0 6px}
+.lc-mvch{display:grid;gap:6px}
+.lc-mvb{justify-content:flex-start;text-align:left;white-space:normal;height:auto;min-height:40px}
+.lc-mvb .m{white-space:normal}
+.lc-note{font-weight:700;margin:10px 0 0}
+.lc-first{margin:10px 0 4px}
+.lc-ask{margin:6px 0;font-weight:600}
+.lc-s3msg{margin:8px 0;font-weight:600}
+.lc-s3msg.on{background:var(--hi-soft);border-radius:6px;padding:.35em .6em}
+.lc-stl .alg{margin-top:10px}
+
+.lc-bxs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px}
+.lc-bxs label{display:flex;align-items:center;gap:8px;font-size:1.05rem}
+.lc-bxs .numin.short{width:5.2rem}
+
+.lc-step label{min-width:5.5rem}
+.lc-lab{font-size:1.2rem}
+
+@media (max-width:760px){
+  .lc-ex{grid-template-columns:minmax(0,1fr)}
+  .lc-mini input{width:70px}
+}

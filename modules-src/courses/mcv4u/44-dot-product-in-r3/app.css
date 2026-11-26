@@ -1,0 +1,36 @@
+/* MCV4U 44: hero caption, 3D angle finder (Explore), Find the missing component stations, Square corner task */
+.dp-hcap{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:.98rem}
+.dp-hcap [data-st]{transition:opacity .45s ease}
+@media (prefers-reduced-motion:reduce){ .dp-hcap [data-st]{transition:none} }
+
+.dp-v{touch-action:none}
+.dp-v:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.dp-main,.dp-side{min-width:0}
+.dp-views{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.dp-views .btn.on{border-color:var(--ink);background:var(--hi-soft);color:var(--ink)}
+.dp-how{margin:6px 0 8px}
+.dp-vecs{display:grid;gap:8px;margin-bottom:10px}
+.dp-vrow{display:flex;align-items:center;flex-wrap:wrap;gap:4px;font-size:1.1rem}
+.dp-vn{min-width:2.6rem}
+.dp-st-in{width:4.2rem;text-align:center}
+.dp-pre{margin:6px 0 10px;align-items:center}
+.dp-ask{margin:10px 0 4px;font-weight:700}
+.dp-verdict{margin:10px 0 6px;font-weight:600}
+.dp-read{margin-top:12px}
+.dp-read .m{white-space:normal}
+.dp-note{margin:10px 0 0;font-weight:600;color:var(--ink)}
+.dp-setups{margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+.dp-setups p{margin:6px 0 0}
+.uses.dp-uses{display:block;margin-top:8px}
+
+.dp-st h3{margin-top:0}
+.dp-stg{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.dp-stv,.dp-sts{min-width:0}
+.dp-count{font-weight:700;margin:8px 0 4px}
+.dp-after{margin:10px 0 0}
+.dp-cube{margin:4px 0 8px}
+
+@media (max-width:760px){
+  .dp-ex,.dp-stg{grid-template-columns:minmax(0,1fr)}
+}

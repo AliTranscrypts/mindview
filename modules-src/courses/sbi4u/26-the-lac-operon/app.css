@@ -1,0 +1,98 @@
+/* SBI4U 26: lac operon strips (hero, switchboard, task preview), trp strip, S12 builder.
+   Roles (plan build notes, course plan §3): DNA --ink; mRNA teal --bio-nadh; sugars (lactose, allolactose, glucose) and Trp brown
+   --bio-carbon; proteins (repressor, CAP, RNA polymerase) --ink-2 outlines with labels; enzymes made and output bars --pen. */
+
+/* hero equation: the lac region as a row of labelled boxes */
+.hero .hero-eq .lo-heq{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:.5em;line-height:1.2}
+.lo-hseg{display:inline-block;border:1.5px solid var(--ink);border-radius:4px;padding:.15em .45em;background:var(--sheet);color:var(--ink);font-weight:600}
+.lo-hseg.op{outline:2px solid var(--ink-2);outline-offset:2px}
+.lo-hdots{color:var(--ink-2);letter-spacing:.1em;padding:0 .1em}
+.lo-hero{max-width:660px;margin:0 auto}
+.lo-hsvg{display:block;width:100%;height:auto}
+
+/* radio groups (from SBI4U 20 / 14 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);min-width:4.2em}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled,.rg.chips button:disabled{opacity:.55}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+
+/* switchboard layout */
+.lo-ex [hidden],.lo-p3 [hidden]{display:none!important}
+@media (min-width:821px){ .pg.lo-pg{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)} }
+.lo-pg .pg-ctrl{display:grid;gap:12px;align-content:start}
+.lo-panel{display:grid;gap:10px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.lo-fs{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px 10px;margin:0;display:grid;gap:8px}
+.lo-fs legend{font-weight:700;font-size:.9rem;padding:0 .3em}
+.lo-al3{display:flex;flex-wrap:wrap;gap:8px 16px}
+.lo-note{margin:0}
+.lo-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.lo-svg{display:block;width:100%;min-width:600px;height:auto}
+.lo-cap{margin:8px 0 0;font-size:.95rem}
+.lo-key{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:8px 0 0;color:var(--ink-2)}
+.lo-kk{display:inline-block;width:18px;height:10px;border-radius:3px;vertical-align:middle}
+.lo-kd{border:2px solid var(--ink);background:var(--sheet)}
+.lo-kp{border:2px solid var(--ink-2);border-radius:6px;background:var(--sheet)}
+.lo-km{height:4px;background:var(--bio-nadh)}
+.lo-ke{background:var(--pen)}
+.lo-hexk{display:inline-block;width:12px;height:12px;background:var(--bio-carbon);clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);vertical-align:middle}
+.lo-bars{margin:10px 0 6px;display:grid;gap:6px}
+.lo-bt{margin:0;font-weight:700;font-size:.9rem}
+.lo-bar{display:grid;grid-template-columns:minmax(0,11em) 1fr;gap:8px;align-items:center;font-size:.86rem}
+.lo-bt2{display:block;height:12px;border:1.5px solid var(--rule);border-radius:6px;overflow:hidden}
+.lo-bt2 i{display:block;height:100%;background:var(--pen);transition:width .4s}
+@media (prefers-reduced-motion:reduce){ .lo-bt2 i{transition:none} }
+
+/* SVG roles */
+.lo-svg text,.lo-hsvg text{font-family:inherit}
+.lo-lab{fill:var(--ink-2);font-size:11.5px}
+.lo-al{font-weight:700;fill:var(--ink)}
+.lo-it{font-style:italic}
+.lo-g{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.lo-site{fill:var(--hi-soft);stroke:var(--ink);stroke-width:2}
+.lo-site.mut,.lo-g.mut{stroke-dasharray:5 3}
+.lo-gapl{stroke:var(--ink);stroke-width:2;stroke-dasharray:2 5;fill:none}
+.lo-prot{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2.2}
+.lo-pol{stroke-width:2.4}
+.lo-pl{fill:var(--ink-2);font-size:11px;font-weight:700}
+.lo-pt{fill:var(--ink-2);font-size:9.5px;font-weight:700}
+.lo-camp{fill:var(--ink)}
+.lo-sug{fill:var(--bio-carbon)}
+.lo-trpt{fill:var(--sheet);font-size:9px;font-weight:700}
+.lo-iptg{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.lo-iptgt{fill:var(--ink-2);font-size:8px;font-weight:700}
+.lo-mrna{fill:none;stroke:var(--bio-nadh);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.lo-ml{fill:var(--ink);font-size:11.5px;font-weight:700}
+.lo-ms{fill:var(--ink-2);font-size:10.5px}
+.lo-mt{fill:var(--bio-nadh);font-size:11px;font-weight:700}
+.lo-enz{fill:var(--pen)}
+.lo-enz.bad{fill:none;stroke:var(--ink-2);stroke-width:1.4}
+.lo-trace{fill:none;stroke:var(--pen);stroke-width:1.4;stroke-dasharray:3 3}
+.lo-tag{fill:var(--ink);font-size:12px;font-weight:700}
+.lo-ghost{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:4 4}
+.lo-x{fill:var(--ink);font-size:13px;font-weight:700}
+.lo-lv{fill:var(--ink);font-size:12px;font-weight:700}
+
+/* Part 3 */
+.lo-st h3{margin-top:0}
+.lo-box{margin:8px 0}
+.lo-sl{margin:8px 0}
+.lo-sl input{width:100%;accent-color:var(--ink)}
+.lo-cerrow{margin:8px 0}
+.lo-cerq{margin:0 0 6px}
+.lo-chips{display:flex;flex-wrap:wrap;gap:6px}
+.lo-chip{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.3em .85em;font-size:.92rem;min-height:36px;text-align:left}
+.lo-chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.lo-chip:disabled{opacity:.7}
+
+/* practice 2 and task */
+.lo-pe6h{margin:0 0 4px}
+.lo-star{margin-right:.3em}
+.lo-tin{display:grid;gap:10px}
+.lo-tpvw h4{margin:0 0 6px}
+.lo-conds{margin:.4em 0 0 1.2em}

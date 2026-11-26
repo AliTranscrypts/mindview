@@ -1,0 +1,44 @@
+/* MCV4U 38: Component converter (V3 vector board, three modes, readout with "More" on phones), Algebra with components
+   stations (V8 boxes, AB and copies, parallel test), Components at work frames, First leg west task */
+.cv-heq2{display:block;margin-top:.3em;font-size:.82em}
+.cv-ex{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.cv-main,.cv-side{min-width:0}
+canvas.plot.cv-board{touch-action:none}
+.cv-key{margin:8px 0 0}
+.cv-h{font-weight:700;margin:10px 0 4px}
+.cv-modes .seg{display:flex;flex-wrap:nowrap;overflow-x:auto;max-width:100%;white-space:nowrap}
+.cv-modes .seg button{flex:0 0 auto}
+.cv-ctrl{margin-top:6px}
+.cv-sl{display:block;margin-top:8px}
+.cv-sl input{width:100%;min-height:28px}
+.cv-sl output{font-weight:700;color:var(--ink)}
+.cv-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.cv-note{margin:6px 0 0}
+.cv-qb{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.cv-qb select{min-height:34px;padding:0 .5em;border:1.5px solid var(--ink);border-radius:8px;background:var(--sheet);font-weight:700}
+.cv-tog{margin-top:12px}
+.cv-readw{margin-top:14px}
+.cv-read .cv-flash{background:var(--hi-soft);border-radius:6px}
+.cv-more{display:none}
+.cv-st .cv-stg{align-items:start}
+.cv-rows{display:flex;flex-direction:column;gap:8px}
+.cv-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.cv-rl{margin-right:2px}
+.cv-in.numin.short{width:5.2em}
+.cv-note2{margin:10px 0 0}
+.cv-st3{font-weight:700;margin:8px 0}
+.cv-st3.cv-yes{color:var(--green)}
+.cv-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:8px 0 4px}
+.cv-fl{white-space:nowrap}
+.lw-in{display:flex;flex-direction:column;gap:10px}
+.lw-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.lw-step label{min-width:7.5rem}
+.lw-step .numin.short{width:4.6em}
+#lw-read{margin-bottom:8px}
+@media (max-width:760px){
+  .cv-ex{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .cv-more{display:inline-flex;margin-top:6px}
+  .cv-readw:not(.open) .cv-mr{display:none}
+}

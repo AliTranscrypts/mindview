@@ -1,0 +1,67 @@
+/* MCV4U 47: hero (wrench, then a slanted box), Wrench and torque (2D wrench view, V1 3D view), Volume stations (tabs + V1),
+   Lean the box task. --ap-face scales the box-face opacity: 14% in light mode, about 22% in dark mode (plan §5). */
+:root{--ap-face:1}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ap-face:1.6}
+}
+:root[data-theme="dark"]{--ap-face:1.6}
+.ap-c1{color:var(--pen)}
+.ap-c2{color:var(--f3)}
+.ap-c3{color:var(--f5)}
+.ap-heq2{display:block;margin-top:.3em}
+svg.ap-hero{display:block;width:100%;height:auto}
+.ap-tm{font:italic 600 15px var(--font-math)}
+.ap-big{font-size:17px}
+/* V1 view3d */
+.v3{min-width:0}
+svg.v3-svg{display:block;width:100%;height:auto;aspect-ratio:1/1;touch-action:none;cursor:grab;background:var(--sheet);border:1.5px solid var(--rule);border-radius:10px}
+svg.v3-svg:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.v3-t{font:italic 600 15px var(--font-math);paint-order:stroke;stroke:var(--sheet);stroke-width:3.5px;stroke-linejoin:round}
+.v3-bar{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.v3-note{margin:6px 0 0}
+/* Explore */
+.ap-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 28px;align-items:start;margin-top:12px}
+.ap-view,.ap-side{min-width:0}
+.ap-key{margin:0 0 8px}
+svg.ap-wsvg{display:block;width:100%;height:auto;aspect-ratio:440/280;background:var(--sheet);border:1.5px solid var(--rule);border-radius:10px}
+.ap-sl{margin:0 0 10px}
+.ap-sl input{width:100%;min-height:28px}
+.ap-sl output{color:var(--ink);font-weight:700}
+.ap-h{font-weight:700;margin:10px 0 6px}
+.ap-th{gap:6px;margin:0 0 6px}
+.ap-vs{margin:0 0 10px}
+.ap-vn{display:block;font-weight:700;margin:0 0 4px}
+.ap-vrow{display:flex;flex-wrap:wrap;gap:6px 10px}
+.ap-st{display:inline-flex;align-items:center;gap:4px;border:1.5px solid var(--rule);border-radius:8px;padding:2px}
+.ap-st .btn{min-width:36px;min-height:36px;padding:0 .4em}
+.ap-st output{min-width:2.6em;text-align:center;font:600 1.08rem var(--font-math)}
+.ap-acts{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.ap-recl{margin:4px 0;padding-left:1.2em}
+.ap-msg{color:var(--ink-2);margin:6px 0 0}
+.ap-read{margin-top:12px}
+.ap-det-d{margin-top:6px}
+.ap-det-d summary{cursor:pointer;font-weight:700;font-size:.9rem}
+.ap-det-d div{overflow-x:auto;margin-top:4px}
+/* Part 3 */
+.ap-tabs{display:flex;flex-wrap:wrap;gap:6px;border-bottom:1.5px solid var(--rule);padding-bottom:8px}
+.ap-tabs button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.35em .8em;font-weight:700;min-height:36px}
+.ap-tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.ap-p3 h3{margin-top:0}
+.ap-ban{margin:10px 0}
+.ap-flat{min-height:1.3em;margin:6px 0}
+.ap-ords{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.ap-ords .btn[aria-pressed="true"]{border-color:var(--ink)}
+.ap-rule{margin-top:12px}
+.ap-detl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.ap-det{display:inline-flex;flex-direction:column;border-left:2px solid currentColor;border-right:2px solid currentColor;padding:2px 6px;border-radius:2px}
+.ap-dr{display:grid;grid-template-columns:repeat(3,2.2em);text-align:center}
+/* task */
+.lb-in{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.lb-step{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.lb-step label{min-width:7rem}
+.lb-step .numin.short{width:4.4rem}
+.lb-step .btn{min-width:40px;min-height:40px}
+.lb-gh{font-weight:700;margin:10px 0 4px}
+@media (max-width:820px){
+  .ap-grid{grid-template-columns:minmax(0,1fr)}
+}

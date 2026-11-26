@@ -410,8 +410,7 @@
     "18",
     "19"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "25",
@@ -425,8 +424,7 @@
    "prereqs": [
     "18"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "26",
@@ -455,7 +453,8 @@
    "prereqs": [
     "26"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "28",
@@ -485,8 +484,7 @@
     "16",
     "27"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "30",
@@ -500,8 +498,7 @@
    "prereqs": [
     "29"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "31",
@@ -515,8 +512,7 @@
    "prereqs": [
     "29"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "32",
@@ -531,8 +527,7 @@
     "31",
     "29"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "33",
@@ -562,7 +557,8 @@
    "prereqs": [
     "31"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "35",
@@ -578,8 +574,7 @@
     "32",
     "27"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "36",
@@ -594,8 +589,7 @@
     "35",
     "31"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "37",
@@ -610,8 +604,7 @@
     "36",
     "35"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "38",
@@ -647,7 +640,8 @@
     "34",
     "37"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   }
  ]
 }

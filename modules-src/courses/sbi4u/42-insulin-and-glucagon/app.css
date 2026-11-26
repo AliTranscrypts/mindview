@@ -1,0 +1,133 @@
+/* SBI4U 42: hero (balance scale + 24-hour storyboard), Blood glucose day (S11 timeline graph, S8 feedback view), Part 3 stations, task.
+   Roles: glucose --ink (thick line, dots); insulin --pen (= --bio-o2, blue); glucagon --bio-atp (orange, dashed on graphs);
+   target band --hi-soft; kidney limit --ink-2 dashed. ATP doesn't appear in this module, so orange is free for glucagon. */
+
+/* radio groups (from SBI4U 07 / 06 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .85em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.45}
+
+/* stepper (from SBI4U 19) and switch (from SBI4U 12) */
+.ig-stp{display:inline-flex;align-items:stretch;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.ig-stb{min-width:40px;min-height:40px;border:0;background:var(--sheet);color:var(--ink);font-size:1.2rem;font-weight:700;padding:0}
+.ig-stb:disabled{opacity:.4}
+.ig-stp output{min-width:4.6em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);padding:0 .4em;line-height:40px}
+.ig-swb{display:inline-flex;align-items:center;gap:8px;text-align:left;border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.4em .7em;min-height:44px;font-size:.9rem;font-weight:700}
+.ig-swk{flex:0 0 30px;height:16px;border-radius:8px;border:1.5px solid var(--ink-2);position:relative;background:var(--paper)}
+.ig-swk::after{content:"";position:absolute;top:1.5px;left:2px;width:10px;height:10px;border-radius:50%;background:var(--ink-2);transition:left .15s}
+.ig-swb[aria-checked="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.ig-swb[aria-checked="true"] .ig-swk{background:var(--ink);border-color:var(--ink)}
+.ig-swb[aria-checked="true"] .ig-swk::after{left:15px;background:var(--sheet)}
+.ig-swst{font-size:.75rem;color:var(--ink-2)}
+.ig-sws{display:flex;flex-wrap:wrap;gap:8px}
+@media (prefers-reduced-motion:reduce){ .ig-swk::after{transition:none} }
+
+/* hero */
+.ig-heq{white-space:normal}
+.ig-hins{color:var(--pen);font-weight:700}
+.ig-hglu{color:var(--bio-atp);font-weight:700}
+.ig-hero{width:100%;display:grid;gap:8px}
+.ig-scale{display:grid;grid-template-columns:minmax(0,1fr) 92px minmax(0,1fr);align-items:end;gap:4px}
+.ig-pan{font-size:.78rem;line-height:1.3;padding:6px 8px;border:1.5px solid var(--rule);border-top:3px solid var(--ink-2);border-radius:0 0 10px 10px;background:var(--sheet);color:var(--ink)}
+.ig-panl{border-top-color:var(--pen)}
+.ig-panr{border-top-color:var(--bio-atp)}
+.ig-beam{width:100%;height:auto;display:block}
+.ig-tl{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ig-hband,.ig-hband2{fill:var(--hi-soft)}
+.ig-hband2{stroke:var(--ink-2);stroke-width:1}
+.ig-ptr{stroke:var(--ink);stroke-width:2}
+.ig-ptrh{fill:var(--ink)}
+.ig-beamb{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.ig-fulc{fill:var(--ink-2)}
+.ig-str{stroke:var(--ink-2);stroke-width:1.2}
+.ig-hax{stroke:var(--ink-2);stroke-width:1.2}
+path.ig-hglc{fill:none;stroke:var(--ink);stroke-width:3.2;stroke-linejoin:round}
+path.ig-hins{fill:none;stroke:var(--pen);stroke-width:2.4;stroke-linejoin:round}
+path.ig-hglu{fill:none;stroke:var(--bio-atp);stroke-width:2.4;stroke-dasharray:6 4;stroke-linejoin:round}
+.ig-plate{fill:var(--sheet);stroke:var(--ink);stroke-width:1.6}
+.ig-plate2{fill:none;stroke:var(--ink-2);stroke-width:1}
+
+/* SVG text and shapes */
+.ig-t{font:600 12px var(--font-ui);fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round}
+.ig-ts{font-weight:400;font-size:10.5px;fill:var(--ink-2)}
+.ig-tb{font-size:12px}
+.ig-tin{fill:var(--pen)}
+.ig-tgl{fill:var(--bio-atp)}
+.ig-islet{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.4}
+.ig-beta{fill:color-mix(in srgb,var(--pen) 22%,var(--sheet));stroke:var(--pen);stroke-width:1.6}
+.ig-beta.dead{fill:var(--sheet);stroke:var(--ink-2);stroke-dasharray:2 2}
+.ig-alpha{fill:color-mix(in srgb,var(--bio-atp) 22%,var(--sheet));stroke:var(--bio-atp);stroke-width:1.6}
+.ig-x{fill:none;stroke:var(--ink-2);stroke-width:1.6}
+.ig-vessel{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.4}
+.ig-glc{fill:var(--ink)}
+.ig-box{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.4}
+.ig-ains line{stroke:var(--pen);stroke-linecap:round}
+.ig-ains path{fill:var(--pen)}
+.ig-aglu line{stroke:var(--bio-atp);stroke-linecap:round;stroke-dasharray:5 3}
+.ig-aglu path{fill:var(--bio-atp)}
+.ig-aglc line{stroke:var(--ink);stroke-linecap:round}
+.ig-aglc path{fill:var(--ink)}
+
+/* explore layout */
+.ig-pg [hidden]{display:none!important}
+.ig-pg .pg-ctrl{display:grid;gap:12px}
+.ig-panel{display:grid;gap:8px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.ig-ph{margin:0;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ig-sl{margin:0}
+.ig-sl input{width:100%;accent-color:var(--ink)}
+canvas.plot.ig-hcv{aspect-ratio:16/7;margin-top:8px}
+.ig-key{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;color:var(--ink-2)}
+.ig-key span{display:inline-flex;align-items:center;gap:5px}
+.ig-key i{display:inline-block;width:22px;height:0;border-top:3.4px solid var(--ink)}
+.ig-key i.ig-ki{border-top:3px solid var(--pen)}
+.ig-key i.ig-kc{border-top:3px dashed var(--bio-atp)}
+.ig-key i.ig-kb{height:10px;border:0;background:var(--hi-soft)}
+.ig-key i.ig-kk{border-top:2px dashed var(--ink-2)}
+.ig-fv{margin-top:10px;width:100%;aspect-ratio:360 / 214;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);position:relative;overflow:hidden}
+.ig-fv svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ig-cap{margin:8px 0 0;font-size:.92rem;min-height:2.8em}
+.ig-note{margin-top:10px}
+.ig-warn{margin:0 0 10px;padding:8px 12px;border:1.5px solid var(--red);border-radius:8px;background:var(--bad-bg);font-size:.92rem}
+.ig-low{color:var(--red)}
+
+/* Part 3 */
+.ig-p3{display:grid;gap:18px}
+.ig-st h3{margin-top:0}
+.ig-note2{margin:10px 0;padding:8px 12px;border-left:4px solid var(--rule);background:var(--info-bg);border-radius:4px}
+canvas.plot.ig-pcv{max-width:520px;margin:8px 0}
+.ig-q{margin:10px 0 6px;font-weight:700}
+.ig-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ig-chips .chip{text-align:left}
+.ig-mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ig-mcol{display:grid;gap:8px;align-content:start}
+.ig-card{border:1.5px solid var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.5em .7em;text-align:left;font-size:.9rem;min-height:44px}
+.ig-card[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);font-weight:700}
+.ig-card.done{border-color:var(--green);background:var(--good-bg);opacity:1}
+.ig-dish{width:100%;max-width:520px;aspect-ratio:360 / 166;position:relative}
+.ig-dish svg{position:absolute;inset:0;width:100%;height:100%;display:block;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ig-bar{fill:var(--pen)}
+.ig-bar0{fill:var(--ink-2)}
+
+/* practice */
+.ig-rule{margin:0 0 12px;padding:8px 12px;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);font-size:.92rem}
+.ig-unit{font-size:.92rem;color:var(--ink-2)}
+
+/* task */
+.ig-conds{margin:8px 0 0;padding-left:1.4em}
+.ig-tin{display:grid;gap:10px;margin:12px 0}
+.ig-tot{margin:8px 0}
+
+@media (max-width:520px){
+  .ig-scale{grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr)}
+  .ig-pan{font-size:.72rem;padding:5px 6px}
+  .ig-mgrid{gap:8px}
+  .ig-card{font-size:.84rem}
+}

@@ -1,0 +1,78 @@
+/* SCH4U 39: hero, pH ladder (Explore), pH in daily life (Part 3), Calculate it, Mix to a target.
+   Colours: H₃O⁺ --ab-h3o (magenta), OH⁻ --ab-oh (cerulean) from the course CSS; the ladder uses --ink ticks. */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.ph-hx .ph-svg{max-width:420px}
+.ph-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.ph-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: pH ladder */
+.ph-how{margin-top:0}
+.ph-modes{margin:0 0 12px}
+.ph-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ph-view,.ph-side{min-width:0}
+.ph-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.ph-box + .ph-box{margin-top:10px}
+.ph-box[hidden],.ph-c[hidden]{display:none}
+.ph-svg{display:block;width:100%;max-width:480px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.ph-cap{min-height:1.5em;margin:10px 0 2px;font-size:1rem}
+.ph-c > * + *{margin-top:12px}
+.ph-vdrow,.ph-dilrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.ph-vd[aria-pressed="true"]{border-color:var(--hi);background:var(--hi-soft)}
+.ph-read{margin-top:14px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.ph-tabs{margin-top:4px}
+
+/* Part 3 */
+.ph-st h3{margin-bottom:6px}
+#p3-app > .ph-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.ph-items{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
+.ph-it{min-height:36px}
+.ph-it[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.ph-stripwrap{overflow-x:auto;padding-bottom:4px}
+.ph-strip{display:grid;grid-template-columns:repeat(15,minmax(26px,1fr));gap:3px;min-width:430px}
+.ph-cell{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:2px;min-height:48px;padding:6px 0 4px;border:1.5px solid var(--ink-2);border-radius:6px;background:var(--sheet);color:var(--ink);font:700 .95rem var(--font-ui)}
+.ph-cell.has{border-color:var(--ink);border-width:2.5px;background:var(--hi-soft)}
+.ph-pin{font-size:.6rem;line-height:1;letter-spacing:1px;color:var(--ink)}
+.ph-ends{display:flex;justify-content:space-between;min-width:430px;margin-top:4px}
+.ph-placed{margin:10px 0 0;padding-left:1.2em}
+.ph-placed li + li{margin-top:2px}
+.ph-alldone{list-style:none;margin-left:-1.2em;margin-top:8px!important;font-weight:700}
+.ph-bl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0}
+.ph-bl input[type=range]{flex:1 1 14rem;max-width:22rem;min-height:32px;accent-color:var(--ab-h3o)}
+.ph-blrow{display:grid;grid-template-columns:6.5em minmax(0,1fr);align-items:center;gap:10px;margin:6px 0;font-size:.95rem}
+.ph-bltrack{display:block;height:18px;border:1.5px solid var(--rule);border-radius:4px;overflow:hidden}
+.ph-blbar{display:block;height:100%;background:var(--ab-h3o)}
+.ph-lake{margin-top:10px}
+.ph-lq{margin:12px 0 6px;font-weight:700}
+.ph-lakech .chips{display:flex;flex-wrap:wrap;gap:6px}
+.ph-msvg{display:block;width:100%;max-width:480px;height:auto;margin:10px 0 4px;font-family:var(--font-ui)}
+.ph-acbtns{margin-top:6px}
+
+/* Practice: Calculate it */
+.ph-sci{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.ph-in{width:6.5em}
+.ph-supbox{vertical-align:.7em;line-height:0}
+.ph-supbox .ph-exp{width:4.2em;font-size:.85rem}
+.ph-unit{margin-left:4px}
+
+/* Task */
+.ph-tva,.ph-tvb{margin-bottom:12px}
+.ph-h4{margin:0 0 8px;font-size:1rem}
+.ph-conds{margin:8px 0 0}
+
+@media (max-width:700px){
+  .ph-grid{grid-template-columns:minmax(0,1fr)}
+  .ph-svg{max-width:420px}
+}

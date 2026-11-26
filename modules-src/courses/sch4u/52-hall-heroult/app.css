@@ -1,0 +1,88 @@
+/* SCH4U 52: hero pot, Aluminium smelter, The cost of aluminium stations, Smelter calculations, Smelter plan task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.hh-eq{display:inline-block;line-height:1.35}
+.hh-eqn{display:inline-block;font-size:.6em;color:var(--ink-2);font-weight:400}
+.hh-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.hh-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.hh-hx-cap{font:400 1.02rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+
+/* Aluminium smelter */
+.hh-modes{margin:0 0 10px}
+.hh-ban{margin-top:4px}
+.hh-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.hh-left,.hh-right{min-width:0}
+.hh-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:6px}
+.hh-cap{min-height:1.5em;margin:10px 0 6px;font-size:1rem}
+.hh-tl{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.hh-scrub{display:flex;align-items:center;gap:8px;flex:1 1 220px;min-width:0}
+.hh-scrub-l{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.hh-clk{flex:1 1 auto;min-width:0;min-height:28px;accent-color:var(--pen)}
+.hh-clk-o{font-size:.9rem;white-space:nowrap}
+.hh-right > * + *{margin-top:12px}
+.hh-cpot > * + *,.hh-crun > * + *{margin-top:12px}
+.hh-cpot[hidden],.hh-crun[hidden],.hh-tl[hidden],.hh-eff[hidden],.hh-an[hidden]{display:none!important}
+.hh-read{margin-top:12px}
+.hh-model{margin:6px 0 0}
+
+/* Part 3 stations */
+.hh-st + .hh-st{margin-top:18px}
+.hh-pw{margin:10px 0}
+.hh-leg{margin:0 0 6px;font-size:.88rem;color:var(--ink-2);display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.hh-sw{display:inline-block;width:14px;height:12px;border-radius:3px}
+.hh-sw-e,.hh-be{background:var(--pen)}
+.hh-sw-a,.hh-ba{background:var(--ink-2)}
+.hh-bar{display:grid;grid-template-columns:6.5em minmax(0,1fr) 5.5em;align-items:center;gap:8px;margin:6px 0;font-size:.92rem}
+.hh-bar.on{font-weight:700}
+.hh-bar.on .hh-bt{outline:2px solid var(--hi);outline-offset:2px}
+.hh-bt{display:flex;height:16px;border-radius:4px;background:var(--paper);overflow:hidden}
+.hh-be,.hh-ba{display:block;height:100%}
+.hh-bv{text-align:right;white-space:nowrap}
+.hh-pwfb{margin:8px 0 10px;min-height:1.4em}
+.hh-recin{display:grid;gap:8px;margin-top:8px}
+.hh-recin .numrow,.hh-numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:8px}
+.hh-unit{font-weight:700;color:var(--ink-2)}
+.hh-facts{margin:6px 0 10px;padding-left:1.3em}
+.hh-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hh-notes textarea{width:100%;min-height:90px}
+.hh-saved{min-height:1.3em;margin:4px 0 0}
+.hh-flow{list-style:none;margin:10px 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;counter-reset:hhf}
+.hh-flow li{position:relative;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.hh-flow li strong{display:block}
+.hh-flow li small{display:block;color:var(--ink-2);font-size:.84rem;margin-top:2px}
+.hh-flow li + li::before{content:"→";position:absolute;left:-9px;top:50%;transform:translate(-50%,-50%);font-weight:700;color:var(--ink-2)}
+
+/* task */
+.hh-conds{margin:6px 0 8px}
+.hh-tkrow + .hh-tkrow{margin-top:12px}
+.hh-h4{margin:0 0 8px}
+.hh-dash{display:grid;gap:10px}
+.hh-g{border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.hh-g.ok{border-color:var(--green)}
+.hh-g.no{border-color:var(--red)}
+.hh-gt{display:flex;justify-content:space-between;gap:8px;font-size:.94rem}
+.hh-g.ok .hh-gt strong{color:var(--green)}
+.hh-g.no .hh-gt strong{color:var(--red)}
+.hh-gb{position:relative;height:12px;border-radius:4px;background:var(--paper);margin-top:6px}
+.hh-gf{display:block;height:100%;border-radius:4px;background:var(--pen)}
+.hh-gl{position:absolute;top:-4px;bottom:-4px;width:0;border-left:2px dashed var(--ink)}
+.hh-g p{margin:4px 0 0}
+
+@media (max-width:760px){
+  .hh-grid{grid-template-columns:minmax(0,1fr)}
+  .hh-notes{grid-template-columns:minmax(0,1fr)}
+  .hh-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hh-flow li:nth-child(3)::before{content:"↓";left:50%;top:-9px}
+}

@@ -1,0 +1,40 @@
+/* MCV4U 52: Normal and plane (V1 3D view with three modes and V12 readouts), Converting between forms stations,
+   Build the equation coefficient boxes, Plane to order task */
+.cp-mag{color:var(--f4)}
+.cp-ex{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.cp-main,.cp-side{min-width:0}
+@media (max-width:760px){.cp-ex{grid-template-columns:minmax(0,1fr)}}
+.cp-eq{min-height:1.6em}
+canvas.plot.cp-cv{touch-action:none;cursor:grab}
+canvas.plot.cp-cv:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.cp-vbar{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+.cp-vnote{margin:4px 0 0}
+.cp-tipn{margin:8px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.cp-h{font-weight:700;margin:12px 0 6px}
+.cp-side .cp-h:first-child{margin-top:0}
+.cp-modes{flex-wrap:wrap}
+.cp-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cp-step{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cp-sl{font-size:.92rem}
+.cp-sr{display:flex;align-items:center;gap:3px}
+.cp-sr .btn{min-width:28px;min-height:30px;padding:0 6px}
+.cp-sr input.numin{width:2.9rem;min-width:0;text-align:center;padding-left:2px;padding-right:2px}
+.cp-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 6px}
+.cp-row input.numin{width:3.4rem;min-width:0;text-align:center}
+.cp-rg{margin:6px 0 0}
+.cp-side dl.read.cp-read{margin-top:14px}
+.cp-st .cp-stg{align-items:start}
+.cp-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.cp-sti{padding:6px 10px;border-left:4px solid var(--rule);border-radius:0 8px 8px 0}
+.cp-sti.on{border-left-color:var(--hi);background:var(--info-bg)}
+.cp-sti .btn{white-space:normal;text-align:left}
+.cp-rv{margin:6px 0 0;overflow-x:auto;max-width:100%}
+.cp-meth{margin:0 0 10px}
+.cp-meth .btn{white-space:normal;text-align:left}
+.cp-pls,.cp-rels{gap:6px;margin:0 0 8px}
+.cp-angh{margin:6px 0 4px;font-weight:700}
+.cp-tally{margin:8px 0 0;font-weight:700}
+.cp-bin{margin:6px 0 4px}
+.cp-ptin{display:flex;flex-direction:column;gap:6px}
+.cp-pgh{margin:8px 0 4px}
+@media (max-width:480px){.cp-row input.numin{width:2.9rem}.cp-grid{gap:6px}.cp-sr .btn{min-width:26px;padding:0 4px}}

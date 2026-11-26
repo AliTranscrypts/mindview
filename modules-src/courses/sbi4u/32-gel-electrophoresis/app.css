@@ -1,0 +1,126 @@
+/* SBI4U 32: Virtual gel (S9 procedure lab), standard curve (S7), Read the gel stations, practice ladder strips, task preview, hero.
+   Colours (plan §5): electrodes in ink (red is kept for "wrong"); ladder bands --ink-2, sample bands --ink, selection --hi,
+   dye front dotted --ink-2. Light mode: pale grey slab, dark bands; dark mode: dark slab, light bands (imaging screen).
+   Module tokens: --ge-slab (gel), --ge-well, --ge-buf (tank buffer). */
+:root{--ge-slab:color-mix(in srgb,var(--ink-2) 15%,var(--sheet));--ge-well:color-mix(in srgb,var(--ink) 40%,var(--sheet));--ge-buf:color-mix(in srgb,var(--ink-2) 6%,var(--sheet))}
+
+/* hero */
+.hero .hero-eq .ge-heq{display:inline-block;line-height:1.3}
+.ge-hero{width:100%;aspect-ratio:520 / 232}
+.ge-hero svg{width:100%;height:100%;display:block}
+.ge-ht{font:700 13px var(--font-ui);fill:var(--ink)}
+.ge-hs{font:600 10.5px var(--font-ui);fill:var(--ink-2)}
+.ge-hdl{fill:var(--ink-2)}
+.ge-hds{fill:var(--ink)}
+.ge-farr{stroke:var(--ink);stroke-width:2.5}
+
+/* radio groups (from SBI4U 19 / 17 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .8em;font-size:.9rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{color:var(--ink-2);opacity:.6}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;min-width:44px;min-height:40px;padding:.2em .8em;font-weight:700;font-variant-numeric:tabular-nums}
+.rg.chips button[aria-checked="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+
+/* explore layout */
+.ge-pg [hidden]{display:none!important}
+.ge-pg .pg-ctrl{display:grid;gap:12px;align-content:start}
+.ge-mhelp{margin:-4px 0 0}
+.ge-gels{display:grid;gap:10px;grid-template-columns:minmax(0,1fr)}
+.ge-gels.cmp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.ge-gw{margin:0;display:grid;gap:6px;justify-items:center;min-width:0}
+.ge-gw > div{justify-self:stretch}
+.ge-gcap{font-weight:700;font-size:.92rem}
+.ge-svg{display:block;width:100%;max-width:420px;height:auto;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.ge-cap{min-height:2.6em;font-size:.92rem;margin:8px 0 6px}
+.ge-load{display:grid;gap:10px}
+.ge-lrow{display:grid;gap:6px}
+.ge-tray{display:flex;flex-wrap:wrap;gap:6px}
+.ge-tube{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;min-height:40px;padding:.25em .8em;font-weight:700;font-size:.88rem}
+.ge-tube.on{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.ge-tube.ge-empty{border-style:dashed}
+.ge-tube:disabled,.ge-lane:disabled{opacity:.55}
+.ge-lanes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+.ge-lane{display:grid;gap:2px;text-align:left;border:1.5px solid var(--ink);background:var(--sheet);color:var(--ink);border-radius:8px;min-height:44px;padding:.3em .45em;font-size:.8rem;line-height:1.2}
+.ge-ln{font-weight:700}
+.ge-lt{color:var(--ink-2);overflow-wrap:anywhere}
+.ge-sl{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px}
+.ge-sl input[type=range]{width:100%;min-height:40px;accent-color:var(--ink)}
+.ge-sl output{font-weight:700;font-variant-numeric:tabular-nums;min-width:4.2em;text-align:right}
+.ge-vnote{margin:-4px 0 0;color:var(--ink-2)}
+.ge-run{display:flex;flex-wrap:wrap;gap:8px}
+.ge-swv{display:inline-block;margin-left:.35em;padding:0 .45em;border-radius:999px;border:1px solid currentColor;font-size:.8em}
+.ge-sw[aria-checked="true"] .ge-swv{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.ge-note{color:var(--ink-2);margin-top:10px}
+
+/* gel SVG */
+.ge-buf{fill:var(--ge-buf);stroke:var(--rule);stroke-width:1}
+.ge-elec{fill:var(--ink)}
+.ge-et{font:700 11.5px var(--font-ui);fill:var(--sheet)}
+.ge-slab{fill:var(--ge-slab);stroke:var(--ink-2);stroke-width:1}
+.ge-well{fill:var(--ge-well)}
+.ge-ax{stroke:var(--ink-2);stroke-width:1}
+.ge-t{font:500 9.5px var(--font-ui);fill:var(--ink-2)}
+.ge-ts{font:600 9.5px var(--font-ui);fill:var(--ink-2)}
+.ge-tk{font:700 10px var(--font-ui);fill:var(--ink)}
+.ge-lc{font:700 10px var(--font-ui);fill:var(--ink)}
+.ge-big{font:700 13px var(--font-ui);fill:var(--ink)}
+.ge-bl{fill:var(--ink-2)}
+.ge-bs{fill:var(--ink)}
+.ge-dye{stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:2 3}
+.ge-out{stroke:var(--ink);stroke-width:2;stroke-dasharray:4 3;fill:none}
+.ge-outh{fill:var(--ink)}
+.ge-dot{fill:var(--ink)}
+.ge-hit{fill:transparent}
+.ge-bd{cursor:pointer;outline:none}
+.ge-bd:focus-visible .ge-hit{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:3 2}
+.ge-ring{fill:none;stroke:var(--hi);stroke-width:2.4}
+.ge-rul{stroke:var(--hi);stroke-width:1.8;fill:none}
+.ge-rl{font:700 10px var(--font-ui);fill:var(--ink);paint-order:stroke;stroke:var(--ge-slab);stroke-width:3px;stroke-linejoin:round}
+.ge-gl{stroke:var(--ink-2);stroke-width:1;stroke-dasharray:2 2}
+.ge-gb{stroke:var(--ink);stroke-width:1.6;fill:none}
+.ge-gt{font:700 9.5px var(--font-ui);fill:var(--ink)}
+
+/* Part 3 */
+.ge-p3{display:grid;gap:22px}
+.ge-stn > h3{margin-top:0}
+.ge-srow{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:16px;align-items:start}
+.ge-sgw{min-width:0}
+.ge-ssvg{max-width:280px}
+.ge-tbl{border-collapse:collapse;font-size:.92rem}
+.ge-tbl th,.ge-tbl td{border-bottom:1px solid var(--rule);padding:.35em .6em;text-align:left}
+.ge-rule{margin:.4em 0}
+.ge-q{font-weight:700;margin:.6em 0 .3em}
+.ge-sq{margin-top:10px}
+.ge-cw{max-width:520px}
+.ge-cw svg{display:block;width:100%;height:auto}
+.ge-grid{stroke:var(--rule);stroke-width:1}
+.ge-fit{stroke:var(--ink-2);stroke-width:2}
+.ge-pt{fill:var(--ink-2);stroke:var(--sheet);stroke-width:1.5}
+.ge-ptc{fill:none;stroke:var(--hi);stroke-width:2.5}
+.ge-mk{fill:var(--ink)}
+.ge-guide{stroke:var(--ink);stroke-width:1.6;stroke-dasharray:5 3}
+.ge-drop{font-weight:700}
+
+/* practice strips */
+.ge-strip{margin:6px 0 10px;max-width:520px}
+.ge-strip svg{display:block;width:100%;height:auto}
+.ge-strip figcaption{margin-top:2px}
+
+/* task */
+.ge-tin{display:grid;gap:12px}
+.ge-tpv h4{margin:0 0 8px}
+.ge-tpv .read{margin-top:10px}
+.ge-tlist{margin:.4em 0 .6em 1.2em}
+
+@media (max-width:640px){
+  .ge-gels.cmp{grid-template-columns:minmax(0,1fr)}
+  .ge-lanes{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ge-srow{grid-template-columns:minmax(0,1fr)}
+  .ge-sl{grid-template-columns:minmax(0,1fr) auto}
+  .ge-sl label{grid-column:1 / -1}
+}

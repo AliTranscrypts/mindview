@@ -1,0 +1,52 @@
+/* MCV4U 35: hero track, Stretch dial (V3 vector board), Vectors in geometry stations, Express it figure, Undo the stretch task */
+.smv-heq2{display:block;margin-top:.3em;font-size:.82em}
+.smv-hero canvas.plot{aspect-ratio:16/9}
+.smv-ex{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.smv-main,.smv-side{min-width:0}
+canvas.plot.smv-board{aspect-ratio:1/1;touch-action:none}
+canvas.plot.smv-geo{aspect-ratio:1/1;touch-action:none}
+.smv-key{margin:8px 0 0}
+.smv-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 8px}
+.smv-h{font-weight:700;min-width:3.6rem}
+.smv-note{margin:4px 0 8px}
+.smv-sl{margin-top:6px}
+.smv-sl input{width:100%;min-height:28px}
+.smv-sl output{font-weight:700}
+.smv-kv{font-weight:700}
+.smv-w p{margin:6px 0 0}
+.smv-step{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0 8px}
+.smv-sh{font-weight:700;min-width:4.6rem}
+.smv-Lo{min-width:2.2rem;text-align:center;font-weight:700;font-size:1.05rem}
+.smv-ub{margin:6px 0 4px}
+.smv-side dl.read.smv-read{margin-top:14px}
+/* Part 3 */
+.smv-st h3{margin-top:0}
+.smv-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.smv-stg{align-items:start}
+.smv-gnote{margin:6px 0 0}
+.smv-ph{font-weight:700;margin:14px 0 6px}
+.smv-alg{list-style:none;margin:8px 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.smv-alg li{padding:5px 10px;border-left:4px solid var(--rule);border-radius:0 8px 8px 0;font-size:1.04rem;overflow-x:auto;max-width:100%}
+.smv-alg li.cur{border-left-color:var(--hi);background:var(--info-bg)}
+.smv-mrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;width:100%}
+/* Express it */
+.smv-fig{margin:6px 0 14px}
+.smv-tri{display:block;width:100%;max-width:420px;height:auto;background:var(--sheet);border:1.5px solid var(--rule);border-radius:8px}
+.smv-fl{stroke:var(--ink-2);stroke-width:1.8}
+.smv-fm{stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:5 5}
+.smv-fva{stroke:var(--pen);stroke-width:3;marker-end:url(#smv-ha)}
+.smv-fvb{stroke:var(--f3);stroke-width:3;marker-end:url(#smv-hb)}
+.smv-fa{fill:var(--pen)}
+.smv-fb{fill:var(--f3)}
+.smv-fd{fill:var(--ink)}
+.smv-ft{fill:var(--ink);font:italic 600 15px var(--font-math)}
+.smv-fta{fill:var(--pen);font-size:17px}
+.smv-ftb{fill:var(--f3);font-size:17px}
+.smv-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:1.1rem;margin:4px 0 8px}
+.smv-frame .numin.short{width:4.2rem}
+.smv-fl2{white-space:nowrap}
+/* task */
+.smv-tst label{min-width:8.5rem}
+@media (max-width:760px){
+  .smv-ex{grid-template-columns:minmax(0,1fr)}
+}

@@ -1,0 +1,25 @@
+/* MCV4U 34: vector board controls, Part 3 stations, surd boxes, Exactly 7 inputs (classes prefixed vs-) */
+.vs-segs,.vs-views{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 10px}
+.vs-swap{display:inline-block}
+.vs-stps{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 8px}
+.vs-stp{display:inline-flex;align-items:center;gap:6px}
+.vs-stl{min-width:2.6em}
+.vs-sto{min-width:1.6em;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.vs-sl{margin:6px 0}
+.vs-loop{margin:8px 0;padding:6px 10px;border:1.5px dashed var(--rule);border-radius:8px;font-weight:600}
+.vs-loop.on{border-style:solid;border-color:var(--green);background:var(--good-bg)}
+.vs-how{margin:6px 0 0}
+.vs-setup{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 0}
+.vs-h{margin:14px 0 6px}
+.vs-p3 .chips{margin:0 0 8px}
+.vs-say{margin:10px 0}
+.vs-steps{margin:0 0 10px;padding-left:1.3em}
+.vs-steps li{margin:0 0 6px;color:var(--ink-2)}
+.vs-steps li.cur{color:var(--ink);font-weight:600}
+.vs-qask{margin:6px 0}
+.vs-stepn{align-self:center}
+canvas.vs-abcd{display:block;max-width:460px;margin:10px 0 0}
+.vs-v8{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+.vs-v8 .numin{width:4.2em}
+.vs-rt{font:600 1.35rem var(--font-math)}
+.vs-unit{font-weight:600}

@@ -1,0 +1,79 @@
+/* MCV4U 32: hero wheel and panels, Ride the model (scenario picture, linked panels, controls, readout), Optimization with
+   angles stations, Rates and times boxes, Design a Ferris wheel task. Prefix sr- (sinusoidal rates), fw- (Ferris wheel task). */
+.sr-heq1{display:block;white-space:nowrap}
+.sr-heq1 + .sr-heq1{margin-top:.12em}
+.sr-hero{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);gap:8px;align-items:center}
+canvas.plot.sr-hw{aspect-ratio:4/5}
+.sr-hg{display:flex;flex-direction:column;gap:6px;min-width:0}
+canvas.plot.sr-hp{aspect-ratio:2/1}
+/* Explore */
+.sr-ex{display:flex;flex-direction:column;gap:14px}
+.sr-main{min-width:0}
+.sr-eq{min-height:1.6em}
+.sr-stage{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.5fr);gap:12px 20px;align-items:start}
+.sr-picw,.sr-pans{min-width:0}
+canvas.plot.sr-pic{aspect-ratio:4/5}
+.sr-pans{display:flex;flex-direction:column;gap:4px}
+.sr-pan[hidden],#sr-fer[hidden],#sr-tid[hidden],#sr-day[hidden],.sr-tbar [hidden]{display:none}
+.sr-pcap{margin:2px 0;font-size:.85rem;font-weight:700;color:var(--ink-2)}
+canvas.plot.sr-pc{aspect-ratio:16/6;touch-action:none}
+canvas.plot.sr-pc.sr-pc2{aspect-ratio:16/5}
+.sr-key{margin:8px 0 0}
+.sr-ctl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 28px;align-items:start}
+.sr-c1,.sr-c2{min-width:0}
+.sr-tbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px}
+.sr-sl{margin-top:8px}
+.sr-sl input{width:100%;min-height:28px}
+.sr-sl output{color:var(--ink);font-weight:700}
+.sr-sl output.sr-or{color:var(--acol)}
+.sr-sl output.sr-oH{color:var(--p-c)}
+.sr-note{margin:4px 0 6px}
+.sr-lab{font-weight:700;font-size:.85rem;margin:12px 0 4px}
+.sr-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0}
+.sr-chips .chip{min-height:36px}
+dl.read.sr-read{margin-top:0}
+.sr-more{display:none;margin-top:6px}
+/* Part 3 */
+.sr-stbar{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.sr-st{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:14px 26px;align-items:start}
+.sr-stl,.sr-str{min-width:0}
+.sr-sth{margin:0 0 4px}
+canvas.plot.sr-fig{aspect-ratio:16/10}
+canvas.plot.sr-gr{aspect-ratio:16/11}
+.sr-fn{margin:0 0 6px;font-weight:600}
+.sr-algbox{margin-top:8px}
+.sr-algbox ol{margin:0;padding-left:1.3em}
+.sr-algbox li + li{margin-top:4px}
+/* Practice 2 */
+.sr-dt{display:flex;flex-direction:column;gap:8px;margin:8px 0 4px}
+.sr-dr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:1.05rem}
+.sr-dl{font-weight:600;min-width:6.5rem}
+.sr-du{color:var(--ink-2)}
+.sr-dr .numin.short{width:8.5rem}
+.sr-dr .numin.short.sr-long{width:12rem;max-width:100%}
+/* task */
+.fw-in{display:flex;flex-direction:column;gap:4px;margin:8px 0}
+.fw-pv{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:10px 16px;align-items:start;margin-top:10px}
+.fw-w,.fw-g{min-width:0}
+canvas.plot.fw-wc{aspect-ratio:4/5}
+canvas.plot.fw-gc{aspect-ratio:2/1}
+.fw-g{display:flex;flex-direction:column;gap:6px}
+.fw-gh{font-weight:700;margin:0}
+@media (max-width:820px){
+  .sr-st{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:700px){
+  .sr-stage,.sr-ctl{grid-template-columns:minmax(0,1fr)}
+  canvas.plot.sr-pic{aspect-ratio:4/3}
+  .sr-read .sr-x{display:none}
+  .sr-read.sr-open .sr-x{display:block}
+  .sr-more{display:inline-flex}
+}
+@media (max-width:560px){
+  .sr-hero{grid-template-columns:minmax(0,1fr)}
+  canvas.plot.sr-hw{aspect-ratio:4/3}
+  canvas.plot.sr-pc{aspect-ratio:5/3}
+  canvas.plot.sr-pc.sr-pc2{aspect-ratio:16/7}
+  .fw-pv{grid-template-columns:minmax(0,1fr)}
+  canvas.plot.fw-wc{aspect-ratio:4/3}
+}

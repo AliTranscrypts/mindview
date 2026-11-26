@@ -1,0 +1,54 @@
+/* SCH4U 25 Calorimetry: hero, C5 calorimeter, Part 3 error lab, task preview. Classes prefixed cal-. */
+.cal-hx{display:flex;flex-direction:column;gap:6px}
+.cal-hx-svg{width:100%;height:auto;display:block}
+.cal-hx-calc{min-height:2.6em;margin:0;font-size:.98rem;text-align:center}
+.cal-hx-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cal-hx-ctr{margin:0;flex:1;min-height:1.4em;font-size:.95rem}
+
+.cal-modes{margin:8px 0 12px}
+.cal-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-items:start}
+.cal-view{min-width:0}
+.cal-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:6px}
+.cal-svg{width:100%;height:auto;display:block;max-height:340px}
+.cal-pw{margin-top:10px}
+.cal-cap{min-height:2.8em;margin:8px 0 0}
+.cal-side{min-width:0;display:flex;flex-direction:column;gap:10px}
+.cal-acc{border:1.5px solid var(--rule);border-radius:8px;padding:6px 10px}
+.cal-acc>summary{font-weight:700;cursor:pointer;min-height:28px}
+.cal-acc .rg-wrap{margin:6px 0}
+.cal-sl{display:block;margin-top:8px;font-weight:600}
+.cal-acc input[type=range]{width:100%;min-height:28px}
+.cal-btns{display:flex;gap:8px;flex-wrap:wrap}
+.cal-work{margin-top:12px;padding:8px 12px;border-left:4px solid var(--en-dh);background:var(--info-bg);border-radius:6px;overflow-x:auto}
+.cal-work:empty{display:none}
+.cal-wl{margin:0;line-height:1.7}
+.cal-tc3{margin-top:14px}
+.cal-h4{margin:0 0 6px;font-size:1rem}
+.cal-rchips button{text-align:left}
+.cal-about{margin-top:12px}
+.cal-ttnote{margin:0}
+.cal-tt .cal-box{display:none}
+.cal-tt .cal-pw{margin-top:0}
+
+.cal-st h3{margin-top:0}
+.cal-s1g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;align-items:start}
+.cal-can{width:100%;height:auto;max-width:320px;display:block}
+.cal-unit{margin-left:6px}
+.cal-s1rows .numrow{margin:6px 0}
+.cal-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.cal-card{border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px;background:var(--sheet)}
+.cal-card.good{border-color:var(--green);background:var(--good-bg)}
+.cal-card.bad{border-color:var(--red);background:var(--bad-bg)}
+.cal-ct{margin:0 0 6px;font-weight:600}
+.cal-bins{display:flex;flex-wrap:wrap;gap:6px}
+.cal-cfb{margin:6px 0 0;font-size:.92rem}
+.cal-fixes{display:flex;flex-wrap:wrap;gap:8px}
+.cal-fixl{margin:10px 0;padding-left:1.2em}
+.cal-tsvg{width:100%;height:auto;display:block;max-width:360px}
+.cal-conds{margin:8px 0 0 1.2em}
+.cal-chiplist button{text-align:left}
+
+@media (max-width:760px){
+  .cal-grid,.cal-s1g{grid-template-columns:minmax(0,1fr)}
+  .cal-svg{max-height:300px}
+}

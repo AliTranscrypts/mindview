@@ -551,7 +551,8 @@
     "30",
     "26"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "33",
@@ -563,7 +564,8 @@
    "size": "S",
    "part3": "scalar-vector",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "34",
@@ -577,7 +579,8 @@
    "prereqs": [
     "33"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "35",
@@ -591,7 +594,8 @@
    "prereqs": [
     "34"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "36",
@@ -606,7 +610,8 @@
     "34",
     "35"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "37",
@@ -620,7 +625,8 @@
    "prereqs": [
     "33"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "38",
@@ -636,7 +642,8 @@
     "35",
     "26"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "39",
@@ -651,7 +658,8 @@
     "37",
     "38"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "40",
@@ -666,7 +674,8 @@
     "38",
     "39"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "41",
@@ -681,8 +690,7 @@
     "34",
     "38"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "42",
@@ -698,7 +706,8 @@
     "33",
     "38"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "43",
@@ -730,7 +739,8 @@
     "39",
     "43"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "45",
@@ -762,7 +772,8 @@
     "44",
     "39"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "47",
@@ -777,7 +788,8 @@
     "45",
     "46"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "48",
@@ -791,7 +803,8 @@
    "prereqs": [
     "38"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "49",
@@ -806,7 +819,8 @@
     "43",
     "48"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "50",
@@ -855,7 +869,8 @@
     "43",
     "44"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "53",
@@ -952,7 +967,8 @@
     "49",
     "50"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "59",

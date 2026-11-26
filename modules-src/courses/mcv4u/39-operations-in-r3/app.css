@@ -1,0 +1,67 @@
+/* MCV4U 39 Operations with vectors in R³ (module-specific; prefix ops- and v3-) */
+.ops-heq{display:inline-flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:.1em .3em}
+.ops-hsep{color:var(--ink-2)}
+.ops-hero{width:100%;max-width:380px;margin:0 auto}
+
+/* V1 3D view */
+.v3-wrap{position:relative;width:100%;aspect-ratio:1/1;border:1px solid var(--rule);border-radius:12px;background:var(--sheet);overflow:hidden}
+.v3-wrap.v3-int{cursor:grab;touch-action:pan-y}
+.v3-wrap.v3-int:active{cursor:grabbing}
+.v3-wrap:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.v3{display:block;width:100%;height:100%;user-select:none;-webkit-user-select:none}
+.v3 text{font-family:var(--font-ui);paint-order:stroke;stroke:var(--sheet);stroke-width:3.5px;stroke-linejoin:round}
+.v3 .v3-ax{font-family:var(--font-math);font-style:italic;font-size:17px}
+.v3 .v3-tk{font-size:11px}
+.v3 .v3-lb{font-size:14px;font-weight:700}
+.v3 .v3-big{font-size:15px}
+
+/* Explore layout */
+.ops-ex{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+.ops-colL,.ops-colR{min-width:0}
+.ops-eq{min-height:1.6em}
+.ops-vw{margin-top:10px}
+.ops-rh{margin:6px 0 0}
+.ops-how{margin:6px 0 10px}
+.ops-opc{margin-bottom:10px}
+.ops-uv{display:grid;grid-template-columns:1fr 1fr;gap:4px 14px}
+.ops-sl{border-left:3px solid var(--ops-edge,var(--rule));padding-left:8px}
+.ops-mw{margin-top:6px}
+.ops-pxyz{margin-top:8px}
+.ops-read{margin-top:12px}
+.ops-grey{color:var(--ink-2);font-size:.92em;white-space:normal}
+.ops-found{margin:8px 0 0}
+#ops-recfb .fb{margin-top:8px}
+@media (max-width:760px){
+  .ops-ex{grid-template-columns:1fr}
+}
+
+/* Part 3 stations */
+.ops-stc{margin-bottom:12px}
+.ops-stg{align-items:start}
+.ops-v3{max-width:420px}
+.ops-pf{border:1px solid var(--rule);border-radius:12px;padding:12px 14px;margin:12px 0;background:var(--sheet)}
+.ops-claim{margin:0 0 8px}
+.ops-lines{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ops-line{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:10px;align-items:center;width:100%;text-align:left;
+  font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px 10px;cursor:pointer}
+.ops-line.on{border-color:var(--pen);box-shadow:0 0 0 2px var(--pen) inset}
+.ops-line.bad{border-color:var(--red)}
+.ops-line:disabled{cursor:default;opacity:1}
+.ops-ls{min-width:0;overflow-wrap:anywhere}
+.ops-lr{font-family:var(--font-ui);font-size:.92em;border-left:1px dashed var(--rule);padding-left:10px}
+.ops-ok{color:var(--green);font-weight:700;margin-left:6px}
+.ops-no{color:var(--red);font-weight:700;margin-left:6px}
+.ops-bl{margin:10px 0 4px}
+@media (max-width:560px){
+  .ops-line{grid-template-columns:1fr}
+  .ops-lr{border-left:0;border-top:1px dashed var(--rule);padding:6px 0 0}
+}
+
+/* V8 component boxes */
+.ops-bin{display:grid;gap:8px;margin:8px 0}
+.ops-brow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.ops-pre{margin-right:2px}
+.ops-par{font-family:var(--font-math);font-size:1.25em;color:var(--ink)}
+.ops-brow .numin.short{width:4.6em}
+.ops-brow .numin.ops-wide{width:9em}
+.ops-brow .numin.ops-bad{border-color:var(--red);box-shadow:0 0 0 1px var(--red) inset}

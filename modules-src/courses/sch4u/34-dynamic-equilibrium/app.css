@@ -1,0 +1,78 @@
+/* SCH4U 34: hero rooms, Two-way traffic (C6 particle box + C8 graphs), Either side stations, Graph detective, Same destination.
+   Colours: course plan §4 equilibrium roles --eq-r (A), --eq-p (B), --eq-f (forward rate), --eq-b (reverse rate). */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.de-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.de-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.de-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: Two-way traffic */
+.de-how{margin-top:0}
+.de-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:0 0 12px}
+.de-sys[hidden]{display:none}
+.de-set{border:1.5px solid var(--rule);border-radius:10px;padding:8px 12px;margin:0 0 14px;background:var(--sheet)}
+.de-set summary{font-weight:700;cursor:pointer;min-height:30px}
+.de-setg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px 24px;margin-top:8px}
+.de-setn{margin:10px 0 0;min-height:1.2em}
+.de-sl{display:flex;flex-direction:column;gap:4px;font-size:.92rem}
+.de-sll{color:var(--ink-2);font-weight:700}
+.de-sl input[type=range]{width:100%;max-width:340px;min-height:28px;accent-color:var(--pen)}
+.de-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:14px 26px;align-items:start}
+.de-view,.de-side{min-width:0}
+.de-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.de-svg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.de-leg{margin:8px 0 0;line-height:1.9}
+.de-sw{display:inline-block;width:26px;height:12px;vertical-align:-1px}
+.de-cap{min-height:1.5em;margin:8px 0 2px;font-size:1rem}
+.de-btns{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.de-graphs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px 22px;margin-top:16px}
+.de-fig{margin:0;min-width:0}
+.de-fig figcaption{font-weight:700;font-size:.95rem;margin:0 0 4px}
+.de-g{display:block;width:100%;max-width:520px;height:auto;font-family:var(--font-ui)}
+.de-note{margin:12px 0 0}
+.de-gcap{margin:6px 0 14px}
+
+/* Part 3 stations */
+.de-st h3{margin-bottom:6px}
+#p3-app > .de-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.de-runs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.de-run{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.3em .85em;font-size:.92rem;min-height:36px}
+.de-run[aria-pressed="true"]{border-color:var(--ink);font-weight:700}
+.de-gbox{max-width:540px}
+.de-rt,.de-hi{margin-top:10px}
+.de-s1c{min-height:1.4em;margin:10px 0 0}
+.de-cells{display:flex;flex-wrap:wrap;gap:6px}
+.de-cell{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.25em .6em;font-size:.92rem;min-height:34px}
+.de-cell.done{border-color:var(--ink-2)}
+.de-cell.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.de-msg2{min-height:1.4em;margin:8px 0 0}
+.de-zv{margin-top:10px;max-width:520px}
+.de-zv[hidden]{display:none}
+.de-ratio{margin-top:10px}
+.de-s3c{margin:10px 0 0;min-height:1.4em}
+
+/* Graph detective */
+.de-chiplist{margin:6px 0 4px}
+.de-unit{color:var(--ink-2);font-size:.92rem}
+
+/* task */
+.de-conds{margin:.4em 0 0 1.2em}
+.de-h4{margin:0 0 6px;font-size:1rem}
+.de-tg{margin-top:4px}
+.de-tkf,.de-tkr,.de-ta0{margin-bottom:12px}
+
+@media (max-width:760px){
+  .de-grid{grid-template-columns:minmax(0,1fr)}
+}

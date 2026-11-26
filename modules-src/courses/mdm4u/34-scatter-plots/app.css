@@ -1,0 +1,79 @@
+/* MDM4U 34: Pattern spotter (D11 scatter tool + strength meter), Match the story stations, Read the plot (N8), task.
+   Dots --pen; meter needle --ink; outlier ring --hi (plan §5). */
+/* radioGroup (from MDM4U 19 / 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled,.rg.seg button:disabled{opacity:.45;cursor:not-allowed}
+
+/* Pattern spotter */
+.sp-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.sp-sh{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.sp-acts{margin:0 0 8px}
+.sp-acts .btn[hidden]{display:none}
+.sp-zoom{margin:6px 0 0}
+.sp-how{margin:8px 0 0}
+.sp-msg{min-height:1.2em;margin:6px 0 0}
+.sp-q{font-weight:700;color:var(--ink-2)}
+.sp-note{margin:6px 0 0}
+.sp-setup{margin-left:6px;vertical-align:baseline}
+
+/* strength meter */
+.sp-mbox{margin:10px 0 0}
+.sp-meter{max-width:520px}
+.sp-mbar{position:relative;display:flex;height:30px;border:1.5px solid var(--ink-2);border-radius:6px;overflow:visible;background:var(--sheet)}
+.sp-ms{display:flex;align-items:center;justify-content:center;font:600 .8rem var(--font-ui);color:var(--ink-2)}
+.sp-ms1{width:33%}
+.sp-ms2{width:34%;border-left:1.5px solid var(--rule);border-right:1.5px solid var(--rule)}
+.sp-ms3{width:33%;background:var(--hi-soft)}
+.sp-needle{position:absolute;top:-7px;bottom:-7px;width:4px;margin-left:-2px;background:var(--ink);border-radius:2px;transition:left .55s ease}
+.sp-needle[hidden]{display:none}
+.sp-rm .sp-needle{transition:none}
+@media (prefers-reduced-motion:reduce){.sp-needle{transition:none}}
+.sp-mread{margin:6px 0 0;font-size:.95rem}
+
+/* Match the story */
+.st-body{margin-top:6px}
+.st-card0{border:1.5px solid var(--rule);border-radius:10px;padding:12px;background:var(--sheet)}
+.st-lab{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.st-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:8px 0 12px}
+@media (max-width:720px){.st-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.st-fig{margin:0}
+.st-fig figcaption{text-align:center;font-weight:700;font-size:.9rem;margin-top:2px}
+.st-cards{display:grid;gap:8px}
+.st-card{border-top:1px solid var(--rule);padding:8px 0 2px}
+.st-story{margin:0 0 6px;font-weight:700}
+.st-picks{display:flex;flex-wrap:wrap;gap:6px}
+.st-pk{min-width:40px;min-height:36px}
+.st-pk[aria-pressed="true"],.st-lqb[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);opacity:1}
+.st-dt{margin:10px 0 4px}
+.st-sb{border-top:1px solid var(--rule);padding:10px 0}
+.st-sbrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:14px;align-items:start}
+@media (max-width:720px){.st-sbrow{grid-template-columns:1fr}}
+.sp-sent{line-height:2.4;margin:0 0 6px}
+.sp-blank .rg-wrap{display:inline-flex;margin:0 2px;vertical-align:middle}
+.sp-blank .rg.chips{gap:4px}
+.sp-blank .rg.chips button{min-height:30px;padding:.15em .65em;font-size:.88rem}
+.st-lq{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.st-lqb{white-space:normal;text-align:left;min-height:40px}
+.sp-tick{color:var(--green);font-weight:700}
+
+/* Read the plot: tappable points (N8) */
+.sp-rp{margin:4px 0 12px;max-width:560px}
+.sp-rpw{position:relative}
+.sp-pt{position:absolute;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:2px solid transparent;background:transparent;padding:0;cursor:pointer}
+.sp-pt:hover:not(:disabled),.sp-pt:focus-visible{border-color:var(--ink)}
+.sp-pt:disabled{cursor:default}
+.sp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.sp-chips .chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);opacity:1}
+
+/* task */
+.sp-conds{margin:6px 0 8px 1.2em;padding:0}
+.sp-tin .rg-wrap{margin-bottom:8px}
+.sp-tin .rg-lab{min-width:4.6em}

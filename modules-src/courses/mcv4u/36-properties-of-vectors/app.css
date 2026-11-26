@@ -1,0 +1,37 @@
+/* MCV4U 36 Properties of vectors (prefix pv-) */
+.pv-hsep{margin:0 .35em;color:var(--ink-2)}
+.pv-hbut{font-family:var(--font-ui);font-size:.7em;font-weight:700;color:var(--ink-2);margin-right:.25em}
+.pv-modes{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;padding:2px 2px 8px;margin-bottom:8px;-webkit-overflow-scrolling:touch}
+.pv-modes .chip{flex:0 0 auto;white-space:nowrap}
+.pv-mode[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.pv-cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.pv-cols{grid-template-columns:minmax(0,1fr)}}
+.pv-main,.pv-side{min-width:0}
+.pv-side > *{margin-bottom:10px}
+.pv-sl{display:block}
+.pv-knote{margin-top:-6px}
+.pv-read dd{overflow-wrap:anywhere}
+.pv-order{margin:6px 0 2px}
+.pv-num{margin:4px 0}
+.pv-tbl{border-collapse:collapse;width:100%;font-size:.95rem}
+.pv-tbl th,.pv-tbl td{border:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+.pv-tbl th{background:var(--hi-soft)}
+.pv-meter{margin:6px 0 0}
+.pv-msvg{width:100%;max-width:420px;height:auto;display:block}
+.pv-mt{font:600 12px var(--font-ui);fill:var(--ink-2)}
+.pv-setups .chips{display:flex;flex-wrap:wrap;gap:6px}
+.pv-st{margin-top:14px}
+.pv-st1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:760px){.pv-st1{grid-template-columns:minmax(0,1fr)}}
+.pv-eqline{font-size:1.08rem;margin:6px 0}
+.pv-line{border-left:3px solid var(--rule);padding-left:10px;margin:8px 0}
+.pv-chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0}
+.pv-moves{flex-wrap:wrap}
+.pv-svg{width:100%;max-width:380px;height:auto;display:block}
+.pv-sfig{max-width:300px;margin:4px 0 6px}
+.pv-svl{font:700 15px var(--font-ui);fill:var(--ink)}
+.pv-sv{font:italic 700 17px var(--font-math)}
+.pv-svp{fill:var(--pen)}
+.pv-svt{fill:var(--f3)}
+.pv-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0}
+.pv-box{width:4.6em}

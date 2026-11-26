@@ -1,0 +1,80 @@
+/* SCH4U 29: hero flasks + live curves, Reaction rate lab (Data / Experiment / Catalyst and nature), Read the rate stations, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"],.rg.chips button[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+.rg.chips button[aria-checked="true"]:disabled{opacity:1}
+
+/* hero */
+.rr-eq{display:inline-block;line-height:1.3}
+.rr-hx-row{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:flex-end;justify-content:center}
+.rr-hx-fl{flex:1 1 220px;max-width:300px;height:auto;font-family:var(--font-ui)}
+.rr-hx-gr{flex:1.5 1 300px;max-width:460px;height:auto;font-family:var(--font-ui)}
+.rr-hx-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.rr-hx-cap{font:400 1.02rem var(--font-ui);color:var(--ink);margin:6px 0;min-height:2.8em;flex:1 1 240px}
+
+/* lab */
+.rr-how{margin-top:0}
+.rr-modes{margin:0 0 12px}
+.rr-v[hidden]{display:none}
+.rr-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.rr-gcol,.rr-ccol{min-width:0}
+.rr-ccol > * + *{margin-top:12px}
+.rr-gcap{margin:6px 0 0}
+.rr-entry{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.rr-entry[hidden]{display:none}
+.rr-entry .numin{width:8em}
+.rr-note{min-height:0;margin:0;font-size:.97rem}
+.rr-note:empty{display:none}
+.rr-ok{color:var(--green)}
+.rr-bad{color:var(--red)}
+.rr-svgbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:6px}
+.rr-bench{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.rr-rxn{margin:0;font-size:1rem}
+.rr-runs{margin-top:16px}
+.rr-runs .q-actions{margin-top:6px}
+.rr-benchq{margin-top:14px;border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px}
+.rr-benchq > * + *{margin-top:10px}
+.rr-lab{font-size:.95rem;font-weight:700;margin:0}
+.rr-tg{cursor:pointer}
+.rr-tbl td,.rr-tbl th{vertical-align:top}
+
+/* Part 3 */
+.rr-st + .rr-st{margin-top:26px;padding-top:18px;border-top:1.5px solid var(--rule)}
+.rr-h3{margin:0 0 6px;font-size:1.12rem}
+.rr-eqbig{font-size:1.2rem;margin:10px 0 6px}
+.rr-s1sl{max-width:460px}
+.rr-gauges{margin-top:10px;display:grid;gap:8px}
+.rr-g{display:grid;grid-template-columns:7.5em minmax(60px,1fr) auto;gap:6px 10px;align-items:center}
+.rr-gl{font-weight:700;font-size:.95rem}
+.rr-gbar{display:block;height:16px;border:1.5px solid var(--ink-2);border-radius:5px;overflow:hidden;background:var(--sheet)}
+.rr-gfill{display:block;height:100%;background:var(--pen)}
+.rr-gfill.used{background:var(--ink-2)}
+.rr-gv{font-size:.95rem;white-space:nowrap}
+.rr-gnote{margin:4px 0 0}
+.rr-urow{padding:10px 0;border-bottom:1px solid var(--rule)}
+.rr-urow:last-child{border-bottom:0}
+.rr-ut{margin:0 0 6px;font-weight:700}
+.rr-urow .fb{margin-top:8px}
+.rr-mi + .rr-mi{margin-top:14px}
+.rr-mi .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.rr-mi .numin{width:8em}
+.rr-mgrid{margin-top:8px}
+
+/* task */
+.rr-tkc,.rr-tks,.rr-tkt{margin-bottom:12px}
+
+@media (max-width:700px){
+  .rr-grid{grid-template-columns:minmax(0,1fr)}
+  .rr-g{grid-template-columns:minmax(0,1fr) auto;}
+  .rr-gbar{grid-column:1 / -1;grid-row:2}
+  .rr-gv{white-space:normal}
+}

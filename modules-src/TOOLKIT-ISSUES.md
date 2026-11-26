@@ -242,3 +242,55 @@ every module that uses the touched code, then ship them together).
 | — | eng4u 16 (cont.) | chapter numbers GUESSED by builder (greetings 4–5, "temporary" 28, "ignoring" 10, "ordinary" 6, 6 Gilead cards) — must be checked; Historical Notes details; 2017 NYT source |
 | — | sbi4u 40 | PLAN ERROR: K⁺-blocked trace drops to −20 mV at 1.5 ms then climbs to +10 at 2.0 (used +20 at 1.5). VERIFY: MS rate claim for Canada |
 | — | mdm4u 37 | PLAN NOTE: add-point x limited to 0–20 but data B runs 10–50 (extended to 60); savings-station data builder-chosen |
+| — | sbi4u 23 | OWNER REVIEW: added Gene Q (5′-ATGGGATAA-3′) for P4; builder-written splicing puzzles, Gene T introns, Station 3 four-exon gene; insulin/Toronto 1921–22 note (Banting, Best, Macleod, Collip) |
+| — | eng4u 18 | OWNER REVIEW: Johnson/Boswell wording, 8 Gatsby lines (verification requested), MLA 9 AI-prompt citation, plagiarius word story; Station 3 six AI scenarios builder-written (plan had none) |
+| — | sbi4u 46 | PLAN ERROR: K3 + Activity 1 mismatch tagged M3 (migration) but are about pyramids. VERIFY: world milestones + UN projection, biocapacity 1.6 gha, Canada footprint, canola dates, food-waste share |
+| — | sbi4u 44 | PLAN ERRORS: L0 slider must reach 0 for P2 (now 0–150); TC1 "(50, 400)" impossible since L0 ≤ 150 |
+| — | mdm4u 34 | Part 3 model data sets builder-written |
+| — | hfa4u 24 | OWNER REVIEW: SDG 2 + targets 2.1–2.5 wording, "not on track", cash-transfer research + 70/25/5 bar (model data), Canada facts (2008 untying, Canadian Foodgrains Bank, WFP 2020 Nobel), 2 APA refs from memory (`// VERIFY`); decision labels, reason chips, rubric evidence, D1/D3/D5 distractors builder-written |
+| — | sbi4u 37 | OWNER REVIEW: Station 4 Canadian anti-doping arrangements, flashcard 4 iodized-salt policy (`// VERIFY`); P3 starts healthy → Graves' |
+| — | eng4u 22 | **EXCERPT SLOTS:** real coverage of one event (Explore Reader), station 5 real claim. OWNER REVIEW: Milton (Areopagitica) + Swift (Examiner) wording not checked vs PD edition, SIFT credit (Caulfield) + date, Pope puffer-coat 2023 + AP hack 2013 details, confirm invented handles (@harbourwatcher, @calderlaughs, @calderchat + plan names) aren't real; models 2–3 builder-written |
+| — | eng4u 17 | PD quotes verified (pglaf/Wikisource); Frankenstein fixed to 1818 "November, that"; Austen kept 1813 comma |
+| — | sbi4u 35 | VERIFY: hibernation curve shape (no plan figures); fever sweat/shiver amounts are model values |
+| S5 dnaDraw (comp/revComp/strand/duplex, ladder↔helix), forkView + knockout model, nucleotideSVG/basePairSVG, densityTube | sbi4u 21 | builder-written station-conclusion distractors + order-builder consequence lines |
+| V3 vectorBoard, vecMath, compassDial | mcv4u 33 | K1 versions A/B have identical prompts in the plan (retake repeats Q1) |
+| — | mcv4u 32 | TC3 "t = 7.5" unreachable with 1 s steps (7/8 get the message); 2 decoy cards added |
+| — | sbi4u 34 | plan gap: no STSE/Canadian item; Activity 2 extra distractors builder-written |
+| — | mcv4u 34 | PLAN ERROR: Final T3 B had two right answers (180° turns also sum to 0⃗); prompt now says "close into a four-sided figure" |
+| — | sbi4u 28 | VERIFY: Health Canada radon recommendation (Final A2) |
+| — | mdm4u 27 | PLAN ERROR: μ slider 0–200 can't reach presets 250/500 or TC3 μ = 508 (now 0–600); Station 3 wrong statements builder-written |
+| — | sbi4u 43 | VERIFY: swift fox reintroduction began 1980s; TC2 "points to N = K" state impossible in the simulator |
+| — | sbi4u 27 | VERIFY: A2 drug claim; O3/O5/O6 extra options + S12 chips builder-written |
+| V1 view3d (SVG 3D view) | mcv4u 46 | PLAN ERRORS: P4 b = (2,4,6) outside the −4..4 steppers; "2 ↔ i⃗" mismatch can't occur (i⃗ not a result); R1–R3 have no hints |
+| — | sbi4u 31 | OWNER REVIEW: Canadian approval of the CRISPR blood-disorder therapy, Assisted Human Reproduction Act wording + status, 2018 embryo case details, law on research embryos (`// VERIFY`); spacer match counts 7/20/9 builder-chosen |
+| — | sbi4u 26 | VERIFY: trp "Medium" level drawn as reduced transcription (plan defines only low/high) |
+| — | mdm4u 39 | third question template + some distractors builder-written |
+| V3 vectorBoard + V3exact | mcv4u 38 | Final A1/A2 version-B prompts incomplete in plan (filled) |
+| — | mcv4u 42 | PLAN NOTE: strain bar "above 2W" unreachable (max ≈1.93W; now 1.5W) |
+| V3 lineBoard, V12 lineAlgebra | mcv4u 48 | PLAN ERROR: N4 wrong answer (8, 7) is A + B but its feedback describes (11, 7) |
+| V8 lineBoxes | mcv4u 49 | PLAN ERROR: P2 needs normal (4, 6) but components limited to −5..5 (now −6..6) |
+| — | mcv4u 44 | PLAN ERROR: hero + P2 say θ ≈ 120° for (1,0,3)·(0,1,−2); correct value ≈ 148° |
+| — | sbi4u 42 | VERIFY: glucose thresholds, history dates; T1/injection model curves builder-chosen |
+| — | sbi4u 25 | VERIFY: GTP/initiation factors omitted; mitochondrial code = vertebrate; Station 1 gene + Station 2 sequence builder-written |
+| — | sbi4u 38 | VERIFY: Experimental Lakes Area dates + estrogen concentrations; Canada BPA baby-bottle ban date (2010); "Wire it" outcomes rule-based |
+| — | sbi4u 42 (cont.) | VERIFY: 4–7 mmol/L band, 4.0 hypo line, 10 mmol/L kidney limit vs Diabetes Canada; Toronto insulin history (patent sale, Nobel sharing) |
+| V1 view3d | mcv4u 37 | Practice 2 uses typed √/± entry |
+| V1 view3d, V2 det3, wrenchView | mcv4u 47 | — |
+| V1 view3d | mcv4u 39 | PLAN NOTE: TC2 wrong states m = 6, 1/3 unreachable on −3..3 slider; point sliders widened to −12..12 for P4 |
+| TOOLKIT TODO: 5+ separate copies of V1 view3d / V3 vectorBoard across mcv4u 33–59 (built in parallel) — consolidate into toolkit/courses/mcv4u.js later | mcv4u | — |
+| — | sch4u 29 | catalyst masses (MnO₂ 0.50 g, potato 5.0 g) + hero curve V = 60(1−e^−kt) are builder model values; R1–R4 hints builder-written |
+| — | sbi4u 32 | PLAN ERROR: readout example gap 11.1 mm should be 11.0 (P4's 3.6 only works with unrounded gaps). VERIFY: Canada national DNA data bank (D6) |
+| V3 vectorBoard | mcv4u 36 | — |
+| V1/V2/V3 vector components | mcv4u 40 | PLAN ERROR: TC1 wrong state s = −1, t = 7 unreachable (sliders −5..5) |
+| V1 view3d | mcv4u 52 | PLAN ERROR: Equation mode limits D to −6..6 but TC1 needs D = −8 (widened to −20..20) |
+| — | eng4u 18 | quotes verified: Gatsby matches 1925 text ("orgastic"), Johnson matches Boswell (PG #1564) |
+| — | sbi4u 29 | VERIFY: Canadian regulator roles, Harvard mouse 2002 ruling, AHRA heritable-change ban, commercial yeast/bacteria insulin; Station 2 distractors + CER chips builder-written |
+| — | sch4u 40 | PLAN ERROR: M8 "water is left out" matching feedback can't trigger (no expression contains [H₂O]); A6 also rejects 0.056 (c − x) |
+| — | sch4u 33 | PLAN NOTE: plan lists 2 mode chips but describes 3 modes; Station 2 model ΔG° = −5 kJ |
+| — | sbi4u 30 | VERIFY: National DNA Data Bank scope; police searches of ancestry databases |
+| — | sch4u 26 | PLAN ERRORS: B4 745-slip gives −1031 (not −1059); B6 C=C slip gives −1437 (not −1588); TC2 sign slip gives 247.2 (not 247.4). VERIFY: C=O 799 parsed from bondNote; Station 3 hydrogen-from-gas fact |
+| — | sch4u 52 | VERIFY: 5% recycling energy figure, Quebec smelter count + power source, inert-anode research status (shown as "model value") |
+| — | sch4u 36 | VERIFY: R4 (CaCO₃) K = 0.010 model value (plan gives none); 2 decoy expressions added |
+| — | sbi4u 24 | PLAN GAP: TC1 "ACC" trap needed an 11th tRNA chip 5′-ACC-3′ (added); S12 chip feedback builder-written |
+| — | sbi4u 39 | **OWNER REVIEW (clinical):** IVF steps, hCG trigger timing (~36 h), hormone-therapy risks — plan §6 asks for clinical-source check; removing corpus luteum also drops estrogen (plan names only progesterone); R2/R3/R8 distractors + Station 1 + CER feedback builder-written |
+| — | sch4u 25 | PLAN ERROR: all 6 Station 2 error sources sort to "too small" (one-answer sorter). VERIFY: NH₄NO₃ molar mass 80.0 g/mol local; R4 made a fuel choice, not number entry |

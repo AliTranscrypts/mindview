@@ -1,0 +1,69 @@
+/* MCV4U 33: hero vector symbol, V3 vector board (Explore), compass dial, Part 3 stations, pair tiles (Practice 1),
+   degree boxes (Practice 2), task steppers */
+.vc-heq{display:inline-flex;align-items:center;gap:.25em}
+.vc-harr{width:.9em;height:1em;flex:0 0 auto}
+.vc-harl{stroke:var(--pen);stroke-width:3.4;stroke-linecap:round;fill:none}
+.vc-harh{fill:var(--pen)}
+.vc-hmeta{font:600 .3em/1.35 var(--font-ui);color:var(--ink-2);text-align:left;margin-left:.3em}
+.vc-hmeta .m{font-size:1.15em;color:var(--ink)}
+
+.vc-ex{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.vc-main,.vc-side{min-width:0}
+.vc-side .seg-wrap{margin:0 0 8px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.vc-lab{font-weight:700;margin:0}
+.vc-how{margin:4px 0 10px}
+.vc-note{min-height:1.2em;margin:4px 0;color:var(--ink-2);font-weight:600}
+.vc-read{margin:6px 0 10px}
+#vc-cmp[hidden],#vc-cps[hidden],#vc-tc3[hidden],#vc-chipbox[hidden],#vc-d2row[hidden],.vc-p3s .btn[hidden]{display:none}
+#vc-cmp .chips{margin:4px 0 6px}
+#vc-hide.on{background:var(--hi-soft);color:var(--ink)}
+#vc-chipbox{margin-top:8px}
+.vc-dialrow{display:flex;align-items:center;gap:14px;margin:6px 0 4px}
+.vc-dialbox{flex:0 0 auto;width:120px}
+.vc-dialout{margin:0;display:flex;flex-direction:column;gap:2px}
+.vc-dialout output{font:700 1.15rem var(--font-ui);color:var(--ink)}
+.vc-dial{display:block;width:120px;height:120px;touch-action:none;cursor:pointer;border-radius:50%}
+.vc-dial:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.vc-dial[aria-disabled="true"]{opacity:.55;cursor:default}
+.vc-dface{fill:var(--sheet);stroke:var(--ink-2);stroke-width:1.5}
+.vc-dtick{stroke:var(--ink-2);stroke-width:1.4}
+.vc-dl{fill:var(--ink);font:700 11px var(--font-ui);text-anchor:middle;dominant-baseline:middle}
+.vc-darc{fill:none;stroke:var(--hi);stroke-width:3.2;stroke-linecap:round}
+.vc-dneedle{stroke:var(--pen);stroke-width:4;stroke-linecap:round}
+.vc-dhub{fill:var(--ink)}
+
+.vc-st{margin:0 0 18px}
+.vc-st h4{margin:0 0 6px}
+.vc-p3{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px 24px;align-items:start;margin:8px 0}
+.vc-p3g,.vc-p3s{min-width:0}
+.vc-cap2{font-weight:700;color:var(--ink);min-height:1.4em;margin:4px 0 8px}
+.vc-real{margin:10px 0 0;padding-left:1.2em}
+.vc-real li{margin:2px 0}
+
+.vc-pair{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.vc-pair svg{display:block;max-width:100%;height:auto}
+.vc-pg{stroke:var(--plot-grid);stroke-width:1;fill:none}
+.vc-pax{stroke:var(--plot-axis);stroke-width:1.3;fill:none}
+.vc-pa{stroke:var(--pen);stroke-width:2.6;stroke-linecap:round;fill:none}
+.vc-pah{fill:var(--pen)}
+.vc-pb{stroke:var(--f3);stroke-width:2.6;stroke-linecap:round;fill:none}
+.vc-pbh{fill:var(--f3)}
+.vc-pcap{font:600 .74rem/1.35 var(--font-ui);color:var(--ink);text-align:left}
+.vc-k1{color:var(--pen);font-weight:800}
+.vc-k2{color:var(--f3);font-weight:800}
+.chip-in .vc-pair svg{width:90px}
+.chip-in .vc-pcap{font-size:.66rem}
+
+.vc-deg{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap;margin:6px 0}
+.vc-deg span:first-child{font-weight:600}
+.vc-dq .chips{margin:6px 0}
+
+.vc-trow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 10px}
+.vc-tname{font-size:1.25rem;min-width:1.6em;font-weight:700}
+.vc-tstep{display:inline-flex;align-items:center;gap:4px}
+.vc-tstep label{min-width:2.3em}
+.vc-tstep input{width:4.2em}
+
+@media (max-width:760px){
+  .vc-ex,.vc-p3{grid-template-columns:minmax(0,1fr)}
+}

@@ -1,0 +1,82 @@
+/* SCH4U 33: hero, Spontaneity map (Explore), Free energy and equilibrium (Part 3), Calculate with ΔG, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* colour roles: ΔH orange, ΔS teal, T ink */
+.gf-dh{color:var(--en-dh)}
+.gf-ds{color:var(--en-cat)}
+.gf-t{color:var(--ink)}
+.gf-heq{white-space:nowrap}
+
+/* hero */
+.gf-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.gf-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.gf-hx-cap{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Spontaneity map */
+.gf-how{margin-top:0}
+.gf-modes{margin:0 0 10px}
+.gf-pre{margin:0 0 6px}
+.gf-pre[hidden],.gf-prenote[hidden],.gf-quadw[hidden],.gf-jarw[hidden]{display:none}
+.gf-prenote{margin:0 0 6px}
+.gf-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 26px;align-items:start;margin-top:10px}
+.gf-left,.gf-right{min-width:0}
+.gf-graph,.gf-tk-svg,.gf-prog,.gf-dia,.gf-jar,.gf-beaker{display:block;width:100%;height:auto}
+.gf-gnote{margin:2px 0 10px}
+.gf-h4{margin:4px 0 8px;font-size:1rem}
+.gf-sliders{display:grid;gap:10px}
+.gf-sl{display:grid;gap:2px}
+.gf-sl-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;font-family:var(--font-ui)}
+.gf-sl-lab{font-weight:700}
+.gf-sl-out{font-weight:700;font-variant-numeric:tabular-nums}
+.gf-sl input[type=range]{width:100%;min-height:32px}
+.gf-sl input[type=range]:disabled{opacity:.45}
+.gf-cap{min-height:1.6em;margin:10px 0 0;color:var(--ink-2)}
+.gf-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.gf-jcap{min-height:2.6em;margin:4px 0 0;color:var(--ink-2)}
+
+/* quadrant chart */
+.gf-q{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:4px;font-family:var(--font-ui);font-size:.86rem}
+.gf-qh{text-align:center;font-weight:700;color:var(--ink-2)}
+.gf-qv{align-self:center;font-weight:700;color:var(--ink-2);white-space:nowrap;padding-right:4px}
+.gf-qc{position:relative;border:1.5px solid var(--rule);border-radius:6px;padding:10px 8px;min-height:3.6em;display:flex;flex-direction:column;justify-content:center;text-align:center;background:var(--sheet)}
+.gf-qc.on{border:2.5px solid var(--ink);background:var(--hi);color:var(--hi-ink);font-weight:700}
+.gf-qm{display:block;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+
+/* Part 3 */
+.gf-st1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.gf-kread{margin-top:10px}
+.gf-rule{margin:8px 0}
+.gf-tscroll{overflow-x:auto}
+.gf-tab{border-collapse:collapse;font-family:var(--font-ui);font-size:.9rem;min-width:100%}
+.gf-tab th,.gf-tab td{border:1px solid var(--rule);padding:6px 8px;text-align:center;white-space:nowrap}
+.gf-tab th{text-align:left;color:var(--ink-2)}
+.gf-tab td.on{background:var(--hi);color:var(--hi-ink);font-weight:700}
+.gf-st2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 24px;align-items:start;margin-top:10px}
+.gf-rl{margin:0 0 2px;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.gf-bar{height:14px;border:1.5px solid var(--rule);border-radius:4px;margin-bottom:8px;overflow:hidden}
+.gf-bar span{display:block;height:100%}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Calculate with ΔG */
+.gf-chiplist{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.gf-side{margin:8px 0 0;font-size:.92rem}
+
+/* task */
+.gf-conds{margin:6px 0 0}
+.gf-tkl{margin:6px 0 0;padding-left:1.2em}
+.gf-tk-h,.gf-tk-s{margin-bottom:10px}
+
+@media (max-width:760px){
+  .gf-grid,.gf-st1,.gf-st2{grid-template-columns:minmax(0,1fr)}
+}

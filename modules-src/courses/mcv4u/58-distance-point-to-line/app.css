@@ -1,0 +1,42 @@
+/* MCV4U 58: Shortest path (V3 2D board + V1 3D view, distance graph, Formula view), Feet and parallels stations,
+   Beyond the formula box frames, Five from P task */
+.dp-heq2{display:block;margin-top:.35em;font-size:.8em}
+.dp-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center}
+.dp-hsvg{width:100%;height:auto;display:block}
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.dp-main,.dp-side{min-width:0}
+.dp-ex [hidden],.dp-st [hidden]{display:none!important}
+.dp-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 8px}
+.dp-vw{display:inline-flex;flex-wrap:wrap;gap:6px}
+.dp-tg[aria-pressed="true"]{background:var(--info-bg);border-color:var(--ink);font-weight:700}
+.dp-tg[aria-pressed="true"]::before{content:"✓ "}
+canvas.plot.dp-c2{touch-action:none}
+.dp-svg{width:100%;height:auto;display:block;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);touch-action:none;cursor:grab}
+.dp-svg:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.dp-pre{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0 0}
+.dp-h{font-weight:700;margin:0 4px 0 0}
+.dp-rn{margin:6px 0 0}
+.dp-note{min-height:1.4em;margin:8px 0 0;font-weight:700}
+.dp-key{margin:4px 0 0}
+.dp-dg{margin-top:10px}
+.dp-dg .dp-h{margin:0 0 4px}
+canvas.plot.dp-dgc{aspect-ratio:16/7}
+.dp-sl{margin-top:4px}
+.dp-sl input{width:100%;min-height:28px}
+.dp-sl output{color:var(--ink);font-weight:700}
+.dp-pn{margin:2px 0 8px}
+.dp-side dl.read.dp-read{margin-top:12px}
+.dp-steps{margin:0 0 10px;padding-left:1.4em}
+.dp-steps li{margin:0 0 6px;color:var(--ink-2)}
+.dp-steps li.dp-on{color:var(--ink);font-weight:600}
+.dp-stg{align-items:start}
+.dp-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+.dp-frame .dp-in{width:5.2rem}
+.dp-ft{white-space:nowrap}
+.dp-stp{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:6px 0}
+.dp-stp label{min-width:7.5rem}
+.dp-stp input{width:4.6rem}
+@media (max-width:760px){
+  .dp-ex{grid-template-columns:minmax(0,1fr)}
+  .dp-hero{grid-template-columns:minmax(0,1fr)}
+}
