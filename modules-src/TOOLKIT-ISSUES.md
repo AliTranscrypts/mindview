@@ -39,3 +39,4 @@ every module that uses the touched code, then ship them together).
 | N11 signChart (+ .build, signScanner), N25 flattenMorph with gap bars | mhf4u 15 | |
 | approachLadder, exactQ, leadRace | mhf4u 17 | |
 | linOverLin, G11 canvasFracLabel, N8 sketchBuilder, N6 graphMatch (from 18), N4 fracBoxes | mhf4u 20 | |
+| sketchBuilder, N6 graphMatch (from 18), N4 coefTemplate | mhf4u 19 | registers summary lines via MV.ACTS from app.js |
