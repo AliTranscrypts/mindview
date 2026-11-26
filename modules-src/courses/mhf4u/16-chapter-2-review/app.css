@@ -1,0 +1,87 @@
+/* MHF4U 16: hero caption, per-topic tables, Connect (sorter, tool chains, the chapter on one page), mixed practice, task */
+.hero .hero-eq.md{font-size:clamp(1.5rem,3.7vw,2.35rem)}
+.hero .hero-eq .m{white-space:normal}
+#hero-cap{font:400 .95rem/1.5 var(--font-ui);color:var(--ink-2);display:grid;gap:2px}
+#hero-cap .hc-l{display:block}
+#hero-cap .m{white-space:normal}
+/* toolkit workaround: the visually hidden "(done)" text in a step button escaped the scrolling step bar on phones */
+.steps .step{position:relative}
+/* per-topic tables */
+.tt-wrap{overflow-x:auto;margin:10px 0}
+.tt td:nth-child(2){white-space:nowrap}
+.tt td:last-child{white-space:nowrap}
+.tt tr.tt-rev td{border-bottom:0}
+.tt tr.tt-more td{padding-top:0;white-space:normal}
+.tt-key{padding:8px 12px;border-left:4px solid var(--hi);background:var(--hi-soft);border-radius:4px}
+.tt-key p{margin:0 0 .3em;max-width:none}
+.tt-key p:last-child{margin:0}
+/* Connect: sorter with five boxes */
+@media (min-width:821px){ [data-act-id="sort"] .bins{grid-template-columns:repeat(3,minmax(0,1fr))} }
+[data-act-id="sort"] .bin-items .chip-in{font-size:.88rem}
+[data-act-id="sort"] .tile .m,[data-act-id="sort"] .chip-in .m{white-space:normal}
+/* Connect: tool chains */
+.ch-seq .q-head{flex-wrap:wrap}
+.ch-seq .q-prompt{font-weight:700}
+.ch-seq .ostep .m{white-space:normal}
+.ch-spare-lab{margin:14px 0 0;font:700 .85rem var(--font-ui);color:var(--ink-2)}
+.ch-spare{margin-top:4px}
+.ch-spare .ostep{border-style:dashed}
+.ostep.ch-left{opacity:.7}
+/* The chapter on one page */
+.op-flow{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:0}
+.op-step{border:1.5px solid var(--ink-2);border-radius:8px;background:var(--paper);padding:10px 14px;position:relative;margin-bottom:30px}
+.op-step:last-child{margin-bottom:0}
+.op-step p{margin:6px 0 0;max-width:none}
+.op-step .m{white-space:normal}
+.op-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.op-n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;border:2px solid var(--ink);font:700 .95rem var(--font-ui);background:var(--sheet)}
+.op-arr{position:absolute;left:50%;bottom:-29px;transform:translateX(-50%);font:700 1.3rem/28px var(--font-ui);color:var(--ink-2)}
+/* Mixed practice */
+@media (max-width:560px){
+  .mx-q .q-head{flex-wrap:wrap}
+  .mx-q .q-head .tags{order:-1;flex:1 0 100%;flex-direction:row;flex-wrap:wrap;justify-content:flex-start}
+}
+.mx-q .q-prompt{font-weight:700}
+.mx-q .numrow{flex-wrap:wrap}
+.mx-pair{gap:10px 22px}
+.mx-cell{display:inline-flex;align-items:center;gap:8px}
+.mx-lab .m{font-size:1.05rem}
+.mx-ib{margin-top:6px}
+.mx-ib canvas.plot.nl{aspect-ratio:auto;height:104px;min-height:0}
+.mx-ptrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:12px 0 0}
+.mx-ptlab{font-weight:700;font-size:.9rem}
+.mx-ptadd{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px}
+.mx-pt{min-height:32px}
+.mx-yours{margin:12px 0 0}
+.mx-yours .m{white-space:normal}
+.mx-sum{margin-top:6px}
+/* Task: one polynomial, five conditions */
+.pt-conds{margin:8px 0 12px;padding-left:1.4em;display:grid;gap:4px}
+.pt-how{margin:4px 0 8px}
+.tk-h{margin:10px 0 4px;font-size:1rem}
+.tk-k{margin-top:10px}
+.tk-eq{font-size:clamp(1.15rem,3vw,1.6rem)}
+.tk-eq .m{white-space:normal}
+.tk-sl{margin:12px 0 2px;font:700 .85rem var(--font-ui);color:var(--ink-2)}
+canvas.plot.tk-nl{aspect-ratio:auto;height:78px;min-height:0}
+.tk-read{margin-top:10px}
+/* zero slots (N21, from MHF4U 14) */
+.zs{display:grid;gap:0;container-type:inline-size}
+.zs-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:7px 0;border-bottom:1px solid var(--rule)}
+.zs-row:last-child{border-bottom:0}
+.zs-row.empty .zs-lab{color:var(--ink-2)}
+.zs-lab{font-weight:700;min-width:4.4em}
+.zs-pos{display:inline-flex;align-items:center;gap:4px}
+.zs-st{min-width:36px;min-height:36px;padding:.2em .5em;font-size:1.1rem}
+.zs-in{width:4.4rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.35em .4em;font:400 1.1rem var(--font-math);text-align:center}
+.zs-in:focus{border-color:var(--ink)}
+.zs-ord{display:inline-flex;align-items:center;gap:4px}
+.zs-ord .chip{min-width:34px;padding:.2em .55em}
+.zs-clr{padding:.3em .6em;order:5}
+@container (max-width:460px){
+  .zs-lab{flex:1 0 55%}
+  .zs-clr{order:1}
+  .zs-pos{order:2}
+  .zs-ord{order:3}
+}
+.zs-msg{min-height:1.1em;color:var(--red);margin:4px 0 0}
