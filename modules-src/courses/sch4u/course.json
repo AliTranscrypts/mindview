@@ -352,7 +352,8 @@
     "16",
     "15"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "23",
@@ -367,7 +368,8 @@
     "16",
     "22"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "24",
@@ -379,7 +381,8 @@
    "size": "M",
    "part3": "thermochemical",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "25",
@@ -393,8 +396,7 @@
    "prereqs": [
     "24"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "26",
@@ -409,8 +411,7 @@
     "17",
     "24"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "27",
@@ -425,7 +426,8 @@
     "24",
     "25"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "28",
@@ -439,7 +441,8 @@
    "prereqs": [
     "27"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "29",
@@ -453,8 +456,7 @@
    "prereqs": [
     "02"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "30",
@@ -469,7 +471,8 @@
     "29",
     "24"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "31",
@@ -484,7 +487,8 @@
     "29",
     "30"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "32",
@@ -498,7 +502,8 @@
    "prereqs": [
     "24"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "33",
@@ -514,8 +519,7 @@
     "28",
     "30"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "34",
@@ -530,8 +534,7 @@
     "29",
     "33"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "35",
@@ -547,7 +550,8 @@
     "24",
     "30"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "36",
@@ -562,8 +566,7 @@
     "34",
     "35"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "37",
@@ -578,7 +581,8 @@
     "36",
     "35"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "38",
@@ -593,7 +597,8 @@
     "34",
     "36"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "39",
@@ -607,8 +612,7 @@
    "prereqs": [
     "38"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "40",
@@ -624,8 +628,7 @@
     "38",
     "39"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "41",
@@ -641,7 +644,8 @@
     "39",
     "40"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "42",
@@ -656,7 +660,8 @@
     "39",
     "41"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "43",
@@ -672,7 +677,8 @@
     "42",
     "41"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "44",
@@ -689,7 +695,8 @@
     "41",
     "35"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "45",
@@ -701,7 +708,8 @@
    "size": "S",
    "part3": "redox-or-not",
    "prereqs": [],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "46",
@@ -744,7 +752,8 @@
    "prereqs": [
     "47"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "49",
@@ -760,7 +769,8 @@
     "46",
     "45"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "50",
@@ -775,7 +785,8 @@
     "47",
     "46"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "51",
@@ -789,7 +800,8 @@
    "prereqs": [
     "50"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "52",
@@ -804,8 +816,7 @@
     "50",
     "51"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   }
  ]
 }

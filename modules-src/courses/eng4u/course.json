@@ -351,7 +351,8 @@
     "18"
    ],
    "trivium": "Logic, Rhetoric",
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "20",
@@ -403,8 +404,7 @@
     "18"
    ],
    "trivium": "Logic",
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "23",
@@ -439,8 +439,7 @@
     "05"
    ],
    "trivium": "Rhetoric",
-   "status": "built",
-   "note": ""
+   "status": "live"
   }
  ]
 }

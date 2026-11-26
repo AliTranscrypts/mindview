@@ -1,0 +1,141 @@
+/* MDM4U 22: hero equation (F F F … F S over q^x · p), Waiting room (D6 one run / many runs / memory test, D7 geometric chart),
+   Waiting-time problems stations, Prize within k tries. Bars --pen, selected range --hi-soft, E(X) line --ink (course plan §3). */
+/* radioGroup (from MDM4U 21 / 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* hero equation: the F … F S row, its labels, then q^x · p under them */
+.hero .hero-eq.sm .gm-heq{font-size:.8em}
+.gm-heq{display:inline-grid;grid-template-columns:auto auto auto auto;grid-template-areas:". tf . ts" ". uf . us" "ml mf md ms";align-items:center;justify-items:center;gap:6px 10px;font-style:normal}
+.gm-ht{display:inline-flex;gap:5px;align-items:center}
+.gm-htf{grid-area:tf}.gm-hts{grid-area:ts}.gm-huf{grid-area:uf}.gm-hus{grid-area:us}
+.gm-hml{grid-area:ml;justify-self:end}.gm-hmf{grid-area:mf}.gm-hmd{grid-area:md}.gm-hms{grid-area:ms}
+.gm-tile{display:inline-grid;place-items:center;width:1.45em;height:1.45em;border:2px solid var(--ink-2);border-radius:6px;font:700 max(.62em,15px) var(--font-ui);color:var(--ink-2);background:var(--sheet)}
+.gm-tile-s{border-color:var(--ink);color:var(--hi-ink);background:var(--hi)}
+.gm-tdots{font:700 .6em var(--font-ui);color:var(--ink-2)}
+.gm-hu{font:600 max(.42em,12px) var(--font-ui);color:var(--ink-2);white-space:nowrap}
+.gm-hm{font-size:1em}
+
+/* hero figure */
+.gm-hfig{display:grid;gap:8px}
+.gm-hrow{display:flex;align-items:center;gap:14px;min-height:76px}
+.gm-hdie{flex:none;width:68px;height:68px}
+.gm-hside{min-width:0;display:grid;gap:4px}
+.gm-hcnt{margin:0;font-size:1rem;font-weight:600}
+canvas.plot.gm-hplot{aspect-ratio:16/9}
+
+/* devices (die, coin, spinner) */
+.gm-die,.gm-coin,.gm-spin{display:block;width:100%;height:100%;overflow:visible}
+.gm-dface{fill:var(--sheet);stroke:var(--ink);stroke-width:4}
+.gm-dsucc{fill:var(--hi)}
+.gm-pip{fill:var(--ink)}
+.gm-dsucc ~ .gm-pip,.gm-dsucc ~ .gm-ctxt{fill:var(--hi-ink)}
+.gm-cface{fill:var(--paper);stroke:var(--ink);stroke-width:4}
+.gm-crim{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-dasharray:4 4}
+.gm-ctxt{fill:var(--ink);font:700 34px var(--font-ui);text-anchor:middle;dominant-baseline:central}
+.gm-sbg{fill:var(--sheet)}
+.gm-ssec{fill:var(--hi-soft);stroke:var(--ink-2);stroke-width:1.5}
+.gm-spin-s .gm-ssec{fill:var(--hi)}
+.gm-slab{fill:var(--ink);font:700 13px var(--font-ui);text-anchor:middle;dominant-baseline:central}
+.gm-srim{fill:none;stroke:var(--ink);stroke-width:3}
+.gm-needle{stroke:var(--ink);stroke-width:3.5;stroke-linecap:round}
+.gm-ntip,.gm-hub{fill:var(--ink)}
+
+/* trial chips (one run, hero, prediction path) */
+.gm-trials{display:flex;flex-wrap:wrap;gap:5px;list-style:none;margin:0;padding:0}
+.gm-tr{display:inline-grid;justify-items:center;min-width:30px;padding:2px 4px;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);line-height:1.1}
+.gm-tr.s{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.gm-trf{font:700 .98rem var(--font-ui)}
+.gm-trs{font:600 .7rem var(--font-ui);color:inherit;opacity:.8}
+
+/* Waiting room */
+.gm-top{margin-bottom:4px}
+.gm-pbox{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px 4px;margin:0 0 10px;background:var(--sheet)}
+.gm-pbox .rg-wrap{margin-bottom:6px}
+.gm-sl{max-width:460px}
+.gm-cap{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+canvas.plot.gm-plot{aspect-ratio:16/10}
+.gm-pw{position:relative}
+.gm-bars{position:absolute;inset:0;pointer-events:none}
+.gm-bar{position:absolute;pointer-events:auto;border:0;padding:0;margin:0;background:transparent;border-radius:3px;cursor:pointer}
+.gm-bar:focus-visible{outline:3px solid var(--ink);outline-offset:-2px}
+.gm-key{margin:6px 0 0}
+.gm-aha{margin:10px 0 0;font-size:.95rem}
+.gm-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.gm-panel .rg-wrap{margin-bottom:6px}
+.gm-sh{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.gm-stp{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.gm-stb{min-width:40px;min-height:38px;padding:0 .5em}
+.gm-sto{min-width:2.2em;text-align:center;font:700 1.15rem var(--font-math)}
+.gm-how{margin:8px 0 0}
+.gm-msg{min-height:1em;margin:4px 0 0}
+.gm-q{display:inline-block;min-width:1.6em;padding:0 .3em;border:1.5px dashed var(--ink-2);border-radius:4px;text-align:center;font-weight:700}
+.gm-one{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.gm-dev{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.gm-devbox{flex:none;width:84px;height:84px}
+.gm-devtxt{flex:1 1 220px;min-width:0}
+.gm-devname{margin:0 0 2px;font-size:.9rem;color:var(--ink-2)}
+.gm-cnt{margin:0 0 6px;font-weight:700;font-size:1.05rem}
+.gm-one .gm-trials{margin-top:10px}
+.gm-runs{margin:8px 0 0}
+.gm-path{margin:0 0 8px}
+.gm-pf{margin:8px 0 0;font-size:1.1rem}
+.gm-many,.gm-mem{margin-top:10px}
+
+/* Waiting-time problems */
+.gw-tabs{margin-bottom:6px}
+.gw-card0{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.gw-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.gw-text{margin:0 0 10px}
+.gw-row{margin:0 0 12px;padding:0 0 10px;border-bottom:1px solid var(--rule)}
+.gw-row:last-of-type{border-bottom:0}
+.gw-rl{margin:0 0 6px;font-weight:700}
+.gw-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.gw-chip{min-height:38px;color:var(--ink)}
+.gw-chip.ok{background:var(--good-bg);border-color:var(--green);font-weight:700;opacity:1}
+.gw-chip.no{background:var(--bad-bg);border-color:var(--red)}
+.gw-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gw-card{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px}
+.gw-ct{margin:0 0 4px;font-weight:700}
+.gw-done{margin:12px 0 0}
+.gm-tick{font-weight:700}
+.gw-h{margin:12px 0 6px}
+.gw-unit{position:relative;height:46px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);overflow:hidden;margin:8px 0 2px}
+.gw-seg{position:absolute;top:0;bottom:0;display:grid;place-items:center;background:var(--pen);color:var(--sheet);border-right:1.5px solid var(--sheet);font-size:.95rem;overflow:hidden;white-space:nowrap}
+.gw-seg .m{color:var(--sheet)}
+.gw-seg1{opacity:.78}
+.gw-new{animation:gwGrow .45s ease-out}
+@keyframes gwGrow{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@media (prefers-reduced-motion:reduce){.gw-new{animation:none}}
+.gw-gap{position:absolute;top:0;bottom:0;display:grid;place-items:center;background:repeating-linear-gradient(135deg,var(--hi-soft) 0 6px,transparent 6px 12px);font:600 .85rem var(--font-ui);color:var(--ink-2)}
+.gw-scale{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-2);margin-bottom:6px}
+.gw-read{margin-top:4px}
+
+/* Prize within k tries */
+.gm-conds{margin:6px 0 0;padding-left:1.3em}
+.gm-conds li{margin:2px 0}
+.pk-in{margin:10px 0}
+.pk-in .rg-lab{min-width:8.2em}
+canvas.plot.pk-plot{aspect-ratio:16/10}
+.pk-read{margin-top:8px}
+
+@media (max-width:560px){
+  .hero .hero-eq.sm .gm-heq{font-size:1em;gap:6px 8px}
+  .gm-top .rg.seg{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .gm-top .rg.seg button{border-left:0}
+  .gm-top .rg.seg button:nth-child(odd){border-right:1.5px solid var(--ink)}
+  .gm-top .rg.seg button:nth-child(-n+2){border-bottom:1.5px solid var(--ink)}
+  canvas.plot.gm-plot,canvas.plot.pk-plot{aspect-ratio:4/3}
+  .gw-cards{grid-template-columns:minmax(0,1fr)}
+  .gm-devbox{width:70px;height:70px}
+  .gm-hdie{width:56px;height:56px}
+}

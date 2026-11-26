@@ -294,3 +294,41 @@ every module that uses the touched code, then ship them together).
 | — | sbi4u 24 | PLAN GAP: TC1 "ACC" trap needed an 11th tRNA chip 5′-ACC-3′ (added); S12 chip feedback builder-written |
 | — | sbi4u 39 | **OWNER REVIEW (clinical):** IVF steps, hCG trigger timing (~36 h), hormone-therapy risks — plan §6 asks for clinical-source check; removing corpus luteum also drops estrogen (plan names only progesterone); R2/R3/R8 distractors + Station 1 + CER feedback builder-written |
 | — | sch4u 25 | PLAN ERROR: all 6 Station 2 error sources sort to "too small" (one-answer sorter). VERIFY: NH₄NO₃ molar mass 80.0 g/mol local; R4 made a fuel choice, not number entry |
+| — | sch4u 34 | PLAN ERROR: hero storyboard flows (30 → 15 per min) don't fit first-order steps with counts 25/75 (hero follows storyboard) |
+| — | sch4u 39 | PLAN ERRORS: TC2 wrong state 1.0×10⁻¹² unreachable (chips stop at 10⁻⁹); Activity 1 feedback needs pH 1.70/3.70/2.7 not among the 8 pairs (added as decoys) |
+| — | sbi4u 33 | K1 A/B share a prompt (plan); Activity 1 items 6–8 + R4 distractors, extra plate results, Michael Smith note builder-written; "count GAATTG" button added so TC1's wrong state is reachable |
+| — | eng4u 24 | OWNER REVIEW: Coleridge (Table Talk 1827) + Strunk (1918) quotes not checked vs PD edition; "Maple Hollow Public Library" + "Signal Check" names vs real orgs; fair-dealing note left for teacher. HUB TODO: course hub doesn't yet show the Art of Language preface |
+| — | sch4u 50 | — |
+| V3 vectorBoard | mcv4u 43 | — |
+| — | sch4u 31 | VERIFY: ozone recovery timeline; order chips 0–4 (plan 0–2) so TC1's n = 4 message can fire; model k values local (no kinetics table in MV.chem.data) |
+| V1 view3d, V12 | mcv4u 50 | PLAN ERROR: task near-miss (2,1,−1)+t(1,1,−2) meets z = 0 at (3/2, 1/2, 0), not (5/2, 3/2, 0); M6 "(5,5,5)+…" match feedback unreachable |
+| C6 particleBox, C8 eqGraphs | sch4u 34 | open-container rate 0.50 s⁻¹ model value |
+| — | sch4u 27 | VERIFY: STSE note under H4/H6 (hydrogen + steel projects); 3 wrong-sign decoys added |
+| V7 ruleChooser, splitBars waterfall, ratioDial (generalized), lnExact (√) | mcv4u 31 | K1 A/B same prompt (plan) |
+| — | sch4u 35 | PLAN ERROR: TC1 test also accepts "add NH₃" (not on accepted list; rejected with named message). VERIFY: Station 1 Haber plant conditions, "half the world's food" STSE claim, cobalt ΔH model +80 kJ (never shown) |
+| — | sch4u 22 | VERIFY: Ca atomic radius 197 pm (added locally); X1–X5 hints builder-written; d block has no values |
+| — | sch4u 37 | Station 2 heating-step values are builder model values |
+| particleBox (100 molecules) | sch4u 38 | PLAN ERROR: 0.0010 mol/L ethanoic acid is 12.5% ionized with the course Ka (plan says 12%); NH₂⁻ decoy added; strong acids ranked on a stand-in scale (no numbers shown) |
+| — | sbi4u 41 | PLAN ERROR: SSRI serotonin above 50 AU "about 12 ms" contradicts its own table (≈9 ms; `// VERIFY`); Sequence 2 "membrane depolarizes" distractor impossible in ordering activity |
+| V1 view3, V12 vecSteppers | mcv4u 51 | — |
+| — | sbi4u 36 | VERIFY: Ontario organ-donor sign-up (16+, beadonor.ca); Canadian figures left out; label/calc hints, S3–S6 distractors, urinalysis feedback builder-written |
+| V1 view3d, V12 lineEntry | mcv4u 56 | "after all six" note shown in preview (task frame has only after3 slot — afterAt now exists in 1.0.8) |
+| V1 view3d | mcv4u 59 | — |
+| — | sch4u 49 | VERIFY: Health Canada lead-in-drinking-water guideline (no number shown), corrosion cost figure omitted; R1/R2/R4/R6 hints, Station 1 options, nail-inquiry table builder-written |
+| — | sch4u 44 | PLAN ERROR: ethanoic 0.10/0.20 buffer drops 0.18 pH after the dose, not 0.19. VERIFY: ocean pH 8.2 → 8.1. K1 A/B same prompt |
+| — | sch4u 32 | VERIFY: −10 °C freezing bars use ΔHfus/ΔSfus at 0 °C (approximation); TC1 "N = 20" unreachable (slider max 10); 4 extra gas-rule reactions builder-chosen |
+| — | sch4u 41 | PLAN ERROR: H4 using Ka(HOCl) directly gives pH 4.52 (or 9.48), not 4.72 (all get M3 feedback, `// VERIFY`) |
+| C4 energyDiagram | sch4u 24 | VERIFY: U-235 fission ≈ 2×10¹⁰ kJ/mol (local; not in MV.chem.data); hero uses hand warmer + cold pack instead of methane |
+| V1 view3d | mcv4u 53 | PLAN ERRORS: TC1/TC3 planes need D = −13/−6 (range widened to −15..15 from −5..5); readout "0t = −3" should be 0t = 3 |
+| — | sch4u 23 | VERIFY: Mendeleev atomic masses not in plan (Li, P, Sb, Bi …), densities, Po ion, Ga/Sc discovery years; F1–F3/F5/F6 hints builder-written. PLAN ERRORS: Sn 118.7 vs course table 119 (plan value kept); near-miss Mg also fails line 4 |
+| — | sch4u 51 | VERIFY: "international ampere" history note; Mg 24.3 + Na 23.0 molar masses local |
+| S5 forkBoard, baseZoom, seqEntry, originStrip, routeBuilder (distractor + order rules) | sbi4u 22 | VERIFY: Canada introduced UV index 1992; telomere Divide model + seq-2 distractor added |
+| C9 titrationLab (charge-balance pH, weak-ready) | sch4u 42 | hidden "Unknown" NaOH = 0.0800 mol/L builder-chosen; 2 pH decoys added |
+| D7 gChart (tail bar ≥16), D6 deviceFaces (die/coin/spinner SVG) | mdm4u 22 | 2 spare matching values added (9/64, 10) |
+| C9 titrationModel/lab (2nd copy, built in parallel with 42) | sch4u 43 | flask fixed at 25.0 mL of 0.18 mol/L |
+| — | sch4u 45 | PLAN ERROR: task line-3 test (ion ∈ 2+ ions) contradicts near-miss "Al + Cu²⁺ fails 3" (used metal rise = ion charge; same 6 answers); numeric practice doesn't prompt for a missing sign |
+| worldMap (F11), profileCard, causeFlow, causeMapBuilder, decisionSet (pick-two) | hfa4u 21 | PLAN ERROR: TC3 "you moved 12 points" — 22→12 is 14 points. OWNER REVIEW: FAO figures, thresholds, 211 line, Part 3 cause-map key for flood/job losses/low wages + added links (`// VERIFY`) |
+| — | eng4u 19 | page 319 KB (over 300 KB target, warning). OWNER REVIEW: Frankenstein 1831 / Jane Eyre / Gatsby quotes + chapter numbers from memory (verification requested). PLAN NOTE: model essay is 767 words, not 900 |
+| — | sch4u 28 | VERIFY: Sabatier reaction in spacecraft (F4), hydrogen from natural gas, Ontario power mix (Station 2) |
+| — | sch4u 30 | VERIFY: ammonia plant 400–500 °C (Station 3, Final A2); catalyst fraction capped at 100%; 2nd homogeneous/heterogeneous examples (amylase, iron) builder-written |
+| C10 cell (2nd copy, built before 47) | sch4u 48 | PLAN ERROR: mismatch card "Iron metal is the cathode" doesn't exist (mapped to pair 4). VERIFY: Ballard note |

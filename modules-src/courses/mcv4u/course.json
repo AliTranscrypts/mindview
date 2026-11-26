@@ -535,7 +535,8 @@
     "13",
     "27"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "32",
@@ -551,8 +552,7 @@
     "30",
     "26"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "33",
@@ -564,8 +564,7 @@
    "size": "S",
    "part3": "scalar-vector",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "34",
@@ -579,8 +578,7 @@
    "prereqs": [
     "33"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "35",
@@ -594,8 +592,7 @@
    "prereqs": [
     "34"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "36",
@@ -610,8 +607,7 @@
     "34",
     "35"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "37",
@@ -625,8 +621,7 @@
    "prereqs": [
     "33"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "38",
@@ -642,8 +637,7 @@
     "35",
     "26"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "39",
@@ -658,8 +652,7 @@
     "37",
     "38"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "40",
@@ -674,8 +667,7 @@
     "38",
     "39"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "41",
@@ -706,8 +698,7 @@
     "33",
     "38"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "43",
@@ -723,7 +714,8 @@
     "38",
     "41"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "44",
@@ -739,8 +731,7 @@
     "39",
     "43"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "45",
@@ -757,7 +748,8 @@
     "35",
     "41"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "46",
@@ -772,8 +764,7 @@
     "44",
     "39"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "47",
@@ -788,8 +779,7 @@
     "45",
     "46"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "48",
@@ -803,8 +793,7 @@
    "prereqs": [
     "38"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "49",
@@ -819,8 +808,7 @@
     "43",
     "48"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "50",
@@ -836,7 +824,8 @@
     "48",
     "37"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "51",
@@ -852,7 +841,8 @@
     "50",
     "39"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "52",
@@ -869,8 +859,7 @@
     "43",
     "44"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "53",
@@ -886,7 +875,8 @@
     "52",
     "44"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "54",
@@ -934,7 +924,8 @@
     "46",
     "50"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "57",
@@ -950,7 +941,8 @@
     "56",
     "47"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "58",
@@ -967,8 +959,7 @@
     "49",
     "50"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "59",
@@ -984,7 +975,8 @@
     "58",
     "46"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   }
  ]
 }

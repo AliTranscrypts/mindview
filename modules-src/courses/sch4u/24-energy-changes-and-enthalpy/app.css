@@ -1,0 +1,77 @@
+/* SCH4U 24: hero, Enthalpy diagram builder (C4), Write it two ways, calculations, Self-heating meal pack.
+   Colours come from the course tokens only: --en-dh (ΔH arrow, energy out, orange), --en-ea (energy in, brown), --ink. */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.eh-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.eh-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.eh-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: enthalpy diagram builder */
+.eh-how{margin-top:0}
+.eh-modes{margin:0 0 12px}
+.eh-subs{margin:0 0 10px}
+.eh-subs[hidden]{display:none}
+.eh-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.eh-view,.eh-side{min-width:0}
+.eh-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.eh-box.drag{cursor:ns-resize;touch-action:none}
+.eh-box:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.eh-svg{display:block;width:100%;max-width:620px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.eh-cap{min-height:1.5em;margin:10px 0 2px;font-size:1rem}
+.eh-c[hidden]{display:none}
+.eh-c > * + *{margin-top:12px}
+.eh-sl{margin-top:12px}
+.eh-bbtns{display:flex;flex-wrap:wrap;gap:8px}
+.eh-read{margin-top:14px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.eh-tabs{margin-top:8px}
+
+/* Part 3: Write it two ways */
+.eh-st h3{margin-bottom:6px}
+#p3-app > .eh-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.eh-s1row{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:10px 0;background:var(--sheet)}
+.eh-s1p{margin:0 0 8px}
+.eh-eqt{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.eh-tile{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:8px;padding:.2em .6em;background:var(--paper);min-height:36px}
+.eh-op{font-weight:700;padding:0 2px}
+.eh-slot{min-width:48px;min-height:40px;border:2px dashed var(--ink-2);border-radius:8px;background:var(--sheet);color:var(--ink-2);font-weight:700;padding:.2em .6em}
+.eh-slot.ready{border-color:var(--pen);background:var(--hi-soft);color:var(--ink)}
+.eh-slot.on{border-style:solid;border-color:var(--en-dh);color:var(--ink)}
+.eh-heat-t{color:var(--en-dh);font-weight:700;white-space:nowrap}
+.eh-tray{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:8px}
+.eh-heat{border:2px solid var(--en-dh);border-radius:8px;background:var(--sheet);padding:.3em .8em;min-height:40px}
+.eh-heat[aria-pressed="true"]{background:var(--hi-soft);box-shadow:0 0 0 3px var(--hi)}
+.eh-dhrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:10px}
+.eh-dhl{font-weight:700}
+.eh-num{width:7em}
+.eh-base,.eh-neweq,.eh-calc{margin:8px 0}
+.eh-trs{margin:8px 0}
+.eh-s3sel{margin:8px 0}
+
+/* calculations */
+.eh-h4{margin:14px 0 6px;font-size:1rem}
+.eh-chiplist{display:flex;flex-wrap:wrap;gap:6px}
+.eh-unit{font-weight:700}
+
+/* task */
+.eh-conds{margin:6px 0 0 1.2em;padding:0}
+.eh-tcard{margin-bottom:6px}
+
+@media (max-width:760px){
+  .eh-grid{grid-template-columns:minmax(0,1fr)}
+  .eh-cardrow{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+  .eh-cardrow button{flex:0 0 auto}
+  .eh-cards .rg-wrap{flex-wrap:wrap;min-width:0}
+  .eh-cards .rg-wrap > .rg{max-width:100%}
+}

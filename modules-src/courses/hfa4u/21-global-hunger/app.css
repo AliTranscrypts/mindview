@@ -1,0 +1,196 @@
+/* HFA4U 21: hero (world map + production bar), World hunger map (F11 world map, profile cards, causes overlay, readout),
+   Why hunger persists (cause-map builder, model scenarios), Data detective, nutrition-response task.
+   Hunger shading: a single-hue ramp of --pen (opacity carries the rate; every value is also written). Threshold lines --ink-2
+   dashed. Double-burden ribbon magenta --p-c, always with its words. Red and green only in feedback. */
+/* radio groups and switch (from HFA4U 16 / 14) */
+.gh-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.gh-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2);min-width:4.2rem;margin:0}
+.gh-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.gh-chipset{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.gh-chipset button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.92rem;min-height:34px;text-align:left;max-width:100%}
+.gh-chipset button:hover:not(:disabled){border-color:var(--pen)}
+.gh-chipset button[aria-checked="true"],.gh-chipset button[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.gh-chipset button:disabled{opacity:.8}
+.gh-sw{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:6px 10px;min-height:40px;font-size:.92rem;max-width:100%}
+.gh-sw:hover{border-color:var(--pen)}
+.gh-swt{position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:999px;border:2px solid var(--ink-2);background:var(--paper)}
+.gh-swt i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--ink-2);transition:left .15s}
+.gh-sw[aria-checked="true"]{border-color:var(--ink)}
+.gh-sw[aria-checked="true"] .gh-swt{background:var(--hi);border-color:var(--ink)}
+.gh-sw[aria-checked="true"] .gh-swt i{left:18px;background:var(--ink)}
+.gh-swl{flex:1 1 auto;min-width:0}
+.gh-swv{flex:0 0 auto;font-size:.78rem;font-weight:700;color:var(--ink-2);min-width:1.8rem;text-align:right}
+.gh-h4{margin:0 0 6px;font-size:1rem}
+.gh-h5{margin:0 0 4px;font-size:.95rem}
+
+/* hero */
+.hero .hero-eq .gh-eqsub{display:block;font:400 .95rem/1.4 var(--font-ui);color:var(--ink-2);margin-top:.5em;letter-spacing:.01em}
+.gh-hero{width:100%}
+.gh-hsvg{display:block;width:100%;height:auto}
+.gh-hlab{fill:var(--ink);font:700 17px var(--font-ui);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+.gh-hlab.sm{font-weight:400}
+.gh-hlab.low{fill:var(--ink-2);font-weight:400}
+.gh-hleg{fill:var(--ink);font:700 15px var(--font-ui)}
+.gh-hlegv{fill:var(--ink-2);font:400 14px var(--font-ui)}
+.gh-hbar{fill:var(--ink-2)}
+.gh-hbase{stroke:var(--ink);stroke-width:2;fill:none}
+.gh-henough{stroke:var(--ink);stroke-width:2;stroke-dasharray:7 5;fill:none}
+.gh-hbt{fill:var(--ink);font:400 15px var(--font-ui)}
+.gh-htag{fill:var(--ink-2);font:700 12px var(--font-ui);letter-spacing:.04em;text-transform:uppercase}
+.hero-fig figcaption.gh-cap{font:700 1.15rem var(--font-ui)}
+
+/* F11 world map */
+.gh-land{fill:var(--sheet);stroke:var(--ink-2);stroke-linejoin:round}
+.gh-shade{fill:var(--pen);stroke:none;pointer-events:none}
+.gh-selo{fill:none;stroke:var(--ink);stroke-linejoin:round}
+.gh-circ{fill:var(--pen);fill-opacity:.3;stroke:var(--pen)}
+.gh-circ.sel{fill-opacity:.45;stroke:var(--ink)}
+.gh-mapw{position:relative;margin:4px 0 0}
+.gh-map{display:block;width:100%;height:auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:8px}
+.gh-mtag{position:absolute;left:8px;bottom:8px;background:var(--sheet)}
+.gh-rbtns{display:block}
+.gh-rb{position:absolute;transform:translate(-50%,-50%);display:inline-grid;justify-items:center;gap:0;border:1.5px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.15em .55em;font-size:.8rem;line-height:1.2;min-height:30px;max-width:9.5rem;text-align:center}
+.gh-rb:hover{border-color:var(--pen)}
+.gh-rb[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.gh-rn{font-weight:700}
+.gh-rv{font-weight:400}
+.gh-rbar{display:none}
+.gh-key{margin:6px 0 0}
+.gh-slots{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:stretch;margin:10px 0 0}
+.gh-slot{flex:1 1 13rem;display:grid;gap:2px;border:2px dashed var(--rule);border-radius:8px;padding:6px 10px;background:var(--paper)}
+.gh-slot.on{border-color:var(--ink-2);border-style:solid}
+.gh-sn{font-size:.82rem;font-weight:700;color:var(--ink-2)}
+.gh-sv{font-weight:700}
+.gh-slots .btn{align-self:center}
+.gh-real ul{margin:.3em 0 .6em;padding-left:1.2em}
+
+/* Explore layout */
+.gh-lab{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15.5rem);gap:16px 22px;align-items:start}
+.gh-main,.gh-side{min-width:0}
+.gh-side{border-left:1.5px solid var(--rule);padding-left:18px}
+.gh-rule{font-size:.95rem;margin:0 0 10px;padding:6px 10px;border-left:4px solid var(--p-c);background:var(--paper);border-radius:4px;max-width:none}
+
+/* profile cards */
+.gh-pcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 12px}
+.gh-pc{position:relative;display:grid;gap:6px;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:10px;padding:10px 12px;font-size:.88rem;width:100%;min-width:0}
+button.gh-pc:hover{border-color:var(--pen)}
+.gh-pc.sel{border:2.5px solid var(--ink);padding:9px 11px;box-shadow:0 0 0 3px var(--hi-soft)}
+.gh-pch{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.gh-pct{font-weight:700;font-size:1rem}
+.gh-witag{font-size:.72rem;font-weight:700;border:1.5px solid var(--ink);border-radius:4px;padding:0 .4em}
+.gh-rib{justify-self:start;background:var(--p-c);color:var(--sheet);font-weight:700;font-size:.8rem;border-radius:4px;padding:.1em .6em;letter-spacing:.02em}
+.gh-bars{display:grid;gap:4px}
+.gh-br{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"l v" "t t" "n n";gap:1px 8px;align-items:end}
+.gh-bl{grid-area:l;font-weight:700;font-size:.85rem}
+.gh-bl small{font-weight:400;color:var(--ink-2)}
+.gh-bv{grid-area:v;font-size:.85rem;white-space:nowrap}
+.gh-bt{grid-area:t;position:relative;display:block;height:14px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);margin-top:12px}
+.gh-bf{position:absolute;left:0;top:0;bottom:0;background:var(--pen);border-radius:2px 0 0 2px;outline:0 solid var(--hi);outline-offset:1px}
+.gh-bf.an{background:var(--nu-micro)}
+.gh-br.pulse .gh-bf{outline-style:solid}
+.gh-th{position:absolute;top:-3px;bottom:-3px;width:0;border-left:1.5px dashed var(--ink-2)}
+.gh-th.hi{border-left:2.5px dashed var(--ink);top:-12px}
+.gh-thl{position:absolute;bottom:100%;left:3px;font-size:.66rem;font-weight:700;color:var(--ink);line-height:1;white-space:nowrap;margin-bottom:-8px}
+.gh-bnote{grid-area:n;font-size:.8rem;font-weight:700;background:var(--hi-soft);border-radius:4px;padding:.05em .4em;justify-self:start}
+.gh-tags{display:flex;flex-wrap:wrap;gap:4px}
+.gh-tag{font-size:.75rem;border:1px solid var(--rule);border-radius:999px;padding:0 .55em;color:var(--ink-2);background:var(--paper)}
+.gh-wi{display:grid;gap:8px;margin:10px 0 0}
+.gh-wis{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px;display:grid;gap:4px}
+.gh-wis .tiny{margin:0}
+.gh-wit{margin:0;font-weight:700}
+.gh-wis .btn{justify-self:start}
+#gh-big{margin-top:4px}
+
+/* causes overlay */
+.gh-flowfig{margin:8px 0 0}
+.gh-flow{display:block;width:100%;height:auto;background:var(--paper);border:1.5px solid var(--rule);border-radius:8px}
+.gh-flowfig figcaption{margin-top:6px}
+.gh-fh{fill:var(--ink-2);font:700 13px var(--font-ui)}
+.gh-fbox{fill:var(--sheet);stroke:var(--rule);stroke-width:1.5}
+.gh-fbox.cause{fill:var(--sheet);stroke:var(--ink);stroke-width:2.4}
+.gh-fbox.scen{fill:var(--paper);stroke:var(--ink-2);stroke-dasharray:6 4}
+.gh-fbox.hit{fill:var(--hi-soft);stroke:var(--ink);stroke-width:2.2}
+.gh-ft{fill:var(--ink);font:400 15px var(--font-ui)}
+.gh-ft.cause,.gh-ft.hit{font-weight:700}
+.gh-ft.scen{fill:var(--ink-2)}
+.gh-farr{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linecap:round}
+.gh-fhead{fill:var(--ink)}
+.gh-fnote{fill:var(--ink);font:700 13px var(--font-ui);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
+.gh-fpulse{fill:none;stroke:var(--hi);stroke-width:4}
+
+/* Part 3: cause-map builder */
+.gh-frame{margin:0 0 12px;padding:10px 14px;border-left:4px solid var(--pen);background:var(--info-bg);border-radius:6px}
+.gh-frame p{margin:0;max-width:none}
+.gh-cm{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(36px,7vw,72px);row-gap:10px;align-items:start;margin:8px 0 0}
+.gh-cmsvg{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.gh-cmc{position:relative;min-width:0}
+.gh-cmh{font-size:.85rem;color:var(--ink-2);margin:-2px 0 6px;min-height:1.3em}
+.gh-cml{display:grid;gap:6px}
+.gh-cb,.gh-kb,.gh-ob{display:flex;align-items:center;gap:6px;width:100%;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.35em .6em;font-size:.9rem;min-height:38px}
+.gh-cb:hover,.gh-kb:hover,.gh-ob:hover{border-color:var(--pen)}
+.gh-cb[aria-pressed="true"],.gh-kb[aria-pressed="true"]{border:2.5px solid var(--ink);background:var(--hi-soft);font-weight:700}
+.gh-cbm{flex:0 0 1.1em;font-weight:700;text-align:center}
+.gh-cb.done{border-color:var(--ink-2)}
+.gh-kb.linked,.gh-ob.linked{border-color:var(--ink)}
+.gh-kb.wrong,.gh-ob.wrong{border-color:var(--red);background:var(--bad-bg)}
+.gh-st{margin-left:auto;font-size:.78rem;font-weight:700;white-space:nowrap}
+.gh-cmln{fill:none;stroke:var(--ink-2);stroke-width:1.6;opacity:.75}
+.gh-cmln.on{stroke:var(--ink);stroke-width:3;opacity:1}
+.gh-cmhd{fill:var(--ink)}
+.gh-cmlo .gh-cmhd{fill:var(--ink-2);opacity:.75}
+.gh-cmprog{margin:8px 0 0;font-weight:700}
+.gh-cmtxt{margin-top:10px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px;background:var(--paper)}
+.gh-cmtxt ul{margin:0;padding-left:1.2em}
+.gh-cmtxt li{margin:2px 0}
+.gh-scens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:6px}
+.gh-scen{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px;background:var(--sheet);display:grid;gap:4px;align-content:start}
+.gh-scen p{margin:0}
+.gh-sbars{display:grid;gap:3px}
+.gh-sb{display:grid;grid-template-columns:3.4rem minmax(0,1fr) 2.6rem;gap:6px;align-items:center;font-size:.82rem}
+.gh-sbt{display:block;height:12px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);position:relative}
+.gh-sbt i{position:absolute;left:0;top:0;bottom:0;background:var(--ink-2);border-radius:2px}
+.gh-sbt i.after{background:var(--pen)}
+.gh-sbv{font-weight:700;text-align:right}
+.gh-quote{font-style:italic}
+.gh-scheck{font-weight:700}
+
+/* Data detective */
+.gh-dg{display:grid;gap:4px;margin-top:10px}
+.gh-dtab{margin-top:8px}
+.gh-dtab table{border-collapse:collapse;font-size:.88rem;width:100%}
+.gh-dtab caption{text-align:left;font-weight:700;padding:6px 8px}
+.gh-dtab th,.gh-dtab td{padding:4px 8px;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
+.gh-nums{display:flex;flex-wrap:wrap;gap:0 18px}
+
+/* task */
+.gh-ivs{display:grid;gap:6px}
+.gh-iv{display:flex;gap:8px;align-items:flex-start;text-align:left;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.4em .7em;font-size:.92rem;min-height:40px;width:100%}
+.gh-iv:hover{border-color:var(--pen)}
+.gh-iv[aria-pressed="true"]{border:2.5px solid var(--ink);background:var(--hi-soft);font-weight:700}
+.gh-ivl{flex:0 0 1.9em;font-weight:700;color:var(--ink-2)}
+.gh-iv[aria-pressed="true"] .gh-ivl{color:var(--ink)}
+.gh-tpv{display:grid;gap:12px}
+.gh-resp{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.gh-resp ol{margin:0;padding-left:1.3em}
+
+@media (max-width:820px){
+  .gh-lab{grid-template-columns:minmax(0,1fr)}
+  .gh-side{border-left:0;padding-left:0;border-top:1.5px solid var(--rule);padding-top:12px}
+  .gh-scens{grid-template-columns:minmax(0,1fr)}
+}
+/* phones: the map becomes a stacked bar list with the same tap targets; profile cards stack; the cause-map columns stack and
+   the connectors give way to the "Your map" list */
+@media (max-width:640px){
+  .gh-map,.gh-mtag{display:none}
+  .gh-rbtns{display:grid;gap:6px}
+  .gh-rb{position:static;transform:none;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n v" "b b";justify-items:stretch;text-align:left;font-size:.9rem;min-height:44px;max-width:none;width:100%;padding:.35em .7em;gap:3px 8px}
+  .gh-rn{grid-area:n}
+  .gh-rv{grid-area:v;font-weight:700}
+  .gh-rbar{grid-area:b;display:block;height:10px;border:1px solid var(--ink-2);border-radius:3px;background:var(--paper);position:relative}
+  .gh-rbar i{position:absolute;left:0;top:0;bottom:0;background:var(--pen)}
+  .gh-rb[aria-pressed="true"] .gh-rbar{border-color:var(--sheet)}
+  .gh-pcards{grid-template-columns:minmax(0,1fr)}
+  .gh-cm{grid-template-columns:minmax(0,1fr)}
+  .gh-cmsvg{display:none}
+}
+#gh-tkin{margin-bottom:10px}

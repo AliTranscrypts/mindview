@@ -1,0 +1,102 @@
+/* SCH4U 38: hero handoff, Proton transfer animator (equation cards, pair brackets, H⁺ token, particle view, balance),
+   Strength grid and data panel, magnesium test, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* species colours (course plan §4): H₃O⁺ magenta, OH⁻ cerulean, anions (conjugate bases) teal */
+.ab-c-h3o{color:var(--ab-h3o)}
+.ab-c-oh{color:var(--ab-oh)}
+.ab-c-an{color:var(--ec-an)}
+
+/* hero */
+.ab-heq{display:inline-block}
+.ab-heq-sub{display:block;font-size:.8em;color:var(--ink-2);font-weight:400}
+.ab-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ab-hx-row{display:flex;justify-content:flex-end;min-height:8px}
+
+/* explore */
+.ab-modes{margin:8px 0 12px}
+.ab-view{border:1.5px solid var(--rule);border-radius:10px;padding:12px;background:var(--sheet)}
+.ab-eqw{position:relative;padding-top:30px}
+.ab-eq{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:4px 10px;font-family:var(--font-ui)}
+.ab-side{display:inline-flex;align-items:flex-end;gap:10px}
+.ab-sp{display:inline-flex;flex-direction:column;align-items:center;min-width:4.2em}
+.ab-role{font-size:.78rem;color:var(--ink-2);white-space:nowrap}
+.ab-f{font-size:1.45rem;font-weight:700;line-height:1.3}
+.ab-f.ab-q{color:var(--ink-2)}
+.ab-pr{font-size:.72rem;color:var(--ink-2);border-top:1.5px solid var(--ink-2);padding:0 .4em;margin-top:2px;white-space:nowrap}
+.ab-pr2{border-top-style:dashed}
+.ab-op,.ab-arr{font-size:1.4rem;color:var(--ink-2);padding-bottom:1.25em}
+.ab-brk{display:block;width:100%;height:52px;font-family:var(--font-ui)}
+.ab-tok{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:var(--ab-h3o);color:var(--sheet);font:700 .82rem var(--font-ui);display:flex;align-items:center;justify-content:center;pointer-events:none}
+.ab-tok[hidden]{display:none}
+.ab-box{max-width:560px;margin:8px auto 0}
+.ab-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ab-pane[hidden]{display:none}
+.ab-legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:.88rem;margin:6px 0 0}
+.ab-legend span{display:inline-flex;align-items:center;gap:6px}
+.ab-dot{display:inline-block;width:13px;height:13px;border-radius:50%}
+.ab-dot-int{background:var(--sheet);border:1.5px solid var(--ink-2)}
+.ab-dot-h3o{background:var(--ab-h3o)}
+.ab-dot-an{background:var(--ec-an)}
+.ab-caprow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+.ab-cap{margin:0;flex:1 1 16rem;min-height:2.6em;color:var(--ink)}
+.ab-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:14px}
+.ab-ctrl > div{margin-bottom:12px}
+.ab-ctrl [hidden]{display:none}
+.ab-rlist button{text-align:left}
+@media (max-width:760px){ .ab-grid{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:480px){
+  .ab-f{font-size:1.2rem}
+  .ab-sp{min-width:3.4em}
+  .ab-eq{gap:2px 6px}
+  .ab-side{gap:6px}
+  .ab-view{padding:10px 8px}
+}
+
+/* Part 3: strength grid */
+.ab-ghead{display:grid;grid-template-columns:7.5rem minmax(0,1fr) minmax(0,1fr);gap:10px;font-weight:700;font-size:.9rem;color:var(--ink-2);margin-top:10px;text-align:center}
+.ab-gridw{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:10px;align-items:center}
+.ab-grow{font-weight:700;font-size:.92rem;color:var(--ink-2)}
+.ab-cells{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.ab-cell{display:flex;flex-direction:column;align-items:stretch;gap:4px;text-align:left;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:10px;font:inherit;cursor:pointer}
+.ab-cell.on{border-color:var(--hi);box-shadow:0 0 0 2px var(--hi)}
+.ab-ct{font-weight:700}
+.ab-ctag{font-size:.82rem;color:var(--ink-2)}
+.ab-csvg{display:block;width:100%;max-width:240px;height:auto;margin:4px auto}
+.ab-cdat{display:flex;flex-direction:column;font-size:.88rem}
+.ab-data{margin-top:14px;border:1.5px solid var(--rule);border-radius:10px;padding:12px}
+.ab-data p{margin:.4em 0}
+.ab-dhint{margin:0}
+.ab-h4{margin:0 0 8px;font-size:1rem}
+.ab-msvg{display:block;width:100%;max-width:440px;height:auto;margin:4px 0 8px;font-family:var(--font-ui)}
+@media (max-width:640px){
+  .ab-ghead{display:none}
+  .ab-gridw{grid-template-columns:minmax(0,1fr)}
+  .ab-cells{grid-template-columns:minmax(0,1fr)}
+  .ab-grow{margin-top:6px}
+}
+
+/* Part 3: magnesium test */
+.ab-mgleg{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:.88rem}
+.ab-mgleg span{display:inline-flex;align-items:center;gap:6px}
+.ab-sw{display:inline-block;width:22px;height:0;border-top:3px solid var(--pen)}
+.ab-sw-ac{border-top-color:var(--ec-an)}
+.ab-ask{font-weight:700;margin-bottom:6px}
+.ab-mgchips{display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.ab-mgchip{text-align:left;border-radius:12px}
+
+/* task */
+.ab-conds{margin:.4em 0 .8em 1.2em;padding:0}
+.ab-tq{margin:10px 0}
+.ab-tktab{margin-top:8px}

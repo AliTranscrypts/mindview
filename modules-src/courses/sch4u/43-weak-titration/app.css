@@ -1,0 +1,86 @@
+/* SCH4U 43 Weak Acid/Base Titration. Indicator colours are module tokens (light and dark). */
+:root{--wt-red:#C62828;--wt-orange:#D9650F;--wt-yellow:#E3B505;--wt-green:#3E9B4F;--wt-blue:#2B59C3;--wt-pale:#F6C1DA;--wt-pink:#D6338A}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--wt-red:#FF6B6B;--wt-orange:#FFA552;--wt-yellow:#F5D547;--wt-green:#6FD07F;--wt-blue:#7FA6FF;--wt-pale:#F7B6D6;--wt-pink:#F27DBA}
+}
+:root[data-theme="dark"]{--wt-red:#FF6B6B;--wt-orange:#FFA552;--wt-yellow:#F5D547;--wt-green:#6FD07F;--wt-blue:#7FA6FF;--wt-pale:#F7B6D6;--wt-pink:#F27DBA}
+
+/* radio group (from SCH4U 05) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.wt-hsub{display:block;font-size:.72em;margin-top:.3em;color:var(--ink-2)}
+.wt-hcap{margin-right:6px}
+
+/* Explore lab */
+.wt-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:18px 22px;align-items:start}
+.wt-main,.wt-side{min-width:0}
+.wt-modes{margin:0 0 10px}
+.wt-labrow{display:flex;align-items:center;gap:14px;margin:0 0 8px}
+.wt-flask{width:118px;height:auto;flex:none;font-family:var(--font-ui)}
+.wt-labside{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.wt-meter{display:inline-flex;align-items:baseline;gap:10px;padding:6px 14px;border:2px solid var(--ink);border-radius:8px;background:var(--paper);font-family:var(--font-ui)}
+.wt-meter.off{border-style:dashed;color:var(--ink-2)}
+.wt-mlab{font-size:.8rem;font-weight:700;color:var(--ink-2)}
+.wt-mval{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;min-width:3.2em}
+.wt-probe{margin:6px 0 0;min-height:1.4em}
+.wt-legend{margin:4px 0 0}
+.wt-ctrl{display:flex;flex-direction:column;gap:10px;margin:0 0 14px}
+.wt-ctrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.wt-bur{display:flex;flex-wrap:wrap;gap:6px}
+.wt-to,.wt-ent{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.wt-to label,.wt-ent label{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.wt-toin,.wt-entin{width:6.5em}
+.wt-chk{display:flex;align-items:center;gap:8px;font-size:.92rem}
+.wt-chk input{width:18px;height:18px}
+.wt-msg{margin:0;min-height:1.2em;font-weight:600}
+.wt-vals{margin:12px 0 0}
+.wt-vals summary{cursor:pointer;font-weight:700}
+.wt-tabs{margin-top:10px}
+.wt-h4{margin:12px 0 6px;font-size:1rem}
+.wt-work{margin:0;padding-left:1.4em}
+.wt-work li{margin:4px 0}
+.wt-recs{margin-top:10px}
+.wt-recs .btn{margin-top:8px}
+
+/* Part 3 */
+.wt-st .plot-wrap{margin-top:10px}
+.wt-s1m{display:flex;flex-direction:column;gap:8px;margin:12px 0}
+.wt-s1row .rg-lab{min-width:4.6em}
+.wt-s2 .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.wt-s2 .numin{width:7em}
+.wt-zoombox{margin:10px 0}
+.wt-psvg{display:block;width:100%;max-width:420px;height:auto;font-family:var(--font-ui)}
+.wt-s3fill p{line-height:2.2}
+.wt-s3fill .numin{width:5.5em}
+.wt-s3k{margin:4px 0 8px}
+
+/* Practice: tap the curve */
+.wt-tapkb{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:8px 0}
+.wt-tapkb label{font-weight:700;font-size:.9rem;color:var(--ink-2)}
+.wt-tapkb input[type=range]{flex:1 1 180px;max-width:360px}
+.wt-tapo{font-variant-numeric:tabular-nums;min-width:4.5em}
+.wt-taplist{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+.wt-taplist .btn{text-align:left;font-weight:500;white-space:normal}
+.wt-taplist .btn.on{border-color:var(--ink);font-weight:700}
+
+/* task */
+.wt-tk{display:flex;flex-direction:column;gap:12px}
+.wt-conds{margin:.4em 0 0}
+
+@media (max-width:820px){
+  .wt-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:480px){
+  .wt-flask{width:96px}
+  .wt-mval{font-size:1.3rem}
+}

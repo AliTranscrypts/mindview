@@ -1,0 +1,81 @@
+/* MCV4U 45: Shadow caster (V3 R² board, V1 R³ view, shadow band, rays, perpendicular part), Projections at work stations,
+   Projection set component boxes, Push back along the track task */
+.pj-heq2{display:block;margin-top:.35em;font-size:.8em}
+.pj-hero svg,.pj-hsvg{width:100%;height:auto;display:block}
+.pj-hst{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pj-hst p{margin:2px 0 0;text-align:center}
+.pj-ex{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.pj-main,.pj-side{min-width:0}
+.pj-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 8px}
+.pj-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.pj-ctl[hidden],.pj-box[hidden]{display:none}
+.pj-setup{margin:0 0 8px}
+.pj-setup .chips{gap:6px}
+.pj-h{font-weight:700;margin:0}
+.pj-svg{width:100%;height:auto;display:block;touch-action:none;background:var(--sheet);border:1px solid var(--rule);border-radius:10px}
+.pj-ssvg{max-width:440px}
+.pj-key{margin:8px 0 0}
+.pj-note{margin:4px 0 0;color:var(--ink-2);min-height:1.3em}
+.pj-box{margin:0 0 10px}
+.pj-sl{display:block;margin:4px 0 8px}
+.pj-sl input{width:100%;min-height:28px}
+.pj-sl output{color:var(--ink);font-weight:700}
+.pj-kn{margin:-4px 0 10px}
+.pj-comp{margin:0 0 8px}
+.pj-cr{display:flex;flex-wrap:wrap;gap:6px 10px;margin-top:4px}
+.pj-cs{display:inline-flex;align-items:center;gap:3px}
+.pj-cs input.numin{width:3.4rem;text-align:center}
+.pj-show{border:1px solid var(--rule);border-radius:8px;padding:6px 10px 8px;margin:0 0 12px;display:flex;flex-wrap:wrap;gap:4px 14px}
+.pj-show legend{font-weight:700;padding:0 4px}
+.pj-cb{display:inline-flex;align-items:center;gap:6px;min-height:32px}
+.pj-morew{display:none}
+@media (max-width:640px){
+  .pj-read:not(.all) .pj-x{display:none}
+  .pj-morew{display:flex}
+}
+@media (max-width:760px){ .pj-ex{grid-template-columns:minmax(0,1fr)} }
+/* SVG marks */
+.pj-grid{stroke:var(--plot-grid);stroke-width:1}
+.pj-axis{stroke:var(--plot-axis);stroke-width:1.5}
+.pj-tick{font:500 11px var(--font-ui);fill:var(--ink-2)}
+.pj-tax{font:italic 600 15px var(--font-math);fill:var(--ink-2)}
+.pj-t{font:600 13px var(--font-ui);fill:var(--ink)}
+.pj-ts{font:700 13px var(--font-ui);fill:var(--ink)}
+.pj-tn{font:700 13px var(--font-ui);fill:var(--ink)}
+.pj-tv{font:italic 700 17px var(--font-math)}
+.pj-ta{fill:var(--pen)}
+.pj-tb{fill:var(--f3)}
+.pj-pill{fill:var(--sheet);opacity:.92}
+.pj-line{stroke:var(--f3);stroke-width:1.5;stroke-dasharray:9 6;opacity:.75}
+.pj-ray{stroke:var(--ink-2);stroke-width:1.3;stroke-dasharray:2 5;opacity:.7}
+.pj-band{stroke:var(--hi);stroke-width:9;stroke-linecap:butt;opacity:.95}
+.pj-perp{stroke:var(--ink-2);stroke-width:2.4;stroke-dasharray:7 5}
+.pj-ra{fill:none;stroke:var(--ink-2);stroke-width:1.6}
+.pj-shaft{stroke-linecap:round}
+.pj-vA .pj-shaft{stroke:var(--pen);stroke-width:3.5}.pj-vA .pj-head{fill:var(--pen)}
+.pj-vB .pj-shaft{stroke:var(--f3);stroke-width:3.5}.pj-vB .pj-head{fill:var(--f3)}
+.pj-vP .pj-shaft{stroke:var(--ink);stroke-width:2}.pj-vP .pj-head{fill:var(--ink)}
+.pj-vK{opacity:.4}.pj-vK .pj-shaft{stroke:var(--f3);stroke-width:2.5;stroke-dasharray:6 5}.pj-vK .pj-head{fill:var(--f3)}
+.pj-pt{fill:var(--ink)}
+.pj-q{fill:var(--sheet);stroke:var(--ink);stroke-width:2.5}
+.pj-pq{stroke:var(--ink);stroke-width:2}
+.pj-crate{fill:var(--hi-soft);stroke:var(--ink-2);stroke-width:2}
+.pj-train{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.pj-rail{stroke:var(--ink-2);stroke-width:2}
+.pj-tie{stroke:var(--rule);stroke-width:4}
+.vb-h{fill:var(--sheet);stroke-width:3;cursor:grab}
+.vb-h.hA{stroke:var(--pen)}.vb-h.hB{stroke:var(--f3)}
+.vb-h:focus{outline:none}
+.vb-h:focus-visible{stroke:var(--ink);stroke-width:4.5}
+/* Part 3 stations */
+.pj-st .read{margin-top:4px}
+/* Practice: component boxes */
+.pj-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:8px 0}
+.pj-frame input.numin{width:4.6rem;text-align:center}
+.pj-fl{font-size:1.05rem}
+/* Task */
+.pt-in{display:flex;flex-direction:column;gap:10px}
+.pt-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.pt-step label{min-width:7rem}
+.pt-step input.numin{width:4.4rem;text-align:center}
+.pt-gh{margin:10px 0 4px;font-weight:700}

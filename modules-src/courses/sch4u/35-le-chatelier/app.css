@@ -1,0 +1,82 @@
+/* SCH4U 35 Le Chatelier's principle. Cobalt swatches are drawn in their true colours (indicator exception, course plan §4),
+   always named in words; they keep their hue in dark mode with a 1 px --ink outline. */
+:root{--co-pink:#E48FB6;--co-violet:#9468C4;--co-blue:#2F63D6}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--co-pink:#EE9CC1;--co-violet:#A27BD0;--co-blue:#4A7BE6} }
+:root[data-theme="dark"]{--co-pink:#EE9CC1;--co-violet:#A27BD0;--co-blue:#4A7BE6}
+
+.lc-heq{display:inline}
+.lc-sw{display:inline-block;width:.8em;height:.8em;border-radius:3px;border:1px solid var(--ink);vertical-align:-.05em;margin-right:.25em}
+.lc-swl{font-size:.8em;color:var(--ink-2)}
+.lc-pink{background:var(--co-pink)} .lc-violet{background:var(--co-violet)} .lc-blue{background:var(--co-blue)}
+
+/* hero */
+.lc-hx{max-width:440px;margin:0 auto}
+.lc-hx-svg{display:block;width:100%;height:auto}
+.lc-hx-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;min-height:34px}
+.lc-hx-ctr{margin:0;font-size:.92rem}
+
+/* Explore */
+.lc-top{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;margin-bottom:10px}
+.lc-eqline{margin:6px 0 10px;font-size:.98rem}
+.lc-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:18px;align-items:start}
+.lc-gwrap,.lc-mini{border:1.5px solid var(--rule);border-radius:8px;padding:6px;background:var(--sheet)}
+.lc-graph{display:block;width:100%;height:auto}
+.lc-meter{margin-top:10px}
+.lc-mhead{margin:0 0 2px;font-size:.92rem}
+.lc-msvg{display:block;width:100%;height:auto;max-width:480px}
+.lc-mtext{margin:2px 0 0;font-size:.92rem}
+.lc-swrow{display:flex;align-items:center;gap:12px;margin-top:10px}
+.lc-swrow[hidden]{display:none}
+.lc-swbig{display:inline-block;width:56px;height:40px;border-radius:8px;border:1px solid var(--ink);flex:none;transition:background-color .6s}
+.lc-swtx{margin:0}
+.lc-stress{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.lc-stress .btn{width:100%;justify-content:center;text-align:center;white-space:normal;min-height:36px}
+.lc-snote{margin:6px 0 0;min-height:1em}
+.lc-ur{display:flex;gap:8px;margin:10px 0}
+.lc-read{margin-top:4px}
+.lc-h4{margin:12px 0 4px;font-size:.95rem}
+.lc-log{margin:0;padding-left:1.4em;font-size:.92rem}
+.lc-log .lc-none{list-style:none;margin-left:-1.4em}
+.lc-pre{border:1.5px dashed var(--rule);border-radius:8px;padding:8px 10px;margin-bottom:10px}
+.lc-pre[hidden]{display:none}
+.lc-preh{margin:0 0 6px;font-size:.92rem}
+.lc-pks,.lc-pkk{margin-bottom:6px}
+@media (max-width:760px){ .lc-grid{grid-template-columns:minmax(0,1fr)} }
+@media (prefers-reduced-motion:reduce){ .lc-swbig{transition:none} }
+
+/* Part 3 */
+.lc-steq{font-weight:700;margin:4px 0 8px}
+.lc-s1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start;margin-bottom:10px}
+.lc-s1c > div{margin-bottom:8px}
+@media (max-width:640px){ .lc-s1{grid-template-columns:minmax(0,1fr)} }
+.lc-bars{display:grid;gap:8px;margin:6px 0}
+.lc-bar{display:grid;grid-template-columns:minmax(7em,11em) minmax(0,1fr) 6.5em;gap:8px;align-items:center;font-size:.9rem}
+.lc-bt{display:block;height:16px;border-radius:8px;background:var(--rule);overflow:hidden}
+.lc-bt i{display:block;height:100%;border-radius:8px;transition:width .4s}
+@media (prefers-reduced-motion:reduce){ .lc-bt i{transition:none} }
+.lc-bw{color:var(--ink-2)}
+.lc-note{margin:6px 0 0;font-size:.92rem}
+.lc-stse{border-left:4px solid var(--hi);padding-left:10px}
+.lc-alt,.lc-soda{margin:6px 0}
+@media (max-width:480px){ .lc-bar{grid-template-columns:minmax(0,1fr) 5.5em} .lc-bl{grid-column:1 / -1} }
+
+/* Practice */
+.lc-sysline{font-weight:700;margin:12px 0 6px}
+.lc-crow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:6px 0}
+.lc-cl{min-width:3.2em;font-weight:700;font-size:.9rem}
+.lc-mini{max-width:420px;margin:8px 0}
+.lc-inv{display:flex;flex-wrap:wrap;gap:8px 18px;margin:8px 0}
+.lc-ivb{display:inline-flex;align-items:center;gap:6px}
+.lc-swsm{display:inline-block;width:22px;height:22px;border-radius:5px;border:1px solid var(--ink)}
+.lc-numrow{margin:8px 0}
+.lc-ea{margin:8px 0;max-width:340px}
+.lc-ea svg{display:block;width:100%;height:auto}
+
+/* Task */
+.lc-tq{margin-bottom:10px}
+.lc-tab th,.lc-tab td{text-align:left}
+.lc-tot th,.lc-tot td{font-weight:700}
+.lc-pts p{display:flex;align-items:center;gap:4px;margin:4px 0}
+.lc-ptl{min-width:3.5em;font-weight:700;font-size:.9rem}
+.lc-dot{display:inline-block;width:14px;height:14px;border-radius:50%;border:1px solid var(--ink)}
+.lc-about{margin-top:10px;color:var(--ink-2)}

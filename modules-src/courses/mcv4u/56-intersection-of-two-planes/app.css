@@ -1,0 +1,46 @@
+/* MCV4U 56: Two-plane hinge (V1 3D view, Hinge / Build / Scale), Find the line stations, Find the line set (V12 entry),
+   Horizontal crease task */
+.tp-ex{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.tp-main,.tp-side{min-width:0}
+canvas.plot.tp-v3{touch-action:none;cursor:grab}
+canvas.plot.tp-v3:active{cursor:grabbing}
+.tp-vw{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+.tp-vw .chip{min-height:32px}
+.tp-note,.tp-key{margin:4px 0 0}
+.tp-cfgb:empty{display:none}
+.tp-cfgb{margin:10px 0 0}
+.tp-ctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.tp-h{font-weight:700;margin:10px 0 4px}
+.tp-ctl .tp-h{margin:0;min-width:3.6rem}
+.tp-pn{margin:4px 0}
+.tp-pre{gap:6px}
+.tp-sl{display:block;margin-top:6px}
+.tp-sl input{width:100%;min-height:30px}
+.tp-sl output{color:var(--ink);font-weight:700}
+.tp-k{color:var(--acol)}
+.tp-seq{margin:2px 0 6px;font-size:1.05rem;overflow-x:auto}
+.tp-tog{margin:12px 0 0;gap:6px}
+.tp-side dl.read.tp-read{margin-top:14px}
+/* Part 3 */
+.tp-st h3{margin-top:0}
+.tp-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.tp-stg{align-items:start}
+.tp-steps{margin:0 0 10px;padding-left:1.5em;display:flex;flex-direction:column;gap:6px}
+.tp-steps li{padding:3px 6px;border-radius:6px}
+.tp-steps li.cur{background:var(--info-bg)}
+.tp-x{margin-top:8px}
+.tp-fl{margin:6px 0 0}
+/* Practice 2 */
+.tp-frame{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;font-size:1.05rem;margin:4px 0 8px}
+.tp-grp{display:inline-flex;align-items:center;gap:3px;white-space:nowrap}
+.tp-frame .numin.short{width:3.4rem}
+/* task */
+.tc-in{display:flex;flex-direction:column;gap:8px;margin:0 0 12px}
+.tc-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.tc-step label{min-width:6.5rem}
+.tc-step .numin.short{width:4.2rem}
+.tc-gh{font-weight:700;margin:10px 0 4px}
+@media (max-width:760px){
+  .tp-ex{grid-template-columns:minmax(0,1fr)}
+  .tp-sl input[data-sl="stop"]{min-height:40px}
+}

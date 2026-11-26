@@ -1,0 +1,63 @@
+/* MCV4U 59: hero caption, Drop the perpendicular (Explore), Skew distance stations, V1 3D view, V8 coordinate boxes, task */
+.dp-hcap{display:inline-block;font-size:1.1rem;transition:opacity .5s ease}
+@media (prefers-reduced-motion:reduce){ .dp-hcap{transition:none} }
+
+/* V1 3D view */
+.dp-cv{cursor:grab;touch-action:pan-y}
+.dp-cv:active{cursor:grabbing}
+.dp-cv:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.dp-views{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.dp-rot{margin:6px 0 0}
+
+/* Explore */
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.dp-main,.dp-side{min-width:0}
+.dp-eq{min-height:1.6em;font-size:1.1rem;display:flex;flex-wrap:wrap;gap:4px 18px;justify-content:center}
+.dp-eq2{color:var(--ink)}
+.dp-h{font-weight:700;margin:12px 0 2px}
+.dp-sl{display:block;margin-top:4px}
+.dp-sl output{color:var(--ink);font-weight:700}
+.dp-how{margin:4px 0 8px}
+.dp-tg{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+.dp-acts{margin:10px 0 0}
+.dp-acts:empty{display:none}
+.dp-read{margin-top:12px}
+.dp-read dd .m{white-space:normal}
+.dp-more{display:none;margin-top:6px}
+#dp-g-slide[hidden],#dp-g-par[hidden],#dp-g-lt[hidden]{display:none}
+@media (max-width:760px){
+  .dp-ex{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .dp-read:not(.dp-all) > div:nth-child(n+6){display:none}
+  .dp-more{display:inline-flex}
+}
+
+/* Part 3 stations */
+.dp-st h3{margin-top:0}
+.dp-stg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px 24px;align-items:start}
+.dp-stl,.dp-str{min-width:0}
+@media (max-width:760px){ .dp-stg{grid-template-columns:1fr} }
+.dp-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;min-height:2.6em}
+.dp-steps li{display:flex;gap:10px;align-items:baseline;border:1.5px solid var(--rule);border-radius:6px;padding:.45em .75em;background:var(--sheet)}
+.dp-steps li.cur{border-color:var(--ink);background:var(--hi-soft)}
+.dp-steps .sn{font-weight:700;color:var(--ink-2)}
+.dp-steps .m{white-space:normal}
+.dp-pl{margin-top:8px}
+.dp-skip{margin-top:12px}
+.dp-skipfb:empty{display:none}
+.dp-shelf{margin:12px 0 0;font-weight:600}
+.dp-shelf[hidden]{display:none}
+
+/* Practice 2: coordinate boxes */
+.dp-rows{display:flex;flex-direction:column;gap:8px;margin:8px 0}
+.dp-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.dp-rl{min-width:6.5em;font-weight:600}
+.dp-row .numin.short{width:5.2em}
+.dp-chs{display:flex;flex-wrap:wrap;gap:6px}
+.dp-chs .chip{text-align:left;white-space:normal}
+
+/* task */
+.dp-tstep{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:8px 0}
+.dp-tstep label{min-width:7em}
+.dp-tstep .numin.short{width:4.2em}

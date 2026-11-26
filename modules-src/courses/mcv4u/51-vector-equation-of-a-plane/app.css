@@ -1,0 +1,70 @@
+/* MCV4U 51: direction colours, hero equation, Plane weaver (3D view, steppers, sliders, readout), Part 3 stations, practice boxes, task */
+.pl-ca{color:var(--pen)}
+.pl-cb{color:var(--f3)}
+.pl-heq{white-space:nowrap}
+.pl-heq .m{white-space:nowrap}
+
+.pl-ex,.pl-p3{display:flex;gap:16px 26px;align-items:flex-start}
+.pl-colL,.pl-p3L{flex:1.05 1 0;min-width:0}
+.pl-colR,.pl-p3R{flex:1 1 0;min-width:0}
+canvas.pl-cv{touch-action:pan-y;cursor:grab}
+canvas.pl-cv:active{cursor:grabbing}
+canvas.pl-cv:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.pl-warn{min-height:1.5em;margin:6px 0 4px;font-weight:700;color:var(--red)}
+.pl-views{margin:6px 0 2px}
+.pl-views .seg button{min-height:32px}
+.pl-turn{margin:4px 0 8px}
+.pl-rdd{margin-top:6px}
+.pl-rdd>summary{cursor:pointer;font-weight:700;margin-bottom:6px}
+.pl-read dd,.pl-sread dd{overflow-wrap:anywhere}
+.pl-mode{margin-bottom:10px}
+.pl-pre{gap:6px;margin:0 0 10px;align-items:center}
+.pl-pre[hidden]{display:none}
+.pl-pl{font-weight:700;margin-right:2px}
+.pl-msg{min-height:1.4em;margin:0 0 6px;font-weight:600;color:var(--red)}
+.pl-sl{margin-top:4px}
+.pl-sl output{font-size:1.2rem}
+.pl-tog{gap:6px;margin-top:8px}
+
+/* V12 vector steppers */
+.pl-vrow{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;margin:0 0 8px}
+.pl-vl{min-width:6.2em;font-weight:700}
+.pl-vl .m{font-size:1.1em}
+.pl-vin{display:inline-flex;align-items:center;gap:2px;flex-wrap:nowrap}
+.pl-br{font:400 1.3rem var(--font-math)}
+.pl-cm{font:400 1.1rem var(--font-math);margin-right:2px}
+.pl-cmp{display:inline-flex;align-items:center}
+.pl-pm{width:26px;height:34px;padding:0;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);font:700 1rem var(--font-ui);cursor:pointer}
+.pl-pm:first-child{border-radius:7px 0 0 7px}
+.pl-pm:last-child{border-radius:0 7px 7px 0}
+.pl-pm:disabled{opacity:.5;cursor:default}
+.numin.pl-n{width:2.6em;padding:.3em .1em;text-align:center;border-radius:0;font-size:1.05rem;-moz-appearance:textfield;appearance:textfield}
+.pl-n::-webkit-inner-spin-button,.pl-n::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+
+/* Part 3 */
+.pl-stc{gap:6px;margin:0 0 12px}
+.pl-p3R h3{margin-top:0}
+.pl-p3R h4{margin:12px 0 6px}
+.pl-sread{margin:10px 0}
+.pl-ok{margin:6px 0;font-weight:600}
+.pl-dq{margin:12px 0 4px;font-weight:700}
+.pl-alg{margin:8px 0;padding-left:1.4em}
+.pl-alg li{margin:3px 0;padding:2px 6px;border-radius:6px;border-left:4px solid transparent}
+.pl-alg li.pl-used{background:var(--hi-soft);border-left-color:var(--hi)}
+.pl-alg li.pl-good{background:var(--good-bg);border-left-color:var(--green)}
+.pl-alg li.pl-bad{background:var(--bad-bg);border-left-color:var(--red)}
+
+/* Practice boxes */
+.pl-eqb{display:flex;flex-direction:column;gap:6px;margin:6px 0 4px}
+.pl-eqr{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.pl-eql{min-width:2.6em;font-size:1.08rem}
+.numin.pl-bx{width:3.4em;padding:.3em .3em;text-align:center}
+.pl-nb{display:inline-flex;align-items:center;gap:8px;margin:6px 0}
+.pl-chs{gap:6px;margin:6px 0}
+
+@media (max-width:760px){
+  .pl-ex,.pl-p3{flex-direction:column}
+  .pl-colL,.pl-colR,.pl-p3L,.pl-p3R{width:100%;flex:none}
+  .pl-vl{min-width:0;width:100%}
+  .pl-heq{font-size:.86em}
+}

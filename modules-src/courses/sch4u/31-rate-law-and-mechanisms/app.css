@@ -1,0 +1,102 @@
+/* SCH4U 31: hero, Initial-rates analyser (Explore), Mechanism detective (Part 3), custom practice items, Plan the trials */
+
+/* radio groups (radioGroup component, delegated variant) */
+.rl-cr{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:6px 0}
+.rl-crl{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.rl-heq{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px}
+.rl-ord{color:var(--pen);font-style:italic;font-weight:700}
+.rl-fbe{font:400 .9rem var(--font-ui);color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+.rl-ordc{display:inline-block;border:1.5px solid var(--pen);color:var(--pen);border-radius:999px;padding:0 .55em;font-style:italic;font-weight:700}
+.rl-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.rl-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.rl-hx-cap{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* analyser */
+.rl-top{margin:0 0 8px}
+.rl-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 26px;align-items:start;margin-top:10px}
+.rl-left,.rl-right{min-width:0}
+.rl-h4{margin:12px 0 6px;font-size:1rem}
+.rl-conc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px 18px}
+.rl-sl label{display:block;font-weight:700;font-size:.95rem}
+.rl-sl input[type=range]{width:100%;min-height:32px;accent-color:var(--pen)}
+.rl-acts{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.rl-tw{max-height:260px;overflow:auto}
+.rl-tbl{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+.rl-tbl th,.rl-tbl td{border-bottom:1px solid var(--rule);padding:4px 8px;text-align:center;white-space:nowrap}
+.rl-tbl tr.on td,.rl-tbl tr.on th{background:var(--hi-soft)}
+.rl-tsel{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:6px;padding:.2em .6em;min-height:32px;font-weight:700}
+.rl-tsel[aria-pressed="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.rl-tsel:focus-visible,.rl-sp:focus-visible,.rl-card:focus-visible,.rl-cell:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.rl-cmp{margin-top:4px}
+.rl-flash{animation:rl-flash 1.2s ease-out 1}
+@keyframes rl-flash{0%{background:color-mix(in srgb,var(--hi) 40%,transparent)}100%{background:transparent}}
+.rl-units{margin:10px 0;padding:8px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.rl-u{margin:2px 0}
+.rl-uend{font-weight:700}
+.rl-cap{margin:8px 0 0;color:var(--ink-2);min-height:1.4em}
+.rl-in{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;font-weight:700;margin:4px 12px 4px 0}
+.rl-num{width:8.5em}
+.rl-model{margin-top:12px}
+
+/* mechanisms */
+.rl-ov{margin:6px 0}
+.rl-pal{margin:8px 0}
+.rl-cards{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.rl-card{border:1.5px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.35em .7em;min-height:40px;font-size:.95rem}
+.rl-card:hover{border-color:var(--ink)}
+.rl-steps{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px}
+.rl-step{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 10px}
+.rl-slow{border-color:var(--ink);background:color-mix(in srgb,var(--hi) 40%,transparent)}
+.rl-stn{font-weight:700;font-size:.9rem;color:var(--ink-2)}
+.rl-eq{font-size:1.05rem}
+.rl-stc{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+.rl-cat{color:var(--en-cat);font-weight:700}
+.rl-int{color:var(--ink-2);font-style:italic}
+.rl-spc{border-radius:4px;padding:0 2px;transition:background .3s,opacity .3s}
+.rl-glow{background:color-mix(in srgb,var(--hi) 40%,transparent);outline:2px solid var(--hi)}
+.rl-appear{background:color-mix(in srgb,var(--hi) 40%,transparent)}
+.rl-fade{opacity:.35;text-decoration:line-through}
+.rl-en{display:block;width:100%;max-width:420px;height:auto;margin:6px 0;font-family:var(--font-ui)}
+
+/* Part 3 */
+.rl-sp{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:6px;padding:.15em .5em;min-height:36px;font-size:1rem;display:inline-flex;flex-direction:column;align-items:center;line-height:1.2}
+.rl-sp.rl-x{text-decoration:line-through;color:var(--ink-2);border-style:dashed}
+.rl-sp.rl-cat{color:var(--en-cat);border-color:var(--en-cat)}
+.rl-sp.rl-int{font-style:italic}
+.rl-badge{font-size:.68rem;font-weight:700;text-decoration:none;display:block}
+.rl-zsvg,.rl-csvg{display:block;width:100%;max-width:460px;height:auto;margin:6px 0;font-family:var(--font-ui)}
+.rl-count{font-weight:700;min-height:1.4em}
+.rl-cands{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.rl-cand .rl-h4{margin-top:0}
+.rl-csteps{margin:4px 0 8px;padding-left:1.2em}
+
+/* practice */
+.rl-ins{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0}
+.rl-chiplist{margin:8px 0}
+
+/* task */
+.rl-grid3{border-collapse:collapse;margin:6px 0}
+.rl-grid3 th{font-size:.85rem;color:var(--ink-2);padding:4px 6px;white-space:nowrap}
+.rl-grid3 td{padding:3px}
+.rl-cell{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;min-height:40px;min-width:92px;padding:.2em .5em;font-variant-numeric:tabular-nums}
+.rl-cell.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rl-pairs{padding-left:1.2em;margin:4px 0}
+.rl-pok{color:var(--ink)}
+.rl-pno{color:var(--ink-2)}
+
+@media (max-width:700px){
+  .rl-grid{grid-template-columns:minmax(0,1fr)}
+  .rl-stc{margin-left:0}
+  .rl-cell{min-width:78px;font-size:.85rem}
+  .rl-grid3 th{font-size:.75rem;padding:2px}
+}

@@ -1,0 +1,126 @@
+/* MCV4U 53: V1 3D view (SVG), plane meter, meter graph, Classify decision tree, Find it / Work backwards entry, laser task */
+/* ---- V1 3D view ---- */
+svg.lp3{display:block;width:100%;height:auto;max-height:430px;background:var(--sheet);border:1.5px solid var(--rule);border-radius:10px}
+svg.lp3-live{touch-action:none;cursor:grab}
+svg.lp3-live:active{cursor:grabbing}
+svg.lp3:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.lp3 .lp-box{stroke:var(--rule);stroke-width:1;fill:none}
+.lp3 .lp-axis{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.lp3 .lp-axis.lp-ah{fill:var(--ink-2);stroke:none}
+.lp3 .lp-tick{fill:var(--ink-2)}
+.lp3 .lp-plane{fill:var(--pen);fill-opacity:.14;stroke:var(--pen);stroke-opacity:.55;stroke-width:1.2}
+.lp3 .lp-plane.lp-faint{fill-opacity:.07;stroke-opacity:.3}
+.lp3 .lp-panel{fill:var(--pen);fill-opacity:.32;stroke:var(--pen);stroke-width:2}
+.lp3 .lp-line{stroke:var(--pen);stroke-width:3.2;stroke-linecap:round;fill:none}
+.lp3 .lp-line.lp-behind{stroke-opacity:.38}
+.lp3 .lp-glow{stroke:var(--pen);stroke-opacity:.28;stroke-width:12;stroke-linecap:round;fill:none}
+.lp3 .lp-beam{stroke:var(--pen);stroke-width:3;stroke-linecap:round;fill:none}
+.lp3 .lp-back{stroke:var(--ink-2);stroke-width:1.6;stroke-dasharray:6 5;fill:none}
+.lp3 .lp-dir{stroke:var(--pen);stroke-width:2.4;fill:none}
+.lp3 .lp-dir.lp-ah{fill:var(--pen);stroke:none}
+.lp3 .lp-nrm{stroke:var(--f4);stroke-width:2.6;fill:none}
+.lp3 .lp-nrm.lp-ah{fill:var(--f4);stroke:none}
+.lp3 .lp-mark{stroke:var(--ink);stroke-width:1.6;fill:none}
+.lp3 .lp-pt{fill:var(--ink);stroke:var(--sheet);stroke-width:1.5}
+.lp3 .lp-pt.lp-hit{fill:var(--green)}
+.lp3 .lp-open{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.lp3 .lp-q{fill:var(--ink-2);stroke:var(--sheet);stroke-width:1.5}
+.lp3 .lp-flash{fill:none;stroke:var(--green);stroke-width:3}
+.lp3 .lp-lab{font:700 13px var(--font-ui),sans-serif;fill:var(--ink);paint-order:stroke;stroke:var(--sheet);stroke-width:4px;stroke-linejoin:round}
+.lp3 .lp-it{font-family:var(--font-math),serif;font-style:italic;font-size:16px}
+.lp3 .lp-axl{fill:var(--ink-2)}
+.lp3 .lp-tn{font-size:11px;font-weight:600;fill:var(--ink-2)}
+.lp3 .lp-nrm-t{fill:var(--f4)}
+.lp3 .lp-dir-t{fill:var(--pen)}
+.lp3 .lp-axis-t{fill:var(--ink-2)}
+.lp3 .lp-note{font-size:14px}
+@media (prefers-reduced-motion:no-preference){
+  .lp3 .lp-flash{animation:lp-pulse 1.1s ease-out 2}
+  @keyframes lp-pulse{0%{stroke-opacity:1;stroke-width:6}100%{stroke-opacity:.35;stroke-width:2}}
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .lp3 .lp-plane{fill-opacity:.18}
+  :root:not([data-theme="light"]) .lp3 .lp-plane.lp-faint{fill-opacity:.09}
+}
+:root[data-theme="dark"] .lp3 .lp-plane{fill-opacity:.18}
+:root[data-theme="dark"] .lp3 .lp-plane.lp-faint{fill-opacity:.09}
+.lp-vctl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:8px 0 0}
+.lp-h{font-weight:700;margin:10px 0 4px}
+.lp-vctl .lp-h{margin:0}
+.lp-note{margin:4px 0 0}
+
+/* ---- hero ---- */
+.lp-hero{max-width:520px;margin:0 auto}
+.lp-hero.lp-hero3{max-width:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.lp-hc{text-align:center;margin:4px 0 0}
+@media (max-width:620px){ .lp-hero.lp-hero3{grid-template-columns:minmax(0,1fr)} }
+
+/* ---- Explore ---- */
+.lp-ex{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.lp-main,.lp-side{min-width:0}
+.lp-viewrow{display:flex;gap:12px;align-items:stretch}
+.lp-view{flex:1;min-width:0}
+.lp-meter{width:78px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.lp-mh{font-weight:700;text-align:center;line-height:1.25}
+.lp-mtrack{position:relative;flex:1;width:18px;min-height:200px;border:1.5px solid var(--rule);border-radius:9px;background:var(--paper)}
+.lp-mzero{position:absolute;left:-9px;right:-9px;top:50%;height:0;border-top:3px solid var(--green)}
+.lp-mbar{position:absolute;left:3px;right:3px;bottom:calc(var(--lo,.5) * 100%);height:calc((var(--hi,.5) - var(--lo,.5)) * 100%);background:var(--pen);opacity:.4;border-radius:4px}
+.lp-mdot{position:absolute;left:50%;bottom:calc(var(--p,.5) * 100%);width:18px;height:18px;margin:0 0 -9px -9px;border-radius:50%;background:var(--ink);border:2px solid var(--sheet)}
+.lp-meter.lp-mz .lp-mdot{background:var(--green)}
+.lp-mval{font-weight:700;text-align:center;min-height:1.4em}
+.lp-ok{color:var(--green);font-weight:700}
+.lp-key{margin:6px 0 0}
+.lp-gbtn{display:none;margin-top:8px}
+.lp-graph{margin-top:10px}
+canvas.plot.lp-gcan{aspect-ratio:16/8}
+.lp-side .seg-wrap{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.lp-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px}
+.lp-st{display:flex;align-items:center;gap:4px;min-width:0}
+.lp-stl{min-width:1.9rem;font-weight:700}
+.lp-sb{min-width:32px;padding-left:6px;padding-right:6px}
+input.numin.lp-sn{width:3.4rem;min-width:0;text-align:center}
+.lp-chips{display:flex;flex-wrap:wrap;gap:6px}
+.lp-sl{display:block;margin-top:12px}
+.lp-sl input{width:100%;min-height:28px}
+.lp-sl output{color:var(--ink);font-weight:700}
+.lp-acts{margin:8px 0 0}
+.lp-msg{margin:6px 0 0;min-height:1em}
+.lp-entl{display:block}
+input.numin.lp-ent{width:100%;max-width:14rem}
+.lp-side dl.read.lp-read{margin-top:14px}
+.lp-read dd{overflow-wrap:anywhere}
+.lp-dd{color:var(--ink-2)}
+@media (max-width:900px){ .lp-ex{grid-template-columns:minmax(0,1fr)} }
+@media (max-width:620px){
+  .lp-viewrow{flex-direction:column}
+  .lp-meter{width:auto;flex-direction:row;align-items:center}
+  .lp-mh{text-align:left;max-width:7rem}
+  .lp-mtrack{flex:1;width:auto;height:18px;min-height:0}
+  .lp-mzero{left:50%;right:auto;top:-9px;bottom:-9px;width:0;height:auto;border-top:0;border-left:3px solid var(--green)}
+  .lp-mbar{top:3px;bottom:3px;left:calc(var(--lo,.5) * 100%);right:auto;width:calc((var(--hi,.5) - var(--lo,.5)) * 100%);height:auto}
+  .lp-mdot{bottom:auto;top:50%;left:calc(var(--p,.5) * 100%);margin:-9px 0 0 -9px}
+  .lp-mval{min-width:3.5rem}
+  .lp-gbtn{display:inline-flex}
+  .lp-graph{display:none}
+  .lp-ex.lp-gopen .lp-graph{display:block}
+}
+
+/* ---- Part 3: Classify ---- */
+.lp-p3 .lp-p3g{margin-top:12px}
+.lp-gl{margin:0 0 6px}
+.lp-steps{margin:10px 0 0;padding-left:1.4em}
+.lp-steps li{margin:0 0 10px}
+.lp-step{margin:0 0 4px}
+.lp-rd{margin:2px 0 6px}
+.lp-br{display:flex;flex-wrap:wrap;gap:8px}
+.lp-node{text-align:left}
+.lp-solve{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+
+/* ---- Practice ---- */
+.lp-pin{display:flex;flex-direction:column;gap:8px;margin:6px 0 4px}
+.lp-pent{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lp-pent .lp-h{margin:0}
+
+/* ---- task ---- */
+.lp-tin .lp-grid{grid-template-columns:minmax(0,1fr)}
+.lp-tview{margin-top:10px}

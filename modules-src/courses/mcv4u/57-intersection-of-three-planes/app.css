@@ -1,0 +1,93 @@
+/* MCV4U 57: Three-plane configurator (Explore), V13 matrices, Algebra meets geometry stations, Solve the system, task */
+.tp-c1{color:var(--pen);font-weight:700}
+.tp-c2{color:var(--f3);font-weight:700}
+.tp-c3{color:var(--f5);font-weight:700}
+.tp-3d canvas{touch-action:pan-y;cursor:grab}
+.tp-3d canvas:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+
+/* Explore layout: view left; controls and readout right. Phone: one column; Row-reduce puts the matrix above the view. */
+.tp-ex{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);grid-template-areas:"main ctrl" "main read";gap:12px 26px;align-items:start}
+.tp-main{grid-area:main;min-width:0}
+.tp-ctrl{grid-area:ctrl;min-width:0}
+.tp-readw{grid-area:read;min-width:0}
+.tp-vhow{margin:4px 0 6px}
+.tp-tog{margin-top:4px}
+.tp-how{margin:6px 0 10px}
+.tp-read{margin-top:0}
+.tp-read dd{overflow-wrap:anywhere}
+.tp-rsay{display:block;margin-top:4px}
+.tp-lab{font-weight:700;margin:10px 0 4px}
+@media (max-width:760px){
+  .tp-ex{grid-template-columns:minmax(0,1fr);grid-template-areas:"main" "ctrl" "read"}
+  .tp-ex.tp-rr{grid-template-areas:"ctrl" "main" "read"}
+}
+
+/* gallery cards: a grid on wide screens, a horizontal carousel on phones */
+.tp-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.tp-card{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;font:inherit;color:var(--ink);background:var(--sheet);border:1.5px solid var(--rule);border-radius:10px;padding:8px 10px;cursor:pointer;min-height:44px}
+.tp-card:hover{border-color:var(--ink-2)}
+.tp-card[aria-pressed="true"]{border:2px solid var(--ink);background:var(--hi-soft)}
+.tp-cn{font-weight:700;font-size:.92rem;line-height:1.25}
+.tp-cc{font-size:.82rem;color:var(--ink-2)}
+@media (max-width:760px){
+  .tp-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .tp-card{flex:0 0 150px;scroll-snap-align:start}
+}
+.tp-eqs{display:flex;flex-direction:column;gap:3px}
+.tp-fixed{display:flex;flex-direction:column;gap:2px;margin:0 0 6px}
+.tp-p3eq{font-size:1.1rem;margin:6px 0}
+.tp-sls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 16px}
+.tp-sls output{color:var(--ink);font-weight:700}
+
+/* V13 matrices */
+.tp-mw{display:inline-flex;align-items:stretch;gap:6px;margin:4px 0;max-width:100%;overflow-x:auto}
+.tp-rls{display:flex;flex-direction:column;justify-content:space-around;padding:3px 0;font-size:.85rem}
+.tp-mat{display:inline-flex;flex-direction:column;gap:2px;padding:3px 8px;font-family:var(--font-math);vertical-align:middle;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-radius:6px;line-height:1.35}
+.tp-mr{display:grid;grid-template-columns:repeat(3,minmax(1.9em,auto)) minmax(2.3em,auto);column-gap:4px;text-align:right;border-radius:4px}
+.tp-mr > span{padding:0 3px;white-space:nowrap}
+.tp-mb{border-left:1.5px solid var(--ink-2)}
+.tp-hi{background:var(--hi-soft)}
+.tp-sm .tp-mat{font-size:.88rem}
+.tp-imat{margin:2px 4px;font-size:.95rem}
+.tp-sys{display:inline-flex;flex-direction:column;gap:1px;vertical-align:middle;margin:2px 6px 2px 2px}
+.q-prompt .tp-sys{display:flex;margin:6px 0}
+
+/* row operations */
+.tp-ops{margin-top:8px}
+.tp-opctl{display:flex;flex-direction:column;gap:6px;margin:8px 0}
+.tp-oprow{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.tp-opform{display:block}
+.tp-opmsg{min-height:1.2em;color:var(--red);font-weight:600;margin:4px 0 0}
+.tp-hist{margin:0;padding-left:1.4em;font-size:.9rem}
+
+/* Part 3 stations */
+.tp-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.tp-st h3{margin-top:0}
+.tp-stg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 26px;align-items:start}
+.tp-stl,.tp-str{min-width:0}
+.tp-steps{margin:8px 0;padding-left:1.4em}
+.tp-steps li{margin:3px 0}
+.tp-steps li.cur{font-weight:600}
+.tp-cmp{margin-top:16px;padding-top:12px;border-top:1px solid var(--rule)}
+.tp-cmp h4{margin:0 0 6px}
+.tp-vlab{margin:0 0 4px;font-weight:600}
+.tp-p3read{margin-top:8px}
+@media (max-width:760px){ .tp-stg{grid-template-columns:minmax(0,1fr)} }
+.tp-flow{margin:0;padding-left:1.3em}
+.tp-flow li{margin:4px 0}
+.tp-flow ul{margin:4px 0;padding-left:1.2em}
+
+/* Practice 2 */
+.tp-flowd{margin:0 0 12px}
+.tp-lbx{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:8px 0}
+.tp-lbx .numin{width:4.2em}
+.tp-chg{margin:8px 0}
+.tp-chl{display:block;font-weight:700;margin:0 0 4px}
+.tp-kbx label{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0}
+.tp-kbx .numin{width:4.2em}
+
+/* task */
+.tp-steps4{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin-top:6px}
+.tp-step{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.tp-step label{min-width:7.5em}
+.tp-step .numin{width:4.2em}

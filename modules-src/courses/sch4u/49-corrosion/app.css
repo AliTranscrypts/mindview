@@ -1,0 +1,91 @@
+/* SCH4U 49: hero drop, Rusting simulator (C10 surface cell), Protect the bridge, practice, Protect the steel */
+/* Module tokens: --cr-rust (rust fill; outlined with --at-s, #D8D08F in dark mode), --cr-oil (oil layer on boiled water). */
+:root{--cr-rust:#8A4A1E;--cr-oil:#EEDC98}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--cr-rust:#6B3A17;--cr-oil:#4A4220} }
+:root[data-theme="dark"]{--cr-rust:#6B3A17;--cr-oil:#4A4220}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* animated electrons and ions (static arrows stay; dots are skipped with reduced motion) */
+@keyframes crE{0%{transform:translate(0,0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
+@keyframes crI{0%{transform:translate(0,0);opacity:0}15%{opacity:1}100%{transform:translate(0,-34px);opacity:0}}
+.cr-ea{animation:crE 1.8s linear infinite}
+.cr-ia{animation:crI 2.2s linear infinite}
+@media (prefers-reduced-motion:reduce){ .cr-ea,.cr-ia{animation:none;display:none} }
+
+/* hero */
+.cr-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.cr-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.cr-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: Rusting simulator */
+.cr-modes{margin:0 0 12px}
+.cr-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.cr-grid.cr-wide{grid-template-columns:minmax(0,1fr)}
+.cr-view,.cr-side{min-width:0}
+.cr-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.cr-svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.cr-cap{min-height:1.5em;margin:10px 0 2px;font-size:1rem}
+.cr-ctl > div + div{margin-top:12px}
+.cr-ctl [hidden],.cr-ctl[hidden]{display:none}
+.cr-time{display:flex;flex-direction:column;gap:4px}
+.cr-time input{width:100%;max-width:360px;min-height:32px}
+.cr-h4{margin:14px 0 6px;font-size:1rem;text-align:left}
+.cr-read{margin-top:6px}
+.cr-pp-svg{display:block;width:100%;max-width:300px;height:auto;font-family:var(--font-ui)}
+.cr-note{margin:12px 0 0}
+.cr-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cr-pn{min-width:0;border-radius:12px;padding:4px}
+.cr-pn.on{box-shadow:0 0 0 3px var(--hi)}
+.cr-pt{margin:0 0 6px;font-size:.92rem}
+.cr-bars{display:block;width:100%;max-width:560px;height:auto;margin-top:10px;font-family:var(--font-ui)}
+.cr-ni{margin:0 0 8px}
+.cr-nt{border-collapse:collapse;width:100%;margin-top:10px}
+.cr-nt th,.cr-nt td{border-top:1px solid var(--rule);padding:6px 4px;text-align:left;vertical-align:middle}
+.cr-nt tbody th{width:2.5em}
+@media (max-width:700px){
+  .cr-grid{grid-template-columns:minmax(0,1fr)}
+  .cr-two{grid-template-columns:minmax(0,1fr)}
+}
+
+/* Part 3: Protect the bridge */
+.cr-st h3{margin-bottom:6px}
+#p3-app > .cr-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.cr-br .cr-bm{cursor:pointer}
+.cr-parts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.cr-pb{border:1.5px solid var(--ink);border-radius:999px;background:var(--sheet);color:var(--ink);padding:.3em .9em;font-size:.92rem;min-height:40px}
+.cr-pb[aria-pressed="true"]{background:var(--ink);color:var(--sheet);font-weight:700}
+.cr-pb.ok{border-color:var(--green)}
+.cr-pn1{font-weight:700}
+.cr-prog{margin:10px 0 0}
+.cr-data{margin-top:14px}
+.cr-lad{border-collapse:collapse;width:100%;margin:8px 0;font-size:.92rem}
+.cr-lad th,.cr-lad td{border-top:1px solid var(--rule);padding:5px 6px;text-align:left}
+.cr-lad tr.cr-fe td{background:var(--hi-soft);font-weight:700}
+.cr-st-svg{display:block;width:100%;max-width:480px;height:auto;margin:8px 0;font-family:var(--font-ui)}
+
+/* Practice: Which metal corrodes? */
+.cr-mets{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.cr-met{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:92px;min-height:64px;border:2px solid var(--ink);border-radius:10px;background:var(--sheet);color:var(--ink);padding:6px 12px}
+.cr-met .cr-sym{font-size:1.25rem;font-weight:700}
+.cr-met .cr-mn{font-size:.82rem;color:var(--ink-2)}
+.cr-met.right{border-color:var(--green);background:var(--good-bg)}
+.cr-met.wrong{border-color:var(--red);background:var(--bad-bg)}
+.cr-met:disabled{opacity:1}
+.cr-chiplist{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.cr-unit{margin-left:6px;color:var(--ink-2)}
+
+/* Task: Protect the steel */
+.cr-tc,.cr-tb{margin-bottom:12px}
+.cr-tl{margin:4px 0 0}
+.cr-conds{margin:8px 0 0 1.2em}

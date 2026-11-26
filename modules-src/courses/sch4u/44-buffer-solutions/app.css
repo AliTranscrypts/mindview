@@ -1,0 +1,76 @@
+/* SCH4U 44: hero, Buffer challenge (beakers, pH graph, particle view, moles table), Part 3 stations, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.bf-eq{display:block;line-height:1.35}
+.bf-eqsub{display:block;font-size:.62em;color:var(--ink-2);margin-top:.3em}
+.bf-a{color:var(--f3);font-weight:700}.bf-h{color:var(--ab-h3o);font-weight:700}.bf-oh{color:var(--ab-oh);font-weight:700}.bf-ha{font-weight:700}
+.bf-hsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.bf-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.bf-hx-cap{font:400 1.02rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:3em}
+
+/* Explore controls */
+.bf-ctrl{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.bf-amts{display:flex;flex-wrap:wrap;gap:10px 28px}
+.bf-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}
+.bf-tog[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.bf-add{display:flex;flex-wrap:wrap;gap:8px}
+.bf-add .btn{min-height:44px}
+.bf-added{color:var(--ink-2)}
+@media (max-width:520px){
+  .bf-add{display:grid;grid-template-columns:1fr 1fr}
+  .bf-add .btn{width:100%;padding-left:.4em;padding-right:.4em}
+}
+
+/* Explore stage */
+.bf-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+@media (max-width:860px){ .bf-grid{grid-template-columns:minmax(0,1fr)} }
+.bf-stage{min-width:0}.bf-side{min-width:0}
+.bf-stage .banner{margin:10px 0}
+.bf-beakers{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:560px}
+@media (max-width:520px){ .bf-beakers{grid-template-columns:minmax(0,1fr);max-width:300px;margin:0 auto} }
+.bf-bsvg,.bf-dsvg,.bf-msvg,.bf-osvg,.bf-tsvg,.bf-brsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.bf-plot{margin-top:10px}
+.bf-key{display:inline-block;width:22px;height:0;vertical-align:middle;border-top:3px solid var(--pen)}
+.bf-key-w{border-top:2.4px dashed var(--ink-2)}
+.bf-key-x{height:12px;border:0;background:var(--hi-soft)}
+.bf-dots{max-width:520px}
+.bf-frames{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:520px){ .bf-frames{grid-template-columns:minmax(0,1fr)} }
+.bf-dk{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:middle}
+.bf-dk-ha{border:2px solid var(--ink);background:var(--sheet)}
+.bf-dk-a{background:var(--f3)}.bf-dk-h{background:var(--ab-h3o)}.bf-dk-oh{background:var(--ab-oh)}
+.bf-calc .tbl-wrap{margin:8px 0}
+.bf-rx{font-size:1.05rem;overflow-x:auto}
+.bf-rx .chem{white-space:normal}
+.bf-lines p{margin:4px 0;font-size:1.02rem}
+.bf-lines p + p{padding-left:1.2em}
+.bf-h4{margin:0 0 8px;font-size:1rem}
+.bf-read dd{overflow-wrap:anywhere}
+
+/* Part 3 */
+.bf-slide{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:8px 0}
+.bf-slide label{font-weight:700}
+.bf-slide input[type=range]{flex:1 1 220px;min-height:32px;accent-color:var(--pen)}
+.bf-meter{max-width:520px}
+.bf-bline,.bf-shift{font-weight:700}
+.bf-brsvg{max-width:440px}
+.bf-med{margin:8px 0}
+.bf-med .chip.on{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.bf-ocean{max-width:440px}
+.bf-st textarea{width:100%;box-sizing:border-box}
+
+/* task */
+.bf-conds{margin:8px 0 0 1.2em}
+.bf-tsvg{max-width:440px;margin-bottom:8px}

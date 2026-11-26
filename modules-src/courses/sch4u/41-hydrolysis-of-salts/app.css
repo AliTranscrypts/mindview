@@ -1,0 +1,76 @@
+/* SCH4U 41 Hydrolysis of Salts. Universal-indicator colours are true colours, defined as tokens (light and dark). */
+:root{--hs-ui-red:#D2312B;--hs-ui-orange:#E8801E;--hs-ui-yellow:#E5C21E;--hs-ui-green:#3E9E3A;--hs-ui-bluegreen:#1F9A8E;--hs-ui-blue:#2F6FD0;--hs-ui-indigo:#4B3FB0;--hs-ui-violet:#7D3AB0;--hs-water:#BFD9EA}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--hs-ui-red:#E2574F;--hs-ui-orange:#F0943A;--hs-ui-yellow:#E9CF4A;--hs-ui-green:#5BB956;--hs-ui-bluegreen:#3DB8AB;--hs-ui-blue:#5A8FE6;--hs-ui-indigo:#7D72D9;--hs-ui-violet:#A46AD6;--hs-water:#4A6B80}
+}
+:root[data-theme="dark"]{--hs-ui-red:#E2574F;--hs-ui-orange:#F0943A;--hs-ui-yellow:#E9CF4A;--hs-ui-green:#5BB956;--hs-ui-bluegreen:#3DB8AB;--hs-ui-blue:#5A8FE6;--hs-ui-indigo:#7D72D9;--hs-ui-violet:#A46AD6;--hs-water:#4A6B80}
+
+/* hero */
+.hs-hx svg{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
+.hs-hx-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;justify-content:space-between}
+.hs-hx-cap{margin:6px 0 0;min-height:3em;flex:1 1 16rem}
+.hs-fade{animation:hs-fade .6s ease-out}
+@keyframes hs-fade{from{opacity:.15}to{opacity:1}}
+
+/* explore */
+.hs-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:820px){.hs-grid{grid-template-columns:minmax(0,1fr)}}
+.hs-left,.hs-ctrl{min-width:0}
+.hs-capn{font-weight:400;color:var(--ink-2);font-size:.9em}
+.hs-ctrl>div{margin-bottom:10px}
+.hs-shelfrow{flex-wrap:wrap}
+@media (max-width:560px){
+  .hs-shelf .rg.chips{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:6px}
+  .hs-shelf .rg.chips button{flex:0 0 auto}
+}
+.hs-beakers{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-around}
+.hs-bk{margin:0;flex:1 1 140px;max-width:220px;text-align:center}
+.hs-bk svg{display:block;width:110px;height:auto;margin:0 auto}
+.hs-bk figcaption{display:flex;flex-direction:column;gap:2px;font-size:.9rem}
+.hs-bk-sub{color:var(--ink-2)}
+.hs-bk-list{font-size:.85rem}
+.hs-grain{animation:hs-drop .9s ease-in forwards}
+@keyframes hs-drop{from{transform:translateY(0)}to{transform:translateY(70px);opacity:.2}}
+.hs-zoom{border:1.5px solid var(--rule);border-radius:10px;padding:6px;outline-offset:3px}
+.hs-zsvg{display:block;width:100%;height:auto}
+.hs-lines{margin:8px 0 0;padding-left:1.2em}
+.hs-lines li{margin:4px 0}
+.hs-wait{padding:18px;border:1.5px dashed var(--rule);border-radius:10px;color:var(--ink-2)}
+.hs-calc p{margin:8px 0}
+.hs-calc .tbl-wrap{max-width:100%;overflow-x:auto}
+.hs-sub{margin:10px 0 2px;font-size:.92rem}
+.hs-msvg{display:block;width:100%;max-width:460px;height:auto}
+.hs-read dd{overflow-wrap:anywhere}
+
+/* part 3 */
+.hs-arline{display:flex;gap:8px;align-items:baseline}
+.hs-dot{display:inline-block;width:12px;height:12px;border-radius:50%;flex:0 0 12px}
+.hs-dot-h3o{background:var(--ab-h3o)}
+.hs-dot-oh{background:var(--ab-oh)}
+.hs-kbars{margin:10px 0;max-width:520px}
+.hs-kbar{display:grid;grid-template-columns:3.2em minmax(0,1fr) auto;gap:8px;align-items:center;margin:6px 0}
+.hs-kt{display:block;height:16px;border:1.5px solid var(--rule);border-radius:4px;overflow:hidden}
+.hs-kfill{display:block;height:100%}
+.hs-kf-h3o{background:var(--ab-h3o)}
+.hs-kf-oh{background:var(--ab-oh)}
+.hs-kv{font-size:.88rem;white-space:nowrap}
+.hs-split{display:flex;height:28px;border:1.5px solid var(--rule);border-radius:6px;overflow:hidden;max-width:520px;margin:8px 0}
+.hs-split i{display:flex;align-items:center;font-style:normal;font-size:.85rem;padding-left:8px;white-space:nowrap;overflow:hidden}
+.hs-sp-a{background:var(--hi-soft);color:var(--ink)}
+.hs-sp-b{background:var(--ab-oh)}
+.hs-eqc{font-size:1rem}
+.hs-dtab{display:flex;flex-direction:column;gap:6px}
+.hs-drow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.hs-dn{min-width:6.5em;font-weight:700}
+.hs-dph{margin-left:auto;font-variant-numeric:tabular-nums}
+.hs-h4{margin:16px 0 6px;font-size:1rem}
+.hs-seq{padding-left:1.6em}
+.hs-seq li{margin:3px 0}
+
+/* practice */
+.hs-inl{font-weight:700;margin-right:6px}
+.hs-sci{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.hs-man{width:5.5em}
+.hs-exp{width:3.6em;position:relative;top:-.5em;font-size:.9em}
+.hs-follow{margin:6px 0 0;padding:8px 10px;border-left:3px solid var(--rule);background:var(--info-bg)}
+@media (prefers-reduced-motion:reduce){.hs-fade,.hs-grain{animation:none}}

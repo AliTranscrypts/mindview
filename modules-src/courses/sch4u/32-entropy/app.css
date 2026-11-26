@@ -1,0 +1,82 @@
+/* SCH4U 32: hero, Microstate shuffler (C6 particle box, bars, table, process cards), Part 3 stations, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+.rg.en-whyg,.rg.en-tkcards{display:grid;gap:6px}
+.rg.en-whyg button,.rg.en-tkcards button{border-radius:10px;text-align:left;padding:.45em .8em;line-height:1.35}
+
+/* hero */
+.en-eq{display:inline-block;line-height:1.3}
+.en-hx-states{display:flex;align-items:center;justify-content:center;gap:4px 8px;margin-bottom:8px}
+.en-hx-st{margin:0;flex:1 1 0;max-width:130px;text-align:center}
+.en-hx-st svg{display:block;width:100%;height:auto}
+.en-hx-st figcaption{font:700 .9rem var(--font-ui);color:var(--ink-2)}
+.en-hx-arr{font:700 1.2rem var(--font-ui);color:var(--ink-2)}
+.en-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.en-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.en-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+.en-hx-ctr{margin:2px 0 0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:1.4em}
+
+/* Microstate shuffler */
+.en-modes{margin:0 0 12px}
+.en-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.en-view,.en-side{min-width:0}
+.en-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:4px}
+.en-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.en-cap{min-height:1.5em;margin:10px 0 4px}
+.en-key{margin:6px 0 0}
+.en-side > * + *{margin-top:12px}
+.en-c1 > * + *{margin-top:10px}
+.en-msg{min-height:0;margin:8px 0 0;color:var(--ink)}
+.en-msg:empty{display:none}
+.en-numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.en-numrow .numin{max-width:9rem}
+.en-unit{font-weight:700}
+.en-why{margin-top:10px}
+.en-count{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start;margin-top:18px}
+.en-barfig{margin:0;min-width:0}
+.en-bars{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.en-tbl{min-width:0}
+.en-tbl .tbl-wrap{max-height:300px;overflow:auto}
+.en-ph{margin:0}
+.en-b1[hidden],.en-b2[hidden],.en-c1[hidden],.en-c2[hidden],.en-work[hidden],.en-count[hidden],.en-why[hidden],.en-barfig[hidden],#en-tkw[hidden]{display:none}
+
+/* Part 3 */
+.en-st + .en-st{margin-top:22px}
+.en-tray{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.en-tile{border:1.5px solid var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:10px;padding:.45em .8em;font:400 1rem var(--font-ui);min-height:40px}
+.en-tile[aria-pressed="true"]{border-color:var(--hi);background:var(--hi-soft);box-shadow:0 0 0 2px var(--hi)}
+.en-bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.en-bin{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;border:2px dashed var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:10px;padding:10px;min-height:96px;font:400 1rem var(--font-ui)}
+.en-bin small{color:var(--ink-2)}
+.en-in{display:flex;flex-direction:column;gap:4px;margin-top:4px}
+.en-chipin{font-size:.88rem;background:var(--good-bg);border-radius:6px;padding:2px 6px}
+.en-data{margin-top:8px}
+.en-zs{margin:8px 0 0}
+.en-sbox,.en-lbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:4px;margin-top:12px;max-width:560px}
+.en-csvg,.en-lsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.en-ccap,.en-ltxt{margin:10px 0 0}
+.en-lread{margin-top:10px}
+
+/* Calculate ΔS° panel */
+.en-acttab{margin:0 0 12px}
+
+/* task */
+#en-tkcard,#en-tkdir,#en-tkw{margin-bottom:12px}
+.en-h4{margin:0 0 6px}
+.en-tkeq{font-size:1.1rem;margin:0 0 10px}
+
+@media (max-width:760px){
+  .en-grid,.en-count{grid-template-columns:minmax(0,1fr)}
+  .en-bins{grid-template-columns:minmax(0,1fr)}
+  .en-bin{min-height:64px}
+}

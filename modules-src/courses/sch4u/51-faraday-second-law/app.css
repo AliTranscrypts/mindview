@@ -1,0 +1,91 @@
+/* SCH4U 51: hero, Cells in series (C10 series layout + mass bars), Find the charge on the ion, Series designer */
+/* Module tokens: --fz-liq (electrolyte solution), --fz-melt (molten salt in the crucible; neutral, no glow),
+   --fz-rod (electrode). Electrons --ec-e (violet), cations --ec-cat (orange), coats --at-m, bars --pen. */
+:root{--fz-liq:#DCE8F3;--fz-melt:#E4E1DA;--fz-rod:#8A93A6}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--fz-liq:#1F3346;--fz-melt:#3A3833;--fz-rod:#7C8597} }
+:root[data-theme="dark"]{--fz-liq:#1F3346;--fz-melt:#3A3833;--fz-rod:#7C8597}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.fz-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.fz-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.fz-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: cells in series */
+.fz-how{margin-top:0}
+.fz-modes{margin:0 0 12px}
+.fz-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.fz-view,.fz-side{min-width:0}
+.fz-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.fz-box + .fz-box{margin-top:10px}
+.fz-svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.fz-cap{min-height:1.5em;margin:10px 0 2px;font-size:1rem}
+.fz-cells{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.fz-cb{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.3em .7em;font-size:.92rem;min-height:40px}
+.fz-cb.on{border-color:var(--ink);font-weight:700;background:var(--hi-soft)}
+.fz-cb:disabled{opacity:.55}
+.fz-cbm{font-size:1.05rem}
+.fz-msg{min-height:1.3em;margin:6px 0 0;font-size:.92rem;color:var(--ink-2)}
+.fz-mysn,.fz-mysc{margin:0 0 8px}
+.fz-sl{display:grid;gap:10px;margin-top:10px}
+.fz-slr{display:flex;flex-direction:column;gap:4px}
+.fz-slr input[type=range]{width:100%;min-height:32px;accent-color:var(--pen)}
+.fz-slr output{font-weight:700;color:var(--ink)}
+.fz-rp{margin-top:12px}
+.fz-rp[hidden]{display:none}
+.fz-rp p{margin:0 0 8px}
+.fz-rpr{display:flex;align-items:center;gap:8px;margin:6px 0}
+.fz-rpl{flex:1 1 8rem;font-weight:700}
+.fz-rpv{min-width:3ch;text-align:center;font-weight:700}
+.fz-btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 12px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.fz-note{margin:12px 0 0}
+.fz-tabs{margin-top:4px}
+
+/* Part 3: find the charge on the ion */
+.fz-st h3{margin-bottom:6px}
+#p3-app > .fz-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.fz-coul{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;margin:8px 0}
+.fz-csvg{width:200px;max-width:100%;height:auto;font-family:var(--font-ui)}
+.fz-reading{margin:0;flex:1 1 14rem}
+.fz-nrow{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin:8px 0}
+.fz-ni{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:.95rem}
+.fz-ni .numin{width:7.5em;max-width:100%}
+.fz-u{color:var(--ink-2)}
+.fz-s2r{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:8px 0}
+.fz-s2l{font-weight:700;flex:0 1 14rem}
+.fz-run{border:1.5px solid var(--rule);border-radius:10px;padding:8px 12px;margin:10px 0;background:var(--sheet)}
+.fz-runh{margin:0 0 4px}
+.fz-cellin{display:inline-flex;align-items:center;gap:4px;border-radius:8px;padding:2px 4px}
+.fz-cellin.ok{background:var(--good-bg)}
+.fz-cellin.no{outline:2px solid var(--red);outline-offset:1px}
+.fz-mk{font-weight:700}
+.fz-data{margin-top:14px}
+.fz-dr{margin:10px 0 14px}
+.fz-hb{display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr) auto;align-items:center;gap:8px;margin:4px 0;font-size:.92rem}
+.fz-hbt{height:14px;border-radius:3px;background:var(--paper);border:1px solid var(--rule);overflow:hidden}
+.fz-hbf{display:block;height:100%;background:var(--pen)}
+.fz-hbf.dash{background:none;border:2px dashed var(--pen);box-sizing:border-box}
+.fz-hbv{font-variant-numeric:tabular-nums}
+
+/* task */
+.fz-conds{margin:6px 0 10px;padding-left:1.4em}
+.fz-tl{margin:0 0 6px}
+.fz-tin .fz-tq{margin-top:10px}
+.fz-tmsg{min-height:1.3em;margin:6px 0 0;font-size:.92rem;color:var(--ink-2)}
+.fz-h4{margin:0 0 6px;font-size:1rem}
+.fz-tsv{max-width:420px}
+
+@media (max-width:760px){
+  .fz-grid{grid-template-columns:minmax(0,1fr)}
+}

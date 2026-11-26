@@ -1,0 +1,63 @@
+/* MCV4U 43 The dot product in R²: hero frames, alignment gauge, property lab, practice boxes, rhombus task. */
+.dp-ca{color:var(--pen)}
+.dp-cb{color:var(--f3)}
+
+/* hero */
+.dp-hero{display:flex;flex-direction:column;align-items:center;gap:6px;max-width:420px;margin:0 auto}
+.dp-hero.dp-three{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:flex-start;max-width:none;gap:10px}
+.dp-hf{display:flex;flex-direction:column;align-items:center;gap:5px;width:100%;min-width:0}
+.dp-three .dp-hf{flex:1 1 150px;max-width:260px}
+.dp-hval{margin:0;font-weight:700;font-size:1.05rem;min-height:1.6em}
+.dp-hero svg{width:100%;height:auto;display:block}
+.dp-hcap{margin:0}
+.dp-band,.dp-zones{display:flex;gap:4px;width:100%}
+.dp-band span,.dp-zones span{flex:1 1 0;min-width:0;text-align:center;font-size:.78rem;line-height:1.25;padding:3px 4px;border:1.5px solid var(--rule);border-radius:6px;color:var(--ink-2);background:var(--sheet)}
+.dp-band span.on,.dp-zones span.on{background:var(--hi-soft);border-color:var(--ink);color:var(--ink);font-weight:700}
+.dp-sax{stroke:var(--rule)}
+.dp-sa{stroke:var(--pen)} .dp-saf{fill:var(--pen)}
+.dp-sb{stroke:var(--f3)} .dp-sbf{fill:var(--f3)}
+.dp-sarc{stroke:var(--ink-2);fill:none}
+.dp-sra{stroke:var(--ink);fill:none}
+.dp-stx{font:italic 600 16px var(--font-math)}
+.dp-tA{fill:var(--pen)} .dp-tB{fill:var(--f3)} .dp-tth{fill:var(--ink-2)}
+
+/* Explore */
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+.dp-zh{margin:8px 0 4px;font-weight:700}
+.dp-key{margin:6px 0 0}
+.dp-side{display:flex;flex-direction:column;gap:8px;min-width:0}
+.dp-side .seg-wrap{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dp-sl{display:block}
+.dp-read{margin:4px 0 0}
+.dp-read dd{overflow-wrap:anywhere}
+.dp-more{display:none;align-self:flex-start}
+.dp-h{margin:4px 0 2px;font-weight:700}
+.dp-lock{margin:2px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+@media (max-width:760px){ .dp-ex{grid-template-columns:1fr} }
+@media (max-width:600px){
+  .dp-more{display:inline-flex}
+  .dp-read:not(.dp-all) .dp-opt{display:none}
+}
+
+/* Part 3: property lab */
+.dp-cards{display:flex;gap:6px;overflow-x:auto;padding:2px 2px 6px;-webkit-overflow-scrolling:touch}
+.dp-cards .dp-card{flex:0 0 auto;white-space:nowrap}
+.dp-cards .dp-card[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--ink);color:var(--ink);font-weight:700}
+.dp-labgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:10px;align-items:start}
+@media (max-width:700px){ .dp-labgrid{grid-template-columns:1fr} }
+.dp-law{font-size:1.05rem;font-weight:600;margin:0 0 4px}
+.dp-lread dd{overflow-wrap:anywhere}
+.dp-agree{margin:8px 0 0}
+.dp-aexpr{font-size:1.1rem;margin:4px 0}
+.dp-prh{margin:10px 0 4px}
+
+/* Practice 2 */
+.dp-box{display:inline-flex;align-items:center;gap:6px;margin:4px 12px 4px 0}
+.dp-un{color:var(--ink-2)}
+
+/* task */
+.rh-in{display:flex;flex-direction:column;gap:8px}
+.rh-step{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.rh-step label{min-width:2.4em}
+.rh-step .numin{width:4.2em}
+.rh-gh{margin:8px 0 4px;font-weight:700}

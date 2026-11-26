@@ -1,0 +1,96 @@
+/* SCH4U 27: hero (C4 enthalpy-level diagram), Equation puzzle (card tray, sum, readout, Diagram mode), Test Hess's law,
+   Three roads to lime. ΔH values and arrows use the course token --en-dh (orange); struck species use --ink-2. */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px;min-width:40px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+.rg.hs-segm button{padding:.3em .6em;min-height:36px;font-size:.88rem}
+
+/* hero */
+.hs-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.hs-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.hs-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* shared typesetting */
+.hs-eq{line-height:1.7}
+.hs-t{white-space:nowrap;transition:opacity .3s}
+.hs-dh,.hs-dhv,.hs-rdh{color:var(--en-dh);font-weight:700;white-space:nowrap}
+.hs-x{text-decoration:line-through;text-decoration-color:var(--ink-2);text-decoration-thickness:2px;opacity:.55}
+.hs-xa{animation:hs-strike .6s ease-out}
+@keyframes hs-strike{from{text-decoration-color:transparent;opacity:1}to{text-decoration-color:var(--ink-2);opacity:.55}}
+.hs-h4{margin:0 0 8px;font-size:1rem}
+
+/* Explore: equation puzzle */
+.hs-top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin:0 0 14px}
+.hs-top > [hidden]{display:none}
+.hs-free{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;min-width:0;max-width:100%}
+.hs-fl{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.hs-sel{font:inherit;font-size:.95rem;padding:.35em .5em;border:1.5px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--ink);min-height:40px;max-width:100%;min-width:0}
+.hs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.hs-trayw,.hs-view{min-width:0}
+.hs-tray{display:flex;flex-direction:column;gap:10px}
+.hs-card{border:1.5px solid var(--ink);border-radius:10px;background:var(--sheet);padding:8px 10px;min-width:0}
+.hs-card.off{border-style:dashed;border-color:var(--ink-2)}
+.hs-card.off .hs-adj{opacity:.6}
+.hs-card.hs-on{box-shadow:0 0 0 3px var(--hi)}
+.hs-card.hs-flip{animation:hs-flip .6s ease-in-out}
+@keyframes hs-flip{0%{transform:rotateX(0)}50%{transform:rotateX(90deg)}100%{transform:rotateX(0)}}
+.hs-ch{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.hs-cn{font-weight:700;margin-right:auto}
+.hs-tg{border:1.5px solid var(--ink);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.3em .7em;font-size:.88rem;font-weight:700;min-height:36px}
+.hs-tg[aria-pressed="true"]{background:var(--hi-soft);border-color:var(--hi-ink);color:var(--hi-ink)}
+.hs-tg:disabled{opacity:.5}
+.hs-given{margin:6px 0 0;font-size:.85rem;color:var(--ink-2)}
+.hs-adj{margin:4px 0 0;font-size:1rem}
+.hs-offl{color:var(--ink-2);font-size:.85rem}
+.hs-tgtl{margin:0 0 10px;font-size:1.02rem}
+.hs-tl{font-weight:700}
+.hs-sumw,.hs-dia{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:10px 12px;margin-bottom:12px}
+.hs-sumw[hidden],.hs-dia[hidden],.hs-typed[hidden],.hs-fnote[hidden]{display:none}
+.hs-dia{padding:4px}
+.hs-svg{display:block;width:100%;max-width:560px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.hs-stack{display:flex;flex-direction:column;gap:6px}
+.hs-row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 10px;align-items:baseline}
+.hs-rl{font-size:.82rem;font-weight:700;color:var(--ink-2);white-space:nowrap}
+.hs-req{min-width:0;line-height:1.7}
+.hs-net{border-top:2px solid var(--ink);padding-top:6px;font-weight:600}
+.hs-read{margin-top:6px}
+.hs-typed{margin-top:10px}
+.hs-tabs,.hs-tabs3{margin-top:10px}
+.hs-fnote{margin:10px 0 0}
+
+/* Part 3 */
+.hs-st h3{margin-bottom:6px}
+#p3-app > .hs-st + .hs-st{margin-top:22px;padding-top:16px;border-top:1.5px solid var(--rule)}
+.hs-q{margin-top:12px}
+.hs-ops{display:flex;flex-direction:column;gap:10px;margin:10px 0}
+.hs-op{border:1.5px solid var(--rule);border-radius:10px;padding:8px 10px;background:var(--sheet);min-width:0}
+.hs-oph{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px}
+.hs-opn{font-weight:700}
+.hs-opq{margin:6px 0 0}
+.hs-data{margin:10px 0}
+.hs-p3m{margin:8px 0 0}
+.hs-pct{margin:10px 0}
+.hs-srcw{margin:10px 0}
+.hs-src{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+
+/* task */
+.hs-tl2{margin:0 0 10px}
+.hs-trow{border:1.5px solid var(--rule);border-radius:10px;padding:6px 10px;margin-bottom:8px;background:var(--sheet);min-width:0}
+.hs-trh{margin-bottom:6px;line-height:1.7}
+.hs-tlet{display:inline-block;min-width:1.6em;font-weight:700;border:1.5px solid var(--ink);border-radius:6px;text-align:center}
+.hs-tnet{margin:10px 0 0}
+
+@media (max-width:760px){
+  .hs-grid{grid-template-columns:minmax(0,1fr)}
+  .hs-sel{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){ .hs-xa,.hs-card.hs-flip{animation:none} .hs-t{transition:none} }

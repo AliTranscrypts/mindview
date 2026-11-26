@@ -1,0 +1,124 @@
+/* SCH4U 45: hero, Oxidation number calculator (C14 annotate mode), Redox or not?, Agents and electrons, One-to-one swap */
+/* Module tokens: --ox-sol (blue Cu²⁺ solution), --ox-sol-line (its surface), --ox-zn (zinc grey), --ox-cu (copper deposit, brown). */
+:root{--ox-sol:#D6E8F7;--ox-sol-line:#7FA9CF;--ox-zn:#C9CED6;--ox-cu:#9A5A2B}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--ox-sol:#1C3550;--ox-sol-line:#4F7FAE;--ox-zn:#7D8794;--ox-cu:#D08A55} }
+:root[data-theme="dark"]{--ox-sol:#1C3550;--ox-sol-line:#4F7FAE;--ox-zn:#7D8794;--ox-cu:#D08A55}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+.rg.ox-whyc button{border-radius:10px;text-align:left}
+
+/* hero */
+.ox-hx-eq{font-size:1.05rem;margin:0 0 6px}
+.ox-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ox-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.ox-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* tagged equation (C14) */
+.ox-eq{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:6px 8px}
+.ox-eqs{display:inline-flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:4px}
+.ox-sp{display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:4px 6px;border:1.5px solid transparent;border-radius:8px;background:none;color:var(--ink);font:inherit}
+.ox-spb{cursor:pointer;border-color:var(--rule);background:var(--sheet);min-height:44px}
+.ox-spb.on{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi-soft)}
+.ox-spb:disabled{opacity:.7;cursor:default}
+.ox-spf{display:inline-flex;align-items:flex-end;gap:2px}
+.ox-cells{display:inline-flex;align-items:flex-end}
+.ox-cell{display:inline-flex;flex-direction:column;align-items:center}
+.ox-cell .ox-tag{font-size:.74rem;padding:0 4px;margin:0 1px 3px;min-width:1.9em}
+.ox-tag0{visibility:hidden}
+.ox-el{font-size:1.2rem;font-weight:700;line-height:1.15}
+.ox-el sub{font-size:.65em;vertical-align:-.25em;line-height:0}
+.ox-cells .ox-q{align-self:flex-end;margin:0 0 .95em 1px;font-size:.8rem;font-weight:700}
+.ox-coef{font-size:1.2rem;font-weight:700;margin-right:1px;line-height:1.15}
+.ox-st{font-size:.82rem;color:var(--ink-2);margin:0 0 .15em 1px}
+.ox-plus,.ox-arrow{font-size:1.25rem;font-weight:700;padding-bottom:.35em}
+.ox-arrow{padding-left:4px;padding-right:4px}
+.ox-sptags{display:flex;flex-wrap:wrap;justify-content:center;gap:3px}
+.ox-pill{font-size:.72rem;font-weight:700;background:var(--hi-soft);color:var(--ink);border-radius:999px;padding:1px 7px}
+.ox-eqwrap{position:relative;padding:44px 4px 62px}
+.ox-ov{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ox-tag{display:inline-block;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);font:700 .92rem var(--font-ui);padding:1px 6px;min-width:2.2em;text-align:center;line-height:1.35}
+.ox-unk{color:var(--ink-2);border-style:dashed}
+.ox-tag.pop{animation:ox-pop .6s ease-out}
+@keyframes ox-pop{0%{transform:scale(.4);background:var(--hi-soft)}60%{transform:scale(1.2);background:var(--hi-soft)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){ .ox-tag.pop{animation:none} }
+
+/* Explore: calculator */
+.ox-modes{margin:0 0 12px}
+.ox-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.ox-main,.ox-aside{min-width:0}
+.ox-pane[hidden]{display:none}
+.ox-pane > * + *{margin-top:12px}
+.ox-stage{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:14px 10px 10px}
+.ox-form{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:8px 14px}
+.ox-acell{display:inline-flex;flex-direction:column;align-items:center;gap:5px}
+.ox-tagrow{display:flex;align-items:center;gap:3px;min-height:28px}
+.ox-mult{font-size:.8rem;color:var(--ink-2);font-weight:700}
+.ox-box{width:4.4em;font:inherit;font-size:.95rem;text-align:center;padding:.25em .3em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);min-height:36px}
+.ox-box.ok{border-color:var(--green);background:var(--good-bg)}
+.ox-box.bad{border-color:var(--red);background:var(--bad-bg)}
+.ox-boxsp{display:block;height:36px}
+.ox-big{font-size:1.9rem;font-weight:700;line-height:1.1}
+.ox-form .ox-q{align-self:flex-end;font-size:1.1rem;margin:0 0 1.6rem -10px}
+.ox-perox{text-align:center;margin:10px 0 0;padding:4px 8px;border-radius:8px;color:var(--ink-2);font-size:.92rem}
+.ox-perox.on{background:var(--hi-soft);color:var(--ink);box-shadow:0 0 0 2px var(--hi)}
+.ox-sum{display:block;width:100%;max-width:440px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.ox-why3[hidden]{display:none}
+.ox-tagbar{display:flex;flex-wrap:wrap;gap:6px}
+.ox-erow{margin-top:10px}
+.ox-btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.ox-cap{min-height:1.5em;margin:8px 0 2px}
+.ox-h4{margin:0 0 6px;font-size:1rem}
+.ox-rail{margin:0 0 14px;padding-left:1.6em;font-size:.92rem}
+.ox-rail li{padding:3px 6px;border-radius:6px;margin:2px 0}
+.ox-rail li.on{background:var(--hi-soft);box-shadow:0 0 0 2px var(--hi);font-weight:700}
+.ox-railp{display:none;margin:0 0 12px}
+.ox-railp summary{display:inline-block;border:1.5px solid var(--hi);border-radius:999px;padding:.25em .9em;font-weight:700;cursor:pointer;min-height:32px}
+.ox-railp[open] summary{margin-bottom:8px}
+.ox-aside .ox-railw[hidden],.ox-aside .ox-railp[hidden]{display:none}
+
+/* Part 3 */
+.ox-deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px;margin:10px 0}
+.ox-card{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;border:1.5px solid var(--rule);border-radius:8px;padding:6px 8px;background:var(--sheet)}
+.ox-card.on{border-color:var(--hi);box-shadow:0 0 0 3px var(--hi-soft)}
+.ox-cardb{width:100%;text-align:left;background:none;border:0;color:var(--ink);font:inherit;padding:4px 26px 4px 2px;min-height:40px;cursor:pointer}
+.ox-mk{position:absolute;top:6px;right:8px;font-weight:700}
+.ox-mk.ok{color:var(--green)}
+.ox-mk.bad{color:var(--red)}
+.ox-bins{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.ox-bin{border:2px dashed var(--rule);border-radius:10px;padding:8px;min-height:90px;min-width:0}
+.ox-binb{width:100%}
+.ox-bn{font-weight:400}
+.ox-binl{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.ox-zcard{border:1.5px solid var(--rule);border-radius:10px;padding:8px 12px;margin:12px 0 8px;background:var(--sheet);min-width:0}
+.ox-zt{margin:0}
+.ox-zcap{margin:4px 0 0}
+.ox-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* task */
+.ox-tm,.ox-ti{margin-bottom:12px}
+.ox-tpv .ox-eq{margin:34px 0 10px}
+.ox-conds{margin:8px 0 0;padding-left:1.4em}
+.ox-unit{margin-left:6px}
+
+@media (max-width:760px){
+  .ox-grid{grid-template-columns:minmax(0,1fr)}
+  .ox-railw{display:none}
+  .ox-railp{display:block}
+  .ox-pair{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .ox-eqwrap .ox-eq{flex-direction:column;align-items:center}
+  .ox-bins{grid-template-columns:minmax(0,1fr)}
+  .ox-big{font-size:1.6rem}
+  .ox-form{gap:8px 10px}
+}
