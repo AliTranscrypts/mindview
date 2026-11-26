@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 28/295 live, 0 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 28/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 28/50 | 0 | 22 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 28/50 | 1 | 21 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -48,8 +48,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 26 Special Angles and Trig Ratios (`special-angles-and-trig-ratios`, topic, site ch4)
 - ✓ 27 Equivalent Trig Expressions (`equivalent-trig-expressions`, topic, site ch4)
 - ✓ 28 Compound Angles (`compound-angles`, topic, site ch4)
-- … 29 Proving Trig Identities (`proving-trig-identities`, topic, site ch4)
-- · 30 Chapter 4 Summary & Review (`chapter-4-review`, review, site ch4)
+- ◐ 29 Proving Trig Identities (`proving-trig-identities`, topic, site ch4)
+- … 30 Chapter 4 Summary & Review (`chapter-4-review`, review, site ch4)
 - … 31 Graphing the 6 Trig Functions (`graphing-the-six-trig-functions`, topic, site ch5)
 - … 32 Transformations of Sinusoidal Functions (`transformations-of-sinusoidal-functions`, topic, site ch5)
 - … 33 Equations of Sinusoidal Functions (`equations-of-sinusoidal-functions`, topic, site ch5)
