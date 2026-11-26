@@ -31,6 +31,8 @@ every module that uses the touched code, then ship them together).
 
 - Gotcha (31): the radical component uses generic class names (`.rb`); a module class `.rb` breaks every √. Namespace toolkit classes (e.g. `.mv-rb`) in a future version.
 
+- Plot (47): `Plot.curve` clamps pixel x to 6 × canvas height, cutting curves on wide, short canvases.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -77,3 +79,4 @@ every module that uses the touched code, then ship them together).
 | G4 logAxis (linear↔log morph, mirror), exampleLabels, N4+G4 rulerBoxes | mhf4u 42 | |
 | N4 solutionSet (boxes + No solution toggle), gateLanes, radioGroup/N9 stepSlider with lock | mhf4u 44 | |
 | N15 moveChooser.lock, N4 roundBoxes, stepSlider (settable count) | mhf4u 43 | |
+| G1+G16 breakPieces, G13 scaleBars, stackedPanels, springAnim, N11 signChart.factorRows | mhf4u 47 | |

@@ -1,0 +1,97 @@
+/* MHF4U 47: hero colours, envelope explorer, sign-and-shape board, work-backwards boxes, task stepper */
+.pq-f,.pq-fl{color:var(--pen)}
+.pq-g,.pq-gl{color:var(--f3)}
+.pq-fl,.pq-gl{font:italic 700 1.15rem var(--font-math)}
+.hero .hero-eq.md{font-size:clamp(2rem,4.4vw,3.1rem)}
+canvas.plot.pq-hstrip{aspect-ratio:5/1;margin-bottom:6px}
+#hero-cap .m{white-space:normal}
+/* radio groups (from MHF4U 25/35) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.95rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button .m{font-size:1.1em}
+.rg button:disabled{opacity:.45}
+.pq-bchips button[aria-checked="true"]{outline:2px solid var(--p-b);outline-offset:1px}
+/* explorer */
+#ex-app .pg{grid-template-rows:auto 1fr}
+.pq-top{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 10px}
+.pq-menus{display:grid;gap:8px;margin:0 0 14px}
+.pq-note{margin:0;min-height:0}
+.pq-note .linkbtn{font-size:inherit}
+.pq-cap{font-size:clamp(1.25rem,3.2vw,1.8rem)}
+.pq-gwrap{display:flex;gap:10px;align-items:stretch}
+.pq-gmain{flex:1 1 auto;min-width:0}
+.pq-barbox{flex:0 0 150px;width:150px;display:flex}
+.pq-barbox[hidden]{display:none}
+canvas.plot.pq-bars{aspect-ratio:auto;height:100%;min-height:220px;width:100%}
+canvas.plot.pq-panel{aspect-ratio:3/1;margin-bottom:4px}
+.pq-spring{display:grid;grid-template-columns:92px minmax(0,1fr);gap:6px;align-items:stretch}
+.pq-spring[hidden]{display:none}
+canvas.plot.pq-springc{aspect-ratio:auto;height:100%;min-height:160px}
+.pq-sent{min-height:1.5em;font-weight:700;margin:8px 0 0}
+.pq-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 0}
+.pq-row .chip[aria-pressed="true"],.pq-row .btn[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.pq-probe{margin-top:6px}
+.pq-flash{margin:10px 0 0;font-weight:700}
+.pq-flash:empty,.pq-closer:empty{display:none}
+.pq-closer{margin:10px 0 0;padding:10px 12px;border-left:4px solid var(--p-b);background:var(--info-bg);border-radius:6px}
+.pq-tally{margin:4px 0 0}
+@media (max-width:560px){
+  .pq-gwrap{flex-direction:column}
+  .pq-barbox{flex:none;width:100%}
+  canvas.plot.pq-bars{height:90px;min-height:0}
+  .pq-spring{grid-template-columns:minmax(0,1fr)}
+  canvas.plot.pq-springc{height:120px;min-height:0}
+}
+@media (max-width:360px){
+  .pq-fchips,.pq-gchips{display:grid;grid-template-columns:1fr 1fr}
+}
+/* Part 3 board: graphs and chart scroll sideways together */
+.pq3-eq{font-size:clamp(1.15rem,3vw,1.6rem)}
+.pq3-step{margin:0 0 10px}
+.pq3-scroll{overflow-x:auto;border:1.5px solid var(--rule);border-radius:8px;padding:6px 0;margin:0 0 12px}
+.pq3-board{display:grid;grid-template-columns:52px minmax(0,1fr);min-width:820px;row-gap:4px}
+.pq3-lab{position:sticky;left:0;z-index:3;background:var(--sheet);display:flex;align-items:center;justify-content:center;font:italic 700 1.05rem var(--font-math);text-align:center;padding:0 4px}
+.pq3-lab[hidden],.pq3-row[hidden]{display:none}
+.pq3-small{font:700 .72rem var(--font-ui);color:var(--ink-2)}
+.pq3-cv canvas.plot.pq3-c{aspect-ratio:auto;height:110px;border-radius:4px}
+.pq3-cv canvas.plot.pq3-res{height:170px}
+.pq3-row{position:relative}
+.pq3-ticks{height:48px}
+.pq3-axis{position:absolute;left:0;right:0;top:24px;border-top:1.5px solid var(--ink)}
+.pq3-tick{position:absolute;top:8px;transform:translateX(-50%);width:32px;height:32px;border-radius:50%;border:1.5px solid var(--ink-2);background:var(--sheet);padding:0;font:600 .72rem var(--font-ui);color:var(--ink);display:flex;align-items:center;justify-content:center;z-index:1}
+.pq3-tick.half{width:26px;height:26px;top:11px;border-style:dashed}
+.pq3-tick.on{background:var(--hi);border:2.5px solid var(--ink);color:var(--hi-ink)}
+.pq3-tick:disabled{opacity:1}
+.pq3-head{height:30px}
+.pq3-cv-lab{position:absolute;top:4px;transform:translateX(-50%);white-space:nowrap;font-size:1rem;background:var(--hi-soft);padding:0 .3em;border-radius:4px}
+.pq3-signs{height:46px}
+.pq3-vl{position:absolute;top:0;bottom:0;border-left:1.5px dashed var(--ink-2);opacity:.6}
+.pq3-pair{position:absolute;top:3px;transform:translateX(-50%);display:flex;gap:3px;border-radius:7px;padding:1px}
+.pq3-pair button{width:32px;height:40px;border:1.5px solid var(--rule);background:var(--sheet);border-radius:6px;font:700 1.15rem var(--font-math);padding:0;color:var(--ink)}
+.pq3-pair button[aria-pressed="true"]{background:var(--hi);border-color:var(--ink);color:var(--hi-ink)}
+.pq3-pair.bad,.pq3-mk.bad{outline:2.5px solid var(--red);background:var(--bad-bg)}
+.pq3-marks{height:124px}
+.pq3-mk{position:absolute;top:2px;transform:translateX(-50%);display:grid;gap:2px;width:92px;border-radius:7px;padding:1px}
+.pq3-mk button{min-height:28px;border:1.5px solid var(--rule);background:var(--sheet);border-radius:6px;font:600 .78rem var(--font-ui);padding:0 .3em;color:var(--ink)}
+.pq3-mk button[aria-pressed="true"]{background:var(--hi);border-color:var(--ink);color:var(--hi-ink);font-weight:700}
+.pq3-msgs{margin:6px 0 0;padding-left:1.2em}
+.pq3-msgs li{margin:0 0 6px}
+@media (max-width:560px){ .pq3-pair button{width:30px} }
+/* Practice 3: template boxes */
+.pq-tpl{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;font:400 1.3rem var(--font-math);margin:8px 0 4px}
+.pq-tpl .m{white-space:nowrap}
+.pq-boxl{display:inline-flex}
+.pq-box{width:4.6rem;min-width:44px;padding:.3em .4em;text-align:center}
+.pq-wbg{margin-top:12px}
+/* task */
+.pq-tkcap{font-size:clamp(1.2rem,3vw,1.6rem)}
+.pq-step{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px}
+.pq-kout{font:600 1.4rem var(--font-math);min-width:2.2em;text-align:center}
+.pq-tkrow{margin:0 0 10px}

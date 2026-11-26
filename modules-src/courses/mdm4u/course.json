@@ -51,7 +51,8 @@
    "siteChapter": 1,
    "size": "S",
    "part3": "equally-likely",
-   "prereqs": []
+   "prereqs": [],
+   "status": "building"
   },
   {
    "nn": "02",
