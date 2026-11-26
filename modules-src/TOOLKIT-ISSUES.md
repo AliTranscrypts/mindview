@@ -63,3 +63,4 @@ every module that uses the touched code, then ship them together).
 | N18 connectionBuilder, N26 factorTiles + sign-chart table, canvas tag/leader helpers | mhf4u 24 | review |
 | N15 moveChooser (two-column LS/RS), N23 overlayGauge, N5 orderTray (decoy tray), N4 identityBoxes, exactRad | mhf4u 29 | |
 | N24 circleGraphLink | mhf4u 31 | needed by 34, 35, 36 |
+| insideRuler, N9 stepSlider, exactPiQ, N6 graphMatch, N4 waveBoxes | mhf4u 32 | |

@@ -6,11 +6,11 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 29/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 30/295 live, 1 built, 6 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 29/50 | 1 | 20 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 30/50 | 1 | 19 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 0/59 | 0 | 59 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 0/39 | 0 | 39 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 0 | 52 | 0 |
@@ -50,14 +50,14 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 28 Compound Angles (`compound-angles`, topic, site ch4)
 - ✓ 29 Proving Trig Identities (`proving-trig-identities`, topic, site ch4)
 - … 30 Chapter 4 Summary & Review (`chapter-4-review`, review, site ch4)
-- ◐ 31 Graphing the 6 Trig Functions (`graphing-the-six-trig-functions`, topic, site ch5)
-- … 32 Transformations of Sinusoidal Functions (`transformations-of-sinusoidal-functions`, topic, site ch5)
+- ✓ 31 Graphing the 6 Trig Functions (`graphing-the-six-trig-functions`, topic, site ch5)
+- ◐ 32 Transformations of Sinusoidal Functions (`transformations-of-sinusoidal-functions`, topic, site ch5)
 - … 33 Equations of Sinusoidal Functions (`equations-of-sinusoidal-functions`, topic, site ch5)
 - … 34 Solving Trig Equations (`solving-trig-equations`, topic, site ch5)
 - … 35 Applications of Trig Functions (`applications-of-trig-functions`, topic, site ch5)
 - · 36 Chapter 5 Summary & Review (`chapter-5-review`, review, site ch5)
 - … 37 Inverse of Exponential Functions (`inverse-of-exponential-functions`, topic, site ch6)
-- · 38 Introduction to Logarithms (`introduction-to-logarithms`, topic, site ch6)
+- … 38 Introduction to Logarithms (`introduction-to-logarithms`, topic, site ch6)
 - · 39 Transformations of Log Functions (`transformations-of-log-functions`, topic, site ch6)
 - · 40 Power Law of Logarithms (`power-law-of-logarithms`, topic, site ch6)
 - · 41 Product and Quotient Laws (`product-and-quotient-laws`, topic, site ch6)
