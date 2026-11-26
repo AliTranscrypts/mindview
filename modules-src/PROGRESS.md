@@ -6,13 +6,13 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 92/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 93/295 live, 2 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 11/59 | 0 | 48 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 7/39 | 1 | 31 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 11/59 | 1 | 47 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 8/39 | 1 | 30 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 6/52 | 0 | 46 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 7/46 | 0 | 39 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 7/25 | 0 | 18 | 0 |
@@ -85,10 +85,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 10 The Product Rule (`the-product-rule`, topic, site ch2)
 - ✓ 11 The Quotient Rule (`the-quotient-rule`, topic, site ch2)
 - … 12 Derivatives of Composite Functions: the Chain Rule (`the-chain-rule`, topic, site ch2)
-- … 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
+- ◐ 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
 - … 14 Higher Order Derivatives (`higher-order-derivatives`, topic, site ch3)
 - … 15 Velocity and Acceleration (`velocity-and-acceleration`, topic, site ch3)
-- · 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
+- … 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
 - · 17 Optimization Problems (`optimization-problems`, topic, site ch3)
 - · 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
 - · 19 Related Rates (`related-rates`, topic, site ch3)
@@ -143,10 +143,10 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 06 Factorial Notation (`factorial-notation`, topic, site ch2)
 - ✓ 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
 - … 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
-- ◐ 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
-- … 10 Circular Permutations (`circular-permutations`, topic, site ch2)
+- ✓ 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
+- ◐ 10 Circular Permutations (`circular-permutations`, topic, site ch2)
 - … 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
-- · 12 Combination Identities (`combination-identities`, topic, site ch3)
+- … 12 Combination Identities (`combination-identities`, topic, site ch3)
 - · 13 Pascal's Triangle & Patterns (`pascals-triangle`, topic, site ch3)
 - · 14 The Binomial Theorem (`binomial-theorem`, topic, site ch3)
 - · 15 Combinations & Probability (`combinations-probability`, topic, site ch3)

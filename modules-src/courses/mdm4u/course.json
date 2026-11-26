@@ -170,8 +170,7 @@
     "08",
     "03"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "10",
@@ -187,7 +186,8 @@
     "09",
     "06"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "11",
@@ -217,7 +217,8 @@
    "part3": "stories",
    "prereqs": [
     "11"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "13",

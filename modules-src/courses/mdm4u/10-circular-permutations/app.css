@@ -1,0 +1,136 @@
+/* MDM4U 10: hero table, Round table (D4 circular mode: table drawing, line-up stack, list of small tables), Part 3 seat
+   placement, Table planner task. Colour tokens only. */
+/* radioGroup (from MDM4U 06) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:0}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+
+/* ---------- @component D4 circular mode: the table drawing (copy with the component) ---------- */
+.cir-tw{position:relative;width:min(100%,330px);aspect-ratio:1;container-type:inline-size;margin:0 auto;--tok:max(34px,13cqw);flex:none}
+.cir-tw.dense{--tok:max(32px,11.6cqw)}
+.cir-disc{position:absolute;inset:22.5%;border-radius:50%;background:var(--paper);border:2px solid var(--rule);display:flex;align-items:center;justify-content:center}
+.cir-dir{font-size:13cqw;line-height:1;color:var(--ink-2);opacity:.32}
+.cir-tw.numd .cir-dir{opacity:.14}
+.cir-topm{position:absolute;left:50%;top:-1px;transform:translateX(-50%);font-size:.62rem;line-height:1;color:var(--ink-2)}
+.cir-num{position:absolute;transform:translate(-50%,-50%);font:700 clamp(11px,4.2cqw,15px)/1 var(--font-ui);color:var(--ink-2)}
+.cir-tok,.cir-seat{position:absolute;width:var(--tok);height:var(--tok);transform:translate(-50%,-50%);border-radius:50%;box-sizing:border-box}
+.cir-tok{display:flex;align-items:center;justify-content:center;background:var(--sheet);border:2px solid var(--ink);color:var(--ink);font:700 clamp(15px,6.2cqw,22px)/1 var(--font-ui)}
+.cir-tok.lock{box-shadow:0 0 0 2px var(--sheet),0 0 0 5px var(--ink)}
+.cir-tok.glow{border-color:var(--hi);box-shadow:0 0 0 5px var(--hi-soft)}
+.cir-tok.tch{background:var(--ev-a-soft)}
+.cir-tok.stu{background:var(--ev-b-soft)}
+.cir-lk{position:absolute;right:-3px;top:-3px;width:11px;height:8px;background:var(--ink);border-radius:2px}
+.cir-lk::before{content:"";position:absolute;left:2px;top:-5px;width:7px;height:6px;border:2px solid var(--ink);border-bottom:0;border-radius:4px 4px 0 0;box-sizing:border-box}
+.cir-seat{border:2px dashed var(--ink-2);background:var(--sheet);color:var(--ink-2);font:600 .82rem var(--font-ui);padding:0;display:flex;align-items:center;justify-content:center}
+button.cir-seat{cursor:pointer}
+.cir-seat.glow{border:2.5px solid var(--hi);box-shadow:0 0 0 5px var(--hi-soft);color:var(--ink)}
+.cir3-nm{font-size:clamp(12px,4.7cqw,15px);font-weight:700}
+.cir-tok sub{font-size:.62em}
+/* small tables (List all) */
+.cir-lbox{max-height:360px;overflow:auto;border:1px solid var(--rule);border-radius:10px;padding:8px;background:var(--sheet)}
+.cir-ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.cir-li{position:relative;display:flex;align-items:center;border:1.5px solid var(--rule);border-radius:8px;padding:1px}
+.cir-li.pair{padding:1px 4px;gap:2px}
+.cir-eq{font:700 .9rem var(--font-ui);color:var(--ink-2)}
+.cir-li.fit{border:2px solid var(--green)}
+.cir-li.fit::after{content:"✓";position:absolute;right:3px;top:0;color:var(--green);font:700 .8rem var(--font-ui)}
+.cir-li.nofit{opacity:.42}
+.cir-li.cur{background:var(--hi-soft);border-color:var(--ink)}
+.cir-mini{width:62px;height:62px;display:block}
+.cir-md{fill:var(--paper);stroke:var(--rule);stroke-width:1.5}
+.cir-mt{fill:var(--ink);font:700 11.5px var(--font-ui);text-anchor:middle;dominant-baseline:central}
+.cir-mn{fill:var(--ink-2);font:700 7.5px var(--font-ui);text-anchor:middle;dominant-baseline:central}
+.cir-lhead{margin:12px 0 6px;font-weight:700}
+
+/* ---------- hero ---------- */
+.cir-heq{display:inline-block}
+.cir-heq-t{font:400 .42em var(--font-ui);font-style:normal;color:var(--ink-2);display:block;margin-bottom:.1em}
+.cir-h{display:grid;grid-template-columns:minmax(0,240px) auto;justify-content:center;gap:10px 18px;align-items:center;padding:4px 0}
+.cir-h-tbl.cir-tw{width:100%}
+.cir-h-side{min-width:92px}
+.cir-h-ups{list-style:none;margin:0;padding:0 0 0 8px;border-left:3px solid transparent;transition:border-color .5s}
+.cir-h-ups li{font:700 1.1rem/1.2 var(--font-ui);letter-spacing:.14em;padding:3px 8px;margin:0 0 18px;border-radius:6px;background:var(--sheet);border:1px solid var(--rule);transition:margin .7s;animation:cirIn .45s ease-out both}
+.cir-h-ups.stacked{border-left-color:var(--ink)}
+.cir-h-ups.stacked li{margin-bottom:3px;animation:none}
+.cir-h-lab{margin:6px 0 0 8px;font-weight:700;opacity:0;transition:opacity .5s}
+.cir-h-lab.on{opacity:1}
+.cir-h-ctr{grid-column:1/-1;text-align:center;font:400 1.6rem var(--font-math);margin:0;min-height:1.3em}
+@keyframes cirIn{from{transform:translateX(-14px);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- Explore ---------- */
+.cir-topbar{display:flex;flex-wrap:wrap;gap:4px 22px}
+.cir-cap{min-height:1.5em;font-size:clamp(1.35rem,3.4vw,2rem)}
+.cir-capn{font:400 .95rem var(--font-ui);color:var(--ink-2)}
+.cir-stage{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:flex-start;justify-content:center;margin-top:4px}
+.cir-big{border-radius:12px}
+.cir-big:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.cir-stack{flex:1 1 160px;min-width:150px;max-width:280px}
+.cir-stack[hidden]{display:none}
+.cir-slab{margin:0 0 6px;font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.cir-slab.done{color:var(--ink)}
+.cir-scols{display:flex;gap:12px}
+.cir-sh{margin:0 0 4px;font-size:.78rem;color:var(--ink-2)}
+.cir-sl{list-style:none;margin:0;padding:0 0 0 8px;border-left:3px solid var(--ink)}
+.cir-scols.diff .cir-sl{border-left:3px dashed var(--ink-2)}
+.cir-sl li{font:700 1rem/1.25 var(--font-ui);letter-spacing:.12em;padding:1px 6px;border-radius:5px;white-space:nowrap;animation:cirIn .3s ease-out both}
+.cir-sl li.cur{background:var(--hi-soft)}
+.cir-line{text-align:center;margin:10px 0 0}
+.cir-lu{font-weight:700;letter-spacing:.12em}
+.cir-ok{color:var(--green);font-weight:700;white-space:nowrap}
+.cir-no{color:var(--red);font-weight:700}
+.cir-msg{margin:4px 0 0;min-height:1.3em;font-size:.92rem;color:var(--ink-2);text-align:center}
+.cir-list[hidden]{display:none}
+.cir-btns{margin-top:6px}
+.cir-lockrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:14px 0 4px}
+.cir-sel{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.35em .5em;font:400 .95rem var(--font-ui);min-height:36px;max-width:100%}
+.cir-chipbox{margin-top:10px}
+.cir-chips{margin:6px 0 4px}
+.cir-chips .chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.cir-chips .chip:disabled{opacity:.45;cursor:not-allowed}
+.cir-guess{margin-top:6px}
+.cir-guess .numrow{margin-top:4px}
+.cir-how{margin-top:10px}
+
+/* ---------- Part 3 ---------- */
+.cir3-station[hidden]{display:none}
+.cir3-station h3{margin-top:6px}
+.cir3-wrap{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:flex-start}
+.cir3-tblw{flex:0 1 330px;min-width:0;width:100%;max-width:330px}
+.cir3-side{flex:1 1 230px;min-width:0}
+.cir3-tray{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px;min-height:46px}
+.cir3-tk{min-width:46px;height:46px;border-radius:999px;border:2px solid var(--ink);background:var(--sheet);color:var(--ink);font:700 .95rem var(--font-ui);padding:0 10px;cursor:pointer}
+.cir3-tk.tch{background:var(--ev-a-soft)}
+.cir3-tk.stu{background:var(--ev-b-soft)}
+.cir3-tk[aria-pressed="true"]{background:var(--hi);color:var(--hi-ink);border-color:var(--ink);box-shadow:0 0 0 4px var(--hi-soft)}
+.cir3-tk sub{font-size:.68em}
+.cir3-menu{margin:4px 0}
+.cir3-ml{font-size:.92rem}
+.cir3-next{min-height:2.6em;margin:10px 0 0;font-size:.92rem;color:var(--ink-2)}
+.cir3-prod{margin-top:12px}
+.cir3-chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:4px}
+.cir3-f{display:inline-flex;flex-direction:column;align-items:center;border:1px solid var(--rule);border-radius:8px;padding:2px 9px;background:var(--sheet);animation:cirIn .3s ease-out both}
+.cir3-fn{font-size:.78rem;color:var(--ink-2)}
+.cir3-fn sub{font-size:.7em}
+.cir3-fv{font:400 1.3rem/1.1 var(--font-math)}
+.cir3-x{font:400 1.2rem var(--font-math);color:var(--ink-2)}
+.cir3-tot{font:700 1.45rem var(--font-math)}
+
+/* ---------- task ---------- */
+.cir-rmenu{margin:.6em 0 .2em}
+.cir-rules{margin:.2em 0 .7em;padding-left:1.3em}
+.cir-conds{margin:.3em 0 .8em;padding-left:1.4em}
+.cir-tin{margin:10px 0 6px}
+.cir-trow{display:flex;align-items:center;gap:8px;margin:0 0 10px}
+.cir-tb{min-width:40px;font-size:1.1rem}
+.cir-tout{min-width:2ch;text-align:center;font:700 1.35rem var(--font-math)}
+.cir-tpv{text-align:center}
+.cir-tpt.cir-tw{width:min(100%,290px)}
+.cir-tcount{margin:8px 0 2px}
+.cir-big-n{font:700 1.7rem var(--font-math)}

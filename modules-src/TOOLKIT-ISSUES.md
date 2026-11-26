@@ -134,3 +134,5 @@ every module that uses the touched code, then ship them together).
 | V5 derivativePanels (domain-aware), V8 coefficientEntry/pointEntry, slopeDial, exactD | mcv4u 09 | |
 | S4 guard-cell scene, dayGraph, S7 jelly bench, guardCellZoom, revealPrompts | sbi4u 07 | |
 | D3 countingSlots (case rows), D4 arrangementTiles (sliding, block outline, ticked list), gapBuilder | mdm4u 09 | |
+| D4 arrangementTiles circular mode (D4C), seat placer | mdm4u 10 | |
+| upright d in dy/dx (MV.m wrapper — promote to mcv4u.js), implicitTangent, exactSurd, V8 pointBoxes/fracBoxes, N13 stationStepper | mcv4u 13 | |

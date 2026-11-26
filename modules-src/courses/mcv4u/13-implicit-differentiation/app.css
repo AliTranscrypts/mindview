@@ -1,0 +1,72 @@
+/* MCV4U 13: hero equation, Off-function tangents (Explore), Tangents to any curve stations, V8 boxes, task */
+.id-hl{background:var(--hi);color:var(--hi-ink);border-radius:4px;padding:0 .12em}
+.id-arr{color:var(--ink-2);margin:0 .12em}
+.id-hcap{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;font-size:1.05rem}
+.id-hcap [data-st]{transition:opacity .45s ease}
+@media (prefers-reduced-motion:reduce){ .id-hcap [data-st]{transition:none} }
+
+.id-ex{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.id-main,.id-side{min-width:0}
+.id-eq{min-height:1.6em;font-size:1.25rem}
+.id-legend{margin-top:6px}
+.id-leg{margin:6px 0 0}
+.id-leg p{margin:0}
+.id-leg .tiny{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.id-legd{padding-left:36px}
+.id-sw{display:inline-block;width:28px;height:0;border-top:3px solid var(--pen);flex:none}
+.id-sw-bot{border-top:2.6px dashed var(--ink)}
+.id-cvs{margin-bottom:4px}
+.id-cvhow{margin:4px 0 8px}
+.id-sl{margin-top:6px}
+.id-sl output{color:var(--ink)}
+.id-how{margin:4px 0 10px}
+.id-read{margin-top:12px}
+.id-more{display:none;margin-top:6px}
+.id-note{margin:10px 0 0;font-weight:600;color:var(--ink)}
+
+.id-st h3{margin-top:0}
+.id-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.id-stseg{margin:0 0 12px}
+.id-stseg .seg button .m{font-size:1.05em}
+.id-stc[hidden]{display:none}
+.id-steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;min-height:2.6em}
+.id-steps li{display:flex;gap:10px;align-items:baseline;border:1.5px solid var(--rule);border-radius:6px;padding:.45em .75em;background:var(--sheet)}
+.id-steps li.cur{border-color:var(--ink);background:var(--hi-soft)}
+.id-steps .sn{font-weight:700;color:var(--ink-2)}
+.id-steps .m{white-space:normal}
+.id-pl{margin-top:8px}
+.id-gen{margin:12px 0 0;font-weight:600}
+.id-taphow{margin:8px 0 6px}
+.id-pts .chip .m{font-size:1.05em}
+.id-p3read{margin:10px 0 0;min-height:2.6em}
+.id-p3read .m{white-space:normal}
+
+.id-bxs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px}
+.id-bxs label{display:flex;align-items:center;gap:8px;font:400 1.1rem var(--font-math)}
+.id-pts2{display:flex;flex-wrap:wrap;gap:10px 22px;margin:6px 0 4px}
+.id-pt{display:inline-flex;align-items:center;gap:4px;font-size:1.15rem}
+.id-pt > .tiny{margin-right:6px;font-size:.8rem;color:var(--ink-2)}
+.id-pt .numin.short{width:4.6rem}
+
+.it-step{display:flex;align-items:center;gap:8px;margin:8px 0 0;flex-wrap:wrap}
+.it-step label{min-width:7rem}
+.it-lab{font-size:1.2rem}
+.it-step .btn{min-width:40px;font-size:1.1rem}
+.it-step .numin.short{width:5.5rem}
+.it-frs{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:8px}
+.it-fr{display:inline-flex;align-items:center;gap:10px}
+.it-frb{display:inline-flex;flex-direction:column;align-items:stretch;gap:4px}
+.it-frb .numin.short{width:5.5rem;text-align:center}
+.it-bar{display:block;border-top:2px solid var(--ink)}
+
+@media (max-width:820px){
+  .id-ex{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .id-read:not(.id-all) .id-x2{display:none}
+  .id-more{display:inline-flex}
+  .id-pt .numin.short{width:4rem}
+  .it-step label{flex-basis:100%;min-width:0}
+}
+.id-heq{font-size:.82em}
+.id-nw{white-space:nowrap}
