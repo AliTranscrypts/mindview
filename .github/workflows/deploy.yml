@@ -41,13 +41,18 @@ jobs:
           BRANCH: ${{ github.ref_name }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error::Repository secret CLOUDFLARE_API_TOKEN is not set. Create a Cloudflare API token with Account → Cloudflare Pages → Edit, then: gh secret set CLOUDFLARE_API_TOKEN -R AliTranscrypts/mindview"
-            exit 1
+            # Not a failure: until the secret exists, deploys are done by hand with
+            # scripts/ci-deploy.sh. Skipping keeps GitHub from emailing a failure per push.
+            echo "::warning::Deploy skipped: repository secret CLOUDFLARE_API_TOKEN is not set (Account → Cloudflare Pages → Edit token; gh secret set CLOUDFLARE_API_TOKEN -R AliTranscrypts/mindview)."
+            echo "DEPLOYED=no" >> "$GITHUB_ENV"
+            exit 0
           fi
+          python3 scripts/verify-baseline.py >/dev/null
           sh scripts/ci-deploy.sh
+          echo "DEPLOYED=yes" >> "$GITHUB_ENV"
 
       - name: Smoke-test the deployed site
-        if: github.ref_name == 'main'
+        if: github.ref_name == 'main' && env.DEPLOYED == 'yes'
         run: |
           for p in / /admin/login /api/me; do
             code=$(curl -s -o /dev/null -w '%{http_code}' "https://mindview.pages.dev$p")
