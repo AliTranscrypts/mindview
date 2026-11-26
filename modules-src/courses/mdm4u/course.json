@@ -325,8 +325,7 @@
     "18",
     "16"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "20",
@@ -392,7 +391,8 @@
     "21",
     "19",
     "05"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "24",
@@ -409,7 +409,8 @@
     "23",
     "18",
     "19"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "25",
@@ -422,7 +423,8 @@
    "part3": "measurement",
    "prereqs": [
     "18"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "26",
@@ -436,7 +438,8 @@
    "prereqs": [
     "25",
     "20"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "27",
@@ -449,7 +452,8 @@
    "part3": "percentiles",
    "prereqs": [
     "26"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "28",
@@ -463,7 +467,8 @@
    "prereqs": [
     "21",
     "27"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "29",
@@ -477,7 +482,8 @@
    "prereqs": [
     "16",
     "27"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "30",
@@ -490,7 +496,8 @@
    "part3": "media",
    "prereqs": [
     "29"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "31",
@@ -503,7 +510,8 @@
    "part3": "which-centre",
    "prereqs": [
     "29"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "32",
@@ -517,7 +525,8 @@
    "prereqs": [
     "31",
     "29"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "33",
@@ -532,7 +541,8 @@
     "31",
     "32",
     "29"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "34",
@@ -545,7 +555,8 @@
    "part3": "stories",
    "prereqs": [
     "31"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "35",
@@ -560,7 +571,8 @@
     "34",
     "32",
     "27"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "36",
@@ -574,7 +586,8 @@
    "prereqs": [
     "35",
     "31"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "37",
@@ -588,7 +601,8 @@
    "prereqs": [
     "36",
     "35"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "38",
@@ -603,7 +617,8 @@
     "35",
     "37",
     "29"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "39",
@@ -622,7 +637,8 @@
     "33",
     "34",
     "37"
-   ]
+   ],
+   "status": "building"
   }
  ]
 }

@@ -1,434 +1,444 @@
 {
- "course": "eng4u",
- "site": "eng4u",
- "code": "ENG4U",
- "title": "English",
- "groupLabel": "Unit",
- "groups": [
-  {
-   "id": "1",
-   "label": "Unit 1",
-   "name": "The Reader's and Writer's Craft"
-  },
-  {
-   "id": "2",
-   "label": "Unit 2",
-   "name": "Shakespearean Tragedy, Hamlet"
-  },
-  {
-   "id": "3",
-   "label": "Unit 3",
-   "name": "Canadian Literature"
-  },
-  {
-   "id": "4",
-   "label": "Unit 4",
-   "name": "Independent Study Unit (ISU)"
-  },
-  {
-   "id": "5",
-   "label": "Unit 5",
-   "name": "Media Studies"
-  }
- ],
- "modules": [
-  {
-   "nn": "01",
-   "slug": "literary-devices",
-   "title": "Literary Devices & Figurative Language",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 1,
-   "size": "M",
-   "part3": "make",
-   "prereqs": [],
-   "trivium": "Grammar, Rhetoric",
-   "status": "live"
-  },
-  {
-   "nn": "02",
-   "slug": "close-reading-short-fiction",
-   "title": "Close Reading of Short Fiction",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 1,
-   "size": "L",
-   "part3": "reread",
-   "prereqs": [
-    "01"
-   ],
-   "trivium": "Logic",
-   "status": "live"
-  },
-  {
-   "nn": "03",
-   "slug": "reading-poetry",
-   "title": "Reading Poetry",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 1,
-   "size": "L",
-   "part3": "form",
-   "prereqs": [
-    "01"
-   ],
-   "trivium": "Grammar, Rhetoric",
-   "status": "live"
-  },
-  {
-   "nn": "04",
-   "slug": "paraphrase-to-analysis",
-   "title": "From Paraphrase to Analysis",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 1,
-   "size": "M",
-   "part3": "upgrade",
-   "prereqs": [
-    "01",
-    "03"
-   ],
-   "trivium": "Logic",
-   "status": "live"
-  },
-  {
-   "nn": "05",
-   "slug": "writing-process",
-   "title": "The Writing Process",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 2,
-   "size": "M",
-   "part3": "revision",
-   "prereqs": [
-    "04",
-    "01",
-    "02"
-   ],
-   "trivium": "Logic, Rhetoric",
-   "status": "live"
-  },
-  {
-   "nn": "06",
-   "slug": "essay-forms",
-   "title": "Essay Forms",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 2,
-   "size": "M",
-   "part3": "four-forms",
-   "prereqs": [
-    "04",
-    "05"
-   ],
-   "trivium": "Logic, Rhetoric",
-   "status": "live"
-  },
-  {
-   "nn": "07",
-   "slug": "conventions-and-citation",
-   "title": "Conventions & Citation",
-   "kind": "topic",
-   "group": "1",
-   "siteChapter": 2,
-   "size": "M",
-   "part3": "punctuation",
-   "prereqs": [
-    "05",
-    "04",
-    "02"
-   ],
-   "trivium": "Grammar",
-   "status": "live"
-  },
-  {
-   "nn": "08",
-   "slug": "elizabethan-context",
-   "title": "Elizabethan Context",
-   "kind": "topic",
-   "group": "2",
-   "siteChapter": 3,
-   "size": "S",
-   "part3": "then-now",
-   "prereqs": [
-    "01",
-    "02",
-    "07"
-   ],
-   "trivium": "Logic",
-   "status": "live"
-  },
-  {
-   "nn": "09",
-   "slug": "tragic-hero",
-   "title": "The Tragic Hero & Aristotelian Form",
-   "kind": "topic",
-   "group": "2",
-   "siteChapter": 3,
-   "size": "M",
-   "part3": "flaw",
-   "prereqs": [
-    "08",
-    "04",
-    "07"
-   ],
-   "trivium": "Logic",
-   "status": "live"
-  },
-  {
-   "nn": "10",
-   "slug": "soliloquy-and-character",
-   "title": "Soliloquy & Character",
-   "kind": "topic",
-   "group": "2",
-   "siteChapter": 3,
-   "size": "L",
-   "part3": "write",
-   "prereqs": [
-    "03",
-    "08",
-    "09"
-   ],
-   "trivium": "Grammar, Rhetoric",
-   "status": "live"
-  },
-  {
-   "nn": "11",
-   "slug": "themes-and-motifs",
-   "title": "Themes & Motifs",
-   "kind": "topic",
-   "group": "2",
-   "siteChapter": 3,
-   "size": "M",
-   "part3": "statement",
-   "prereqs": [
-    "04",
-    "07",
-    "08",
-    "09",
-    "10"
-   ],
-   "trivium": "Logic",
-   "status": "live"
-  },
-  {
-   "nn": "12",
-   "slug": "performance-and-adaptation",
-   "title": "Performance & Adaptation",
-   "kind": "topic",
-   "group": "2",
-   "siteChapter": 3,
-   "size": "M",
-   "part3": "adaptation",
-   "prereqs": [
-    "08",
-    "09",
-    "10",
-    "11"
-   ],
-   "trivium": "Rhetoric",
-   "status": "building"
-  },
-  {
-   "nn": "13",
-   "slug": "what-is-canlit",
-   "title": "What is \"Canadian Literature\"?",
-   "kind": "topic",
-   "group": "3",
-   "siteChapter": 4,
-   "size": "M",
-   "part3": "thesis",
-   "prereqs": [
-    "01",
-    "02",
-    "03",
-    "04"
-   ],
-   "trivium": "Logic",
-   "status": "building"
-  },
-  {
-   "nn": "14",
-   "slug": "munro-short-story",
-   "title": "Alice Munro & the Canadian Short Story",
-   "kind": "topic",
-   "group": "3",
-   "siteChapter": 4,
-   "size": "L",
-   "part3": "tradition",
-   "prereqs": [
-    "02",
-    "04",
-    "07",
-    "13"
-   ],
-   "trivium": "Logic, Rhetoric",
-   "status": "building"
-  },
-  {
-   "nn": "15",
-   "slug": "indigenous-voices",
-   "title": "Indigenous Voices & Thomas King",
-   "kind": "topic",
-   "group": "3",
-   "siteChapter": 4,
-   "size": "L",
-   "part3": "responsibly",
-   "prereqs": [
-    "02",
-    "03",
-    "13",
-    "14"
-   ],
-   "trivium": "Rhetoric, Logic"
-  },
-  {
-   "nn": "16",
-   "slug": "atwood-speculative",
-   "title": "Atwood and Speculative Canada",
-   "kind": "topic",
-   "group": "3",
-   "siteChapter": 4,
-   "size": "M",
-   "part3": "language",
-   "prereqs": [
-    "04",
-    "11",
-    "13"
-   ],
-   "trivium": "Logic"
-  },
-  {
-   "nn": "17",
-   "slug": "choosing-a-novel",
-   "title": "Choosing a Novel of Literary Merit",
-   "kind": "topic",
-   "group": "4",
-   "siteChapter": 5,
-   "size": "S",
-   "part3": "proposal",
-   "prereqs": [
-    "02",
-    "04",
-    "11"
-   ],
-   "trivium": "Logic"
-  },
-  {
-   "nn": "18",
-   "slug": "research-and-sources",
-   "title": "Research & Secondary Sources",
-   "kind": "topic",
-   "group": "4",
-   "siteChapter": 5,
-   "size": "M",
-   "part3": "critics",
-   "prereqs": [
-    "07",
-    "17"
-   ],
-   "trivium": "Logic"
-  },
-  {
-   "nn": "19",
-   "slug": "sustained-essay",
-   "title": "The Sustained Literary-Analysis Essay",
-   "kind": "topic",
-   "group": "4",
-   "siteChapter": 5,
-   "size": "L",
-   "part3": "line",
-   "prereqs": [
-    "04",
-    "06",
-    "07",
-    "11",
-    "17",
-    "18"
-   ],
-   "trivium": "Logic, Rhetoric"
-  },
-  {
-   "nn": "20",
-   "slug": "isu-oral-defence",
-   "title": "ISU Oral Defence",
-   "kind": "topic",
-   "group": "4",
-   "siteChapter": 5,
-   "size": "M",
-   "part3": "hard-question",
-   "prereqs": [
-    "19",
-    "18",
-    "17",
-    "12"
-   ],
-   "trivium": "Rhetoric"
-  },
-  {
-   "nn": "21",
-   "slug": "media-forms",
-   "title": "Media Forms & Conventions",
-   "kind": "topic",
-   "group": "5",
-   "siteChapter": 6,
-   "size": "M",
-   "part3": "forms",
-   "prereqs": [
-    "01",
-    "04",
-    "07"
-   ],
-   "trivium": "Rhetoric"
-  },
-  {
-   "nn": "22",
-   "slug": "news-and-bias",
-   "title": "News, Bias & Source Evaluation",
-   "kind": "topic",
-   "group": "5",
-   "siteChapter": 6,
-   "size": "M",
-   "part3": "check",
-   "prereqs": [
-    "21",
-    "04",
-    "18"
-   ],
-   "trivium": "Logic"
-  },
-  {
-   "nn": "23",
-   "slug": "advertising-and-social-media",
-   "title": "Advertising & Social Media Rhetoric",
-   "kind": "topic",
-   "group": "5",
-   "siteChapter": 6,
-   "size": "M",
-   "part3": "disclosure",
-   "prereqs": [
-    "21",
-    "22",
-    "01"
-   ],
-   "trivium": "Rhetoric"
-  },
-  {
-   "nn": "24",
-   "slug": "creating-media",
-   "title": "Creating an Original Media Text",
-   "kind": "topic",
-   "group": "5",
-   "siteChapter": 6,
-   "size": "L",
-   "part3": "test",
-   "prereqs": [
-    "21",
-    "22",
-    "23",
-    "05"
-   ],
-   "trivium": "Rhetoric"
-  }
- ]
+  "course": "eng4u",
+  "site": "eng4u",
+  "code": "ENG4U",
+  "title": "English",
+  "groupLabel": "Unit",
+  "groups": [
+    {
+      "id": "1",
+      "label": "Unit 1",
+      "name": "The Reader's and Writer's Craft"
+    },
+    {
+      "id": "2",
+      "label": "Unit 2",
+      "name": "Shakespearean Tragedy, Hamlet"
+    },
+    {
+      "id": "3",
+      "label": "Unit 3",
+      "name": "Canadian Literature"
+    },
+    {
+      "id": "4",
+      "label": "Unit 4",
+      "name": "Independent Study Unit (ISU)"
+    },
+    {
+      "id": "5",
+      "label": "Unit 5",
+      "name": "Media Studies"
+    }
+  ],
+  "modules": [
+    {
+      "nn": "01",
+      "slug": "literary-devices",
+      "title": "Literary Devices & Figurative Language",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 1,
+      "size": "M",
+      "part3": "make",
+      "prereqs": [],
+      "trivium": "Grammar, Rhetoric",
+      "status": "live"
+    },
+    {
+      "nn": "02",
+      "slug": "close-reading-short-fiction",
+      "title": "Close Reading of Short Fiction",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 1,
+      "size": "L",
+      "part3": "reread",
+      "prereqs": [
+        "01"
+      ],
+      "trivium": "Logic",
+      "status": "live"
+    },
+    {
+      "nn": "03",
+      "slug": "reading-poetry",
+      "title": "Reading Poetry",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 1,
+      "size": "L",
+      "part3": "form",
+      "prereqs": [
+        "01"
+      ],
+      "trivium": "Grammar, Rhetoric",
+      "status": "live"
+    },
+    {
+      "nn": "04",
+      "slug": "paraphrase-to-analysis",
+      "title": "From Paraphrase to Analysis",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 1,
+      "size": "M",
+      "part3": "upgrade",
+      "prereqs": [
+        "01",
+        "03"
+      ],
+      "trivium": "Logic",
+      "status": "live"
+    },
+    {
+      "nn": "05",
+      "slug": "writing-process",
+      "title": "The Writing Process",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 2,
+      "size": "M",
+      "part3": "revision",
+      "prereqs": [
+        "04",
+        "01",
+        "02"
+      ],
+      "trivium": "Logic, Rhetoric",
+      "status": "live"
+    },
+    {
+      "nn": "06",
+      "slug": "essay-forms",
+      "title": "Essay Forms",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 2,
+      "size": "M",
+      "part3": "four-forms",
+      "prereqs": [
+        "04",
+        "05"
+      ],
+      "trivium": "Logic, Rhetoric",
+      "status": "live"
+    },
+    {
+      "nn": "07",
+      "slug": "conventions-and-citation",
+      "title": "Conventions & Citation",
+      "kind": "topic",
+      "group": "1",
+      "siteChapter": 2,
+      "size": "M",
+      "part3": "punctuation",
+      "prereqs": [
+        "05",
+        "04",
+        "02"
+      ],
+      "trivium": "Grammar",
+      "status": "live"
+    },
+    {
+      "nn": "08",
+      "slug": "elizabethan-context",
+      "title": "Elizabethan Context",
+      "kind": "topic",
+      "group": "2",
+      "siteChapter": 3,
+      "size": "S",
+      "part3": "then-now",
+      "prereqs": [
+        "01",
+        "02",
+        "07"
+      ],
+      "trivium": "Logic",
+      "status": "live"
+    },
+    {
+      "nn": "09",
+      "slug": "tragic-hero",
+      "title": "The Tragic Hero & Aristotelian Form",
+      "kind": "topic",
+      "group": "2",
+      "siteChapter": 3,
+      "size": "M",
+      "part3": "flaw",
+      "prereqs": [
+        "08",
+        "04",
+        "07"
+      ],
+      "trivium": "Logic",
+      "status": "live"
+    },
+    {
+      "nn": "10",
+      "slug": "soliloquy-and-character",
+      "title": "Soliloquy & Character",
+      "kind": "topic",
+      "group": "2",
+      "siteChapter": 3,
+      "size": "L",
+      "part3": "write",
+      "prereqs": [
+        "03",
+        "08",
+        "09"
+      ],
+      "trivium": "Grammar, Rhetoric",
+      "status": "live"
+    },
+    {
+      "nn": "11",
+      "slug": "themes-and-motifs",
+      "title": "Themes & Motifs",
+      "kind": "topic",
+      "group": "2",
+      "siteChapter": 3,
+      "size": "M",
+      "part3": "statement",
+      "prereqs": [
+        "04",
+        "07",
+        "08",
+        "09",
+        "10"
+      ],
+      "trivium": "Logic",
+      "status": "live"
+    },
+    {
+      "nn": "12",
+      "slug": "performance-and-adaptation",
+      "title": "Performance & Adaptation",
+      "kind": "topic",
+      "group": "2",
+      "siteChapter": 3,
+      "size": "M",
+      "part3": "adaptation",
+      "prereqs": [
+        "08",
+        "09",
+        "10",
+        "11"
+      ],
+      "trivium": "Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "13",
+      "slug": "what-is-canlit",
+      "title": "What is \"Canadian Literature\"?",
+      "kind": "topic",
+      "group": "3",
+      "siteChapter": 4,
+      "size": "M",
+      "part3": "thesis",
+      "prereqs": [
+        "01",
+        "02",
+        "03",
+        "04"
+      ],
+      "trivium": "Logic",
+      "status": "building"
+    },
+    {
+      "nn": "14",
+      "slug": "munro-short-story",
+      "title": "Alice Munro & the Canadian Short Story",
+      "kind": "topic",
+      "group": "3",
+      "siteChapter": 4,
+      "size": "L",
+      "part3": "tradition",
+      "prereqs": [
+        "02",
+        "04",
+        "07",
+        "13"
+      ],
+      "trivium": "Logic, Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "15",
+      "slug": "indigenous-voices",
+      "title": "Indigenous Voices & Thomas King",
+      "kind": "topic",
+      "group": "3",
+      "siteChapter": 4,
+      "size": "L",
+      "part3": "responsibly",
+      "prereqs": [
+        "02",
+        "03",
+        "13",
+        "14"
+      ],
+      "trivium": "Rhetoric, Logic",
+      "status": "building"
+    },
+    {
+      "nn": "16",
+      "slug": "atwood-speculative",
+      "title": "Atwood and Speculative Canada",
+      "kind": "topic",
+      "group": "3",
+      "siteChapter": 4,
+      "size": "M",
+      "part3": "language",
+      "prereqs": [
+        "04",
+        "11",
+        "13"
+      ],
+      "trivium": "Logic",
+      "status": "building"
+    },
+    {
+      "nn": "17",
+      "slug": "choosing-a-novel",
+      "title": "Choosing a Novel of Literary Merit",
+      "kind": "topic",
+      "group": "4",
+      "siteChapter": 5,
+      "size": "S",
+      "part3": "proposal",
+      "prereqs": [
+        "02",
+        "04",
+        "11"
+      ],
+      "trivium": "Logic",
+      "status": "building"
+    },
+    {
+      "nn": "18",
+      "slug": "research-and-sources",
+      "title": "Research & Secondary Sources",
+      "kind": "topic",
+      "group": "4",
+      "siteChapter": 5,
+      "size": "M",
+      "part3": "critics",
+      "prereqs": [
+        "07",
+        "17"
+      ],
+      "trivium": "Logic",
+      "status": "building"
+    },
+    {
+      "nn": "19",
+      "slug": "sustained-essay",
+      "title": "The Sustained Literary-Analysis Essay",
+      "kind": "topic",
+      "group": "4",
+      "siteChapter": 5,
+      "size": "L",
+      "part3": "line",
+      "prereqs": [
+        "04",
+        "06",
+        "07",
+        "11",
+        "17",
+        "18"
+      ],
+      "trivium": "Logic, Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "20",
+      "slug": "isu-oral-defence",
+      "title": "ISU Oral Defence",
+      "kind": "topic",
+      "group": "4",
+      "siteChapter": 5,
+      "size": "M",
+      "part3": "hard-question",
+      "prereqs": [
+        "19",
+        "18",
+        "17",
+        "12"
+      ],
+      "trivium": "Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "21",
+      "slug": "media-forms",
+      "title": "Media Forms & Conventions",
+      "kind": "topic",
+      "group": "5",
+      "siteChapter": 6,
+      "size": "M",
+      "part3": "forms",
+      "prereqs": [
+        "01",
+        "04",
+        "07"
+      ],
+      "trivium": "Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "22",
+      "slug": "news-and-bias",
+      "title": "News, Bias & Source Evaluation",
+      "kind": "topic",
+      "group": "5",
+      "siteChapter": 6,
+      "size": "M",
+      "part3": "check",
+      "prereqs": [
+        "21",
+        "04",
+        "18"
+      ],
+      "trivium": "Logic",
+      "status": "building"
+    },
+    {
+      "nn": "23",
+      "slug": "advertising-and-social-media",
+      "title": "Advertising & Social Media Rhetoric",
+      "kind": "topic",
+      "group": "5",
+      "siteChapter": 6,
+      "size": "M",
+      "part3": "disclosure",
+      "prereqs": [
+        "21",
+        "22",
+        "01"
+      ],
+      "trivium": "Rhetoric",
+      "status": "building"
+    },
+    {
+      "nn": "24",
+      "slug": "creating-media",
+      "title": "Creating an Original Media Text",
+      "kind": "topic",
+      "group": "5",
+      "siteChapter": 6,
+      "size": "L",
+      "part3": "test",
+      "prereqs": [
+        "21",
+        "22",
+        "23",
+        "05"
+      ],
+      "trivium": "Rhetoric",
+      "status": "building"
+    }
+  ]
 }
