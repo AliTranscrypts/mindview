@@ -9,8 +9,10 @@ REPO=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$REPO"
 Q="modules-src/.artifacts/ship-queue.txt"
 [ -s "$Q" ] || { echo "Queue empty."; exit 0; }
-TARGETS=$(sort -u "$Q" | tr '\n' ' ')
-: > "$Q"
+mv "$Q" "$Q.taking"
+TARGETS=$(grep -E '^[a-z0-9]+:[0-9]+$' "$Q.taking" | sort -u | tr '\n' ' ')
+rm -f "$Q.taking"
+[ -n "$TARGETS" ] || { echo "Queue empty."; exit 0; }
 SUBJECT=$(python3 - $TARGETS <<'EOF'
 import json, sys
 parts = []

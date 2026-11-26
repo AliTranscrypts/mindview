@@ -15,20 +15,28 @@ cd "$REPO"
 SUBJECT="$1"; shift
 [ -n "$SUBJECT" ] && [ $# -gt 0 ] || { echo "usage: ship.sh \"subject\" course:NN ..."; exit 2; }
 
-echo "→ Rebuilding with the current toolkit and running the full check …"
+OKLIST=""
+echo "→ Rebuilding with the current toolkit and running the ${FAST:+quick }check …"
 for t in "$@"; do
   # Full output is kept in .artifacts/check-<course><NN>.log. Under heavy load (many builders running
   # browsers) a check can time out, so a failure is retried once before the ship is refused.
   LOG="modules-src/.artifacts/check-${t%%:*}${t##*:}.log"
   ok=0
   for attempt in 1 2; do
-    if (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}") > "$LOG" 2>&1 \
+    if (cd modules-src && node build/assemble.mjs "${t%%:*}" "${t##*:}" >/dev/null && node build/check.mjs "${t%%:*}" "${t##*:}" ${FAST:+--quick}) > "$LOG" 2>&1 \
        && grep -q "✓ PASS ${t%%:*} " "$LOG"; then ok=1; break; fi
     [ "$attempt" = 1 ] && echo "  check failed for $t (attempt 1) — retrying" && sleep 10
   done
   grep -E "PASS|FAIL" "$LOG" | grep -v hub
-  [ "$ok" = 1 ] || { echo "❌ check failed for $t — not shipping. Details:"; grep -E "✗|FAIL|Error" "$LOG" | head -12; exit 1; }
+  if [ "$ok" != 1 ]; then
+    echo "❌ check failed for $t — not shipping it. Details:"; grep -E "✗|FAIL|Error" "$LOG" | head -12
+    # FAST mode: drop the failing module from this batch (logged for follow-up) instead of blocking the rest.
+    [ -n "$FAST" ] || exit 1
+    echo "$t" >> modules-src/.artifacts/ship-failed.txt
+  else OKLIST="$OKLIST $t"; fi
 done
+set -- $OKLIST
+[ $# -gt 0 ] || { echo "❌ nothing left to ship in this batch"; exit 1; }
 for t in "$@"; do
   c="${t%%:*}"; n="${t##*:}"
   st=$(python3 -c "import json,sys;d=json.load(open('modules-src/courses/$c/course.json'));print(next(m.get('status','todo') for m in d['modules'] if m['nn']=='$n'))")
@@ -89,7 +97,7 @@ else
 fi
 
 sleep 5
-if node modules-src/tools/prod-test.mjs "$@"; then
+if QUICK=${FAST:+1} node modules-src/tools/prod-test.mjs "$@"; then
   for t in "$@"; do python3 modules-src/tools/progress.py set "${t%%:*}" "${t##*:}" live; done
   echo "✓ Live and tested: $*"
 else

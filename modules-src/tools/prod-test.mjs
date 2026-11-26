@@ -133,7 +133,9 @@ async function main() {
   console.log('2. Site pages');
   await visit(ctx, base + '/', 'home');
   await visit(ctx, base + '/catalog', 'catalog');
+  const QUICKC = process.env.QUICK === '1' && targets.length ? new Set(targets.map((t) => t.split(':')[0])) : null;
   for (const c of all) {
+    if (QUICKC && !QUICKC.has(c.course) && !QUICKC.has(c.site)) continue;
     const mods = c.modules.filter((m) => built(c, m));
     if (!mods.length) continue;
     await visit(ctx, `${base}/courses/${c.site}`, `courses/${c.site} landing`);

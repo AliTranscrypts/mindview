@@ -6,13 +6,13 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 158/295 live, 1 built, 22 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 159/295 live, 1 built, 21 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 26/59 | 1 | 32 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 0 | 21 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 27/59 | 0 | 32 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 18/39 | 1 | 20 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 0 | 35 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 18/46 | 0 | 28 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 18/25 | 0 | 7 | 0 |
@@ -99,7 +99,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
 - ✓ 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
 - ✓ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
-- ◐ 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
+- ✓ 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
 - … 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
 - … 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
 - … 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
@@ -153,7 +153,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 16 Theoretical & Empirical Probability (`theoretical-empirical`, topic, site ch4)
 - ✓ 17 Conditional Probability (`conditional-probability`, topic, site ch4)
 - ✓ 18 Discrete Random Variables & Probability Distributions (`discrete-random-variables`, topic, site ch4)
-- … 19 Expected Value (`expected-value`, topic, site ch4)
+- ◐ 19 Expected Value (`expected-value`, topic, site ch4)
 - … 20 Variance & Standard Deviation of Discrete Random Variables (`variance-discrete`, topic, site ch4)
 - … 21 The Binomial Distribution (`binomial-distribution`, topic, site ch5)
 - … 22 The Geometric Distribution (`geometric-distribution`, topic, site ch5)

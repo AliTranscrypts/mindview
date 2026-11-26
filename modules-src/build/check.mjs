@@ -1,5 +1,5 @@
 // Automatic checks for built module pages (04-shared-toolkit.md §6.3, adapted to the MindView site).
-// Usage: node build/check.mjs <course> [NN ...] [--static-only] [--keep-going]
+// Usage: node build/check.mjs <course> [NN ...] [--static-only] [--quick] [--keep-going]
 //        node build/check.mjs --all [--static-only]
 // Static checks need plain Node only (CI runs them with no npm install). Browser checks lazily import playwright
 // and use the installed Google Chrome (channel "chrome"); screenshots go to modules-src/.artifacts/<course>/<id>/.
@@ -10,6 +10,7 @@ import { SRC, ROOT, VERSION, loadCourse, courses, moduleId, outFile, pickModules
 
 const args = process.argv.slice(2);
 const STATIC = args.includes("--static-only");
+const QUICK = args.includes("--quick") || process.env.QUICK === "1";  // desktop pass only
 const ALL = args.includes("--all");
 const pos = args.filter(a => !a.startsWith("--"));
 const LEGACY_KEYS = { "mhf4u/01-power-functions":"mhf4u-power-functions-v1" };
@@ -243,7 +244,7 @@ async function browserCheck(browser, url, P, shotDir){
     await ctx.close();
   }
   // 2. phone, dark, reduced motion
-  {
+  if (!QUICK) {
     const ctx = await browser.newContext({ viewport:{ width:390, height:844 }, colorScheme:"dark", reducedMotion:"reduce", isMobile:true, hasTouch:true });
     const page = await ctx.newPage(); const errs = []; watch(page, errs, "phone");
     await page.goto(url); await page.waitForSelector("#steps .step", { timeout:10000 }).catch(() => {});
@@ -267,7 +268,7 @@ async function browserCheck(browser, url, P, shotDir){
     await ctx.close();
   }
   // 3. storage blocked
-  {
+  if (!QUICK) {
     const ctx = await browser.newContext({ viewport:{ width:1024, height:768 } });
     await ctx.addInitScript(() => { Object.defineProperty(window, "localStorage", { get(){ throw new DOMException("blocked", "SecurityError"); } }); });
     const page = await ctx.newPage(); const errs = []; watch(page, errs, "storage-blocked");

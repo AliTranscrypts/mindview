@@ -1,0 +1,112 @@
+/* MDM4U 19: Balance point (D7 seesaw, game designer, long run), Is it worth it? stations, moneyEntry, Design a fair game.
+   Histogram bars --pen; beam and fulcrum --ink; markers --ink-2; running average --pen (course plan §3). */
+/* radioGroup (from MDM4U 18) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* switch (from MDM4U 18) */
+.xv-sw.cc-switch{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);font:700 .92rem var(--font-ui);padding:4px 0;min-height:36px;text-align:left}
+.xv-sw .cc-track{position:relative;flex:none;width:40px;height:22px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.xv-sw .cc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.xv-sw[aria-checked="true"] .cc-track{background:var(--pen);border-color:var(--pen)}
+.xv-sw[aria-checked="true"] .cc-knob{left:19px;border-color:var(--pen)}
+@media (prefers-reduced-motion:reduce){.xv-sw .cc-track,.xv-sw .cc-knob{transition:none}}
+
+/* Balance point */
+.xv-top{margin-bottom:4px}
+canvas.plot.xv-plot{aspect-ratio:16/10}
+canvas.plot.xv-lrplot{aspect-ratio:16/9}
+.xv-cap{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+.xv-show{display:flex;flex-wrap:wrap;gap:2px 18px;margin:6px 0 0}
+.xv-lrbox{margin-top:10px}
+.xv-aha{margin:12px 0 0;font-size:.95rem}
+.xv-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.xv-sh{margin:0 0 8px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.xv-sh2{margin-top:12px}
+.xv-how{margin:8px 0 0}
+.xv-msg{min-height:1.2em;margin:6px 0 0}
+.xv-brows{display:grid;gap:6px}
+.xv-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;padding:4px 0;border-bottom:1px solid var(--rule)}
+.xv-rl{font-weight:700;font-size:.88rem;color:var(--ink-2);margin-left:4px}
+.xv-stb{min-width:38px;min-height:36px;padding:0 .5em}
+.xv-ov{min-width:2.4em;text-align:center;font:700 1.08rem var(--font-math)}
+.xv-op{min-width:3.6em}
+.xv-lock{min-height:36px;margin-left:auto}
+.xv-lock[aria-pressed="true"]{background:var(--ink);color:var(--sheet);border-color:var(--ink)}
+.xv-cost{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0 0}
+.xv-cl{font-weight:700;min-width:6.6em}
+.xv-dol{font-weight:700}
+.xv-in{width:5.6rem}
+.xv-prizes{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px 14px}
+.xv-prize{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.xv-prize label{display:flex;flex-direction:column;gap:2px}
+.xv-pl{font-size:.88rem;font-weight:700}
+.xv-pin{display:inline-flex;align-items:center;gap:4px}
+.xv-pbtn{display:inline-flex;gap:4px;align-self:flex-end}
+.xv-q{display:inline-block;min-width:1.6em;padding:0 .3em;border:1.5px dashed var(--ink-2);border-radius:4px;text-align:center;font-weight:700}
+.xv-ex{margin-left:6px;min-height:30px;padding:0 .6em;font-size:.8rem}
+.xv-ex[aria-pressed="true"]{background:var(--hi-soft)}
+.xv-verdict{display:inline-block;border:1.5px solid var(--ink);border-radius:999px;padding:.05em .7em;font-weight:700;font-size:.92rem}
+.xv-v0{background:var(--good-bg)}
+.xv-vh,.xv-vp{background:var(--info-bg)}
+.xv-tbl{margin-top:12px}
+.xv-nw{white-space:nowrap}
+.xv-tbl-m{display:none}
+.xv-conds{margin:6px 0 0;padding-left:1.3em}
+.xv-conds li{margin:2px 0}
+
+/* Is it worth it? */
+.wi-tabs{margin-bottom:6px}
+.wi-card0{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.wi-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.wi-text{margin:0 0 10px}
+.wi-item{margin:0 0 10px}
+.wi-item .numrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.wi-after{margin:10px 0;font-weight:600}
+.wi-sl{display:block;max-width:420px;margin:6px 0 10px}
+canvas.plot.wi-plot{aspect-ratio:16/9;max-width:560px}
+.wi-card{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px}
+.wi-quote{margin:0 0 8px;font-weight:600}
+.wi-bins{display:flex;flex-wrap:wrap;gap:8px}
+.wi-bin{min-height:38px}
+.wi-bin[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.xv-tick{font-weight:700}
+
+/* moneyEntry */
+.xv-pick{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:4px 0 8px}
+.xv-pk{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.92rem;min-height:36px}
+.xv-pk[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.xv-pk:disabled{opacity:.6}
+
+/* Design a fair game */
+.fg-in{margin:10px 0}
+.fg-in .rg-lab{min-width:7.4em}
+.fg-row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start}
+.fg-spin{flex:0 0 150px}
+.fg-tbl{flex:1 1 240px;min-width:0}
+.xv-spin{display:block;width:150px;height:150px}
+.xv-sec{stroke:var(--sheet);stroke-width:2}
+.xv-sec0,.xv-sec2{fill:var(--ev-a-soft)}
+.xv-sec1,.xv-sec3{fill:var(--ev-b-soft)}
+.xv-st{fill:var(--ink);font:700 19px var(--font-ui);text-anchor:middle;dominant-baseline:central}
+.xv-rim{fill:none;stroke:var(--ink);stroke-width:2}
+.xv-hub{fill:var(--ink)}
+
+@media (max-width:560px){
+  .xv-tbl-m{display:block}
+  .xv-tbl-d{display:none}
+  canvas.plot.xv-plot,canvas.plot.xv-lrplot,canvas.plot.wi-plot{aspect-ratio:4/3}
+  .xv-cl{flex-basis:100%}
+  .xv-prizes{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .xv-in{width:4.6rem}
+  .xv-lock{margin-left:0}
+}
