@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 52/295 live, 2 built, 4 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 54/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
-| MHF4U (mhf4u) | courses/mhf4u/modules/ | 49/50 | 0 | 1 | 0 |
+| MHF4U (mhf4u) | courses/mhf4u/modules/ | 49/50 | 1 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 1/59 | 0 | 58 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 1/39 | 0 | 38 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 0/52 | 1 | 51 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 1/52 | 0 | 51 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 1/46 | 0 | 45 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 0/25 | 1 | 24 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 1/25 | 0 | 24 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 0/24 | 0 | 24 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -69,13 +69,13 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 47 Products and Quotients of Functions (`products-and-quotients-of-functions`, topic, site ch8)
 - ✓ 48 Composite Functions (`composite-functions`, topic, site ch8)
 - ✓ 49 Modelling with Combined Functions (`modelling-with-combined-functions`, topic, site ch8)
-- … 50 Chapter 8 Summary & Review (`chapter-8-review`, review, site ch8)
+- ◐ 50 Chapter 8 Summary & Review (`chapter-8-review`, review, site ch8)
 
 ## MCV4U Calculus and Vectors (`mcv4u`)
 
 - ✓ 01 Rationalizing Radical Expressions (`rationalizing-radical-expressions`, topic, site ch1)
 - … 02 Slope of a Tangent to a Curve (`slope-of-a-tangent`, topic, site ch1)
-- · 03 Rates of Change (`rates-of-change`, topic, site ch1)
+- … 03 Rates of Change (`rates-of-change`, topic, site ch1)
 - · 04 The Limit of a Function (`the-limit-of-a-function`, topic, site ch1)
 - · 05 Properties of Limits (`properties-of-limits`, topic, site ch1)
 - · 06 Continuity (`continuity`, topic, site ch1)
@@ -177,8 +177,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## SCH4U Chemistry (`sch4u`)
 
-- ◐ 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
-- · 02 Alkenes, Alkynes and Aromatics (`alkenes-alkynes-aromatics`, topic, site ch1)
+- ✓ 01 Alkanes, Cycloalkanes and Alkyl Halides (`alkanes-cycloalkanes-alkyl-halides`, topic, site ch1)
+- … 02 Alkenes, Alkynes and Aromatics (`alkenes-alkynes-aromatics`, topic, site ch1)
 - · 03 Alcohols and Ethers (`alcohols-and-ethers`, topic, site ch1)
 - · 04 Aldehydes and Ketones (`aldehydes-and-ketones`, topic, site ch1)
 - · 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
@@ -281,8 +281,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## HFA4M Nutrition and Health (`hfa4u`)
 
-- ◐ 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
-- · 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
+- ✓ 01 Factors Influencing Food Choices (`food-choices`, topic, site ch1)
+- … 02 Macronutrients: Carbohydrates, Lipids, Proteins (`macronutrients`, topic, site ch1)
 - · 03 Micronutrients: Vitamins, Minerals, Water (`micronutrients`, topic, site ch1)
 - · 04 Digestion, Absorption & Metabolism (`digestion-metabolism`, topic, site ch1)
 - · 05 Canada's Food Guide, DRIs & Energy Balance (`food-guide-dri-energy`, topic, site ch1)
@@ -309,7 +309,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
 ## ENG4U English (`eng4u`)
 
-- · 01 Literary Devices & Figurative Language (`literary-devices`, topic, site ch1)
+- … 01 Literary Devices & Figurative Language (`literary-devices`, topic, site ch1)
 - · 02 Close Reading of Short Fiction (`close-reading-short-fiction`, topic, site ch1)
 - · 03 Reading Poetry (`reading-poetry`, topic, site ch1)
 - · 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)

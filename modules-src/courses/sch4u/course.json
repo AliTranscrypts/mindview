@@ -42,8 +42,7 @@
    "size": "L",
    "part3": "reactions",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "02",
@@ -56,7 +55,8 @@
    "part3": "bromine-test",
    "prereqs": [
     "01"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "03",

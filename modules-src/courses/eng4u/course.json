@@ -42,7 +42,8 @@
    "size": "M",
    "part3": "make",
    "prereqs": [],
-   "trivium": "Grammar, Rhetoric"
+   "trivium": "Grammar, Rhetoric",
+   "status": "building"
   },
   {
    "nn": "02",

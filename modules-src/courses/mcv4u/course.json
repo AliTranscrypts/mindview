@@ -89,7 +89,8 @@
    "part3": "contexts",
    "prereqs": [
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "04",

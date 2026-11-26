@@ -881,7 +881,8 @@
     "48",
     "49"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   }
  ]
 }

@@ -35,6 +35,8 @@ every module that uses the touched code, then ship them together).
 
 - Challenge cards (46): removing a button inside a challenge card before the toolkit's click handler runs makes the handler throw.
 
+- Plot (50): `Plot.point` forces full opacity.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -91,3 +93,4 @@ every module that uses the touched code, then ship them together).
 | S1 diagramExplorer, radioGroup (disabled options), xsSVG/miniLeafSVG leaf drawings | sbi4u 01 | course files: sbi4u.css (--bio-e/h/atp/nadh/fadh/carbon/o2, --leaf, .bio-tok/.bio-chem), sbi4u.js (MV.bio.chem, chemHTML, tok, rng) |
 | foodWeb, F1 personaPanel, annotation tagger, mixed inquiry activity | hfa4u 01 | course files: hfa4u.css (--nu-*, --leaf, --fs-*, .hfa-private/.hfa-nft/.hfa-kc), hfa4u.js (MV.nutri.kcal/pctEnergy/pctDV/amdr/apa, MV.kitchenCard). NOTE: builder authored 38 of 48 "levers" the plan left open — owner review |
 | C1 moleculeView, C2 nameBuilder | sch4u 01 | course files: sch4u.js (MV.chem.data tables, f(), atom(), tablePanel(), bpOf()), sch4u.css (--at-*, role tokens, .chem) |
+| detective case chips, functionPicker, canvasMath, breakPieces sampler, task evaluator | mhf4u 50 | review |
