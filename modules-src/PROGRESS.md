@@ -6,14 +6,14 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 294/295 live, 1 built, 0 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 295/295 live, 0 built, 0 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 59/59 | 0 | 0 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 39/39 | 0 | 0 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 51/52 | 1 | 0 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 52/52 | 0 | 0 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 46/46 | 0 | 0 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 25/25 | 0 | 0 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 24/24 | 0 | 0 | 0 |
@@ -196,7 +196,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Lewis Diagrams (`lewis-diagrams`, topic, site ch2)
 - ✓ 18 VSEPR Theory and Molecular Geometry (`vsepr`, topic, site ch2)
 - ✓ 19 Chemical Bonding and Polarity (`bonding-and-polarity`, topic, site ch2)
-- ◐ 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
+- ✓ 20 Hybridization (sp/sp²/sp³) (`hybridization`, topic, site ch2)
 - ✓ 21 Intermolecular Forces and Crystals (`intermolecular-forces-and-crystals`, topic, site ch2)
 - ✓ 22 Periodic Trends (`periodic-trends`, topic, site ch2)
 - ✓ 23 The Periodic Table (`the-periodic-table`, topic, site ch2)
