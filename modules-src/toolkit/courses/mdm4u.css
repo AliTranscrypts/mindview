@@ -1,0 +1,20 @@
+/* MDM4U course styles (toolkit/courses/mdm4u.css). The assembler adds this file to every MDM4U module, after the toolkit CSS.
+   Tokens (course plan §3), light and dark, defined like the base tokens:
+     --ev-a  blue    event A (Venn, trees), spinner sector A (same hexes as --pen)
+     --ev-b  teal    event B, spinner sector B (same hexes as --f3)
+     --ev-c  orange  event C, spinner sector C, residual segments (same hexes as --p-k)
+     --ev-a-soft / --ev-b-soft / --ev-c-soft   light tints of the three for region fills and table cells
+   Text on an --ev-* fill: use var(--sheet) (passes 4.5 : 1 in both modes). Always show the letter too (colour-key rule 2).
+   Classes:
+     .ev-a .ev-b .ev-c   letter/text in the event colour (bold)
+     .mdm-sw             small square swatch: <i class="mdm-sw" style="background:var(--ev-a)"></i>
+     .mdm-model          "model data" tag for built-in made-up datasets (course plan §1) */
+:root{--ev-a:#2343C4;--ev-b:#0E7C7B;--ev-c:#A84C05;--ev-a-soft:rgba(35,67,196,.13);--ev-b-soft:rgba(14,124,123,.14);--ev-c-soft:rgba(168,76,5,.13)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18)}
+}
+:root[data-theme="dark"]{--ev-a:#93AEFF;--ev-b:#5FD0CD;--ev-c:#FF9F5A;--ev-a-soft:rgba(147,174,255,.18);--ev-b-soft:rgba(95,208,205,.18);--ev-c-soft:rgba(255,159,90,.18)}
+
+.ev-a{color:var(--ev-a);font-weight:700}.ev-b{color:var(--ev-b);font-weight:700}.ev-c{color:var(--ev-c);font-weight:700}
+.mdm-sw{display:inline-block;width:.85em;height:.85em;border-radius:2px;vertical-align:-.08em;border:1px solid var(--ink-2)}
+.mdm-model{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);border-radius:4px;padding:.05em .45em}

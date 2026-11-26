@@ -33,6 +33,8 @@ every module that uses the touched code, then ship them together).
 
 - Plot (47): `Plot.curve` clamps pixel x to 6 × canvas height, cutting curves on wide, short canvases.
 
+- Challenge cards (46): removing a button inside a challenge card before the toolkit's click handler runs makes the handler throw.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -81,3 +83,4 @@ every module that uses the touched code, then ship them together).
 | N15 moveChooser.lock, N4 roundBoxes, stepSlider (settable count) | mhf4u 43 | |
 | G1+G16 breakPieces, G13 scaleBars, stackedPanels, springAnim, N11 signChart.factorRows | mhf4u 47 | |
 | functionPicker, tonePlayer, N27 linkedPanels (strip), G13 valueBar (stacked, clipped) | mhf4u 46 | |
+| N18 concept map, gateLanes, G11 canvasMath | mhf4u 45 | review |

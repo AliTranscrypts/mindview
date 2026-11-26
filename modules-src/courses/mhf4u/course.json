@@ -782,7 +782,8 @@
     "43",
     "44"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "46",
@@ -804,8 +805,7 @@
     "32",
     "28"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "47",
