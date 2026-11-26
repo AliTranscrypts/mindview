@@ -136,3 +136,6 @@ every module that uses the touched code, then ship them together).
 | D3 countingSlots (case rows), D4 arrangementTiles (sliding, block outline, ticked list), gapBuilder | mdm4u 09 | |
 | D4 arrangementTiles circular mode (D4C), seat placer | mdm4u 10 | |
 | upright d in dy/dx (MV.m wrapper — promote to mcv4u.js), implicitTangent, exactSurd, V8 pointBoxes/fracBoxes, N13 stationStepper | mcv4u 13 | |
+| gearTrain, pipeLines, V7 layerPeeler, V8 coefBoxes (extended) | mcv4u 12 | plan: TC2 −8 state unreachable on −4…4 slider |
+| F6 needsCurve, drinkShelf, cafeteriaMenu, realityStations, radioGroup (function options) | hfa4u 08 | OWNER REVIEW (VERIFY): fibre/protein DRIs, vitamin D + fibre per card, map distances/prices, Station 3–4 scenarios/times, Lin family background, chart values, Minaker 2016 citation |
+| D4 arrangementTiles (identical tiles), D5 gridPaths | mdm4u 08 | |

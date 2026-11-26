@@ -154,7 +154,8 @@
     "07",
     "06"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "09",
@@ -186,8 +187,7 @@
     "09",
     "06"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "11",
@@ -232,7 +232,8 @@
    "prereqs": [
     "11",
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "14",
