@@ -121,3 +121,4 @@ every module that uses the touched code, then ship them together).
 | F6 lifeStageSwitcher, F1 plateCheck, fridgeSort, F13 claimCards, dayPlanner | hfa4u 06 | OWNER REVIEW (VERIFY-marked): DRI values beyond the plan, 3 milestones, 20 task-card model values, illustrative NTD chart, APA refs, C1–C5 distractors/hints |
 | S2 zScheme, S4 membraneSim, S3 energyLedger bars, rule-based ordering activity | sbi4u 05 | |
 | D4 arrangementTiles (build/list), factorTiles, log bar chart | mdm4u 06 | |
+| V7 diffQuotientEngine, V8 coefBoxes, exactDec | mcv4u 08 | plan fix: E3 fix B "for every h ≠ 1" false at h = −3 → "almost every h" |
