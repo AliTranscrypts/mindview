@@ -1,0 +1,33 @@
+/* MHF4U 09: hero secant table, Explore secant table, linked panels (slope tracker), sign strip, ramp sliders */
+.hero-sec{display:grid;gap:10px}
+.hero-tbl table.vt{font-size:.98rem}
+.hero-tbl table.vt th,.hero-tbl table.vt td{padding:4px 10px}
+.sx-tbl{margin:0 0 14px}
+.sx-tcap{margin:0 0 4px}
+.sx-tbl .tbl-wrap{max-height:15rem;overflow-y:auto}
+.sx-tbl table.vt td{font-size:.98rem}
+.pg-ctrl .seg-wrap{margin-top:8px}
+.sx-pl{margin-top:10px}
+.sx-pl output{color:var(--ink)}
+canvas.plot.half{aspect-ratio:8/3}
+.lp-panel + .lp-panel{margin-top:6px}
+.sg-strip{display:flex;gap:4px;overflow-x:auto;align-items:stretch;padding:2px 2px 6px}
+.sg-st{flex:1 0 auto;min-width:64px;display:flex;flex-direction:column;align-items:center;gap:2px;border:2px solid var(--rule);background:var(--sheet);color:var(--ink-2);border-radius:6px;padding:.35em .5em;font-size:.8rem;font-weight:700;white-space:nowrap}
+.sg-st b{font:700 1.25rem/1 var(--font-math);color:var(--ink);min-height:1.1em}
+.sg-st.on{border-color:var(--ink);background:var(--hi-soft);color:var(--ink)}
+.sg-st:not(:disabled):hover,.sg-pt:not(:disabled):hover{border-color:var(--pen)}
+.sg-pt{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:38px;border:1.5px dashed var(--ink-2);background:var(--paper);color:var(--ink);border-radius:6px;padding:.2em .3em;font-size:.78rem;line-height:1.15}
+.sg-pt b{font:700 1.1rem/1.1 var(--font-math);color:var(--ink-2)}
+.sg-pt.on{border-style:solid;border-color:var(--ink);background:var(--hi-soft)}
+.sg-pt.on b{color:var(--ink)}
+.sg-lines{margin:8px 0 0}
+.sg-lines p{margin:2px 0}
+.rp-sl .slider output{color:var(--ink)!important}
+.rp-sl input[type=range]{accent-color:var(--ink)!important}
+@media (max-width:820px){
+  .pg.sx{grid-template-areas:"graph" "tbl" "ctrl" "read"}
+  .pg.sx .pg-read{display:contents}
+  .pg.sx .sx-tbl{grid-area:tbl;margin:0}
+  .pg.sx .pg-read > dl.read{grid-area:read}
+  .sx-tbl .tbl-wrap{max-height:12.5rem}
+}

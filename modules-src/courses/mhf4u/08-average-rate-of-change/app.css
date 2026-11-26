@@ -1,0 +1,65 @@
+/* MHF4U 08: hero equation, secant lab controls, Part 3 rounds, N29 sentence builder, sketch options, road-trip task */
+.hero .hero-eq.sm{display:flex;flex-wrap:wrap;align-items:center;gap:.05em .3em;line-height:1.15}
+.hero .hero-eq .ar-w{font:700 .52em var(--font-ui);color:var(--ink-2)}
+.hero .hero-eq .ar-big{font-size:1.5em}
+.hero .hero-eq .ar-big .frac{font-size:1em}
+.hero .hero-eq .ar-eq{font-size:.9em;white-space:nowrap}
+.hero-fig figcaption{font-size:1.2rem;line-height:1.45}
+
+.sl-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 8px}
+.sl-row .chips{margin:0}
+.sl-lab{font-weight:700;font-size:.92rem}
+.sl-what{display:block;font:400 .9rem/1.35 var(--font-ui);color:var(--ink-2);margin-top:4px}
+.sl-how{margin:4px 0 0}
+.stp-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin:4px 0 2px}
+.stp{display:inline-flex;align-items:center;gap:6px}
+.stp-l{font-size:1.2rem;min-width:1.5em;text-align:right}
+.stp .btn{min-width:38px;min-height:36px;justify-content:center;padding:.2em .5em}
+.stp-v{font:400 1rem var(--font-math);min-width:5.2em;text-align:center}
+.read .rd-h{color:var(--ink);font-size:.95rem}
+.sl-leg{display:flex;flex-wrap:wrap;gap:4px 18px;margin:8px 0 0;font-weight:700;font-size:.95rem;max-width:none;min-height:1.5em}
+.sl-leg > span{display:inline-flex;align-items:center;gap:8px}
+.sl-sw{display:inline-block;width:30px;height:0;border-top:2.5px solid var(--ink-2)}
+.sl-sw.dash{border-top-style:dashed}
+.sl-sw.dot{border-top-style:dotted;border-top-width:3px}
+
+.cx-ch{margin-bottom:16px}
+.cx-prompt{font-weight:700}
+.cx-plot{margin-top:12px}
+.cx-h{margin:18px 0 8px}
+.cx-grid > div > .cx-h:first-child{margin-top:0}
+.cx-box{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:0 0 8px}
+.cx-box label{flex:1 1 11rem;font-weight:600}
+.cx-in{display:inline-flex;align-items:center;gap:6px}
+.cx-in input{width:7.5rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:.4em .6em;font:400 1.15rem var(--font-math)}
+.cx-in input:focus{border-color:var(--ink)}
+.cx-in input.good{border-color:var(--green)}
+.cx-in input.bad{border-color:var(--red)}
+.cx-in .u{min-width:2.4em;color:var(--ink-2)}
+.cx-units{margin:0}
+.chip.good{box-shadow:0 0 0 2px var(--green)}
+.chip.bad{box-shadow:0 0 0 2px var(--red)}
+.fb ul{margin:6px 0 0;padding-left:1.2em}
+.fb li{margin:0 0 .3em}
+
+.sb-line{font-size:1.06rem;line-height:2.5;max-width:none;margin:0}
+.sb-slot{display:inline-block;min-width:4.4em;min-height:34px;margin:0 .12em;padding:.05em .55em;border:0;border-bottom:2.5px solid var(--ink);background:var(--paper);border-radius:5px 5px 0 0;font:700 1rem/1.6 var(--font-ui);color:var(--ink);vertical-align:baseline}
+.sb-slot.on{background:var(--hi);color:var(--hi-ink)}
+.sb-slot.good{border-bottom-color:var(--green);background:var(--good-bg)}
+.sb-slot.bad{border-bottom-color:var(--red);background:var(--bad-bg)}
+.sb-slot:disabled{opacity:1}
+.sb-bank{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 12px;border:1.5px dashed var(--ink-2);border-radius:8px;margin-top:8px}
+.sb-bank-lab{font-weight:700;font-size:.9rem}
+.sb-tip{margin:6px 0 0}
+
+.opt svg.sk{display:block;margin:0 0 4px;color:var(--ink-2);max-width:100%;height:auto}
+.cx-sk{grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr))}
+.vase-row{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.5fr);gap:12px;align-items:end}
+.vase-row canvas.plot{max-width:100%}
+
+.rt-plan{margin:6px 0 0;padding-left:1.3em}
+.rt-plan li{margin:0 0 .2em}
+.rt-in{gap:10px}
+.rt-in input{width:4.7rem}
+.rt-in input:disabled{opacity:.7}
+.rt-lg{margin-top:10px}

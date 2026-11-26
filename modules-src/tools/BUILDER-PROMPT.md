@@ -34,6 +34,11 @@ checklist reacts.
 - Don't run `git`, don't deploy, don't run `link-chapters.py`, `hub.mjs` or `progress.py`, and never write to `modules-src/toolkit/` (guide section 9).
 - Where the plan is ambiguous or impossible to implement as written, make the smallest faithful choice
   and list it under "deviations".
+- Option order: the build reorders 4-option lists (guide §3.2). Keep the plan's order in content.mjs,
+  never refer to options by letter/position, and in your try scripts pick options by their text.
+- Known toolkit quirks (work around locally): `MV.player` called twice on one host adds duplicate
+  listeners (use a fresh host); matching (N6) appends "Try another partner." to mismatch feedback;
+  `Plot.line` ignores alpha; y tick labels clip when the y-axis is off-screen.
 - Canadian spelling, true minus signs, upright function names, colours only from tokens.
 
 **Reply (under 150 words):** PASS/FAIL of the final check run, output file size, counts (goals, warm-up,

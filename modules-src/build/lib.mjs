@@ -44,6 +44,28 @@ export function fnv(str){
   for (let i = 0; i < str.length; i++) { h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
   return ("0000000" + h.toString(16)).slice(-8);
 }
+// Plans list the correct option first, so without this the answer would almost always be A.
+// A 4-option list with exactly one {ok:true} is reordered at build time: all-numeric options are
+// sorted ascending (blueprint §6 "sensible order"); anything else gets a deterministic shuffle
+// seeded by the option texts, so rebuilding gives the same order. Opt out with fixedOrder:true on
+// the item that owns the list. Code must never depend on an option's position (use MV.ok()).
+const NUM_RE = /^[−-]?\d+(\.\d+)?(\/\d+)?$/;
+const plain = t => String(t == null ? "" : t).replace(/[`$\s]/g, "").replace(/<[^>]+>/g, "");
+export function arrangeOptions(list, salt){
+  if (!Array.isArray(list) || list.length !== 4) return list;
+  if (!list.every(x => x && typeof x === "object" && !Array.isArray(x))) return list;
+  if (list.filter(x => x.ok === true).length !== 1) return list;
+  const texts = list.map(x => plain(x.t != null ? x.t : x.text));
+  if (texts.every(t => NUM_RE.test(t))) {
+    const v = t => { const [n, d] = t.replace("−", "-").split("/"); return parseFloat(n) / (d ? parseFloat(d) : 1); };
+    return list.map((x, i) => [x, v(texts[i])]).sort((a, b) => a[1] - b[1]).map(p => p[0]);
+  }
+  let seed = parseInt(fnv(salt + "|" + texts.join("|")), 16) >>> 0;
+  const rnd = () => { seed = (Math.imul(seed ^ (seed >>> 15), 0x2c1b3c6d) + 0x9e3779b9) >>> 0; return seed / 4294967296; };
+  const out = list.slice();
+  for (let i = out.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [out[i], out[j]] = [out[j], out[i]]; }
+  return out;
+}
 // Decision 7 (answers lightly scrambled): option {ok:true} -> {_n, _k}; item {answer:x} -> {_a: base64(xor(json, salt))}.
 export function encodeAnswers(content, salt){
   let counter = 0;
@@ -69,6 +91,7 @@ export function encodeAnswers(content, salt){
       const r = {};
       for (const k of Object.keys(o)) {
         if (k === "answer") r._a = enc(o[k]);
+        else if ((k === "options" || k === "fixes") && !o.fixedOrder) r[k] = walk(arrangeOptions(o[k], salt));
         else r[k] = walk(o[k]);
       }
       return r;
