@@ -1,0 +1,103 @@
+/* MDM4U 18: hero, Variable builder (D7 histogram, outcome grid, custom table, compare), Part 3 stations, probEntry, task.
+   Histogram bars are --pen (course plan §3); simulated bars are outlined; the probe uses --hi-soft. */
+/* radioGroup (from MDM4U 15) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.seg button:disabled{opacity:.42;cursor:not-allowed}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px;text-align:left}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips button:disabled{opacity:.45;cursor:not-allowed}
+
+/* switch (from MDM4U 02) */
+.dr-sw.cc-switch{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;color:var(--ink);font:700 .92rem var(--font-ui);padding:4px 0;min-height:36px;text-align:left}
+.dr-sw .cc-track{position:relative;flex:none;width:40px;height:22px;border-radius:11px;background:var(--paper);border:1.5px solid var(--ink-2);transition:background .2s,border-color .2s}
+.dr-sw .cc-knob{position:absolute;top:2px;left:2px;width:15px;height:15px;border-radius:50%;background:var(--sheet);border:1.5px solid var(--ink-2);transition:left .2s}
+.dr-sw[aria-checked="true"] .cc-track{background:var(--pen);border-color:var(--pen)}
+.dr-sw[aria-checked="true"] .cc-knob{left:19px;border-color:var(--pen)}
+
+/* @component outcomeTable styles (grid version) */
+.ot-wrap{overflow-x:auto;max-width:100%;padding:2px}
+table.ot{border-collapse:separate;border-spacing:3px;margin:0 auto}
+table.ot th{font:400 1rem var(--font-math);color:var(--ink);padding:2px 4px;text-align:center;min-width:22px}
+table.ot th.ot-corner{font:700 .68rem/1.25 var(--font-ui);color:var(--ink-2);text-align:left}
+.ot-corner span{display:block;white-space:nowrap}
+.ot-cn{text-align:right}
+.dr-c{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-width:40px;min-height:40px;padding:2px 4px;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);line-height:1.05}
+.dr-c.tint{background:color-mix(in srgb,var(--pen) var(--tint),var(--sheet))}
+.dr-c.dr-has{border-color:var(--pen)}
+.dr-c:hover{border-color:var(--pen)}
+.dr-cv{font:700 1.05rem var(--font-math)}
+.dr-cp{font:400 .7rem var(--font-ui);color:var(--ink-2);white-space:nowrap}
+.dr-c.dr-has .dr-cp{color:var(--ink)}
+table.ot.coins .dr-c,table.ot.spin .dr-c,table.ot.bag .dr-c{min-width:64px}
+table.ot.coins .dr-cp,table.ot.spin .dr-cp,table.ot.bag .dr-cp{font-size:.82rem}
+
+/* hero */
+.dr-heq{display:inline;line-height:1.45;font-size:.8em}
+.dr-har{color:var(--ink-2);padding:0 .15em}
+
+/* Variable builder */
+.dr-top{display:flex;flex-direction:column;gap:0;margin-bottom:6px}
+canvas.plot.dr-plot{aspect-ratio:16/10}
+.dr-cap{font-size:clamp(1.15rem,2.6vw,1.5rem)}
+.dr-cap.long{font-size:clamp(1rem,2.2vw,1.25rem)}
+.dr-gridbox{margin-top:12px}
+.dr-gl{margin:0 0 6px}
+.dr-ed,.dr-simbox{margin-top:12px}
+.dr-aha{margin:12px 0 0;font-size:.95rem}
+.dr-panel{border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--sheet)}
+.dr-sh{margin:0 0 6px;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.dr-panel .slider{margin:0 0 8px}
+.dr-msg{min-height:1.2em;margin:6px 0 0}
+.dr-warn{font-weight:700;color:var(--ink)}
+.dr-q{display:inline-block;min-width:1.6em;padding:0 .3em;border:1.5px dashed var(--ink-2);border-radius:4px;text-align:center;font-weight:700}
+.dr-tbl{margin-top:12px}
+.dr-tbl-m{display:none}
+.dr-conds{margin:6px 0 0;padding-left:1.3em}
+.dr-conds li{margin:2px 0}
+.dr-step{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:8px 0}
+.dr-stl{min-width:4.2em;font-weight:700}
+.dr-sv{min-width:3em;text-align:center;font:700 1.1rem var(--font-math)}
+.dr-ktab{margin:6px 0 4px}
+.dr-edh{margin:4px 0 8px}
+.dr-rows{display:grid;gap:6px}
+.dr-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.dr-row label{display:inline-flex;align-items:center;gap:6px}
+.dr-row .numin{width:5.2rem}
+.dr-row .dr-xin{width:4.2rem}
+
+/* Part 3 stations */
+.cs-tabs{margin-bottom:6px}
+.cs-card{border:1.5px solid var(--rule);border-radius:10px;padding:12px 14px;background:var(--sheet)}
+.cs-lab{display:block;font:700 .8rem var(--font-ui);letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
+.cs-text{margin:0 0 10px}
+.cs-read{margin-top:8px}
+.cs-after{margin:10px 0 0}
+.cs-dice h4{margin:0}
+canvas.plot.cs-dplot{aspect-ratio:4/3}
+canvas.plot.cs-s3{aspect-ratio:16/10;max-width:560px}
+.cs-tick{font-weight:700}
+
+/* probEntry */
+.pe-row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.pe-lab{display:inline-flex;align-items:center;gap:8px}
+
+/* task */
+.dt-in{margin:10px 0}
+canvas.plot.dt-plot{aspect-ratio:4/3}
+.dt-read{margin-top:8px}
+
+@media (max-width:560px){
+  .dr-tbl-m{display:block}
+  .dr-tbl-d{display:none}
+  canvas.plot.dr-plot,canvas.plot.cs-s3{aspect-ratio:4/3}
+  .dr-c{min-width:38px;min-height:40px;padding:2px}
+  .dr-cp{font-size:.62rem}
+  table.ot{border-spacing:2px}
+  table.ot.coins .dr-c,table.ot.spin .dr-c,table.ot.bag .dr-c{min-width:56px}
+}

@@ -1,0 +1,96 @@
+/* SCH4U 14: hero, Energy level ladder (C12), Spectra as fingerprints, calculations, Light a sign */
+/* Module tokens: --bm-night (the dark screen a spectrum is shown on, both themes), --bm-tube (hydrogen tube glow),
+   --bm-band (grey UV and IR bands). Spectral line colours are computed from wavelengths in app.js (course plan §4). */
+:root{--bm-night:#05070D;--bm-tube:#C8479B;--bm-band:#D3D8E2}
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){--bm-night:#000000;--bm-tube:#F07AC0;--bm-band:#3B4351} }
+:root[data-theme="dark"]{--bm-night:#000000;--bm-tube:#F07AC0;--bm-band:#3B4351}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.bm-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.bm-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.bm-hx-ctr{margin:0;font:400 1rem var(--font-ui);color:var(--ink-2);min-height:2.6em;flex:1 1 14rem}
+
+/* Explore: energy level ladder */
+.bm-how{margin-top:0}
+.bm-modes{margin:0 0 12px}
+.bm-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.bm-view,.bm-side{min-width:0}
+.bm-box{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.bm-svg{display:block;width:100%;max-width:540px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.bm-cap{min-height:1.5em;margin:10px 0 2px;font-size:1rem}
+.bm-c[hidden]{display:none}
+.bm-c > * + *{margin-top:12px}
+.bm-c > p.tiny{margin-top:12px}
+.bm-fallb{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.bm-fb{min-height:40px;min-width:64px}
+.bm-casc{margin:8px 0 0}
+.bm-sendrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.bm-btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 12px;padding-top:12px;border-top:1.5px solid var(--rule)}
+.bm-note{margin:12px 0 0}
+.bm-tabs{margin-top:4px}
+
+/* Part 3: Spectra as fingerprints */
+.bm-st h3{margin-bottom:6px}
+#p3-app > .bm-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.bm-h4{margin:14px 0 6px;font-size:1rem}
+.bm-hs{display:block;width:100%;max-width:540px;height:auto;font-family:var(--font-ui)}
+.bm-unks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:10px}
+.bm-uk{display:flex;flex-direction:column;align-items:stretch;gap:4px;text-align:left;border:2px solid var(--ink);border-radius:10px;background:var(--sheet);color:var(--ink);padding:8px 10px 4px;touch-action:none;cursor:grab;min-width:0}
+.bm-uk[aria-pressed="true"]{border-color:var(--hi-ink);background:var(--hi-soft);box-shadow:0 0 0 3px var(--hi)}
+.bm-ukh{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;font-size:.95rem}
+.bm-ukt{color:var(--ink-2);font-weight:700}
+.bm-msg{min-height:1.4em;margin:8px 0 0;font-size:.95rem;color:var(--ink-2)}
+.bm-refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:10px}
+.bm-ref{border:2px dashed var(--ink-2);border-radius:10px;background:var(--paper);padding:6px 8px 2px;min-width:0}
+.bm-ref.over{border-style:solid;border-color:var(--pen);background:var(--hi-soft)}
+.bm-refb{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;width:100%;text-align:left;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.35em .6em;font-size:.95rem;min-height:40px}
+.bm-refp{color:var(--ink-2);font-size:.85rem}
+.bm-data{margin-top:14px}
+.bm-ovi{margin-top:10px}
+.bm-ovi .tiny{margin:2px 0 0}
+.bm-sl{margin:12px 0 2px;font-size:.95rem}
+.bm-cmp{margin:10px 0}
+.bm-s3el{margin:6px 0 4px}
+.bm-s3cap{min-height:1.4em;margin:10px 0 0}
+.bm-ghost{position:fixed;z-index:50;pointer-events:none;transform:translate(-50%,-120%);background:var(--hi);color:var(--hi-ink);border:2px solid var(--hi-ink);border-radius:8px;padding:.25em .6em;font:700 .9rem var(--font-ui)}
+.bm-st .jq{margin-top:14px}
+
+/* Practice: calculations */
+.bm-chiplist{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.bm-chiplist .chip{text-align:left;max-width:100%}
+.bm-unit{font-size:.95rem;color:var(--ink-2)}
+
+/* Performance task: Light a sign */
+.bm-conds{margin:6px 0 10px;padding-left:1.4em}
+.bm-tl{margin:4px 0 8px}
+.bm-tin{display:flex;flex-direction:column;gap:6px}
+.bm-trow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.bm-trl{min-width:5.6em;font-size:.92rem;font-weight:700;color:var(--ink-2)}
+.bm-trb{display:flex;flex-wrap:wrap;gap:6px}
+.bm-tb{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:8px;padding:.3em .7em;font-size:.95rem;min-height:38px;min-width:58px}
+.bm-tb.on{background:var(--hi);border-color:var(--hi-ink);color:var(--hi-ink);font-weight:700}
+.bm-tmsg{min-height:1.3em;margin:8px 0 0;font-size:.92rem;color:var(--ink-2)}
+
+@media (max-width:760px){
+  .bm-grid{grid-template-columns:minmax(0,1fr)}
+}
+/* phones: the ladder uses the sheet's full width, and SVG labels grow so they stay readable when the drawing shrinks */
+@media (max-width:560px){
+  .bm-view .bm-box{margin:0 -12px}
+  .bm-svg text[font-size="12"],.bm-hx-svg text[font-size="12"]{font-size:14px}
+  .bm-svg text[font-size="11"],.bm-hx-svg text[font-size="11"]{font-size:12.5px}
+  .bm-svg text[font-size="11.5"],.bm-hx-svg text[font-size="11.5"]{font-size:13px}
+  .bm-hs text[font-size="10.5"]{font-size:12px}
+}

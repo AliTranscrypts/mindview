@@ -96,3 +96,9 @@ promotion candidates.
   Components: E1 annotationStudio + E2 deviceLens + spotProse (01), E9 structureMap + E6 paragraphBuilder (02),
   E3 scansionTapper (03), E8 citationBuilder (07), E7 thesisForge + E17 draftWorkspace (05/06), E10 stageSimulator (08).
   Hamlet: quote the Globe text with Globe act.scene.line numbers; 08's `R` table is the unit's reference list.
+  Copyrighted course texts (Munro, King, Atwood, ISU novels, Frye, Survival …): the plan's §3 allows short excerpts
+  under fair dealing, but you have no class edition. So: use only the short quotations the plan itself prints
+  (exact, as given); never fetch or reproduce copyrighted text from the web or from memory. Each plan "excerpt
+  slot" becomes a "Read in your copy" card naming the passage (scene/description, and pp. [class edition] if the
+  plan has a credit line), with the activity working from the plan's quotations and paraphrase. Mark every slot
+  with a `// EXCERPT SLOT:` comment (teacher pastes the class-edition text) and list the slots in your reply.

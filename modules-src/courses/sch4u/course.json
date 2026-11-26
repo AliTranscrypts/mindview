@@ -233,7 +233,8 @@
    "prereqs": [
     "13"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "15",
@@ -288,7 +289,8 @@
    "part3": "formula",
    "prereqs": [
     "17"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "19",
@@ -301,7 +303,8 @@
    "part3": "polarity-tests",
    "prereqs": [
     "18"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "20",

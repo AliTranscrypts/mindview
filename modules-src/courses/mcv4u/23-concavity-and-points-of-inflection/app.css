@@ -1,0 +1,93 @@
+/* MCV4U 23: hero equation, bend detector (V5 panels + V11 concavity strip), Part 3 stations (radios, cards, stepper, growth
+   panels), V11 sign chart, Bend it fields and the task steppers */
+.cv-heq{display:inline-flex;flex-direction:column;align-items:flex-start;gap:.1em;line-height:1.3}
+.cv-ht{white-space:nowrap}
+.cv-hdot{display:none}
+.cv-f4,.cv-f4 .m{color:var(--f4)}
+
+.cv-ex{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.cv-main,.cv-side{min-width:0}
+.cv-eq{min-height:1.6em}
+.cv-pan{margin-top:4px}
+.cv-pan[hidden]{display:none}
+.cv-pcap{margin:4px 0 2px;font-size:.95rem;display:flex;flex-wrap:wrap;align-items:center;gap:2px 8px;min-height:1.5em}
+.cv-pcap .m{white-space:nowrap}
+.cv-sw{display:inline-block;width:18px;height:4px;border-radius:2px;flex:0 0 auto}
+canvas.plot.cv-c-f{aspect-ratio:16/9}
+canvas.plot.cv-c-strip{aspect-ratio:auto;height:58px}
+canvas.plot.cv-c-d1,canvas.plot.cv-c-d2{aspect-ratio:16/5}
+.cv-fns{margin-bottom:6px}
+.cv-fns .chip{font-size:.86rem}
+.cv-fns .chip .m{font-size:1.05em}
+.cv-bsl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;margin:2px 0 4px}
+.cv-bsl output{color:var(--ink)}
+#cv-mode{margin-top:6px}
+.cv-how{margin:8px 0 10px}
+.cv-sl output{color:var(--ink)}
+.cv-skip,.cv-mnote{min-height:1.2em;margin:0 0 6px;color:var(--ink-2);font-weight:600}
+.cv-mk{margin:4px 0 4px}
+.cv-mk .chip{min-height:34px}
+.cv-sum{margin-top:10px}
+.cv-sum summary{cursor:pointer;font-weight:700}
+.cv-sum .read{margin-top:8px}
+.cv-ibbox{margin-top:20px;padding-top:14px;border-top:1px solid var(--rule)}
+.cv-ibh{margin:0 0 4px;font-size:1.05rem}
+
+.cv-st h3{margin-top:0}
+.cv-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.cv-rg{display:inline-flex;flex-wrap:wrap;gap:6px}
+.cv-rg button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:34px}
+.cv-rg button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.cv-rg button:disabled{opacity:.65}
+.cv-cpt{margin:0 0 14px}
+.cv-cl{margin:0 0 6px}
+.cv-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 18px;margin-top:6px}
+.cv-card{min-width:0;border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+.cv-cf{margin:0 0 6px;font-size:1.05rem}
+.cv-card .cv-rgh{margin-top:8px}
+.cv-steps{list-style:none;margin:0 0 8px;padding:0}
+.cv-steps li{display:flex;gap:8px;padding:5px 8px;border-radius:6px;margin:2px 0}
+.cv-steps li.cur{background:var(--hi-soft)}
+.cv-steps .sn{font-weight:700;min-width:1.4em}
+canvas.plot.cv-c-n{aspect-ratio:16/8}
+canvas.plot.cv-c-n1{aspect-ratio:16/6}
+.cv-s3b{margin-top:6px}
+
+.cv-sc-wrap{overflow-x:auto;position:relative}
+table.cv-sct th,table.cv-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.cv-sct tbody th{text-align:left;font-weight:600}
+.cv-sc-k{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.cv-sct .cv-sc-u{font:600 .78rem var(--font-ui);color:var(--ink-2)}
+table.cv-sct .cv-sc-ar span[aria-hidden]{font-size:1.25rem;line-height:1;display:block}
+.cv-sc-w{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.cv-sct .cv-sc-d td{font-weight:700}
+
+.cv-bf{margin:8px 0 6px}
+.cv-bl{margin:6px 0 2px;font-weight:600}
+.cv-bfiv{border-left:3px solid var(--rule);padding-left:10px}
+.cv-bnum{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font:400 1.05rem var(--font-math)}
+.cv-bpts{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.cv-bpt{display:inline-flex;align-items:center;gap:4px}
+.cv-bpt .m{font-size:1.2rem}
+.cv-bpt .numin.short{width:4.6rem}
+.cv-band{color:var(--ink-2);font-size:.9rem}
+
+.cv-tstep{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.cv-tstep label{min-width:7rem}
+.cv-tlab{font-size:1.2rem}
+.cv-tstep .btn{min-width:40px;font-size:1.1rem}
+.cv-tstep .numin.short{width:5rem}
+.cv-tpan canvas.plot.cv-ttop{aspect-ratio:16/9}
+.cv-tpan canvas.plot.cv-tlow{aspect-ratio:16/6}
+
+@media (max-width:820px){
+  .cv-ex{grid-template-columns:minmax(0,1fr)}
+  .cv-cards{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  canvas.plot.cv-c-f{aspect-ratio:auto;height:220px}
+  canvas.plot.cv-c-d1,canvas.plot.cv-c-d2{aspect-ratio:auto;height:120px}
+  canvas.plot.cv-c-strip{height:52px}
+  .cv-bsl{grid-template-columns:minmax(0,1fr)}
+  .cv-bpt .numin.short{width:3.8rem}
+}
