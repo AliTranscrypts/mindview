@@ -1,0 +1,115 @@
+/* MCV4U 55 Systems of Equations (Matrices): augmented matrices, the row-reduction stepper, 3D views, solution boxes. */
+/* ---- augmented matrix (square brackets, a bar before the constants) ---- */
+.sy-mx{display:inline-block;vertical-align:middle;margin:2px 3px;font-variant-numeric:tabular-nums}
+.sy-mxg{position:relative;display:inline-grid;grid-template-columns:repeat(3,auto);column-gap:0;padding:2px .42em;line-height:1.55}
+.sy-mx.c4 .sy-mxg{grid-template-columns:repeat(4,auto)}
+.sy-mx.c2 .sy-mxg{grid-template-columns:repeat(2,auto)}
+.sy-mxg::before,.sy-mxg::after{content:"";position:absolute;top:0;bottom:0;width:.32em;border:1.6px solid currentColor}
+.sy-mxg::before{left:0;border-right:0}
+.sy-mxg::after{right:0;border-left:0}
+.sy-mxg>span{padding:0 .32em;text-align:right;min-width:1.4em}
+.sy-mxg>span.sy-b{border-left:1.5px solid currentColor;padding-left:.5em;margin-left:.18em}
+.sy-mx.big{font-size:1.18rem;margin:0}
+.sy-mx.big .sy-mxg{line-height:2;padding:4px .5em}
+.sy-mx.big .sy-mxg>span{min-width:2.3em;padding:0 .38em}
+.sy-fl{animation:sy-flash 1.3s ease-out}
+.sy-ol{outline:2px solid var(--hi);outline-offset:-2px}
+@keyframes sy-flash{0%,35%{background:var(--hi-soft)}100%{background:transparent}}
+@media (prefers-reduced-motion:reduce){.sy-fl{animation:none;outline:2px solid var(--hi);outline-offset:-2px}}
+.sy-heq{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px;justify-content:center}
+.sy-harr{font-size:1.4em;color:var(--ink-2)}
+/* ---- hero ---- */
+.sy-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:14px;align-items:center}
+.sy-hl{min-height:200px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;overflow-x:auto}
+.sy-hsys{display:flex;flex-direction:column;gap:8px;font-size:1.2rem}
+.sy-hop{min-height:1.6em;margin:0;font-weight:700;color:var(--ink)}
+.sy-hbs{display:flex;gap:14px;min-height:1.6em;margin:0;font-size:1.1rem}
+.sy-hboth{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.sy-hcap{grid-column:1/-1;margin:0;min-height:1.2em}
+.sy-fade{animation:sy-in .6s ease-out}
+@keyframes sy-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.sy-fade{animation:none}}
+@media (max-width:640px){.sy-hero{grid-template-columns:1fr}.sy-hl{min-height:0}}
+/* ---- 3D canvas ---- */
+.sy-c3{display:block;width:100%;aspect-ratio:4/3;border:1px solid var(--rule);border-radius:10px;touch-action:pan-y;cursor:grab;background:var(--sheet)}
+.sy-c3:active{cursor:grabbing}
+.sy-c3:focus-visible{outline:3px solid var(--hi);outline-offset:2px}
+.sy-views{flex-wrap:wrap}
+/* ---- Explore layout ---- */
+.sy-ex{display:flex;flex-direction:column;gap:10px}
+.sy-sys{display:flex;flex-wrap:wrap;gap:6px}
+.sy-cols{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:820px){.sy-cols{grid-template-columns:minmax(0,1fr)}}
+.sy-right{display:flex;flex-direction:column;gap:8px;min-width:0}
+.sy-left{min-width:0}
+.sy-geobar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.sy-tog{display:inline-flex;align-items:center;gap:6px;font-weight:600;min-height:28px}
+.sy-tog input{width:18px;height:18px}
+.sy-ghow{margin:4px 0 0}
+.sy-gcap{margin:0}
+.sy-read{margin:0}
+.sy-bs{border:1px solid var(--rule);border-radius:10px;padding:10px 12px}
+.sy-bs h4{margin:0 0 4px}
+/* ---- stepper ---- */
+.sy-st{display:flex;flex-direction:column;gap:10px}
+.sy-mwrap{border:1px solid var(--rule);border-radius:10px;padding:10px;overflow-x:auto;background:var(--sheet)}
+.sy-mbig{display:flex;align-items:flex-start;gap:4px}
+.sy-rls{display:flex;flex-direction:column;padding-top:4px;font-size:1.18rem;line-height:2;color:var(--ink-2);font-weight:600;font-size:.95rem}
+.sy-rls>span{height:2.36rem;display:flex;align-items:center}
+.sy-eqs{display:flex;flex-direction:column;gap:2px;margin-top:8px}
+.sy-eq{display:flex;align-items:baseline;gap:8px}
+.sy-eqn{font-weight:700;color:var(--c,var(--ink));min-width:1.8em}
+.sy-ops{display:flex;flex-direction:column;gap:8px}
+.sy-opc{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.sy-sel{min-height:34px;font:inherit;padding:2px 4px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink)}
+.sy-sym{font-size:1.1rem;color:var(--ink-2)}
+.sy-ri{font-weight:600}
+.sy-cnote{flex-basis:100%;margin:0}
+.sy-zero[aria-disabled="true"]{opacity:.6;text-decoration:line-through;cursor:not-allowed}
+.sy-opmsg:empty{display:none}
+.sy-zmsg{margin:0 0 6px}
+.sy-urow{display:flex;gap:8px}
+.sy-hist summary{cursor:pointer;font-weight:600;min-height:24px}
+.sy-hist ol{margin:6px 0 0;padding-left:1.4em}
+/* ---- Build mode and matrix entry ---- */
+.sy-bld{border:1px dashed var(--rule);border-radius:10px;padding:8px 10px}
+.sy-bgrid{display:flex;flex-direction:column;gap:6px;overflow-x:auto;padding-bottom:2px}
+.sy-brow{display:flex;align-items:center;gap:4px}
+.sy-brl{min-width:1.8em;font-weight:600;color:var(--ink-2)}
+.sy-bin{width:3.6em}
+.sy-bbar{display:inline-block;width:2px;height:28px;background:var(--ink);margin:0 4px}
+/* ---- solution entry ---- */
+.sy-kinds{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.sy-vals,.sy-pars{display:flex;flex-wrap:wrap;gap:8px 14px;margin:6px 0}
+.sy-val,.sy-par{display:inline-flex;align-items:center;gap:6px}
+.sy-val .numin,.sy-par .numin{width:4.2em}
+/* ---- Part 3 ---- */
+.sy-stn{margin:0 0 22px}
+.sy-stn h3{margin:0 0 6px}
+.sy-s1{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:start}
+.sy-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.sy-card{border:1px solid var(--rule);border-radius:10px;padding:8px 10px;min-width:0;overflow-x:auto}
+.sy-card .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.sy-cl{margin:0;font-weight:700}
+.sy-s1g{position:sticky;top:70px}
+.sy-s2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:16px;align-items:start}
+.sy-chkl{margin:2px 0}
+.sy-ok{color:var(--green);font-weight:700}
+.sy-s3cards{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.sy-mbtn{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:6px 10px;cursor:pointer;min-height:44px}
+.sy-mbtn[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.sy-s3{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:820px){.sy-s1,.sy-s2,.sy-s3{grid-template-columns:minmax(0,1fr)}.sy-s1g{position:static}}
+@media (max-width:520px){.sy-cards{grid-template-columns:minmax(0,1fr)}}
+/* ---- Practice 2 ---- */
+.sy-pdet{margin:6px 0}
+.sy-pdet summary{cursor:pointer;font-weight:600;min-height:28px}
+.sy-pst{margin-top:8px}
+.sy-kq{display:flex;flex-direction:column;gap:8px;margin:6px 0}
+.sy-ever{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.sy-fmsg:empty{display:none}
+/* ---- task ---- */
+.sy-teq{margin:0 0 6px;font-size:1.15rem}
+.sy-tstep{display:flex;align-items:center;gap:6px;margin:4px 0}
+.sy-tstep label{min-width:5.6em}
+#sy-tref{margin-top:8px;overflow-x:auto}
