@@ -6,17 +6,17 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 107/295 live, 4 built, 22 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 111/295 live, 3 built, 23 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 15/59 | 1 | 43 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 10/39 | 2 | 27 | 0 |
-| SCH4U (sch4u) | courses/sch4u/modules/ | 8/52 | 1 | 43 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 9/46 | 0 | 37 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 16/59 | 1 | 42 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 12/39 | 0 | 27 | 0 |
+| SCH4U (sch4u) | courses/sch4u/modules/ | 9/52 | 0 | 43 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 9/46 | 1 | 36 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 10/25 | 0 | 15 | 0 |
-| ENG4U (eng4u) | courses/eng4u/modules/ | 5/24 | 0 | 19 | 0 |
+| ENG4U (eng4u) | courses/eng4u/modules/ | 5/24 | 1 | 18 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
 
@@ -87,14 +87,14 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 12 Derivatives of Composite Functions: the Chain Rule (`the-chain-rule`, topic, site ch2)
 - ✓ 13 Implicit Differentiation (`implicit-differentiation`, topic, site ch2)
 - ✓ 14 Higher Order Derivatives (`higher-order-derivatives`, topic, site ch3)
-- ◐ 15 Velocity and Acceleration (`velocity-and-acceleration`, topic, site ch3)
+- ✓ 15 Velocity and Acceleration (`velocity-and-acceleration`, topic, site ch3)
 - ✓ 16 Maximum and Minimum on an Interval (`maximum-and-minimum-on-an-interval`, topic, site ch3)
-- … 17 Optimization Problems (`optimization-problems`, topic, site ch3)
+- ◐ 17 Optimization Problems (`optimization-problems`, topic, site ch3)
 - … 18 Economics and Science Optimization Problems (`economics-and-science-optimization`, topic, site ch3)
 - … 19 Related Rates (`related-rates`, topic, site ch3)
 - … 20 Increasing and Decreasing Functions (`increasing-and-decreasing-functions`, topic, site ch4)
-- · 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
-- · 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
+- … 21 Critical Points and the First Derivative Test (`critical-points-and-first-derivative-test`, topic, site ch4)
+- … 22 Vertical, Horizontal and Oblique Asymptotes (`asymptotes`, topic, site ch4)
 - · 23 Concavity and Points of Inflection (`concavity-and-points-of-inflection`, topic, site ch4)
 - · 24 An Algorithm for Curve Sketching (`algorithm-for-curve-sketching`, topic, site ch4)
 - · 25 Derivatives of Exponential Functions, *y* = *e*ˣ (`derivative-of-e-to-the-x`, topic, site ch5)
@@ -145,8 +145,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
 - ✓ 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
 - ✓ 10 Circular Permutations (`circular-permutations`, topic, site ch2)
-- ◐ 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
-- ◐ 12 Combination Identities (`combination-identities`, topic, site ch3)
+- ✓ 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
+- ✓ 12 Combination Identities (`combination-identities`, topic, site ch3)
 - … 13 Pascal's Triangle & Patterns (`pascals-triangle`, topic, site ch3)
 - … 14 The Binomial Theorem (`binomial-theorem`, topic, site ch3)
 - … 15 Combinations & Probability (`combinations-probability`, topic, site ch3)
@@ -184,7 +184,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 05 Carboxylic Acids and Esters (`carboxylic-acids-and-esters`, topic, site ch1)
 - ✓ 06 Amines and Amides (`amines-and-amides`, topic, site ch1)
 - ✓ 07 Addition Polymers (`addition-polymers`, topic, site ch1)
-- ◐ 08 Condensation Polymers (`condensation-polymers`, topic, site ch1)
+- ✓ 08 Condensation Polymers (`condensation-polymers`, topic, site ch1)
 - ✓ 09 IUPAC Nomenclature (`iupac-nomenclature`, topic, site ch1)
 - … 10 Organic Reaction Mechanisms (`organic-reaction-mechanisms`, topic, site ch1)
 - … 11 Stereoisomers (`stereoisomers`, topic, site ch1)
@@ -241,7 +241,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
 - ✓ 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
 - ✓ 09 C3, C4 and CAM Photosynthesis and Photorespiration (`c3-c4-cam`, topic, site ch2)
-- … 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)
+- ◐ 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)
 - … 11 Redox Reactions (`redox-reactions`, topic, site ch2)
 - … 12 NAD⁺ and FAD (`nad-and-fad`, topic, site ch2)
 - … 13 Overview of Cellular Respiration (`overview-of-cellular-respiration`, topic, site ch2)
@@ -313,12 +313,12 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 02 Close Reading of Short Fiction (`close-reading-short-fiction`, topic, site ch1)
 - ✓ 03 Reading Poetry (`reading-poetry`, topic, site ch1)
 - ✓ 04 From Paraphrase to Analysis (`paraphrase-to-analysis`, topic, site ch1)
-- … 05 The Writing Process (`writing-process`, topic, site ch2)
+- ◐ 05 The Writing Process (`writing-process`, topic, site ch2)
 - ✓ 06 Essay Forms (`essay-forms`, topic, site ch2)
 - … 07 Conventions & Citation (`conventions-and-citation`, topic, site ch2)
 - … 08 Elizabethan Context (`elizabethan-context`, topic, site ch3)
-- · 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
-- · 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
+- … 09 The Tragic Hero & Aristotelian Form (`tragic-hero`, topic, site ch3)
+- … 10 Soliloquy & Character (`soliloquy-and-character`, topic, site ch3)
 - · 11 Themes & Motifs (`themes-and-motifs`, topic, site ch3)
 - · 12 Performance & Adaptation (`performance-and-adaptation`, topic, site ch3)
 - · 13 What is "Canadian Literature"? (`what-is-canlit`, topic, site ch4)

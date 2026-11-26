@@ -1,0 +1,157 @@
+/* SBI4U 10: energy landscape (Plot canvas), ΔG bars, energy-accounting ledger (S3), enzyme stations (SVG), ΔG calculator, task.
+   Roles: reaction --pen; uncatalysed hill --ink-2 dashed; ATP --bio-atp (ADP and Pᵢ in --ink-2); carbon compounds (glucose,
+   substrate, pathway A–D) --bio-carbon; enzyme outlines --ink-2; competitive inhibitor --f3; allosteric inhibitor --acol;
+   heat bar --ink-2 fill with an orange (--p-k) outline and the word "heat". */
+:root{--ez-enzf:color-mix(in srgb,var(--ink-2) 12%,var(--sheet))}
+
+/* hero equation */
+.em-heq .em-hdg{display:block;font-size:.78em;margin-top:.2em;color:var(--ink-2)}
+.em-c-atp{color:var(--bio-atp);font-weight:700}
+
+/* radio groups (from SBI4U 06 / 01 / MHF4U 25) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .8em;font-size:.88rem;min-height:34px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg.chips.em-rxc button{border-radius:8px;text-align:left;line-height:1.3}
+
+/* stepper */
+.em-step{display:inline-flex;align-items:center;gap:6px}
+.em-stb{min-width:40px;min-height:40px;border:1.5px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--ink);font-size:1.15rem;font-weight:700;line-height:1}
+.em-stb:disabled{opacity:.4;cursor:default}
+.em-sto{padding:0 .5em;text-align:center;font-weight:700}
+
+/* explore layout */
+.em-pg [hidden]{display:none!important}
+.em-pg .pg-ctrl{display:grid;gap:12px}
+.em-panel{display:grid;gap:12px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.em-pnote,.em-note{margin:0}
+.em-note{margin-top:10px}
+.em-runrow{margin:0}
+.em-sl{margin:0}
+.em-sl input{width:100%;accent-color:var(--ink)}
+.em-legend{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;margin:6px 0 0;color:var(--ink-2)}
+.em-legend span{display:inline-flex;align-items:center;gap:5px}
+.em-legend svg{width:26px;height:8px}
+.em-lg-pen{stroke:var(--pen);stroke-width:3}
+.em-lg-unc{stroke:var(--ink-2);stroke-width:2;stroke-dasharray:5 4}
+.em-lg-atp{stroke:var(--bio-atp);stroke-width:3}
+.em-cap{margin:8px 0 0;font-size:.92rem;min-height:2.8em}
+.em-more{display:none;margin-top:6px}
+@media (max-width:640px){
+  .em-more{display:inline-flex}
+  .em-read:not(.open) .em-x{display:none}
+  #em-cv{aspect-ratio:1/1}
+}
+
+/* ΔG bars */
+.em-bars{margin-top:10px;display:grid;gap:6px;padding:10px 12px;border:1.5px solid var(--rule);border-radius:8px}
+.em-brow{display:grid;grid-template-columns:76px minmax(0,1fr) 52px;align-items:center;gap:8px;font-size:.88rem}
+.em-bl{font-weight:700}
+.em-bt{position:relative;height:16px;background:var(--paper);border-radius:3px}
+.em-bz{position:absolute;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:var(--ink)}
+.em-bf{position:absolute;top:2px;bottom:2px;border-radius:2px}
+.em-bpen{background:var(--pen)}
+.em-batp{background:var(--bio-atp)}
+.em-bnet{background:var(--ink)}
+.em-bv{font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.em-bsc{margin:0}
+
+/* energy accounting (S3 ledger) */
+.em-acct{border:1.5px solid var(--rule);border-radius:8px;padding:12px 14px;background:var(--sheet);display:grid;gap:10px}
+.em-ah{margin:0;font-weight:700}
+.em-arow{display:grid;grid-template-columns:104px minmax(0,1fr) 40px;gap:10px;align-items:center}
+.em-arow b{text-align:right;font-variant-numeric:tabular-nums}
+.em-al{font-size:.9rem;font-weight:700}
+.em-at{position:relative;height:26px;background:var(--paper);border-radius:4px}
+.em-af{position:absolute;left:0;top:0;bottom:0;border-radius:4px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.em-fin{background:var(--ink)}
+.em-fuse{background:var(--pen)}
+.em-fheat{background:var(--ink-2);box-shadow:inset 0 0 0 3px var(--p-k)}
+.em-fheat span{color:var(--sheet);font-weight:700;font-size:.82rem}
+.em-typ{position:absolute;top:-5px;bottom:-5px;border:2px solid var(--ink);border-radius:3px;background:transparent;min-width:4px}
+.em-typl{margin:0}
+.em-typk{display:inline-block;width:12px;height:12px;border:2px solid var(--ink);border-radius:3px;vertical-align:-2px}
+.em-laws{border-top:1px solid var(--rule);padding-top:8px;display:grid;gap:4px;font-size:.92rem}
+.em-laws p{margin:0}
+.em-ok{color:var(--green);font-weight:700}
+.em-blk{color:var(--red);font-weight:700}
+
+/* final check data tables */
+.em-qt{border-collapse:collapse;margin:8px 0;font-size:.95rem}
+.em-qt th,.em-qt td{border:1px solid var(--rule);padding:4px 14px;text-align:center}
+.em-qt thead th{background:var(--paper)}
+
+/* sorter closing note */
+.em-sortx{display:block;margin-top:4px;font-weight:400}
+
+/* Part 3 */
+.ez-p3{display:grid;gap:26px}
+.ez-st > h3{margin-top:0}
+.ez-st + .ez-st{border-top:1.5px solid var(--rule);padding-top:20px}
+.ez-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px 24px;align-items:start}
+@media (max-width:820px){ .ez-row{grid-template-columns:minmax(0,1fr)} }
+.ez-fig{margin:0}
+.ez-side{display:grid;gap:12px;min-width:0}
+.ez-side .tiny{margin:0}
+.ez-stage{border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);overflow:hidden}
+.ez-stage svg{display:block;width:100%;height:auto}
+.ez-cap{margin:8px 0;font-size:.92rem;min-height:2.6em}
+.ez-read{margin:0}
+.ez-gwrap{min-width:0}
+.ez-leg2{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.ez-k{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:-1px;margin-left:4px}
+.ez-k-sub{background:var(--bio-carbon)}
+.ez-k-comp{background:var(--f3)}
+.ez-k-allo{background:var(--acol)}
+.ez-data{margin-top:12px}
+.ez-tw{max-height:290px;overflow:auto}
+.ez-tbl{border-collapse:collapse;width:100%;min-width:340px;font-size:.92rem;font-variant-numeric:tabular-nums}
+.ez-tbl th,.ez-tbl td{border-bottom:1px solid var(--rule);padding:4px 10px;text-align:right}
+.ez-tbl thead th{position:sticky;top:0;background:var(--sheet)}
+.ez-tbl tr.on th,.ez-tbl tr.on td{background:var(--hi-soft);font-weight:700}
+.ez-key{margin:10px 0 0}
+.ez-ex{margin:12px 0 0;font-size:.95rem;padding:8px 12px;border-left:4px solid var(--rule);background:var(--paper)}
+.ez-fl{display:flex;justify-content:space-between;margin:0 0 4px;font-size:.92rem}
+.ez-ft{display:block;height:12px;background:var(--paper);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.ez-ft i{display:block;height:100%;background:var(--ink)}
+
+/* Part 3 SVG */
+.ez-bg{fill:var(--sheet)}
+.ez-enz{fill:var(--ez-enzf);stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round}
+.ez-sub{fill:var(--bio-carbon);stroke:var(--sheet);stroke-width:1.2;stroke-linejoin:round}
+.ez-comp{fill:var(--f3);stroke:var(--sheet);stroke-width:1.2;stroke-linejoin:round}
+.ez-allo{fill:var(--acol);stroke:var(--sheet);stroke-width:1.2}
+.ez-dtok{fill:var(--bio-carbon);stroke:var(--sheet);stroke-width:1.2}
+.ez-lead{stroke:var(--ink-2);stroke-width:1.2}
+.ez-lab{font:600 12px var(--font-ui);fill:var(--ink)}
+.ez-lab-b{font-weight:700}
+.ez-lab-s{font-size:10.5px;fill:var(--ink-2)}
+.ez-halo{fill:none;stroke:var(--ink-2);stroke-width:1.4;stroke-dasharray:6 4}
+.ez-strain{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round}
+.ez-div{stroke:var(--rule);stroke-width:1.5}
+.ez-cpd{fill:var(--bio-carbon)}
+.ez-cpdt{font:700 15px var(--font-ui);fill:var(--sheet)}
+.ez-flowl{stroke:var(--ink);stroke-linecap:round}
+.ez-flowh{fill:var(--ink)}
+.ez-fb{fill:none;stroke:var(--ink);stroke-width:2}
+.ez-fbh{fill:var(--ink)}
+.ez-minus{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.ez-minust{font:700 18px var(--font-ui);fill:var(--ink)}
+@media (max-width:640px){ .ez-stage3 .ez-lab{font-size:17px} .ez-stage3 .ez-lab-s{font-size:14px} .ez-stage3 .ez-cpdt{font-size:20px} .ez-stage1 .ez-lab{font-size:13.5px} }
+
+/* ΔG calculator */
+.em-unit{margin-left:6px;color:var(--ink-2);font-weight:700}
+.em-pair{display:grid;gap:6px}
+
+/* performance task */
+.em-conds{margin:8px 0 0;padding-left:1.4em}
+.em-conds li{margin:2px 0}
+.em-tin{display:grid;gap:12px;margin:12px 0}
+.em-tpv h4{margin:0 0 6px}
+.em-tnet{margin:8px 0 4px;font-size:.95rem}

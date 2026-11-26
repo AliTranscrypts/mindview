@@ -155,3 +155,6 @@ every module that uses the touched code, then ship them together).
 | C1 chainStage, calcAct (mixed set) | sch4u 08 | model values: PLA 10% compost, cellulose 15%/95%, 0.85 chain-length per melt; Canada line VERIFY |
 | D5 pascalExplorer (rows 0–15, marks, row sums, mod colouring, hockey/fib), N29 sentenceBuilder (+chip order), N4 numEntryWords | mdm4u 12 | plan: n = 15 state unreachable (slider max 10) |
 | V9 motionTrack (v/a arrows, strip, marks), V5 motionPanels (tabs on phones), V11 motionSignChart, V8 tripBoxes | mcv4u 15 | toolkit bug: intervalBuilder arrow keys step 1 even with ½ steps |
+| energyLandscape, enzymeSVG/enzymeZoom, S3 ledger (accounting), stepper, S7 rateProbe, S2 feedback pathway | sbi4u 10 | B2 value VERIFY |
+| V10 shapeStage (box, field), modelSlots, orderSteps, slotChoice, V8 solveBoxes, V11 signChart | mcv4u 17 | toolkit quirk: {x} placeholders inside backtick maths get broken by MV.m |
+| E17 draftWorkspace, E7 thesisForge, E5 sentenceLab, story reader panel | eng4u 05 | 340 KB (over 300 target); plan drafts did not fit together — readout shows 8 changes/4 higher-order (plan 9/6); all texts verified |

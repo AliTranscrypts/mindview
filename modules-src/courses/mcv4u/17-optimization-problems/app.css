@@ -1,0 +1,128 @@
+/* MCV4U 17: hero equation, V10 shape stage (box and field figures, objective graph, V′ panel), Box builder controls and
+   readouts, Part 3 stations (ordering graph, chip-slot model builder, V11 sign chart), practice slot chips and V8 boxes, task.
+   Tokens added here (light and dark): --op-river (river band), --v10-fo / --v10-fo-out / --v10-fo-in (box face opacities:
+   base --pen at 15% light, 25% dark, as the plan asks; outer and inner flap faces a little stronger and weaker). */
+:root{--op-river:#C9DCF4;--op-bank:#6E8FC4;--v10-fo:.15;--v10-fo-out:.3;--v10-fo-in:.2}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--op-river:#203553;--op-bank:#5D7FB3;--v10-fo:.25;--v10-fo-out:.42;--v10-fo-in:.3}
+}
+:root[data-theme="dark"]{--op-river:#203553;--op-bank:#5D7FB3;--v10-fo:.25;--v10-fo-out:.42;--v10-fo-in:.3}
+
+.op-heq{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:.1em .1em;font-size:.74em;line-height:1.4}
+.op-ht{white-space:nowrap}
+.op-ht .m{font-size:1em}
+.op-arr{color:var(--ink-2);margin:0 .15em;font-style:normal}
+
+/* ---- V10 shape stage ---- */
+.v10{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 18px;align-items:start}
+.v10-fig,.v10-gr{min-width:0}
+.v10-svg{display:block;width:100%;height:auto;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet)}
+.v10-low{margin-top:8px}
+.v10-low[hidden]{display:none}
+canvas.plot.v10-d{aspect-ratio:16/7}
+.v10-base{fill:var(--pen);fill-opacity:var(--v10-fo);stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round}
+.v10-out{fill:var(--pen);fill-opacity:var(--v10-fo-out);stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round}
+.v10-in{fill:var(--pen);fill-opacity:var(--v10-fo-in);stroke:var(--ink);stroke-width:1.4;stroke-linejoin:round}
+.v10-cut{fill:none;stroke:var(--ink-2);stroke-width:1.3;stroke-dasharray:4 3}
+.v10-cut.hi{fill:var(--hi);fill-opacity:.55}
+.v10-dim{fill:var(--ink);font:700 13px var(--font-ui);paint-order:stroke;stroke:var(--sheet);stroke-width:3px;stroke-linejoin:round}
+.v10-cx{font:italic 600 14px var(--font-math)}
+.v10-river{fill:var(--op-river)}
+.v10-bank{stroke:var(--op-bank);stroke-width:1.5}
+.v10-rl{font:italic 600 12px var(--font-ui);fill:var(--ink-2)}
+.v10-field{fill:var(--hi-soft)}
+.v10-fence{fill:none;stroke:var(--ink);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.v10-quad{stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:5 4}
+.v10-bar{stroke:var(--ink-2);stroke-width:2}
+.v10-sb{font:600 11px var(--font-ui);fill:var(--ink-2)}
+.op-hero.v10{grid-template-columns:minmax(0,1fr);gap:4px}
+.op-hero .v10-svg{border:0;background:transparent;max-height:230px}
+.op-hero canvas.plot{aspect-ratio:16/8}
+
+/* ---- Explore ---- */
+.op-eq{font-size:clamp(1.25rem,3vw,1.7rem)}
+.op-bot{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px 28px;align-items:start;margin-top:16px}
+.op-ctl,.op-rd{min-width:0}
+.op-lab{font-weight:700}
+.op-crow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:10px}
+.op-chips{margin:0}
+.op-chips .chip{font-size:.88rem}
+.op-tog[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.op-sl{margin-top:12px}
+.op-sl output{color:var(--ink)}
+.op-type{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:4px 0 0}
+.op-type label{font-weight:700;font-size:.92rem}
+.op-type .numin.short{width:5.5rem}
+.op-note{min-height:1.2em;margin:6px 0 0;font-weight:600}
+.op-how{margin:6px 0 10px}
+.op-ans{border-top:1.5px dashed var(--rule);padding-top:10px}
+.op-ans label{display:block;font-weight:700;font-size:.92rem;margin-bottom:4px}
+.op-ansrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.op-ansrow .numin{width:9rem}
+.op-more[hidden]{display:none}
+.op-more{margin-top:8px}
+.op-more summary{font-weight:700;cursor:pointer;padding:4px 0}
+
+/* ---- Part 3 ---- */
+.op-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.op-st h3{margin-top:0}
+.op-prob{font-weight:600}
+.op-ordg{max-width:460px;margin-top:14px}
+.op-ordg .tiny{margin:4px 0 0}
+.op-mp{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule)}
+.op-mp:first-of-type{border-top:0;padding-top:0}
+.op-mpt{font-weight:600}
+.op-slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.op-slot{display:flex;flex-direction:column;gap:4px;text-align:left;border:2px dashed var(--rule);border-radius:8px;background:var(--sheet);padding:8px 10px;min-height:68px;min-width:0}
+.op-slot.on{border-color:var(--ink);border-style:solid;background:var(--hi-soft)}
+.op-slot.full{border:2px solid var(--green);background:var(--good-bg);opacity:1}
+.op-sll{font:700 .78rem var(--font-ui);color:var(--ink-2)}
+.op-slv{font:400 1.02rem var(--font-math);overflow-wrap:anywhere}
+.op-slv .m{white-space:normal}
+.op-tray{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.op-mchip{font-size:.95rem}
+.op-mchip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.op-mtip{margin:10px 0 0}
+.op-sch{font-weight:700;margin:12px 0 4px}
+.op-scw{overflow-x:auto;position:relative}
+table.op-sct th,table.op-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.op-sct tbody th{text-align:left;font-weight:600}
+.op-sck{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.op-sct .op-scu{font:600 .78rem var(--font-ui);color:var(--ink-2)}
+table.op-sct .op-scu .m{font-size:1.1em}
+table.op-sct .op-scar span[aria-hidden]{font-size:1.25rem;line-height:1;display:block}
+.op-scw2{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.op-sct .op-scd td{font-weight:700}
+.op-mx{margin-top:10px}
+
+/* ---- Practice ---- */
+.op-mrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin:8px 0 0}
+.op-mlab{font-weight:700;font-size:.9rem;min-width:5.2rem;color:var(--ink-2)}
+.op-mrow .chips{margin:0;flex:1 1 300px}
+.op-mrow .chip{font-size:.95rem}
+.op-mrow .chip.op-good{background:var(--good-bg);border-color:var(--green);color:var(--ink)}
+.op-snote{margin:6px 0 0}
+.op-bxs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px}
+.op-bx{display:flex;align-items:center;gap:8px;font-size:.98rem}
+.op-bx .numin.short{width:6rem}
+.op-bx .numin.op-ex{width:7.5rem}
+.op-bu{font-size:.95rem;color:var(--ink-2)}
+
+/* ---- task ---- */
+.op-tstep{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.op-tstep label{min-width:9rem}
+.op-tstep .m{font-size:1.2rem}
+.op-tstep .btn{min-width:40px;font-size:1.1rem}
+.op-tstep .numin.short{width:5rem}
+.op-tpv.v10{grid-template-columns:minmax(0,1fr)}
+
+@media (max-width:820px){
+  .op-bot{grid-template-columns:minmax(0,1fr)}
+  .op-slots{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .v10{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:420px){
+  .op-slots{grid-template-columns:minmax(0,1fr)}
+}

@@ -203,8 +203,7 @@
     "03",
     "02"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "12",
@@ -218,8 +217,7 @@
    "prereqs": [
     "11"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "13",
