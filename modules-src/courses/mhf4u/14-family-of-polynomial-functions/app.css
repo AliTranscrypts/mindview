@@ -1,0 +1,106 @@
+/* MHF4U 14: family fan, zero slots, exact k box, build sheet, find the member, task */
+.ff-top{margin:0 0 10px}
+.ff-radio{margin:0}
+.ff-radio .chip .m{white-space:normal}
+.ff-fam .ff-radio .chip{font-size:.92rem}
+.ff-sub{font:400 clamp(1.05rem,2.6vw,1.35rem)/1.3 var(--font-math);margin:-2px 0 8px;color:var(--ink);overflow-wrap:anywhere;min-height:0}
+.ff-sub .m{white-space:normal;font-size:1em}
+.ff-note{min-height:1.5em;margin:8px 0 0;font-size:.95rem;font-weight:700;color:var(--ink)}
+.ff-ctrl,.pg-ctrl > div + div{margin-top:12px}
+.pg-ctrl .slider{margin-top:6px}
+.pg-ctrl input[type=range]{width:100%;min-height:40px}
+.ff-exact{font:400 .85rem var(--font-ui);color:var(--ink-2)}
+.ff-ex{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.ff-ex > .m{font-size:1.25rem}
+.ff-pq{width:3.6rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.4em .45em;font:400 1.15rem var(--font-math);text-align:center}
+.ff-pq:focus{border-color:var(--ink)}
+.ff-bar{font:400 1.4rem var(--font-math)}
+.ff-pm{min-width:42px;min-height:38px;font:700 1.2rem var(--font-math)}
+.ff-exmsg{min-height:1.1em;margin:4px 0 0;color:var(--red)}
+.ff-zoomrow{margin-top:0}
+.ff-zb{min-width:42px;font-size:1.1rem;padding:.25em .6em}
+.ff-reveal{margin:6px 0 0;min-height:1.2em}
+.ff-setinfo{margin:0}
+.ff-setrow{margin-top:8px}
+.pg-read .ff-hl{background:var(--hi-soft);border-radius:4px;padding-left:6px;padding-right:6px}
+.ff-st{font-weight:700}
+.ff-st.caught{color:var(--green)}
+.ff-st.far,.ff-st.zeroNon,.ff-st.axis,.ff-st.zeroZero{font-weight:400}
+
+/* zero slots (N21) */
+.zs{display:grid;gap:0;container-type:inline-size}
+.zs-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:7px 0;border-bottom:1px solid var(--rule)}
+.zs-row:last-child{border-bottom:0}
+.zs-row.empty .zs-lab{color:var(--ink-2)}
+.zs-lab{font-weight:700;min-width:4.4em}
+.zs-pos{display:inline-flex;align-items:center;gap:4px}
+.zs-st{min-width:36px;min-height:36px;padding:.2em .5em;font-size:1.1rem}
+.zs-in{width:4.4rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.35em .4em;font:400 1.1rem var(--font-math);text-align:center}
+.zs-in:focus{border-color:var(--ink)}
+.zs-fix{font-size:1.1rem;min-width:4.4rem}
+.zs-ord{display:inline-flex;align-items:center;gap:4px}
+.zs-ord .chip{min-width:34px;padding:.2em .55em}
+.b3-ord{gap:2px;flex-wrap:nowrap}
+.b3-ord .tiny{margin-right:2px}
+.b3-ord .chip{min-width:30px;min-height:30px;padding:.1em .4em}
+.zs-clr{padding:.3em .6em;order:5}
+@container (max-width:460px){
+  .zs-lab{flex:1 0 55%}
+  .zs-clr{order:1}
+  .zs-pos{order:2}
+  .zs-ord{order:3}
+}
+.zs-msg{min-height:1.1em;color:var(--red);margin:4px 0 0}
+
+/* Part 3 build sheet */
+.b3-rounds{margin-bottom:12px}
+.b3-cond{margin:0 0 10px}
+.b3-eq{font-size:clamp(1.1rem,2.8vw,1.5rem);margin:10px 0 4px}
+.b3-eq .m{white-space:normal}
+.b3-note{margin:4px 0 0;font-weight:700;min-height:1.2em}
+.b3-step{border:1.5px solid var(--rule);border-radius:8px;padding:10px 12px;margin-bottom:10px;background:var(--sheet)}
+.b3-step.cur{border-color:var(--ink)}
+.b3-step.locked{opacity:.65}
+.b3-step.done{border-color:var(--green)}
+.b3-step h4{margin:0 0 6px;font-size:1rem}
+.b3-ok{color:var(--green)}
+.b3-ask,.b3-ask2{margin:0 0 8px}
+.b3-tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 4px}
+.b3-tiles.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.b3-cell{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+.b3-tile{width:100%;text-align:center}
+.b3-tile[aria-checked="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.b3-tile .m{white-space:nowrap}
+.b3-ord{display:inline-flex;flex-wrap:wrap;align-items:center;gap:3px}
+.b3-frame{margin:0 0 6px;font-size:1.1rem;line-height:2.4}
+.b3-frame label{font-weight:400}
+.b3-in,.mb-in{width:5.4rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);padding:.3em .45em;font:400 1.1rem var(--font-math);text-align:center;vertical-align:middle}
+.b3-in.short{width:4rem}
+.b3-in.co{width:3.2em}
+.b3-in:focus,.mb-in:focus{border-color:var(--ink)}
+.b3-in.bad,.mb-in.bad{border-color:var(--red);background:var(--bad-bg)}
+.b3-in:disabled,.mb-in:disabled{opacity:.85}
+.b3-done{font-weight:700;color:var(--green);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.b3-alg .alg-lines .m{white-space:normal}
+
+/* Practice: find the member */
+.mb-item{margin-top:6px}
+.mb-prompt{margin:0 0 8px}
+.mb-frame{font-size:1.1rem;line-height:2.5;margin:0}
+.mb-gap{display:inline-block;width:18px}
+
+/* Task */
+.tk-h{margin:10px 0 2px;font-size:.95rem}
+.tk-cap{font-size:clamp(1.15rem,3vw,1.6rem)}
+
+@media (min-width:821px){
+  .b3-left{position:sticky;top:calc(var(--mv-top, 0px) + 150px)}
+}
+@media (max-width:560px){
+  .b3-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+/* long equations in Spot the Error steps, prompts and the results must wrap on phones */
+.steps-list .m,.sbtn .m,.task .m,.mb-prompt .m,.b3-step .fb .m,.ff-reveal .m,.pg-read dd .m{white-space:normal}
+/* the hero equation is long: shrink it on phones so it fits on one line */
+@media (max-width:560px){ .hero .hero-eq.md{font-size:clamp(1.3rem,7vw,1.7rem)} }
+.hero .hero-eq .m{white-space:normal}

@@ -32,3 +32,4 @@ every module that uses the touched code, then ship them together).
 | N28 rootHunter (with its own synthetic-division step-through), N4 factorTray, groupingTiles, cubeVolumeModel | mhf4u 12 | |
 | N22 syntheticDivision, G13 valueBar, N4 boxSet | mhf4u 11 | |
 | N15 moveChooser, N25 flattenMorph, N4 rootBoxes, dotLabels | mhf4u 13 | |
+| N21 zeroSlots, exactQ | mhf4u 14 | |
