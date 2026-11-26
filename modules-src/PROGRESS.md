@@ -6,13 +6,13 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 55/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 56/295 live, 1 built, 7 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 1/59 | 1 | 57 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 1/39 | 0 | 38 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 2/59 | 0 | 57 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 1/39 | 1 | 37 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 1/52 | 0 | 51 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 1/46 | 0 | 45 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 1/25 | 0 | 24 | 0 |
@@ -74,7 +74,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 ## MCV4U Calculus and Vectors (`mcv4u`)
 
 - ✓ 01 Rationalizing Radical Expressions (`rationalizing-radical-expressions`, topic, site ch1)
-- ◐ 02 Slope of a Tangent to a Curve (`slope-of-a-tangent`, topic, site ch1)
+- ✓ 02 Slope of a Tangent to a Curve (`slope-of-a-tangent`, topic, site ch1)
 - … 03 Rates of Change (`rates-of-change`, topic, site ch1)
 - … 04 The Limit of a Function (`the-limit-of-a-function`, topic, site ch1)
 - · 05 Properties of Limits (`properties-of-limits`, topic, site ch1)
@@ -136,8 +136,8 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 ## MDM4U Mathematics of Data Management (`mdm4u`)
 
 - ✓ 01 Sample Spaces & Counting Outcomes (`sample-spaces`, topic, site ch1)
-- … 02 The Fundamental Counting Principle (`fundamental-counting-principle`, topic, site ch1)
-- · 03 Mutually Exclusive Events & the Additive Principle (`mutually-exclusive`, topic, site ch1)
+- ◐ 02 The Fundamental Counting Principle (`fundamental-counting-principle`, topic, site ch1)
+- … 03 Mutually Exclusive Events & the Additive Principle (`mutually-exclusive`, topic, site ch1)
 - · 04 Venn Diagrams & Set Operations (`venn-diagrams`, topic, site ch1)
 - · 05 Independent vs Dependent Events (`independent-dependent`, topic, site ch1)
 - · 06 Factorial Notation (`factorial-notation`, topic, site ch2)

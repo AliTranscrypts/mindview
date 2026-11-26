@@ -1,0 +1,83 @@
+/* ENG4U course styles (toolkit/courses/eng4u.css). The assembler adds this file to every ENG4U module, after the toolkit CSS.
+   Annotation colour roles (course plan §5), light / dark, defined like the base tokens (same hexes as the base tokens named):
+     --an-sound    orange   sound devices: alliteration, assonance, rhythm, rhyme      (= --p-k)
+     --an-image    teal     imagery, sensory detail                                    (= --f3)
+     --an-figure   violet   figurative language: metaphor, simile, personification…    (= --acol)
+     --an-syntax   blue     syntax and structure: sentence shape, line breaks, repetition (= --pen; the "Structure" lens)
+     --an-diction  brown    diction: word choice, connotation, tone words              (= --p-b)
+     --an-theme    magenta  theme and big-idea notes                                   (= --p-c)
+     --an-*-soft            tints of the six for highlight backgrounds (text on a tint stays --ink)
+     --pp-claim / --pp-evidence / --pp-analysis / --pp-link   paragraph parts: blue / teal / violet / ink
+     --sc-stress / --sc-slack   scansion: stressed syllable (--ink, mark ´) / unstressed (--ink-2, mark ˘)
+   Rules: never colour alone. Every highlight carries a text tag (.an-tag); red and green stay reserved for feedback.
+   In canvas code read a role with MV.css("--an-figure").
+   Classes:
+     .an + .an-sound|.an-image|.an-figure|.an-syntax|.an-diction|.an-theme
+                   highlight span (tint + underline in the role colour):
+                   <mark class="an an-sound">clasps</mark><span class="an-tag an-sound">Sound · alliteration</span>
+                   The role class sets --an-c / --an-c-soft, so any element can use the role colour through them.
+     .an-tag       the text tag that always goes with a highlight (a small pill in the role colour)
+     .an-chip      lens / role toggle button: <button class="an-chip an-figure" aria-pressed="true"><i class="an-dot"></i>Figure</button>
+     .an-note      margin note with a role-coloured rule: <p class="an-note an-image">…</p>
+     .eng-margin   two columns, text | margin notes (one column under 820 px)
+     .eng-passage  passage block; inside it .eng-poem (line-numbered verse, MV.eng.passage) or .eng-prose (numbered paragraphs)
+     .eng-cite     credit line under a passage (author, title, date; MLA style)
+     .eng-toks .eng-tl .eng-tok .eng-br   word-chip selector rows (MV.eng.tokens); .eng-tok.speaking = word being read aloud
+     .eng-w        a word span in read-aloud text; .eng-w.speaking brightens it
+     .sc-syl .sc-stress .sc-slack   scansion syllables with ´ / ˘ marks above */
+:root{--an-sound:#A84C05;--an-image:#0E7C7B;--an-figure:#7A3DB8;--an-syntax:#2343C4;--an-diction:#6B5A1E;--an-theme:#B0286F;
+  --an-sound-soft:rgba(168,76,5,.13);--an-image-soft:rgba(14,124,123,.13);--an-figure-soft:rgba(122,61,184,.12);--an-syntax-soft:rgba(35,67,196,.11);
+  --an-diction-soft:rgba(107,90,30,.14);--an-theme-soft:rgba(176,40,111,.11);
+  --pp-claim:var(--an-syntax);--pp-evidence:var(--an-image);--pp-analysis:var(--an-figure);--pp-link:var(--ink);--sc-stress:var(--ink);--sc-slack:var(--ink-2)}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--an-sound:#FF9F5A;--an-image:#5FD0CD;--an-figure:#C9A8FF;--an-syntax:#93AEFF;--an-diction:#D8D08F;--an-theme:#F49AC8;
+    --an-sound-soft:rgba(255,159,90,.17);--an-image-soft:rgba(95,208,205,.16);--an-figure-soft:rgba(201,168,255,.17);--an-syntax-soft:rgba(147,174,255,.16);
+    --an-diction-soft:rgba(216,208,143,.15);--an-theme-soft:rgba(244,154,200,.15)}
+}
+:root[data-theme="dark"]{--an-sound:#FF9F5A;--an-image:#5FD0CD;--an-figure:#C9A8FF;--an-syntax:#93AEFF;--an-diction:#D8D08F;--an-theme:#F49AC8;
+  --an-sound-soft:rgba(255,159,90,.17);--an-image-soft:rgba(95,208,205,.16);--an-figure-soft:rgba(201,168,255,.17);--an-syntax-soft:rgba(147,174,255,.16);
+  --an-diction-soft:rgba(216,208,143,.15);--an-theme-soft:rgba(244,154,200,.15)}
+
+.an-sound{--an-c:var(--an-sound);--an-c-soft:var(--an-sound-soft)}.an-image{--an-c:var(--an-image);--an-c-soft:var(--an-image-soft)}
+.an-figure{--an-c:var(--an-figure);--an-c-soft:var(--an-figure-soft)}.an-syntax{--an-c:var(--an-syntax);--an-c-soft:var(--an-syntax-soft)}
+.an-diction{--an-c:var(--an-diction);--an-c-soft:var(--an-diction-soft)}.an-theme{--an-c:var(--an-theme);--an-c-soft:var(--an-theme-soft)}
+mark.an,.an{background:var(--an-c-soft,var(--hi-soft));color:inherit;box-shadow:inset 0 -2.5px 0 var(--an-c,var(--ink));border-radius:3px;padding:0 .06em}
+.an-tag{display:inline-block;font:700 .7rem/1.35 var(--font-ui);font-style:normal;letter-spacing:.01em;color:var(--an-c,var(--ink-2));background:var(--sheet);
+  border:1.5px solid var(--an-c,var(--ink-2));border-radius:999px;padding:0 .45em;margin:0 .3em 0 .2em;vertical-align:.2em;white-space:nowrap}
+.an-chip{display:inline-flex;align-items:center;gap:.4em;border:2px solid var(--an-c,var(--rule));background:var(--sheet);color:var(--ink);border-radius:999px;
+  padding:.25em .8em;font-size:.92rem;min-height:34px}
+.an-chip[aria-pressed="true"]{background:var(--an-c-soft);font-weight:700}
+.an-chip[aria-pressed="true"]::after{content:"on";font-size:.72rem;font-weight:700;color:var(--an-c)}
+.an-dot{display:inline-block;width:.75em;height:.75em;border-radius:50%;background:var(--an-c,var(--ink-2));flex:0 0 auto}
+.an-note{border-left:4px solid var(--an-c,var(--rule));background:var(--paper);border-radius:0 6px 6px 0;padding:6px 10px;margin:0 0 6px;font-size:.92rem;max-width:none}
+.eng-margin{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px 24px;align-items:start}
+.eng-margin > *{min-width:0}
+@media (max-width:820px){ .eng-margin{grid-template-columns:minmax(0,1fr)} }
+
+/* passages */
+.eng-passage{border-left:3px solid var(--rule);padding:4px 0 4px 14px;margin:0 0 12px}
+ol.eng-poem{list-style:none;margin:0;padding:0;font:400 1.15rem/1.6 var(--font-math)}
+ol.eng-poem li{display:grid;grid-template-columns:2.2em minmax(0,1fr);align-items:baseline}
+ol.eng-poem li.eng-gap{height:.6em}
+.eng-ln{font:400 .75rem var(--font-ui);color:var(--ink-2);text-align:right;padding-right:.9em;user-select:none}
+.eng-prose p{font:400 1.08rem/1.65 var(--font-math);max-width:70ch}
+.eng-prose .eng-ln{display:inline-block;min-width:3.2em;padding-right:.6em;text-align:left}
+.eng-cite{font-size:.85rem;color:var(--ink-2);margin:4px 0 0}
+
+/* word-chip selector (MV.eng.tokens) */
+.eng-toks{display:grid;gap:6px}
+.eng-tl{display:flex;flex-wrap:wrap;align-items:center;gap:4px 2px}
+.eng-tok{border:1.5px solid transparent;background:transparent;color:var(--ink);border-radius:6px;padding:.08em .28em;min-height:34px;min-width:24px;
+  font:400 1.22rem/1.3 var(--font-math)}
+.eng-tok:not(:disabled):hover{border-color:var(--rule)}
+.eng-tok.an{background:var(--an-c-soft)}
+.eng-tok[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.eng-tok.eng-br{font:700 .9rem var(--font-ui);color:var(--ink-2);border:1.5px dashed var(--rule)}
+.eng-tok.speaking,.eng-w.speaking{outline:2px solid var(--ink);outline-offset:1px;border-radius:4px}
+.eng-w{transition:opacity .25s,color .25s}
+
+/* scansion */
+.sc-syl{position:relative;display:inline-block;padding-top:.7em}
+.sc-syl::before{position:absolute;left:0;right:0;top:0;text-align:center;font:700 .85em/1 var(--font-ui)}
+.sc-stress{color:var(--sc-stress);font-weight:600}.sc-stress::before{content:"´"}
+.sc-slack{color:var(--sc-slack)}.sc-slack::before{content:"˘"}

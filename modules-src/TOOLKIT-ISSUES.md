@@ -95,3 +95,4 @@ every module that uses the touched code, then ship them together).
 | C1 moleculeView, C2 nameBuilder | sch4u 01 | course files: sch4u.js (MV.chem.data tables, f(), atom(), tablePanel(), bpOf()), sch4u.css (--at-*, role tokens, .chem) |
 | detective case chips, functionPicker, canvasMath, breakPieces sampler, task evaluator | mhf4u 50 | review |
 | V4 secantTangent, exactDec (from mhf4u 09) | mcv4u 02 | plan: TC1 h=2.5 and TC3 a=5 states unreachable with plan controls |
+| D3 countingSlots, N4 countEntry (products/powers), D1 treeDiagram (+onLevel) | mdm4u 02 | |
