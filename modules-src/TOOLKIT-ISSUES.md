@@ -29,6 +29,8 @@ every module that uses the touched code, then ship them together).
 
 - Gaps (27): every failed challenge check counts as a try, even for invalid/setup states (no way to return "not counted"); no "challenge opened" event (modules use focus/tap or set-up buttons).
 
+- Gotcha (31): the radical component uses generic class names (`.rb`); a module class `.rb` breaks every √. Namespace toolkit classes (e.g. `.mv-rb`) in a future version.
+
 ## Promotion candidates (code lives in the named module's app.js, tagged `@component`)
 | Component | First built in | Notes |
 |---|---|---|
@@ -60,3 +62,4 @@ every module that uses the touched code, then ship them together).
 | G8 circleDraw, G13 valueBars, N9 angleSlider, radioGroup, valuePalette | mhf4u 28 | |
 | N18 connectionBuilder, N26 factorTiles + sign-chart table, canvas tag/leader helpers | mhf4u 24 | review |
 | N15 moveChooser (two-column LS/RS), N23 overlayGauge, N5 orderTray (decoy tray), N4 identityBoxes, exactRad | mhf4u 29 | |
+| N24 circleGraphLink | mhf4u 31 | needed by 34, 35, 36 |

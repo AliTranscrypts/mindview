@@ -41,7 +41,8 @@ checklist reacts.
 - Known toolkit quirks (work around locally): `MV.player` called twice on one host adds duplicate
   listeners (use a fresh host); matching (N6) appends "Try another partner." to mismatch feedback;
   `Plot.line` ignores alpha; y tick labels clip when the y-axis is off-screen. Don't name a text field `ok` (only a boolean
-  `ok` marks answers).
+  `ok` marks answers). Don't define CSS classes that the toolkit uses (e.g. `.rb` is the √ bar); prefix
+  your own classes with the module's topic.
 - Canadian spelling, true minus signs, upright function names, colours only from tokens.
 
 **Reply (under 150 words):** PASS/FAIL of the final check run, output file size, counts (goals, warm-up,

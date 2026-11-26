@@ -55,10 +55,26 @@ function courses() {
 const built = (c, m) => (m.status === 'built' || m.status === 'live') && fs.existsSync(path.join(repo, 'courses', c.site, 'modules', `${m.nn}-${m.slug}.html`));
 
 const failures = [];
-const fail = (what, msg) => { failures.push(`${what}: ${msg}`); console.log(`  ✗ ${what}: ${msg}`); };
+let QUIET = false;
+const fail = (what, msg) => { failures.push(`${what}: ${msg}`); if (!QUIET) console.log(`  ✗ ${what}: ${msg}`); };
 const ok = (what, msg = '') => console.log(`  ✓ ${what}${msg ? ' — ' + msg : ''}`);
 
+// A failing page is retried once after a pause (fresh deploys can take a few seconds to reach every
+// edge); it only counts as a failure if the retry fails too.
 async function visit(ctx, url, what, check) {
+  const before = failures.length;
+  await visitOnce(ctx, url, what, check, true);
+  if (failures.length > before) {
+    failures.length = before;
+    console.log(`    … retrying ${what} in 8 s`);
+    await new Promise((r) => setTimeout(r, 8000));
+    await visitOnce(ctx, url, what, check, false);
+  }
+  QUIET = false;
+}
+
+async function visitOnce(ctx, url, what, check, quiet) {
+  QUIET = quiet;
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', (e) => errors.push(String(e.message || e)));

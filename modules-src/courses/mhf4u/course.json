@@ -500,8 +500,7 @@
     "28",
     "27"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "30",
@@ -537,7 +536,8 @@
     "18",
     "19"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "32",
@@ -642,7 +642,8 @@
    "prereqs": [
     "17",
     "20"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "38",
