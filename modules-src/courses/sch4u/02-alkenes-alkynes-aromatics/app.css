@@ -1,0 +1,126 @@
+/* SCH4U 02: hero, C1 molecule view (atom + bond buttons), C2 name chips, C3 stepper, Multiple-bond lab, bromine test, task */
+/* Bromine-water colours (course plan §4: indicator-like colours in their true colours, always named in words) */
+:root{--ae-bw:#C8661A;--ae-clear:#E4ECF2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ae-bw:#D9772E;--ae-clear:#33424A}}
+:root[data-theme="dark"]{--ae-bw:#D9772E;--ae-clear:#33424A}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.ae-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ae-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ae-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+
+/* C1 molecule view */
+.c1-wrap{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.c1-svg{display:block;width:100%;height:auto;touch-action:pan-y;font-family:var(--font-ui)}
+.c1-ov{position:absolute;inset:0;pointer-events:none}
+.c1-b{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;background:transparent;padding:0;pointer-events:auto;cursor:pointer}
+.c1-b.bd{width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:6px}
+.c1-b:hover{background:var(--hi-soft)}
+.c1-b:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.c1-rot{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.c1-rot .btn{min-width:40px;min-height:40px}
+.c1-rot[hidden]{display:none}
+
+/* C2 name chips */
+.c2-tape{font:400 1.3rem/1.3 var(--font-ui);margin:4px 0 10px;min-height:1.4em;overflow-wrap:anywhere}
+.c2-name{font-weight:700;color:var(--ink)}
+.c2-lab{display:block;font-size:.78rem;font-weight:700;color:var(--ink-2);margin:6px 0 2px}
+.c2-tape .c2-lab{display:inline;font-size:.85rem}
+.c2-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.c2-row .c2-lab{flex-basis:100%;margin-bottom:0}
+.c2-c{min-height:36px;min-width:36px}
+.c2-c:disabled{opacity:.45}
+.c2-act{margin-top:10px}
+
+/* Multiple-bond lab */
+.ae-how{margin-top:0}
+.ae-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.ae-left{grid-area:view;min-width:0}.ae-ctrl{grid-area:ctrl;min-width:0}.ae-right{grid-area:read;min-width:0}
+.ae-cap{font:400 clamp(1.15rem,2.6vw,1.55rem)/1.3 var(--font-ui);white-space:normal}
+.ae-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.ae-views{margin-top:10px}
+.ae-modes{margin-bottom:12px}
+.ae-sl{display:block;margin:4px 0 6px}
+.ae-msg{min-height:1.4em;margin:8px 0 6px;font-size:.92rem;color:var(--ink-2)}
+.ae-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:10px 0 6px}
+.ae-bondrow .chips{margin:0}
+.ae-bondrow .chip,.ae-merow .btn{min-height:36px}
+.ae-bondrow .chip:disabled{opacity:.45}
+.ae-why{margin:4px 0 0}
+.ae-merow{margin-top:8px}
+.ae-rot{margin-top:14px;padding-top:10px;border-top:1px solid var(--rule)}
+.ae-roth{margin:0 0 4px}
+.ae-rotmsg{min-height:1.4em;margin:6px 0 0;font-weight:700}
+.ae-react,.ae-bzc{margin-top:12px}
+.ae-react[hidden],.ae-bzc[hidden],.ae-build[hidden],.ae-bz[hidden],.ae-molbox[hidden],.ae-views[hidden],.ae-step[hidden],.ae-stepcap[hidden]{display:none}
+.ae-shelf .rg.chips button{font-size:.92rem}
+.ae-twice{display:flex;align-items:center;gap:8px;margin:10px 0 4px;font-size:.95rem;min-height:32px}
+.ae-twice input{width:20px;height:20px}
+.ae-twice.off{opacity:.55}
+.ae-rmsg{margin:4px 0 0}
+.ae-step{margin-top:10px}
+.ae-stepcap{margin:8px 0 0;min-height:2.8em;font-size:1rem}
+.ae-flasks{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ae-fl{margin:0;border:1.5px solid var(--rule);border-radius:10px;padding:10px;background:var(--sheet);text-align:center}
+.ae-fl figcaption{font-size:.95rem;text-align:left;margin-top:6px}
+.ae-flask{display:inline-block;width:110px;height:auto;vertical-align:middle}
+.ae-ring{display:inline-block;width:150px;max-width:52%;height:auto;vertical-align:middle;font-family:var(--font-ui)}
+.ae-fl .ae-flask{width:96px}
+.ae-word{font-weight:700}
+.ae-right .chem-tab{margin-top:14px}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ae-tubes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:10px 0}
+.ae-tube{display:flex;flex-direction:column;align-items:center;gap:2px;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:8px 4px;cursor:pointer;font:inherit;min-height:44px}
+.ae-tube:hover{border-color:var(--pen)}
+.ae-tube-g{width:34px;height:auto}
+.ae-tn{font-weight:700;font-size:.9rem;text-align:center}
+.ae-card{border-left:4px solid var(--pen);background:var(--info-bg);padding:8px 12px;border-radius:6px;margin:6px 0}
+.ae-card p{margin:0}
+.ae-h4{margin:16px 0 4px}
+.ae-res .chip{min-height:32px;margin:2px 4px 2px 0}
+.ae-rc{display:inline-flex;flex-wrap:wrap}
+.ae-bad{display:block;font-size:.88rem;color:var(--red)}
+.ae-q{font-weight:700;margin:6px 0 8px}
+.ae-eqs{font-size:.9rem;overflow-wrap:anywhere}
+.ae-eqs .chem{white-space:normal}
+.ae-flasks.two{max-width:520px}
+.ae-oiltab{margin-top:10px}
+.ae-bars{display:block;width:100%;max-width:340px;height:auto;margin-top:8px;font-family:var(--font-ui)}
+.ae-ratio{margin-top:10px}
+
+/* practice + task */
+.ae-nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.ae-navb{min-width:44px;min-height:36px}
+.ae-tgt{margin:6px 0 4px}
+.ae-cond{font:400 1.45rem/1.3 var(--font-ui);margin:4px 0 10px;overflow-wrap:anywhere}
+.ae-nm .ae-ring{width:200px;max-width:100%}
+.ae-nmchips{margin-top:8px}
+.ae-pchips{margin-top:10px}
+.ae-pchips .chip{min-height:36px}
+.ae-conds{margin:6px 0 10px;padding-left:1.3em}
+.ae-tkin > div{margin:0 0 10px}
+#tk-view{margin-bottom:10px}
+
+@media (max-width:760px){
+  .ae-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .rg.seg button{padding:.4em .6em}
+  .ae-shelf .rg.chips{flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:4px}
+  .ae-shelf .rg.chips button{flex:none}
+  .ae-shelf .rg-wrap{display:block}
+  .ae-flasks{grid-template-columns:minmax(0,1fr)}
+  .ae-tubes{grid-template-columns:repeat(3,minmax(0,1fr))}
+}

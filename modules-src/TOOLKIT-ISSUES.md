@@ -99,3 +99,10 @@ every module that uses the touched code, then ship them together).
 | V4 secantTangent, exactDec (from mhf4u 09) | mcv4u 02 | plan: TC1 h=2.5 and TC3 a=5 states unreachable with plan controls |
 | D3 countingSlots, N4 countEntry (products/powers), D1 treeDiagram (+onLevel) | mdm4u 02 | |
 | S7 spectrumGraph, S9 procedureLab, N8 spectrumTap | sbi4u 02 | |
+| E1 annotationStudio, E2 deviceLens, spotProse, radioGroup | eng4u 01 | course files: eng4u.css (--an-*, --pp-*, --sc-*, .an/.eng-passage/.eng-tok; header subtitle wraps), eng4u.js (MV.eng.words/tokenize/mlaInText/isMLA/passage/tokens/voice/saveLine/commonplace/triviumPicker). OWNER REVIEW: Dickinson "Hope" uses the plan's dashed text (later edition); the public-domain 1891/1924 text has no dashes. Johnson line 1 corrected to "nest," per Flint and Feather 1914 |
+| F3 labelLab, macro energy/AMDR bars, molecule sketches, mixed-item practice set | hfa4u 02 | OWNER REVIEW: author-written model data (amino-acid bar values, butter/canola presets) and an APA list whose years need verifying |
+| V9 motionTrack, N29 sentenceBuilder (multi-answer blanks), N4 unitBoxes | mcv4u 03 | |
+| C1 moleculeView (multiple bonds, 3D), C2 nameBuilder (alkenes/alkynes/rings/benzene), C3 mechanismStepper | sch4u 02 | course data gap: 9 boiling points kept as BP_ADD in app.js — fold into MV.chem.data later. Plan issue: 4-methylpent-2-ene fails checklist lines 2 and 3 (plan lists only 2) |
+| V6 approachTable, lim typesetting (.lm-lim → promote to mcv4u course files), canvas rich/limCanvas | mcv4u 04 | |
+| D2 vennDiagram (2 or 3 sets) | mdm4u 03 | |
+| radioGroup, F1 adequacy bars, retention stage, prediction cards, body tap points, food icons | hfa4u 03 | OWNER REVIEW: advisory figures + framing example taken from a web search of government sources, marked VERIFY in content (check Oct 2026 numbers); model data (Sam record, bars, tofu decoy, self-check values) |

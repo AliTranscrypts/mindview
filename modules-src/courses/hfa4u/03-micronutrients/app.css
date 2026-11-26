@@ -1,0 +1,203 @@
+/* HFA4U 03: hero (log page → milk carton), Nutrient detective (cases, retention lab, food records, prediction cards),
+   Water stations, task. Role colours from hfa4u.css: micronutrients --nu-micro (violet), water --nu-water (blue),
+   vegetables --leaf, protein foods --nu-protein. Red and green stay reserved for feedback. */
+/* radio groups (from HFA4U 02) */
+.mi-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:0 0 10px}
+.mi-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2);min-width:4.5rem}
+.mi-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.mi-rg.seg button:disabled{opacity:.45}
+.mi-chipset{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.mi-chipset button{border:1.5px solid var(--rule);background:var(--sheet);border-radius:999px;padding:.28em .85em;font-size:.92rem;min-height:34px;text-align:left}
+.mi-chipset button:not(:disabled):hover{border-color:var(--pen)}
+.mi-chipset button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.mi-chipset button.mi-vit{border-color:var(--nu-micro)}
+.mi-chipset button.mi-min{border-color:var(--nu-micro);border-style:dashed}
+.mi-chipset button.mi-vit[aria-checked="true"],.mi-chipset button.mi-min[aria-checked="true"]{border-color:var(--hi)}
+
+/* lab layout */
+.mi-lab{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.mi-main,.mi-side{min-width:0}
+.mi-side{border-left:1.5px solid var(--rule);padding-left:18px}
+.mi-top{margin:0 0 2px}
+.mi-h4{margin:14px 0 6px;font-size:1rem}
+.mi-side .mi-h4{margin-top:0}
+.mi-h5{margin:14px 0 6px;font-size:.95rem}
+
+/* Mode 1: cases */
+.mi-cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:0 0 10px}
+.mi-cbtn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;text-align:left;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.35em .6em;min-height:44px;min-width:0}
+.mi-cbtn span{font-size:.78rem;color:var(--ink-2);line-height:1.25;overflow-wrap:anywhere}
+.mi-cbtn:hover{border-color:var(--pen)}
+.mi-cbtn[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.mi-cbtn.solved{border-style:solid;box-shadow:inset 4px 0 0 var(--nu-micro)}
+.mi-sv{font-size:.75rem;font-weight:700;color:var(--ink)!important}
+.mi-paper{background:var(--sheet);border:1.5px solid var(--ink-2);border-radius:6px;padding:10px 14px;margin:0 0 12px;box-shadow:3px 3px 0 var(--rule)}
+.mi-paper h4{margin:0 0 6px}
+.mi-clues{margin:0;display:grid;gap:4px}
+.mi-clues > div{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:8px}
+.mi-clues dt{font-size:.82rem;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:.03em;padding-top:.15em}
+.mi-clues dd{margin:0}
+.mi-solve{margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--rule)}
+.mi-nutbox .mi-rgw{flex-wrap:nowrap;align-items:flex-start}
+.mi-file ol{margin:0;padding-left:1.4em}
+.mi-file li{margin:0 0 .45em}
+
+/* Mode 2: retention lab */
+.mi-lctl,.mi-stagebox{min-width:0}
+.mi-stagebox{border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);padding:6px 12px 10px;margin:0 0 12px}
+.mi-stage{display:block;width:100%;height:auto}
+.mi-counter{stroke:var(--ink-2);stroke-width:2}
+.mi-pot,.mi-board,.mi-dish,.mi-pan,.mi-sink,.mi-bowl{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.mi-pan{fill:none;stroke-width:3}
+.mi-board{fill:var(--plate-grain-soft)}
+.mi-window{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.5}
+.mi-knob{fill:none;stroke:var(--ink-2);stroke-width:1.5}
+.mi-water{fill:var(--nu-water-soft);stroke:var(--nu-water);stroke-width:1.2}
+.mi-basket{stroke:var(--ink-2);stroke-width:2.5;stroke-dasharray:6 4}
+.mi-steam path{fill:none;stroke:var(--ink-2);stroke-width:2;stroke-linecap:round}
+.mi-bubble{fill:none;stroke:var(--nu-water);stroke-width:1.5}
+.mi-drain{fill:var(--ink-2)}
+.mi-drop{fill:var(--nu-water)}
+.mi-veg circle,.mi-veg rect,.mi-veg ellipse{fill:var(--leaf-soft);stroke:var(--leaf);stroke-width:2}
+.mi-veg path{fill:none;stroke:var(--leaf);stroke-width:2.4;stroke-linecap:round}
+.mi-slab{fill:var(--ink);font:700 13px var(--font-ui)}
+.mi-stxt{fill:var(--ink-2);font:400 13px var(--font-ui)}
+.mi-ctag circle,.mi-ctag path{fill:none;stroke:var(--ink-2);stroke-width:1.8;stroke-linecap:round}
+.mi-rb{margin:6px 0 0}
+.mi-rbh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;font-size:.9rem;margin:0 0 4px}
+.mi-rtrack{position:relative;display:block;height:22px;background:var(--sheet);border:1.5px solid var(--nu-micro);border-radius:5px;overflow:hidden}
+.mi-rfill{position:absolute;left:0;top:0;bottom:0;background:var(--nu-micro)}
+.mi-rval{margin:4px 0 0;font-weight:700;font-variant-numeric:tabular-nums}
+
+/* Mode 3: food records */
+.mi-persona{border:1.5px solid var(--rule);border-radius:8px;padding:4px 14px 8px;margin:6px 0 4px;background:var(--sheet)}
+.mi-persona p{margin:0 0 4px}
+.mi-rec{margin:0;padding-left:1.2em}
+.mi-rec li{margin:0 0 .2em}
+.mi-abars{display:grid;gap:5px}
+.mi-abar{display:grid;grid-template-columns:minmax(5.5rem,7.5rem) minmax(0,1fr) 6.2rem;align-items:center;gap:8px;font-size:.9rem}
+.mi-atrack{position:relative;height:18px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.mi-afill{position:absolute;left:0;top:2px;bottom:2px;background:var(--nu-micro);border-radius:3px}
+.mi-abar.low .mi-afill{background:repeating-linear-gradient(135deg,var(--nu-micro) 0 5px,var(--nu-micro-soft) 5px 9px)}
+.mi-abar.low .mi-alab,.mi-abar.low .mi-aval{font-weight:700}
+.mi-aref{position:absolute;left:50%;top:-2px;bottom:-2px;width:0;border-left:2px dashed var(--ink)}
+.mi-aval{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.mi-akey{margin:2px 0 0}
+.mi-lowc{display:flex;flex-wrap:wrap;gap:6px}
+.mi-lowc .chip[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+#mi-shelf .mi-rgw{margin:0}
+.mi-foods{display:grid;grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr));gap:6px;margin:8px 0 12px}
+.mi-food{display:flex;align-items:center;gap:8px;text-align:left;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.35em .6em;min-height:44px;font-size:.88rem;line-height:1.25}
+.mi-food:hover{border-color:var(--pen)}
+.mi-food[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft);font-weight:700}
+.mi-ico{flex:0 0 26px;width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.mi-slist{margin:0 0 8px;padding-left:1.2em}
+
+/* prediction cards */
+.mi-cardh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;margin:0 0 6px}
+.mi-cardp{border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);padding:6px}
+.mi-csvg{display:block;width:100%;height:auto;max-height:300px}
+.mi-ccols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 16px;text-align:center}
+.mi-ccols h5{margin:4px 0 0;font-size:.95rem}
+.mi-cends p{margin:0 0 4px;font-size:.9rem;min-height:1.3em}
+.mi-tank{fill:none;stroke:var(--ink);stroke-width:2.4}
+.mi-liquid{fill:var(--nu-micro-soft);stroke:var(--nu-micro);stroke-width:1.5}
+.mi-pipe{fill:none;stroke:var(--ink-2);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.mi-vdrop{fill:var(--nu-micro)}
+.mi-plate{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.mi-lentil{fill:var(--nu-protein-soft);stroke:var(--nu-protein);stroke-width:1.4}
+.mi-glass{stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round}
+.mi-oj{fill:var(--hi-soft)}
+.mi-tea{fill:var(--plate-grain-soft)}
+.mi-mtrack{fill:var(--sheet);stroke:var(--nu-micro);stroke-width:1.5}
+.mi-mfill{fill:var(--nu-micro)}
+.mi-mmid{stroke:var(--ink);stroke-width:1.5;stroke-dasharray:3 3}
+
+/* hero */
+.mi-hero{max-width:520px;margin:0 auto}
+.mi-hsvg{display:block;width:100%;height:auto}
+.mi-page{fill:var(--sheet);stroke:var(--ink-2);stroke-width:2}
+.mi-prule{stroke:var(--rule);stroke-width:1.2}
+.mi-logh{fill:var(--ink);font:italic 700 17px var(--font-math)}
+.mi-logd{fill:var(--ink);font:700 17px var(--font-math)}
+.mi-logn{fill:var(--ink);font:italic 400 17px var(--font-math)}
+.mi-lemon{fill:var(--hi);stroke:var(--ink-2);stroke-width:2}
+.mi-lemon2{fill:var(--hi-soft);stroke:var(--ink-2);stroke-width:1}
+.mi-lseg{stroke:var(--ink-2);stroke-width:1}
+.mi-carton{fill:var(--sheet);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.mi-cside{fill:var(--rule);stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.mi-milk{fill:var(--ink);font:700 22px var(--font-ui);letter-spacing:.08em}
+.mi-glow{fill:var(--nu-micro-soft);stroke:var(--nu-micro);stroke-width:2.5}
+.mi-vd{fill:var(--nu-micro);font:700 12.5px var(--font-ui)}
+.hero-fig figcaption.mi-cap{animation:mi-fade .8s ease-out}
+@keyframes mi-fade{from{opacity:0}to{opacity:1}}
+
+/* Part 3: water stations */
+.mi-st{padding:4px 0 18px;margin:0 0 16px;border-bottom:1.5px solid var(--rule)}
+.mi-st h3{margin-top:0}
+.mi-bodyw{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:12px 24px;align-items:start}
+.mi-body{position:relative;width:100%;max-width:210px;aspect-ratio:200/320}
+.mi-bsvg{position:absolute;inset:0;width:100%;height:100%}
+.mi-bline{fill:var(--nu-water-soft);stroke:var(--ink-2);stroke-width:2;stroke-linejoin:round}
+.mi-tap{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;padding:0;border-radius:50%;border:2.5px solid var(--nu-water);background:var(--sheet);color:var(--ink);font:700 .95rem var(--font-ui);line-height:1}
+.mi-tap:hover{background:var(--nu-water-soft)}
+.mi-tap.seen{border-style:solid;background:var(--nu-water-soft)}
+.mi-tap[aria-pressed="true"]{background:var(--hi);border-color:var(--ink);color:var(--hi-ink)}
+.mi-jobp{padding:10px 14px;border-left:4px solid var(--nu-water);background:var(--nu-water-soft);border-radius:4px;min-height:6em}
+.mi-jobp h4{margin:0 0 4px}
+.mi-jobp p{margin:0 0 .4em;max-width:none}
+.mi-joblist{margin:6px 0 4px;padding-left:1.3em;font-size:.9rem}
+.mi-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 8px}
+.mi-fact{border:1.5px solid var(--nu-water);border-radius:8px;padding:8px 12px;background:var(--sheet)}
+.mi-fact p{margin:0;max-width:none}
+.mi-note{margin:6px 0 0}
+.mi-drinks{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.mi-drink{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.35em .8em .35em .5em;font-weight:700;min-height:44px;text-align:left}
+.mi-drink:hover{border-color:var(--pen)}
+.mi-drink[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.mi-drink svg{width:22px;height:28px;flex:0 0 22px}
+.mi-gline{fill:none;stroke:var(--ink-2);stroke-width:1.6;stroke-linejoin:round}
+.mi-gw{fill:var(--nu-water-soft)}.mi-gm{fill:var(--sheet);stroke:var(--ink-2);stroke-width:.8}.mi-gj{fill:var(--hi-soft)}.mi-gs{fill:var(--plate-grain-soft)}
+.mi-dcard{padding:10px 14px;border-left:4px solid var(--nu-water);background:var(--nu-water-soft);border-radius:4px;min-height:4em}
+.mi-dcard h4{margin:0 0 2px}
+.mi-dcard p{margin:0}
+.mi-dcard ul{margin:2px 0 0;padding-left:1.2em}
+.mi-cfg{margin:10px 0 0}
+.mi-leg{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:.88rem;margin:4px 0 6px}
+.mi-leg span{display:inline-flex;align-items:center;gap:6px}
+.mi-lsw{display:inline-block;width:26px;height:0;border-top:3px solid var(--nu-water)}
+.mi-lsw.lif{border-top:3px dashed var(--ink-2)}
+.mi-prompts{margin:12px 0 4px}
+#mi-st3 table.vt td:last-child{white-space:normal;text-align:left;min-width:13rem;font-family:var(--font-ui);font-size:.88rem}
+.mi-check{margin:8px 0 0;padding-left:1.2em}
+.mi-check li{margin:0 0 .35em}
+.mi-frame{margin:12px 0 0;padding:10px 14px;border:1.5px solid var(--rule);border-radius:8px}
+.mi-frame p{margin:0 0 .5em}
+.mi-frame p:last-child{margin:0}
+
+/* task */
+.mi-tin{display:grid;gap:2px;margin:6px 0 8px}
+.mi-tpv{display:grid;gap:10px}
+
+@media (max-width:820px){
+  .mi-lab{grid-template-columns:minmax(0,1fr)}
+  .mi-side{border-left:0;padding-left:0;border-top:1.5px solid var(--rule);padding-top:12px}
+}
+@media (max-width:560px){
+  .mi-cases{grid-template-columns:minmax(0,1fr)}
+  .mi-cbtn{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:2px 8px;min-height:40px}
+  .mi-nutbox .mi-rgw{flex-direction:column;align-items:stretch;gap:4px}
+  .mi-nutbox .mi-chipset{flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 6px;-webkit-overflow-scrolling:touch}
+  .mi-nutbox .mi-chipset button{flex:0 0 auto;white-space:nowrap}
+  #mi-m2 .mi-chipset,.mi-tin .mi-chipset{flex-direction:column;align-items:stretch;width:100%}
+  #mi-m2 .mi-rgw,.mi-tin .mi-rgw{flex-direction:column;align-items:stretch;gap:4px}
+  #mi-m2 .mi-chipset button,.mi-tin .mi-chipset button{border-radius:8px}
+  .mi-abar{grid-template-columns:5rem minmax(0,1fr) 5.4rem;font-size:.84rem}
+  .mi-bodyw{grid-template-columns:minmax(0,1fr)}
+  .mi-body{margin:0 auto}
+  .mi-facts{grid-template-columns:minmax(0,1fr)}
+  .mi-foods{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mi-clues > div{grid-template-columns:minmax(0,1fr);gap:0}
+  #mi-adv{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){ .hero-fig figcaption.mi-cap{animation:none} }

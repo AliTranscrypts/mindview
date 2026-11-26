@@ -18,6 +18,8 @@
 //              -> {value, equal, rational, simplified, issue, msg}; issue: "radical" (root left in the denominator),
 //              "radicand" (√8, √9), "like" (like terms not combined), "fraction" (2/4, or fractions over a denominator),
 //              "sign" (negative denominator), "common" (10√5/15); msg is a ready feedback sentence (m() markup in backticks).
+//   MV.mcv.lim(sub)   HTML for "lim" with the approach written underneath, e.g. MV.mcv.lim("x -> 2^-") + MV.m(" f(x) = 5").
+//              Screen readers hear "lim (x → 2⁻)". Styled by .lm-lim in mcv4u.css (promoted from modules 04/05).
 //              MV.mcv.exact.same(rawA, rawB) compares two typed forms term by term in any order.
 (function(){
 "use strict";
@@ -206,5 +208,6 @@ var exact = {
   }
 };
 
-MV.mcv = { rpow:rpow, gcd:gcd, kfree:kfree, Q:Q, S:S, exact:exact };
+function lim(sub){ return '<span class="lm-lim"><span class="lm-lt">lim</span><span class="vh"> (</span><span class="lm-lu">' + MV.m(sub) + '</span><span class="vh">)</span></span>'; }
+MV.mcv = { rpow:rpow, gcd:gcd, kfree:kfree, Q:Q, S:S, exact:exact, lim:lim };
 })();

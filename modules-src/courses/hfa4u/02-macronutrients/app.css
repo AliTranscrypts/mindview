@@ -1,0 +1,206 @@
+/* HFA4U 02: hero molecules, Macronutrient lab (benches, Measure), label lab stations, Energy detective, self check, lunch box.
+   Role colours from hfa4u.css: carbohydrate --nu-carb, fat --nu-fat, protein --nu-protein; molecule skeletons in --ink. */
+/* radio groups (from HFA4U 01) */
+.mn-rgw{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.mn-rgl{font-size:.85rem;font-weight:700;color:var(--ink-2)}
+.mn-rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.mn-rg.seg button:disabled{opacity:.45}
+
+/* molecule sketches */
+.mn-ring{fill:var(--nu-carb-soft);stroke:var(--nu-carb);stroke-width:2;stroke-linejoin:round}
+.mn-gal{fill:var(--nu-carb)}
+.mn-link{fill:none;stroke:var(--nu-carb);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mn-rt{fill:var(--ink);font:700 10px var(--font-ui)}
+.mn-bl{fill:var(--nu-carb);font:700 13px var(--font-ui)}
+.mn-tl{fill:none;stroke:var(--nu-fat);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.mn-gly{fill:none;stroke:var(--nu-fat);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.mn-cc{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.mn-db{stroke:var(--nu-fat);stroke-width:2.6;stroke-linecap:round}
+.mn-cend{fill:var(--nu-fat)}
+.mn-slot0{stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:4 5}
+.mn-endt{fill:var(--ink-2);font:400 13px var(--font-ui)}
+.mn-bd{fill:var(--nu-protein-soft);stroke:var(--nu-protein);stroke-width:2}
+.mn-bd.e{stroke-width:3.4}
+.mn-bt{fill:var(--ink);font:700 11px var(--font-ui)}
+.mn-plink{stroke:var(--nu-protein);stroke-width:2.2}
+.mn-enz{fill:var(--sheet);stroke:var(--ink);stroke-width:2}
+.mn-enzt{fill:var(--ink);font:700 12px var(--font-ui)}
+.mn-no{fill:var(--red);font:700 20px var(--font-ui)}
+.mn-empty{fill:var(--ink-2);font:400 14px var(--font-ui)}
+
+/* hero */
+.mn-hero{max-width:520px;margin:0 auto}
+.mn-hsvg{display:block;width:100%;height:auto}
+.mn-hl{fill:var(--ink);font:700 17px var(--font-ui)}
+.mn-hs{fill:var(--ink-2);font:400 14px var(--font-ui)}
+.mn-hk{font:700 18px var(--font-ui)}
+.mn-kc{fill:var(--nu-carb)}.mn-kf{fill:var(--nu-fat)}.mn-kp{fill:var(--nu-protein)}
+.mn-hnote{fill:var(--nu-fat);font:italic 700 13px var(--font-ui)}
+.hero-fig figcaption.mn-cap{animation:mn-fade .8s ease-out}
+@keyframes mn-fade{from{opacity:0}to{opacity:1}}
+
+/* lab layout */
+.mn-lab{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:16px 26px;align-items:start}
+.mn-main,.mn-side{min-width:0}
+.mn-side{border-left:1.5px solid var(--rule);padding-left:18px}
+.mn-top{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 6px}
+.mn-h4{margin:14px 0 6px;font-size:1rem}
+.mn-side .mn-h4{margin-top:0}
+.mn-svgbox{border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);padding:4px;margin:6px 0 10px}
+.mn-svgbox svg{display:block;width:100%;height:auto;margin:0 auto}
+.mn-ctl{display:flex;flex-wrap:wrap;gap:10px 22px;margin:8px 0}
+.mn-msg{min-height:1.3em;margin:6px 0 0}
+.mn-tiles{display:flex;flex-wrap:wrap;gap:8px}
+.mn-tile{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.3em .75em .3em .4em;font-weight:700;min-height:40px}
+.mn-tile:hover{border-color:var(--nu-carb)}
+.mn-tile svg{width:26px;height:26px}
+.mn-check{display:inline-flex;align-items:center;gap:6px;font-size:.92rem;cursor:pointer}
+.mn-check input{width:18px;height:18px;accent-color:var(--pen)}
+
+/* fat bench: tail with bond buttons over the drawing */
+.mn-tailbox{overflow-x:auto;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);margin:6px 0 4px}
+.mn-tail{position:relative;min-width:560px;aspect-ratio:640/210}
+.mn-tail svg{position:absolute;inset:0;width:100%;height:100%}
+.mn-bb{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;padding:0;border-radius:50%;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink-2);font:700 .74rem var(--font-ui);line-height:1}
+.mn-bb:hover{border-color:var(--pen)}
+.mn-bb.d1,.mn-bb.d2{border:2.5px solid var(--nu-fat);color:var(--ink)}
+.mn-bb.d2{border-style:dashed}
+.mn-bb[aria-pressed="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink)}
+.mn-gsvg{max-height:260px}
+.mn-state{font-weight:700;margin:4px 0 8px}
+.mn-slots{display:grid;gap:4px}
+.mn-slot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px;padding:4px 0;border-bottom:1px solid var(--rule)}
+
+/* protein bench */
+.mn-beads{display:flex;flex-wrap:wrap;gap:6px}
+.mn-bead{position:relative;min-width:44px;min-height:34px;border-radius:999px;border:2px solid var(--nu-protein);background:var(--nu-protein-soft);color:var(--ink);font:700 .85rem var(--font-ui);padding:.2em .6em}
+.mn-bead.e{border-width:3.5px}
+.mn-bead b,.mn-ekey{display:inline-block;margin-left:3px;font-size:.68rem;font-weight:700;border:1.5px solid var(--ink);border-radius:3px;padding:0 3px;line-height:1.3;vertical-align:.1em;color:var(--ink)}
+.mn-foods,.mn-fchips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.mn-aah{font-weight:700;margin:0 0 6px}
+.mn-aab{display:grid;gap:4px}
+.mn-aar{display:grid;grid-template-columns:minmax(6.5rem,9rem) minmax(0,1fr) 5.2rem;align-items:center;gap:8px;font-size:.9rem}
+.mn-aat{position:relative;height:16px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.mn-aaf{position:absolute;left:0;top:2px;bottom:2px;background:var(--nu-protein);border-radius:3px}
+.mn-aar.low .mn-aal,.mn-aar.low .mn-aav{font-weight:700}
+.mn-aar.low .mn-aaf{background:repeating-linear-gradient(135deg,var(--nu-protein) 0 5px,var(--nu-protein-soft) 5px 9px)}
+.mn-ref{position:absolute;top:-2px;bottom:-2px;width:0;border-left:2px dashed var(--ink)}
+.mn-refkey{margin:4px 0 0}
+
+/* Measure */
+.mn-grid{display:grid;gap:6px;margin:8px 0 4px}
+.mn-grow{display:grid;grid-template-columns:2rem repeat(4,minmax(0,1fr));gap:6px 10px;align-items:center}
+.mn-grow .numin{width:100%;min-width:0}
+.mn-ghead span{font-size:.8rem;font-weight:700;color:var(--ink-2);line-height:1.2;overflow-wrap:anywhere}
+.mn-gw{font-weight:700}
+.mn-fnames{margin:6px 0 0}
+#mn-fill{margin:0 0 8px}
+.mn-mctl{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin:0 0 10px}
+.mn-food{border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px 10px;margin:0 0 10px;min-width:0}
+.mn-food legend{font-weight:700;padding:0 4px}
+.mn-gin{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:8px 12px}
+.mn-gin label{display:grid;gap:3px;font-size:.85rem;font-weight:700;color:var(--ink-2)}
+.mn-gin .numin,.mn-gin .txtin{width:100%;max-width:11rem}
+.mn-viz{display:grid;gap:4px}
+.mn-vp{margin:6px 0 8px}
+.mn-vp h5{margin:0 0 6px;font-size:.92rem}
+.mn-leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.85rem;margin:0 0 4px}
+.mn-leg span{display:inline-flex;align-items:center;gap:5px}
+.mn-swband{background:var(--hi-soft)!important;border-style:dashed!important}
+.mn-swnat{background:var(--nu-carb-soft)!important;border-color:var(--nu-carb)!important}
+.mn-erow{display:grid;grid-template-columns:2.2rem minmax(0,1fr) 5.4rem;align-items:center;gap:8px;margin:0 0 5px}
+.mn-elab{font-weight:700}
+.mn-erow.mn-w{grid-template-columns:minmax(0,1fr) 4.6rem}
+.mn-wl{display:block;font-size:.88rem;margin:0 0 2px}
+.mn-etrack{position:relative;display:flex;height:20px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.mn-seg{display:block;height:100%}
+.mn-eval{font-variant-numeric:tabular-nums;text-align:right;font-weight:700}
+.mn-c{background:var(--nu-carb)}.mn-f{background:var(--nu-fat)}.mn-p{background:var(--nu-protein)}
+.mn-fib{background:repeating-linear-gradient(90deg,var(--nu-carb) 0 6px,var(--nu-carb-soft) 6px 8px)}
+.mn-nat{background:var(--nu-carb-soft);box-shadow:inset 0 0 0 1.5px var(--nu-carb)}
+.mn-add{background:var(--nu-carb)}
+.mn-prow{display:grid;grid-template-columns:6.6rem minmax(0,1fr) 3.6rem;align-items:center;gap:8px;margin:0 0 6px}
+.mn-plab{font-weight:700;font-size:.9rem}
+.mn-pbars{display:grid;gap:3px}
+.mn-ptrack{position:relative;display:block;height:18px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden}
+.mn-band{position:absolute;top:0;bottom:0;background:var(--hi-soft);border-left:1.5px dashed var(--ink-2);border-right:1.5px dashed var(--ink-2)}
+.mn-pfill{position:absolute;left:0;top:4px;bottom:4px;border-radius:2px}
+.mn-ptag{position:absolute;right:4px;top:0;font-size:.7rem;font-weight:700;line-height:16px;color:var(--ink-2)}
+.mn-pval{font-variant-numeric:tabular-nums;text-align:right;font-weight:700;font-size:.9rem;white-space:nowrap}
+.mn-ans{border-top:1.5px solid var(--rule);margin-top:10px;padding-top:4px}
+
+/* Part 3 label lab */
+.mn-st{padding:4px 0 18px;margin:0 0 16px;border-bottom:1.5px solid var(--rule)}
+.mn-st h3{margin-top:0}
+.mn-st1{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 22px;align-items:start}
+.mn-nftw{overflow-x:auto;max-width:100%}
+.mn-nftw .hfa-nft{min-width:13rem}
+.mn-lb{border:0;background:none;padding:0;font:inherit;color:inherit;text-align:left;text-decoration:underline dotted var(--ink-2);text-underline-offset:3px;min-height:24px;cursor:pointer}
+.mn-lb[aria-pressed="true"]{text-decoration:underline solid}
+.mn-mean{padding:10px 14px;border-left:4px solid var(--hi);background:var(--hi-soft);border-radius:4px;min-height:4em}
+.mn-mean p{margin:0 0 .4em;max-width:none}
+.mn-yogs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 22px}
+.mn-yog h4{margin:0 0 6px}
+.mn-ingh{margin:8px 0 4px;font-weight:700;font-size:.9rem}
+.mn-ings{display:flex;flex-wrap:wrap;gap:6px}
+.mn-ing{display:inline-flex;flex-direction:column;align-items:flex-start;border:1.5px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.25em .7em;min-height:34px;font-size:.92rem}
+.mn-ing.natural{border-color:var(--nu-carb);background:var(--nu-carb-soft)}
+.mn-ing.added{border:2.5px solid var(--nu-carb)}
+.mn-ing.none{border-style:dashed}
+.mn-ingk{font-size:.75rem;font-weight:700;color:var(--ink-2)}
+.mn-yq{margin:12px 0 0}
+.mn-yq p{margin:0}
+.mn-sbars{margin:8px 0 4px}
+.mn-data{margin:8px 0 0;padding-left:1.2em}
+.mn-data li{margin:0 0 .3em}
+.mn-breads{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.mn-bcard{border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.45em .85em;font-weight:700;min-height:40px;text-align:left}
+.mn-bcard[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.mn-bread{margin:0 0 10px;min-height:3em}
+.mn-bread p{margin:0 0 .4em}
+mark.mn-first{background:var(--hi-soft);color:var(--ink);font-weight:700;padding:0 2px;border-bottom:2px solid var(--hi)}
+.mn-slotx{margin:12px 0 0;padding-top:8px;border-top:1px solid var(--rule)}
+.mn-slotx h5{margin:0 0 6px}
+.mn-slotx input[type=file]{max-width:100%;font-size:.85rem}
+.mn-fig{margin:8px 0}
+.mn-fig img{max-width:100%;max-height:320px;border:1px solid var(--rule);border-radius:6px}
+.mn-fig figcaption{font-size:.8rem;color:var(--ink-2)}
+
+/* Energy detective */
+#act-detective .numin{max-width:9rem}
+.mn-dchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 4px}
+.mn-dchip{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--rule);background:var(--sheet);border-radius:999px;padding:.3em .9em;min-height:38px;font-size:.92rem}
+.mn-dchip b{font-weight:700;color:var(--ink-2)}
+.mn-dchip[aria-pressed="true"]{border-color:var(--ink);background:var(--hi);color:var(--hi-ink)}
+.mn-dchip[aria-pressed="true"] b{color:var(--hi-ink)}
+
+/* self check */
+.mn-selfset{border:0;padding:0;margin:10px 0;display:grid;gap:6px}
+.mn-selfbar{position:relative;height:22px;max-width:28rem;background:var(--paper);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:8px 0}
+.mn-selffill{position:absolute;left:0;top:0;bottom:0;width:0;background:repeating-linear-gradient(90deg,var(--nu-carb) 0 6px,var(--nu-carb-soft) 6px 8px)}
+.mn-selfref{position:absolute;right:6px;top:0;line-height:20px;font-size:.75rem;font-weight:700;color:var(--ink-2)}
+
+/* lunch box */
+.mn-lbfs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:0 0 12px}
+.mn-lbf{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:.45em .65em;min-width:0}
+.mn-lbf:not(:disabled):hover{border-color:var(--pen)}
+.mn-lbf[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.mn-lbf:disabled{opacity:.5}
+.mn-lbt{font-weight:700;line-height:1.25}
+.mn-lbm{font-size:.78rem;color:var(--ink-2)}
+.mn-lbg{font-size:.72rem;font-weight:700;border:1px solid var(--ink-2);border-radius:999px;padding:0 .5em;color:var(--ink-2)}
+
+@media (max-width:820px){
+  .mn-lab{grid-template-columns:minmax(0,1fr)}
+  .mn-side{border-left:0;padding-left:0;border-top:1.5px solid var(--rule);padding-top:12px}
+  .mn-st1,.mn-yogs{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .mn-prow{grid-template-columns:5.4rem minmax(0,1fr) 4.4rem}
+  .mn-fchips .chip{font-size:.8rem;padding:.2em .6em;min-height:30px}
+  .mn-grow{gap:6px}
+  .mn-aar{grid-template-columns:6.4rem minmax(0,1fr) 4.4rem;font-size:.84rem}
+  .mn-lbfs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .mn-erow{grid-template-columns:2rem minmax(0,1fr) 4.6rem}
+}
+@media (prefers-reduced-motion:reduce){ .hero-fig figcaption.mn-cap{animation:none} }

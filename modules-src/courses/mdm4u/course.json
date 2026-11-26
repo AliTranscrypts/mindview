@@ -81,7 +81,8 @@
     "01",
     "02"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "04",
