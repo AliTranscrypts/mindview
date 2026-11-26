@@ -33,3 +33,4 @@ every module that uses the touched code, then ship them together).
 | N22 syntheticDivision, G13 valueBar, N4 boxSet | mhf4u 11 | |
 | N15 moveChooser, N25 flattenMorph, N4 rootBoxes, dotLabels | mhf4u 13 | |
 | N21 zeroSlots, exactQ | mhf4u 14 | |
+| recipPieces (G1+G16), reciprocalTwin, G13 valueBar variant, N11 signLine, N6 graphMatch, N4 coefBoxes | mhf4u 18 | plan issue: TC1 answer equals the start state |

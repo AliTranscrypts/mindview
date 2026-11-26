@@ -1,0 +1,70 @@
+/* MHF4U 18: reciprocal twin, closing in, twin thumbnails, work backwards, design task */
+@media (min-width:821px){ .pg.rt{grid-template-rows:auto 1fr} }
+.rt .drag-h{width:44px;height:44px;margin:-22px 0 0 -22px}
+.rt-cap .w{font:400 .5em var(--font-ui);color:var(--ink-2);vertical-align:middle}
+.rt-tw .plot-wrap + .plot-wrap{margin-top:6px}
+.rt-leg{display:flex;flex-wrap:wrap;gap:4px 16px;margin:8px 0 0;font-size:.9rem;color:var(--ink-2)}
+.rt-leg i.sw{display:inline-block;width:24px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.rt-leg i.sw.dash{background:repeating-linear-gradient(90deg,var(--ink-2) 0 6px,transparent 6px 10px)}
+.rt-sl .slider output{color:var(--ink)!important}
+.rt-sl input[type=range]{accent-color:var(--ink)!important}
+.rt-tg{margin:12px 0 0}
+.rt-note{margin-top:10px}
+.rt-read > div.hl{background:var(--hi-soft);border-radius:6px;padding-left:8px;padding-right:8px}
+.rt-rng{outline-offset:2px;border-bottom:1.5px dotted var(--ink-2)}
+.rt-tip{display:none;margin-left:8px;font-size:.85rem;color:var(--ink-2)}
+.rt-rng:hover + .rt-tip,.rt-rng:focus + .rt-tip{display:inline}
+.rt-all{display:none}
+@media (max-width:560px){
+  .rt-read:not(.all) > .rt-x{display:none}
+  .rt-all{display:inline-block;margin-top:8px}
+}
+
+/* Part 3 */
+.ci h3.ci-h{font-size:1.02rem;margin:16px 0 6px}
+.ci h3.ci-h:first-child{margin-top:0}
+.ci-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:6px 0}
+.ci-lab{min-width:9.5rem}
+.ci-ch{display:inline-flex;flex-wrap:wrap;gap:6px}
+.ci-ch .chip{min-width:3.2rem;font-size:1rem}
+.ci-mk{font-weight:700}
+.ci-mk.ok{color:var(--green)}
+.ci-mk.no{color:var(--red)}
+.ci-fbl{margin:.3em 0 .4em;padding-left:1.2em}
+.ci-fbl li{margin:.25em 0}
+.ci-line{margin-bottom:6px;aspect-ratio:16/7!important}
+#ci-tbl{margin-top:10px}
+#ci-tbl .tbl-wrap{max-height:17rem;overflow:auto}
+#ci-tbl table.vt td,#ci-tbl table.vt th{padding:5px 10px}
+.ci-live{margin:10px 0 0;font-weight:700}
+#ci-alg table.vt td,#ci-alg table.vt th{white-space:nowrap}
+
+/* Practice 1: thumbnails (lines in a sticky strip, reciprocals in a grid) */
+.tw{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:12px}
+.tw-col h4{margin:0 0 6px;color:var(--ink-2);font-size:.85rem}
+.tw-lines{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--mv-top) + var(--tw-top,0px));z-index:3;background:var(--sheet);padding:6px 0 8px;border-bottom:1.5px solid var(--rule)}
+.tw-lines .tw-grid{display:flex;overflow-x:auto;gap:8px;padding-bottom:4px}
+.tw-lines .tw-th{flex:1 0 112px;max-width:160px}
+.tw-recs .tw-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.tw-th{display:grid;gap:4px;align-content:start;text-align:left;width:100%;border:2px solid var(--rule);background:var(--sheet);border-radius:8px;padding:6px;min-width:0}
+.tw-th:not(:disabled):hover{border-color:var(--pen)}
+.tw-th[aria-pressed="true"]{border-color:var(--ink);background:var(--hi-soft)}
+.tw-th.done{border-color:var(--green);background:var(--good-bg);color:var(--ink)}
+.tw-tag{font-weight:700;font-size:.9rem}
+.tw-c{aspect-ratio:5/4!important;border:0!important;border-radius:4px}
+.tw-eq{font-size:.86rem;overflow-wrap:anywhere}
+.tw-eq:empty{display:none}
+.tw-eq .pair-n{font-weight:700;color:var(--green)}
+@media (max-width:700px){ .tw-recs .tw-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){
+  .tw{margin-left:-10px;margin-right:-10px}
+  .tw-lines .tw-th{flex:0 0 132px}
+  .tw-recs .tw-grid{grid-template-columns:repeat(2,minmax(160px,1fr))}
+}
+
+/* Practice 3 and the task: y = 1/([k]x − [c]) frame */
+.wb-frame{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:1.3rem;margin:6px 0 4px}
+.wb-frame .numin{width:6.5rem;font-size:1.15rem}
+.wb-cap{min-height:2.4em}
+.wb .pred-q{margin-top:0}
+.dr-read{margin-top:10px}
