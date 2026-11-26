@@ -1,0 +1,77 @@
+/* MHF4U 26: unit circle dots (N12), explorer controls and readout, family sign grid, find-the-angles, task inputs */
+.uc-dots{position:static}
+.uc-dot{position:absolute;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:0;background:transparent;padding:0;z-index:2;cursor:pointer}
+.uc-dot:focus-visible{outline:3px solid var(--pen);outline-offset:0}
+.ux-step{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.btn.ux-pm{font-size:1.5rem;line-height:1;min-width:52px;min-height:44px;padding:.15em .6em}
+.ux-now{font:400 1.25rem var(--font-math);min-width:6em;text-align:center}
+.ux-tg{margin:12px 0 0}
+.ux-pin{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:4px}
+.ux-tip{margin:10px 0 0}
+.ux-pin .linkbtn{padding:2px 4px;color:var(--pen);font-weight:700;min-height:24px}
+.read > div.uc-hl{background:var(--hi-soft);margin:0 -8px;padding-left:8px;padding-right:8px;border-radius:6px}
+.read > div.uc-flash{animation:ucflash .9s ease-out}
+@keyframes ucflash{0%{background:var(--hi)}100%{background:var(--hi-soft)}}
+.uc-red{color:var(--red);font-weight:700}
+.read dd .m{font-size:1.1em}
+.pg-read .read dd{line-height:1.5}
+.hero .hero-eq.md{font-size:clamp(2.2rem,5.6vw,3.5rem)}
+/* Part 3 */
+.fam-h{font-size:1rem;margin:0 0 8px}
+.fam-h + .chips{margin-bottom:16px}
+.fam-mv{display:flex;flex-wrap:wrap;gap:8px}
+.fam-cap{margin:10px 0 0;min-height:2.6em}
+.fam-cap .m{white-space:normal}
+table.sg td{padding:6px 10px}
+table.sg th[scope=row]{font-family:var(--font-math);font-size:1.1rem;color:var(--ink);background:var(--paper)}
+.sg-pair{display:inline-flex;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden;vertical-align:middle}
+.sg-pair button{min-width:40px;min-height:40px;border:0;background:var(--sheet);font:700 1.2rem var(--font-math);padding:0 .4em}
+.sg-pair button + button{border-left:1.5px solid var(--ink)}
+.sg-pair button[aria-pressed="true"]{background:var(--ink);color:var(--sheet)}
+.sg-pair button:disabled{color:inherit}
+.sg-pair button[aria-pressed="true"]:disabled{color:var(--sheet)}
+table.sg td.bad .sg-pair{border-color:var(--red);box-shadow:0 0 0 2px var(--red)}
+table.sg td.bad{background:var(--bad-bg)}
+table.sg td.good{background:var(--good-bg)}
+.sg-x{color:var(--red);font-weight:700;margin-left:6px}
+.sg-ok{color:var(--green);font-weight:700;margin-left:6px}
+ul.sg-fb{margin:6px 0 0;padding-left:1.2em}
+ul.sg-fb li{margin:4px 0}
+table.fam-num td{text-align:left}
+.sgn{display:inline-block;min-width:.75em;text-align:right}
+/* Practice 2 */
+.fa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 28px;align-items:start;margin-top:6px}
+.fa-plot{max-width:460px;width:100%}
+.fa-q{font:400 1.7rem var(--font-math);margin:0 0 8px}
+.fa-q .m{white-space:normal}
+/* task */
+.tk-in{display:flex;flex-wrap:wrap;gap:8px 28px;margin:8px 0 14px}
+.tk-row{display:flex;align-items:center;gap:10px}
+.tk-name{font:400 1.6rem var(--font-math)}
+.tk-frac{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.tk-frac input,.tk-frac select{width:4.4rem;border:1.5px solid var(--rule);border-radius:8px;background:var(--sheet);padding:.3em .4em;font:400 1.2rem var(--font-math);text-align:center;min-height:38px}
+.tk-frac input:focus,.tk-frac select:focus{border-color:var(--ink)}
+.tk-line{display:block;width:100%;height:2px;background:var(--ink)}
+.tk-pi{font:400 1.7rem var(--font-math)}
+.tk-cap{font-size:clamp(1.3rem,3.4vw,1.8rem)}
+.tk-bars{margin-top:12px;display:grid;gap:8px}
+.tk-bar-row{display:grid;grid-template-columns:4.2em minmax(0,1fr) 4.6em;align-items:center;gap:10px}
+.tk-bl{font-size:1.05rem}
+.tk-track{position:relative;display:block;height:16px;border:1.5px solid var(--rule);border-radius:4px;background:var(--paper)}
+.tk-track b{position:absolute;top:2px;bottom:2px;border-radius:2px}
+.tk-zero{position:absolute;left:50%;top:-4px;bottom:-4px;width:1.5px;background:var(--ink-2)}
+.tk-bv{font-size:1.05rem}
+.tk-verdict{margin:2px 0 0}
+@media (max-width:820px){
+  .fa{grid-template-columns:minmax(0,1fr)}
+  .fa-plot{max-width:none}
+}
+@media (max-width:560px){
+  table.sg th,table.sg td{padding:5px 4px}
+  table.sg td{position:relative;padding-right:12px}
+  .sg-pair button{min-width:33px;padding:0 .2em}
+  .sg-x,.sg-ok{position:absolute;top:1px;right:1px;margin:0;font-size:.8rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .read > div.uc-flash{animation:none}
+}
