@@ -1,0 +1,149 @@
+/* SCH4U 04: hero, C1 molecule view, carbonyl explorer (bars, dipole box, gallery, pin), test bench, C2 chips, task builder */
+
+/* test-bench observation colours, drawn true to life and always named in words (plan §5): colourless and blue solutions,
+   brick-red precipitate, silver mirror (a light-grey gradient in dark mode) */
+:root{--ak-tol:#EDF3F7;--ak-ben:#2F6FD0;--ak-brick:#B4532C;--ak-silver-a:#8E98A3;--ak-silver-b:#F1F3F6}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--ak-tol:#2B3B44;--ak-ben:#4F8BE6;--ak-brick:#D9774D;--ak-silver-a:#A3ACB6;--ak-silver-b:#E8ECEF}
+}
+:root[data-theme="dark"]{--ak-tol:#2B3B44;--ak-ben:#4F8BE6;--ak-brick:#D9774D;--ak-silver-a:#A3ACB6;--ak-silver-b:#E8ECEF}
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.ak-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ak-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ak-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+
+/* C1 molecule view */
+.c1-wrap{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.c1-svg{display:block;width:100%;height:auto;touch-action:pan-y;font-family:var(--font-ui)}
+.c1-ov{position:absolute;inset:0;pointer-events:none}
+.c1-b{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;background:transparent;padding:0;pointer-events:auto;cursor:pointer}
+.c1-b.bd{width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:6px}
+.c1-b:hover{background:var(--hi-soft)}
+.c1-b:focus-visible{outline:3px solid var(--pen);outline-offset:1px}
+.c1-rot{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.c1-rot .btn{min-width:40px;min-height:40px}
+.c1-rot[hidden]{display:none}
+
+/* explorer */
+.ak-how{margin-top:0}
+.ak-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.ak-left{grid-area:view;min-width:0}.ak-ctrl{grid-area:ctrl;min-width:0}.ak-right{grid-area:read;min-width:0}
+.ak-cap{font:400 clamp(1.15rem,2.6vw,1.55rem)/1.3 var(--font-ui);white-space:normal;min-height:1.4em}
+.ak-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.ak-molrow{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
+.ak-molrow.two{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+.ak-pin{border:1.5px dashed var(--rule);border-radius:10px;padding:6px 8px}
+.ak-pin .ak-sub{margin:0 0 4px}
+.ak-pinlab{margin:6px 0 0;font-size:.92rem;overflow-wrap:anywhere}
+.ak-views{margin-top:10px}
+.ak-note{min-height:1.4em;margin:8px 0 0;font-size:1rem}
+.ak-modes{margin-bottom:12px}
+.ak-sl{display:block;margin:4px 0 8px}
+.ak-me{margin:6px 0 2px}
+.ak-mehint{margin:4px 0 0}
+.ak-msg{min-height:1.4em;margin:8px 0 6px;font-size:.92rem;color:var(--ink-2)}
+.ak-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:10px 0 6px}
+.ak-acts{margin-top:8px}
+.ak-water{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-size:.95rem;min-height:32px}
+.ak-water input{width:20px;height:20px}
+.ak-right .chem-tab{margin-top:14px}
+.ak-gal[hidden],.ak-molrow[hidden],.ak-pin[hidden],.ak-pbox[hidden],.ak-bars[hidden],.ak-views[hidden],.ak-water[hidden],.ak-build[hidden],.ak-note[hidden],.ak-acts [hidden],.ak-dmol[hidden],#ak-tkprod[hidden]{display:none}
+/* bars */
+.ak-bars{margin-top:12px}
+.ak-bsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ak-blabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;margin-top:2px}
+.ak-blab{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.9rem;line-height:1.25;overflow-wrap:anywhere;padding:4px 2px;border-radius:6px}
+.ak-blab.cur{background:var(--hi-soft)}
+/* particle box */
+.ak-pbox{margin-top:12px}
+.ak-psvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ak-pcap{margin:8px 0 2px;font-size:.98rem}
+.ak-pleg{margin:4px 0 0}
+.ak-hbkey{display:inline-block;width:26px;height:0;border-top:3px dotted var(--e-pair);vertical-align:middle;margin:0 2px}
+/* gallery */
+.ak-cards{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+.ak-card{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);color:var(--ink);padding:8px 10px;min-height:44px;min-width:8.5em;font:inherit;font-size:.9rem;cursor:pointer}
+.ak-card span{font-size:.82rem;color:var(--ink-2)}
+.ak-card .ak-fam{font-weight:700}
+.ak-card.on{border-color:var(--pen);box-shadow:inset 0 0 0 1.5px var(--pen);background:var(--hi-soft)}
+.ak-galfig{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.ak-galsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ak-galnote{margin:8px 0 0}
+
+/* C2 chips */
+.c2-tape{font:400 1.3rem/1.3 var(--font-ui);margin:4px 0 10px;min-height:1.4em;overflow-wrap:anywhere}
+.c2-name{font-weight:700;color:var(--ink)}
+.c2-lab{display:block;font-size:.78rem;font-weight:700;color:var(--ink-2);margin:6px 0 2px}
+.c2-tape .c2-lab{display:inline;font-size:.85rem}
+.c2-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.c2-row .c2-lab{flex-basis:100%;margin-bottom:0}
+.c2-c{min-height:36px;min-width:36px}
+.c2-c:disabled{opacity:.45}
+.c2-act{margin-top:10px}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ak-bench{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:14px 24px;align-items:start}
+.ak-tubebox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);padding:6px 8px}
+.ak-tube{display:block;width:100%;max-width:320px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.ak-obs{margin:4px 0 2px;font-weight:700;min-height:2.6em}
+.ak-tdesc{margin:10px 0;font-size:.95rem}
+.ak-spick{margin:4px 0 12px}
+.ak-h4{margin:16px 0 6px}
+.ak-res{width:100%;border-collapse:collapse;font-size:.92rem}
+.ak-res th,.ak-res td{border-bottom:1px solid var(--rule);padding:6px 8px;text-align:left;vertical-align:top}
+.ak-res thead th{font-size:.85rem;color:var(--ink-2)}
+.ak-rec{display:flex;flex-wrap:wrap;gap:4px}
+.ak-rec .chip{min-height:32px;font-size:.85rem}
+.ak-bad{display:block;margin-top:4px;font-size:.85rem;color:var(--red)}
+.ak-data{margin-top:14px}
+.ak-dmol{max-width:560px}
+.ak-deq{margin:8px 0 4px}
+.ak-deq .chem{white-space:normal;overflow-wrap:anywhere}
+.ak-crow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:8px 0}
+.ak-clab{min-width:6.5em;font-weight:700}
+.ak-nnav{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.ak-nnav .chip{min-height:36px;min-width:44px}
+.ak-nmol{max-width:600px}
+.ak-ncond{margin:8px 0 4px}
+.ak-ncond .chem{white-space:normal;overflow-wrap:anywhere}
+
+/* practice + task */
+.ak-tf{display:block;font-size:.85em;color:var(--ink-2);font-weight:400}
+.ak-ring{display:block;width:84px;height:auto}
+.ak-pchips{margin-top:10px}
+.ak-pchips .chip{min-height:36px}
+.ak-conds{margin:6px 0 10px;padding-left:1.3em}
+.ak-menu{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.ak-menu .ak-sub,.ak-menu p{flex-basis:100%;margin:4px 0 0}
+.ak-menu .btn{min-height:36px}
+.ak-menu .btn:disabled{opacity:.5}
+.ak-tkr{flex-basis:100%;margin-top:6px}
+#ak-tkview{margin-bottom:6px}
+#ak-tkprod{margin-top:10px}
+
+@media (max-width:760px){
+  .ak-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .ak-molrow.two{grid-template-columns:minmax(0,1fr)}
+  .rg.seg button{padding:.4em .6em}
+  .ak-modes .rg.seg{display:flex}
+  .ak-modes .rg.seg button{flex:1 1 auto}
+  .ak-blab{font-size:.74rem}
+  .ak-blab strong{font-size:.8rem}
+  .ak-cards{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .ak-card{flex:0 0 auto}
+  .ak-bench{grid-template-columns:minmax(0,1fr)}
+}

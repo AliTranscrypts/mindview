@@ -1,0 +1,87 @@
+/* MCV4U 11: hero equation colours, V5 derivative panels (Explore), V11 sign chart, Derive it stations, V8 boxes, task */
+.qr-f{color:var(--pen)}
+.qr-g{color:var(--f3)}
+.qr-minus{background:var(--hi);color:var(--hi-ink);border-radius:4px;padding:0 .14em}
+.qr-hcap [data-st]{transition:opacity .45s ease}
+.qr-hcap{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:1.05rem}
+.qr-hcap .qr-hnum{border-radius:4px;padding:0 .12em;transition:background-color .45s ease}
+.qr-lit .qr-hnum{background:var(--hi-soft)}
+.qr-hz{font-size:.9rem;color:var(--ink-2)}
+.qr-lit .qr-hz .m{background:var(--hi);color:var(--hi-ink);border-radius:4px;padding:0 .2em}
+@media (prefers-reduced-motion:reduce){ .qr-hcap [data-st],.qr-hcap .qr-hnum{transition:none} }
+
+canvas.plot.dp-top{aspect-ratio:16/10}
+canvas.plot.dp-low{aspect-ratio:16/8}
+.dp-panels .dp-panel + .dp-panel{margin-top:6px}
+.dp-panels .dp-lowwrap[hidden],.qx-sc[hidden]{display:none}
+.dp-ex{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px 28px;align-items:start}
+.dp-main,.dp-side{min-width:0}
+.qx-eq{min-height:2.4em}
+.qx-key{margin:6px 0 0}
+.qx-fns{margin-bottom:6px}
+.qx-fns .chip{font-size:.86rem}
+.qx-fns .chip .m{font-size:1.05em}
+.qx-bsl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 16px;margin:2px 0 4px}
+.qx-bsl output{color:var(--ink)}
+.qx-how{margin:8px 0 10px}
+.qx-sl{margin-top:4px}
+.qx-sl output{color:var(--ink)}
+.qx-skip{min-height:1.2em;margin:0 0 6px;color:var(--ink-2);font-weight:600}
+#qx-tools{margin:2px 0 12px}
+.qx-note{color:var(--red);margin:6px 0 0}
+.qx-more{display:none;margin-top:6px}
+.qx-tc2{margin-top:12px;border:1.5px solid var(--rule);border-radius:8px;padding:8px 12px}
+.qx-badge{margin:0;font-weight:700;color:var(--ink);background:var(--hi-soft);border-radius:6px;padding:4px 8px;display:inline-block}
+.qx-sc{margin-top:10px}
+.qx-sch{margin:0 0 6px;font-size:.95rem}
+.qx-sc-wrap{overflow-x:auto;position:relative}
+table.qx-sct th,table.qx-sct td{padding:5px 8px;text-align:center;white-space:nowrap}
+table.qx-sct tbody th{text-align:left;font-weight:600}
+table.qx-sct th .m,table.qx-sct td .m{white-space:nowrap}
+.qx-sc-k{display:block;font:400 .72rem var(--font-ui);color:var(--ink-2)}
+table.qx-sct .qx-sc-u{font:600 .78rem var(--font-ui);color:var(--ink-2)}
+table.qx-sct .qx-sc-ar{font-size:1.25rem;line-height:1}
+table.qx-sct .qx-sc-d td{font-weight:700}
+table.qx-sct .hl{background:var(--hi-soft)}
+
+.p3-st h3{margin-top:0}
+.p3-st:first-child{margin-top:0;padding-top:0;border-top:0}
+.qd-steps{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px;min-height:2.6em}
+.qd-steps li{display:flex;gap:10px;align-items:baseline;border:1.5px solid var(--rule);border-radius:6px;padding:.45em .75em;background:var(--sheet)}
+.qd-steps li.cur{border-color:var(--ink);background:var(--hi-soft)}
+.qd-steps .sn{font-weight:700;color:var(--ink-2)}
+.qd-ord{margin-top:16px}
+.qd-ord [data-act="hint"]{display:none}
+.qd-ord .ostep .m{white-space:normal}
+.qd-rule{margin:10px 0 0;font-size:1.1rem;font-weight:600}
+#qd-tbl{margin-top:8px}
+#qd-tbl table.vt td,#qd-tbl table.vt th{padding:3px 10px}
+.qd-lines{margin:12px 0 0}
+.qd-same small{font-weight:700;color:var(--ink)}
+.qd-thumb{margin-top:14px}
+.qd-thumb p{margin:4px 0 0}
+
+.qs-bxs{display:flex;flex-wrap:wrap;gap:10px 18px;margin:6px 0 4px}
+.qs-bxs label{display:flex;align-items:center;gap:8px;font:400 1.1rem var(--font-math)}
+.qs-pts{display:flex;flex-wrap:wrap;gap:10px 22px;margin:6px 0 4px}
+.qs-pt{display:inline-flex;align-items:center;gap:4px;font-size:1.15rem}
+.qs-pt > .tiny{margin-right:6px;font-size:.8rem;color:var(--ink-2)}
+.qs-pt .numin.short{width:4.6rem}
+.qs-q .chips{margin:6px 0 2px}
+
+.qt-step{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.qt-step label{min-width:7.5rem}
+.qt-lab{font-size:1.2rem}
+.qt-step .btn{min-width:40px;font-size:1.1rem}
+.qt-step .numin.short{width:5.5rem}
+
+@media (max-width:820px){
+  .dp-ex{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .dp-ex canvas.plot.dp-top,.dp-ex canvas.plot.dp-low{aspect-ratio:auto;height:220px}
+  .qx-read:not(.qx-all) .qx-x2{display:none}
+  .qx-more{display:inline-flex}
+  .qs-pt .numin.short{width:4rem}
+  .qt-step label{flex-basis:100%;min-width:0}
+}

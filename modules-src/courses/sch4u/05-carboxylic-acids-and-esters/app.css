@@ -1,0 +1,101 @@
+/* SCH4U 05: hero, C1 esterStage, esterification station, bars, Part 3 stations, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.ce-hx-svg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ce-hx-name{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:10px 18px;margin:6px 0 2px;min-height:4.2em}
+.ce-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.ce-hx-cap{font:400 1.05rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:2.8em}
+
+/* name halves + scent card */
+.ce-name{display:inline-flex;flex-wrap:wrap;align-items:flex-end;gap:4px 10px;font:400 1.35rem var(--font-ui)}
+.ce-half{display:inline-flex;flex-direction:column;align-items:center}
+.ce-half strong{padding:0 2px 2px;border-bottom:4px solid var(--pen)}
+.ce-half.oate strong{border-bottom-color:var(--f3)}
+.ce-half small{font-size:.78rem;color:var(--ink-2);margin-top:3px}
+.ce-scent{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--rule);border-radius:10px;padding:6px 12px;background:var(--sheet);font-size:.98rem}
+.ce-sico{width:24px;height:24px;color:var(--ink-2);flex:none}
+.ce-u{padding-bottom:1px;border-bottom:3px solid var(--pen);font-weight:700}
+.ce-u.oate{border-bottom-color:var(--f3)}
+
+/* station */
+.ce-how{margin-top:0}
+.ce-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.ce-left{grid-area:view;min-width:0}.ce-ctrl{grid-area:ctrl;min-width:0}.ce-right{grid-area:read;min-width:0}
+.ce-cap{font:400 clamp(1.05rem,2.3vw,1.35rem)/1.35 var(--font-ui);white-space:normal;min-height:1.4em}
+.ce-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.ce-capn{font-size:.8em;color:var(--ink-2)}
+.ce-stagebox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);overflow:hidden}
+.ce-svg,.ce-psvg,.ce-soapsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ce-stepcap{min-height:2.8em;margin:8px 0 4px;font-size:1rem}
+.ce-out{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 18px;margin-top:10px;min-height:1em}
+.ce-ctrl > div + div{margin-top:12px}
+.ce-pick > div + div,.ce-revc > div + div{margin-top:10px}
+.ce-heavy{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-size:.95rem;min-height:32px}
+.ce-heavy input{width:20px;height:20px;flex:none}
+.ce-find{margin-top:12px;padding-top:10px;border-top:1px solid var(--rule)}
+.ce-find label{display:block;font-size:.88rem;font-weight:700;color:var(--ink-2);margin-bottom:4px}
+.ce-fr{display:flex;flex-wrap:wrap;gap:6px}
+.ce-fin{font:inherit;padding:.35em .55em;border:1.5px solid var(--rule);border-radius:6px;background:var(--sheet);color:var(--ink);min-width:0;flex:1 1 9rem;max-width:18rem;min-height:36px}
+.ce-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:4px 0 6px}
+.ce-trio{display:flex;flex-wrap:wrap;gap:6px}
+.ce-trio .btn{min-height:36px}
+.ce-act{margin-top:14px}
+.ce-msg{min-height:1.4em;margin:8px 0 0;font-size:.95rem;color:var(--ink-2)}
+.ce-right .chem-tab{margin-top:14px}
+.ce-pick[hidden],.ce-revc[hidden],.ce-propc[hidden],.ce-heavy[hidden],.ce-stage[hidden],.ce-bars[hidden],.ce-act[hidden],.ce-zoom[hidden],.ce-leg[hidden]{display:none}
+.ce-nodata{margin:6px 0}
+/* bars */
+.ce-bsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.ce-blabs{display:grid;gap:4px;margin-top:2px}
+.ce-blab{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.9rem;line-height:1.25;overflow-wrap:anywhere;padding:4px 2px;border-radius:6px}
+.ce-blab.cur{background:var(--hi-soft)}
+.ce-bnote{margin:8px 0 0}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.ce-beakers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px;margin-top:12px}
+.ce-bk{margin:0;min-width:0;border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--sheet)}
+.ce-bk figcaption{font-weight:700;text-align:center;margin-bottom:4px}
+.ce-bksvg,.ce-zsvg{display:block;width:100%;max-width:300px;height:auto;margin:0 auto;font-family:var(--font-ui)}
+.ce-zoom{margin:8px 0}
+.ce-bkread{margin-top:6px}
+.ce-leg{margin:10px 0 0}
+.ce-key{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;color:var(--sheet);font-weight:700;font-size:.75rem;vertical-align:middle}
+.ce-key.h3o{background:var(--ab-h3o)}.ce-key.an{background:var(--f3)}
+.ce-key.mol{width:20px;height:11px;border-radius:6px;border:1.6px solid var(--ink-2);background:var(--sheet)}
+.ce-s2pick{margin:8px 0 12px}
+.ce-pairbox{max-width:560px}
+.ce-s2cap,.ce-soapcap{min-height:2.8em;margin:8px 0 6px}
+.ce-s2read,.ce-soapread{margin-top:6px}
+.ce-soapbox{border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet);margin-top:10px;overflow:hidden}
+.ce-soapstep{margin-top:4px}
+
+/* practice + task */
+.ce-pchips{margin-top:10px}
+.ce-pchips .chip{min-height:36px}
+.ce-conds{margin:6px 0 10px;padding-left:1.3em}
+.ce-h4{margin:12px 0 6px}
+.ce-tk > div + div{margin-top:10px}
+.ce-tkname{margin:10px 0 4px;font-size:1.05rem}
+#ce-tkview[hidden]{display:none}
+
+@media (max-width:760px){
+  .ce-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .rg.seg button{padding:.4em .6em}
+  .ce-beakers{grid-template-columns:minmax(0,1fr)}
+  .ce-blab{font-size:.74rem}
+  .ce-blab strong{font-size:.8rem}
+  .ce-name{font-size:1.15rem}
+}

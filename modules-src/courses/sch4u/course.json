@@ -85,7 +85,8 @@
    "prereqs": [
     "03"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "05",
@@ -100,7 +101,8 @@
     "03",
     "04"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "06",
@@ -115,7 +117,8 @@
     "05",
     "03"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "07",
@@ -128,7 +131,8 @@
    "part3": "plastics",
    "prereqs": [
     "02"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "08",
@@ -143,7 +147,8 @@
     "05",
     "06",
     "07"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "09",
@@ -157,7 +162,8 @@
    "prereqs": [
     "01",
     "06"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "10",

@@ -122,3 +122,9 @@ every module that uses the touched code, then ship them together).
 | S2 zScheme, S4 membraneSim, S3 energyLedger bars, rule-based ordering activity | sbi4u 05 | |
 | D4 arrangementTiles (build/list), factorTiles, log bar chart | mdm4u 06 | |
 | V7 diffQuotientEngine, V8 coefBoxes, exactDec | mcv4u 08 | plan fix: E3 fix B "for every h ≠ 1" false at h = −3 → "almost every h" |
+| dish drawings, F6 lifeStageSwitcher, F13 productCards, F2 toddlerPlate + dayPlanner, whoDecides meter | hfa4u 07 | OWNER REVIEW (VERIFY): timeline rows for every age except 7–8 months, Ayo scenario + plate, APA refs. Toolkit: prediction start state applies only once an option is picked |
+| V5 derivativePanels (asymptotes, domain skips), V11 signChart, ratFn, V8 slopeBoxes | mcv4u 11 | |
+| S4 membraneSim, S3 energyLedger, S7 experimentBench (acid bath), atpSynthaseZoom | sbi4u 06 | |
+| C1 moleculeView (+dip overlay), C2 chips + carbonyl judge, dipoleBox, bpBars, moleculeBuilder (alcohol mode) | sch4u 04 | course data gap: 11 carbonyl bp + alcohol bp kept locally |
+| C1 esterStage, bpBars, C2 nameChips, predictAct | sch4u 05 | course data gap: 11 bp + 7 scents kept locally |
+| C1 (N, lone pairs, H-bond ghosts, reaction morphs), C2 amine/amide namer, bpBars, phMeter, sort-then-name activity | sch4u 06 | OWNER REVIEW (VERIFY): acetaminophen mp ~169 °C and solubility ~14 g/L supplied by builder; N-compound bp kept locally |

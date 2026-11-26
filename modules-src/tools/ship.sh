@@ -77,8 +77,15 @@ if gh secret list -R AliTranscrypts/mindview 2>/dev/null | grep -q CLOUDFLARE_AP
   echo "✓ CI deploy finished (run $RID)"
 else
   echo "→ No CLOUDFLARE_API_TOKEN secret yet; deploying locally."
-  BRANCH=main sh scripts/ci-deploy.sh 2>&1 | grep -E "Uploaded|Functions bundle|Deployment complete|❌|ERROR" || true
-  git checkout -q .wrangler/cache/pages.json 2>/dev/null || true
+  deployed=0
+  for attempt in 1 2 3; do
+    out=$(BRANCH=main sh scripts/ci-deploy.sh 2>&1 || true)
+    echo "$out" | grep -E "Uploaded|Deployment complete|❌|ERROR" || true
+    git checkout -q .wrangler/cache/pages.json 2>/dev/null || true
+    if echo "$out" | grep -q "Deployment complete"; then deployed=1; break; fi
+    echo "  deploy attempt $attempt failed; retrying in 20 s"; sleep 20
+  done
+  [ "$deployed" = 1 ] || { echo "❌ deploy failed 3 times — commit is pushed but not live"; exit 1; }
 fi
 
 sleep 5

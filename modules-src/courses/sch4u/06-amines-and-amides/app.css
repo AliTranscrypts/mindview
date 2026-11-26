@@ -1,0 +1,119 @@
+/* SCH4U 06: hero, C1 molecule view, Nitrogen family builder (slots, name chips, pH meter, bars), Part 3 stations, practice, task */
+
+/* radio groups (radioGroup component) */
+.rg-wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.rg-lab{font-size:.88rem;font-weight:700;color:var(--ink-2)}
+.rg.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--ink);border-radius:8px;overflow:hidden}
+.rg.seg button{border:0;background:var(--sheet);color:var(--ink);padding:.4em .9em;font-size:.92rem;font-weight:700;min-height:40px}
+.rg.seg button + button{border-left:1.5px solid var(--ink)}
+.rg.seg button[aria-checked="true"]{background:var(--ink);color:var(--sheet)}
+.rg.chips{display:inline-flex;flex-wrap:wrap;gap:6px;margin:0}
+.rg.chips button{border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);border-radius:999px;padding:.28em .85em;font-size:.9rem;min-height:36px}
+.rg.chips button[aria-checked="true"]{background:var(--hi);border-color:var(--hi);color:var(--hi-ink);font-weight:700}
+.rg button:disabled{opacity:.5}
+
+/* hero */
+.am-eq{display:block;line-height:1.4}
+.am-n{color:var(--at-n);font-weight:700}
+.am-o{color:var(--at-o);font-weight:700}
+.am-hx .c1-wrap{border:0;background:transparent}
+.am-hx-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+.am-hx-cap{font:400 1.02rem var(--font-ui);color:var(--ink);margin:4px 0;min-height:4.2em}
+
+/* C1 molecule view */
+.c1-wrap{position:relative;border:1.5px solid var(--rule);border-radius:10px;background:var(--sheet)}
+.c1-svg{display:block;width:100%;height:auto;touch-action:pan-y;font-family:var(--font-ui)}
+.c1-svg:focus-visible{outline:3px solid var(--pen);outline-offset:2px}
+.c1-rot{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px}
+.c1-rot .btn{min-width:40px;min-height:40px}
+.c1-rot[hidden]{display:none}
+
+/* builder */
+.am-how{margin-top:0}
+.am-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-areas:"view read" "ctrl read";gap:16px 28px;align-items:start}
+.am-left{grid-area:view;min-width:0}.am-ctrl{grid-area:ctrl;min-width:0}.am-right{grid-area:read;min-width:0}
+.am-cap{font:400 clamp(1.1rem,2.4vw,1.45rem)/1.35 var(--font-ui);white-space:normal;min-height:1.4em}
+.am-cap .chem{white-space:normal;overflow-wrap:anywhere}
+.am-capf{font-size:.8em;color:var(--ink-2);margin-left:.4em}
+.am-views{margin-top:10px}
+.am-leg{margin:8px 0 0}
+.am-ph{margin-top:10px}
+.am-ph .am-sub{margin:6px 0 2px}
+.am-msvg{display:block;width:100%;max-width:460px;height:auto;font-family:var(--font-ui)}
+.am-note{min-height:1.2em;margin:8px 0 0}
+.am-modes{margin-bottom:12px}
+.am-slot{margin:0 0 10px}
+.am-acyl{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-size:.95rem;font-weight:700;min-height:32px}
+.am-acyl input{width:22px;height:22px;flex:none}
+.am-msg{min-height:1.3em;margin:6px 0;font-size:.92rem;color:var(--ink-2)}
+.am-sub{font-size:.88rem;font-weight:700;color:var(--ink-2);margin:10px 0 6px}
+.am-name{margin-top:10px;padding-top:8px;border-top:1px solid var(--rule)}
+.am-name .q-actions{margin-top:6px}
+.am-right .chem-tab{margin-top:14px}
+.am-molbox[hidden],.am-cmp[hidden],.am-pb[hidden],.am-pc[hidden],.am-pd[hidden],.am-views[hidden],.am-ph[hidden]{display:none}
+.am-pd .q-actions{margin:10px 0 6px}
+.am-crow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 8px}
+.am-crow .c2-lab{min-width:5.2em}
+.am-crow .chip{min-height:34px}
+/* name chips (C2) */
+.c2-tape{font-size:1.02rem;margin:0 0 8px;min-height:1.4em;overflow-wrap:anywhere}
+.c2-name{font-weight:700}
+.c2-lab{font-size:.82rem;font-weight:700;color:var(--ink-2)}
+.c2-rows{display:flex;flex-direction:column;gap:6px}
+.c2-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.c2-row .c2-lab{min-width:5.2em}
+.c2-c{min-height:34px}
+.c2-act{margin-top:6px}
+/* bars */
+.am-cwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.am-cin{min-width:460px}
+.am-bsvg{display:block;width:100%;height:auto;font-family:var(--font-ui)}
+.am-blabs{display:grid;gap:4px;margin-top:2px}
+.am-blab{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.86rem;line-height:1.25;overflow-wrap:anywhere;padding:4px 2px}
+.am-blab strong{font-size:.86rem}
+.am-hb{display:inline-block;margin-top:4px;font-size:.78rem;font-weight:700;color:var(--ink)}
+.am-hb.no{font-weight:400;color:var(--ink-2)}
+.am-hbk{display:inline-block;width:20px;height:0;border-top:2.5px dashed var(--ink-2);vertical-align:middle}
+
+/* Part 3 */
+#p3-app > .part:first-child{border-top:0;margin-top:0;padding-top:0}
+.am-pscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.am-pscroll .c1-wrap{min-width:600px}
+.am-pcap{min-height:2.8em;margin:8px 0 4px}
+.am-count{font-weight:700;margin:8px 0 0}
+.am-rsvg{display:block;width:100%;max-width:560px;height:auto;margin-top:10px;font-family:var(--font-ui)}
+.am-chain{display:flex;flex-wrap:wrap;align-items:center;gap:2px 0;font-size:1.08rem;margin:8px 0;line-height:1.9}
+.am-u{white-space:nowrap}
+.am-lk{white-space:nowrap;background:var(--hi-soft);border-bottom:2px solid var(--pen);font-weight:700;padding:0 2px}
+.am-next{white-space:nowrap;color:var(--ink-2);margin-left:.8em}
+.am-gpick{margin:8px 0 10px}
+.am-gform{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0}
+.am-seg{border:1.5px dashed var(--ink-2);background:var(--sheet);color:var(--ink);border-radius:6px;padding:.3em .45em;font:400 1.08rem var(--font-ui);min-height:40px}
+.am-seg.on{background:var(--hi);border:1.5px solid var(--hi);color:var(--hi-ink);font-weight:700}
+.am-seg.bk{border-style:solid;color:var(--ink-2)}
+.am-gmsg{min-height:1.4em;margin:8px 0 4px}
+.am-glist{margin:4px 0 0;padding-left:1.2em}
+
+/* practice + task */
+.am-names{margin-top:16px}
+.am-h4{margin:12px 0 6px}
+.am-nrow{border-top:1px solid var(--rule);padding:10px 0}
+.am-nt{margin:0 0 6px}
+.am-nchips{margin:0 0 6px}
+.am-nchips .chip,.am-pchips .chip{min-height:36px;text-align:left}
+.am-ordhow{margin:8px 0 6px}
+.am-seq{margin:8px 0 4px;padding-left:1.6em}
+.am-seq li{padding:2px 0;font-weight:700}
+.am-seq li.empty{font-weight:400}
+.am-pchips{margin-top:10px}
+.am-conds{margin:6px 0 10px;padding-left:1.3em}
+.am-tkeq{margin:4px 0 8px;font-size:1.02rem}
+.am-tkeq .chem{white-space:normal;overflow-wrap:anywhere}
+#am-tka,#am-tkn{margin-bottom:8px}
+
+@media (max-width:760px){
+  .am-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"view" "ctrl" "read"}
+  .rg.seg button{padding:.4em .6em}
+  .am-blab{font-size:.76rem}
+  .am-blab strong{font-size:.78rem}
+}
