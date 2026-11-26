@@ -94,3 +94,4 @@ every module that uses the touched code, then ship them together).
 | foodWeb, F1 personaPanel, annotation tagger, mixed inquiry activity | hfa4u 01 | course files: hfa4u.css (--nu-*, --leaf, --fs-*, .hfa-private/.hfa-nft/.hfa-kc), hfa4u.js (MV.nutri.kcal/pctEnergy/pctDV/amdr/apa, MV.kitchenCard). NOTE: builder authored 38 of 48 "levers" the plan left open — owner review |
 | C1 moleculeView, C2 nameBuilder | sch4u 01 | course files: sch4u.js (MV.chem.data tables, f(), atom(), tablePanel(), bpOf()), sch4u.css (--at-*, role tokens, .chem) |
 | detective case chips, functionPicker, canvasMath, breakPieces sampler, task evaluator | mhf4u 50 | review |
+| V4 secantTangent, exactDec (from mhf4u 09) | mcv4u 02 | plan: TC1 h=2.5 and TC3 a=5 states unreachable with plan controls |
