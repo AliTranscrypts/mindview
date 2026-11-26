@@ -336,3 +336,4 @@ every module that uses the touched code, then ship them together).
 | — | eng4u 19 | quotes verified vs PG #42324, #1260 + Wikisource 1925; fixed 1831 "Every where" (ch. 10) |
 | C10 cellView + stripBeaker | sch4u 47 | PLAN ERROR: plan calls I₂ solution colourless (shown pale brown); W6 option C feedback, Station 3 distractors, L-hints builder-written |
 | C1 forceBox, latticeView, bpBars (−260 to 200 °C) | sch4u 21 | PLAN ERROR: near-miss (C₃H₈, HCl, C₂H₅OH) also fails line 3; MgO mp 2852 °C (plan) vs ≈2850 (course table) |
+| C12 orbitalScene (3D hybrid/p/σ/π, twist), C1 lineLabeller, C1 hybridModel, N4 pairEntry | sch4u 20 | VERIFY: ethane twist barrier ≈ 12 kJ/mol (local); "6 σ, 3 π" state impossible with 8 bond lines; sorter whys + hints builder-written |

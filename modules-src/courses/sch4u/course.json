@@ -322,7 +322,8 @@
     "02",
     "11"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "21",
