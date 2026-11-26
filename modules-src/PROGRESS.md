@@ -6,16 +6,16 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 167/295 live, 1 built, 127 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 168/295 live, 1 built, 126 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
-| MCV4U (mcv4u) | courses/mcv4u/modules/ | 28/59 | 1 | 30 | 0 |
+| MCV4U (mcv4u) | courses/mcv4u/modules/ | 29/59 | 0 | 30 | 0 |
 | MDM4U (mdm4u) | courses/mdm4u/modules/ | 21/39 | 0 | 18 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 17/52 | 0 | 35 | 0 |
 | SBI4U (sbi4u) | courses/sbi4u/modules/ | 19/46 | 0 | 27 | 0 |
-| HFA4M (hfa4u) | courses/hfa4m/modules/ | 19/25 | 0 | 6 | 0 |
+| HFA4M (hfa4u) | courses/hfa4m/modules/ | 19/25 | 1 | 5 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 13/24 | 0 | 11 | 0 |
 
 ## MHF4U Advanced Functions (`mhf4u`)
@@ -101,7 +101,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 26 The Derivative of *y* = *b*ˣ (`derivative-of-b-to-the-x`, topic, site ch5)
 - ✓ 27 Derivatives of Logarithmic Functions (`derivatives-of-logarithmic-functions`, topic, site ch5)
 - ✓ 28 Optimization Problems with Exponential Functions (`optimization-with-exponentials`, topic, site ch5)
-- ◐ 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
+- ✓ 29 Derivatives of Sine and Cosine (`derivatives-of-sine-and-cosine`, topic, site ch5)
 - … 30 Derivatives of Tangent and Cotangent (`derivatives-of-tangent-and-cotangent`, topic, site ch5)
 - … 31 Logarithmic Differentiation (`logarithmic-differentiation`, topic, site ch5)
 - … 32 Sinusoidal Word Problems (`sinusoidal-word-problems`, topic, site ch5)
@@ -300,7 +300,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 17 Conventional, Organic, GMO & Sustainable Agriculture (`agriculture-methods`, topic, site ch4)
 - ✓ 18 Food Processing & Labelling (`processing-labelling`, topic, site ch4)
 - ✓ 19 Food Security in Canada (`food-security-canada`, topic, site ch4)
-- … 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
+- ◐ 20 Indigenous Food Sovereignty (`indigenous-food-sovereignty`, topic, site ch4)
 - … 21 Global Hunger & Malnutrition (`global-hunger`, topic, site ch5)
 - … 22 Climate Change & Food Systems (`climate-food-systems`, topic, site ch5)
 - … 23 Sustainable Agriculture & Food Waste (`sustainability-food-waste`, topic, site ch5)
