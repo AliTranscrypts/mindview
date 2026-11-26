@@ -53,3 +53,4 @@ every module that uses the touched code, then ship them together).
 | N12 unitCircle | mhf4u 26 | reused by 27, 28, 30, 31, 34 |
 | exactQ22, N11 signChart.rational | mhf4u 22 | |
 | G8 circleDraw, N19 wheel, N19 beltPath, unitChain, N4 piBoxes, radioGroup | mhf4u 25 | |
+| N23 overlayGauge, N12 unitCircle (copy), G8 circleDraw (arcAt/txt/eqLabel), radio chips, piS/exS/parsePi | mhf4u 27 | |

@@ -387,8 +387,7 @@
     "21",
     "02"
    ],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "23",
@@ -438,8 +437,7 @@
    "size": "M",
    "part3": "spin",
    "prereqs": [],
-   "status": "built",
-   "note": ""
+   "status": "live"
   },
   {
    "nn": "26",
@@ -470,7 +468,8 @@
     "06",
     "07"
    ],
-   "status": "building"
+   "status": "built",
+   "note": ""
   },
   {
    "nn": "28",
@@ -571,7 +570,8 @@
     "31",
     "27",
     "26"
-   ]
+   ],
+   "status": "building"
   },
   {
    "nn": "34",
