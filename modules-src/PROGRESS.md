@@ -6,15 +6,15 @@ Legend: ✓ live (deployed + prod-tested) · ◐ built, not yet live · … buil
 
 Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 
-**Overall: 91/295 live, 1 built, 20 building, 0 blocked.** Updated 2026-11-26.
+**Overall: 92/295 live, 1 built, 19 building, 0 blocked.** Updated 2026-11-26.
 
 | Course | Site folder | Live | Built | To do | Blocked |
 |---|---|---:|---:|---:|---:|
 | MHF4U (mhf4u) | courses/mhf4u/modules/ | 50/50 | 0 | 0 | 0 |
 | MCV4U (mcv4u) | courses/mcv4u/modules/ | 11/59 | 0 | 48 | 0 |
-| MDM4U (mdm4u) | courses/mdm4u/modules/ | 7/39 | 0 | 32 | 0 |
+| MDM4U (mdm4u) | courses/mdm4u/modules/ | 7/39 | 1 | 31 | 0 |
 | SCH4U (sch4u) | courses/sch4u/modules/ | 6/52 | 0 | 46 | 0 |
-| SBI4U (sbi4u) | courses/sbi4u/modules/ | 6/46 | 1 | 39 | 0 |
+| SBI4U (sbi4u) | courses/sbi4u/modules/ | 7/46 | 0 | 39 | 0 |
 | HFA4M (hfa4u) | courses/hfa4m/modules/ | 7/25 | 0 | 18 | 0 |
 | ENG4U (eng4u) | courses/eng4u/modules/ | 4/24 | 0 | 20 | 0 |
 
@@ -143,7 +143,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 06 Factorial Notation (`factorial-notation`, topic, site ch2)
 - ✓ 07 Permutations of Distinct Objects (`permutations-distinct`, topic, site ch2)
 - … 08 Permutations with Identical Objects (`permutations-identical`, topic, site ch2)
-- … 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
+- ◐ 09 Permutations with Restrictions (`permutations-restrictions`, topic, site ch2)
 - … 10 Circular Permutations (`circular-permutations`, topic, site ch2)
 - … 11 Combinations: Counting Without Order (`combinations`, topic, site ch3)
 - · 12 Combination Identities (`combination-identities`, topic, site ch3)
@@ -238,7 +238,7 @@ Build order: MHF4U → MCV4U → MDM4U → SCH4U → SBI4U → HFA4U → ENG4U
 - ✓ 04 Overview of Photosynthesis (`overview-of-photosynthesis`, topic, site ch2)
 - ✓ 05 Noncyclic Electron Flow (`noncyclic-electron-flow`, topic, site ch2)
 - ✓ 06 Light Reactions (`light-reactions`, topic, site ch2)
-- ◐ 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
+- ✓ 07 Stomata Opening and Closing (`stomata`, topic, site ch2)
 - … 08 The Calvin Cycle (`the-calvin-cycle`, topic, site ch2)
 - … 09 C3, C4 and CAM Photosynthesis and Photorespiration (`c3-c4-cam`, topic, site ch2)
 - … 10 Introduction to Metabolism (`introduction-to-metabolism`, topic, site ch2)

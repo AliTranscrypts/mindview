@@ -133,3 +133,4 @@ every module that uses the touched code, then ship them together).
 | (update) | eng4u 04 | VERIFIED since: Frankenstein ch. 5 opening matches the 1831 text (no comma); Tennyson "The Eagle" (Wikisource); Frost "Nothing Gold Can Stay". STILL UNVERIFIED: Wordsworth "I wandered lonely" st. 1, Defence of Poetry "world/World", Keats line in K1B |
 | V5 derivativePanels (domain-aware), V8 coefficientEntry/pointEntry, slopeDial, exactD | mcv4u 09 | |
 | S4 guard-cell scene, dayGraph, S7 jelly bench, guardCellZoom, revealPrompts | sbi4u 07 | |
+| D3 countingSlots (case rows), D4 arrangementTiles (sliding, block outline, ticked list), gapBuilder | mdm4u 09 | |
