@@ -172,7 +172,7 @@ async function openDetail(student, module) {
   const w = d.work; if (!w) { $('detail').innerHTML = '<div class="panel">No work found.</div>'; return; }
   const S = JSON.parse(w.state || '{}'), p = JSON.parse(w.progress || '{}'), m = modules.find(x => x.id === module);
   let h = `<div class="panel"><h2>${esc(label(student))} — ${esc((m && m.title) || p.title || module)}</h2>
-    <div class="meta">${esc(w.email)} · First opened ${esc(when(w.first_seen))} · Last active ${esc(when(w.updated))} · ${w.saves} saves ·
+    <div class="meta">${esc(w.email)} · ${w.saves} saves ·
     Parts done: ${esc((p.partsDone || []).join(', ') || 'none')} · <a href="/courses/${course}/modules/${esc(module)}.html" target="_blank">Open module ↗</a></div>`;
   h += '<h2 style="margin-top:14px"><span class="tag t-for">FOR</span>Diagnostic & formative practice</h2>' +
     section('Warm-up answers', S.warm) + section('Predictions', S.preds) + section('Challenges', S.chal) +
