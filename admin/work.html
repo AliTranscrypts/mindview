@@ -135,7 +135,7 @@ function cell(r) {
     return `<button class="cell ${pct < 60 ? 'c-low' : 'c-done'}" ${go} title="Best ${best}/${f.outOf}, ${f.attempt} attempt(s)">${pct}%</button>`;
   }
   const done = (p.partsDone || []).length;
-  return `<button class="cell c-prog" ${go} title="Last active ${esc(when(r.updated))}">${done}/${p.parts || 6}</button>`;
+  return `<button class="cell c-prog" ${go} title="In progress">${done}/${p.parts || 6}</button>`;
 }
 
 function paintGrid() {
