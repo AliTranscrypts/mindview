@@ -71,6 +71,18 @@ The site is a **Cloudflare Pages** project deployed via **Direct Upload**
 - `WORK_DB` — D1 database `mindview-work` (added 2026-11-27): students' interactive-module work
   (`module_work` latest state, `final_attempts` append-only). Shared by staging and production.
 
+### Reviewer role (added 2026-11-27, owner request)
+View-only account for an outside reviewer (`functions/lib/reviewer.js`). Only superusers create or edit reviewers.
+- Course access = the reviewer record's `enrolled_courses`, enforced by the middleware on **every host** (staging too),
+  for `/courses/{code}/…` and `/assessments/…`. Reviewers skip the student supervision lock, so they see unit tests
+  and final exams; `.instructor-only` answer keys stay hidden (`js/role-gated.js` treats them like students).
+- Their dashboard shows only their courses and a read-only student list (name, email, which of their courses).
+  **No** Student Progress, Student Work, Assessment Unlock, Users or user counts (owner decision 2026-11-27).
+  `reviewer` is deliberately absent from every `ROLE_RANK` table, so "rank >= teacher" checks treat it as below
+  teacher; every write is refused.
+- Students with `test_account: true` (checkbox on Manage Users) are left out of the reviewer's student list.
+- The role-reference matrix on Manage Users (§2d, frozen) has no Reviewer column; add one only with owner approval.
+
 ---
 
 ## 2. Frozen UX patterns (additive changes only)

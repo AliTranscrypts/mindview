@@ -18,6 +18,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293
 .role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
 .role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}
 .role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
+.role-pill.reviewer{background:#b45309;}
 .container{max-width:1100px;margin:0 auto;padding:32px 24px;}
 h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 .sub{color:#64748b;margin-bottom:28px;display:flex;align-items:center;gap:10px;}
@@ -181,6 +182,30 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
             </div>
         </div>
 
+        <!-- ══ REVIEWER (view-only) ═══════════════════════════════════ -->
+        <div id="reviewer-only" style="display:none;">
+            <div class="card">
+                <h2 style="font-size:18px;margin-bottom:10px;">Your courses</h2>
+                <p style="color:#475569;font-size:14px;margin-bottom:14px;">
+                    You can open these courses, including their interactive modules, unit tests and final exams. This account is view-only.
+                </p>
+                <div id="reviewer-courses" style="display:flex;gap:10px;flex-wrap:wrap;"></div>
+            </div>
+            <div class="card">
+                <h2 style="font-size:18px;margin-bottom:10px;">Registered students</h2>
+                <div style="overflow-x:auto;">
+                    <table id="reviewer-students" style="width:100%;border-collapse:collapse;font-size:14px;">
+                        <thead><tr>
+                            <th style="text-align:left;padding:8px 10px;border-bottom:1px solid #e2e8f0;color:#64748b;font-size:12px;text-transform:uppercase;">Name</th>
+                            <th style="text-align:left;padding:8px 10px;border-bottom:1px solid #e2e8f0;color:#64748b;font-size:12px;text-transform:uppercase;">Email</th>
+                            <th style="text-align:left;padding:8px 10px;border-bottom:1px solid #e2e8f0;color:#64748b;font-size:12px;text-transform:uppercase;">Your courses they're in</th>
+                        </tr></thead>
+                        <tbody><tr><td colspan="3" class="muted" style="padding:10px;">Loading…</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <!-- ══ STUDENT ════════════════════════════════════════════════ -->
         <div id="student-only" style="display:none;">
             <div class="card">
@@ -197,7 +222,7 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 </div><!-- /.container -->
 
 <script>
-const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
+const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student', reviewer:'Reviewer'};
 
 (async function() {
     const r = await fetch('/api/me', { credentials: 'same-origin' });
@@ -249,6 +274,19 @@ function render(user) {
         document.getElementById('teacher-only').style.display = 'block';
         loadPendingRequests();
         setInterval(loadPendingRequests, 15_000); // refresh badge every 15 s
+    } else if (role === 'reviewer') {
+        const courseBox = document.getElementById('reviewer-courses');
+        const codes = user.enrolled_courses || [];
+        if (!codes.length) courseBox.innerHTML = '<span class="muted">No courses assigned yet.</span>';
+        codes.forEach(c => {
+            const a = document.createElement('a');
+            a.className = 'btn ghost';
+            a.href = '/courses/' + encodeURIComponent(c) + '.html';
+            a.textContent = c.toUpperCase() + ' →';
+            courseBox.appendChild(a);
+        });
+        document.getElementById('reviewer-only').style.display = 'block';
+        loadReviewerStudents();
     } else {
         document.getElementById('student-only').style.display = 'block';
     }
@@ -267,6 +305,34 @@ async function loadStats() {
                 users.filter(u => u.role === role).length;
         });
     } catch(e) { console.error(e); }
+}
+
+// ── Reviewer: read-only student list (name, email, which of their courses) ──
+async function loadReviewerStudents() {
+    const body = document.querySelector('#reviewer-students tbody');
+    const cell = (text, muted) => {
+        const td = document.createElement('td');
+        td.style.cssText = 'padding:8px 10px;border-bottom:1px solid #f1f5f9;';
+        if (muted) td.className = 'muted';
+        td.textContent = text;
+        return td;
+    };
+    try {
+        const r = await fetch('/api/users', { credentials: 'same-origin' });
+        const students = r.ok ? ((await r.json()).students || []) : null;
+        body.innerHTML = '';
+        if (!students) { body.innerHTML = '<tr><td colspan="3" class="muted" style="padding:10px;">Could not load the student list.</td></tr>'; return; }
+        if (!students.length) { body.innerHTML = '<tr><td colspan="3" class="muted" style="padding:10px;">No students yet.</td></tr>'; return; }
+        students.forEach(s => {
+            const tr = document.createElement('tr');
+            tr.appendChild(cell(s.full_name || '—'));
+            tr.appendChild(cell(s.email, true));
+            tr.appendChild(cell((s.courses || []).map(c => c.toUpperCase()).join(', ') || '—', !(s.courses || []).length));
+            body.appendChild(tr);
+        });
+    } catch (e) {
+        body.innerHTML = '<tr><td colspan="3" class="muted" style="padding:10px;">Could not load the student list.</td></tr>';
+    }
 }
 
 // ── Teacher: live pending-request badge ──────────────────────────────────────

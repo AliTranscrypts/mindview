@@ -24,6 +24,7 @@ const ROLE_LABELS = {
   admin: 'Administrator',
   teacher: 'Teacher',
   student: 'Student',
+  reviewer: 'Reviewer',
 };
 
 function json(status, body) {
@@ -83,10 +84,11 @@ export async function onRequest(context) {
     role_label: ROLE_LABELS[role] || role,
     can_manage_users: role === 'admin' || role === 'superuser',
   };
-  // Only attach enrolled_courses for students — for teachers/admins/superusers
-  // it's meaningless (they have full access regardless). Defaults to [] for
-  // students whose record predates the field.
-  if (role === 'student') {
+  // Only attach enrolled_courses for students and reviewers (whose list is the
+  // courses they may review) — for teachers/admins/superusers it's meaningless
+  // (they have full access regardless). Defaults to [] for students whose
+  // record predates the field.
+  if (role === 'student' || role === 'reviewer') {
     user.enrolled_courses = enrolledCourses || [];
   }
   return json(200, { authenticated: true, user });

@@ -100,6 +100,12 @@ export async function onRequest(context) {
   const method = request.method.toUpperCase();
   const url = new URL(request.url);
 
+  // Reviewers (../lib/reviewer.js) never see or record student progress. As
+  // non-instructors, GET below only ever returns their own (empty) record.
+  if (role === 'reviewer' && method !== 'GET') {
+    return json(403, { error: 'Reviewers have view-only access' });
+  }
+
   // ── GET — fetch progress ──────────────────────────────────────────────────
   if (method === 'GET') {
     const course = url.searchParams.get('course');

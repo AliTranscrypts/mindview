@@ -162,7 +162,7 @@ export async function onRequest(context) {
 
     // ── Student: request unlock ──
     if (action === 'request') {
-      if (isInstructor) return json(403, { error: 'Only students can request unlock' });
+      if (role !== 'student') return json(403, { error: 'Only students can request unlock' });
 
       const reqKey = `unlock-req:${userId}:${slug}`;
       const reqData = {

@@ -771,8 +771,9 @@
       }
 
     } else {
-      // ── Teacher / Admin / Superuser path ──────────────────────────────
-      if (isSupervised) {
+      // ── Teacher / Admin / Superuser (and view-only Reviewer) path ─────
+      // Reviewers don't supervise exams, so they skip the supervision panel.
+      if (isSupervised && role !== 'reviewer') {
         var teacherPanel = buildTeacherPanel(jitsiUrl, typeLabel);
         insertAfterHeader(teacherPanel);
       }

@@ -16,7 +16,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293
 .topbar nav a.active{color:#fff;}
 .user-chip{display:flex;align-items:center;gap:10px;font-size:13px;}
 .user-chip .role{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;}
-.role.superuser{background:#dc2626;}.role.admin{background:#7c3aed;}.role.teacher{background:#059669;}.role.student{background:#2563eb;}
+.role.superuser{background:#dc2626;}.role.admin{background:#7c3aed;}.role.teacher{background:#059669;}.role.student{background:#2563eb;}.role.reviewer{background:#b45309;}
 .container{max-width:1200px;margin:0 auto;padding:32px 24px;}
 h1{font-size:28px;font-weight:800;margin-bottom:6px;}
 .sub{color:#64748b;margin-bottom:20px;}
@@ -29,7 +29,10 @@ table{width:100%;border-collapse:collapse;}
 th, td{text-align:left;padding:12px 14px;border-bottom:1px solid #e2e8f0;font-size:14px;}
 th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#64748b;font-weight:700;}
 .role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
-.role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
+.role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}.role-pill.reviewer{background:#b45309;}
+.test-field{display:none;margin-top:14px;font-size:13px;color:#334155;}
+.test-field.visible{display:block;}
+.test-tag{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:10px;font-size:11px;font-weight:700;background:#f1f5f9;color:#64748b;}
 table.role-matrix th, table.role-matrix td{vertical-align:middle;}
 table.role-matrix th:not(:first-child){text-align:center;}
 table.role-matrix td.yes{text-align:center;color:#16a34a;font-weight:800;font-size:18px;background:#f0fdf4;}
@@ -240,6 +243,7 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
                     <option value="teacher">Teacher</option>
                     <option value="admin" id="opt-admin">Administrator</option>
                     <option value="superuser" id="opt-superuser">Super User</option>
+                    <option value="reviewer" id="opt-reviewer">Reviewer (view-only)</option>
                 </select>
             </div>
             <div class="field"><label>Password <span class="muted" id="pwHint">(min 8 chars)</span></label><input type="password" id="password" minlength="8"></div>
@@ -248,9 +252,10 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
                  Students can see all course landing pages, but actual chapter,
                  lesson, video, and assessment content requires being enrolled
                  in that specific course (enforced by middleware). -->
+            <label class="test-field" id="testField"><input type="checkbox" id="test_account"> Test account, not a real student (hidden from reviewers)</label>
             <div class="enrol-block" id="enrolBlock">
-                <h3>📚 Enrolled Courses</h3>
-                <p class="hint">Pick the courses this student is paying for and should be able to open. Lessons, videos, and assessments for non-enrolled courses are blocked; the student can still see the course overview pages to know what's offered.</p>
+                <h3 id="enrolTitle">📚 Enrolled Courses</h3>
+                <p class="hint" id="enrolHint">Pick the courses this student is paying for and should be able to open. Lessons, videos, and assessments for non-enrolled courses are blocked; the student can still see the course overview pages to know what's offered.</p>
                 <div class="enrol-actions">
                     <button type="button" onclick="enrolSelectAll(true)">Select all 40</button>
                     <button type="button" onclick="enrolSelectAll(false)">Clear all</button>
@@ -273,7 +278,9 @@ table.role-matrix tr.group-end td{border-bottom:3px solid #cbd5e1;}
 </div>
 
 <script>
-const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
+const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student', reviewer:'Reviewer'};
+const STUDENT_ENROL_HINT = "Pick the courses this student is paying for and should be able to open. Lessons, videos, and assessments for non-enrolled courses are blocked; the student can still see the course overview pages to know what's offered.";
+const REVIEWER_ENROL_HINT = "Pick the courses this reviewer may open, including their unit tests and final exams. Reviewers also see a list of real students (name, email, which of these courses they're in), but no progress, module work or user counts, and they can't change anything. Students marked as test accounts are hidden from reviewers.";
 let currentUser = null;
 let actorRole = null;
 // Users created in this page session that GET /api/users hasn't returned yet.
@@ -397,8 +404,11 @@ function readEnrolledCourses() {
 function toggleEnrolBlock(role) {
   const block = document.getElementById('enrolBlock');
   if (!block) return;
-  if (role === 'student') block.classList.add('visible');
+  if (role === 'student' || role === 'reviewer') block.classList.add('visible');
   else block.classList.remove('visible');
+  document.getElementById('enrolTitle').textContent = role === 'reviewer' ? '📚 Courses to review' : '📚 Enrolled Courses';
+  document.getElementById('enrolHint').textContent = role === 'reviewer' ? REVIEWER_ENROL_HINT : STUDENT_ENROL_HINT;
+  document.getElementById('testField').classList.toggle('visible', role === 'student');
 }
 
 function canManageRole(actor, target) {
@@ -435,6 +445,7 @@ async function init() {
         document.getElementById('scope-note').textContent = 'Manage teachers and students';
         document.getElementById('opt-admin').style.display = 'none';
         document.getElementById('opt-superuser').style.display = 'none';
+        document.getElementById('opt-reviewer').style.display = 'none';
     }
     await loadUsers();
 }
@@ -482,12 +493,17 @@ function renderUsers(users) {
                 const codesTitle = courses.map(c => c.toUpperCase()).join(', ');
                 enrolCell = `<span title="${escapeHtml(codesTitle)}" style="font-weight:600;color:#15803d;">${courses.length} course${courses.length === 1 ? '' : 's'}</span>`;
             }
+        } else if (u.role === 'reviewer') {
+            const courses = Array.isArray(u.enrolled_courses) ? u.enrolled_courses : [];
+            enrolCell = courses.length
+                ? `<span title="${escapeHtml(courses.map(c => c.toUpperCase()).join(', '))}" style="font-weight:600;color:#b45309;">${courses.length} course${courses.length === 1 ? '' : 's'} (review)</span>`
+                : `<span class="muted">None — content blocked</span>`;
         } else {
             enrolCell = `<span class="muted">All (role bypass)</span>`;
         }
         return `
             <tr>
-                <td><strong>${escapeHtml(u.full_name || '—')}</strong>${isMe ? ' <span class="muted">(you)</span>' : ''}</td>
+                <td><strong>${escapeHtml(u.full_name || '—')}</strong>${isMe ? ' <span class="muted">(you)</span>' : ''}${u.test_account ? '<span class="test-tag" title="Test account: hidden from reviewers">test</span>' : ''}</td>
                 <td class="muted">${escapeHtml(u.email)}</td>
                 <td><span class="role-pill ${u.role}">${ROLE_LABELS[u.role]}</span></td>
                 <td>${enrolCell}</td>
@@ -545,6 +561,7 @@ function editUser(u) {
     document.getElementById('password').required = false;
     document.getElementById('modalAlert').innerHTML = '';
     renderEnrolCheckboxes(u.enrolled_courses || []);
+    document.getElementById('test_account').checked = !!u.test_account;
     toggleEnrolBlock(u.role);
     document.getElementById('modal').classList.add('show');
 }
@@ -574,7 +591,7 @@ document.getElementById('userForm').addEventListener('submit', async e => {
     // Send enrolled_courses only for student records. For other roles the API
     // rejects a non-empty enrolled_courses, and on update we want to clear
     // any stale list if the role is being changed away from student.
-    if (role === 'student') {
+    if (role === 'student' || role === 'reviewer') {
         body.enrolled_courses = readEnrolledCourses();
     } else if (id) {
         // On update, explicitly clear enrolled_courses when changing role
@@ -582,6 +599,7 @@ document.getElementById('userForm').addEventListener('submit', async e => {
         // suspenders so the UI never sends stale state.)
         body.enrolled_courses = [];
     }
+    if (role === 'student') body.test_account = document.getElementById('test_account').checked;
 
     try {
         const url = id ? `/api/users?id=${encodeURIComponent(id)}` : '/api/users';
@@ -600,7 +618,8 @@ document.getElementById('userForm').addEventListener('submit', async e => {
                 role: body.role,
                 created_at: new Date().toISOString(),
             };
-            if (body.role === 'student') created.enrolled_courses = body.enrolled_courses || [];
+            if (body.role === 'student' || body.role === 'reviewer') created.enrolled_courses = body.enrolled_courses || [];
+            if (body.test_account) created.test_account = true;
             recentlyCreated.set(data.id, created);
         }
         closeModal();

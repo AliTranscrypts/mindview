@@ -26,6 +26,7 @@
 
 import { readSessionFromRequest } from './lib/session.js';
 import { withHtmlExt } from './lib/assessment-paths.js';
+import { reviewerCourses } from './lib/reviewer.js';
 
 // ── Sequential unit-progression helpers ──────────────────────────────────
 
@@ -445,7 +446,7 @@ function stagingBannerHTML() {
     display:flex;align-items:center;justify-content:center;gap:12px;
     font-family:'Segoe UI',system-ui,sans-serif;
     box-shadow:0 -2px 10px rgba(124,58,237,0.4);">
-    🧪 STAGING MODE — Enrolment gate disabled · All 40 courses open for all roles · Production students remain restricted
+    🧪 STAGING MODE — Enrolment gate disabled · All 40 courses open for all roles except Reviewer · Production students remain restricted
     <button onclick="document.getElementById('mv-staging-banner').remove()"
       style="background:rgba(255,255,255,0.2);border:none;color:#fff;
       padding:2px 10px;border-radius:6px;cursor:pointer;font-weight:700;">✕</button>
@@ -620,6 +621,58 @@ p{color:#475569;line-height:1.6;margin-bottom:14px;}
 </html>`;
 }
 
+// Course a reviewer is asking for: the code for course content (/courses/{code}/…)
+// and assessment papers (/assessments/{code}/… or /assessments/{code}_…), '' for an
+// /assessments/ path with no course code (blocked), null for everything else.
+function reviewerCourseFromPath(pathname) {
+  let m = pathname.match(/^\/courses\/([a-z0-9]+)\/./i);
+  if (m) return m[1].toLowerCase();
+  if (/^\/assessments\//i.test(pathname)) {
+    m = pathname.match(/^\/assessments\/([a-z0-9]+)[\/_]/i);
+    return m ? m[1].toLowerCase() : '';
+  }
+  return null;
+}
+
+function renderReviewerOutOfScopeHTML(courseCode, email) {
+  const safeName = escapeHtml(COURSE_DISPLAY_NAMES[courseCode] || courseCode.toUpperCase() || 'This course');
+  const safeEmail = escapeHtml(email || '');
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not included in your review — ${safeName}</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;max-width:560px;width:100%;padding:42px 36px;box-shadow:0 4px 18px rgba(15,23,42,0.06);}
+.icon{font-size:48px;margin-bottom:14px;}
+h1{font-size:24px;font-weight:800;margin-bottom:10px;color:#0f172a;}
+.course-line{display:inline-block;background:#fef3c7;color:#78350f;padding:6px 12px;border-radius:8px;font-weight:700;font-size:14px;margin-bottom:18px;}
+p{color:#475569;line-height:1.6;margin-bottom:14px;}
+.actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap;}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;background:#fff;color:#475569;border:1px solid #e2e8f0;}
+.note{font-size:13px;color:#64748b;margin-top:18px;border-top:1px solid #e2e8f0;padding-top:14px;}
+.note a{color:#2563eb;font-weight:600;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon">🔒</div>
+  <h1>Not included in your review access</h1>
+  <div class="course-line">${safeName}</div>
+  <p>Your reviewer account covers a set list of courses, and this one isn't on it. Contact a MindView administrator if you need it added.</p>
+  <div class="actions">
+    <a class="btn" href="/admin">Reviewer dashboard</a>
+    <a class="btn" href="/">All courses</a>
+  </div>
+  <p class="note">Signed in as <a href="/api/logout">${safeEmail}</a>.</p>
+</div>
+</body>
+</html>`;
+}
+
 export async function onRequest(context) {
   const { request, env, next } = context;
   const url = new URL(request.url);
@@ -663,6 +716,25 @@ export async function onRequest(context) {
     // Production (mindview.pages.dev) always enforces enrolment normally.
     const isProductionHost = url.hostname === 'mindview.pages.dev';
     const enrollmentEnforced = isProductionHost;  // false on staging/preview
+
+    // Reviewer accounts (functions/lib/reviewer.js) only open the courses in
+    // their record, on every host. This covers /assessments/ papers too,
+    // because reviewers skip the student supervision lock below.
+    if (payload.role === 'reviewer') {
+      const code = reviewerCourseFromPath(url.pathname);
+      if (code !== null) {
+        let allowed = new Set();
+        try {
+          if (env.USERS_KV) allowed = await reviewerCourses(env, payload.sub);
+        } catch { /* KV error → fail closed */ }
+        if (!allowed.has(code)) {
+          return new Response(renderReviewerOutOfScopeHTML(code, payload.email), {
+            status: 403,
+            headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
+          });
+        }
+      }
+    }
 
     if (payload.role === 'student' && enrollmentEnforced) {
       const m = url.pathname.match(/^\/courses\/([a-z0-9]+)\/(.+)$/i);

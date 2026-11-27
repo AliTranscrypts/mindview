@@ -20,14 +20,25 @@
 // chapters / lessons / assessments require enrolment. Teachers / admins /
 // superusers ignore this field and have full access.
 //
+// Reviewer role (added 2026-11-27, see ../lib/reviewer.js): view-only outside
+// reviewer. Only superusers create/manage reviewers. A reviewer's
+// enrolled_courses lists the courses it may review. Reviewers may call GET
+// (list) only, and get { students: [{ full_name, email, courses }] } for the
+// students not flagged test_account: true, with courses limited to their own.
+// test_account (boolean, students only) marks a test login, not a real student.
+//
 // TODO: Add an "email:<lower>" -> id secondary index on create/update so login
 //       no longer needs to scan the namespace.
 
 import { readSessionFromRequest } from '../lib/session.js';
 import { hashPassword } from '../lib/password.js';
+import { reviewerCourses, visibleToReviewer } from '../lib/reviewer.js';
 
 const ROLE_RANK = { student: 0, teacher: 1, admin: 2, superuser: 3 };
-const ALL_ROLES = ['student', 'teacher', 'admin', 'superuser'];
+const ALL_ROLES = ['student', 'teacher', 'admin', 'superuser', 'reviewer'];
+// Roles whose enrolled_courses list is read: students (what they paid for)
+// and reviewers (what they may review).
+const COURSE_LIST_ROLES = ['student', 'reviewer'];
 const MIN_PW_LENGTH = 8;
 
 // The 34 Ontario course codes that can appear in a student's enrolled_courses
@@ -101,13 +112,30 @@ export async function onRequest(context) {
   if (!session) return json(401, { error: 'Authentication required' });
 
   const actorRole = session.role;
-  if (actorRole !== 'admin' && actorRole !== 'superuser') {
-    return json(403, { error: 'Insufficient permissions' });
-  }
-
   const url = new URL(request.url);
   const targetId = url.searchParams.get('id');
   const method = request.method;
+
+  // Reviewers: read-only list of real students (no test accounts): name,
+  // email, and only which of the reviewer's own courses each is enrolled in.
+  // Returned as `students`, not `users`, so no admin page reads it as the full list.
+  if (actorRole === 'reviewer') {
+    if (method !== 'GET' || targetId) return json(403, { error: 'Insufficient permissions' });
+    const mine = await reviewerCourses(env, session.sub);
+    const list = await env.USERS_KV.list();
+    const users = await Promise.all(list.keys.map((k) => env.USERS_KV.get(k.name, 'json')));
+    const students = users.filter(visibleToReviewer).map((u) => ({
+      full_name: u.full_name || '',
+      email: u.email,
+      courses: (Array.isArray(u.enrolled_courses) ? u.enrolled_courses : []).filter((c) => mine.has(c)),
+    }));
+    students.sort((a, b) => (a.full_name || a.email).localeCompare(b.full_name || b.email));
+    return json(200, { students });
+  }
+
+  if (actorRole !== 'admin' && actorRole !== 'superuser') {
+    return json(403, { error: 'Insufficient permissions' });
+  }
 
   // ---------- LIST ----------
   if (method === 'GET' && !targetId) {
@@ -132,7 +160,7 @@ export async function onRequest(context) {
     } catch {
       return json(400, { error: 'Invalid JSON body' });
     }
-    const { email, password, full_name, role, enrolled_courses } = body || {};
+    const { email, password, full_name, role, enrolled_courses, test_account } = body || {};
     if (!email || !password || !role) {
       return json(400, { error: 'email, password, role are required' });
     }
@@ -143,14 +171,17 @@ export async function onRequest(context) {
     if (!canManageRole(actorRole, role)) {
       return json(403, { error: `Your role cannot create ${role} users` });
     }
-    // enrolled_courses is only meaningful for students; reject it on other
-    // roles so we don't silently persist data that will never be read.
+    // enrolled_courses is only meaningful for students and reviewers; reject
+    // it on other roles so we don't silently persist data that will never be read.
     const enrolCheck = validateEnrolledCourses(enrolled_courses);
     if (!enrolCheck.ok) return json(400, { error: enrolCheck.error });
-    if (role !== 'student' && enrolCheck.value.length > 0) {
+    if (!COURSE_LIST_ROLES.includes(role) && enrolCheck.value.length > 0) {
       return json(400, {
-        error: 'enrolled_courses can only be set on student accounts',
+        error: 'enrolled_courses can only be set on student or reviewer accounts',
       });
+    }
+    if (test_account !== undefined && typeof test_account !== 'boolean') {
+      return json(400, { error: 'test_account must be true or false' });
     }
     const id = crypto.randomUUID();
     const passwordHash = await hashPassword(password);
@@ -162,8 +193,11 @@ export async function onRequest(context) {
       passwordHash,
       created_at: new Date().toISOString(),
     };
-    if (role === 'student') {
+    if (COURSE_LIST_ROLES.includes(role)) {
       user.enrolled_courses = enrolCheck.value;
+    }
+    if (role === 'student' && test_account === true) {
+      user.test_account = true;
     }
     await env.USERS_KV.put(id, JSON.stringify(user));
     return json(201, { ok: true, id });
@@ -199,24 +233,32 @@ export async function onRequest(context) {
     delete updates.password;
     // Validate enrolled_courses on update too. Determine the effective role
     // after this update (existing role unless the request changes it).
+    const effectiveRole = updates.role || target.role;
     if ('enrolled_courses' in updates) {
       const enrolCheck = validateEnrolledCourses(updates.enrolled_courses);
       if (!enrolCheck.ok) return json(400, { error: enrolCheck.error });
-      const effectiveRole = updates.role || target.role;
-      if (effectiveRole !== 'student' && enrolCheck.value.length > 0) {
+      if (!COURSE_LIST_ROLES.includes(effectiveRole) && enrolCheck.value.length > 0) {
         return json(400, {
-          error: 'enrolled_courses can only be set on student accounts',
+          error: 'enrolled_courses can only be set on student or reviewer accounts',
         });
       }
       updates.enrolled_courses = enrolCheck.value;
     }
-    // If the role is being changed to something non-student, drop the field
-    // so it doesn't sit stale on a teacher/admin record.
-    if (updates.role && updates.role !== 'student' && 'enrolled_courses' in target) {
+    if ('test_account' in updates && typeof updates.test_account !== 'boolean') {
+      return json(400, { error: 'test_account must be true or false' });
+    }
+    // If the role is being changed to one without a course list, drop the
+    // field so it doesn't sit stale on a teacher/admin record.
+    if (updates.role && !COURSE_LIST_ROLES.includes(updates.role) && 'enrolled_courses' in target) {
       updates.enrolled_courses = undefined;
+    }
+    // test_account only means something on a student record.
+    if (effectiveRole !== 'student' || updates.test_account === false) {
+      updates.test_account = undefined;
     }
     const merged = { ...target, ...updates, id: targetId };
     if (merged.enrolled_courses === undefined) delete merged.enrolled_courses;
+    if (merged.test_account === undefined) delete merged.test_account;
     // Never let the caller overwrite the immutable id from the body.
     await env.USERS_KV.put(targetId, JSON.stringify(merged));
     return json(200, { ok: true });
