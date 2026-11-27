@@ -68,6 +68,8 @@ The site is a **Cloudflare Pages** project deployed via **Direct Upload**
 - `USERS_KV` — Workers KV namespace, holds user records
 - `SESSION_SECRET` — Pages environment variable (Production + Preview),
   HMAC key for `mv_session` cookies. **If unset, middleware returns 500.**
+- `WORK_DB` — D1 database `mindview-work` (added 2026-11-27): students' interactive-module work
+  (`module_work` latest state, `final_attempts` append-only). Shared by staging and production.
 
 ---
 
@@ -285,6 +287,6 @@ Self-study modules built from the owner's plans in `/Users/ali/Desktop/MV/Module
 
 - Pages under `courses/<code>/` get the existing enrolment gate and page-nav automatically; no middleware change was needed.
 - HFA4U plans are published inside the site's **HFA4M** course (`courses/hfa4m/modules/`); storage keys keep the `hfa4u-` prefix.
-- Each module saves progress only in the student's browser (`localStorage`), as the plans require.
+- Each module saves progress in the student's browser (`localStorage`). Since 2026-11-27 (owner request) the middleware also injects `js/module-sync.js` on module pages, which copies student work to `/api/module-work` (D1 `WORK_DB`); teachers see it at `admin/work.html` (Student Work), grouped FOR / AS / OF.
 
 **End of baseline. Last updated 2026-05-21 by the chapter-restructure session; §8 and CI/CD added 2026-11-26.**
