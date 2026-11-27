@@ -38,6 +38,10 @@ function renderUser(fullName, role) {
         document.getElementById('nav-manage-users').style.display = 'inline-block';
         document.getElementById('nav-admin').style.display = 'inline-block';
     }
+    // Reviewers get the Admin link only: their dashboard shows their courses and the student list.
+    if (role === 'reviewer') {
+        document.getElementById('nav-admin').style.display = 'inline-block';
+    }
 }
 
 // "My Courses" (students only): one card per enrolled course. The cards are
