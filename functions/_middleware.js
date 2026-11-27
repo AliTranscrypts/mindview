@@ -487,6 +487,14 @@ function withProtectionInjected(response, pathname, isProduction) {
           '<script src="/js/assessment-workflow.js" defer></script>',
           { html: true }
         );
+        // Interactive-module work tracking — added 2026-11-27 per owner request.
+        // Sends the student's module state to /api/module-work for admin/work.html.
+        if (/^\/courses\/[a-z0-9]+\/modules\//.test(pathname)) {
+          el.append(
+            '<script src="/js/module-sync.js" defer></script>',
+            { html: true }
+          );
+        }
       },
     })
     .on('body', {

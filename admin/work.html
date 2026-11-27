@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Work — MindView Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:10px;}
+.topbar a{color:#fff;text-decoration:none;}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
+.brand img{height:32px;}
+.topbar nav{display:flex;gap:20px;flex-wrap:wrap;}
+.topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
+.topbar nav a.active{color:#fff;}
+.user-chip{font-size:13px;display:flex;align-items:center;gap:10px;}
+.container{max-width:1200px;margin:0 auto;padding:28px 16px;}
+h1{font-size:26px;font-weight:800;margin-bottom:6px;}
+h2{font-size:19px;font-weight:800;margin:4px 0 10px;}
+h3{font-size:15px;font-weight:800;margin:16px 0 8px;}
+.sub{color:#64748b;font-size:15px;margin-bottom:20px;}
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;}
+.filters select{padding:9px 14px;border:1.5px solid #94a3b8;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:#0f172a;min-width:200px;}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:#64748b;margin-bottom:14px;}
+.wrap{overflow-x:auto;background:#fff;border:1px solid #e2e8f0;border-radius:12px;}
+table{border-collapse:collapse;font-size:13px;width:100%;}
+th,td{border-bottom:1px solid #f1f5f9;padding:7px 8px;text-align:center;white-space:nowrap;}
+th{background:#f8fafc;font-weight:700;color:#334155;position:sticky;top:0;}
+td.name,th.name{text-align:left;position:sticky;left:0;background:#fff;z-index:1;}
+th.name{background:#f8fafc;z-index:2;}
+.cell{display:inline-block;min-width:44px;padding:3px 6px;border-radius:6px;font-weight:700;cursor:pointer;border:none;font-family:inherit;font-size:12px;}
+.c-none{background:#f1f5f9;color:#94a3b8;cursor:default;}
+.c-prog{background:#fef3c7;color:#78350f;}
+.c-done{background:#dcfce7;color:#166534;}
+.c-low{background:#fee2e2;color:#7f1d1d;}
+.panel{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-top:18px;}
+.meta{font-size:13px;color:#64748b;margin-bottom:8px;}
+.tag{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:800;margin-right:6px;}
+.t-for{background:#fef3c7;color:#78350f;}.t-as{background:#cffafe;color:#155e75;}.t-of{background:#ede9fe;color:#4c1d95;}
+.kv{font-size:13px;margin:4px 0 4px 4px;}
+.kv b{color:#334155;}
+.text{white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:8px 10px;font-size:14px;margin:4px 0 8px;}
+code{font-size:12px;color:#475569;word-break:break-word;white-space:pre-wrap;}
+.empty{text-align:center;padding:40px 20px;color:#94a3b8;font-size:15px;}
+details summary{cursor:pointer;font-weight:700;font-size:13px;color:#475569;margin-top:10px;}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">
+    <a href="/admin"><img src="/logo.png" alt="MindView"></a>
+    <span>MindView Admin</span>
+  </div>
+  <nav>
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/progress.html">Student Progress</a>
+    <a href="/admin/work.html" class="active">Student Work</a>
+    <a href="/admin/assessments.html">Assessment Unlock</a>
+    <a href="/admin/users.html">Users</a>
+    <a href="/">Courses →</a>
+  </nav>
+  <div class="user-chip">
+    <span id="user-name"></span>
+    <a href="/api/logout" style="color:#94a3b8;">Logout</a>
+  </div>
+</div>
+<div class="container">
+  <h1>🧩 Student Work — Interactive Modules</h1>
+  <p class="sub">Everything students do in the interactive modules is saved here automatically. Pick a course, then click a cell to see that student's work in that module.</p>
+  <div class="filters">
+    <select id="sel-course"><option value="">— Select course —</option></select>
+    <select id="sel-student"><option value="">All students</option></select>
+  </div>
+  <div class="legend">
+    <span><span class="cell c-none">–</span> not started</span>
+    <span><span class="cell c-prog">3/6</span> in progress (parts done)</span>
+    <span><span class="cell c-done">85%</span> Final Check submitted (best)</span>
+    <span><span class="cell c-low">40%</span> Final Check under 60%</span>
+  </div>
+  <div id="grid"><div class="empty">Select a course above.</div></div>
+  <div id="detail"></div>
+</div>
+<script>
+const COURSES = { mhf4u:'MHF4U', mcv4u:'MCV4U', mdm4u:'MDM4U', sch4u:'SCH4U', sbi4u:'SBI4U', hfa4m:'HFA4M', eng4u:'ENG4U' };
+let names = {}, modules = [], rows = [], course = '';
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const when = iso => iso ? new Date(iso).toLocaleString('en-CA', { dateStyle:'medium', timeStyle:'short' }) : '—';
+const $ = id => document.getElementById(id);
+
+(async function () {
+  const r = await fetch('/api/me', { credentials:'same-origin' });
+  const d = r.ok ? await r.json() : null;
+  if (!d || !d.authenticated) { location.replace('/login?next=/admin/work.html'); return; }
+  if (!['teacher','admin','superuser'].includes(d.user.role)) {
+    document.body.innerHTML = '<div style="padding:60px;text-align:center;"><h1>🚫 Access denied</h1></div>'; return;
+  }
+  $('user-name').textContent = d.user.full_name || d.user.email;
+  Object.entries(COURSES).forEach(([k, v]) => $('sel-course').insertAdjacentHTML('beforeend', `<option value="${k}">${v}</option>`));
+  try {
+    const ur = await fetch('/api/users', { credentials:'same-origin' });
+    if (ur.ok) ((await ur.json()).users || []).forEach(u => { names[u.id] = u.full_name || u.email; });
+  } catch (e) {}
+  $('sel-course').onchange = load;
+  $('sel-student').onchange = paintGrid;
+})();
+
+async function load() {
+  course = $('sel-course').value; $('detail').innerHTML = '';
+  if (!course) { $('grid').innerHTML = '<div class="empty">Select a course above.</div>'; return; }
+  $('grid').innerHTML = '<div class="empty">Loading…</div>';
+  const [wr, hub] = await Promise.all([
+    fetch('/api/module-work?course=' + course, { credentials:'same-origin' }).then(r => r.json()),
+    fetch('/courses/' + course + '/modules/index.html', { credentials:'same-origin' }).then(r => r.ok ? r.text() : ''),
+  ]);
+  rows = (wr.rows || []).map(x => Object.assign(x, { p: JSON.parse(x.progress || '{}') }));
+  const doc = new DOMParser().parseFromString(hub, 'text/html'), seen = new Set();
+  modules = [];
+  doc.querySelectorAll('a[href]').forEach(a => {
+    const m = (a.getAttribute('href') || '').match(/(\d\d-[a-z0-9-]+)\.html$/);
+    if (m && !seen.has(m[1])) { seen.add(m[1]); modules.push({ id:m[1], title:(a.textContent || m[1]).trim().replace(/\s+/g, ' ') }); }
+  });
+  rows.forEach(x => { if (!seen.has(x.module)) { seen.add(x.module); modules.push({ id:x.module, title:x.p.title || x.module }); } });
+  modules.sort((a, b) => a.id.localeCompare(b.id));
+  const sel = $('sel-student'), ids = [...new Set(rows.map(x => x.user_id))];
+  sel.innerHTML = '<option value="">All students</option>' + ids.map(id => `<option value="${esc(id)}">${esc(label(id))}</option>`).join('');
+  paintGrid();
+}
+
+function label(id) { const r = rows.find(x => x.user_id === id); return names[id] || (r && r.email) || id; }
+
+function cell(r) {
+  if (!r) return '<span class="cell c-none">–</span>';
+  const p = r.p, f = p.final;
+  const go = `data-s="${esc(r.user_id)}" data-m="${esc(r.module)}"`;
+  if (f && f.outOf) {
+    const best = f.bestScore != null ? f.bestScore : f.score, pct = Math.round(100 * best / f.outOf);
+    return `<button class="cell ${pct < 60 ? 'c-low' : 'c-done'}" ${go} title="Best ${best}/${f.outOf}, ${f.attempt} attempt(s)">${pct}%</button>`;
+  }
+  const done = (p.partsDone || []).length;
+  return `<button class="cell c-prog" ${go} title="Last active ${esc(when(r.updated))}">${done}/${p.parts || 6}</button>`;
+}
+
+function paintGrid() {
+  const only = $('sel-student').value;
+  const ids = [...new Set(rows.map(x => x.user_id))].filter(id => !only || id === only);
+  if (!ids.length) { $('grid').innerHTML = '<div class="empty">No student work recorded for this course yet.</div>'; return; }
+  const idx = {}; rows.forEach(r => { idx[r.user_id + '|' + r.module] = r; });
+  let h = '<div class="wrap"><table><thead><tr><th class="name">Student</th>' +
+    modules.map(m => `<th title="${esc(m.title)}">${esc(m.id.slice(0, 2))}</th>`).join('') + '</tr></thead><tbody>';
+  ids.forEach(id => {
+    h += `<tr><td class="name">${esc(label(id))}</td>` + modules.map(m => '<td>' + cell(idx[id + '|' + m.id]) + '</td>').join('') + '</tr>';
+  });
+  $('grid').innerHTML = h + '</tbody></table></div>';
+  $('grid').querySelectorAll('button.cell').forEach(b => b.onclick = () => openDetail(b.dataset.s, b.dataset.m));
+}
+
+function val(v) {
+  if (v == null || v === '') return '<span class="meta">—</span>';
+  if (typeof v === 'string') return v.length > 60 || v.includes('\n') ? `<div class="text">${esc(v)}</div>` : esc(v);
+  if (typeof v !== 'object') return esc(v);
+  return `<code>${esc(JSON.stringify(v))}</code>`;
+}
+function section(title, obj) {
+  if (!obj || typeof obj !== 'object' || !Object.keys(obj).length) return '';
+  return `<h3>${esc(title)}</h3>` + Object.entries(obj).map(([k, v]) => `<div class="kv"><b>${esc(k)}:</b> ${val(v)}</div>`).join('');
+}
+
+async function openDetail(student, module) {
+  $('detail').innerHTML = '<div class="panel">Loading…</div>';
+  const d = await fetch(`/api/module-work?course=${course}&student=${encodeURIComponent(student)}&module=${encodeURIComponent(module)}`, { credentials:'same-origin' }).then(r => r.json());
+  const w = d.work; if (!w) { $('detail').innerHTML = '<div class="panel">No work found.</div>'; return; }
+  const S = JSON.parse(w.state || '{}'), p = JSON.parse(w.progress || '{}'), m = modules.find(x => x.id === module);
+  let h = `<div class="panel"><h2>${esc(label(student))} — ${esc((m && m.title) || p.title || module)}</h2>
+    <div class="meta">${esc(w.email)} · First opened ${esc(when(w.first_seen))} · Last active ${esc(when(w.updated))} · ${w.saves} saves ·
+    Parts done: ${esc((p.partsDone || []).join(', ') || 'none')} · <a href="/courses/${course}/modules/${esc(module)}.html" target="_blank">Open module ↗</a></div>`;
+  h += '<h2 style="margin-top:14px"><span class="tag t-for">FOR</span>Diagnostic & formative practice</h2>' +
+    section('Warm-up answers', S.warm) + section('Predictions', S.preds) + section('Challenges', S.chal) +
+    section('Quick checks', S.qc) + section('Sorting activities', S.sort) + section('Spot activities', S.spot) + section('Other activities', S.act);
+  h += '<h2 style="margin-top:14px"><span class="tag t-as">AS</span>Self-assessment & reflection</h2>' +
+    section('Goal ratings — before (0–3)', S.rate0) + section('Goal ratings — after (0–3)', S.rate1) +
+    section('Journal', S.journal) + section('Written responses', S.writes);
+  h += '<h2 style="margin-top:14px"><span class="tag t-of">OF</span>Final Check & task</h2>';
+  if (d.attempts.length) {
+    h += '<div class="wrap" style="margin:6px 0"><table><thead><tr><th>Attempt</th><th>Score</th><th>K</th><th>T</th><th>C</th><th>A</th><th>Submitted</th></tr></thead><tbody>' +
+      d.attempts.map(a => { const c = JSON.parse(a.by_cat || '{}'), f = k => c[k] ? c[k][0] + '/' + c[k][1] : '—';
+        return `<tr><td>${a.attempt}</td><td><b>${a.score}/${a.out_of}</b></td><td>${f('K')}</td><td>${f('T')}</td><td>${f('C')}</td><td>${f('A')}</td><td>${esc(when(a.at))}</td></tr>`; }).join('') +
+      '</tbody></table></div>';
+    h += '<details><summary>Answers per attempt</summary>' + d.attempts.map(a => `<div class="kv"><b>Attempt ${a.attempt}:</b> ${val(JSON.parse(a.answers || '{}').q)}</div>`).join('') + '</details>';
+  } else h += '<div class="meta">Final Check not submitted yet.</div>';
+  if (S.final && !S.final.submitted && Object.keys(S.final.q || {}).length) h += section('Final Check in progress (not yet submitted)', S.final.q);
+  if (S.task && (S.task.explain || (S.task.found || []).length)) h += section('Task', { explanation:S.task.explain, found:S.task.found });
+  h += '<details><summary>All saved data (raw)</summary><code>' + esc(JSON.stringify(S, null, 1)) + '</code></details></div>';
+  $('detail').innerHTML = h;
+  $('detail').scrollIntoView({ behavior:'smooth' });
+}
+</script>
+</body>
+</html>

@@ -94,6 +94,7 @@ h1{font-size:28px;font-weight:800;margin-bottom:6px;}
                 <a href="/admin/users.html" class="btn">👥 Manage Users →</a>
                 <a href="/admin/assessments.html" class="btn green">🔐 Assessment Authorization</a>
                 <a href="/admin/progress.html" class="btn ghost">📊 Student Progress</a>
+                <a href="/admin/work.html" class="btn ghost">🧩 Student Work</a>
                 <a href="/" class="btn ghost">Browse Courses</a>
             </div>
         </div>
@@ -229,10 +230,12 @@ function render(user) {
         nav.innerHTML += '<a href="/admin/users.html">Users</a>'
             + '<a href="/admin/assessments.html">🔐 Authorization</a>'
             + '<a href="/admin/progress.html">📊 Progress</a>'
+            + '<a href="/admin/work.html">🧩 Work</a>'
             + '<a href="/">Courses →</a>';
     } else if (role === 'teacher') {
         nav.innerHTML += '<a href="/admin/assessments.html">🔐 Authorize Exams</a>'
             + '<a href="/admin/progress.html">📊 Progress</a>'
+            + '<a href="/admin/work.html">🧩 Work</a>'
             + '<a href="/">Courses →</a>';
     } else {
         nav.innerHTML += '<a href="/">Courses →</a>';
