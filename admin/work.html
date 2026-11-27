@@ -114,12 +114,9 @@ async function load() {
     fetch('/courses/' + course + '/modules/index.html', { credentials:'same-origin' }).then(r => r.ok ? r.text() : ''),
   ]);
   rows = (wr.rows || []).map(x => Object.assign(x, { p: JSON.parse(x.progress || '{}') }));
-  const doc = new DOMParser().parseFromString(hub, 'text/html'), seen = new Set();
-  modules = [];
-  doc.querySelectorAll('a[href]').forEach(a => {
-    const m = (a.getAttribute('href') || '').match(/(\d\d-[a-z0-9-]+)\.html$/);
-    if (m && !seen.has(m[1])) { seen.add(m[1]); modules.push({ id:m[1], title:(a.textContent || m[1]).trim().replace(/\s+/g, ' ') }); }
-  });
+  const seen = new Set(), re = /"nn":"(\d\d)","slug":"([a-z0-9-]+)","title":"((?:[^"\\]|\\.)*)"[^}]*?"built":true/g;
+  modules = []; let mm;
+  while ((mm = re.exec(hub))) { const id = mm[1] + '-' + mm[2]; if (!seen.has(id)) { seen.add(id); let t = mm[3]; try { t = JSON.parse('"' + t + '"'); } catch (e) {} modules.push({ id, title:t }); } }
   rows.forEach(x => { if (!seen.has(x.module)) { seen.add(x.module); modules.push({ id:x.module, title:x.p.title || x.module }); } });
   modules.sort((a, b) => a.id.localeCompare(b.id));
   const sel = $('sel-student'), ids = [...new Set(rows.map(x => x.user_id))];
@@ -163,7 +160,10 @@ function val(v) {
 }
 function section(title, obj) {
   if (!obj || typeof obj !== 'object' || !Object.keys(obj).length) return '';
-  return `<h3>${esc(title)}</h3>` + Object.entries(obj).map(([k, v]) => `<div class="kv"><b>${esc(k)}:</b> ${val(v)}</div>`).join('');
+  const used = v => v != null && v !== '' && v !== false && v !== 0 && (typeof v !== 'object' || Object.values(v).some(used));
+  const items = Object.entries(obj).filter(([, v]) => used(v));
+  if (!items.length) return '';
+  return `<h3>${esc(title)}</h3>` + items.map(([k, v]) => `<div class="kv"><b>${esc(k)}:</b> ${val(v)}</div>`).join('');
 }
 
 async function openDetail(student, module) {
